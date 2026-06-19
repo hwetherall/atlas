@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import type { Dimension, Ledger } from "@/lib/schema";
 import { DIMENSION_LABELS, DIMENSION_VALUES } from "@/lib/dimensions";
 import type { ScenarioAction, ScenarioState } from "@/lib/useScenario";
@@ -43,14 +44,19 @@ function FilterGroup({
               role="checkbox"
               aria-checked={on}
               onClick={() => onToggle(value)}
-              className={[
-                "rounded-md border px-2.5 py-1 text-sm transition-colors",
-                on
-                  ? "border-sky-500/60 bg-sky-500/15 text-sky-200"
-                  : "border-neutral-700 bg-neutral-900 text-neutral-400 hover:border-neutral-600",
-              ].join(" ")}
+              className={`relative rounded-md px-3 py-1.5 text-sm transition-colors ${
+                on ? "text-sky-100" : "text-neutral-400 hover:text-neutral-200"
+              }`}
             >
-              {label}
+              {on && (
+                <motion.div
+                  layoutId={`bg-${dimension}`}
+                  className="absolute inset-0 rounded-md bg-sky-500/20 border border-sky-500/40 shadow-[0_0_10px_rgba(56,189,248,0.2)]"
+                  initial={false}
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+              <span className="relative z-10">{label}</span>
             </button>
           );
         })}
@@ -66,7 +72,7 @@ export default function ScenarioControls({ ledger, state, dispatch }: Props) {
   const assumptionNodes = ledger.filter((n) => n.kind === "assumption");
 
   return (
-    <section className="rounded-lg border border-neutral-800 bg-neutral-900/50 p-4">
+    <section className="glass-panel rounded-xl p-5">
       <div className="flex items-center justify-between">
         <h2 className="text-sm font-semibold text-neutral-200">Scenario controls</h2>
         {differs ? (
@@ -91,7 +97,7 @@ export default function ScenarioControls({ ledger, state, dispatch }: Props) {
         ))}
       </div>
 
-      <div className="mt-5 space-y-4 border-t border-neutral-800 pt-4">
+      <div className="mt-5 space-y-4 border-t border-white/10 pt-4">
         <h3 className="text-xs font-medium uppercase tracking-wide text-neutral-400">
           Assumptions
         </h3>
@@ -112,11 +118,11 @@ export default function ScenarioControls({ ledger, state, dispatch }: Props) {
         })}
       </div>
 
-      <div className="mt-5 flex gap-2 border-t border-neutral-800 pt-4">
+      <div className="mt-5 flex gap-2 border-t border-white/10 pt-4">
         <button
           type="button"
           onClick={() => dispatch({ type: "pinBaseline" })}
-          className="rounded-md bg-sky-500 px-3 py-1.5 text-sm font-medium text-neutral-950 hover:bg-sky-400"
+          className="rounded-md bg-gradient-to-b from-sky-400 to-sky-600 px-4 py-2 text-sm font-medium text-white shadow-[0_0_15px_rgba(56,189,248,0.4)] transition-all hover:brightness-110"
         >
           Pin as baseline
         </button>
@@ -124,7 +130,7 @@ export default function ScenarioControls({ ledger, state, dispatch }: Props) {
           type="button"
           onClick={() => dispatch({ type: "resetToBaseline" })}
           disabled={!differs}
-          className="rounded-md border border-neutral-700 px-3 py-1.5 text-sm text-neutral-300 hover:border-neutral-600 disabled:opacity-40"
+          className="rounded-md border border-white/10 bg-white/5 px-4 py-2 text-sm text-neutral-300 transition-all hover:bg-white/10 disabled:opacity-40"
         >
           Reset to baseline
         </button>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import type { Confidence, FactNode, Ledger, NodeKind, Scenario } from "@/lib/schema";
 import { labelFor } from "@/lib/dimensions";
 import { boundsFor } from "@/lib/levers";
@@ -55,7 +56,7 @@ function Row({
   const missingSource = node.kind === "extracted" && !node.source?.title;
 
   return (
-    <li className="border-b border-neutral-800/70 last:border-0">
+    <li className="border-b border-white/5 last:border-0">
       <div className="flex items-center gap-3 py-2">
         <button
           type="button"
@@ -63,7 +64,13 @@ function Row({
           aria-expanded={open}
           className="flex min-w-0 flex-1 items-center gap-2 text-left"
         >
-          <span className="text-neutral-600">{open ? "▾" : "▸"}</span>
+          <motion.span 
+            className="text-neutral-500"
+            animate={{ rotate: open ? 90 : 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            ▸
+          </motion.span>
           <span className="truncate text-sm text-neutral-200">{node.label}</span>
           <Badge className={KIND_STYLE[node.kind]}>{node.kind}</Badge>
           {missingSource ? (
@@ -95,51 +102,61 @@ function Row({
         </div>
       </div>
 
-      {open ? (
-        <div className="ml-6 mb-2 space-y-1 text-xs text-neutral-400">
-          {node.source ? (
-            <div>
-              <span className="text-neutral-500">Source: </span>
-              {node.source.url ? (
-                <a
-                  href={node.source.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sky-400 underline"
-                >
-                  {node.source.title ?? node.source.url}
-                </a>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden"
+          >
+            <div className="ml-6 mb-2 space-y-1 text-xs text-neutral-400">
+              {node.source ? (
+                <div>
+                  <span className="text-neutral-500">Source: </span>
+                  {node.source.url ? (
+                    <a
+                      href={node.source.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-sky-400 underline transition-colors hover:text-sky-300"
+                    >
+                      {node.source.title ?? node.source.url}
+                    </a>
+                  ) : (
+                    <span className="text-neutral-300">
+                      {node.source.title ?? node.source.note}
+                    </span>
+                  )}
+                  {node.source.note && node.source.title ? (
+                    <span className="text-neutral-500"> — {node.source.note}</span>
+                  ) : null}
+                </div>
               ) : (
-                <span className="text-neutral-300">
-                  {node.source.title ?? node.source.note}
-                </span>
+                <div className="text-neutral-500">No source attached.</div>
               )}
-              {node.source.note && node.source.title ? (
-                <span className="text-neutral-500"> — {node.source.note}</span>
-              ) : null}
+              <div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px] text-neutral-500">
+                <span>id: {node.id}</span>
+                <span>asOf: {node.asOf}</span>
+                {node.dimension ? (
+                  <span>
+                    {node.dimension}: {labelFor(node.dimension, node.dimensionValue ?? "")}
+                  </span>
+                ) : null}
+                {node.op ? <span>op: {node.op}({(node.inputs ?? []).join(", ")})</span> : null}
+              </div>
             </div>
-          ) : (
-            <div className="text-neutral-500">No source attached.</div>
-          )}
-          <div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px] text-neutral-500">
-            <span>id: {node.id}</span>
-            <span>asOf: {node.asOf}</span>
-            {node.dimension ? (
-              <span>
-                {node.dimension}: {labelFor(node.dimension, node.dimensionValue ?? "")}
-              </span>
-            ) : null}
-            {node.op ? <span>op: {node.op}({(node.inputs ?? []).join(", ")})</span> : null}
-          </div>
-        </div>
-      ) : null}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </li>
   );
 }
 
 export default function FactsLedger({ ledger, scenario, dispatch }: Props) {
   return (
-    <section className="rounded-lg border border-neutral-800 bg-neutral-900/50 p-4">
+    <section className="glass-panel rounded-xl p-5">
       <h2 className="text-sm font-semibold text-neutral-200">Facts ledger</h2>
       <p className="mt-0.5 text-xs text-neutral-500">
         The levers are facts. Click a row for sourcing; assumption leaves are

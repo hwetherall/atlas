@@ -1,7 +1,9 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { DELTA_ORDER, type DeltaFactor, type DeltaResult } from "@/lib/compute";
 import { formatEUR } from "@/lib/format";
+import AnimatedNumber from "@/components/AnimatedNumber";
 
 interface Props {
   deltaTam: DeltaResult;
@@ -27,7 +29,7 @@ function Headline({ label, total }: { label: string; total: number }) {
     <div>
       <div className="text-xs uppercase tracking-wide text-neutral-500">{label}</div>
       <div className={`font-mono text-2xl tabular-nums ${tone}`}>
-        {zero ? "—" : formatEUR(total, { signed: true })}
+        {zero ? "—" : <AnimatedNumber value={total} format="eur" signed />}
       </div>
     </div>
   );
@@ -43,7 +45,7 @@ export default function DeltaPanel({ deltaTam, deltaYam }: Props) {
   );
 
   return (
-    <section className="rounded-lg border border-neutral-800 bg-neutral-900/50 p-4">
+    <section className="glass-panel rounded-xl p-5">
       <h2 className="text-sm font-semibold text-neutral-200">Δ vs baseline</h2>
       <p className="mt-0.5 text-xs text-neutral-500">
         The delta is the product. A market size on its own is just a number.
@@ -78,26 +80,28 @@ export default function DeltaPanel({ deltaTam, deltaYam }: Props) {
                     {/* center line */}
                     <div className="absolute left-1/2 top-0 h-full w-px bg-neutral-700" />
                     {!negligible ? (
-                      <div
-                        className={`absolute top-0 h-full ${negative ? "rounded-l-sm bg-rose-500/70" : "rounded-r-sm bg-emerald-500/70"}`}
-                        style={{
+                      <motion.div
+                        className={`absolute top-0 h-full ${negative ? "rounded-l-sm bg-gradient-to-l from-rose-500 to-rose-600 shadow-[0_0_10px_rgba(244,63,94,0.3)]" : "rounded-r-sm bg-gradient-to-r from-emerald-400 to-emerald-600 shadow-[0_0_10px_rgba(52,211,153,0.3)]"}`}
+                        initial={false}
+                        animate={{
                           width: `${widthPct}%`,
                           [negative ? "right" : "left"]: "50%",
                         }}
+                        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                       />
                     ) : null}
                   </div>
                   <div
                     className={`w-24 shrink-0 text-right font-mono tabular-nums ${negligible ? "text-neutral-600" : negative ? "text-rose-300" : "text-emerald-300"}`}
                   >
-                    {negligible ? "—" : formatEUR(v, { signed: true })}
+                    {negligible ? "—" : <AnimatedNumber value={v} format="eur" signed />}
                   </div>
                 </div>
               );
             })}
           </div>
           <p className="mt-2 text-[11px] text-neutral-600">
-            Contributions sum exactly to ΔTAM {formatEUR(deltaTam.total, { signed: true })}.
+            Contributions sum exactly to ΔTAM <AnimatedNumber value={deltaTam.total} format="eur" signed />.
           </p>
         </div>
       )}

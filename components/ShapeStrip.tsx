@@ -1,20 +1,22 @@
 "use client";
 
 import { useMemo } from "react";
+import { motion } from "framer-motion";
 import type { Ledger } from "@/lib/schema";
 import { SEGMENTS } from "@/lib/dimensions";
 import { formatPct } from "@/lib/format";
+import AnimatedNumber from "@/components/AnimatedNumber";
 
 interface Props {
   ledger: Ledger;
 }
 
 const SEG_COLORS = [
-  "bg-sky-500",
-  "bg-sky-400",
-  "bg-emerald-400",
-  "bg-amber-400",
-  "bg-violet-400",
+  "bg-gradient-to-r from-sky-400 to-sky-500",
+  "bg-gradient-to-r from-sky-300 to-sky-400",
+  "bg-gradient-to-r from-emerald-400 to-emerald-500",
+  "bg-gradient-to-r from-amber-400 to-amber-500",
+  "bg-gradient-to-r from-violet-400 to-violet-500",
 ];
 
 export default function ShapeStrip({ ledger }: Props) {
@@ -34,13 +36,13 @@ export default function ShapeStrip({ ledger }: Props) {
   }, [ledger]);
 
   return (
-    <section className="rounded-lg border border-neutral-800 bg-neutral-900/50 p-4">
+    <section className="glass-panel rounded-xl p-5">
       <h2 className="text-sm font-semibold text-neutral-200">Market shape</h2>
       <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div>
           <div className="text-xs uppercase tracking-wide text-neutral-500">CAGR</div>
           <div className="font-mono text-xl tabular-nums text-neutral-50">
-            {formatPct(cagr)}
+            <AnimatedNumber value={cagr} format="pct" />
           </div>
           <div className="text-[11px] text-neutral-600">2025–2030</div>
         </div>
@@ -50,7 +52,7 @@ export default function ShapeStrip({ ledger }: Props) {
             Top-3 concentration
           </div>
           <div className="font-mono text-xl tabular-nums text-neutral-50">
-            {formatPct(cr3)}
+            <AnimatedNumber value={cr3} format="pct" />
           </div>
           <div className="text-[11px] text-neutral-600">consumed from VentureX</div>
         </div>
@@ -59,12 +61,14 @@ export default function ShapeStrip({ ledger }: Props) {
           <div className="text-xs uppercase tracking-wide text-neutral-500">
             Segmentation
           </div>
-          <div className="mt-1.5 flex h-3 w-full overflow-hidden rounded-sm">
+          <div className="mt-1.5 flex h-3 w-full overflow-hidden rounded-sm bg-white/5 shadow-inner">
             {segShares.map((s) => (
-              <div
+              <motion.div
                 key={s.label}
                 className={s.color}
-                style={{ width: `${s.value * 100}%` }}
+                initial={false}
+                animate={{ width: `${s.value * 100}%` }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 title={`${s.label} ${formatPct(s.value)}`}
               />
             ))}
@@ -73,7 +77,7 @@ export default function ShapeStrip({ ledger }: Props) {
             {segShares.map((s) => (
               <span key={s.label} className="flex items-center gap-1">
                 <span className={`inline-block h-2 w-2 rounded-sm ${s.color}`} />
-                {s.label} {formatPct(s.value)}
+                {s.label} <AnimatedNumber value={s.value} format="pct" className="ml-0.5" />
               </span>
             ))}
           </div>

@@ -28,13 +28,12 @@ const rawLedger: FactNode[] = [
 
   // geography shares (sum = 1.00)
   { id: "geo.DE", label: "Germany", kind: "estimated", value: 0.28, unit: "ratio", confidence: "inferred", asOf: AS_OF, dimension: "geography", dimensionValue: "DE" },
-  { id: "geo.FR", label: "France", kind: "estimated", value: 0.16, unit: "ratio", confidence: "inferred", asOf: AS_OF, dimension: "geography", dimensionValue: "FR" },
   { id: "geo.NL", label: "Netherlands", kind: "estimated", value: 0.13, unit: "ratio", confidence: "inferred", asOf: AS_OF, dimension: "geography", dimensionValue: "NL" },
   { id: "geo.PL", label: "Poland", kind: "estimated", value: 0.12, unit: "ratio", confidence: "inferred", asOf: AS_OF, dimension: "geography", dimensionValue: "PL" },
   { id: "geo.CH", label: "Switzerland", kind: "estimated", value: 0.07, unit: "ratio", confidence: "inferred", asOf: AS_OF, dimension: "geography", dimensionValue: "CH" },
   { id: "geo.CZ", label: "Czechia", kind: "estimated", value: 0.06, unit: "ratio", confidence: "inferred", asOf: AS_OF, dimension: "geography", dimensionValue: "CZ" },
   { id: "geo.AT", label: "Austria", kind: "estimated", value: 0.05, unit: "ratio", confidence: "inferred", asOf: AS_OF, dimension: "geography", dimensionValue: "AT" },
-  { id: "geo.other", label: "Other CE", kind: "estimated", value: 0.13, unit: "ratio", confidence: "inferred", asOf: AS_OF, dimension: "geography", dimensionValue: "other" },
+  { id: "geo.other", label: "Other CE", kind: "estimated", value: 0.29, unit: "ratio", confidence: "inferred", asOf: AS_OF, dimension: "geography", dimensionValue: "other" },
 
   // segment (application) shares (sum = 1.00)
   { id: "seg.hyperscale", label: "Hyperscale", kind: "estimated", value: 0.34, unit: "ratio", confidence: "inferred", asOf: AS_OF, dimension: "segment", dimensionValue: "hyperscale", sensitivityRange: { low: 0.29, high: 0.39 } },

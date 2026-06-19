@@ -18,7 +18,6 @@ export interface DimensionValue {
 
 export const GEOGRAPHIES: DimensionValue[] = [
   { value: "DE", label: "Germany" },
-  { value: "FR", label: "France" },
   { value: "NL", label: "Netherlands" },
   { value: "PL", label: "Poland" },
   { value: "CH", label: "Switzerland" },
