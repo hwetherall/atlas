@@ -44,6 +44,59 @@ const isoDate = z
   .string()
   .regex(/^\d{4}-\d{2}-\d{2}$/, "asOf must be an ISO date (YYYY-MM-DD)");
 
+// ─────────────────────────────────────────────────────────────────────────────
+// ledger.md §3 — Enriched-ledger metadata. All additive and OPTIONAL: the
+// existing ledger validates unchanged, and none of this enters the lever math.
+// These power the Fact Inspector's Fact · Evidence · Recipe · Lineage view.
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ── Evidence: richer than the single `source`. The inspector prefers
+//    `evidence` when present and falls back to `source`. ───────────────────────
+export const sourceTypeSchema = z.enum([
+  "industry-report",
+  "internal", // VentureX profile / competitor table — "consume, don't re-derive"
+  "analyst-estimate",
+  "triangulation",
+  "pending", // a source we know we want but haven't attached → shows the promotion path
+]);
+export type SourceType = z.infer<typeof sourceTypeSchema>;
+
+export const evidenceSchema = z.object({
+  title: z.string().min(1),
+  sourceType: sourceTypeSchema,
+  publisher: z.string().optional(),
+  date: z.string().optional(), // free-form ISO-ish; not as strict as asOf
+  excerpt: z.string().optional(), // short snippet/quote
+  url: z.string().optional(),
+  attached: z.boolean().default(true),
+});
+export type Evidence = z.infer<typeof evidenceSchema>;
+
+// ── Derivation: the human-readable calc/triangulation behind a leaf value.
+//    (Calculated internal nodes still use op/inputs; this is the narrative
+//    behind an `estimated`/`extracted` value.) ────────────────────────────────
+export const derivationSchema = z.object({
+  method: z.string().min(1), // "Top-down capacity apportionment"
+  expression: z.string().min(1), // "DE_capacity (2.1 GW) ÷ CE_capacity (7.5 GW) = 0.28"
+  crossCheck: z.string().optional(), // "GDP-weighted: 0.27 (within 5%)"
+});
+export type Derivation = z.infer<typeof derivationSchema>;
+
+// ── Maturity ladder + confidence provenance ──────────────────────────────────
+export const maturitySchema = z.enum([
+  "needs-source",
+  "single-source",
+  "triangulated",
+  "verified",
+]);
+export type Maturity = z.infer<typeof maturitySchema>;
+
+export const provenanceSchema = z.object({
+  rationale: z.string().min(1), // why this `confidence`, in one line
+  promotionPath: z.string().optional(), // what would lift it (the VOI action)
+});
+export type Provenance = z.infer<typeof provenanceSchema>;
+
 export const factNodeSchema = z
   .object({
     id: z.string().min(1),
@@ -67,6 +120,13 @@ export const factNodeSchema = z
 
     // risk metadata (makes the module Risk-Seek-ready):
     sensitivityRange: sensitivityRangeSchema.optional(),
+
+    // ledger.md §3 — enriched-ledger metadata (all optional, read-only):
+    evidence: z.array(evidenceSchema).optional(),
+    derivation: derivationSchema.optional(),
+    provenance: provenanceSchema.optional(),
+    maturity: maturitySchema.optional(),
+    skillId: z.string().optional(),
   })
   .superRefine((node, ctx) => {
     // Citations are mandatory on extracted nodes (CLAUDE.md §9).

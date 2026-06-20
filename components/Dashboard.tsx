@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { ledger } from "@/lib/ledger"; // self-validates at module load (fails loudly at boot)
 import { delta, evaluate, sensitivity } from "@/lib/compute";
@@ -15,6 +15,7 @@ import DeltaPanel from "@/components/DeltaPanel";
 import ShapeStrip from "@/components/ShapeStrip";
 import Tornado from "@/components/Tornado";
 import FactsLedger from "@/components/FactsLedger";
+import FactInspector from "@/components/FactInspector";
 import FactGraph from "@/components/FactGraph";
 
 const containerVariants: Variants = {
@@ -39,6 +40,7 @@ interface Props {
 export default function Dashboard({ onReplay }: Props) {
   const { state, dispatch } = useScenario(ledger);
   const { current: cur, baseline: base } = state;
+  const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
 
   const current = useMemo(() => evaluate(ledger, cur), [cur]);
   const baseline = useMemo(() => evaluate(ledger, base), [base]);
@@ -154,8 +156,23 @@ export default function Dashboard({ onReplay }: Props) {
         transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         className="mt-6"
       >
-        <FactsLedger ledger={ledger} scenario={cur} dispatch={dispatch} />
+        <FactsLedger
+          ledger={ledger}
+          scenario={cur}
+          dispatch={dispatch}
+          onSelect={setSelectedNodeId}
+          selectedNodeId={selectedNodeId}
+        />
       </motion.div>
+
+      <FactInspector
+        nodeId={selectedNodeId}
+        ledger={ledger}
+        scenario={cur}
+        baseline={base}
+        onSelect={setSelectedNodeId}
+        onClose={() => setSelectedNodeId(null)}
+      />
     </div>
   );
 }

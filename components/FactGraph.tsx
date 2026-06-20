@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { NodeKind } from "@/lib/schema";
 import { formatEUR, formatPct } from "@/lib/format";
+import { KIND_STYLE } from "@/lib/badges";
 import type { GraphModel, GraphNode } from "@/lib/graph";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -19,14 +19,6 @@ interface Props {
   model: GraphModel;
   variant?: "hero" | "panel";
 }
-
-// Reuse the kind palette from the facts ledger so badges read consistently.
-const KIND_STYLE: Record<NodeKind, string> = {
-  extracted: "border-emerald-500/40 bg-emerald-500/10 text-emerald-200",
-  estimated: "border-sky-500/40 bg-sky-500/10 text-sky-200",
-  calculated: "border-violet-500/40 bg-violet-500/10 text-violet-200",
-  assumption: "border-amber-500/40 bg-amber-500/10 text-amber-200",
-};
 
 const NODE_W = 168;
 const NODE_H = 38;
