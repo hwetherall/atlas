@@ -69,7 +69,8 @@ function formatRatioOrEur(unit: string, v: number): string {
 function formatRange(node: FactNode): string {
   if (!node.sensitivityRange) return "—";
   const { low, high } = node.sensitivityRange;
-  return `${formatRatioOrEur(node.unit, low)} – ${formatRatioOrEur(node.unit, high)}`;
+  // No spaces around the dash so "€900M–€1,500M" fits on one line.
+  return `${formatRatioOrEur(node.unit, low)}–${formatRatioOrEur(node.unit, high)}`;
 }
 
 function claim(node: FactNode): React.ReactNode {
@@ -128,7 +129,9 @@ function MetricCard({
   return (
     <div className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2.5">
       <div className="text-[10px] uppercase tracking-wide text-neutral-500">{label}</div>
-      <div className={`mt-1 font-mono text-base font-semibold tabular-nums ${valueClass}`}>
+      <div
+        className={`mt-1 whitespace-nowrap font-mono text-base font-semibold tabular-nums ${valueClass}`}
+      >
         {value}
       </div>
       <div className="text-[10px] text-neutral-500">{sub}</div>
@@ -228,25 +231,35 @@ export default function FactInspector({ nodeId, ledger, scenario, onSelect, onCl
     const lineage = lineageOf(ledger, node.id);
     const topOutput = lineage.downstream.find((r) => r.id.startsWith("out."));
 
-    // Live contribution.
+    // Live contribution / sensitivity card (improve-ledger.md §6).
+    //  • filter leaf → its marginal € slice of TAM (a genuine, non-redundant number)
+    //  • serviceable/obtainable → ± band swing on the metric it drives (SAM/YAM)
+    //  • tamBase → no card: its band swing would just restate the Plausible-band card
     const isFilterLeaf = Boolean(node.dimension && node.dimensionValue);
-    let contribValue: string;
-    let contribSub: string;
+    let showContrib = true;
+    let contribLabel = "Live contribution";
+    let contribValue = "—";
+    let contribSub = "";
     if (isFilterLeaf && node.dimension && node.dimensionValue) {
       const selected = scenario[DIM_FIELD[node.dimension]].includes(node.dimensionValue);
       const c = marginalContribution(ledger, scenario, node.id, "tam");
       if (selected) {
-        contribValue = formatEUR(c, { signed: true });
+        contribValue = formatEUR(c); // c > 0 → "€336M" (unsigned)
         contribSub = "to TAM now";
       } else {
         contribValue = `+${formatEUR(Math.abs(c))}`;
         contribSub = "if included";
       }
-    } else {
-      const m = node.id === "serviceableFactor" ? "sam" : node.id === "obtainableFactor" ? "yam" : "tam";
+    } else if (node.id === "serviceableFactor" || node.id === "obtainableFactor") {
+      const m = node.id === "serviceableFactor" ? "sam" : "yam";
       const sw = bandSwing(ledger, scenario, node.id, m);
+      contribLabel = `${m.toUpperCase()} sensitivity`;
       contribValue = sw > 0 ? `±${formatEUR(sw)}` : "—";
       contribSub = sw > 0 ? `band on ${m.toUpperCase()}` : "no band swing";
+    } else {
+      // tamBase (and any other base node): the Plausible-band card already shows
+      // its € range — a sensitivity card here would just halve and restate it.
+      showContrib = false;
     }
 
     // Value of information, bucketed against the ledger max.
@@ -257,6 +270,8 @@ export default function FactInspector({ nodeId, ledger, scenario, onSelect, onCl
     return {
       lineage,
       topOutput,
+      showContrib,
+      contribLabel,
       contribValue,
       contribSub,
       bucket,
@@ -371,8 +386,14 @@ export default function FactInspector({ nodeId, ledger, scenario, onSelect, onCl
                 <span className="text-[11px] text-neutral-500">as of {node.asOf}</span>
               </motion.div>
 
-              <div className="mt-4 grid grid-cols-3 gap-2">
-                <MetricCard label="Live contribution" value={view.contribValue} sub={view.contribSub} />
+              <div className={`mt-4 grid gap-2 ${view.showContrib ? "grid-cols-3" : "grid-cols-2"}`}>
+                {view.showContrib ? (
+                  <MetricCard
+                    label={view.contribLabel}
+                    value={view.contribValue}
+                    sub={view.contribSub}
+                  />
+                ) : null}
                 <MetricCard
                   label="Plausible band"
                   value={view.band}

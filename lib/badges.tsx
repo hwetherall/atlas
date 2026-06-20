@@ -19,6 +19,24 @@ export const CONFIDENCE_STYLE: Record<Confidence, string> = {
   unknown: "border-rose-500/40 text-rose-300",
 };
 
+// Confidence as a single colored dot — the per-row trust signal in the ledger
+// (improve-ledger.md §5). The full badge stays in the inspector.
+export const CONFIDENCE_DOT: Record<Confidence, string> = {
+  verified: "bg-emerald-400",
+  inferred: "bg-amber-400",
+  unknown: "bg-rose-400",
+};
+
+export function ConfidenceDot({ confidence }: { confidence: Confidence }) {
+  return (
+    <span
+      className={`inline-block h-1.5 w-1.5 shrink-0 rounded-full ${CONFIDENCE_DOT[confidence]}`}
+      title={`${confidence} confidence`}
+      aria-label={`${confidence} confidence`}
+    />
+  );
+}
+
 // The maturity ladder: needs-source → single-source → triangulated → verified.
 export const MATURITY_STYLE: Record<Maturity, string> = {
   "needs-source": "border-rose-500/40 bg-rose-500/10 text-rose-300",
@@ -55,5 +73,39 @@ export function Badge({
     >
       {children}
     </span>
+  );
+}
+
+// A toggle chip used as the kind / confidence filter legend (improve-ledger.md
+// §5): filled = active, muted+struck = filtered out, dimmed = disabled (count 0).
+export function FilterChip({
+  label,
+  active,
+  disabled = false,
+  className,
+  onClick,
+}: {
+  label: string;
+  active: boolean;
+  disabled?: boolean;
+  className: string;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={disabled}
+      aria-pressed={active}
+      className={`rounded border px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide transition-opacity ${className} ${
+        disabled
+          ? "cursor-not-allowed opacity-20"
+          : active
+            ? ""
+            : "opacity-30 line-through"
+      }`}
+    >
+      {label}
+    </button>
   );
 }

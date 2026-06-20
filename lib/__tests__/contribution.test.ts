@@ -35,3 +35,18 @@ describe("marginalContribution", () => {
     expect(marginalContribution(ledger, baseline, "no-such-node", "tam")).toBe(0);
   });
 });
+
+describe("€ now invariants — per-dimension sum === TAM (improve-ledger.md §3)", () => {
+  // Each dimension partitions the SAME TAM, so at the pinned baseline (all
+  // selected) the marginal slices within a dimension sum to tamBase exactly:
+  //   Σ base×share = base×Σshare = 1200×1.0 = 1200.
+  const dims = ["geography", "segment", "customerType"] as const;
+  for (const dim of dims) {
+    it(`Σ marginalContribution over ${dim} leaves === 1200`, () => {
+      const sum = ledger
+        .filter((n) => n.dimension === dim)
+        .reduce((acc, n) => acc + marginalContribution(ledger, baseline, n.id, "tam"), 0);
+      expect(sum).toBeCloseTo(1200, 6);
+    });
+  }
+});
