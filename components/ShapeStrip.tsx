@@ -11,13 +11,8 @@ interface Props {
   ledger: Ledger;
 }
 
-const SEG_COLORS = [
-  "bg-gradient-to-r from-sky-400 to-sky-500",
-  "bg-gradient-to-r from-sky-300 to-sky-400",
-  "bg-gradient-to-r from-emerald-400 to-emerald-500",
-  "bg-gradient-to-r from-amber-400 to-amber-500",
-  "bg-gradient-to-r from-violet-400 to-violet-500",
-];
+// Categorical slots from globals.css — CVD-validated order, never reorder.
+const SEG_COLORS = ["bg-seg-1", "bg-seg-2", "bg-seg-3", "bg-seg-4", "bg-seg-5"];
 
 export default function ShapeStrip({ ledger }: Props) {
   const { cagr, cr3, segShares } = useMemo(() => {
@@ -36,32 +31,34 @@ export default function ShapeStrip({ ledger }: Props) {
   }, [ledger]);
 
   return (
-    <section className="glass-panel rounded-xl p-5">
-      <h2 className="text-sm font-semibold text-neutral-200">Market shape</h2>
+    <section className="card rounded-xl p-5">
+      <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-2">
+        Market shape
+      </h2>
       <div className="mt-3 grid grid-cols-1 gap-4 sm:grid-cols-3">
         <div>
-          <div className="text-xs uppercase tracking-wide text-neutral-500">CAGR</div>
-          <div className="font-mono text-xl tabular-nums text-neutral-50">
+          <div className="text-xs uppercase tracking-wide text-ink-3">CAGR</div>
+          <div className="font-mono text-xl tabular-nums text-ink">
             <AnimatedNumber value={cagr} format="pct" />
           </div>
-          <div className="text-[11px] text-neutral-600">2025–2030</div>
+          <div className="text-[11px] text-ink-faint">2025–2030</div>
         </div>
 
         <div>
-          <div className="text-xs uppercase tracking-wide text-neutral-500">
+          <div className="text-xs uppercase tracking-wide text-ink-3">
             Top-3 concentration
           </div>
-          <div className="font-mono text-xl tabular-nums text-neutral-50">
+          <div className="font-mono text-xl tabular-nums text-ink">
             <AnimatedNumber value={cr3} format="pct" />
           </div>
-          <div className="text-[11px] text-neutral-600">consumed from VentureX</div>
+          <div className="text-[11px] text-ink-faint">consumed from VentureX</div>
         </div>
 
         <div>
-          <div className="text-xs uppercase tracking-wide text-neutral-500">
+          <div className="text-xs uppercase tracking-wide text-ink-3">
             Segmentation
           </div>
-          <div className="mt-1.5 flex h-3 w-full overflow-hidden rounded-sm bg-white/5 shadow-inner">
+          <div className="mt-1.5 flex h-3 w-full gap-[2px] overflow-hidden rounded-sm border border-hairline bg-well">
             {segShares.map((s) => (
               <motion.div
                 key={s.label}
@@ -73,7 +70,7 @@ export default function ShapeStrip({ ledger }: Props) {
               />
             ))}
           </div>
-          <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-0.5 text-[11px] text-neutral-500">
+          <div className="mt-1.5 flex flex-wrap gap-x-3 gap-y-0.5 text-[11px] text-ink-3">
             {segShares.map((s) => (
               <span key={s.label} className="flex items-center gap-1">
                 <span className={`inline-block h-2 w-2 rounded-sm ${s.color}`} />

@@ -6,18 +6,20 @@ import { BOUNDARY_EXCLUSIONS } from "@/lib/boundary";
 // change what's in the ledger) are v2; this is the seam where Risk Seek plugs in.
 export default function BoundaryPanel() {
   return (
-    <section className="glass-panel rounded-xl p-5">
+    <section className="card rounded-xl p-5">
       <div className="flex items-center justify-between">
-        <h2 className="text-sm font-semibold text-neutral-200">What&apos;s excluded — and why</h2>
-        <span className="rounded-full border border-neutral-700 px-2 py-0.5 text-[11px] text-neutral-500">
+        <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-2">
+          What&apos;s excluded — and why
+        </h2>
+        <span className="rounded-full border border-hairline px-2 py-0.5 text-[11px] text-ink-faint">
           read-only · v2 boundary levers
         </span>
       </div>
       <ul className="mt-3 space-y-2">
         {BOUNDARY_EXCLUSIONS.map((e) => (
           <li key={e.item} className="text-sm">
-            <span className="text-neutral-200">{e.item}</span>
-            <span className="text-neutral-500"> — {e.reason}</span>
+            <span className="text-ink">{e.item}</span>
+            <span className="text-ink-3"> — {e.reason}</span>
           </li>
         ))}
       </ul>

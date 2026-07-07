@@ -1,22 +1,177 @@
 @import "tailwindcss";
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   Design tokens — "editorial × tech" light theme.
+   Primitives live on :root: the ONLY place hex values are defined. A future
+   dark mode re-declares these vars in a .dark block and touches nothing else.
+   The @theme inline block below maps them to Tailwind utilities; `inline` is
+   required so utilities reference var(--x) at use-site rather than freezing
+   the value at build time.
+   ───────────────────────────────────────────────────────────────────────────── */
+
 :root {
-  --background: #050505;
-  --foreground: #ededed;
+  /* surfaces */
+  --paper: #fbfaf8;
+  --card: #ffffff;
+  --well: #f6f4ef;
+
+  /* ink hierarchy (contrast on white) */
+  --ink: #16233b; /* 15.05:1 */
+  --ink-2: #4a5568; /* 7.53:1 — body/secondary */
+  --ink-3: #6e7787; /* 4.51:1 — captions/labels */
+  --ink-faint: #98a0ad; /* disabled/tertiary only, never body */
+
+  /* hairlines */
+  --hairline: #e7e4dc;
+  --hairline-strong: #d6d2c6;
+
+  /* accent (one, restrained) */
+  --accent: #2e6be6;
+  --accent-ink: #2456bc; /* accent-as-text, 6.70:1 */
+  --accent-wash: #eff4fe;
+
+  /* semantic */
+  --positive: #0e8345;
+  --positive-ink: #116a3e;
+  --positive-wash: #ecfdf5;
+  --negative: #c2402c;
+  --negative-ink: #b02a37;
+  --negative-wash: #fff1f2;
+  --warning: #d97706;
+  --warning-ink: #b45309;
+  --warning-wash: #fffbeb;
+
+  /* badge hue families: dark text (≥4.8:1 on own tint) + tint bg + line border */
+  --fact-green: #047857;
+  --fact-green-tint: #ecfdf5;
+  --fact-green-line: #a7f3d0;
+  --fact-blue: #2456bc;
+  --fact-blue-tint: #eff4fe;
+  --fact-blue-line: #c7d9f8;
+  --fact-violet: #6d28d9;
+  --fact-violet-tint: #f5f3ff;
+  --fact-violet-line: #ddd6fe;
+  --fact-amber: #b45309;
+  --fact-amber-tint: #fffbeb;
+  --fact-amber-line: #fde68a;
+  --fact-red: #be123c;
+  --fact-red-tint: #fff1f2;
+  --fact-red-line: #fecdd3;
+
+  /* categorical data slots (CVD-validated order — never reorder or cycle) */
+  --seg-1: #2e6be6;
+  --seg-2: #1baf7a;
+  --seg-3: #eda100;
+  --seg-4: #008300;
+  --seg-5: #4a3aa7;
+
+  /* funnel ordinal ramp (one hue, light→dark = distillation) */
+  --funnel-tam: #6e97ec;
+  --funnel-sam: #2e6be6;
+  --funnel-yam: #1b4192;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-well: var(--well);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-ink-faint: var(--ink-faint);
+  --color-hairline: var(--hairline);
+  --color-hairline-strong: var(--hairline-strong);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-wash: var(--accent-wash);
+  --color-positive: var(--positive);
+  --color-positive-ink: var(--positive-ink);
+  --color-positive-wash: var(--positive-wash);
+  --color-negative: var(--negative);
+  --color-negative-ink: var(--negative-ink);
+  --color-negative-wash: var(--negative-wash);
+  --color-warning: var(--warning);
+  --color-warning-ink: var(--warning-ink);
+  --color-warning-wash: var(--warning-wash);
+  --color-fact-green: var(--fact-green);
+  --color-fact-green-tint: var(--fact-green-tint);
+  --color-fact-green-line: var(--fact-green-line);
+  --color-fact-blue: var(--fact-blue);
+  --color-fact-blue-tint: var(--fact-blue-tint);
+  --color-fact-blue-line: var(--fact-blue-line);
+  --color-fact-violet: var(--fact-violet);
+  --color-fact-violet-tint: var(--fact-violet-tint);
+  --color-fact-violet-line: var(--fact-violet-line);
+  --color-fact-amber: var(--fact-amber);
+  --color-fact-amber-tint: var(--fact-amber-tint);
+  --color-fact-amber-line: var(--fact-amber-line);
+  --color-fact-red: var(--fact-red);
+  --color-fact-red-tint: var(--fact-red-tint);
+  --color-fact-red-line: var(--fact-red-line);
+  --color-seg-1: var(--seg-1);
+  --color-seg-2: var(--seg-2);
+  --color-seg-3: var(--seg-3);
+  --color-seg-4: var(--seg-4);
+  --color-seg-5: var(--seg-5);
+  --color-funnel-tam: var(--funnel-tam);
+  --color-funnel-sam: var(--funnel-sam);
+  --color-funnel-yam: var(--funnel-yam);
+
+  /* typography — font vars are set by next/font in app/layout.tsx */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", Menlo, Consolas,
+    monospace;
+
+  /* shadows (soft, navy-tinted — ink = 22,35,59) */
+  --shadow-card: 0 1px 2px rgba(22, 35, 59, 0.05),
+    0 2px 8px -2px rgba(22, 35, 59, 0.06);
+  --shadow-raised: 0 2px 4px rgba(22, 35, 59, 0.06),
+    0 8px 24px -8px rgba(22, 35, 59, 0.1);
+  --shadow-drawer: -8px 0 32px -8px rgba(22, 35, 59, 0.18);
 }
 
 html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
-    Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   min-height: 100vh;
 }
 
+::selection {
+  background: var(--accent-wash);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@layer components {
+  /* The panel primitive — replaces the dark theme's .glass-panel. */
+  .card {
+    @apply rounded-xl border border-hairline bg-card shadow-card;
+  }
+}
+
 @layer utilities {
-  .glass-panel {
-    @apply bg-white/[0.02] backdrop-blur-xl border border-white/[0.08] shadow-2xl;
-    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05), 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+  /* Fine engineering-paper grid for the page backdrop; fades toward the fold. */
+  .bg-grid {
+    background-image: linear-gradient(
+        to right,
+        rgba(22, 35, 59, 0.035) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(22, 35, 59, 0.035) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(
+      ellipse 100% 70% at 50% 0%,
+      black 25%,
+      transparent 70%
+    );
   }
 }

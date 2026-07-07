@@ -72,3 +72,14 @@ export function informationValue(ledger: Ledger, scenario: Scenario, id: string)
   if (!node) return 0;
   return swingTam(ledger, scenario, id) * UNCERTAINTY[node.confidence];
 }
+
+export type VoiBucket = "High" | "Med" | "Low";
+
+/** Bucket a node's information value against the ledger max (display tiering). */
+export function voiBucket(voi: number, maxVoi: number): VoiBucket {
+  if (maxVoi <= 0) return "Low";
+  const r = voi / maxVoi;
+  if (r >= 0.5) return "High";
+  if (r >= 0.15) return "Med";
+  return "Low";
+}

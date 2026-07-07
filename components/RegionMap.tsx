@@ -53,13 +53,15 @@ export default function RegionMap({ ledger, selected, onToggle }: Props) {
   const selectedSet = new Set(selected);
 
   return (
-    <section className="glass-panel rounded-xl p-5">
-      <h2 className="text-sm font-semibold text-neutral-200">Geography</h2>
-      <p className="mt-0.5 text-xs text-neutral-500">
+    <section className="card rounded-xl p-5">
+      <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-2">
+        Geography
+      </h2>
+      <p className="mt-0.5 text-xs text-ink-3">
         Shaded by market intensity. Click a country to include / exclude it.
       </p>
 
-      <div className="mt-3 w-full drop-shadow-xl">
+      <div className="mt-3 w-full">
         <ComposableMap
           projection="geoAzimuthalEqualArea"
           projectionConfig={{
@@ -80,9 +82,13 @@ export default function RegionMap({ ledger, selected, onToggle }: Props) {
                 const on = isTracked && selectedSet.has(value);
                 const intensity = isTracked ? share / maxShare : 0;
                 
+                // Sequential ramp on the accent hue (= --accent); excluded and
+                // untracked land recede into warm greys on the white card.
                 const fill = on
-                  ? `rgba(56,189,248,${(0.3 + 0.7 * intensity).toFixed(3)})`
-                  : "rgba(255,255,255,0.02)";
+                  ? `rgba(46,107,230,${(0.3 + 0.7 * intensity).toFixed(3)})`
+                  : isTracked
+                    ? "#EDEAE1"
+                    : "#EFEDE6";
 
                 return (
                   <Geography
@@ -103,17 +109,18 @@ export default function RegionMap({ ledger, selected, onToggle }: Props) {
                     }}
                     style={{
                       default: { fill, outline: "none", transition: "all 0.4s ease" },
-                      hover: { 
-                        fill: isTracked ? fill : "rgba(255,255,255,0.05)", 
-                        outline: "none", 
-                        filter: isTracked ? "brightness(1.2)" : "none", 
-                        transition: "all 0.4s ease" 
+                      hover: {
+                        // Darken, don't brighten — glows read wrong on light.
+                        fill: on ? fill : isTracked ? "#E3ECFB" : "#EFEDE6",
+                        outline: "none",
+                        filter: on ? "brightness(0.95)" : "none",
+                        transition: "all 0.4s ease",
                       },
                       pressed: { fill, outline: "none" },
                     }}
                     className={[
-                      isTracked ? "cursor-pointer focus-visible:stroke-sky-300" : "pointer-events-none",
-                      on ? "stroke-sky-400" : "stroke-white/10",
+                      isTracked ? "cursor-pointer focus-visible:stroke-accent" : "pointer-events-none",
+                      on ? "stroke-funnel-yam" : isTracked ? "stroke-hairline-strong" : "stroke-white",
                     ].join(" ")}
                     strokeWidth={on ? 1 : 0.5}
                   />
@@ -130,8 +137,10 @@ export default function RegionMap({ ledger, selected, onToggle }: Props) {
                 <text
                   textAnchor="middle"
                   y={4}
+                  // White halo keeps labels legible on any fill intensity.
+                  style={{ paintOrder: "stroke", stroke: "#FFFFFF", strokeWidth: 2.5 }}
                   className={`pointer-events-none select-none text-[10px] font-medium transition-colors duration-400 ${
-                    on ? "fill-white drop-shadow-md" : "fill-neutral-500"
+                    on ? "fill-ink" : "fill-ink-3"
                   }`}
                 >
                   {value}
@@ -142,13 +151,19 @@ export default function RegionMap({ ledger, selected, onToggle }: Props) {
         </ComposableMap>
       </div>
 
-      <div className="mt-2 flex items-center justify-between text-[11px] text-neutral-500">
+      <div className="mt-2 flex items-center justify-between text-[11px] text-ink-3">
         <span className="flex items-center gap-1.5">
-          <span className="inline-block h-2 w-6 rounded-sm bg-gradient-to-r from-sky-500/20 to-sky-400 shadow-[0_0_8px_rgba(56,189,248,0.4)]" />
+          <span
+            className="inline-block h-2 w-6 rounded-sm"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(46, 107, 230, 0.3), #2e6be6)" /* = --accent ramp */,
+            }}
+          />
           low → high intensity
         </span>
         <span className="flex items-center gap-1">
-          <span className="inline-block h-2 w-3 rounded-sm border border-white/10 bg-white/5" />
+          <span className="inline-block h-2 w-3 rounded-sm border border-hairline bg-[#EDEAE1]" />
           excluded
         </span>
       </div>

@@ -21,13 +21,13 @@ const FACTOR_LABELS: Record<DeltaFactor, string> = {
 function Headline({ label, total }: { label: string; total: number }) {
   const zero = Math.abs(total) < 1e-9;
   const tone = zero
-    ? "text-neutral-400"
+    ? "text-ink-3"
     : total < 0
-      ? "text-rose-400"
-      : "text-emerald-400";
+      ? "text-negative-ink"
+      : "text-positive-ink";
   return (
     <div>
-      <div className="text-xs uppercase tracking-wide text-neutral-500">{label}</div>
+      <div className="text-xs uppercase tracking-wide text-ink-3">{label}</div>
       <div className={`font-mono text-2xl tabular-nums ${tone}`}>
         {zero ? "—" : <AnimatedNumber value={total} format="eur" signed />}
       </div>
@@ -45,9 +45,11 @@ export default function DeltaPanel({ deltaTam, deltaYam }: Props) {
   );
 
   return (
-    <section className="glass-panel rounded-xl p-5">
-      <h2 className="text-sm font-semibold text-neutral-200">Δ vs baseline</h2>
-      <p className="mt-0.5 text-xs text-neutral-500">
+    <section className="card rounded-xl p-5">
+      <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-2">
+        Δ vs baseline
+      </h2>
+      <p className="mt-0.5 text-xs text-ink-3">
         The delta is the product. A market size on its own is just a number.
       </p>
 
@@ -57,13 +59,13 @@ export default function DeltaPanel({ deltaTam, deltaYam }: Props) {
       </div>
 
       {atBaseline ? (
-        <p className="mt-4 text-sm text-neutral-500">
+        <p className="mt-4 text-sm text-ink-3">
           Current scenario is the baseline — no delta to decompose.
         </p>
       ) : (
         <div className="mt-5">
-          <div className="text-xs font-medium uppercase tracking-wide text-neutral-400">
-            ΔTAM decomposition <span className="text-neutral-600">(funnel order)</span>
+          <div className="text-xs font-medium uppercase tracking-wide text-ink-2">
+            ΔTAM decomposition <span className="text-ink-faint">(funnel order)</span>
           </div>
           <div className="mt-2 space-y-1.5">
             {DELTA_ORDER.map((factor) => {
@@ -73,15 +75,15 @@ export default function DeltaPanel({ deltaTam, deltaYam }: Props) {
               const negligible = Math.abs(v) < 1e-9;
               return (
                 <div key={factor} className="flex items-center gap-2 text-sm">
-                  <div className="w-28 shrink-0 text-neutral-400">
+                  <div className="w-28 shrink-0 text-ink-2">
                     {FACTOR_LABELS[factor]}
                   </div>
                   <div className="relative h-3.5 flex-1">
                     {/* center line */}
-                    <div className="absolute left-1/2 top-0 h-full w-px bg-neutral-700" />
+                    <div className="absolute left-1/2 top-0 h-full w-px bg-ink/20" />
                     {!negligible ? (
                       <motion.div
-                        className={`absolute top-0 h-full ${negative ? "rounded-l-sm bg-gradient-to-l from-rose-500 to-rose-600 shadow-[0_0_10px_rgba(244,63,94,0.3)]" : "rounded-r-sm bg-gradient-to-r from-emerald-400 to-emerald-600 shadow-[0_0_10px_rgba(52,211,153,0.3)]"}`}
+                        className={`absolute top-0 h-full ${negative ? "rounded-l-sm bg-negative" : "rounded-r-sm bg-positive"}`}
                         initial={false}
                         animate={{
                           width: `${widthPct}%`,
@@ -92,7 +94,7 @@ export default function DeltaPanel({ deltaTam, deltaYam }: Props) {
                     ) : null}
                   </div>
                   <div
-                    className={`w-24 shrink-0 text-right font-mono tabular-nums ${negligible ? "text-neutral-600" : negative ? "text-rose-300" : "text-emerald-300"}`}
+                    className={`w-24 shrink-0 text-right font-mono tabular-nums ${negligible ? "text-ink-faint" : negative ? "text-negative-ink" : "text-positive-ink"}`}
                   >
                     {negligible ? "—" : <AnimatedNumber value={v} format="eur" signed />}
                   </div>
@@ -100,7 +102,7 @@ export default function DeltaPanel({ deltaTam, deltaYam }: Props) {
               );
             })}
           </div>
-          <p className="mt-2 text-[11px] text-neutral-600">
+          <p className="mt-2 text-[11px] text-ink-faint">
             Contributions sum exactly to ΔTAM <AnimatedNumber value={deltaTam.total} format="eur" signed />.
           </p>
         </div>

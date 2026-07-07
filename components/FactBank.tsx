@@ -1,0 +1,179 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import type { FactNode, Ledger } from "@/lib/schema";
+import type { ScenarioAction, ScenarioState } from "@/lib/useScenario";
+import { informationValue, swingTam } from "@/lib/voi";
+import { formatEUR } from "@/lib/format";
+import EquationStrip, { type EquationTerm } from "@/components/EquationStrip";
+import FactBankTable from "@/components/FactBankTable";
+import FactDetail from "@/components/FactDetail";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// FactBank — the centerpiece page the guided flow lands on before the
+// dashboard. Top: the whole model as one live equation with its levers.
+// Middle: what to verify next. Bottom: the grouped fact table, master-detail
+// with the dossier. Scenario state is shared with the dashboard (lifted to
+// app/page.tsx), so lever changes on either surface stay in sync.
+// ─────────────────────────────────────────────────────────────────────────────
+
+interface Props {
+  ledger: Ledger;
+  state: ScenarioState;
+  dispatch: React.Dispatch<ScenarioAction>;
+  onOpenDashboard: () => void;
+}
+
+// Which equation term a fact feeds — drives hover/selection highlighting.
+function termOf(node: FactNode | null | undefined): EquationTerm | null {
+  if (!node) return null;
+  if (node.id === "tamBase") return "base";
+  if (node.dimension) return node.dimension;
+  if (node.id === "serviceableFactor") return "serviceable";
+  if (node.id === "obtainableFactor") return "obtainable";
+  return null; // shape facts sit outside the funnel
+}
+
+export default function FactBank({ ledger, state, dispatch, onOpenDashboard }: Props) {
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [hoveredNode, setHoveredNode] = useState<FactNode | null>(null);
+  const node = selectedId ? (ledger.find((n) => n.id === selectedId) ?? null) : null;
+
+  // Esc closes the detail panel.
+  useEffect(() => {
+    if (!node) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedId(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [node]);
+
+  // Keep the selected row visible when lineage navigation switches facts.
+  useEffect(() => {
+    if (!selectedId) return;
+    document.getElementById(`fb-row-${selectedId}`)?.scrollIntoView({ block: "nearest" });
+  }, [selectedId]);
+
+  const stats = useMemo(() => {
+    const total = ledger.length;
+    const crossChecked = ledger.filter(
+      (n) => n.maturity === "verified" || n.maturity === "triangulated",
+    ).length;
+    const flagged = ledger.filter((n) => n.maturity === "needs-source").length;
+    const sources = ledger.reduce(
+      (acc, n) => acc + (n.evidence?.filter((e) => e.attached).length ?? (n.source ? 1 : 0)),
+      0,
+    );
+    return { total, crossChecked, flagged, sources };
+  }, [ledger]);
+
+  // Top-3 verification targets: biggest swing × weakest evidence.
+  const verifyNext = useMemo(() => {
+    return ledger
+      .map((n) => ({ node: n, voi: informationValue(ledger, state.current, n.id) }))
+      .filter((x) => x.voi > 0)
+      .sort((a, b) => b.voi - a.voi)
+      .slice(0, 3)
+      .map((x) => ({ node: x.node, swing: swingTam(ledger, state.current, x.node.id) }));
+  }, [ledger, state.current]);
+
+  const highlightTerm = termOf(hoveredNode) ?? termOf(node);
+
+  return (
+    <div className="mx-auto max-w-7xl px-6 py-10">
+      <header className="flex flex-wrap items-end justify-between gap-4 border-b border-hairline pb-6">
+        <div>
+          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-accent-ink">
+            Fact bank
+          </p>
+          <h1 className="mt-1 font-display text-3xl font-medium tracking-tight text-ink">
+            Every number, on the record
+          </h1>
+          <p className="mt-2 text-sm text-ink-2">
+            Every input behind TAM, SAM and YAM — its sources, its method, and what it moves.{" "}
+            <span className="text-ink-3">
+              {stats.total} inputs · {stats.sources} sources attached · {stats.crossChecked}{" "}
+              cross-checked · {stats.flagged} flagged for sourcing
+            </span>
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={onOpenDashboard}
+          className="shrink-0 rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-accent-ink"
+        >
+          Open the dashboard →
+        </button>
+      </header>
+
+      <EquationStrip
+        ledger={ledger}
+        state={state}
+        dispatch={dispatch}
+        highlightTerm={highlightTerm}
+      />
+
+      {/* What to check next — value-of-information, made legible. */}
+      <div className="mt-4 flex flex-wrap items-center gap-2">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-3">
+          Verify next
+        </span>
+        {verifyNext.map(({ node: n, swing }) => (
+          <button
+            key={n.id}
+            type="button"
+            onClick={() => setSelectedId(n.id)}
+            className="rounded-md border border-hairline bg-card px-2.5 py-1 text-xs text-ink-2 transition-colors hover:border-accent/40 hover:text-accent-ink"
+          >
+            <span className="mr-1 text-fact-red">⚑</span>
+            {n.label} · up to ±{formatEUR(swing)} on TAM
+          </button>
+        ))}
+      </div>
+
+      <div
+        className={
+          node
+            ? "mt-6 flex flex-col gap-6 lg:grid lg:grid-cols-[minmax(0,38fr)_minmax(0,62fr)] lg:items-start"
+            : "mt-6"
+        }
+      >
+        <div>
+          <FactBankTable
+            ledger={ledger}
+            scenario={state.current}
+            dispatch={dispatch}
+            selectedId={selectedId}
+            onSelect={(id) => setSelectedId((cur) => (cur === id ? null : id))}
+            onHoverNode={setHoveredNode}
+            condensed={Boolean(node)}
+          />
+        </div>
+
+        <AnimatePresence mode="popLayout">
+          {node ? (
+            <motion.div
+              key="detail"
+              initial={{ opacity: 0, x: 16 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 16 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="card order-first overflow-hidden rounded-xl p-0 lg:order-none lg:sticky lg:top-16 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto"
+            >
+              <FactDetail
+                variant="panel"
+                node={node}
+                ledger={ledger}
+                scenario={state.current}
+                onSelect={setSelectedId}
+                onClose={() => setSelectedId(null)}
+              />
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+      </div>
+    </div>
+  );
+}

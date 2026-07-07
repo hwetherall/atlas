@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { ledger } from "@/lib/ledger";
+import { oracleLedger as ledger } from "./fixtures/oracleLedger"; // frozen §10 oracle
 import { valuesOf } from "@/lib/dimensions";
 import type { Scenario } from "@/lib/schema";
 import { baselineScenario } from "@/lib/compute";

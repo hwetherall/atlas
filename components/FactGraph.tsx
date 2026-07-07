@@ -86,7 +86,7 @@ export default function FactGraph({ model, variant = "panel" }: Props) {
               <motion.path
                 key={e.id}
                 d={d}
-                stroke={e.dimmed ? "rgba(255,255,255,0.05)" : "rgba(148,197,255,0.28)"}
+                stroke={e.dimmed ? "rgba(22,35,59,0.06)" : "rgba(22,35,59,0.20)" /* = --ink */}
                 strokeWidth={1.5}
                 initial={animate ? { pathLength: 0, opacity: 0 } : false}
                 animate={animate ? { pathLength: 1, opacity: 1 } : undefined}
@@ -116,12 +116,12 @@ export default function FactGraph({ model, variant = "panel" }: Props) {
             >
               <foreignObject x={n.x - w / 2} y={n.y - h / 2} width={w} height={h}>
                 <div
-                  className={`flex h-full w-full flex-col justify-center rounded-md border px-2 backdrop-blur-sm ${KIND_STYLE[n.kind]} ${
-                    n.dimmed ? "opacity-40 saturate-50" : ""
-                  } ${out ? "items-center shadow-[0_0_22px_rgba(167,139,250,0.25)]" : ""}`}
-                  style={out ? { boxShadow: "0 0 22px rgba(167,139,250,0.25)" } : undefined}
+                  className={`flex h-full w-full flex-col justify-center rounded-md border px-2 ${
+                    out ? "items-center border-ink bg-ink text-paper" : KIND_STYLE[n.kind]
+                  } ${n.dimmed ? "opacity-40 saturate-50" : ""}`}
+                  style={out ? { boxShadow: "0 2px 8px rgba(22,35,59,0.25)" /* = --ink */ } : undefined}
                 >
-                  <span className={`truncate ${out ? "text-center text-[11px] uppercase tracking-wide opacity-80" : "text-[11px] leading-tight"}`}>
+                  <span className={`truncate ${out ? "text-center text-[11px] uppercase tracking-wide text-paper/60" : "text-[11px] leading-tight"}`}>
                     {n.label}
                   </span>
                   <span className={`font-mono tabular-nums ${out ? "text-[20px] font-semibold leading-tight" : "text-[12px] leading-tight"}`}>

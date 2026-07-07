@@ -29,7 +29,7 @@ components/            FactsLedger, RegionMap, ScenarioControls, FunnelOutputs,
                        DeltaPanel, Tornado, ShapeStrip, BoundaryPanel, AssumptionSlider
 lib/
   schema.ts           Zod schemas + types (FactNode/Scenario/Ledger); validateLedger fails loudly at boot
-  ledger.ts           the hardcoded §10 seed ledger (illustrative values)
+  ledger.ts           the curated ledger (real, sourced values — see research/)
   dimensions.ts       geography/segment/customerType value lists + labels
   compute.ts          evaluate / delta / sensitivity (pure, deterministic)
   useScenario.ts      reducer: toggle filters, set assumptions, pin baseline
@@ -55,12 +55,20 @@ npm run build      # production build + TypeScript check
 - ΔTAM decomposes (funnel order) to Geography −€336M, Segment −€786M, Customer
   −€47M and telescopes exactly to **−€1,168.9M**.
 
-These are pinned in `lib/__tests__/compute.test.ts`.
+These numbers are pinned against the **frozen pre-research ledger** in
+`lib/__tests__/fixtures/oracleLedger.ts` (engine tests import it, not the live
+ledger), so the live ledger can be re-curated without breaking the gate. The
+live ledger has its own sanity suite in `lib/__tests__/realLedger.test.ts`.
+
+## Research pass (real values)
+
+`lib/ledger.ts` now carries **real, sourced values** curated from a cached Exa
+research pass (`npm run research`, 2026-07-06). Raw search results are checked
+in under `research/raw/` as the audit trail; each fact's derivation documents
+its scope-down chain, and maturity/confidence say honestly which values are
+extracted, triangulated, or still need a source.
 
 ## Notes
-
-- The §10 ledger **values are illustrative placeholders**; the structure is
-  canonical. Replacing them with sourced figures is a separate research pass.
 - Scope factors are treated as **independent** across dimensions (MVP
   approximation, surfaced in the UI as a caveat).
 - The tornado is behind `FLAGS.tornado` and can be hidden in one line.

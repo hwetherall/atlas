@@ -51,11 +51,11 @@ export default function IntakeWizard({ onComplete }: Props) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <p className="text-xs font-medium uppercase tracking-[0.2em] text-sky-400/80">Atlas</p>
-        <h1 className="mt-1 bg-gradient-to-br from-white to-neutral-400 bg-clip-text text-2xl font-semibold tracking-tight text-transparent">
+        <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-accent-ink">Atlas</p>
+        <h1 className="mt-1 font-display text-3xl font-medium tracking-tight text-ink">
           New market analysis
         </h1>
-        <p className="mt-1 text-sm text-neutral-400">
+        <p className="mt-1 text-sm text-ink-2">
           Tell Atlas about the venture. It will research the market and build a live, sourced model.
         </p>
       </motion.div>
@@ -67,22 +67,22 @@ export default function IntakeWizard({ onComplete }: Props) {
             <div
               className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-[11px] font-medium transition-colors ${
                 i < step
-                  ? "border-emerald-500/50 bg-emerald-500/15 text-emerald-300"
+                  ? "border-ink bg-ink text-paper"
                   : i === step
-                    ? "border-sky-500/60 bg-sky-500/15 text-sky-200"
-                    : "border-white/10 bg-white/[0.02] text-neutral-500"
+                    ? "border-accent bg-accent-wash text-accent-ink"
+                    : "border-hairline bg-card text-ink-faint"
               }`}
             >
               {i < step ? "✓" : i + 1}
             </div>
             {i < last ? (
-              <div className={`h-px flex-1 ${i < step ? "bg-emerald-500/40" : "bg-white/10"}`} />
+              <div className={`h-px flex-1 ${i < step ? "bg-ink/30" : "bg-hairline"}`} />
             ) : null}
           </div>
         ))}
       </div>
 
-      <div className="glass-panel mt-4 min-h-[20rem] rounded-2xl p-6">
+      <div className="card mt-4 min-h-[20rem] rounded-2xl p-6">
         <AnimatePresence mode="wait">
           <motion.div
             key={step}
@@ -93,8 +93,8 @@ export default function IntakeWizard({ onComplete }: Props) {
           >
             {step === 0 ? (
               <div>
-                <h2 className="text-sm font-semibold text-neutral-200">Upload your venture profile</h2>
-                <p className="mt-0.5 text-xs text-neutral-500">
+                <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-2">Upload your venture profile</h2>
+                <p className="mt-0.5 text-xs text-ink-3">
                   The same anonymized profile VentureX produces — plus anything else relevant.
                 </p>
 
@@ -112,12 +112,12 @@ export default function IntakeWizard({ onComplete }: Props) {
                     addFiles(e.dataTransfer.files);
                   }}
                   className={`mt-4 flex w-full flex-col items-center justify-center rounded-xl border border-dashed py-8 text-center transition-colors ${
-                    dragging ? "border-sky-400/60 bg-sky-500/5" : "border-white/15 bg-white/[0.02] hover:border-white/25"
+                    dragging ? "border-accent bg-accent-wash" : "border-hairline-strong bg-well/50 hover:border-ink/30"
                   }`}
                 >
                   <span className="text-2xl">⬆</span>
-                  <span className="mt-2 text-sm text-neutral-300">Drop files or click to browse</span>
-                  <span className="mt-0.5 text-xs text-neutral-500">PDF, DOCX, XLSX — nothing leaves your machine</span>
+                  <span className="mt-2 text-sm text-ink-2">Drop files or click to browse</span>
+                  <span className="mt-0.5 text-xs text-ink-3">PDF, DOCX, XLSX — nothing leaves your machine</span>
                 </button>
                 <input
                   ref={fileInput}
@@ -131,12 +131,12 @@ export default function IntakeWizard({ onComplete }: Props) {
                   {docs.map((d, i) => (
                     <li
                       key={`${d.name}-${i}`}
-                      className="flex items-center gap-3 rounded-lg border border-white/8 bg-white/[0.02] px-3 py-2"
+                      className="flex items-center gap-3 rounded-lg border border-hairline bg-card px-3 py-2"
                     >
                       <span className="text-base">📄</span>
-                      <span className="min-w-0 flex-1 truncate text-sm text-neutral-200">{d.name}</span>
-                      <span className="shrink-0 text-xs text-neutral-500">{d.meta}</span>
-                      <span className="shrink-0 text-emerald-400">✓</span>
+                      <span className="min-w-0 flex-1 truncate text-sm text-ink">{d.name}</span>
+                      <span className="shrink-0 text-xs text-ink-3">{d.meta}</span>
+                      <span className="shrink-0 text-positive">✓</span>
                     </li>
                   ))}
                 </ul>
@@ -145,20 +145,20 @@ export default function IntakeWizard({ onComplete }: Props) {
 
             {step === 1 ? (
               <div>
-                <h2 className="text-sm font-semibold text-neutral-200">Confirm the business</h2>
-                <p className="mt-0.5 text-xs text-neutral-500">
+                <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-2">Confirm the business</h2>
+                <p className="mt-0.5 text-xs text-ink-3">
                   Atlas pre-filled this from your documents. Edit anything that&apos;s off.
                 </p>
                 <div className="mt-4 space-y-3">
                   {fields.map((f, i) => (
                     <label key={f.label} className="block">
-                      <span className="text-xs text-neutral-500">{f.label}</span>
+                      <span className="text-xs text-ink-3">{f.label}</span>
                       <input
                         value={f.value}
                         onChange={(e) =>
                           setFields((prev) => prev.map((p, j) => (j === i ? { ...p, value: e.target.value } : p)))
                         }
-                        className="mt-1 w-full rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-neutral-100 outline-none transition-colors focus:border-sky-500/50"
+                        className="mt-1 w-full rounded-lg border border-hairline bg-card px-3 py-2 text-sm text-ink outline-none transition-colors focus:border-accent"
                       />
                     </label>
                   ))}
@@ -168,15 +168,15 @@ export default function IntakeWizard({ onComplete }: Props) {
 
             {step === 2 ? (
               <div>
-                <h2 className="text-sm font-semibold text-neutral-200">A few follow-ups</h2>
-                <p className="mt-0.5 text-xs text-neutral-500">
+                <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-2">A few follow-ups</h2>
+                <p className="mt-0.5 text-xs text-ink-3">
                   These pin down the axes Atlas will size across.
                 </p>
                 <div className="mt-4 space-y-5">
                   {FOLLOWUP_QUESTIONS.map((q) => (
                     <div key={q.id}>
-                      <p className="text-sm text-neutral-200">{q.question}</p>
-                      <p className="text-xs text-neutral-500">{q.helper}</p>
+                      <p className="text-sm text-ink">{q.question}</p>
+                      <p className="text-xs text-ink-3">{q.helper}</p>
                       <div className="mt-2 flex flex-wrap gap-2">
                         {q.options.map((opt) => {
                           const active = answers[q.id] === opt;
@@ -187,8 +187,8 @@ export default function IntakeWizard({ onComplete }: Props) {
                               onClick={() => setAnswers((a) => ({ ...a, [q.id]: opt }))}
                               className={`rounded-full border px-3 py-1 text-xs transition-colors ${
                                 active
-                                  ? "border-sky-500/60 bg-sky-500/15 text-sky-200"
-                                  : "border-white/10 bg-white/[0.02] text-neutral-400 hover:border-white/25 hover:text-neutral-200"
+                                  ? "border-accent/40 bg-accent-wash text-accent-ink"
+                                  : "border-hairline bg-card text-ink-2 hover:border-hairline-strong hover:text-ink"
                               }`}
                             >
                               {opt}
@@ -204,14 +204,14 @@ export default function IntakeWizard({ onComplete }: Props) {
 
             {step === 3 ? (
               <div>
-                <h2 className="text-sm font-semibold text-neutral-200">Research plan</h2>
-                <p className="mt-0.5 text-xs text-neutral-500">
+                <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-2">Research plan</h2>
+                <p className="mt-0.5 text-xs text-ink-3">
                   Atlas will run these steps, then hand you a live model.
                 </p>
                 <ol className="mt-4 space-y-2">
                   {RESEARCH_PLAN.map((item, i) => (
-                    <li key={item} className="flex gap-3 text-sm text-neutral-300">
-                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-sky-500/40 bg-sky-500/10 text-[11px] text-sky-300">
+                    <li key={item} className="flex gap-3 text-sm text-ink-2">
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-accent/40 bg-accent-wash text-[11px] text-accent-ink">
                         {i + 1}
                       </span>
                       <span>{item}</span>
@@ -230,7 +230,7 @@ export default function IntakeWizard({ onComplete }: Props) {
           type="button"
           onClick={() => setStep((s) => Math.max(0, s - 1))}
           disabled={step === 0}
-          className="rounded-lg px-3 py-2 text-sm text-neutral-400 transition-colors hover:text-neutral-200 disabled:cursor-not-allowed disabled:opacity-30"
+          className="rounded-lg px-3 py-2 text-sm text-ink-3 transition-colors hover:text-ink disabled:cursor-not-allowed disabled:opacity-30"
         >
           ← Back
         </button>
@@ -238,7 +238,7 @@ export default function IntakeWizard({ onComplete }: Props) {
           <button
             type="button"
             onClick={() => setStep((s) => Math.min(last, s + 1))}
-            className="rounded-lg border border-sky-500/50 bg-sky-500/15 px-5 py-2 text-sm font-medium text-sky-100 shadow-[0_0_20px_rgba(56,189,248,0.2)] transition-colors hover:bg-sky-500/25"
+            className="rounded-lg bg-accent px-5 py-2 text-sm font-medium text-white shadow-sm transition-colors hover:bg-accent-ink"
           >
             Continue →
           </button>
@@ -246,7 +246,7 @@ export default function IntakeWizard({ onComplete }: Props) {
           <button
             type="button"
             onClick={onComplete}
-            className="rounded-lg border border-emerald-500/50 bg-emerald-500/15 px-5 py-2 text-sm font-medium text-emerald-100 shadow-[0_0_20px_rgba(16,185,129,0.25)] transition-colors hover:bg-emerald-500/25"
+            className="rounded-lg bg-ink px-5 py-2 text-sm font-medium text-paper shadow-sm transition-colors hover:bg-ink/90"
           >
             Execute research plan →
           </button>

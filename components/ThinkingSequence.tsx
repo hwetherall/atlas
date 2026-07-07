@@ -58,19 +58,19 @@ export default function ThinkingSequence({ onComplete }: Props) {
       >
         <div className="flex items-center gap-3">
           <span className="relative flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400/60" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-sky-400" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/50" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent" />
           </span>
-          <h1 className="text-lg font-semibold tracking-tight text-neutral-100">
+          <h1 className="font-display text-lg font-medium tracking-tight text-ink">
             Researching the market
           </h1>
         </div>
-        <p className="mt-1 text-sm text-neutral-500">
+        <p className="mt-1 text-sm text-ink-3">
           Atlas is sourcing facts and assembling a live model. This takes a moment.
         </p>
       </motion.div>
 
-      <div className="glass-panel mt-6 rounded-2xl p-5">
+      <div className="card mt-6 rounded-2xl p-5">
         <ul className="space-y-2.5 font-mono text-[13px]">
           <AnimatePresence initial={false}>
             {visible.map((s, i) => {
@@ -86,15 +86,15 @@ export default function ThinkingSequence({ onComplete }: Props) {
                 >
                   <span className="flex h-4 w-4 shrink-0 items-center justify-center">
                     {done ? (
-                      <span className="text-emerald-400">✓</span>
+                      <span className="text-positive">✓</span>
                     ) : running ? (
-                      <span className="h-3.5 w-3.5 animate-spin rounded-full border-[1.5px] border-sky-400/30 border-t-sky-400" />
+                      <span className="h-3.5 w-3.5 animate-spin rounded-full border-[1.5px] border-accent/30 border-t-accent" />
                     ) : (
-                      <span className="text-neutral-600">•</span>
+                      <span className="text-ink-faint">•</span>
                     )}
                   </span>
-                  <span className={done ? "text-neutral-400" : "text-neutral-100"}>{s.label}</span>
-                  {s.detail ? <span className="text-neutral-600">· {s.detail}</span> : null}
+                  <span className={done ? "text-ink-3" : "text-ink"}>{s.label}</span>
+                  {s.detail ? <span className="text-ink-faint">· {s.detail}</span> : null}
                 </motion.li>
               );
             })}
@@ -103,13 +103,13 @@ export default function ThinkingSequence({ onComplete }: Props) {
 
         {/* progress bar */}
         <div className="mt-5">
-          <div className="h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
+          <div className="h-1.5 overflow-hidden rounded-full bg-ink/8">
             <motion.div
-              className="h-full rounded-full bg-gradient-to-r from-sky-500 to-indigo-400"
+              className="h-full rounded-full bg-accent"
               style={{ width: widthPct }}
             />
           </div>
-          <div className="mt-1.5 flex justify-between text-[11px] text-neutral-500">
+          <div className="mt-1.5 flex justify-between text-[11px] text-ink-3">
             <span>Building fact graph</span>
             <span className="tabular-nums">{pctText}%</span>
           </div>
@@ -119,7 +119,7 @@ export default function ThinkingSequence({ onComplete }: Props) {
       <button
         type="button"
         onClick={() => onCompleteRef.current()}
-        className="mt-4 self-center text-xs text-neutral-600 transition-colors hover:text-neutral-400"
+        className="mt-4 self-center text-xs text-ink-faint transition-colors hover:text-ink-2"
       >
         Skip →
       </button>

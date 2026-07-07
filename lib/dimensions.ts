@@ -1,4 +1,4 @@
-import type { Dimension } from "@/lib/schema";
+import type { Dimension, FactNode, Scenario } from "@/lib/schema";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // §3.3 — Lever dimensions: the selectable values + display labels.
@@ -63,4 +63,23 @@ export function labelFor(dimension: Dimension, value: string): string {
   return (
     DIMENSION_VALUES[dimension].find((d) => d.value === value)?.label ?? value
   );
+}
+
+/** Scenario field that holds the selected values of a dimension. */
+export const DIMENSION_FIELD: Record<
+  Dimension,
+  "geographies" | "segments" | "customerTypes"
+> = {
+  geography: "geographies",
+  segment: "segments",
+  customerType: "customerTypes",
+};
+
+/**
+ * A filter leaf is excluded when its dimensionValue is not in the scenario's
+ * selection for its dimension. Non-dimensional nodes are never excluded.
+ */
+export function isExcluded(node: FactNode, scenario: Scenario): boolean {
+  if (!node.dimension || !node.dimensionValue) return false;
+  return !scenario[DIMENSION_FIELD[node.dimension]].includes(node.dimensionValue);
 }

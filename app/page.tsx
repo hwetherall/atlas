@@ -1,21 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { FLAGS } from "@/lib/flags";
+import { ledger } from "@/lib/ledger"; // self-validates at module load (fails loudly at boot)
+import { useScenario } from "@/lib/useScenario";
 import IntakeWizard from "@/components/IntakeWizard";
 import ThinkingSequence from "@/components/ThinkingSequence";
 import GraphReveal from "@/components/GraphReveal";
+import FactBank from "@/components/FactBank";
 import Dashboard from "@/components/Dashboard";
+import WorkspaceNav, { type WorkspaceTab } from "@/components/WorkspaceNav";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Phase orchestrator for the guided demo. The dashboard itself lives in
-// components/Dashboard.tsx; this shell walks the user through intake → thinking
-// → graph reveal → dashboard, sharing one background across all phases.
-// FLAGS.intro = false boots straight to the dashboard (dev).
+// Phase orchestrator for the guided demo: intake → thinking → graph reveal →
+// FACT BANK → dashboard. The fact bank and dashboard form the "workspace" —
+// one AnimatePresence child whose two surfaces stay mounted and share scenario
+// state (lifted here), so tab flips are instant and levers stay in sync across
+// both. FLAGS.intro = false boots straight to the dashboard (dev).
 // ─────────────────────────────────────────────────────────────────────────────
 
-type Phase = "intake" | "thinking" | "reveal" | "dashboard";
+type Phase = "intake" | "thinking" | "reveal" | "factbank" | "dashboard";
 
 const fade = {
   initial: { opacity: 0 },
@@ -26,14 +31,41 @@ const fade = {
 
 export default function Home() {
   const [phase, setPhase] = useState<Phase>(FLAGS.intro ? "intake" : "dashboard");
+  const { state, dispatch } = useScenario(ledger);
+
+  // Lazy-mount-then-keep: each workspace surface runs its entrance animation
+  // once, then stays mounted (hidden) so tab flips are instant and lose no state.
+  const [seen, setSeen] = useState({ factbank: false, dashboard: false });
+  useEffect(() => {
+    if (phase === "factbank" && !seen.factbank) setSeen((s) => ({ ...s, factbank: true }));
+    if (phase === "dashboard" && !seen.dashboard) setSeen((s) => ({ ...s, dashboard: true }));
+  }, [phase, seen]);
+
+  const inWorkspace = phase === "factbank" || phase === "dashboard";
+
+  function goTab(tab: WorkspaceTab) {
+    setPhase(tab);
+    window.scrollTo({ top: 0 });
+  }
+
+  function replay() {
+    setSeen({ factbank: false, dashboard: false });
+    dispatch({ type: "resetToBaseline" });
+    setPhase("intake");
+  }
 
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Shared mesh gradient background */}
+      {/* Shared backdrop: engineering-paper grid + one restrained accent wash */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-[10%] -top-[10%] h-[40%] w-[40%] rounded-full bg-sky-600/20 blur-[120px]" />
-        <div className="absolute -right-[10%] top-[20%] h-[30%] w-[30%] rounded-full bg-indigo-600/10 blur-[120px]" />
-        <div className="absolute bottom-[10%] left-[20%] h-[40%] w-[40%] rounded-full bg-emerald-600/10 blur-[120px]" />
+        <div className="bg-grid absolute inset-0" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 50% at 50% -20%, rgba(46, 107, 230, 0.06), transparent)" /* = --accent */,
+          }}
+        />
       </div>
 
       <main className="relative">
@@ -52,13 +84,32 @@ export default function Home() {
 
           {phase === "reveal" ? (
             <motion.div key="reveal" {...fade}>
-              <GraphReveal onContinue={() => setPhase("dashboard")} />
+              <GraphReveal onContinue={() => setPhase("factbank")} />
             </motion.div>
           ) : null}
 
-          {phase === "dashboard" ? (
-            <motion.div key="dashboard" {...fade}>
-              <Dashboard onReplay={() => setPhase("intake")} />
+          {inWorkspace ? (
+            <motion.div key="workspace" {...fade}>
+              <WorkspaceNav
+                active={phase as WorkspaceTab}
+                onNavigate={goTab}
+                onReplay={replay}
+              />
+              {(phase === "factbank" || seen.factbank) && (
+                <div className={phase === "factbank" ? "" : "hidden"}>
+                  <FactBank
+                    ledger={ledger}
+                    state={state}
+                    dispatch={dispatch}
+                    onOpenDashboard={() => goTab("dashboard")}
+                  />
+                </div>
+              )}
+              {(phase === "dashboard" || seen.dashboard) && (
+                <div className={phase === "dashboard" ? "" : "hidden"}>
+                  <Dashboard state={state} dispatch={dispatch} />
+                </div>
+              )}
             </motion.div>
           ) : null}
         </AnimatePresence>

@@ -9,9 +9,9 @@ import type {
   NodeKind,
   Scenario,
 } from "@/lib/schema";
-import { labelFor } from "@/lib/dimensions";
+import { isExcluded } from "@/lib/dimensions";
 import { boundsFor } from "@/lib/levers";
-import { formatEUR, formatPct } from "@/lib/format";
+import { formatNodeValue } from "@/lib/format";
 import {
   Badge,
   KIND_STYLE,
@@ -22,6 +22,7 @@ import {
 import { informationValue } from "@/lib/voi";
 import type { ScenarioAction } from "@/lib/useScenario";
 import AssumptionSlider from "@/components/AssumptionSlider";
+import FilterChip from "@/components/FilterChip";
 
 interface Props {
   ledger: Ledger;
@@ -31,31 +32,12 @@ interface Props {
   selectedNodeId: string | null;
 }
 
-const DIM_FIELD: Record<Dimension, "geographies" | "segments" | "customerTypes"> = {
-  geography: "geographies",
-  segment: "segments",
-  customerType: "customerTypes",
-};
-
 const CONF_RANK: Record<Confidence, number> = { verified: 2, inferred: 1, unknown: 0 };
 
 const KINDS: NodeKind[] = ["extracted", "estimated", "calculated", "assumption"];
 const CONFIDENCES: Confidence[] = ["verified", "inferred", "unknown"];
 
 type SortKey = "default" | "value" | "confidence" | "voi";
-
-function renderValue(node: FactNode): string {
-  if (node.unit === "EUR_M") return formatEUR(node.value);
-  if (node.unit === "ratio") return formatPct(node.value, node.value < 0.1 ? 1 : 0);
-  return `${node.value} ${node.unit}`;
-}
-
-// A filter leaf is excluded when its dimensionValue is not in the scenario's
-// selection for its dimension. Excluded rows dim live with the levers (§7.2).
-function isExcluded(node: FactNode, scenario: Scenario): boolean {
-  if (!node.dimension || !node.dimensionValue) return false;
-  return !scenario[DIM_FIELD[node.dimension]].includes(node.dimensionValue);
-}
 
 function Row({
   node,
@@ -76,8 +58,8 @@ function Row({
 
   return (
     <li
-      className={`border-b border-white/5 last:border-0 ${
-        selected ? "bg-sky-500/[0.06]" : ""
+      className={`border-b border-hairline/70 last:border-0 ${
+        selected ? "bg-accent-wash/60" : ""
       }`}
       style={{ transition: "opacity 0.4s ease, background-color 0.2s ease" }}
     >
@@ -93,7 +75,7 @@ function Row({
         >
           <span
             className={`truncate text-sm ${
-              excluded ? "text-neutral-400 line-through" : "text-neutral-200"
+              excluded ? "text-ink-3 line-through" : "text-ink"
             }`}
           >
             {node.label}
@@ -105,7 +87,7 @@ function Row({
             </Badge>
           ) : null}
           {missingSource ? (
-            <Badge className="border-rose-500/50 text-rose-300">missing source</Badge>
+            <Badge className="border-fact-red-line text-fact-red">missing source</Badge>
           ) : null}
         </button>
 
@@ -128,9 +110,9 @@ function Row({
             <button
               type="button"
               onClick={() => onSelect(node.id)}
-              className="block w-full text-right font-mono text-sm tabular-nums text-neutral-100"
+              className="block w-full text-right font-mono text-sm tabular-nums text-ink"
             >
-              {renderValue(node)}
+              {formatNodeValue(node)}
             </button>
           )}
         </div>
@@ -140,31 +122,6 @@ function Row({
         </div>
       </div>
     </li>
-  );
-}
-
-// A small toggle chip for the kind / confidence filters.
-function FilterChip({
-  label,
-  active,
-  className,
-  onClick,
-}: {
-  label: string;
-  active: boolean;
-  className: string;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`rounded border px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide transition-opacity ${className} ${
-        active ? "" : "opacity-30 line-through"
-      }`}
-    >
-      {label}
-    </button>
   );
 }
 
@@ -210,22 +167,24 @@ export default function FactsLedger({
   }
 
   return (
-    <section className="glass-panel rounded-xl p-5">
+    <section className="card rounded-xl p-5">
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-        <h2 className="text-sm font-semibold text-neutral-200">Facts ledger</h2>
-        <p className="text-xs text-neutral-500">
+        <h2 className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-2">
+          Facts ledger
+        </h2>
+        <p className="text-xs text-ink-3">
           The levers are facts. Click a row to inspect; assumption leaves are editable inline.
         </p>
       </div>
 
       {/* Controls — local view state only; never recomputes the model. */}
-      <div className="mt-3 flex flex-wrap items-center gap-2 border-b border-white/5 pb-3 text-xs">
-        <label className="flex items-center gap-1.5 text-neutral-500">
+      <div className="mt-3 flex flex-wrap items-center gap-2 border-b border-hairline pb-3 text-xs">
+        <label className="flex items-center gap-1.5 text-ink-3">
           Sort
           <select
             value={sortKey}
             onChange={(e) => setSortKey(e.target.value as SortKey)}
-            className="rounded border border-white/10 bg-white/[0.03] px-1.5 py-1 text-xs text-neutral-300 outline-none focus:border-sky-400/40"
+            className="rounded border border-hairline bg-card px-1.5 py-1 text-xs text-ink-2 outline-none focus:border-accent"
           >
             <option value="default">Default order</option>
             <option value="value">Value</option>
@@ -239,8 +198,8 @@ export default function FactsLedger({
           onClick={() => setSortKey("voi")}
           className={`rounded-md border px-2 py-1 text-xs transition-colors ${
             sortKey === "voi"
-              ? "border-rose-500/40 bg-rose-500/10 text-rose-300"
-              : "border-white/10 bg-white/[0.03] text-neutral-400 hover:border-white/20 hover:text-neutral-200"
+              ? "border-fact-red-line bg-fact-red-tint text-fact-red"
+              : "border-hairline bg-card text-ink-3 hover:border-hairline-strong hover:text-ink"
           }`}
         >
           ⚑ Riskiest first
@@ -256,7 +215,7 @@ export default function FactsLedger({
               onClick={() => setHiddenKinds((s) => toggle(s, k))}
             />
           ))}
-          <span className="mx-1 h-3 w-px bg-white/10" />
+          <span className="mx-1 h-3 w-px bg-hairline-strong" />
           {CONFIDENCES.map((c) => (
             <FilterChip
               key={c}
@@ -281,7 +240,7 @@ export default function FactsLedger({
           />
         ))}
         {rows.length === 0 ? (
-          <li className="py-6 text-center text-xs text-neutral-600">
+          <li className="py-6 text-center text-xs text-ink-faint">
             No facts match the current filters.
           </li>
         ) : null}

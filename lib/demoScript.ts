@@ -80,11 +80,11 @@ export interface ThinkingStep {
 export const THINKING_STEPS: ThinkingStep[] = [
   { label: "Reading uploaded profile & notes", detail: "3 documents", ms: 850 },
   { label: "Searching market sources", detail: "trade data · analyst notes", ms: 1000 },
-  { label: "Extracting market base", detail: "€1,200M · Central Europe", ms: 900 },
+  { label: "Extracting market base", detail: "€320M · Central Europe", ms: 900 },
   { label: "Estimating geography shares", detail: "7 markets", ms: 850 },
   { label: "Estimating segment & buyer mix", detail: "5 segments · 4 buyers", ms: 900 },
   { label: "Assessing serviceable & Year-1 obtainable share", ms: 850 },
-  { label: "Assembling fact graph", detail: "20 nodes · 24 edges", ms: 850 },
+  { label: "Assembling fact graph", detail: "27 nodes · 24 edges", ms: 850 },
   { label: "Computing TAM / SAM / YAM", ms: 800 },
   { label: "Ranking value-of-information risks", ms: 700 },
 ];
