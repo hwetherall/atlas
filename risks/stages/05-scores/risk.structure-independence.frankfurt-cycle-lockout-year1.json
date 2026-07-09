@@ -1,0 +1,26 @@
+{
+  "inputsHash": "60e8ea2f2242e9532a66614cc74d77baeefb1bb8e6f1bb6e332482bf86f8c82f",
+  "generatedAt": "2026-07-08T21:44:15.320Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names exact nodes and values (obtainableFactor 0.01 with 0.005–0.03 band, geo.DE=0.50, cust.operator-large=0.40), specific actors and venues (Frankfurt 1.2GW, Equinix/Digital Realty portals, TED), and a dated timing claim (capacity delivering in months 0–12 was specced 2024–25). The perturbation is a concrete number (0.004) with a stated conditioning logic."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable field is genuinely new: the node was already corrected 3%→1% and carries 'triangulated' maturity, so it reads as scrubbed, while the residual error is a concentration×timing correlation no single-node band encodes. Held at 3 because long enterprise procurement cycles in the large-operator segment is a hazard some experienced founders would already suspect, even if not in this precise cube-cell form."
+    },
+    "mechanismDepth": {
+      "score": 4,
+      "note": "Each hop is separately referenced and independently plausible: flagship-campus lumpiness (digest c3/c6) → 85% FLAPD flow-through with upstream spec-lock (c9, geo.DE, cust.operator-large) → benchmark misapplied to a near-zero contestable cell (obtainableFactor, Stage). The correlation argument survives 'why?' at every arrow, including why the band low end doesn't cover it."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The timing/spec-lock premise has ≥2 independent corroborating sources (DCD campus concentration, 40–60 week switchgear lead times, NTT 2026-award/2028-delivery) and the likelihood rationale honestly logs a failed falsifier search. Held at 3 because the load-bearing quantitative claim — months-0–12 contestable share 'approaches zero' — is inference from the mechanism, and the refresh/retrofit escape hatch is admitted to be unmeasured."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The operational mitigation (re-weight Year-1 targeting to brownfield PDU swap-outs in standing Frankfurt/Amsterdam stock) changes sequencing in the next two quarters, and the information mitigation redirects diligence spend now. Both indicators are monitorable at named venues (TED, CBRE quarterly pipeline) with explicit thresholds."
+    }
+  }
+}

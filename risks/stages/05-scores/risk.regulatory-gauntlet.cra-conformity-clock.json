@@ -1,0 +1,26 @@
+{
+  "inputsHash": "505d3b1a332af2c9add83fc3a7752bae70c97b4f324b5f2a920afd1e7081566c",
+  "generatedAt": "2026-07-08T05:30:23.825Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact instrument (Reg. 2024/2847), both deadlines (11 Sep 2026, 11 Dec 2027), the affected nodes (serviceableFactor, obtainableFactor) with quantified perturbations (×0.85, set 0.02), and the buyer segment (cust.operator-large) plus named operator portals in indicators."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The narrative shows the model's cert stack (EN 50600, ecodesign 2019/424, CE/TÜV) omits the CRA entirely, and whyMissable gives a real hiding mechanism — the Dec-2027 headline date sits outside the 12-month window while procurement clocks run ahead. Falls short of 4 because 'buyers front-run compliance deadlines' is a fairly standard regulatory-risk pattern a diligent founder tracking EU product law might surface."
+    },
+    "mechanismDepth": {
+      "score": 2,
+      "note": "Trigger and model-impact steps are well-referenced, but the propagation link — notified-body scarcity screening out the entrant — collapses under the risk's own contradicting stances showing ~90% of products are Default class with self-assessment, and the rationale admits 'no direct evidence 2026 RFPs already carry CRA clauses'. A hostile 'why?' at the propagation arrow is not survived as written."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The trigger (dates, product scope) has ≥2 independent corroborating sources (Cloudsmith, norppa, craevidence), but the severity-bearing premise (notified-body route) is directly contradicted by two attached sources; the risk honestly marks itself 'contested' and revised likelihood from 0.45 to 0.38. Honest handling saves it from lower, but a load-bearing premise stands contradicted."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations are next-two-quarter actions (CRA classification gap assessment, SBOM/SDL standup, OEM-wrapper sequencing of first sales) that change spend and channel sequencing, and the indicators (TED notices, OJEU hEN listings with thresholds) are concretely monitorable."
+    }
+  }
+}

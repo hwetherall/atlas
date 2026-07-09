@@ -1,0 +1,38 @@
+{
+  "inputsHash": "f160a6c05bc254b9147437d2bba4847f8dcaff50945c897b3e2da136471be576",
+  "generatedAt": "2026-07-08T17:42:10.554Z",
+  "data": {
+    "title": "Per-country registrations delay sales, cutting Year-1 reach",
+    "narrative": "The model assumes the venture can reach 45% of its serviceable market in Year 1. But each country needs registrations done before the first legal sale, and Germany's WEEE setup alone takes 2 to 4 months. Because these steps run one after another, several countries stay unreachable for part of the year, pushing Year-1 reach below the low edge and dropping Switzerland out entirely.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Each country needs registrations done before any legal sale.",
+        "refs": [
+          "digest:serviceable-benchmark#c10",
+          "ledger:geo.CH"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Registrations run in sequence, so reachable countries grow slowly across 12 months.",
+        "refs": [
+          "ledger:serviceableFactor",
+          "digest:serviceable-benchmark#c12",
+          "profile:Stage"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Year-1 reach drops below the band edge and Switzerland falls out.",
+        "refs": [
+          "ledger:serviceableFactor",
+          "ledger:geo.CH"
+        ]
+      }
+    ],
+    "whyMissable": "Each registration is a cheap form, so none lands on a risk list built around big items, and the real damage only shows when the compliance schedule meets the sales plan.",
+    "falsifier": "A counsel-built timeline showing all CE-7 registrations, including Swiss setup, can finish in parallel within 90 days before launch.",
+    "likelihoodRationale": "The registrations are legally required and their lead times are documented facts, and hardware entrants routinely underestimate this sequencing. The only real doubt is whether the venture has quietly already started them."
+  }
+}

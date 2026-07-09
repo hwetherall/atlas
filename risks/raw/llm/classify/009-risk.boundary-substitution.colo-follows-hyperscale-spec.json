@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "58071c2e6967fde7a66d318050f2c31e293a15b8c216ff766d9332b95d62a4b7",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"Wholesale colocation buys what its hyperscale tenants tell it to\",\n \"narrative\": \"The model treats colocation as an independent segment worth 0.18 that buys PDUs and hedges against hyperscale substitution. But CBRE reports European colo take-up is driven by hyperscalers leasing wholesale capacity, where the tenant sets the rack-power spec. If those tenants standardize on busway and power-shelf fit-outs, the colo slice's PDU content falls while its share stays fixed, overstating the Year-1 number.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"CBRE says colo growth comes from hyperscale and AI tenants\",\n   \"refs\": [\n    \"digest:seg-mix#c24\",\n    \"digest:seg-mix#c15\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Wholesale tenants set busway rack specs; landlords fit to spec\",\n   \"refs\": [\n    \"digest:seg-mix#c14\",\n    \"ledger:seg.colocation\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"seg.colocation's 0.18 has no sensitivity band for falling PDU content\",\n   \"refs\": [\n    \"ledger:seg.colocation\",\n    \"digest:seg-mix#c1\",\n    \"digest:seg-mix#c7\"\n   ]\n  }\n ],\n \"falsifier\": \"Fit-out specs or tenant BOMs from 2026 wholesale colo deals in Frankfurt or Amsterdam showing rack PDUs at retail-colo rates.\",\n \"category\": \"boundary\",\n \"evidence\": [\n  {\n   \"title\": \"Data Centre Take-up in Europe to Reach New Peak in 2025\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"CBRE UK\",\n   \"date\": \"2025-05-27\",\n   \"excerpt\": \"Hyperscaler requirements have multiplied which has led to the development of larger, wholesale facilities across Europe that are often single let. As a result, facilities of unprecedented size are expected to be built in Europe this year.\",\n   \"url\": \"https://www.cbre.co.uk/press-releases/data-centre-take-up-in-europe-to-reach-new-peak-in-2025\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Amsterdam Data Center | Ardent Data Centers\",\n   \"sourceType\": \"triangulation\",\n   \"publisher\": \"Northern Data / Ardent\",\n   \"date\": null,\n   \"excerpt\": \"Our AI-Ready Compute Suite, AMS1, is a 6 MW vendor-agnostic data hall designed for Bring-Your-Own-Server and racks... Access to a 6 MW suite with dual-fed overhead busway (150+ kW per rack).\",\n   \"url\": \"https://northerndata.de/amsterdam-ardent-data-centers\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"CBRE European Real Estate Market Outlook 2025 - Data Centres\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"CBRE\",\n   \"date\": null,\n   \"excerpt\": \"Take-up of colocation data centre space in Europe is expected to outstrip new supply in 2025 given strong demand from hyperscalers and providers of AI and high‑performance computing services.\",\n   \"url\": \"https://www.cbre.com/insights/books/european-real-estate-market-outlook-2025/data-centres\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"seg.colocation\",\n  \"label\": \"Colocation\",\n  \"kind\": \"estimated\",\n  \"value\": 0.18,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"single-source\",\n  \"dimension\": \"segment\",\n  \"dimensionValue\": \"colocation\",\n  \"sensitivityRange\": null,\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Capacity-split rescaling\",\n   \"expression\": \"Synergy end-2025 non-hyperscale colocation 20% × 0.91 = 0.18\"\n  },\n  \"provenance\": {\n   \"rationale\": \"Single publisher's capacity series (20–22% across vintages), global scope applied to CE → inferred.\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"Hyperscale operators to account for 67% of all data center capacity by 2031\",\n    \"sourceType\": \"industry-report\",\n    \"publisher\": \"Synergy Research Group\",\n    \"date\": \"2026\",\n    \"excerpt\": \"Non-hyperscale colocation capacity accounting for another 20% of total capacity (end-2025).\",\n    \"attached\": true\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"risk\",\"settleTest\":\"The load-bearing claim is that 2026 wholesale colo fit-outs will standardize on busway/power-shelf and drop PDU content below the model's assumption. Only actual 2026 tenant BOMs and fit-out specs from Frankfurt/Amsterdam wholesale deals — which do not yet exist — would settle whether PDU content falls; the segment share itself (0.18) is a defensible today-value backed by Synergy's series.\",\"proposedCorrection\":null,\"researchQueries\":[{\"query\":\"CBRE and JLL European wholesale colocation fit-out specifications 2025-2026: busway vs rack-PDU power distribution standardization in Frankfurt and Amsterdam single-let facilities\",\"kind\":\"confirming\"},{\"query\":\"Retail vs wholesale colocation rack power distribution BOM comparison: evidence that hyperscale wholesale tenants still specify rack-mount PDUs at retail-colo intensity in European FLAP-D markets\",\"kind\":\"falsifying\"}]}",
+  "usage": {
+    "prompt_tokens": 2815,
+    "completion_tokens": 353,
+    "total_tokens": 3168,
+    "cost": 0.0229,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.0229,
+      "upstream_inference_prompt_cost": 0.014075,
+      "upstream_inference_completions_cost": 0.008825
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T18:17:50.740Z"
+}

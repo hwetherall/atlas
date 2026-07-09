@@ -1,0 +1,10 @@
+{
+  "inputsHash": "c1b5ea72ad2c872f09be1179423ad4f31ffb85b959e5ce3300b337c722130632",
+  "generatedAt": "2026-07-08T21:52:38.285Z",
+  "data": {
+    "resolution": "risk",
+    "settleTest": "Only observing whether standalone, multi-vendor rack-PDU tenders actually materialize in CE-7 over the next 6-24 months (the falsifier itself is a forward pipeline count) settles this. Whether incumbents continue to bundle at zero margin and whether contestable standalone demand emerges is a market-unfolding question, not a purchasable fact about today.",
+    "proposedCorrection": null,
+    "researchQueries": []
+  }
+}

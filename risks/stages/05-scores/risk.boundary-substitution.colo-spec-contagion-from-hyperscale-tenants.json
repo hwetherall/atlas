@@ -1,0 +1,26 @@
+{
+  "inputsHash": "0c6a809d9002434feb35a2ca7e7b1c35ec304f01b213c0f016ea45bb42a9b4c3",
+  "generatedAt": "2026-07-08T21:27:12.664Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (seg.colocation 0.18, null band, single-source), the actor cohort (hyperscale/AI tenants in wholesale preleases), the instrument (tenant fit-out spec sheets specifying busway/power shelves), a quantified perturbation (0.18→0.12), and dated, located indicators (2026 Frankfurt/Amsterdam preleases). The 19%/20% capacity-growth figures and wholesale-vs-retail split within the 18% slice are all pinned."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "Goes beyond 'a band edge might bind' by supplying a NEW structural reason: the node's null band makes it invisible in every tornado view, and the kill path runs through a wholesale/retail composition split the model doesn't carry, per whyMissable. Loses a point because the busway/shelf migration itself is already tracked in the model for self-build ('the same migration the exemplar tracks'), so extending it to colo is a step a sharp founder might take."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at each hop: tenant cohort fills colo halls → tenant spec authority in wholesale preleases displaces PDU content while capacity metrics stay healthy → null-band node makes erosion structurally invisible. The critical middle link (tenants actually specifying busway inside leased CE halls) is plausible and marketed-for but not yet directly observed, as the likelihood rationale itself admits, so it stops short of surviving every hostile 'why?'."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "≥2 independent sources (CBRE take-up outlook, CBRE AI-signings data, Vertiv busway explicitly for colo white space) corroborate the trigger and the substitute's availability, and the risk honestly surfaces the contradicting retail-colo PDU evidence (JMP) and the Nordic-vs-Frankfurt geographic mismatch in its own rationale. Falls short of 4 because no direct prelease fit-out spec confirms PDU displacement in the exact falsifier markets."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations change near-term action: a retail/wholesale segmentation study (information, voiNodeId set) and anchoring Year-1 sales in architecturally sticky retail colo directly alter sequencing and spend this year. Both indicators (prelease fit-out specs, operator capex-call language) are concrete, sourced, and monitorable with thresholds."
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "inputsHash": "5499350c58a6e00686aa2fc358fd80b887c4fc0f70bec69d1bb38918a2be247e",
+  "generatedAt": "2026-07-08T18:20:32.263Z",
+  "data": {
+    "resolution": "risk",
+    "settleTest": "The DDA 2026 State of the Dutch Data Centers colocation-additions-by-year figure — i.e., NL's share of CE-7 NEW colo capacity commissioned during Year-1 — which only exists after the year unfolds; the current 0.28 is correctly derived from a 2025 installed-capacity snapshot, so the dispute is about future flow, not today's stock.",
+    "proposedCorrection": null,
+    "researchQueries": [
+      {
+        "query": "DDA State of the Dutch Data Centers 2026 — annual NL colocation net additions (MW) vs CE-7 total additions for the commissioning year",
+        "kind": "confirming"
+      },
+      {
+        "query": "Does the Dutch hyperscale ban (Jan 2024 decree) exempt colocation and enterprise data centres, and has NL colo pipeline continued adding capacity in Amsterdam MRA municipalities and Zeewolde/Hollands Kroon since 2024?",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

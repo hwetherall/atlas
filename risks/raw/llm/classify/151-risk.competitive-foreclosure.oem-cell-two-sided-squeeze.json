@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "db33740f861d56b3ce4d2e77ecd944bc0a344cbb83c42689c327a863dd546c7a",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"OEM/integrator channel closes from both sides, cutting share\",\n \"narrative\": \"The model assumes the venture can win 0.22 of the OEM/integrator channel in Year 1. But every integrator case study we found picks incumbent brands on certification, DCIM fit and support, while white-label demand goes to low-cost Asian ODMs the entrant cannot match. The genuinely open fraction may be about 0.08, roughly a third of the modeled cell. If so, the channel-mix and Year-1 number are too high.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"Integrators pick PDU brands on features and support ecosystems\",\n   \"refs\": [\n    \"digest:cust-mix#c14\",\n    \"digest:cust-mix#c13\",\n    \"ledger:cust.oem\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Entrant lacks incumbent ecosystem and ODM cost position\",\n   \"refs\": [\n    \"digest:cr3-vendors#c4\",\n    \"digest:cr3-vendors#c1\",\n    \"profile:Company\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"Addressable OEM share falls from 0.22 to about 0.08\",\n   \"refs\": [\n    \"ledger:cust.oem\",\n    \"ledger:cust.operator-large\"\n   ]\n  }\n ],\n \"falsifier\": \"One CE integrator or OEM signing a design-in or white-label deal with the entrant, or a documented RFQ evaluating a non-incumbent intelligent PDU on merit within Year 1.\",\n \"category\": \"competitive\",\n \"evidence\": [\n  {\n   \"title\": \"About | Digipower Manufacturing Inc.\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Digipower Manufacturing Inc.\",\n   \"date\": null,\n   \"excerpt\": \"Founded in 1999, DigiPower began by designing and manufacturing power solutions for OEM and ODM customers worldwide. As a leading rack PDU manufacturer in Taiwan, we focus on data center power distribution and management products\",\n   \"url\": \"https://www.digipower.com.tw/about\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"DCIM Power Solution Helps British Cloud and Networking Provider Exponential-e\",\n   \"sourceType\": \"triangulation\",\n   \"publisher\": \"Raritan\",\n   \"date\": null,\n   \"excerpt\": \"Solution: Power IQ® DCIM Monitoring Software and PX® 5000 Series Intelligent PDUs — incumbent PDU selected bundled with its own DCIM ecosystem for a colocation integrator serving 1700+ customers.\",\n   \"url\": \"https://www.raritan.com/assets/re/resources/case_studies/Case_Study_-_Exponential-e_(English).pdf\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Telefónica Germany upgrades data center operations with Vertiv PowerIT rPDUs\",\n   \"sourceType\": \"triangulation\",\n   \"publisher\": \"Vertiv\",\n   \"date\": null,\n   \"excerpt\": \"Vertiv and the Telefónica Group have maintained a strong, multi-year partnership... deploying energy-efficient critical infrastructure solutions — incumbent selection driven by existing support relationship.\",\n   \"url\": \"https://www.vertiv.com/495b0e/globalassets/content---assets-2025/documents/vertiv-telefonica_marketing-thought-leadership-case-study_emea-english.pdf\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"cust.oem\",\n  \"label\": \"OEM / integrator\",\n  \"kind\": \"estimated\",\n  \"value\": 0.22,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"needs-source\",\n  \"dimension\": \"customerType\",\n  \"dimensionValue\": \"oem-integrator\",\n  \"sensitivityRange\": null,\n  \"funnelActive\": true,\n  \"derivation\": null,\n  \"provenance\": {\n   \"rationale\": \"OEM/ODM white-label supply is well documented qualitatively (rack-integrator channel) but unquantified → internal estimate.\",\n   \"promotionPath\": \"Validate buyer mix with 3 CE operator/distributor interviews.\"\n  },\n  \"evidence\": []\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"error\",\"settleTest\":\"A CE-region OEM/integrator channel buyer-mix dataset (or 3-5 distributor/integrator interviews plus incumbent-vs-ODM design-win records) quantifying the fraction of intelligent-PDU integrator business open to non-incumbent, non-ODM entrants — this exists today and would settle the 0.22 vs 0.08 dispute without waiting for the market to unfold.\",\"proposedCorrection\":{\"nodeId\":\"cust.oem\",\"value\":0.08,\"low\":0.05,\"high\":0.14,\"rationale\":\"Integrator case studies show incumbent selection on DCIM/certification/support and white-label going to Asian ODMs, so the genuinely-open fraction is roughly a third of the modeled 0.22 cell.value.\"},\"researchQueries\":[{\"query\":\"CE-region (Germany, UK) colocation and rack-integrator PDU procurement: share of intelligent-PDU design-ins awarded to non-incumbent, non-ODM vendors 2023-2024 (Raritan/Vertiv/APC vs entrants)\",\"kind\":\"confirming\"},{\"query\":\"Documented design-in or white-label PDU deals or open RFQs where a CE integrator/OEM selected a non-incumbent intelligent PDU on merit rather than Raritan, Vertiv, APC, or a low-cost Taiwanese ODM like DigiPower\",\"kind\":\"falsifying\"}]}",
+  "usage": {
+    "prompt_tokens": 2703,
+    "completion_tokens": 488,
+    "total_tokens": 3191,
+    "cost": 0.025715,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.025715,
+      "upstream_inference_prompt_cost": 0.013515,
+      "upstream_inference_completions_cost": 0.0122
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T21:53:11.163Z"
+}

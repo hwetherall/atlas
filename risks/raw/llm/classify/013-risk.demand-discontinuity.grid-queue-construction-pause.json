@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "58bdc03fcf70410ac51773b448df79bd86b777a0d7d55b0e48888ac5206f118c",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"German and Dutch grid queues stall the venture's Year-1 deliveries\",\n \"narrative\": \"The model assumes demand grows at a steady 9% and treats Year-1 orders as if they follow that trend. But 78% of the target market sits in Germany and the Netherlands, where new capacity is stuck: Frankfurt faces 24–36-month grid-connection waits and Amsterdam caps new connections at 350 MVA until 2030. Orders land when sites get power, not when the trend rises. If 2026 energizations slip, Year-1 orders slip with them.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"Frankfurt grid waits run 24–36 months; Amsterdam caps connections at 350 MVA\",\n   \"refs\": [\n    \"digest:geo-DE#c20\",\n    \"digest:geo-NL#c8\",\n    \"digest:geo-NL#c3\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Germany and Netherlands are 78% of demand; Frankfurt dominates German base\",\n   \"refs\": [\n    \"ledger:geo.DE\",\n    \"ledger:geo.NL\",\n    \"digest:geo-DE#c1\",\n    \"digest:geo-DE#c4\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"The 9% trend is a 2030 figure; delayed power cuts Year-1 orders\",\n   \"refs\": [\n    \"ledger:shape.cagr\",\n    \"ledger:obtainableFactor\",\n    \"profile:Stage\"\n   ]\n  }\n ],\n \"falsifier\": \"H1-2026 evidence that Frankfurt and Amsterdam energizations convert on schedule, with under-construction capacity going live at or above the prior year's rate.\",\n \"category\": \"exogenous\",\n \"evidence\": [\n  {\n   \"title\": \"Cushman & Wakefield: European data centre growth is shifting\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Cushman & Wakefield\",\n   \"date\": \"2026-04-28\",\n   \"excerpt\": \"Amsterdam, with 852 MW of operational capacity, has less room for further expansion... Capacity currently under construction has plateaued at around 2.5 GW. Across Europe, the explanation is often the same: power shortages, limited grid connections and lengthy permitting\",\n   \"url\": \"https://www.cushmanwakefield.com/en/netherlands/news/2026/04/emea-datacentre-update-h2-2025\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Data center grid connection lead times by market 2025\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Statista\",\n   \"date\": \"2026-01-06\",\n   \"excerpt\": \"As of 2025, the average lead time for data centers to be connected to the power grid in both Amsterdam and Tokyo was 10 years, the longest of any major market. Frankfurt: 7 years.\",\n   \"url\": \"https://www.statista.com/statistics/1651131/data-center-grid-connection-lead-times-by-market/\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Frankfurt at the Limit: Power Shortages Slow the Data Center Boom\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"igor'sLAB\",\n   \"date\": \"2026-03-19\",\n   \"excerpt\": \"The energy provider Mainova estimates that high-capacity new connections on a large scale will not be possible again until the mid-2030s.\",\n   \"url\": \"https://www.igorslab.de/en/frankfurt-at-its-limit-power-shortages-are-slowing-the-boom-in-data-centers/\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"obtainableFactor\",\n  \"label\": \"Year-1 obtainable share of SAM\",\n  \"kind\": \"assumption\",\n  \"value\": 0.03,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"triangulated\",\n  \"dimension\": null,\n  \"dimensionValue\": null,\n  \"sensitivityRange\": {\n   \"low\": 0.01,\n   \"high\": 0.05\n  },\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Benchmark anchoring\",\n   \"expression\": \"Year-1 SOM benchmarks: 1% of SAM (Prospeo); early-stage range 1–5% (IdeaPlan) → curated 3% mid-band\",\n   \"crossCheck\": \"Prior 6% assumption sat above every year-1 benchmark found — revised down\"\n  },\n  \"provenance\": {\n   \"rationale\": \"Two independent benchmark sources agree on 1–5%, but both are generic (not DC-hardware-specific) → inferred.\",\n   \"promotionPath\": \"Replace with pipeline-based model once first CE deals close (win-rate × cycle time × capacity).\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"Addressable markets — SOM benchmarks\",\n    \"sourceType\": \"analyst-estimate\",\n    \"publisher\": \"Prospeo\",\n    \"date\": null,\n    \"excerpt\": \"SOM benchmarks that won't get you laughed out of the room: 1% of SAM in Year 1, 3% in Year 2, 5% in Year 3.\",\n    \"attached\": true\n   },\n   {\n    \"title\": \"Serviceable Obtainable Market (SOM) — early-stage ranges\",\n    \"sourceType\": \"analyst-estimate\",\n    \"publisher\": \"IdeaPlan\",\n    \"date\": \"2024\",\n    \"excerpt\": \"For early-stage companies, SOM is typically 1-5% of SAM. For growing companies with product-market fit, SOM can reach 10-20% of SAM.\",\n    \"attached\": true\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"risk\",\"settleTest\":\"Only H1-2026 actuals on whether Frankfurt and Amsterdam energizations convert on schedule (under-construction MW going live at or above prior-year rate) would settle whether Year-1 orders slip — this is a future demand gate that hasn't bound yet, not a mis-stated current number.\",\"proposedCorrection\":null,\"researchQueries\":[]}",
+  "usage": {
+    "prompt_tokens": 3178,
+    "completion_tokens": 136,
+    "total_tokens": 3314,
+    "cost": 0.01929,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01929,
+      "upstream_inference_prompt_cost": 0.01589,
+      "upstream_inference_completions_cost": 0.0034
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T18:18:23.742Z"
+}

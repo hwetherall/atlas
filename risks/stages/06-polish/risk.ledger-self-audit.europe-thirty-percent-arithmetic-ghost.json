@@ -1,0 +1,39 @@
+{
+  "inputsHash": "a0046541f048bf9330922313cb324bde0575edb2b715b98aca64f4256a6a0daf",
+  "generatedAt": "2026-07-08T21:49:56.876Z",
+  "data": {
+    "title": "Unsourced 'Europe = 30%' hop could drop the base below its floor",
+    "narrative": "The model builds tamBase from a global figure times a 'Europe = 30%' share, and presents it as a bounded 240 to 360 range. But that 30% share is an analyst guess with no source, and the global anchor itself ranges from $1.7B to $5.3B, wider than the stated band. A hostile reviewer who swaps in the lowest credible numbers lands near €200M, below the floor, so the Year-1 base cannot survive audit.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Diligence checks the global anchor and finds estimates from $1.7B to $5.3B.",
+        "refs": [
+          "digest:cust-mix#c9",
+          "digest:cust-mix#c11",
+          "ledger:tamBase"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "The unsourced 30% Europe share cannot rescue a contested anchor.",
+        "refs": [
+          "ledger:tamBase",
+          "digest:geo-region-denominator#c5",
+          "digest:geo-region-denominator#c0"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Every downstream number inherits a base below the stated band.",
+        "refs": [
+          "ledger:tamBase",
+          "ledger:serviceableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "A removed €495M ceiling makes the base look stress-tested, but the fix left the weakest hop, the unsourced Europe share, untouched.",
+    "falsifier": "Commissioned IndexBox EU rack-PDU country tables placing the CE-7 base at €270M or above.",
+    "likelihoodRationale": "The 2.3x global spread and the unsourced Europe hop are documented facts, so the defensibility failure is certain. Whether the true value sits below the floor is a judgment call, since a Germany-alone $509.6M figure cuts the other way."
+  }
+}

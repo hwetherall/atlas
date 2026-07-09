@@ -1,0 +1,26 @@
+{
+  "inputsHash": "1a00467b22c31deeaac1ba477330b9dc4b07ec070c571db8db3d1dca484b331b",
+  "generatedAt": "2026-07-08T05:30:23.825Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact figures (€2.45B base, 21.23% CAGR, ~55% unsourced PDU share, €495M ceiling, +€3.3M YAM at the €520 edge), the specific publisher (BIS/R&M), and the affected node (tamBase) with a concrete recentre value of 280."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The ledger already caveats 'broader scope used as cross-check ceiling', but the risk supplies a genuinely new reason: the 21.23% growth signature is arithmetically incompatible with rack-PDU-only sources (5.4–9.8%), implying the ceiling measures the substitute architecture and the band is asymmetric. The whyMissable correctly notes the caveat itself camouflages the adversarial nature of the contamination."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at each hop, and the trigger is arithmetic rather than hand-waved; but the propagation step's load-bearing claim — that excess growth sits in PSU/shelf revenue rather than report optimism — is admitted unverified in the likelihood rationale, so one arrow would take a hit from a hostile 'why?'."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Two attached BIS sources corroborate the CAGR/base arithmetic and the category's bundling of DC-power substitutes, and the rationale honestly flags the unverified 55% share and the OCP 12.4% counter-signal (one stance even marked 'contradicts'). Falls short of 4 because the key quantitative premise — segmentation showing material contamination — has no direct source."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The perturbation (tamBase set to 280) and the operational mitigation to size Year-1 inventory/hires against 240–320 directly change near-term spend, and both indicators (BIS segmentation pages, 2026 publisher refreshes) are concretely monitorable."
+    }
+  }
+}

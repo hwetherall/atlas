@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "f939a34159a1d7aacc27e8dba98ef9cb73afa3f3aa1779040b6e95f8ed51f5a9",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"OEM/integrator channel is owned by cheaper Asian ODMs\",\n \"narrative\": \"The model books 22% of PDU spend to the OEM/integrator channel as if it were open to win. But that channel is where Taiwanese and Chinese ODMs like Digipower and GETEKnet already sell white-label PDUs at cost points a Central European manufacturer cannot match. Integrator deals are decided on unit cost, so this spend is out of reach on day one. Counting it overstates the serviceable market.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"Asian ODMs already supply OEM/integrator PDUs as white-label goods.\",\n   \"refs\": [\n    \"digest:cust-mix#c11\",\n    \"digest:cust-mix#c12\",\n    \"digest:cust-mix#c13\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Integrators buy on lowest cost; the entrant cannot match ODM prices.\",\n   \"refs\": [\n    \"profile:Product\",\n    \"profile:Company\",\n    \"ledger:cust.oem\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"The 22% cell is priced out, inflating serviceable spend.\",\n   \"refs\": [\n    \"ledger:cust.oem\",\n    \"ledger:serviceableFactor\"\n   ]\n  }\n ],\n \"falsifier\": \"Quotes showing the venture can price within 10–15% of ODM white-label at integrator volumes, or an integrator win awarded on features rather than cost.\",\n \"category\": \"competitive\",\n \"evidence\": [\n  {\n   \"title\": \"OEM PDU Power Distribution Unit Solution\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"GETEKnet (Ningbo Geteknet Telecom Equipment)\",\n   \"date\": \"2025-09-25\",\n   \"excerpt\": \"GETEKnet is a leading OEM manufacturer and supplier of PDU... All data center PDUs are designed and manufactured under strict quality control and comply with international CE and RoHS certifications. Price changes against quantity. OEM / ODM is available.\",\n   \"url\": \"https://www.getek.com/oem-pdu-power-distribution-unit-solution/\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"The Rise of White-Label Servers: Can SMEs Reduce Their TCO Through the OCP Standard?\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"ZKKR Technology\",\n   \"date\": \"2021-11-12\",\n   \"excerpt\": \"Cloud computing giants... have significantly boosted their global market share... by directly sourcing white-label servers through the ODM model... in 2024, Taiwan, China, accounted for 81% of global white-label server shipments.\",\n   \"url\": \"https://www.zkkrtech.com/news_detail/4.html\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Panduit wins prestigious Data Centre Solutions Technology Award\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"MSP Channel / Digitalisation World\",\n   \"date\": \"2025-05-30\",\n   \"excerpt\": \"The award went to the Panduit G6 Power Distribution Unit... underlines the best-in-class, low profile form factor and enhanced onboard intelligence required in the latest iterations of data centre compute cabinets.\",\n   \"url\": \"https://www.msp-channel.com/news/69994/panduit-wins-prestigious-data-centre-solutions-technology-award\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"cust.oem\",\n  \"label\": \"OEM / integrator\",\n  \"kind\": \"estimated\",\n  \"value\": 0.22,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"needs-source\",\n  \"dimension\": \"customerType\",\n  \"dimensionValue\": \"oem-integrator\",\n  \"sensitivityRange\": null,\n  \"funnelActive\": true,\n  \"derivation\": null,\n  \"provenance\": {\n   \"rationale\": \"OEM/ODM white-label supply is well documented qualitatively (rack-integrator channel) but unquantified → internal estimate.\",\n   \"promotionPath\": \"Validate buyer mix with 3 CE operator/distributor interviews.\"\n  },\n  \"evidence\": []\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"error\",\"settleTest\":\"A channel share study or set of CE distributor/operator interviews quantifying what fraction of PDU spend actually flows through OEM/integrator white-label channels contestable by a regional manufacturer — this is a knowable fact about today's channel structure, not a future event.\",\"proposedCorrection\":{\"nodeId\":\"cust.oem\",\"value\":0.05,\"low\":0.0,\"high\":0.1,\"rationale\":\"If the OEM/integrator channel is structurally locked to low-cost Asian ODMs on unit cost, most of the 22% is not serviceable for a Central European entrant, so the addressable slice should be marked down to a small cost-insensitive/feature-driven residual.\"},\"researchQueries\":[{\"query\":\"Share of European data center PDU OEM/integrator channel supplied by Taiwanese/Chinese ODMs (Digipower, GETEKnet) vs regional/branded vendors (Panduit, Schneider, Rittal) 2024-2025\",\"kind\":\"confirming\"},{\"query\":\"Integrator PDU procurement awarded on features/certification/local support rather than unit cost in Central Europe — case studies of branded PDU wins in rack-integration deals\",\"kind\":\"falsifying\"}]}",
+  "usage": {
+    "prompt_tokens": 2697,
+    "completion_tokens": 414,
+    "total_tokens": 3111,
+    "cost": 0.023835,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.023835,
+      "upstream_inference_prompt_cost": 0.013485,
+      "upstream_inference_completions_cost": 0.01035
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T18:20:22.818Z"
+}

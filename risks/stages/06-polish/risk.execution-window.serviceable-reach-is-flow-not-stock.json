@@ -1,0 +1,40 @@
+{
+  "inputsHash": "a47e5928c03d225a78f0a33541ddb90daa4e4f0035d0f739a33941607af4d7a3",
+  "generatedAt": "2026-07-08T17:42:19.513Z",
+  "data": {
+    "title": "Year-1 reach is two countries, not 55% of the market",
+    "narrative": "The model assumes the venture can serve 55% of its market in Year 1. But that reach must be built during the same 12 months, and the only outside analogues we found sit near 12%, not 45–65%. A realistic first-year footprint of Germany plus the Netherlands through one distributor is closer to 30–35% of the market than 55%.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "The 55% is a guess; every outside figure sits far lower",
+        "refs": [
+          "digest:serviceable-benchmark#c3",
+          "digest:serviceable-benchmark#c13",
+          "ledger:serviceableFactor"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Reach must be built country by country during Year 1",
+        "refs": [
+          "digest:serviceable-benchmark#c12",
+          "digest:serviceable-benchmark#c10",
+          "ledger:geo.CH",
+          "ledger:geo.other"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Year-1 share drops toward two countries, shrinking the revenue base",
+        "refs": [
+          "ledger:serviceableFactor",
+          "ledger:geo.DE"
+        ]
+      }
+    ],
+    "whyMissable": "The 55% carries a wide band that looks like honest uncertainty, but for a pre-launch venture the true Year-1 value starts near zero and ramps.",
+    "falsifier": "Signed distribution deals and completed registrations covering at least 55% of the market within the first quarter after launch.",
+    "likelihoodRationale": "No outside evidence supports 45–65% reach for any comparable vendor, and the certs, channel and support behind that reach do not exist before launch. A single pan-regional distributor deal could cover several countries at once, which keeps this from rating higher."
+  }
+}

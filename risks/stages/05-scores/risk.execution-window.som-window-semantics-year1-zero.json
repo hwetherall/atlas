@@ -1,0 +1,26 @@
+{
+  "inputsHash": "8205267950790c43405226897ef57ef37ece462ed2f26973f232d5983e15c58d",
+  "generatedAt": "2026-07-08T21:32:17.573Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (obtainableFactor), the contested value (1% Year-1 vs 0.5% floor vs 0.004 perturbation), the specific sources (Prospeo/IdeaPlan/Wise), a worked example ($3.2M/$3.2B ≈ 0.1%, Tractian $200K), and the pre-launch selling window (PO in month 7–9). Actors, numbers, and instruments are all pinned down."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The risk is not 'the band edge could be true' — it names a NEW reason: the time-semantics of the cited benchmarks (cumulative 1–5yr vs Year-1 snapshot), which the whyMissable notes is hidden by the node's 'triangulated' maturity and prior 3%→1% correction. Docked one point because 'SOM percentages are multi-year' is a known critique among careful founders, even if this ledger buries it."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Four-step chain with refs at every arrow: multi-year source semantics → 0.1% worked example → pre-launch pro-rating → 2–3x overstatement. The final quantitative jump to 0.004 is the weakest link — the rationale itself concedes the pro-rating and 2–3x figure were not independently corroborated."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The core premise (benchmarks are 1–3/3–5 year cumulative, not annual) has ≥2 independent corroborating sources (Prospeo and IdeaPlan) plus four supporting stances, and the likelihood rationale is honest that the 0.1% worked example and pro-rating claims remain uncorroborated. Held below 4 because Prospeo appears three times (not fully independent) and all sources are low-authority marketing glossaries rather than empirical data."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes near-term action: replace top-down 1% with a bottom-up pipeline model 'before fundraising commitments are set against YAM' and re-baseline to a 24-month window with quarterly gates. Both stated indicators (PO by month 6 via own CRM/TED; comparables' first-year disclosures) are concrete and monitorable."
+    }
+  }
+}

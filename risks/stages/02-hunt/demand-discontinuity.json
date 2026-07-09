@@ -1,0 +1,430 @@
+{
+  "inputsHash": "463b541404efc6ea9f357cf1f17ae6fcf945c8e2009a61805834dae5911d9725",
+  "generatedAt": "2026-07-08T19:58:28.979Z",
+  "data": {
+    "hypotheses": [
+      {
+        "id": "prelet-lockout-year1-contestability",
+        "title": "83% pre-let pipeline plus long-lead electrical frameworks leave almost no contestable Year-1 PDU orders",
+        "narrative": "The obtainableFactor's own cross-check assumes DC electrical gear is locked 12–24 months before fit-out, which keeps a ≤2% Year-1 share plausible. But the FLAP-D development pipeline is 83% pre-let at a record-low 6.3% vacancy — the 2026–27 builds a new entrant would sell into had their electrical bill-of-materials specified inside framework agreements signed at pre-let, i.e. in 2023–24. The venture's first 12 months open onto a market where the visible demand is real but already awarded: what remains contestable is churn and expansion inside operating halls, a fraction of the 1% anchor. The YAM is not conservative; it is counting orders that were signed before the company existed in the market.",
+        "category": "execution",
+        "targetNodes": [
+          "obtainableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "FLAP-D vacancy hits a record-low 6.3% with the pipeline 83% pre-let — capacity is committed to named tenants years before commissioning, and pre-let deals carry integrated electrical packages fixed at design lock",
+            "refs": [
+              "digest:geo-DE#c19",
+              "ledger:obtainableFactor"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "PDU line items ride those pre-let frameworks through the large-operator channel the venture targets first; RFPs that open during the venture's first 12 months are for capacity commissioning in 2028+, not for Year-1 revenue",
+            "refs": [
+              "ledger:cust.operator-large",
+              "digest:geo-DE#c19",
+              "profile:Who is the primary buyer you'll sell through first?"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The truly contestable Year-1 share of SAM sits below the 0.5% band floor; the 1% Prospeo anchor — already flagged as semantically fragile — overstates the first-year orderbook regardless of SAM size",
+            "refs": [
+              "ledger:obtainableFactor"
+            ]
+          }
+        ],
+        "whyMissable": "The 1% Year-1 benchmark reads as already-haircut — it is the bottom of the published 1–5% range, so it looks conservative. The pre-let statistic lives in commercial real-estate reports (JLL EMEA year-end), not in any PDU market report, so nobody on the team joins the two documents; the funnel has no 'already-awarded vs contestable' dimension where this could surface.",
+        "expectedObviousness": "low",
+        "falsifier": "Three or more CE colocation fit-outs commissioning in 2026–27 running open rack-PDU bake-offs (multi-bidder, no incumbent framework) during the venture's first two quarters.",
+        "likelihood": {
+          "value": 0.45,
+          "rationale": "The 83% pre-let rate and record-low vacancy are documented for exactly the venture's window; offsetting this, retrofit, expansion and mid-market colo demand remains genuinely open, so total foreclosure is unlikely.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "obtainableFactor",
+            "op": "set",
+            "value": 0.004,
+            "note": "Contestable Year-1 share falls below the current 0.5% band floor once pre-awarded fit-out demand is netted out"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Share of CE data-center electrical/PDU procurements that are open multi-bidder vs sole-source or framework call-offs",
+            "where": "TED (EU tenders portal) and major operator procurement portals (Digital Realty, Equinix, NTT supplier registration)",
+            "threshold": "<20% of PDU line items contested openly over two quarters",
+            "updates": "increases"
+          },
+          {
+            "signal": "FLAP-D pre-let percentage and vacancy in successive half-year prints",
+            "where": "JLL EMEA Data Centre Report and Cushman & Wakefield EMEA updates",
+            "threshold": "Pre-let stays above 80% with vacancy below 8%",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Map the 2026–27 CE commissioning pipeline project-by-project and audit whether each electrical package is already awarded or still open",
+            "type": "information",
+            "voiNodeId": "obtainableFactor",
+            "note": "Converts the 0.5–3% band into a named-project contestable-demand figure"
+          },
+          {
+            "action": "Re-aim the Year-1 motion at expansion and retrofit demand in operating halls and mid-market colo, where procurement is not pre-awarded at building pre-let",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": null
+          },
+          {
+            "action": "Pursue approved-vendor-list qualification inside at least one operator framework agreement so the venture is inside the wall when call-offs occur",
+            "type": "contractual",
+            "voiNodeId": null,
+            "note": null
+          }
+        ]
+      },
+      {
+        "id": "frankfurt-grid-queue-de-slip",
+        "title": "A single metro's 24–36-month grid queue gates ~37% of the CE TAM's Year-1 flow",
+        "narrative": "Germany is 0.50 of the base and Frankfurt hosts ~75% of German IT capacity — so roughly 37% of the venture's TAM routes through one metro's grid interconnection queue, where waits now run 24–36 months and vacancy is 2.2%. The model treats DE as a diversified half of the market; in the first-12-months window it is really a bet that Frankfurt's 542 MW under construction energizes on schedule. If 2026 energizations slip right — grid queue, plus EnEfG efficiency/heat-reuse compliance adding commissioning friction — the fit-outs that would generate the venture's largest tranche of Year-1 PDU purchase orders move to 2027–28 while the 9% trend stays intact on paper.",
+        "category": "exogenous",
+        "targetNodes": [
+          "geo.DE",
+          "obtainableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Frankfurt grid connections face 24–36-month waits while 542 MW sits under construction and 383 MW in planning — energization slots, not demand, set commissioning dates",
+            "refs": [
+              "digest:geo-DE#c15",
+              "digest:geo-DE#c8",
+              "digest:geo-DE#c14"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "Frankfurt is ~75% of German capacity and DE is 0.50 of the CE base, so a queue slip in one metro defers the largest single block of near-term fit-out demand; PDU POs land at fit-out, so deferred energization means deferred orders regardless of the 2030 CAGR",
+            "refs": [
+              "digest:geo-DE#c1",
+              "ledger:geo.DE"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "DE's effective share of the in-window demand flow falls toward the installed-load low bound (0.42) and the Year-1 obtainable pace drops with it — the funnel's biggest geography becomes 2028 revenue",
+            "refs": [
+              "ledger:geo.DE",
+              "ledger:obtainableFactor"
+            ]
+          }
+        ],
+        "whyMissable": "The ledger carries country-level shares that look diversified across seven markets; there is no metro dimension, so the fact that half the funnel physically routes through one substation queue is structurally invisible. The DE band (0.42–0.53) reads as scope uncertainty, not as a timing gate.",
+        "expectedObviousness": "medium",
+        "falsifier": "TenneT/regional grid operator commitments (or JLL Frankfurt prints) showing Frankfurt live IT load stepping up by >100 MW within the venture's Year-1, i.e. the 542 MW under construction energizing on schedule.",
+        "likelihood": {
+          "value": 0.4,
+          "rationale": "Queue lengths and near-zero vacancy are documented; offsetting, projects already under construction typically hold secured grid allocations, so slippage hits the planning cohort harder than the UC cohort.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "geo.DE",
+            "op": "set",
+            "value": 0.42,
+            "note": "DE share of contestable in-window demand falls to the installed-load low bound as Frankfurt additions slip"
+          },
+          {
+            "nodeId": "obtainableFactor",
+            "op": "scale",
+            "value": 0.6,
+            "note": "Year-1 pace compressed as the largest geography's fit-outs defer"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Frankfurt live IT-load and under-construction prints",
+            "where": "JLL German data center market updates and Mordor Frankfurt series",
+            "threshold": "<+50 MW live-load growth across two consecutive half-year prints",
+            "updates": "increases"
+          },
+          {
+            "signal": "Grid-connection queue length and energization commitments for Rhein-Main data-center applicants",
+            "where": "TenneT/Amprion connection disclosures and Hesse permitting dockets; operator capex-call commentary on Frankfurt energization dates",
+            "threshold": "Stated waits lengthening beyond 36 months or named projects re-guiding commissioning by ≥2 quarters",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Commission an energization-date audit of the Frankfurt 542 MW under-construction pipeline (which projects hold firm grid allocations for 2026)",
+            "type": "information",
+            "voiNodeId": "geo.DE",
+            "note": "Separates timing risk from level risk in the DE share"
+          },
+          {
+            "action": "Rebalance the Year-1 territory plan toward Berlin (219 MW in planning) and Poland/CEE, where additions are less grid-queue-bound",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": null
+          },
+          {
+            "action": "Launch a retrofit/replacement SKU program for operating Frankfurt halls whose demand does not depend on new grid connections",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": null
+          }
+        ]
+      },
+      {
+        "id": "nl-grid-freeze-share-erosion",
+        "title": "The Netherlands' 0.28 slice is legally and electrically frozen for the entire Year-1 window",
+        "narrative": "geo.NL = 0.28 is one of the best-triangulated nodes in the ledger — Statista and the DDA agree within 3%. But both measure installed stock, and the venture sells into flow: new fit-outs where a new vendor can be designed in. In NL that flow is administratively shut for the whole first-12-months window: a national decree bans new hyperscale builds outside two municipalities, Amsterdam's draft zoning plan caps connections at 350 MVA until 2030, and distribution firms say no power is available until 2030 — with Amsterdam holding ~70% of national colo. What remains in NL is replacement demand inside operating halls, the most incumbent-locked business there is. Nearly a third of the funnel is a stock share masquerading as an addressable flow.",
+        "category": "boundary",
+        "targetNodes": [
+          "geo.NL"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "National hyperscale ban outside Het Hogeland/Hollands Kroon, Amsterdam's 350 MVA connection ceiling to 2030, and grid operators reporting no power available until 2030",
+            "refs": [
+              "digest:geo-NL#c7",
+              "digest:geo-NL#c8",
+              "digest:geo-NL#c9"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "Amsterdam Metro holds ~70% of Dutch colo capacity, so the caps bind the bulk of the country; NL growth already decelerated to 4.9% CAGR 2021–23 — the flow of new fit-outs where a new PDU vendor gets specified approaches zero in the Year-1 window",
+            "refs": [
+              "digest:geo-NL#c12",
+              "digest:geo-NL#c13"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "NL's share of contestable Year-1 demand is far below its 0.28 installed-capacity share; the geography mix overweights a frozen market and inflates SAM and YAM proportionally",
+            "refs": [
+              "ledger:geo.NL"
+            ]
+          }
+        ],
+        "whyMissable": "The node is triangulated with two independent sources agreeing within ~3% — it looks like a solved cell. The failure mode is not measurement error but metric choice: installed MW is the wrong proxy for a new entrant's reachable demand in a market where new construction is banned and the grid is allocated to 2030.",
+        "expectedObviousness": "medium",
+        "falsifier": "Liander/Stedin announcing material new data-center grid allocations before 2030, or the DDA reporting >80 MW of newly commissioned Dutch colocation capacity within the venture's Year-1.",
+        "likelihood": {
+          "value": 0.55,
+          "rationale": "The ban, the MVA cap and the grid unavailability statements are enacted or on the record for exactly this window; leakage exists via the Eemshaven/Agriport exception zones and private-substation workarounds like the Pure DC 78 MW campus, so the freeze is partial rather than total.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "geo.NL",
+            "op": "set",
+            "value": 0.2,
+            "note": "Contestable NL slice shrinks in absolute terms (frozen new-build flow); deliberately not re-normalizing siblings — this is a smaller slice, not a mix shift"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Adoption status of Amsterdam's umbrella zoning plan and the 350 MVA connection ceiling",
+            "where": "Gemeente Amsterdam planning docket and Dutch Data Center Association policy updates",
+            "threshold": "Plan adopted with the 350 MVA cap intact",
+            "updates": "increases"
+          },
+          {
+            "signal": "National colocation capacity print year-on-year",
+            "where": "DDA 'State of the Dutch Data Centers' annual report",
+            "threshold": "National colo MW flat at ≤950 MW",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Obtain Liander/Stedin/TenneT NL connection-queue data for the data-center category to quantify how much NL fit-out actually proceeds through 2027",
+            "type": "information",
+            "voiNodeId": "geo.NL",
+            "note": "Replaces the stock-based 0.28 with a flow-based reachable share"
+          },
+          {
+            "action": "Concentrate NL go-to-market on the exception zones (Eemshaven, Agriport) and private-substation projects where new builds are still legal and powered",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": null
+          }
+        ]
+      },
+      {
+        "id": "ce-hyperscale-flow-mirage",
+        "title": "Year-1 hyperscale demand lands in Ireland, Sweden and Belgium — the 0.44 CE slice is a global split painted on the wrong map",
+        "narrative": "seg.hyperscale rescales Synergy's global 44–48% capacity share onto Central Europe via a flat 0.91 carve-out. But ~60% of Europe's operational hyperscale self-build capacity sits in Ireland, the Netherlands, Sweden and Belgium — three of the four outside CE-7 entirely, and the fourth banned from new hyperscale construction. The 2026 self-build wave (4.2 GW, +24% YoY) will follow existing land banks and secured grid positions, i.e. mostly outside the venture's geographic scope, while inside CE-7 hyperscalers consume capacity as colo pre-lets procured through global frameworks. The model's largest segment is substantially a demand flow the venture cannot geographically reach in Year 1, and the 'sell to large operators first' strategy is aimed at it.",
+        "category": "model-structure",
+        "targetNodes": [
+          "seg.hyperscale"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "European hyperscale self-build additions of 4.2 GW in 2026 (+24% YoY) concentrate where the operational base already sits: ~60% in Ireland, NL, Sweden, Belgium as of Q4 2025",
+            "refs": [
+              "digest:seg-mix#c12",
+              "digest:seg-mix#c14"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "Within CE-7 the two plausible hyperscale destinations are gated — NL closed to new hyperscale builds outside two municipalities, Frankfurt queued 24–36 months — so CE's realized hyperscale share of the Year-1 demand flow runs well below the flat 0.91 rescale of the global split",
+            "refs": [
+              "digest:geo-NL#c7",
+              "digest:geo-DE#c15",
+              "ledger:seg.hyperscale"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "seg.hyperscale at 0.44 overstates the in-scope segment; the overstatement propagates into the large-operator buyer cell the venture leads with, compounding the channel-mix uncertainty already flagged there",
+            "refs": [
+              "ledger:seg.hyperscale",
+              "ledger:cust.operator-large",
+              "profile:Who is the primary buyer you'll sell through first?"
+            ]
+          }
+        ],
+        "whyMissable": "The node is marked triangulated across multiple Synergy vintages, and the trajectory (41→48%) is genuinely well-evidenced — but every vintage is global. The flat 0.91 carve-out looks like a conservative haircut, so the review instinct is satisfied; nobody asks whether the geography of hyperscale capacity is itself skewed away from CE-7, because the ledger has no node where that question lives.",
+        "expectedObviousness": "low",
+        "falsifier": "A Europe-scoped capacity split (CBRE, Synergy custom cut, or DC Byte) showing CE-7 hyperscale-operated share at or above ~0.40, or two-plus announced 2026 CE-7 hyperscale self-build campuses breaking ground outside the NL exception zones.",
+        "likelihood": {
+          "value": 0.4,
+          "rationale": "The 60% concentration outside CE-7 is a hard Q4-2025 datapoint and the CE gating mechanisms are enacted; uncertainty remains because hyperscalers also occupy CE colo capacity (leased, not self-build), which partially preserves the segment's PDU demand inside scope.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "seg.hyperscale",
+            "op": "set",
+            "value": 0.32,
+            "note": "CE-realized hyperscale slice shrinks in absolute terms; not a mix shift to siblings — the demand flows to geographies outside scope"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "CE-7 share of new European hyperscale self-build MW",
+            "where": "CBRE European data centre quarterly updates; DCNN/DC Byte self-build geography breakdowns",
+            "threshold": "CE-7 receiving <15% of new self-build MW over two quarters",
+            "updates": "increases"
+          },
+          {
+            "signal": "Hyperscaler campus announcements and permitting filings inside CE-7",
+            "where": "Google/Microsoft/AWS EU infrastructure press; German and Polish municipal permitting dockets",
+            "threshold": "Zero new CE-7 self-build campus starts over two consecutive quarters",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Commission a CE-7-scoped segment split (hyperscale/colo/enterprise by MW) as a custom cut from Synergy or DC Byte",
+            "type": "information",
+            "voiNodeId": "seg.hyperscale",
+            "note": "Directly replaces the global 0.91 rescale with regional data"
+          },
+          {
+            "action": "Rebalance the Year-1 pipeline toward colocation and enterprise cells that are physically located in CE-7, deferring the hyperscale motion until regional presence is proven",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": null
+          }
+        ]
+      },
+      {
+        "id": "construction-plateau-lumpy-year1",
+        "title": "Construction has plateaued while the pipeline balloons: Year-1 opens onto a digestion trough the 9% trend averages away",
+        "narrative": "EMEA capacity under construction has plateaued at ~2.5 GW even as the development pipeline swelled 25% to nearly 15 GW — projects are stacking in planning, not converting to builds, because grid, permits and capex phasing bind. PDU purchase orders follow construction fit-out, not pipeline announcements. And with public cloud providers taking 61% of 2025 EMEA take-up, three or four hyperscaler capex committees synchronize the whole cycle: if 2026 is an AI-capex digestion year, CE fit-out starts pause for 2–4 quarters exactly inside the venture's window while the 2030 CAGR remains intact on paper. The 1%-of-SAM Year-1 anchor implicitly assumes an on-trend year; the conversion data says the window may be a below-trend one.",
+        "category": "exogenous",
+        "targetNodes": [
+          "obtainableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "EMEA under-construction capacity plateaued at ~2.5 GW while the pipeline grew >25% to ~15 GW — the planning-to-construction conversion, not demand, is the binding constraint",
+            "refs": [
+              "digest:geo-NL#c3",
+              "digest:geo-NL#c2"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "Public cloud accounts for ~61% of EMEA take-up, so a synchronized capex digestion by a handful of buyers stalls CE fit-out starts for multiple quarters; PDU orders are placed at fit-out, so Year-1 order flow decouples from the 8–10% trend consensus that the model treats as context",
+            "refs": [
+              "digest:geo-DE#c18",
+              "ledger:shape.cagr"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "obtainableFactor's 1%-of-SAM anchor presumes an average demand year; a trough year roughly halves the achievable Year-1 pace without changing TAM or SAM at all",
+            "refs": [
+              "ledger:obtainableFactor"
+            ]
+          }
+        ],
+        "whyMissable": "The CAGR node is triangulated at 8–10% across three publishers and looks solid — but annual lumpiness never appears in a CAGR. The under-construction plateau statistic sits in a real-estate H2 update, not in any PDU market report, and the model has no node representing 'which year of the cycle the launch window lands in'.",
+        "expectedObviousness": "medium",
+        "falsifier": "Cushman & Wakefield / JLL H1-2026 EMEA prints showing under-construction capacity breaking materially above ~2.5 GW with CE construction starts rising, or hyperscaler earnings guidance re-accelerating European data-center capex for 2026.",
+        "likelihood": {
+          "value": 0.35,
+          "rationale": "The plateau and buyer concentration are documented, but 'digestion year lands exactly in the launch window' is a timing call; CBRE simultaneously projects record 20% supply growth in Europe's five largest markets, so evidence points both ways.",
+          "basis": "judgment"
+        },
+        "perturbation": [
+          {
+            "nodeId": "obtainableFactor",
+            "op": "scale",
+            "value": 0.5,
+            "note": "Trough-year order flow: achievable Year-1 pace at half the on-trend anchor"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "European data-center capex commentary and guidance from the top cloud buyers",
+            "where": "Microsoft/Alphabet/Amazon/Meta quarterly earnings calls, EU infrastructure line items",
+            "threshold": "Two or more guiding EU DC capex flat-to-down for 2026",
+            "updates": "increases"
+          },
+          {
+            "signal": "EMEA under-construction capacity metric",
+            "where": "Cushman & Wakefield EMEA data centre update (half-yearly)",
+            "threshold": "UC stuck at ≤2.5 GW for two consecutive prints while pipeline keeps growing",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Build a CE fit-out start-date tracker (construction starts, not announcements) to time the Year-1 sales push against real order windows",
+            "type": "information",
+            "voiNodeId": "obtainableFactor",
+            "note": "Converts the cycle-timing guess into an observed conversion rate"
+          },
+          {
+            "action": "Anchor the Year-1 revenue plan on installed-base retrofit and replacement demand, which is driven by the operating stock rather than the construction cycle",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": null
+          },
+          {
+            "action": "Keep manufacturing and inventory commitments flexible (contract manufacturing, low fixed minimums) to survive a two-quarter order trough without cash strain",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": null
+          }
+        ]
+      }
+    ]
+  }
+}

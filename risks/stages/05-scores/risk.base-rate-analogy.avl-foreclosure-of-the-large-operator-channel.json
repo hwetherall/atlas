@@ -1,0 +1,26 @@
+{
+  "inputsHash": "de7cea9369b795ab1ef3755e879d7efe48c1900f9626c95b4f62cdce752ec47f",
+  "generatedAt": "2026-07-08T05:30:23.823Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (cust.operator-large, 0.40 weight), the procurement instruments (AVLs, frameworks, reference-install prerequisites), named operators for monitoring (Equinix, NTT, Vantage), and a concrete perturbation (exclude the cell for the Year-1 window). Indicators carry numeric thresholds (≥2 of first 5 RFQs, >70% of first 10 conversations)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "Goes beyond 'the 0.40 might be soft' by naming a NEW structural reason: procurement machinery no ledger node represents, plus the finding that the 0.40 rests on one supplier's order mix, not a channel split. A founder knows AVLs exist, so full foreclosure-as-framing is sharp but the general 'big buyers are hard to sell into' skeleton is on most competent lists."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at each hop (AVL prerequisites → cannot enter tenders → cell converts to zero in-window), and each link is independently plausible. The leap from 'qualification barriers exist' to 'structurally closed for the entire window' is the one arrow a hostile partner can push on, and the rationale itself concedes it is partly inferential."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Multiple independent sources corroborate the key premises: framework procurement (Find a Tender award), hyperscaler spec regimes (OCP/Olympus), and the OEM/white-label reference class (Moduledge), with the likelihood rationale honestly flagging that full-window foreclosure was not directly evidenced. Falls short of 4 because the load-bearing 'foreclosed, not slow' claim has no direct source and the falsifier was not tested."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes next-two-quarter sequencing: the strategic mitigation re-routes Year-1 GTM through OEM/integrator channels and demotes operator AVL entry to Year 2. Both indicators (RFQ prequalification clauses, CRM channel mix of first 10 conversations) are monitorable now with stated thresholds."
+    }
+  }
+}

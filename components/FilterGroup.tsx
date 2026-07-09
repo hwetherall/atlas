@@ -34,7 +34,7 @@ export default function FilterGroup({
         aria-checked={on}
         onClick={() => onToggle(value)}
         className={`rounded-md border transition-colors ${
-          compact ? "px-2 py-1 text-xs" : "px-3 py-1.5 text-sm"
+          compact ? "px-1.5 py-0.5 text-[11px]" : "px-3 py-1.5 text-sm"
         } ${
           on
             ? "border-accent/30 bg-accent-wash text-accent-ink"
@@ -51,7 +51,7 @@ export default function FilterGroup({
       <div
         role="group"
         aria-label={DIMENSION_LABELS[dimension]}
-        className="flex flex-wrap items-center gap-1"
+        className="flex flex-wrap items-center gap-1 gap-y-0.5"
       >
         {showLabel ? (
           <span className="mr-0.5 text-[10px] font-medium uppercase tracking-wide text-ink-faint">

@@ -1,0 +1,25 @@
+{
+  "inputsHash": "4143aaa8aeec96b6aa08268d77d5d190bacec88e68438c6cf414fb549a15ee5a",
+  "generatedAt": "2026-07-08T18:17:35.996Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "Procurement records or channel-mix data from 2–3 large operators showing what share of their 2026–27 PDU spend (including AI-density halls) is tendered as discrete, operator-selected direct-purchase lines versus embedded in integrator/incumbent rack deals. This is a purchasable/knowable fact about today's channel structure, not a future event.",
+    "proposedCorrection": {
+      "nodeId": "cust.operator-large",
+      "value": 0.28,
+      "low": 0.2,
+      "high": 0.36,
+      "rationale": "If a material share of large-operator AI-density capacity is bought as integrated racks with PDU slots locked to incumbents, the reachable direct-sale pool is smaller than the 0.40 derived from 'large operators buy direct.'"
+    },
+    "researchQueries": [
+      {
+        "query": "Schneider-Foxconn and Wiwynn/Dell integrated AI rack deals: what fraction of hyperscale/large-operator PDU procurement in 2026 is embedded in integrator rack contracts vs. operator-selected direct tenders",
+        "kind": "confirming"
+      },
+      {
+        "query": "Recent 2026-27 large-operator and hyperscale tenders (e.g., Jülich, AWS, Microsoft, Equinix) listing PDUs as discrete operator-selected line items open to non-incumbent vendors for AI-density halls",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

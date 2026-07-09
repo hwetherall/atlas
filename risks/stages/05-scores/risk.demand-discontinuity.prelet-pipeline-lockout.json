@@ -1,0 +1,26 @@
+{
+  "inputsHash": "522725742bc5e1fe2057793221b2a1ab4e3041241e968e37ac1009627015eca6",
+  "generatedAt": "2026-07-08T05:30:23.826Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (obtainableFactor), quantified actors and instruments (83% pre-let pipeline, 6.3% FLAP-D vacancy, CR3 ~0.55 frameworks, 12–24 month spec lead), a concrete perturbation (set to 0.008), and dated windows (2026–27 fit-out deliveries). Indicators point to specific venues (TED, JLL semi-annual, Vertiv/Schneider calls) with numeric thresholds."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The core reframe — share of SAM ≠ share of the orderable flow, because pre-let builds lock the PDU BOM at design/tender before launch — is a genuinely new reason the 3% band fails, and whyMissable correctly explains why '3% looks humble' hides it. Docked one point because the narrative concedes the model's own crossCheck already surfaced the 0.1%–0.001% hardware-entrant analogues, so the direction of the concern was partly on the table."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at every hop (digest:geo-DE, ledger:cust.operator-large, ledger:shape.cr3, ledger:obtainableFactor) and each link is independently plausible. The critical hop — that pre-let real-estate commitment entails PDU vendor lock-in at tender — rests on asserted industry practice rather than a cited procurement-timing source, and the mitigations/rationale implicitly admit this gap."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The trigger (83% pre-let, 6.3% vacancy) has JLL plus two independent corroborators, and the likelihood rationale is honest that 'no direct evidence quantifies the Year-1 orderable residue.' The load-bearing procurement-lockout premise leans on a generic supply-agreements piece and a weakly relevant Huawei anecdote, so the key premise falls short of two independent corroborations."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The perturbation cuts obtainableFactor from 3% to 0.8%, which reprices the entire Year-1 plan, and the strategic mitigation (re-aim at replacement/retrofit and white-space) changes go-to-market sequencing within two quarters. All three indicators are concretely monitorable via TED, JLL's semi-annual report, and incumbent earnings calls."
+    }
+  }
+}

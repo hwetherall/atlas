@@ -1,0 +1,452 @@
+{
+  "inputsHash": "5e4940ba94f6c935336b1adee31499eb8f1f42e5189ed68fd6162c2e51b60772",
+  "generatedAt": "2026-07-08T20:01:48.121Z",
+  "data": {
+    "hypotheses": [
+      {
+        "id": "framework-agreements-close-first-buyer",
+        "title": "The declared 'large operators' beachhead is pre-signed: global framework agreements close the 40% buyer cell before the first sales call",
+        "narrative": "The venture's own profile names large operators as the first buyer, and the ledger prices that cell at 0.40 of PDU spend with a comfortable 0.33–0.47 band. But the band models uncertainty about SIZE, not AVAILABILITY. The procurement record shows large operators buying rack power through multi-year global framework agreements and all-in integrated contracts (the Digital Realty–Schneider $373M framework pattern; Iren's all-in Dell deal; Jülich bundling PDU into a single IT line item). A framework agreement is not a competitor to out-sell — it is a contract that removes the tender from the market for its whole term. If a majority of the 0.40 cell is framework-governed, the entrant's declared beachhead is contractually closed for exactly its Year-1 window, and the YAM is silently re-based onto the slower mid-market and channel cells.",
+        "category": "competitive",
+        "targetNodes": [
+          "cust.operator-large",
+          "obtainableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "CE large operators renew or extend multi-year global rack-power framework agreements with Schneider/Vertiv/Eaton — the same vendors whose named major customers (Equinix, Telefonica, Vodafone) are the CE operator base",
+            "refs": [
+              "digest:cust-mix#c12",
+              "digest:cr3-vendors#c1",
+              "ledger:cust.operator-large"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "PDU line items ride the framework or the integrated OEM package; no standalone, contestable RFQ ever reaches the market for that operator's builds during the term — the entrant's pre-launch, first-12-months window (profile: Stage) coincides with mid-term, not renewal, for most frameworks",
+            "refs": [
+              "profile:Stage",
+              "ledger:cust.operator-large",
+              "digest:cust-mix#c0"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The addressable fraction of cust.operator-large collapses from 0.40 to roughly the framework-gap residual (~0.20); because the ledger's four channel values are unsourced internal estimates, nothing in the model currently resists this collapse",
+            "refs": [
+              "ledger:cust.operator-large",
+              "ledger:obtainableFactor",
+              "digest:cust-mix#c0"
+            ]
+          }
+        ],
+        "whyMissable": "'Large operators buy direct' reads as good news on the founder's risk list — direct means no channel margin and a nameable account list. The surface appearance of reachability (you know exactly who to call) hides the contract structure: direct purchasing at that scale is framework purchasing, and the sensitivity band on the node models estimation error, not contractual foreclosure.",
+        "expectedObviousness": "medium",
+        "falsifier": "Two or more CE large operators (Equinix/NTT/Data4-class) issuing standalone, multi-vendor rack-PDU RFQs open to non-framework vendors within the next 12 months.",
+        "likelihood": {
+          "value": 0.5,
+          "rationale": "Multiple documented procurement artifacts (Digital Realty–Schneider framework, Iren all-in contract, Jülich bundled line item) all point the same direction; what is uncertain is the fraction of CE operator spend covered, not the mechanism's existence.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "cust.operator-large",
+            "op": "set",
+            "value": 0.2,
+            "note": "Framework-governed spend removed from the addressable large-operator cell; residual is framework gaps, expiries and carve-outs"
+          },
+          {
+            "nodeId": "obtainableFactor",
+            "op": "scale",
+            "value": 0.7,
+            "note": "Year-1 pace slows further because the remaining open demand sits in channels the venture did not plan to enter first"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Global or EMEA rack-power framework renewals announced by Schneider/Vertiv/Eaton with named CE operators",
+            "where": "Schneider and Vertiv press rooms; DataCenterDynamics procurement coverage; operator annual reports (supplier commitments notes)",
+            "threshold": "Any CE major renewing a ≥3-year rack-power framework during the venture's launch year",
+            "updates": "increases"
+          },
+          {
+            "signal": "Standalone rack-PDU lots appearing in European public/colo tenders",
+            "where": "TED (tenders.europa.eu) CPV codes for power distribution equipment; national procurement portals (DE: bund.de vergabe)",
+            "threshold": "Fewer than 2 standalone, multi-vendor PDU lots per quarter across CE-7",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Structured interviews with 3 CE operator procurement leads specifically on framework coverage, term dates, and second-source carve-out clauses",
+            "type": "information",
+            "voiNodeId": "cust.operator-large",
+            "note": "Replaces the unsourced 0.40 with a framework-adjusted addressable share and yields an expiry calendar"
+          },
+          {
+            "action": "Build the Year-1 account plan around framework expiry dates and approved-second-source slots rather than open-market wins",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Frameworks typically permit qualified alternates; entering as second source converts foreclosure into a wedge"
+          },
+          {
+            "action": "Negotiate pilot clauses with operators' innovation/energy teams that sit outside procurement frameworks (retrofit metering pilots)",
+            "type": "contractual",
+            "voiNodeId": null,
+            "note": "Pilot spend often bypasses framework governance thresholds"
+          }
+        ]
+      },
+      {
+        "id": "distributor-line-review-lockout",
+        "title": "Annual line reviews plus Legrand's dual-brand grip close the distributor cell mid-cycle — the entrant arrives with the shelf already allocated",
+        "narrative": "The 0.13 distributor cell looks like the easy channel: no framework agreements, documented master-distributor models, even explicit private-label options for distributors in buyer's guides. But distribution in this category runs on annual line reviews with exclusivity and margin-program terms, and the intelligent-PDU shelf specifically is consolidated — Legrand owns BOTH Raritan and Server Technology, the two intelligent-PDU specialist brands, giving one vendor two slots on every line card and strong leverage in review negotiations. A pre-launch entrant hits the market mid-cycle: even a willing distributor cannot onboard a conflicting line until the next review, which lands at or after the end of the venture's Year-1 window. The cell is not small — for the YAM horizon it is closed.",
+        "category": "competitive",
+        "targetNodes": [
+          "cust.distributor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Master-distributor structures (the MaxPower pattern: one distributor supplying all reseller partners) concentrate line-card decisions into few annual review events, and Legrand's ownership of both Raritan and Server Technology means the intelligent-PDU slots on those line cards are already double-occupied by one incumbent",
+            "refs": [
+              "digest:cust-mix#c7",
+              "digest:cr3-vendors#c4",
+              "ledger:cust.distributor"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "The venture launches mid-review-cycle (profile: pre-launch, first 12 months); the documented private-label route exists but requires certifications, stock commitments and margin programs a Year-1 entrant cannot yet fund, so no CE distributor can list the product inside the YAM window",
+            "refs": [
+              "profile:Stage",
+              "digest:cust-mix#c13",
+              "ledger:cust.distributor"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "cust.distributor (0.13, maturity needs-source, zero corroborating evidence in the ledger) contributes nothing to Year-1 reachable demand; the funnel silently overstates the channel mix available inside the obtainable window",
+            "refs": [
+              "ledger:cust.distributor",
+              "ledger:obtainableFactor"
+            ]
+          }
+        ],
+        "whyMissable": "Distribution looks like the LOW-commitment channel — 'anyone can get listed eventually' — and the ledger's 0.13 looks too small to interrogate. The hidden variable is timing: line reviews are annual gates, so a cell that is genuinely open in steady state is closed for precisely the 12-month window the YAM measures. Founders model channel share, not channel calendar.",
+        "expectedObviousness": "low",
+        "falsifier": "A named CE electrical/IT distributor (Rexel, Sonepar, Also-class) confirming in writing that a new intelligent-PDU line can be onboarded within two quarters without waiting for the annual line review or triggering an exclusivity conflict.",
+        "likelihood": {
+          "value": 0.45,
+          "rationale": "Annual line reviews with incumbency advantages are the documented norm in electrical distribution (base-rate), and the Legrand dual-brand consolidation of the intelligent-PDU shelf is a hard fact; the open question is how rigidly CE distributors enforce review timing for a differentiated product.",
+          "basis": "base-rate"
+        },
+        "perturbation": [
+          {
+            "nodeId": "cust.distributor",
+            "op": "exclude",
+            "value": null,
+            "note": "Distributor cell unavailable to the venture within the Year-1 horizon — foreclosed by review-cycle timing and shelf exclusivity, not shrunk"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Intelligent-PDU brands listed on CE distributor line cards and webshops",
+            "where": "Rexel Germany / Sonepar online catalogs; Also and Ingram Micro DC-infrastructure category pages",
+            "threshold": "Raritan + Server Technology + APC occupying all intelligent-PDU listings with no non-incumbent brand added over two quarters",
+            "updates": "increases"
+          },
+          {
+            "signal": "Legrand channel-program announcements tightening intelligent-PDU distribution terms",
+            "where": "Legrand investor communications and EMEA partner-program pages; distribution trade press (ChannelPartner.de)",
+            "threshold": "Any announced exclusivity, rebate-tier or dual-brand bundling program covering Raritan/Server Technology in EMEA",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Commission a channel audit: map line-review dates, exclusivity terms and private-label requirements across the top 5 CE electrical/IT distributors",
+            "type": "information",
+            "voiNodeId": "cust.distributor",
+            "note": "Turns an assumed 0.13 cell into a dated calendar of when (if ever) it opens"
+          },
+          {
+            "action": "Enter via a distributor's private-label program (documented option) rather than as a branded line — sidesteps the brand-slot conflict",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Buyer's-guide evidence shows distributors actively seek OEM/private-label intelligent-PDU options"
+          },
+          {
+            "action": "Time distributor outreach to the review calendar and pre-book slots for Year-2 rather than burning Year-1 sales capacity on a closed gate",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": null
+          }
+        ]
+      },
+      {
+        "id": "bundle-pricing-kills-bakeoffs",
+        "title": "Near-zero-margin PDU bundling inside power+cooling packages means the contestable Year-1 pool is below the model's own 0.5% floor",
+        "narrative": "The obtainableFactor band (0.5–3%) assumes there exists a pool of standalone rack-PDU purchase decisions a new entrant can compete for. But the same incumbents sell the $23B power and $26B cooling packages those PDUs plug into, and the procurement record shows PDUs travelling as embedded line items inside those packages — where the incumbent can price the PDU at near-zero margin because the busway, UPS and cooling carry the deal. The only standalone PDU procurements surfaced by research were tiny ($58K–$130K), had 1–2 bidders, and one was explicitly sole-sourced. Meanwhile the 1%-of-SAM anchor itself is generic startup folklore: the sources define SOM as a 1–3 or 3–5 year cumulative window, and the closest worked hardware comparable runs at ~0.1% of SAM. Both legs of the 1% — the benchmark and the tender evidence — point below the band, not inside it.",
+        "category": "execution",
+        "targetNodes": [
+          "obtainableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Incumbents holding both the power ($23B) and cooling ($26B) packages bundle intelligent PDUs into integrated deals, cross-subsidising PDU price to zero incremental margin — no bake-off is ever held on the PDU line",
+            "refs": [
+              "digest:cust-mix#c2",
+              "digest:cust-mix#c3",
+              "ledger:shape.cr3"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "The residual standalone-tender pool is small and often non-contestable (sole-sourced, 1–2 bidders), while the 1% Year-1 benchmark the node anchors on is defined by its own sources as a multi-year cumulative figure — Prospeo frames SOM as 1–3 years, Wise as 3–5, and TryBuildCo's worked example lands at ~0.1% of SAM",
+            "refs": [
+              "digest:obtainable-benchmark#c1",
+              "digest:obtainable-benchmark#c6",
+              "digest:obtainable-benchmark#c7"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "True Year-1 obtainable share of SAM falls to ~0.3% — below the band's 0.5% floor — because the denominator (SAM) includes bundled demand that never becomes a contestable decision, and the Tractian cross-check that supported ≤1% is itself unverified against its source ($200K starting revenue, not $1.2M first-year)",
+            "refs": [
+              "ledger:obtainableFactor",
+              "digest:obtainable-benchmark#c10",
+              "digest:obtainable-benchmark#c0"
+            ]
+          }
+        ],
+        "whyMissable": "The founder's team already 'corrected' this node once (3%→1%) and the band looks conservative, so it reads as the model's most stress-tested number. The hidden failure is compositional: the band debates WHICH percentage of SAM is winnable, while the bundling mechanism removes demand from the contestable denominator entirely — a smaller pie of decisions, not a smaller slice of spend.",
+        "expectedObviousness": "medium",
+        "falsifier": "A logged pipeline of ≥5 standalone, multi-vendor rack-PDU tenders in CE-7, each ≥€250K, posted within any 6-month window, in which a non-incumbent vendor is qualified to bid.",
+        "likelihood": {
+          "value": 0.4,
+          "rationale": "The bundling evidence (integrated contracts, sole-sourced standalone bids) and the benchmark-window semantics both push the same direction, but retrofit and colo tenant purchases do generate some genuinely standalone PDU decisions that the tender search may have under-sampled.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "obtainableFactor",
+            "op": "set",
+            "value": 0.003,
+            "note": "Contestable-decision pool shrinks the effective Year-1 capture below the modeled 0.5% floor"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Ratio of bundled vs standalone rack-PDU procurement in published CE tenders",
+            "where": "TED (tenders.europa.eu) — compare PDU-specific CPV lots vs PDU lines inside integrated electrical-fit-out lots",
+            "threshold": "≥80% of PDU volume appearing only inside integrated lots over two quarters",
+            "updates": "increases"
+          },
+          {
+            "signal": "Incumbent commentary on solutions/portfolio attach rates for rack power",
+            "where": "Vertiv and Schneider quarterly earnings calls; Schneider capital markets day materials",
+            "threshold": "Explicit statements that rack PDU is sold predominantly as part of integrated rack/power/cooling solutions",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Build a bottom-up contestable-tender census for CE-7 (12 months of TED + colo tenant RFQs) to replace the generic 1% benchmark with a counted pipeline",
+            "type": "information",
+            "voiNodeId": "obtainableFactor",
+            "note": "Directly converts the node from folklore benchmark to observed decision volume"
+          },
+          {
+            "action": "Target the purchase moments bundles don't reach: colo TENANT-side PDU purchases and brownfield retrofit/metering upgrades, where no incumbent package exists to hide the PDU inside",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Retrofit demand is decision-rich even when new-build demand is bundled"
+          },
+          {
+            "action": "Price and package for attach to third-party rack integrators' bundles rather than head-to-head against incumbent bundles",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": null
+          }
+        ]
+      },
+      {
+        "id": "oem-cell-two-sided-squeeze",
+        "title": "The OEM/integrator cell is squeezed shut from both sides: brand-spec deals go to incumbent ecosystems, white-label seats go to scale ODMs",
+        "narrative": "The 0.22 OEM/integrator cell looks like the natural entry channel for an industrial entrant — and superficially the evidence agrees, because BOTH routes into it are documented: integrators buy branded PDUs, and buyer's guides advertise OEM/private-label options. The trap is that each route is closed for a different reason. Every integrator case study found shows selection of branded incumbents on certification, DCIM compatibility and support ecosystems — assets a Year-1 entrant does not have. The white-label seats, meanwhile, are held by Asian ODMs (the Digipower pattern) competing on a manufacturing cost curve a Central European industrial entrant cannot match. The cell's 0.22 value is an unsourced internal estimate with an addressability premise no source supports; for this venture the genuinely open fraction may be a third of the modeled cell.",
+        "category": "competitive",
+        "targetNodes": [
+          "cust.oem"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Rack integrators select PDU brands on features, certification and DCIM-ecosystem compatibility — the documented integrator behavior favors incumbents whose monitoring stacks are already deployed — while the private-label demand that does exist is served by dedicated OEM/ODM manufacturers with global scale",
+            "refs": [
+              "digest:cust-mix#c14",
+              "digest:cust-mix#c13",
+              "ledger:cust.oem"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "An industrial entrant sits in the dead zone between the two: no installed DCIM/support ecosystem to win brand-spec designs (those accrue to the Legrand/Raritan/Server Technology axis and the top-5 vendor set) and no ODM cost position to win price-spec white-label seats",
+            "refs": [
+              "digest:cr3-vendors#c4",
+              "digest:cr3-vendors#c1",
+              "profile:Company"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "Addressable share of cust.oem falls from 0.22 to ~0.08 (the fraction of integrator demand that is regional, spec-flexible, and not price-anchored to ODM quotes); the funnel's channel mix shifts further onto cells that are themselves contested",
+            "refs": [
+              "ledger:cust.oem",
+              "ledger:cust.operator-large"
+            ]
+          }
+        ],
+        "whyMissable": "The cell appears doubly open — 'we can sell branded OR white-label' — which is exactly why it survives founder scrutiny. Two documented routes in feels like redundancy; it is actually two separately-owned gates, and the evidence that each gate is held (integrator brand loyalty; ODM incumbency) sits in different source types that never appear on the same page of a risk review.",
+        "expectedObviousness": "low",
+        "falsifier": "One CE rack integrator or OEM signing a design-in or white-label agreement with the entrant, or a documented integrator RFQ in which a non-incumbent, non-ODM intelligent PDU is evaluated on merit within the launch year.",
+        "likelihood": {
+          "value": 0.4,
+          "rationale": "Every retrieved integrator case study shows incumbent-brand selection and no source quantifies an open OEM share, but the sample of case studies is small and integrator behavior for differentiated intelligent-PDU features is untested — judgment on how far the pattern generalizes.",
+          "basis": "judgment"
+        },
+        "perturbation": [
+          {
+            "nodeId": "cust.oem",
+            "op": "set",
+            "value": 0.08,
+            "note": "Only the regional, spec-flexible integrator fraction remains addressable; brand-spec and ODM-price fractions foreclosed"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "PDU brands named in European integrator/turnkey rack case studies and reference designs",
+            "where": "Vertiv, Legrand, Rittal and Schleifenbauer project case-study pages; DataCenterDynamics build coverage",
+            "threshold": "≥3 consecutive quarters of new CE integrator projects specifying only incumbent-brand PDUs",
+            "updates": "increases"
+          },
+          {
+            "signal": "ODM intelligent-PDU pricing and OEM-program activity",
+            "where": "Digipower and comparable ODM price lists / OEM program pages; Computex and Data Centre World exhibitor announcements",
+            "threshold": "ODM per-outlet-managed PDU quotes ≥30% below the entrant's achievable unit cost",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Run a design-in probe with 3 CE rack integrators: submit the product to their qualification process and log the actual selection criteria and thresholds",
+            "type": "information",
+            "voiNodeId": "cust.oem",
+            "note": "Replaces the unsourced 0.22 addressability premise with observed gate criteria"
+          },
+          {
+            "action": "Differentiate on the one axis neither incumbents nor ODMs own regionally: MID-compliant billing-grade metering and local engineering support for CE colo sub-metering requirements",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "A regulatory-technical feature can reopen brand-spec gates that price and ecosystem cannot"
+          },
+          {
+            "action": "Offer integrators a co-branded (not white-label) program with shared support obligations, splitting the difference between the two closed routes",
+            "type": "contractual",
+            "voiNodeId": null,
+            "note": null
+          }
+        ]
+      },
+      {
+        "id": "intelligent-pdu-concentration-shrinks-serviceable",
+        "title": "In the intelligent-PDU sub-market the venture actually plays in, Legrand's dual acquisition plus DCIM spec-lock makes concentration — and the serviceable haircut — worse than the headline",
+        "narrative": "shape.cr3 = 0.55 is computed for the whole rack-PDU category, and serviceableFactor's 0.55 haircut is justified purely on regulatory reach (EN 50600, ecodesign, CE/TÜV). Neither number describes the venture's actual product market: INTELLIGENT PDUs, where Legrand owns both specialist brands (Raritan and Server Technology), Vertiv holds Geist, and Schneider leads the category — so the intelligent sub-segment is materially more concentrated than the blended 0.55 suggests. Concentration in intelligent PDUs is not just competitive pressure; it is a serviceability constraint, because intelligent-PDU purchases are spec-locked to DCIM/monitoring ecosystems and vendor-certified compatibility lists. Demand written into specs as 'Raritan-compatible' or 'certified for our DCIM' is not reachable at any price. The 0.55 serviceableFactor, built only on regulatory logic, silently assumes all regulatory-clear demand is spec-open — the one assumption the sub-market's ownership structure contradicts.",
+        "category": "model-structure",
+        "targetNodes": [
+          "serviceableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Legrand consolidates the intelligent-PDU specialist brands (Raritan AND Server Technology) while Vertiv holds Geist — the intelligent sub-segment's effective concentration exceeds the blended rack-PDU CR3 of 0.55, which is itself extrapolated from a single 15.8% datapoint",
+            "refs": [
+              "digest:cr3-vendors#c4",
+              "digest:cr3-vendors#c0",
+              "ledger:shape.cr3"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "Intelligent-PDU procurement is written against DCIM/monitoring ecosystems: buyer's guides treat DCIM compatibility as a primary selection criterion and the intelligent-PDU sub-market carries only qualitative 'Medium' concentration labels with no share table (Omdia's vendor-share data is paywalled) — so the spec-locked fraction of demand is real but unmeasured",
+            "refs": [
+              "digest:cust-mix#c13",
+              "digest:cr3-vendors#c12",
+              "digest:cr3-vendors#c10"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "serviceableFactor's 0.55, derived solely from the regulatory stack, omits an ecosystem-compatibility haircut; applying it drops effective serviceable share toward 0.40 — the venture's SAM overstates reachable demand even where every certificate is in hand",
+            "refs": [
+              "ledger:serviceableFactor",
+              "profile:Product"
+            ]
+          }
+        ],
+        "whyMissable": "The team has a serviceable haircut AND a concentration figure, so both boxes look ticked. What hides the risk is scope mismatch: the CR3 describes a broader category than the product, the serviceableFactor describes a narrower constraint (regulation) than reality, and no ledger node connects them — the DCIM spec-lock falls exactly into the seam between two nodes that each look individually handled.",
+        "expectedObviousness": "medium",
+        "falsifier": "The Omdia rack-PDU vendor-share table showing intelligent-PDU top-3 combined share below ~50%, or ≥3 CE operator/colo PDU specifications requiring only open protocols (SNMP/Redfish/Modbus) with no vendor-certified DCIM compatibility list.",
+        "likelihood": {
+          "value": 0.35,
+          "rationale": "The ownership consolidation is documented fact and DCIM compatibility is a documented selection criterion, but the actual spec-locked fraction of CE demand is unmeasured — the perturbation size rests on judgment over hard shares, which the paywalled Omdia table could resolve either way.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "serviceableFactor",
+            "op": "set",
+            "value": 0.4,
+            "note": "Regulatory-clear but DCIM/spec-locked demand removed from the serviceable share"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "DCIM/compatibility language in CE colo and enterprise PDU specifications",
+            "where": "TED tender technical annexes; colo operator technical-standards documents (Equinix/NTT design guides); Data Centre World CE conference specs sessions",
+            "threshold": "Majority of sampled specs naming vendor-certified DCIM compatibility rather than open protocols",
+            "updates": "increases"
+          },
+          {
+            "signal": "Legrand intelligent-PDU portfolio integration moves (Raritan/Server Technology product-line merges, unified DCIM certification programs)",
+            "where": "Legrand investor day materials; Raritan and Server Technology product announcements",
+            "threshold": "Announcement of a unified compatibility/certification program spanning both brands",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Purchase the Omdia Rack PDU Annual Market Analysis (2024 base, vendor shares) to measure intelligent-PDU concentration directly",
+            "type": "information",
+            "voiNodeId": "serviceableFactor",
+            "note": "The one named source that converts the qualitative 'Medium' label into shares, sizing the spec-locked haircut"
+          },
+          {
+            "action": "Engineer and certify against open standards (Redfish/SNMP) and the top two third-party DCIM platforms before launch, converting spec-locked demand into reachable demand",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Compatibility certification is a buyable asset, unlike incumbent install base"
+          },
+          {
+            "action": "Sample 20 recent CE PDU specifications and count spec-open vs vendor-locked language to bound the ecosystem haircut empirically",
+            "type": "information",
+            "voiNodeId": "serviceableFactor",
+            "note": "Cheap bottom-up cross-check the ledger itself flags as missing for this node"
+          }
+        ]
+      }
+    ]
+  }
+}

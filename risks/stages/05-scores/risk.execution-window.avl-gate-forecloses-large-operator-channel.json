@@ -1,0 +1,26 @@
+{
+  "inputsHash": "f68b60f7d663642515094ddf5493b652500d103bdfa030d17ef5efd471c7f747",
+  "generatedAt": "2026-07-08T05:30:23.825Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names ledger nodes (cust.operator-large, obtainableFactor, cust.distributor, cust.oem), exact mix values (0.40 / 0.13 / 0.22), named incumbents and accounts (Vertiv, Equinix, Telefonica, Vodafone), and a dated window (Year-1 clock). The perturbation is a precise op (exclude) rather than a vague haircut."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The 0.40 slice is in the model, but the risk supplies a NEW reason: the ledger has no time-to-qualify node and the mix figure 'rests on a misread company-level order stat', so no sensitivity band exposes it. Loses a point because 'large-account procurement is slow for new vendors' is on most competent founders' lists; the novel part is the exclude-vs-shrink framing."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Each hop (AVL prerequisites → mix stat encodes no qualification clock → Year-1 exclusion) carries refs and would mostly survive hostile 'why?' probing. The weakest link is the 'historically cannot open in 12 months' premise, which is asserted from norms rather than shown for CE operator AVLs specifically."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "Sources are real but tangential to the load-bearing premise: the Vertiv Supplier Quality Manual governs Vertiv's own component suppliers, not operators qualifying PDU vendors, and the TFTIOR matrix covers regulatory certification in India/Brazil, not AVL onboarding. Credit for honesty — a contradicting ServerTech quote is included and the likelihood rationale concedes no direct evidence of the specific Year-1 foreclosure."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly re-sequences the next two quarters (distributor/OEM-first GTM, pilot MOU, 3 procurement interviews with a named VOI node), and the falsifier is time-boxed to two quarters. Indicators point to concrete monitorable venues (supplier-registration portals, TED tenders) with thresholds."
+    }
+  }
+}

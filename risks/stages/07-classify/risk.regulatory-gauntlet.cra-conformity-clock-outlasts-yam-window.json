@@ -1,0 +1,10 @@
+{
+  "inputsHash": "91ec6d978f26dfc343e0a65de7564820d00d4dd505a7ae333b38c075ea9fee70",
+  "generatedAt": "2026-07-08T21:52:34.036Z",
+  "data": {
+    "resolution": "risk",
+    "settleTest": "Only the actual 2026 tender behavior settles this — whether EU data-center buyers in fact impose binding CRA/SBOM shortlist clauses before the Sept 2026 reporting date and Dec 2027 full conformity, and whether that pace pushes the entrant off enough shortlists to cut Year-1 share below 1%. The regulatory dates are known today, but whether buyers actually gate 2026 bids on CRA-readiness (versus accepting a compliance roadmap) is a demand-response that unfolds over the next 12-24 months.",
+    "proposedCorrection": null,
+    "researchQueries": []
+  }
+}

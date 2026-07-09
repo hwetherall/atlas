@@ -1,0 +1,26 @@
+{
+  "inputsHash": "50b677cf4e123828bd2f3e8575b2944789f01654f2770c768a6d66530d3fc963",
+  "generatedAt": "2026-07-08T21:42:37.291Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names exact ledger nodes and values (cust.operator-large 0.40 → 0.2, cust.oem → 0.33), specific actors and instruments (Schneider/DLR $373M SCA, Vertiv custom-PDU programs, Digipower ODM), and a concrete falsifier (3 CE operators, 2026 fit-outs)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "Goes beyond 'the 0.40 might be soft' by naming a NEW reason: the cell is a consumption share, not a channel split, and the 'needs-source' flag disguises a reachability problem as a precision problem. Not a full 4 because 'big operators are hard for new entrants to sell into' is on many founders' lists in some form."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at each hop, and the propagation step correctly dissects the derivation ('30% of one supplier's orders measures DC exposure, not who signs the PO'). The final quantification — half the cell foreclosed — is asserted rather than derived, which a hostile partner would attack."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Multiple independent sources corroborate framework/bundle procurement (Schneider-DLR SCA, DCF analysis, Getek/Panduit/Vertiv channel pages), and contradicting stances (DLR's multi-vendor clause, Schleifenbauer direct sales) are honestly logged in the likelihood rationale. Falls short of 4 because the marquee SCAs are US deals covering UPS/switchgear, not rack PDUs in CE — the key premise is corroborated by adjacent, not direct, evidence."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly attacks the profile's declared first buyer and prescribes near-term resequencing (OEM/integrator as primary Year-1 route, second-source framework slots) plus a cheap VOI interview mitigation. Indicators are monitorable in named venues (Schneider/Vertiv earnings calls, operator procurement releases) with stated thresholds."
+    }
+  }
+}

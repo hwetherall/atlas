@@ -1,0 +1,26 @@
+{
+  "inputsHash": "6b1ed51d522c3bebf3fdcc25e967881cfa7e82fd7b46ba2c9276048b90109da6",
+  "generatedAt": "2026-07-08T05:30:23.826Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact ledger cell (cust.oem, 0.22), specific actors (Digipower, GETEKnet), and quantified indicator thresholds (ODM ASPs ≥30% below at 500+ units, 2-of-3 RFQs price-decided). The falsifier is similarly concrete (~10–15% landing gap or a feature-based design win)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "Goes beyond 'the 0.22 might be high' by supplying a new structural reason: the whyMissable inversion that 'OEM/integrator' reads as home turf to a manufacturer while the channel is actually ODM cost-locked. Not a full 4 because a founder who studied competitive sourcing in this segment would likely have Asian ODM white-label pressure somewhere on their list."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three referenced hops (ODM channel structure → BOM-cost award logic → SAM overstatement) each cite corpus/ledger nodes, and the propagation step honestly flags channel opacity. The load-bearing middle claim — 'RFQs are decided on BOM cost before any intelligence feature is evaluated' — is asserted rather than evidenced, and the risk's own stances (Vertiv ETO, Panduit award) show a hostile partner could break that arrow."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "≥2 independent sources (GETEKnet, Digipower) corroborate the ODM white-label trigger, and the likelihood rationale honestly incorporates contradicting evidence (Vertiv custom, Panduit) with a revised 0.52. Not a 4 because the key foreclosure premise is only inferred — the white-label share stat is about servers not PDUs, and the narrative's 'never invited' rhetoric overstates what the evidence and its own 0.52 support."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The perturbation (exclude cust.oem) directly changes SAM and any GTM ramp counting integrator volume, and the information mitigation (ODM teardown/landed-cost benchmark before booking OEM revenue) is an immediate next-quarter action. Both indicators are monitorable via named external sources with explicit thresholds."
+    }
+  }
+}

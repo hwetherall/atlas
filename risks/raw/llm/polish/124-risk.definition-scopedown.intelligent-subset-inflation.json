@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "590636a20ade2f09d7ec91a12e05835990f50a27bf1eeacc4fe6e71ac8e6f281",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are the editor on a risk report. Rewrite the prose fields of one risk to the target register below. You are rewriting WORDS, not content: keep every load-bearing fact, name, number and date; never add claims; keep each mechanism step's \"step\" type and copy its \"refs\" array VERBATIM.\n\nYou are writing for a busy executive who will read 27 of these in one sitting.\nRules:\n- TITLE: one idea, ≤ 75 characters, plain words. Name the thing and the\n  direction it moves. Banned words: scope-down, denominator, normalization,\n  launder, phantom, semantics, conflate, misallocation, apportion.\n- NARRATIVE: 2–4 short sentences, in this shape: (1) what the model assumes,\n  (2) what we found instead — keep the single most important number,\n  (3) what it means for the Year-1 number. At most one number per sentence.\n  No parentheticals, no em-dash chains, no nested clauses.\n- MECHANISM steps: ≤ 12 words each, plain verbs, no jargon.\n- WHY-MISSABLE and FALSIFIER: one sentence each.\n- LIKELIHOOD RATIONALE: ≤ 2 sentences.\n- Keep every fact, name, number and date that carries the argument; cut\n  everything else. Never soften, hedge, or add new claims or numbers.\n\nWORKED EXAMPLE of the target register:\nBEFORE: \"The obtainableFactor was 'triangulated' from generic SOM heuristics —\nbut the benchmark sources themselves disagree on what period the percentage\ndescribes. Wise defines SOM as a 3–5-year capture window; Prospeo and IdeaPlan\nframe 1–3 years. Applied to a single pre-launch year, the same literature\nimplies numbers an order of magnitude lower...\"\nAFTER: \"The model says the venture can win 3% of its serviceable market in\nYear 1. But the benchmarks that 3% comes from describe what companies capture\nover 3–5 years, not 12 months. The one comparable hardware entrant we found\nstarted far lower in its first year. If the clock is wrong, the Year-1 number\nis several times too high.\""
+    },
+    {
+      "role": "user",
+      "content": "THE RISK (context, do not rewrite): perturbation [{\"nodeId\":\"tamBase\",\"op\":\"scale\",\"value\":0.55,\"note\":\"Restrict the base to the intelligent-PDU-relevant revenue share of the rack-PDU category (~55% revenue-weighted in Europe)\"}], likelihood 0.5, category fact\n\nFIELDS TO REWRITE:\n{\n \"title\": \"The €300M base counts the non-intelligent majority of a market the venture cannot sell into\",\n \"narrative\": \"The venture sells intelligent rack PDUs, but tamBase anchors on Grand View's $2.81B 'rack PDU' figure — and Grand View itself states the NON-intelligent segment held the largest revenue share in 2025. IndexBox confirms the split is real by selling 'Rack PDUs' and 'Intelligent Rack PDUs' as separate EU reports. The scope-down chain carefully audited geography and FX but never audited product type: roughly half the €300M base is basic/metered units the product line does not address. TAM, SAM and YAM all inherit a ~2x product-scope inflation while the ledger label ('rack-PDU market, all segments/buyers') reads as if it were scope-matched.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"Grand View's own segmentation of the $2.81B anchor reports the non-intelligent rack-PDU segment held the largest 2025 revenue share, while the venture's product is intelligent PDUs only\",\n   \"refs\": [\n    \"digest:tam-global-crosscheck#c2\",\n    \"ledger:tamBase\",\n    \"profile:Product\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Independent sizings of the intelligent-only subset run $2.1B (GIA 2024) to $3.0B (MRF 2025) against $1.7–3.9B for total rack-PDU — and IndexBox maintains distinct EU reports for 'Rack PDUs' vs 'Intelligent Rack PDUs', confirming the vendor community treats them as different products with different bases\",\n   \"refs\": [\n    \"digest:tam-global-crosscheck#c12\",\n    \"digest:tam-global-crosscheck#c13\",\n    \"digest:tam-base#c14\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"The €300M CE base carries the full-category value; the venture-relevant intelligent-only base is materially smaller, and every downstream funnel stage (SAM €165M, YAM €1.65M) inherits the inflation because serviceableFactor haircuts reach, not product scope\",\n   \"refs\": [\n    \"ledger:tamBase\",\n    \"ledger:serviceableFactor\"\n   ]\n  }\n ],\n \"whyMissable\": \"The label 'rack-PDU market' looks perfectly scope-matched to a rack-PDU vendor — the refinement cycle even proved its diligence by removing the PDUs+PSUs ceiling, creating the impression definitional contamination was handled. The remaining contamination sits inside the anchor's own segmentation table, one level below the headline number anyone reads.\",\n \"falsifier\": \"A scope-pure European source (IndexBox EU Intelligent Rack PDUs headline, or an Omdia segment table) showing intelligent/monitored/switched PDUs at ≥75% of European rack-PDU revenue — i.e., Europe's revenue mix is intelligent-dominated even if global unit mix is not.\",\n \"likelihoodRationale\": \"The anchor source directly states non-intelligent held the largest revenue share globally; the offset is that intelligent units carry 3–5x ASPs and European colo/hyperscale buyers skew intelligent, so the revenue-weighted European intelligent share plausibly lands at 45–60% rather than below 40%\"\n}\n\nEmit JSON: { title, narrative, mechanism: [{step, text, refs}], whyMissable, falsifier, likelihoodRationale }"
+    }
+  ],
+  "content": "{\"title\":\"Base counts basic PDUs the venture cannot sell, halving the market\",\"narrative\":\"The model assumes the venture can sell into the full €300M rack-PDU market. But Grand View, the source of that figure, says the non-intelligent segment held the largest revenue share in 2025, and the venture sells only intelligent PDUs. About half the €300M is basic units the product cannot address, so the Year-1 number is inflated about 2x.\",\"mechanism\":[{\"step\":\"trigger\",\"text\":\"Grand View says non-intelligent PDUs held the largest 2025 share.\",\"refs\":[\"digest:tam-global-crosscheck#c2\",\"ledger:tamBase\",\"profile:Product\"]},{\"step\":\"propagation\",\"text\":\"Vendors sell intelligent and basic PDUs as separate products.\",\"refs\":[\"digest:tam-global-crosscheck#c12\",\"digest:tam-global-crosscheck#c13\",\"digest:tam-base#c14\"]},{\"step\":\"model-impact\",\"text\":\"SAM €165M and YAM €1.65M both inherit the inflation.\",\"refs\":[\"ledger:tamBase\",\"ledger:serviceableFactor\"]}],\"whyMissable\":\"The label 'rack-PDU market' looks matched to a rack-PDU vendor, but the mismatch sits inside the source's own segmentation table below the headline.\",\"falsifier\":\"A European source showing intelligent PDUs at 75% or more of rack-PDU revenue.\",\"likelihoodRationale\":\"The source states non-intelligent held the largest revenue share globally. But intelligent units carry 3-5x prices and European buyers skew intelligent, so the European intelligent share plausibly lands at 45-60%.\"}",
+  "usage": {
+    "prompt_tokens": 2592,
+    "completion_tokens": 558,
+    "total_tokens": 3150,
+    "cost": 0.02691,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.02691,
+      "upstream_inference_prompt_cost": 0.01296,
+      "upstream_inference_completions_cost": 0.01395
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T21:49:37.081Z"
+}

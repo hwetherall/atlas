@@ -1,0 +1,26 @@
+{
+  "inputsHash": "a1ebc684d67a953cf0737c5fe5a513beb52eaba99dce6b3d81779082b6e631b0",
+  "generatedAt": "2026-07-08T05:30:23.823Z",
+  "data": {
+    "specificity": {
+      "score": 3,
+      "note": "Names the target node (obtainableFactor), a quantified perturbation (scale 0.7), instruments (SBOM, OTA signing, CRA/RED delegated acts) and a 30% attrition value, but the gating actors are generic tiers ('5 target CE buyers', 'large operators') rather than named accounts, and the gate's timing is only anchored via indicators, not the narrative."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The compound insight — pre-listing security audit plus post-PO acceptance attrition both hitting realized revenue AFTER the funnel metrics a founder tracks — is genuinely downstream of what a market model measures, and the whyMissable correctly notes the surface signal (signed pilot) actively reassures. A security-aware hardware founder might have the audit gate on their list, which keeps this off a 4."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "All three hops are referenced and the trigger→model-impact path is independently plausible, but the propagation link imports a ~30% non-acceptance rate from IoT 'pilot purgatory' statistics that measure buyer-side project stagnation, not vendor hardware returned after deployment — a hostile 'why does that base rate transfer?' question is not fully answered."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The security-audit premise has ≥3 independent corroborations (Server Tech VAPT, Nlyte, OCP-SAFE, the zero-day disclosure), but the load-bearing 30% figure is proxied by McKinsey's 84%-stuck-in-pilot and 70%-never-past-POC stats, which measure a different quantity; the likelihood rationale honestly flags this revision, which earns 3 not 4."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The mitigations directly change next-two-quarter spend and sequencing (pre-launch attested firmware stack, buyer security-requirement survey before feature freeze, acceptance clauses in every pilot contract), and both indicators (TED RFQ security annexes, CRA conformity dates) are concrete and monitorable with stated thresholds."
+    }
+  }
+}

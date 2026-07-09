@@ -1,0 +1,10 @@
+{
+  "inputsHash": "c03eefc6eb7c6eed5e1352f7e8dcdfd43eb6d83a061380a682b1b68d06df4615",
+  "generatedAt": "2026-07-08T21:52:14.628Z",
+  "data": {
+    "resolution": "risk",
+    "settleTest": "Only the actual product design decision (radio vs wired-only, self-declaration vs notified-body path) and the real certification queue timing as the launch unfolds would settle whether Year-1 window is truncated. The regulation exists today, but whether it binds depends on unmade product/compliance choices and future queue behavior — time settles it, not a purchasable report.",
+    "proposedCorrection": null,
+    "researchQueries": []
+  }
+}

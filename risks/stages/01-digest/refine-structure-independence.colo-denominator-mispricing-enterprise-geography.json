@@ -1,0 +1,214 @@
+{
+  "inputsHash": "1df49778354ef916e30b460b8e065cadb63f3b27e960003d2c51c67b02edc71e",
+  "generatedAt": "2026-07-08T19:06:20.304Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c0",
+        "claim": "BMWK-commissioned report states German data centres had an installed IT power demand of over 2,700 MW, far higher than colocation-only Statista figures for Germany, implying large non-colo (enterprise/self-operated) capacity uncounted in colo-based denominators.",
+        "number": 2700,
+        "unit": "MW",
+        "sourceTitle": "Status and development of the German data centre landscape – Executive Summary",
+        "url": "https://www.bundeswirtschaftsministerium.de/Redaktion/EN/Publikationen/Digitale-Welt/status-and-development-of-the-german-data-centre-landscape-executive-summary.pdf?__blob=publicationFile&v=2",
+        "excerpt": "With over 2,000 data centres and an installed IT power demand of over 2,700 MW, Ger many is already the largest centre for digital infra structure in Europe.",
+        "tags": [
+          "structure",
+          "definition",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c1",
+        "claim": "German Data Center Impact Report gives a much lower total IT power figure for Germany (colocation + enterprise data centers >50kW) than the BMWK total, showing definitional divergence in what counts as 'total installed load.'",
+        "number": 1955,
+        "unit": "MW",
+        "sourceTitle": "DATA CENTER IMPACT REPORT DEUTSCHLAND",
+        "url": "https://www.germandatacenters.com/fileadmin/images/DCIRD-24/Data-Center-Impact-Report-Deutschland-2024_EN.pdf",
+        "excerpt": "1,955 MW IT power in Germany approx.",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c2",
+        "claim": "Frankfurt colocation IT power reported at 831 MW, used as a sub-national benchmark for Germany's largest colo market.",
+        "number": 831,
+        "unit": "MW",
+        "sourceTitle": "DATA CENTER IMPACT REPORT DEUTSCHLAND",
+        "url": "https://www.germandatacenters.com/fileadmin/images/DCIRD-24/Data-Center-Impact-Report-Deutschland-2024_EN.pdf",
+        "excerpt": "831 MW IT power in Frankfurt colocation data centers",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c3",
+        "claim": "Statista's 2025 colocation and scale-colocation IT power table lists Germany at 1,737 MW, well below BMWK's 2,700 MW+ total installed figure for the same country.",
+        "number": 1737,
+        "unit": "MW",
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "2025 | 1,772 | 1,737 | 951 | 813 | 543 | 451 | 363 | 274 | 286 | 228 | 226 | 198 | 167 | 105 | 79 | 68 | 64 | 65 | 56 | 34 | 32 | 31 | 27 | 18 | 18 | 17 | 14 | 13 | 20 | 6 |",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c4",
+        "claim": "Statista's 2025 colocation table lists Netherlands at 951 MW, matching the value used in geo.NL's derivation.",
+        "number": 951,
+        "unit": "MW",
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "2025 | 1,772 | 1,737 | 951 | 813 | 543 | 451 | 363 | 274 | 286 | 228 | 226 | 198 | 167 | 105 | 79 | 68 | 64 | 65 | 56 | 34 | 32 | 31 | 27 | 18 | 18 | 17 | 14 | 13 | 20 | 6 |",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c5",
+        "claim": "Statista's 2025 colocation table lists Switzerland at 274 MW, matching the value used in geo.CH's derivation.",
+        "number": 274,
+        "unit": "MW",
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "2025 | 1,772 | 1,737 | 951 | 813 | 543 | 451 | 363 | 274 | 286 | 228 | 226 | 198 | 167 | 105 | 79 | 68 | 64 | 65 | 56 | 34 | 32 | 31 | 27 | 18 | 18 | 17 | 14 | 13 | 20 | 6 |",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c6",
+        "claim": "Statista's 2024 colocation table shows Germany at 1,458 MW, Netherlands at 915 MW, and Switzerland at 243 MW, indicating year-over-year colo growth rates that differ by country.",
+        "number": 1458,
+        "unit": "MW",
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "2024 | 1,660 | 1,458 | 915 | 760 | 485 | 352 | 267 | 243 | 240 | 197 | 190 | 157 | 115 | 91 | 77 | 65 | 64 | 53 | 35 | 34 | 32 | 28 | 26 | 17 | 14 | 14 | 14 | 12 | 10 | 5 |",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c7",
+        "claim": "Bitkom's 2025 study reports a much higher total German data-center/IT-installation capacity figure than either BMWK or DCIRD, including cloud, traditional and edge segments.",
+        "number": 2980,
+        "unit": "MW",
+        "sourceTitle": "Rechenzentren in Deutschland 2025",
+        "url": "https://www.bitkom.org/sites/main/files/2025-11/bitkom-praesentation-rechenzentren-2025.pdf",
+        "excerpt": "5.000 4.000 | | 2025 2980 | | | | Hohe Investitionen",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c8",
+        "claim": "Bitkom breaks down Germany's total IT connection power by facility size: large data centers (>5MW) account for 50%, medium (100kW-5MW) 23%, and small IT installations 27% — a size-based split independent of colocation vs. enterprise/on-prem categorization.",
+        "number": 50,
+        "unit": "percent",
+        "sourceTitle": "Rechenzentren in Deutschland 2025",
+        "url": "https://www.bitkom.org/sites/main/files/2025-11/bitkom-praesentation-rechenzentren-2025.pdf",
+        "excerpt": "Große RZ > 5 MW Kleine IT-Installationen Mittelgroße RZ 100 kW - 5 MW in Prozent 50 23 27",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c9",
+        "claim": "Germany's data-center sector is subject to explicit efficiency requirements under the Energy Efficiency Act, a regulatory driver behind renewed public and market attention.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "DATA CENTER IMPACT REPORT DEUTSCHLAND",
+        "url": "https://www.germandatacenters.com/fileadmin/images/DCIRD-24/Data-Center-Impact-Report-Deutschland-2024_EN.pdf",
+        "excerpt": "Data centers have recently become the focus of public attention due to the German Energy Efficiency Act, which places explicit efficiency requirements on existing and new facilities.",
+        "tags": [
+          "regulation"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c10",
+        "claim": "CBRE reports 5.8 GW of data centre capacity expected across Europe by end of 2024, a macro demand benchmark not broken out by country in this report.",
+        "number": 5.8,
+        "unit": "GW",
+        "sourceTitle": "Data Centres Overview | CBRE Switzerland",
+        "url": "https://www.cbre.ch/insights/reports/data-centers-overview-fr-2025",
+        "excerpt": "5.8GW Data centre capacity expected across Europe by the end of 2024",
+        "tags": [
+          "demand",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c11",
+        "claim": "CBRE reports 85% of European colocation take-up last year was concentrated in the FLAPD markets (Frankfurt, London, Amsterdam, Paris, Dublin), excluding Zurich/Switzerland from the top-tier demand cluster.",
+        "number": 85,
+        "unit": "percent",
+        "sourceTitle": "Data Centres Overview | CBRE Switzerland",
+        "url": "https://www.cbre.ch/insights/reports/data-centers-overview-fr-2025",
+        "excerpt": "85% Of take-up was recorded in FLAPD* last year *Represents the five largest colocation markets in Europe: Frankfurt, London, Amsterdam, Paris, and Dublin",
+        "tags": [
+          "demand",
+          "competition"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c12",
+        "claim": "The Dutch Data Center Association's 2025 report frames the market narrative as moving 'From Boom to Bottlenecks,' signaling supply-side capacity constraints rather than providing an updated total-installed-load MW figure.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "State of the Dutch Data Centers 2025 - Dutch Data Center Association",
+        "url": "https://www.dutchdatacenters.nl/en/publications/state-of-the-dutch-data-centers-2025/",
+        "excerpt": "this year themed: “From Boom to Bottlenecks.” This special edition marks ten years of independent data center analysis",
+        "tags": [
+          "demand",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c13",
+        "claim": "German data-center counts vary across sources: BMWK cites 'over 2,000' data centres while DCIRD cites 1,994 and Bitkom cites 'ca. 2.000... und 100 ab 5MW', reflecting inconsistent inventory definitions even before MW totals are considered.",
+        "number": 1994,
+        "unit": "count",
+        "sourceTitle": "DATA CENTER IMPACT REPORT DEUTSCHLAND",
+        "url": "https://www.germandatacenters.com/fileadmin/images/DCIRD-24/Data-Center-Impact-Report-Deutschland-2024_EN.pdf",
+        "excerpt": "1,994 data centers* thereof 309 colocation data centers thereof 69 % in colocation data centers",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "BMWK's total German installed IT power (>2,700 MW, Jan 2025) is ~1,000 MW higher than Statista's colocation-only Germany figure (1,737 MW, 2025) used as the numerator basis for CE-7 colo apportionment. If ~35-40% of Germany's real installed load sits outside colocation, the colo-only denominator (CE-7 colo 3,451 MW) that geo.NL and geo.CH divide into is structurally biased toward whichever countries have lower non-colo shares — undermining the top-down capacity apportionment method used for both nodes.",
+        "nodes": [
+          "geo.NL",
+          "geo.CH"
+        ]
+      },
+      {
+        "text": "Three German 'total capacity' figures disagree sharply — BMWK 2,700 MW+ (Jan 2025), DCIRD 1,955 MW (colo+enterprise>50kW), and Bitkom 2,980 MW (2025, cloud+traditional+edge) — a spread of over 1,000 MW depending on scope. This directly contradicts the search intent's premise that 'an existing/purchasable dataset... fixes the denominator scope today'; no such single consistent total-installed-load dataset was found, meaning geo.NL and geo.CH's colo-based denominator remains unvalidated against any agreed total-load standard.",
+        "nodes": [
+          "geo.NL",
+          "geo.CH"
+        ]
+      },
+      {
+        "text": "For Switzerland, no new source in this search round narrows the gap already flagged in geo.CH's own provenance note between the colo-only Statista figure (274 MW) and the installed-base/self-operated-inclusive Mordor estimate (850.6 MW) or CBRE Suisse's commercial-only 340 MW; CBRE's 2025 Switzerland report instead provides only pan-European aggregates (5.8GW Europe-wide, 85% FLAPD take-up), leaving geo.CH's wide sensitivity band (0.07–0.13) empirically unresolved.",
+        "nodes": [
+          "geo.CH"
+        ]
+      }
+    ],
+    "absences": [
+      "No published total-installed-load (colocation + enterprise on-premise + self-operated) country-by-country MW breakdown for the CE-7 set (NL, DE, CH, plus others) using a single consistent methodology was found — the exact denominator-fixing dataset the queries sought does not appear to exist in retrieved sources.",
+      "No updated or more granular CBRE Suisse / Mordor figure disaggregating Swiss self-operated versus colocation capacity beyond what is already cited in geo.CH's derivation (340 MW commercial-only vs. 850.6 MW installed-base) was surfaced.",
+      "No numeric total-installed IT load figure (beyond colocation-only capacity) for the Netherlands was found in the 2025 DDA report text retrieved; the report's 'From Boom to Bottlenecks' theme is described qualitatively without a companion enterprise/self-operated MW figure.",
+      "No harmonized definitional standard (e.g., minimum kW threshold, inclusion/exclusion of self-operated or edge/traditional installations) was found reconciling BMWK's >100kW threshold, DCIRD's >50kW threshold, and Statista's colocation-only scope — the absence of standardization is itself an obstacle to fixing the denominator scope as intended."
+    ]
+  }
+}

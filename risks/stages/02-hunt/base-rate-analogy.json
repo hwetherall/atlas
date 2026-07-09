@@ -1,0 +1,415 @@
+{
+  "inputsHash": "53370cfd76b4936aa36956e3fe53f626c592922eb62ee59a39f7588c42bd2b7f",
+  "generatedAt": "2026-07-08T20:08:16.717Z",
+  "data": {
+    "hypotheses": [
+      {
+        "id": "som-window-cumulative-misread",
+        "title": "The 1% Year-1 anchor is a 36-month number wearing a 12-month label",
+        "narrative": "obtainableFactor's 1% rests on Prospeo's staged benchmark, read as an annual snapshot. But Prospeo itself frames SOM as revenue captured over 1-3 years, IdeaPlan says 'one to three years', Wise says 'three to five years', and TryBuildCo's own worked example lands at 0.1% of SAM — below the model's stated floor of 0.5%. The cross-check comparable (Tractian '$1.2M first year') is unverified against its own source, which shows $200K starting revenue. For a pre-launch industrial entrant with zero installed base and no certifications on day 0, the honest 12-month number is the bottom of the reference class, not its midpoint. The whole YAM figure is a period-mismatch error, not a market estimate.",
+        "category": "fact",
+        "targetNodes": [
+          "obtainableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Every source underlying the 1% benchmark defines the obtainable percentage as a cumulative 1-3 or 3-5 year capture window, not a Year-1 snapshot — the model pins a multi-year ratio to a 12-month YAM",
+            "refs": [
+              "digest:obtainable-benchmark#c1",
+              "digest:obtainable-benchmark#c5",
+              "digest:obtainable-benchmark#c6"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "The two cross-checks that were supposed to independently confirm 1% both fail on inspection: TryBuildCo's worked example yields ~0.1% of SAM (below the model's 0.5% floor), and Tractian's revenue started at $200K — the '$1.2M first year' number cited in the derivation does not appear in the source",
+            "refs": [
+              "digest:obtainable-benchmark#c7",
+              "digest:obtainable-benchmark#c10"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "obtainableFactor 0.01 overstates the honest pre-launch Year-1 capture by roughly 3x; the corrected value sits near 0.3% of SAM, and the sensitivity band's low edge (0.5%) does not even contain the reference-class outcomes",
+            "refs": [
+              "ledger:obtainableFactor",
+              "profile:Stage"
+            ]
+          }
+        ],
+        "whyMissable": "The node is marked 'triangulated' and the refinement cycle already 'caught' one benchmark misread (Year-2 read as Year-1), so the team believes the period question is settled. The surface appearance of a completed correction hides that the corrected source itself defines the percentage over a multi-year window — the fix repeated the same category of error one level down.",
+        "expectedObviousness": "medium",
+        "falsifier": "A documented comparable — an industrial hardware entrant into DC infrastructure — that captured ≥1% of a regional SAM in its first 12 months from commercial launch, with dated revenue evidence.",
+        "likelihood": {
+          "value": 0.55,
+          "rationale": "The window-semantics mismatch is directly visible in the cited sources' own text (Prospeo, IdeaPlan, Wise all describe multi-year windows), and the Tractian cross-check number is unverifiable against its source — this is closer to a documented error than a speculative risk.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "obtainableFactor",
+            "op": "set",
+            "value": 0.003,
+            "note": "Multi-year benchmark converted to an honest 12-month figure for a zero-installed-base entrant, consistent with TryBuildCo's 0.1% worked example and Tractian's actual $200K start"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Quote-to-PO conversion time in the first CE opportunities",
+            "where": "Own CRM pipeline reviewed at month 6; cross-referenced against TED (Tenders Electronic Daily) award timelines for rack-power line items",
+            "threshold": "Median cycle >9 months at month 6 implies Year-1 closes are structurally impossible at the 1% level",
+            "updates": "increases"
+          },
+          {
+            "signal": "Published first-year revenue disclosures of comparable DC-hardware entrants (Asian PDU makers entering EU)",
+            "where": "Company registries / Crunchbase / vendor press releases announcing first EU revenue milestones",
+            "threshold": "No comparable showing >0.5% regional SAM capture in year 1",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Build a bottom-up pipeline model (named CE accounts × realistic win rate × cycle time × rack capacity) to replace the top-down benchmark before committing the Year-1 plan",
+            "type": "information",
+            "voiNodeId": "obtainableFactor",
+            "note": "The ledger's own promotionPath names this; doing it pre-launch converts a period-mismatched heuristic into a defensible number"
+          },
+          {
+            "action": "Re-denominate Year-1 targets in design-wins and framework qualifications rather than revenue, and set the revenue plan on a 36-month SOM curve",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Aligns internal expectations and investor communication with what the reference class actually delivers in 12 months"
+          }
+        ]
+      },
+      {
+        "id": "prelet-lockin-serviceable-window",
+        "title": "2026 demand is already specified: the serviceable haircut ignores that reachability has a clock",
+        "narrative": "serviceableFactor 0.55 is framed as a channel-and-regulatory reach haircut, as if reach were a static property. But for DC electrical gear, the demand that will invoice in the next 12 months was specified at design stage — the model's own cross-check admits 12-24 month procurement lock, and the corpus shows lock-in occurring far earlier (transformer lead times of 48-60 months, hyperscale cycles up to 4-7 years). Meanwhile the entrant's EU compliance stack (WEEE, CE, TÜV, RoHS, plus EN 50600-compatible documentation) consumes 6-9 months from day 0. The intersection of 'demand contestable in months 1-12' and 'entrant qualified to bid' is a fraction of the static 0.55 — the serviceable share within the YAM window is a different, smaller number than the serviceable share of the market in steady state.",
+        "category": "model-structure",
+        "targetNodes": [
+          "serviceableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Rack-power specifications for capacity landing in 2026 were locked at design/procurement stage well before the venture's launch date — the model's own cross-check concedes a 12-24 month lock window, and the growth the market shape describes is precisely this pre-committed pipeline",
+            "refs": [
+              "ledger:obtainableFactor",
+              "ledger:shape.cagr"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "The entrant cannot bid even the contestable residue until its compliance stack clears: the full EU entry set (WEEE, CE, TÜV, Grüner Punkt, RoHS, EORI) is broader than the ledger's named certs and runs 6-9 months, and EN 50600 facility-standard compatibility must be documented for operator RFQs",
+            "refs": [
+              "digest:serviceable-benchmark#c13",
+              "digest:serviceable-benchmark#c11",
+              "profile:Stage"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "serviceableFactor 0.55 counts demand that is temporally unreachable within the first 12 months; the effective serviceable share for the YAM window — demand both uncommitted and open to a newly-certified vendor — is closer to 0.35, and the node has no bottom-up cross-check to catch this",
+            "refs": [
+              "ledger:serviceableFactor",
+              "digest:serviceable-benchmark#c1"
+            ]
+          }
+        ],
+        "whyMissable": "The serviceable haircut looks handled because it already discounts 45% of the TAM and cites the regulatory stack. What the static number hides is a timing dimension: 0.55 may be right for the market in general and simultaneously wrong for every month of the venture's first year, because 'reachable' and 'reachable now' are different sets. A team reviewing the number checks its level, not its clock.",
+        "expectedObviousness": "low",
+        "falsifier": "Three or more CE operator RFQs for rack PDUs in the next two quarters that (a) accept vendors whose certifications complete during the tender process and (b) award within 9 months of publication.",
+        "likelihood": {
+          "value": 0.45,
+          "rationale": "Base rate for enterprise/DC hardware: sales cycles of 12-18 months and certification of 6-9 months are well-established for the reference class; the open question is only what fraction of CE demand is genuinely spot-contestable, which no source quantifies — the absence itself is the risk.",
+          "basis": "base-rate"
+        },
+        "perturbation": [
+          {
+            "nodeId": "serviceableFactor",
+            "op": "set",
+            "value": 0.35,
+            "note": "Static reach haircut tightened to window-adjusted reach: demand that is both uncommitted and open to a vendor whose certification completes mid-year"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Time from RFQ publication to award for rack-power line items in CE",
+            "where": "TED (Tenders Electronic Daily) and major CE colo operator procurement portals (e.g., NTT, Vantage, Data4 supplier registration pages)",
+            "threshold": "Median award cycle >9 months, or supplier prequalification requiring completed certification at bid time",
+            "updates": "increases"
+          },
+          {
+            "signal": "Quoted lead time for the venture's own TÜV/CE certification slots",
+            "where": "TÜV NORD / TÜV SÜD test-lab booking confirmations and notified-body queue quotes",
+            "threshold": "Certification completion date beyond month 8 of the launch year",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Commission a bottom-up channel-coverage model (named CE accounts × spec-lock status × certification-at-bid requirements) to produce a window-adjusted serviceable estimate",
+            "type": "information",
+            "voiNodeId": "serviceableFactor",
+            "note": "The ledger's promotionPath names this model; adding the spec-lock dimension is the marginal work that prices the clock"
+          },
+          {
+            "action": "Start the full EU certification stack before launch and pre-register as a supplier on operator procurement portals so month-1 of the commercial window is not month-1 of the compliance clock",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": "Converts sequential cert→bid timeline into parallel; recovers 4-6 months of the window"
+          }
+        ]
+      },
+      {
+        "id": "framework-foreclosure-beachhead",
+        "title": "The chosen beachhead buys through global frameworks: half the large-operator cell is not a market for a regional entrant",
+        "narrative": "The venture's stated first channel is large operators, and the model gives that cell 40% of PDU spend on the logic 'large operators buy direct'. The corpus shows what 'direct' actually means at that scale: Digital Realty's $373M Schneider framework agreement, Iren's $1.6bn all-in Dell contract, PDU spend embedded as one line inside integrated rack/power/cooling packages. Combined with CR3 ≈ 0.55 among vendors who sell exactly those bundles, the buying event a new entrant needs — a discrete, multi-bidder PDU bake-off at a large operator — is disappearing. The only standalone PDU procurements found in the corpus were small, 1-2 bidder, sometimes explicitly sole-sourced. The beachhead the profile names is the cell most structurally closed to the venture; the model prices it as the biggest open door.",
+        "category": "competitive",
+        "targetNodes": [
+          "cust.operator-large"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Large operators consolidate rack-power purchasing into multi-year global framework agreements and integrated vendor packages rather than discrete PDU line items — the exact procurement pattern documented in the cust.operator-large evidence trail",
+            "refs": [
+              "ledger:cust.operator-large",
+              "digest:cr3-vendors#c1"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "With the #1 vendor alone at 15.8% and a semi-consolidated top set (Schneider, Vertiv, Eaton, ABB, Legrand) selling bundled infrastructure, framework renewal — not open tender — becomes the default buying event; the residual standalone tenders observed were 1-2 bidder or sole-sourced ('No substitutions')",
+            "refs": [
+              "digest:cr3-vendors#c0",
+              "digest:cr3-vendors#c2",
+              "ledger:shape.cr3"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The 0.40 large-operator share — itself an unsourced internal estimate with no channel-split evidence — overstates the spend a regional entrant can actually contest; roughly half the cell is foreclosed behind frameworks the entrant cannot enter in year 1, and the venture's go-to-market points straight at it",
+            "refs": [
+              "ledger:cust.operator-large",
+              "profile:Product"
+            ]
+          }
+        ],
+        "whyMissable": "The founder's risk list treats 'large operators buy direct' as good news — direct means no distributor margin and a named buyer. The surface appearance of an accessible direct channel hides that 'direct' at hyperscale/large-colo means framework-direct: the door has a lock shaped like a 5-year global agreement, and the buyer's procurement team is contractually discouraged from running the bake-off the entrant's plan requires.",
+        "expectedObviousness": "low",
+        "falsifier": "Two named CE large operators (e.g., a Frankfurt or Amsterdam colo/hyperscale buyer) confirming a vendor-neutral, multi-bidder rack-PDU RFQ process in 2026 that is open to suppliers outside existing framework agreements.",
+        "likelihood": {
+          "value": 0.5,
+          "rationale": "Framework consolidation at large operators is directly evidenced (Digital Realty-Schneider, Iren-Dell cases in the node's own tension trail), and the customerType split it undermines is admitted to be an unsourced internal estimate; uncertainty is only over the foreclosed fraction, not the mechanism's existence.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "cust.operator-large",
+            "op": "set",
+            "value": 0.2,
+            "note": "≈half of large-operator PDU spend sits inside global frameworks and integrated packages that a pre-launch regional entrant cannot contest; siblings deliberately not re-normalized — this is absolute foreclosure, not a mix shift"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "New or renewed multi-year power-infrastructure framework announcements by CE-active large operators",
+            "where": "Digital Realty / Equinix / Vantage / NTT press releases and Schneider/Vertiv/Eaton earnings-call order-book commentary",
+            "threshold": "≥2 new CE-relevant frameworks announced covering rack power",
+            "updates": "increases"
+          },
+          {
+            "signal": "Bidder counts and substitution clauses on standalone rack-PDU tenders",
+            "where": "TED (Tenders Electronic Daily) award notices and operator supplier portals",
+            "threshold": "Median bidders ≤2 or 'no substitution' language on >half of observed PDU line items",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Run the three CE operator/distributor procurement interviews the ledger already flags as pending, specifically instrumenting for framework coverage vs open-RFQ share of PDU spend",
+            "type": "information",
+            "voiNodeId": "cust.operator-large",
+            "note": "Directly de-risks the largest unsourced cell in the funnel; the interview guide should ask 'when did you last run a competitive PDU bake-off' not 'who do you buy from'"
+          },
+          {
+            "action": "Re-sequence the beachhead to mid-size operators and enterprise retrofits, where discrete PDU purchasing survives, and approach large operators via second-source qualification inside existing frameworks rather than head-on displacement",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Second-source slots are the documented entry path for challengers in framework-dominated categories"
+          }
+        ]
+      },
+      {
+        "id": "channel-calendar-lockout",
+        "title": "Distributor line-cards and integrator qualification run on annual calendars the 12-month plan cannot intersect",
+        "narrative": "35% of the modeled funnel flows through OEM/integrator (0.22) and distributor (0.13) cells — both admitted internal estimates with zero evidence attached. The reference class says both channels have a calendar: distributor line-card reviews are annual events requiring certifications, stock commitments and demand proof in hand; integrators demonstrably select branded incumbents on certification, DCIM compatibility and support (every case study found — Vertiv/Greenergy, Legrand/MIND Park — shows brand selection, none shows a new entrant winning a slot). A pre-launch vendor with no certs on day 0 misses the current listing cycle entirely and enters the next one as an unproven applicant. Within the YAM window these two cells are not small — they are closed, and the model treats 'closed this year' as indistinguishable from 'open at 35%'.",
+        "category": "execution",
+        "targetNodes": [
+          "cust.oem",
+          "cust.distributor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Distributor line-card onboarding is an annual-cycle gate requiring completed certifications and reference installs at application time — assets a pre-launch entrant does not possess in month 1 and cannot assemble before the cycle closes",
+            "refs": [
+              "ledger:cust.distributor",
+              "profile:Stage",
+              "digest:serviceable-benchmark#c13"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "The parallel OEM/integrator path is gated the same way but on brand: integrators select PDU suppliers on certification, DCIM compatibility and support track record, a pattern consistent across the corpus's integrator case studies and the incumbent vendor sets that dominate every published landscape",
+            "refs": [
+              "ledger:cust.oem",
+              "digest:cr3-vendors#c4",
+              "digest:cr3-vendors#c7"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "cust.oem (0.22) and cust.distributor (0.13) together carry 35% of the funnel into SAM, but within the first 12 months both cells are calendar-foreclosed; the SAM the Year-1 obtainable percentage is applied to is materially smaller than modeled",
+            "refs": [
+              "ledger:cust.oem",
+              "ledger:cust.distributor"
+            ]
+          }
+        ],
+        "whyMissable": "Channel shares look like a mix question — 'we'll get some of each' — so the risk review debates the percentages, not their availability. The hidden feature is that indirect channels are not continuously open markets: they are gated queues with annual admission, and a pre-launch company applies to the queue rather than selling into the cell. Nothing in a static share number signals that the cell has an opening date.",
+        "expectedObviousness": "medium",
+        "falsifier": "A signed CE master-distributor listing or OEM/integrator supply agreement with committed volumes, effective within the venture's first six months.",
+        "likelihood": {
+          "value": 0.4,
+          "rationale": "Annual line-card cycles and brand-based integrator selection are standard for the reference class (industrial electrical hardware entering EU distribution); uncertainty is whether an aggressive pre-launch certification push can compress one cycle, which some Asian PDU entrants have managed with EU-stock commitments.",
+          "basis": "base-rate"
+        },
+        "perturbation": [
+          {
+            "nodeId": "cust.distributor",
+            "op": "exclude",
+            "value": null,
+            "note": "Distributor cell unavailable within the YAM window — listing cycle cannot complete inside 12 months from a zero-cert start"
+          },
+          {
+            "nodeId": "cust.oem",
+            "op": "set",
+            "value": 0.11,
+            "note": "Integrator cell half-foreclosed: brand/certification selection excludes the entrant from established integrator programs; residual is opportunistic white-label volume"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Line-card additions in rack-power categories at CE electrical/IT distributors",
+            "where": "Rexel, Sonepar, Also/Ingram product-catalog update announcements and new-vendor press releases",
+            "threshold": "Zero new rack-PDU vendors added in the trailing two quarters signals a hard-gated cycle",
+            "updates": "increases"
+          },
+          {
+            "signal": "Integrator RFI/qualification requirements for PDU suppliers",
+            "where": "Vendor-qualification questionnaires from CE rack integrators and modular-DC builders (e.g., responses to the venture's own outreach, logged monthly)",
+            "threshold": "Certification-complete and ≥2 reference installs required at application in >75% of responses",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Interview three CE distributors/integrators now (the ledger's own pending evidence) to map listing-cycle dates, entry requirements, and whether a 'new vendor' fast-track exists",
+            "type": "information",
+            "voiNodeId": "cust.oem",
+            "note": "Simultaneously prices the unsourced 0.22/0.13 cells and establishes whether the calendar can be intersected at all in year 1"
+          },
+          {
+            "action": "Concentrate Year-1 entirely on the direct mid-operator/enterprise cells and treat channel listings as a Year-2 milestone with pre-work (cert dossier, EU stock plan) started in month 1",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": "Stops the plan from booking revenue from cells that have no opening date inside the window"
+          }
+        ]
+      },
+      {
+        "id": "poc-acceptance-reversal",
+        "title": "The industrial-hardware acceptance base rate un-books a third of whatever Year-1 obtains",
+        "narrative": "Whatever tiny share the venture obtains in year 1 will be obtained as pilots and first deployments — the profile's own 'conservative ramp' guarantees it. The reference class puts a number on what happens next: 30% of deployed industrial hardware systems are never fully accepted — customers sign, the vendor deploys, and six months later the gear comes back out. Intelligent PDUs are acutely exposed because acceptance hinges on post-deployment behavior: DCIM integration, metering accuracy, firmware stability under the operator's monitoring stack. The model's obtainableFactor is a gross booking rate; nothing in the funnel converts it to net-of-reversal, and for a first-year entrant the reversal doesn't just cut revenue — it destroys the reference accounts that the Year-2 3% benchmark silently assumes exist.",
+        "category": "execution",
+        "targetNodes": [
+          "obtainableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "30% of deployed industrial hardware systems in the reference class were never fully accepted and required uninstallation — a measured base rate, not an anecdote",
+            "refs": [
+              "digest:obtainable-benchmark#c12"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "A pre-launch entrant's first-12-month wins are structurally pilots/POCs with acceptance clauses; intelligent-PDU acceptance depends on DCIM compatibility and metering behavior that only surfaces after deployment, in mid/enterprise accounts where the venture has no support track record",
+            "refs": [
+              "profile:Stage",
+              "ledger:cust.operator-mid",
+              "digest:cr3-vendors#c4"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "obtainableFactor 0.01 is a gross capture rate; net of the acceptance-failure base rate, realized Year-1 share runs ~30% lower, and the staged benchmark's Year-2 step (3%) presumes surviving reference accounts that reversals eliminate",
+            "refs": [
+              "ledger:obtainableFactor",
+              "digest:obtainable-benchmark#c0"
+            ]
+          }
+        ],
+        "whyMissable": "Acceptance risk hides inside a revenue number that looks conservative already — at 1% of SAM, no one audits whether the 1% stays booked. The surface appearance of prudence (a small number) conceals that the number is gross, and the funnel has no node where post-deployment reversal could even be expressed.",
+        "expectedObviousness": "low",
+        "falsifier": "The venture's first three CE pilot deployments passing formal customer acceptance within 90 days of install, with no rollback or return clause exercised in the following two quarters.",
+        "likelihood": {
+          "value": 0.35,
+          "rationale": "The 30% non-acceptance figure is a single-source base rate from adjacent industrial hardware, not PDU-specific; PDUs are simpler than full industrial systems, but DCIM-integration acceptance criteria and zero support track record cut the other way.",
+          "basis": "base-rate"
+        },
+        "perturbation": [
+          {
+            "nodeId": "obtainableFactor",
+            "op": "scale",
+            "value": 0.7,
+            "note": "Gross Year-1 capture haircut by the industrial-hardware non-acceptance base rate (~30% of deployments reverse)"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Acceptance and return-rights clauses in pilot contracts",
+            "where": "Redlines from CE operator procurement teams on the venture's pilot MSAs, reviewed at each signing",
+            "threshold": "Acceptance windows >90 days or unconditional return rights in a majority of pilot contracts",
+            "updates": "increases"
+          },
+          {
+            "signal": "DCIM interoperability status of the product against the platforms CE operators run",
+            "where": "Sunbird/Schneider EcoStruxure/Vertiv Trellis compatibility matrices and the venture's integration test reports",
+            "threshold": "Product absent from ≥2 of the major DCIM compatibility lists at launch",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Run a structured pre-launch DCIM interoperability certification program (top-3 platforms used by CE operators) and publish the compatibility matrix before the first pilot ships",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": "Removes the single largest post-deployment acceptance failure mode before it can trigger the base rate"
+          },
+          {
+            "action": "Instrument the first five pilots as an acceptance-rate study — formal acceptance criteria, 90-day gates, root-cause logging on any reversal — to replace the generic 30% base rate with a venture-specific one",
+            "type": "information",
+            "voiNodeId": "obtainableFactor",
+            "note": "Converts the obtainableFactor from a benchmark guess to a measured pipeline parameter, the ledger's own stated promotion path"
+          }
+        ]
+      }
+    ]
+  }
+}

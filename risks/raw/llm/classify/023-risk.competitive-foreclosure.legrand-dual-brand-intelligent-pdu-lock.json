@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "76076b7e821460587605db7f6349b49d886fc8dc87fa70eecdbb421571eeafd9",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"One owner controls two top PDU brands, shrinking reachable market\",\n \"narrative\": \"The model assumes the top three vendors hold 55% of the market, treating Raritan and Server Technology as separate rivals. But Legrand owns both, and in the intelligent-PDU market this venture targets, that gives one owner the two pioneer brands whose monitoring is wired into operators' systems. Swapping a PDU means re-integrating that monitoring layer, so incumbents keep renewals. This pushes the truly serviceable fraction below the model's 0.45 low edge, cutting the Year-1 number.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"Vendor lists show Raritan and Server Technology as separate; Legrand owns both.\",\n   \"refs\": [\n    \"digest:cr3-vendors#c5\",\n    \"digest:cr3-vendors#c0\",\n    \"ledger:shape.cr3\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"PDUs plug into monitoring stacks, so replacements renew with the incumbent.\",\n   \"refs\": [\n    \"ledger:seg.enterprise\",\n    \"ledger:seg.colocation\",\n    \"profile:Product\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"Adding integration lock drops serviceable fraction below the 0.45 low edge.\",\n   \"refs\": [\n    \"ledger:serviceableFactor\",\n    \"digest:cr3-vendors#c1\"\n   ]\n  }\n ],\n \"falsifier\": \"An Omdia 2025 table showing intelligent-PDU concentration at or below the whole-market level, or operator interviews confirming open protocols make mixing vendors routine.\",\n \"category\": \"fact\",\n \"evidence\": [\n  {\n   \"title\": \"Legrand, North and Central America Expands Data Power and Control Capabilities with the Acquisition of Server Technology, Inc.\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Legrand\",\n   \"date\": \"2017-11-02\",\n   \"excerpt\": \"Server Technology will become part of LNCA’s Data Center Power and Control division, which also includes Raritan. Both the Server Technology and Raritan businesses will continue to operate independently.\",\n   \"url\": \"https://www.legrand.us/about-us/newsroom/press/legrand-acquires-server-technology\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Protocol Diversity in Data Centers: DCIM Solutions\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Modius, Inc.\",\n   \"date\": \"2024-12-17\",\n   \"excerpt\": \"DCIM normalizes data across protocols and vendors into a unified, real-time operational view... Vendor-locked tools fragment visibility across systems.\",\n   \"url\": \"https://modius.com/blog/simplifying-data-center-operations-how-modius-opendata-tackles-protocol-diversity/\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Intelligent PDU Market Size, Share & 2030 Trends Report\",\n   \"sourceType\": \"analyst-estimate\",\n   \"publisher\": \"Mordor Intelligence\",\n   \"date\": \"2025-08-06\",\n   \"excerpt\": \"Market Concentration | Medium — intelligent PDU market USD 3.52 billion in 2025.\",\n   \"url\": \"https://www.mordorintelligence.com/industry-reports/intelligent-pdu-market\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"serviceableFactor\",\n  \"label\": \"Serviceable share of TAM\",\n  \"kind\": \"assumption\",\n  \"value\": 0.55,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"needs-source\",\n  \"dimension\": null,\n  \"dimensionValue\": null,\n  \"sensitivityRange\": {\n   \"low\": 0.45,\n   \"high\": 0.65\n  },\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Reachability assumption\",\n   \"expression\": \"No public SAM/TAM benchmark for B2B hardware exists; EU cert stack (EN 50600, ecodesign 2019/424, CE/TÜV) justifies < 1.0 but doesn't quantify 0.55\"\n  },\n  \"provenance\": {\n   \"rationale\": \"Assumption leaf — channel + regulatory reach; EU certification barriers documented qualitatively only.\",\n   \"promotionPath\": \"Bottom-up channel-coverage model (named accounts × reachable share) → sourced serviceable %.\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"EU ecodesign requirements for servers and data storage (2019/424)\",\n    \"sourceType\": \"industry-report\",\n    \"publisher\": \"EUR-Lex\",\n    \"date\": \"2019\",\n    \"excerpt\": \"EU ecodesign and certification requirements gate which demand is regulatory-clear for a new entrant — the qualitative basis of the serviceable haircut.\",\n    \"attached\": true\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"error\",\"settleTest\":\"An Omdia or Mordor intelligent-PDU vendor-share table showing Legrand-owned Raritan + Server Technology combined share, plus the top-3 concentration measured on the intelligent-PDU segment specifically — an existing purchasable dataset that settles today's concentration figure.\",\"proposedCorrection\":{\"nodeId\":\"serviceableFactor\",\"value\":0.4,\"low\":0.3,\"high\":0.5,\"rationale\":\"Consolidating Raritan and Server Technology under one owner raises effective top-vendor concentration and adds monitoring-integration switching costs, lowering the reachable serviceable fraction below the current 0.45 low edge.\"},\"researchQueries\":[{\"query\":\"Omdia/Mordor 2025 intelligent-PDU market share table: combined Raritan + Server Technology (Legrand) share and top-3 concentration in the intelligent-PDU segment\",\"kind\":\"confirming\"},{\"query\":\"Operator/DCIM evidence that open protocols (SNMP, Redfish, Modbus) make swapping intelligent-PDU vendors routine without re-integrating the monitoring layer\",\"kind\":\"falsifying\"}]}",
+  "usage": {
+    "prompt_tokens": 2940,
+    "completion_tokens": 403,
+    "total_tokens": 3343,
+    "cost": 0.024775,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.024775,
+      "upstream_inference_prompt_cost": 0.0147,
+      "upstream_inference_completions_cost": 0.010075
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T18:19:52.747Z"
+}

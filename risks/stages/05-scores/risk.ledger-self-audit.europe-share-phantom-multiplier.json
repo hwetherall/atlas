@@ -1,0 +1,26 @@
+{
+  "inputsHash": "d4c8237f714071ffc72fa8b85348bf90acd328efb5396f0e09b05fade53248ee",
+  "generatedAt": "2026-07-08T05:30:23.825Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact derivation chain (Global $2.81B × 30% × CE 39.8%), the offending factor, quantified alternatives (22–25% → €230–260M tamBase), a concrete perturbation (set 235), and named publishers/reports with thresholds. Nothing here is generic."
+    },
+    "nonObviousness": {
+      "score": 2,
+      "note": "The risk's own trigger admits the '≈30% [est.]' is 'flagged in the corpus as unsourced', so a founder who read the ledger has it on the list, undercutting the whyMissable claim that the formula 'reads as one more citation'. The new content is the directional argument (NA=38% + APAC concentration implies a residual below 30%), which earns it above zero."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Every hop is referenced and the linear propagation to SAM/YAM is arithmetically airtight; the note that the band encodes source dispersion, not a structural hole, is a genuine mechanism point. The weakest link is inferring Europe's current share from APAC being 'fastest-growing' — growth rate does not directly imply present revenue share, and a hostile 'why?' at that arrow only half-survives."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The trigger premise (no published Europe share; GVR states only NA=38%) is directly confirmed and attached, but the load-bearing quantitative claim (Europe 22–25%) has no source — IndexBox, Omdia, and BIS are all stanced 'silent'. Honest labeling as speculative with a named falsifier and an evidence-revision note fits the well-argued-prior anchor of 2."
+    },
+    "decisionRelevance": {
+      "score": 3,
+      "note": "The mitigations are immediately actionable this quarter (buy the IndexBox report named in the ledger's own promotion path; rebuild tamBase bottom-up from Statista MW data) and the indicators carry concrete thresholds. It falls short of 4 because a ~25% smaller tamBase reshapes the sizing narrative more than near-term operational spend or sequencing."
+    }
+  }
+}

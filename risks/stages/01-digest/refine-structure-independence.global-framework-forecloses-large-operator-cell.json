@@ -1,0 +1,177 @@
+{
+  "inputsHash": "70e9b73fcaac766aa0cd2ca181c7f5d5d289cf49ad3352b26c31a1c11e4ea940",
+  "generatedAt": "2026-07-08T19:07:14.988Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-structure-independence.global-framework-forecloses-large-operator-cell#c0",
+        "claim": "Digital Realty signed a $373 million multi-year Supply Capacity Agreement (SCA) with Schneider Electric covering UPS, Low Voltage Switchgear, and Pre-Fabricated Skids, described as a 'strategic shift' from prior procurement model",
+        "number": 373,
+        "unit": "USD millions",
+        "sourceTitle": "Digital Realty signs $373m data center power kit deal with Schneider Electric - DCD",
+        "url": "https://www.datacenterdynamics.com/en/news/digital-realty-signs-373m-data-center-power-kit-deal-with-schneider-electric/",
+        "excerpt": "Colo giant Digital Realty has signed a $373 million supply capacity agreement (SCA) with Schneider Electric for data center power equipment.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.global-framework-forecloses-large-operator-cell#c1",
+        "claim": "Digital Realty's SCA model provides guaranteed capacity while 'preserving the flexibility needed for a dynamic, multi-vendor environment to mitigate risk'",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Schneider Electric and Digital Realty Announce $373M Supply Capacity Agreement to Meet Rising Data Center Demand",
+        "url": "https://www.nasdaq.com/press-release/schneider-electric-and-digital-realty-announce-373m-supply-capacity-agreement-meet",
+        "excerpt": "The strategic shift to an SCA model provides guaranteed capacity, economies of scale, and a dedicated LVS production line, while preserving the flexibility needed for a dynamic, multi-vendor environment to mitigate risk.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.global-framework-forecloses-large-operator-cell#c2",
+        "claim": "The Digital Realty-Schneider SCA covers UPS, low voltage switchgear and prefabricated skids — rack PDUs are not named as an included product category",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Digital Realty signs $373m data center power kit deal with Schneider Electric - DCD",
+        "url": "https://www.datacenterdynamics.com/en/news/digital-realty-signs-373m-data-center-power-kit-deal-with-schneider-electric/",
+        "excerpt": "Digital has agreed a deal that will see it receive Uninterruptible Power Supply (UPS), Low Voltage Switchgear (LVS) and pre-fabricated skids from power technology specialist Schneider.",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.global-framework-forecloses-large-operator-cell#c3",
+        "claim": "Greenergy, Estonia's leading colocation provider, deployed rack PDUs via A-Kaabel, a local company that has been an authorized Vertiv sales and service partner in Estonia since 2020",
+        "number": 2020,
+        "unit": "year",
+        "sourceTitle": "Greenergy and A-Kaabel deploy Vertiv™ rack PDUs to power scalable data center growth in Estonia",
+        "url": "https://www.vertiv.com/48ebb0/globalassets/documents/case-studies/vertiv-greenergy-cs-en-emea-web.pdf",
+        "excerpt": "Since 2020, A-Kaabel has been an authorized sales and service partner for Vertiv in Estonia.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.global-framework-forecloses-large-operator-cell#c4",
+        "claim": "Vertiv frames its Universal rack PDU as solving SKU sprawl for global companies that face different electrical standards (e.g., Japan, US, UK voltages) across their facility footprint",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Universal Rack Power Distribution Unit (UPDU): Simplify",
+        "url": "https://www.vertiv.com/48edd5/globalassets/products/critical-power/power-distribution/universal-rack-power-distribution-unit-updu-application-brief.pdf",
+        "excerpt": "If a user, for example, has IT cabinets in Japan, the US, and the UK, the user could have different voltages at each cabinet. Three different voltages would require three (3) different rPDUs—even if the rest of the physical configuration is identical.",
+        "tags": [
+          "structure",
+          "substitution"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.global-framework-forecloses-large-operator-cell#c5",
+        "claim": "Some large operators in North America have standardized on 400V internationally within company-owned facilities but must still support different voltages at points-of-presence",
+        "number": 400,
+        "unit": "V",
+        "sourceTitle": "Universal Rack Power Distribution Unit (UPDU): Simplify",
+        "url": "https://www.vertiv.com/48edd5/globalassets/products/critical-power/power-distribution/universal-rack-power-distribution-unit-updu-application-brief.pdf",
+        "excerpt": "Some large operators in North America have realized the efficiency benefits of operating at the typical international voltage (400V) in their company-owned facilities. These same operators also maintain points-of-presence at North",
+        "tags": [
+          "structure",
+          "substitution"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.global-framework-forecloses-large-operator-cell#c6",
+        "claim": "Vertiv and Telefónica Group have maintained a 'strong, multi-year partnership across Spain and Latin America' for critical infrastructure, extended to a Germany-specific rPDU deployment",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Telefónica Germany upgrades data center operations with Vertiv™ PowerIT rPDUs for enhanced real-time monitoring",
+        "url": "https://www.vertiv.com/495b0e/globalassets/content---assets-2025/documents/vertiv-telefonica_marketing-thought-leadership-case-study_emea-english.pdf",
+        "excerpt": "Vertiv and the Telefónica Group have maintained a strong, multi-year partnership across Spain and Latin America, deploying energy-efficient critical infrastructure solutions.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.global-framework-forecloses-large-operator-cell#c7",
+        "claim": "Telefónica is responsible for operation and modernization of all data centers and core network sites nationwide in Germany, implying country-level (not just global HQ) infrastructure decision scope",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Telefónica Germany upgrades data center operations with Vertiv™ PowerIT rPDUs for enhanced real-time monitoring",
+        "url": "https://www.vertiv.com/495b0e/globalassets/content---assets-2025/documents/vertiv-telefonica_marketing-thought-leadership-case-study_emea-english.pdf",
+        "excerpt": "In Germany, Telefónica is responsible for the operation and modernization of all data centers and core network sites nationwide, maintaining critical infrastructure that serves millions of customers",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.global-framework-forecloses-large-operator-cell#c8",
+        "claim": "The data center PDU market is estimated at $4.89 billion in 2026 and $14.23 billion by 2032, a 19.5% CAGR",
+        "number": 4.89,
+        "unit": "USD billions (2026)",
+        "sourceTitle": "Schneider Electric (France) and Vertiv (US) are Leading Players in the Data Centre PDU Market",
+        "url": "https://www.marketsandmarkets.com/ResearchInsight/data-center-pdu-companies.asp",
+        "excerpt": "The data center PDU market is estimated to be valued at USD 4.89 billion in 2026 and USD 14.23 billion by 2032, registering a CAGR of 19.5% from 2026 to 2032.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.global-framework-forecloses-large-operator-cell#c9",
+        "claim": "Named major players in the data center PDU market are Schneider Electric, Vertiv, Eaton, Legrand, and ABB",
+        "number": 5,
+        "unit": "companies",
+        "sourceTitle": "Top Data Center Rack Power Distribution Unit (PDU) Companies - Key Players & More",
+        "url": "https://www.mordorintelligence.com/industry-reports/data-center-rack-pdu-market/companies",
+        "excerpt": "Schneider Electric SE Vertiv Group Corp. Eaton Corporation plc ABB Ltd Legrand SA",
+        "tags": [
+          "competition"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.global-framework-forecloses-large-operator-cell#c10",
+        "claim": "Greenergy's new Estonian facility allocated only one-third of new capacity to customers shortly after opening in late 2022, with remaining capacity ramping based on AI/HPC demand",
+        "number": 0.33,
+        "unit": "ratio",
+        "sourceTitle": "Greenergy and A-Kaabel deploy Vertiv™ rack PDUs to power scalable data center growth in Estonia",
+        "url": "https://www.vertiv.com/48ebb0/globalassets/documents/case-studies/vertiv-greenergy-cs-en-emea-web.pdf",
+        "excerpt": "Initial capacity allocation: Allocated 1/3 of the new capacity to customers shortly after opening.",
+        "tags": [
+          "demand",
+          "execution"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "The node cust.operator-large treats the 40% large-operator buyer share as a single addressable segment reachable via CE-level channel work, but the Digital Realty–Schneider $373M multi-year Supply Capacity Agreement and Telefónica's multi-year cross-regional Vertiv partnership both indicate that large operators' power-equipment procurement is frequently locked at global/HQ-negotiated framework level, not decided per-country — implying an unquantified but potentially large fraction of the 40% cell is foreclosed to new regional vendors within a 12-month window.",
+        "nodes": [
+          "cust.operator-large"
+        ]
+      },
+      {
+        "text": "Conversely, the Greenergy/A-Kaabel Estonia case shows a large regional colocation operator sourcing rack PDUs through a locally authorized partner rather than a global contract, suggesting the large-operator segment is not uniformly globally locked — the node's flat 0.40 estimate may obscure meaningful heterogeneity between hyperscale (likely global-contracted) and large colo (potentially regionally accessible) sub-segments.",
+        "nodes": [
+          "cust.operator-large"
+        ]
+      },
+      {
+        "text": "None of the retrieved sources quantify what share of large-operator rack-PDU spend is globally-contracted versus regionally decided, so the search neither confirms nor refutes the node's implicit assumption that the 40% cell is addressable via CE-level sales/channel motions within 12 months.",
+        "nodes": [
+          "cust.operator-large"
+        ]
+      }
+    ],
+    "absences": [
+      "No published vendor-approval-list or procurement-portal (e.g., Achilles) data was found showing whether rack-PDU vendor selection for Central European hyperscale/colo operators happens at global HQ vs. regional/country level.",
+      "No documented case was found of a new PDU vendor entering an approved vendor list via a regional pilot within a 12-month window.",
+      "No source quantifies the share of the '40% large-operator' cell that is globally-contracted (and thus unreachable to new entrants within 12 months) versus regionally decided.",
+      "No operator or distributor interview data (the three CE interviews proposed in the node's promotionPath) appear in these results — the pending interview evidence item remains unfilled.",
+      "No Central European country-specific (e.g., Poland's Atman, GTS/Vantage regional sites) procurement-scope documentation was returned despite being named in the query; only Estonian, German, and North American/global examples surfaced.",
+      "No data distinguishing hyperscaler procurement behavior from large colocation-operator procurement behavior within the 'large operator' cell was found — the two are treated as one undifferentiated buyer group in available sources."
+    ]
+  }
+}

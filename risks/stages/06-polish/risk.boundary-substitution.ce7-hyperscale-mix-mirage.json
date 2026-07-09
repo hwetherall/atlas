@@ -1,0 +1,38 @@
+{
+  "inputsHash": "5a6698db20e7558940a2dc6f2a073b9821e037a32a1562838009d7aadbf4f4bd",
+  "generatedAt": "2026-07-08T21:49:29.859Z",
+  "data": {
+    "title": "Segment mix overweights hyperscale in CE-7, misdirecting Year-1 effort",
+    "narrative": "The model applies Synergy's global 48% hyperscale share to Central Europe using a flat 0.91 carve-out. But about 60% of Europe's hyperscale self-build capacity sits in Ireland, the Netherlands, Sweden and Belgium, outside CE-7. So the buyer mix overweights hyperscale by perhaps a third, which leaves the TAM headline unchanged but points certification and Year-1 pipeline effort at the wrong buyers.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Model applies a global 48% hyperscale share to CE-7.",
+        "refs": [
+          "digest:seg-mix#c0",
+          "digest:seg-mix#c14"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Hyperscale self-build grows 24% yearly, concentrated outside CE-7.",
+        "refs": [
+          "digest:seg-mix#c12",
+          "digest:seg-mix#c13"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "The €300M base misfires: hyperscale up, colo and enterprise down.",
+        "refs": [
+          "ledger:seg.hyperscale",
+          "ledger:seg.colocation",
+          "ledger:seg.enterprise"
+        ]
+      }
+    ],
+    "whyMissable": "The wrong mix leaves TAM, SAM and YAM totals identical, so every reviewed number reads the same and no test checks whether the mix came from the wrong geography.",
+    "falsifier": "A Europe- or CE-scoped split from CBRE, Synergy or JLL showing hyperscale-owned capacity at 40% or more of CE-7 megawatts.",
+    "likelihoodRationale": "The 60%-outside-CE figure and the 24% versus 19% growth split are directly sourced and corroborated, and no Europe-scoped share exists. The main uncertainty is how much hyperscale capacity leased inside CE colo offsets the self-build concentration elsewhere."
+  }
+}

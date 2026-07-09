@@ -1,0 +1,25 @@
+{
+  "inputsHash": "312fd6c78a06278685780c48c61509e4978cf8b6ed259a0469131e8519e8f030",
+  "generatedAt": "2026-07-08T21:53:56.267Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "CBRE's 2025-26 pipeline dataset (or IndexBox EU rack-PDU country tables) showing the geographic split of new/refresh MW by country — this exists today and would settle whether CE-7's 39.8% standing-capacity share matches where 2026 PDU orders get written.",
+    "proposedCorrection": {
+      "nodeId": "tamBase",
+      "value": 260,
+      "low": 210,
+      "high": 320,
+      "rationale": "PDU revenue tracks new-build/refresh flow, not standing capacity; with 57-70% of new supply landing in FLAPD (mostly outside CE-7), the flow-weighted CE share is materially below the 39.8% standing-share, so the base and band should shift down."
+    },
+    "researchQueries": [
+      {
+        "query": "CBRE 2025-2026 European data centre pipeline MW by country/market — share delivered in CE-7 markets (Warsaw, Vienna, Zurich, Berlin, Prague, etc.) vs FLAPD",
+        "kind": "confirming"
+      },
+      {
+        "query": "IndexBox EU Rack PDUs country tables — CE-7 country revenue shares vs FLAPD countries to test whether PDU spend tracks standing MW rather than new-build flow",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

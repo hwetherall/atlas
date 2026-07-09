@@ -1,0 +1,39 @@
+{
+  "inputsHash": "9c06ec0024429cc545a94a456d1603b1ec637335287b356f12e8f0457031d912",
+  "generatedAt": "2026-07-08T21:51:24.453Z",
+  "data": {
+    "title": "Year-1 hyperscale demand lands outside Central Europe",
+    "narrative": "The model takes Synergy's 44-48% global hyperscale share and applies it to Central Europe as a flat 0.91 carve-out. But about 60% of Europe's operational hyperscale self-build capacity sits in Ireland, the Netherlands, Sweden and Belgium, mostly outside the venture's reach. The model's largest segment is largely demand the venture cannot reach in Year 1, and it is the exact segment the sell-to-large-operators strategy targets.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "European hyperscale self-build adds 4.2 GW in 2026, up 24%.",
+        "refs": [
+          "digest:seg-mix#c12",
+          "digest:seg-mix#c14"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Central Europe's hyperscale sites are gated, so realized share stays low.",
+        "refs": [
+          "digest:geo-NL#c7",
+          "digest:geo-DE#c15",
+          "ledger:seg.hyperscale"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "The 0.44 share overstates the reachable segment and misleads buyer plans.",
+        "refs": [
+          "ledger:seg.hyperscale",
+          "ledger:cust.operator-large",
+          "profile:Who is the primary buyer you'll sell through first?"
+        ]
+      }
+    ],
+    "whyMissable": "The node looks well-evidenced and the 0.91 carve-out reads as a conservative haircut, so nobody asks whether hyperscale capacity is skewed away from Central Europe.",
+    "falsifier": "A Europe-scoped split showing CE-7 hyperscale share at or above 0.40, or two-plus announced 2026 CE-7 hyperscale campuses breaking ground outside the Dutch exception zones.",
+    "likelihoodRationale": "The 60% concentration outside CE-7 is a hard Q4-2025 datapoint and the gating rules are enacted, but hyperscalers also lease CE colo capacity, which keeps some demand in scope. A new 3.2 GW Poland campus shows self-build starting inside CE, nudging likelihood modestly up from 0.40."
+  }
+}

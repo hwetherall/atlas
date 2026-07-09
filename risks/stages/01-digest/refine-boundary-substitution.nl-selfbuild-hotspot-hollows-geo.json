@@ -1,0 +1,158 @@
+{
+  "inputsHash": "63cc668bef335106cf731337d300ae85de946c64556832e3ce5bd81bd8e18f66",
+  "generatedAt": "2026-07-08T18:50:43.892Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-boundary-substitution.nl-selfbuild-hotspot-hollows-geo#c0",
+        "claim": "Netherlands Data Center Colocation Market value 2023 and 2029 forecast with CAGR",
+        "number": 3.54,
+        "unit": "% CAGR",
+        "sourceTitle": "Netherlands Data Center Colocation Market Supply & Demand Analysis 2023-2029",
+        "url": "https://www.businesswire.com/news/home/20241209978128/en/Netherlands-Data-Center-Colocation-Market-Supply-Demand-Analysis-2023-2029-Coverage-of-123-Existing-and-13-Upcoming-Facilities---Core-Shell-Vs.-Installed-Vs.-Utilized-IT-Power-Capacity---ResearchAndMarkets.com",
+        "excerpt": "The Netherlands Data Center Colocation Market was valued at USD 990 Million in 2023, and is expected to reach USD 1.22 billion by 2029, rising at a CAGR of 3.54%.",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.nl-selfbuild-hotspot-hollows-geo#c1",
+        "claim": "Netherlands Hyperscale Data Center Market size and growth forecast",
+        "number": 26.41,
+        "unit": "% CAGR",
+        "sourceTitle": "Netherlands Hyperscale Data Center Market Report 2031",
+        "url": "https://www.mordorintelligence.com/industry-reports/netherlands-hyperscale-data-center-market",
+        "excerpt": "The Netherlands hyperscale data center market size in 2026 is estimated at USD 1.01 billion, growing from 2025 value of USD 0.800 billion with 2032 projections showing USD 4.12 billion, growing at 26.41% CAGR over 2026-2032.",
+        "tags": [
+          "base-rate",
+          "substitution",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.nl-selfbuild-hotspot-hollows-geo#c2",
+        "claim": "Netherlands overall Data Center Market size and growth forecast",
+        "number": 9.1,
+        "unit": "% CAGR",
+        "sourceTitle": "Netherlands Data Center Market Share & Size 2031 Outlook",
+        "url": "https://www.mordorintelligence.com/industry-reports/netherlands-data-center-market",
+        "excerpt": "Base Year Market Size (2025) | USD 11.25 Billion ... Market Size (2031) | USD 18.96 Billion | Growth Rate (2026 - 2031) | 9.10% CAGR",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.nl-selfbuild-hotspot-hollows-geo#c3",
+        "claim": "Germany Data Center Construction Market size and growth forecast",
+        "number": 8.62,
+        "unit": "% CAGR",
+        "sourceTitle": "Germany Data Center Construction Market Size, Report & Share Analysis 2031",
+        "url": "https://www.mordorintelligence.com/industry-reports/germany-data-center-construction-market",
+        "excerpt": "The Germany data center construction market size was valued at USD 7.28 billion in 2025 and estimated to grow from USD 7.91 billion in 2026 to reach USD 11.94 billion by 2031, at a CAGR of 8.62%",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.nl-selfbuild-hotspot-hollows-geo#c4",
+        "claim": "Europe Data Center PDU/PSU market size and growth forecast",
+        "number": 21.23,
+        "unit": "% CAGR",
+        "sourceTitle": "Europe Data Center PDUs and PSUs Market Report 2025-2035",
+        "url": "https://finance.yahoo.com/news/europe-data-center-pdus-psus-104000983.html",
+        "excerpt": "The Europe data center PDUs and PSUs market is poised for exponential growth, reaching $20.05 billion by 2035 from $2.45 billion in 2024, with a CAGR of 21.23% during 2025-2035.",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.nl-selfbuild-hotspot-hollows-geo#c5",
+        "claim": "Global Data Center PDU Market size forecast (MarketsandMarkets, version 1)",
+        "number": 19.5,
+        "unit": "% CAGR",
+        "sourceTitle": "Schneider Electric (France) and Vertiv (US) are Leading Players in the Data Centre PDU Market",
+        "url": "https://www.marketsandmarkets.com/ResearchInsight/data-center-pdu-companies.asp",
+        "excerpt": "The data center PDU market is estimated to be valued at USD 4.89 billion in 2026 and USD 14.23 billion by 2032, registering a CAGR of 19.5% from 2026 to 2032.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.nl-selfbuild-hotspot-hollows-geo#c6",
+        "claim": "Global Data Center PDU Market size forecast (MarketsandMarkets, version 2, differing base value)",
+        "number": 19.5,
+        "unit": "% CAGR",
+        "sourceTitle": "Data Center PDU Market Size, Share, Latest Trends & Growth Analysis, 2025-2032",
+        "url": "https://www.marketsandmarkets.com/Market-Reports/data-center-pdu-market-183927907.html",
+        "excerpt": "the data center PDU market size was valued USD 3.94 biliion in 2025 and is project to reach USD 14.23 billion by 2032, growing at a CAGR of 19.5% from 2026 to 2032.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.nl-selfbuild-hotspot-hollows-geo#c7",
+        "claim": "Major vendors in the data center PDU market",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Data Center PDU Market Size, Share, Latest Trends & Growth Analysis, 2025-2032",
+        "url": "https://www.marketsandmarkets.com/Market-Reports/data-center-pdu-market-183927907.html",
+        "excerpt": "Schneider Electric (France) - Eaton (Ireland) - Vertiv Group Corp. (US) - Legrand (France) - ABB (Switzerland) - nVent (UK)",
+        "tags": [
+          "competition",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.nl-selfbuild-hotspot-hollows-geo#c8",
+        "claim": "Netherlands rack PDU market top import countries identified but no per-MW intensity figure given",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Netherlands Data Center Rack PDU Market | Share & Size 2032",
+        "url": "https://www.6wresearch.com/industry-report/netherlands-data-center-rack-pdu-market",
+        "excerpt": "The Netherlands saw a diverse range of countries exporting data center rack PDUs in 2024, with Germany, China, USA, Belgium, and",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.nl-selfbuild-hotspot-hollows-geo#c9",
+        "claim": "KPMG launched a periodic CapEx/OpEx benchmark across key DC markets but no NL-specific PDU or fit-out cost figure surfaced",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Benchmarking CapEx and OpEx in the global data centre market",
+        "url": "https://assets.kpmg.com/content/dam/kpmgsites/ie/pdf/insights/strategy/ie-global-data-centre-cost-benchmarks.pdf.coredownload.inline.pdf",
+        "excerpt": "this paper launches a periodic benchmark for DC capital expenditure (CapEx) and operating expenditure (OpEx) across key markets, highlighting regional cost variation and its underlying drivers.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "Netherlands hyperscale (self-build) data center market is forecast to grow at 26.41% CAGR (2026-2032) versus the Netherlands colocation market's 3.54% CAGR (2023-2029) and the overall NL data center market's 9.10% CAGR (2026-2031) — implying self-build capacity is growing several times faster than colocation, which could erode the colo-share basis (951 MW colo / 3,451 MW CE-7) used to derive geo.NL's 0.28 ratio if self-build MW is not proportionally represented in the CE-7 colo denominator.",
+        "nodes": [
+          "geo.NL"
+        ]
+      },
+      {
+        "text": "No PDU-vendor or BOM dataset splitting rack-PDU revenue/units per installed colo MW by country (NL vs CE-7) was found, so the underlying premise of the query — that PDU-euro intensity per MW could confirm or refute NL's 0.28 apportionment — remains untested by any surfaced source; the two evidentiary sources for geo.NL (Statista, Dutch Data Center Association) are colocation-capacity counts, not spend-intensity data, so no independent corroborating or contradicting signal on 'euro intensity per MW' exists in this batch.",
+        "nodes": [
+          "geo.NL"
+        ]
+      }
+    ],
+    "absences": [
+      "No vendor-level (Vertiv/Legrand/Schneider) PDU revenue or unit-shipment split by country (Netherlands vs CE-7 average) was found — the core requested dataset does not appear to exist in accessible form.",
+      "No colo fit-out bill-of-materials (BOM) dataset showing discrete rack-PDU spend per MW for the Netherlands compared to Germany/France was found.",
+      "No figure quantifying 'PDU-euro intensity per MW' for any country was located; all PDU market sizing found is at the pan-European or global level, not country-disaggregated.",
+      "The 6Wresearch Netherlands Rack PDU report exists as a purchasable product but the retrieved excerpt shows only import-country competition (HHI) framing, not a per-MW revenue or intensity metric.",
+      "No data distinguishing whether Netherlands hyperscaler self-build capacity is served by different PDU vendors/procurement channels (bypassing typical colo fit-out BOM) than colocation capacity was found, despite this being central to the group's 'self-build hollowing' framing."
+    ]
+  }
+}

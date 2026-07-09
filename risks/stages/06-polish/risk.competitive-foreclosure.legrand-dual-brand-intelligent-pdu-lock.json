@@ -1,0 +1,39 @@
+{
+  "inputsHash": "d56521e80c986b998549f76035cca2b4144062b3d9cc24dc995f7b4eb29612fc",
+  "generatedAt": "2026-07-08T17:42:39.718Z",
+  "data": {
+    "title": "One owner controls two top PDU brands, shrinking reachable market",
+    "narrative": "The model assumes the top three vendors hold 55% of the market, treating Raritan and Server Technology as separate rivals. But Legrand owns both, and in the intelligent-PDU market this venture targets, that gives one owner the two pioneer brands whose monitoring is wired into operators' systems. Swapping a PDU means re-integrating that monitoring layer, so incumbents keep renewals. This pushes the truly serviceable fraction below the model's 0.45 low edge, cutting the Year-1 number.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Vendor lists show Raritan and Server Technology as separate; Legrand owns both.",
+        "refs": [
+          "digest:cr3-vendors#c5",
+          "digest:cr3-vendors#c0",
+          "ledger:shape.cr3"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "PDUs plug into monitoring stacks, so replacements renew with the incumbent.",
+        "refs": [
+          "ledger:seg.enterprise",
+          "ledger:seg.colocation",
+          "profile:Product"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Adding integration lock drops serviceable fraction below the 0.45 low edge.",
+        "refs": [
+          "ledger:serviceableFactor",
+          "digest:cr3-vendors#c1"
+        ]
+      }
+    ],
+    "whyMissable": "The vendor lists name the two Legrand brands separately, and the serviceable haircut was framed as regulatory only, so the software-integration lock never made the list.",
+    "falsifier": "An Omdia 2025 table showing intelligent-PDU concentration at or below the whole-market level, or operator interviews confirming open protocols make mixing vendors routine.",
+    "likelihoodRationale": "Legrand's dual-brand ownership is confirmed and DCIM stickiness is well documented, but the locked share of replacement demand is unquantified. Open standards like Redfish and SNMP counter the magnitude, so confidence is modest at 0.30."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "inputsHash": "1b37191b5badae1efdb1aac0bdf72fa73d683dae57a545eb787436146576640d",
+  "generatedAt": "2026-07-08T21:54:59.971Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A single-source, consistent-scope table of total installed IT load (colo + self-operated) for all CE-7 countries — e.g., a PMR or Arizton pan-European installed-IT-load series — that lets you compute per-country shares on one denominator. This exists as a purchasable dataset and settles whether colo-based shares misstate the country mix today.",
+    "proposedCorrection": {
+      "nodeId": "geo.DE",
+      "value": 0.46,
+      "low": 0.42,
+      "high": 0.5,
+      "rationale": "Colo-only denominator overstates Germany; the BMWK installed-IT-load cross-check already puts DE at ~0.42, so recentering to ~0.46 splits the two scope methods rather than anchoring on colo-only 0.50."
+    },
+    "researchQueries": [
+      {
+        "query": "PMR or Arizton pan-European total installed IT load (colo + enterprise/self-operated) by country for Germany, Netherlands, Switzerland, Poland, Czechia, Austria 2025",
+        "kind": "confirming"
+      },
+      {
+        "query": "BMWK 2,700 MW German installed IT power vs CE-7 total installed IT load — does Germany's installed-load share fall within 3pp of its colo-based 0.50 share",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

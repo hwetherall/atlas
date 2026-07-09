@@ -1,0 +1,317 @@
+{
+  "inputsHash": "d997b77b454711ae99f36604fa202a5323ffbfe500afa1cb7fcfd8741de447d5",
+  "generatedAt": "2026-07-08T18:47:18.828Z",
+  "data": {
+    "claims": [
+      {
+        "id": "geo-region-denominator#c0",
+        "claim": "Statista's full 2025 European colocation IT power table lists MW by country beyond the CE-7 set used in the geo nodes' denominator.",
+        "number": 1772,
+        "unit": "MW",
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "| 2025 | 1,772 | 1,737 | 951 | 813 | 543 | 451 | 363 | 274 | 286 | 228 | 226 | 198 | 167 | 105 | 79 | 68 | 64 | 65 | 56 | 34 | 32 | 31 | 27 | 18 | 18 | 17 | 14 | 13 | 20 | 6 |",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c1",
+        "claim": "UK colocation IT power (2025) exceeds Germany's, making the UK the single largest national colo market in the Statista dataset, outside the CE-7 grouping.",
+        "number": 1772,
+        "unit": "MW",
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "| 2025 | 1,772 | 1,737 | 951 | 813 |",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c2",
+        "claim": "France, Ireland, Norway, Italy and Spain each hold sizeable 2025 colo capacity (813, 543, 451, 363, 286 MW respectively) that is entirely excluded from the CE-7 denominator used for geo.* shares.",
+        "number": 813,
+        "unit": "MW",
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "| 2025 | ... | 813 | 543 | 451 | 363 | 274 | 286 |",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c3",
+        "claim": "Frankfurt and London are individually forecast to reach 1.2GW and 1.3GW of data centre capacity respectively by end-2025, together representing roughly half of total European supply.",
+        "number": 1200,
+        "unit": "MW",
+        "sourceTitle": "Data Centres | CBRE (European Real Estate Market Outlook Mid-Year Review 2025)",
+        "url": "https://www.cbre.com/insights/books/european-real-estate-market-outlook-mid-year-review-2025/data-centres",
+        "excerpt": "London and Frankfurt are expected to account for 2.5GW of capacity, or approximately half of the total data centre supply in Europe, by the end of 2025. They are forecast to be 1.3GW and 1.2GW markets, respectively.",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c4",
+        "claim": "Data centre supply across Europe's five largest markets (FLAPD) is expected to grow 20% year-on-year in 2025 despite power constraints.",
+        "number": 20,
+        "unit": "%",
+        "sourceTitle": "Data Centres | CBRE (European Real Estate Market Outlook 2025)",
+        "url": "https://www.cbre.com/insights/books/european-real-estate-market-outlook-2025/data-centres",
+        "excerpt": "Despite a distinct lack of available power, data centre supply across Europe's five largest markets is expected to grow by a record 20% year-on-year in 2025.",
+        "tags": [
+          "execution",
+          "demand"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c5",
+        "claim": "Europe's top-15 tracked colocation markets had 4,726MW of colocation supply in Q4 2024, with 470MW availability and 341MW take-up that quarter.",
+        "number": 4726,
+        "unit": "MW",
+        "sourceTitle": "Europe Data Centres (CBRE Figures Q4 2024)",
+        "url": "https://assoimmobiliare-be.afterpixel.com/app/uploads/2025/02/Europe-Data-Centres-Figures-Q4-2024.pdf",
+        "excerpt": "4,726MW European colocation supply 470MW European colocation availability 341MW European colocation take-up",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c6",
+        "claim": "937MW of new colocation supply is expected across European markets in 2025, up from 655MW delivered in 2024 and 561MW in 2023.",
+        "number": 937,
+        "unit": "MW",
+        "sourceTitle": "New Investment in Europe's Data Centre Markets to Hit New Heights in 2025 | CBRE UK",
+        "url": "https://www.cbre.co.uk/press-releases/europes-data-centre-markets-to-hit-new-heights",
+        "excerpt": "there are 937MW of new supply expected in European markets this year... an increase of 282MW more than the 655MW of capacity delivered in 2024.",
+        "tags": [
+          "execution",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c7",
+        "claim": "More than half of 2025's new European colocation capacity (57%) is expected in the FLAPD markets (Frankfurt, London, Amsterdam, Paris, Dublin).",
+        "number": 57,
+        "unit": "%",
+        "sourceTitle": "New Investment in Europe's Data Centre Markets to Hit New Heights in 2025 | CBRE UK",
+        "url": "https://www.cbre.co.uk/press-releases/europes-data-centre-markets-to-hit-new-heights",
+        "excerpt": "More than half (57%) of this capacity is expected to be delivered in the leading European data centre markets - Frankfurt, London, Amsterdam, Paris and Dublin.",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c8",
+        "claim": "London has over 1GW of live data centre capacity, making it Europe's largest single data centre market.",
+        "number": 1,
+        "unit": "GW",
+        "sourceTitle": "Data Centres Overview | CBRE UK",
+        "url": "https://www.cbre.co.uk/insights/reports/data-centers-overview-fr-2025",
+        "excerpt": ">1GW Live capacity in London, making it Europe's largest data centre market",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c9",
+        "claim": "85% of last year's European colocation take-up was recorded in the FLAPD markets alone.",
+        "number": 85,
+        "unit": "%",
+        "sourceTitle": "Data Centres Overview | CBRE UK",
+        "url": "https://www.cbre.co.uk/insights/reports/data-centers-overview-fr-2025",
+        "excerpt": "85% Of take-up was recorded in FLAPD* last year *Represents the five largest colocation markets in Europe: Frankfurt, London, Amsterdam, Paris, and Dublin",
+        "tags": [
+          "demand",
+          "competition"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c10",
+        "claim": "Total European data centre capacity is expected to reach 5.8GW by the end of 2024, per CBRE.",
+        "number": 5.8,
+        "unit": "GW",
+        "sourceTitle": "Data Centres Overview | CBRE UK",
+        "url": "https://www.cbre.co.uk/insights/reports/data-centers-overview-fr-2025",
+        "excerpt": "5.8GW Data centre capacity expected across Europe by the end of 2024",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c11",
+        "claim": "Commercial colocation and hyperscale facilities now provide more than two-thirds of Europe's total IT power.",
+        "number": 67,
+        "unit": "%",
+        "sourceTitle": "New 2026 State of European Data Centres | eudca.org",
+        "url": "https://www.eudca.org/new-2026-state-of-european-data-centres",
+        "excerpt": "The 2026 edition shows that commercial colocation and hyperscale facilities now provide more than two-thirds of Europe's IT power, driven by the growing demand for cloud and AI.",
+        "tags": [
+          "definition",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c12",
+        "claim": "European IT power demand is forecast to grow at a 17% CAGR through 2031.",
+        "number": 17,
+        "unit": "% CAGR",
+        "sourceTitle": "New 2026 State of European Data Centres | eudca.org",
+        "url": "https://www.eudca.org/new-2026-state-of-european-data-centres",
+        "excerpt": "With European IT power demand forecast to grow at a CAGR of 17% through 2031, the report analyses the key challenges, including access to power, cooling innovation...",
+        "tags": [
+          "demand",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c13",
+        "claim": "Colocation data centres contributed €53 billion to Europe's GDP in 2025 alone, per EUDCA.",
+        "number": 53,
+        "unit": "€ billion",
+        "sourceTitle": "New 2026 State of European Data Centres | eudca.org",
+        "url": "https://www.eudca.org/new-2026-state-of-european-data-centres",
+        "excerpt": "Colocation data centres significantly advanced Europe's 2030 energy, water, and climate goals in 2025 alone, contributing €53 billion to the continent's GDP.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c14",
+        "claim": "Total European data centre capacity is projected to more than double to over 52.2GW by 2030, a ~21% CAGR from 2025-2030, versus 20.4GW forecast for 2025.",
+        "number": 52.2,
+        "unit": "GW",
+        "sourceTitle": "European data centre market — CIL Strategy Consultants discussion document",
+        "url": "https://cil.com/media/lkkjjdus/cil-strategy-consultants-european-data-centre-market-discussion-document.pdf",
+        "excerpt": "Total European data centre capacity 52.2 GW, 2021-30f ~21% CAGR 2025-30... 2025f 20.4",
+        "tags": [
+          "base-rate",
+          "execution"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c15",
+        "claim": "The workload mix in European data centres could flip from 80% cloud today to 80% AI by 2030, per CIL.",
+        "number": 80,
+        "unit": "%",
+        "sourceTitle": "European data centre market — CIL Strategy Consultants discussion document",
+        "url": "https://cil.com/media/lkkjjdus/cil-strategy-consultants-european-data-centre-market-discussion-document.pdf",
+        "excerpt": "AI as the latest game changer The mix of workloads could flip from 80% cloud today to 80% AI by 2030, requiring significantly more power, advanced cooling, and infrastructure investment.",
+        "tags": [
+          "demand",
+          "substitution"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c16",
+        "claim": "Arizton's Europe data centre portfolio database covers 2,042 facilities (1,477 existing, 565 upcoming) across 21 countries, without published country-level MW share breakdown in the excerpt.",
+        "number": 2042,
+        "unit": "facilities",
+        "sourceTitle": "Europe Data Centers, Top Data Centers, Data Center Locations, Upcoming Data Center Facilities — Arizton",
+        "url": "https://www.arizton.com/market-reports/europe-data-center-portfolio",
+        "excerpt": "Discover Insights on 2,042 Data Center Facilities Across 21 Key Countries in Europe... 1477 Existing Data Centers 565 Upcoming Data Centers",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c17",
+        "claim": "The UK dominates the existing Western Europe colocation market with more than 1.7GW of power capacity, ahead of Germany, France, and the Netherlands.",
+        "number": 1.7,
+        "unit": "GW",
+        "sourceTitle": "Western Europe Colocation Data Center Portfolio Report 2026 | Data Centre Magazine",
+        "url": "https://datacentremagazine.com/globenewswire/3253667",
+        "excerpt": "The United Kingdom dominates the existing market with a power capacity of more than 1.7 GW, driven by major players like VIRTUS Data Centers, Equinix, Digital Realty, Ark Data Centers and Vantage Data...",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c18",
+        "claim": "Data protection and data residency regulation are cited as a factor driving double-digit supply growth in Europe's secondary (non-FLAPD) markets.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Europe Data Centres (CBRE Figures Q4 2024)",
+        "url": "https://assoimmobiliare-be.afterpixel.com/app/uploads/2025/02/Europe-Data-Centres-Figures-Q4-2024.pdf",
+        "excerpt": "A lack of availability in FLAPD, growing demand for wholesale capacity from hyperscalers, and data protection/data residency regulation are factors leading to double-digit supply growth of Europe's secondary markets.",
+        "tags": [
+          "regulation",
+          "demand"
+        ]
+      },
+      {
+        "id": "geo-region-denominator#c19",
+        "claim": "CBRE tracks 10 secondary European markets and expects double-digit supply growth in five of them in 2025, with seven secondary markets (e.g., Milan, Madrid) expected to exceed 100MW of supply by year-end.",
+        "number": 100,
+        "unit": "MW",
+        "sourceTitle": "New Investment in Europe's Data Centre Markets to Hit New Heights in 2025 | CBRE UK",
+        "url": "https://www.cbre.co.uk/press-releases/europes-data-centre-markets-to-hit-new-heights",
+        "excerpt": "CBRE expects double-digit supply growth in five of the 10 secondary European markets tracked in 2025. There are seven markets, such as Milan and Madrid, expected to have 100MW of supply or more by ye",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "Statista's full 2025 country table (used as the basis for the CE-7 colo denominator of 3,451 MW) also lists large non-CE-7 markets — UK 1,772, France 813, Ireland 543, Norway 451, Italy 363, Spain 286 MW — showing the curated 'CE-7' denominator captures only a subset of total European colocation capacity, not 'Europe' broadly, which could mislead if geo.* shares are read as shares of all Europe rather than of a custom CE-7 basket.",
+        "nodes": [
+          "geo.DE",
+          "geo.NL",
+          "geo.PL",
+          "geo.CH",
+          "geo.CZ",
+          "geo.AT",
+          "geo.other"
+        ]
+      },
+      {
+        "text": "CBRE reports Europe's top-15 tracked markets had 4,726MW of colocation supply in Q4 2024, versus the Statista-derived CE-7 colo total of only 3,451MW for 2025 across just 6-7 countries — the CBRE figure, covering fewer (but larger, e.g. UK/France/Ireland-inclusive) markets, is 37% larger than the CE-7 denominator despite different country coverage, underscoring that 'colocation supply' scope varies materially by source and undermines confidence in a single normalizing denominator.",
+        "nodes": [
+          "geo.DE",
+          "geo.NL",
+          "geo.PL",
+          "geo.CH",
+          "geo.CZ",
+          "geo.AT",
+          "geo.other"
+        ]
+      },
+      {
+        "text": "EUDCA states colocation+hyperscale facilities provide 'more than two-thirds' of Europe's total IT power, implying total European IT power is roughly 1.5x the colo+hyperscale figure — this reinforces (at a continental scale) the colo-vs-installed scope divergence already flagged in geo.DE, geo.PL, geo.CH, and geo.AT derivations, suggesting the gap between colo-only and installed-load apportionment could be systematic across all CE-7 countries, not just the ones with noted cross-check divergence.",
+        "nodes": [
+          "geo.DE",
+          "geo.PL",
+          "geo.CH",
+          "geo.AT"
+        ]
+      },
+      {
+        "text": "CIL Strategy Consultants estimates total European data centre capacity at 20.4GW for 2025 and 52.2GW by 2030 (all data centre types), dwarfing the colo-only Statista Europe total (~8.6GW summing the full 2025 country column) — this scope gap (colo-only vs total capacity including hyperscale/self-built) is far larger than the 0.42–0.53 / 0.42–0.13 bands already flagged for geo.DE/geo.PL/geo.CH/geo.AT, suggesting those uncertainty bands may understate the true colo-vs-total divergence.",
+        "nodes": [
+          "geo.DE",
+          "geo.PL",
+          "geo.CH",
+          "geo.AT",
+          "geo.other"
+        ]
+      }
+    ],
+    "absences": [
+      "No source was found that reconciles colo-scope vs. installed-IT-load-scope country capacity in one consistent table across all CE-7 countries, which is exactly the promotion path required by geo.DE and geo.PL to move from 'inferred' to 'verified'.",
+      "No CBRE, EUDCA, or Arizton source in the results provided a full country-by-country MW breakdown comparable to Statista's; CBRE's reporting is organized by city/market (Frankfurt, London, Amsterdam, Paris, Dublin, Milan, Madrid) rather than by country, so it cannot directly cross-check geo.DE, geo.NL, geo.PL, geo.CH, geo.CZ, or geo.AT shares.",
+      "The EUDCA 'State of European Data Centres 2026' report explicitly promises 'NTA Country Profiles' but the search results only surfaced summary/marketing text, not the actual country-level MW figures needed to triangulate geo.PL, geo.CH, or geo.AT.",
+      "No updated source was found on Romania's or Hungary's data centre capacity beyond the same Statista figures already used in geo.other, despite CIL noting Central Europe as an 'emerging' secondary region — leaving the 'Other CE' promotion path (break out RO/HU once either exceeds ~5% of the CE base) unaddressed.",
+      "No single source quantified Switzerland's or Austria's colocation-vs-installed capacity split in a way that resolves the scope divergence already noted in geo.CH and geo.AT derivations (Mordor's installed-base figures for both remain single-source, uncorroborated by a second method in this search pass)."
+    ]
+  }
+}

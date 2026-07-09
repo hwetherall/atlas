@@ -1,0 +1,26 @@
+{
+  "inputsHash": "ddaef9d4eacc6152add449886e009ca39b943bc441d239b9a37168781e8ebf50",
+  "generatedAt": "2026-07-08T21:31:00.156Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names seg.enterprise 0.29 vs its own 0.24 low band, the 2pp/year decline to 19% by 2031, specific NVIDIA architectures (DGX GB busbar vs SuperPOD AC/PDU with 432+96 rPDU counts), and a concrete perturbation to 0.20. Actors, instruments, values and the 12-month window are all pinned."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "Reopening a register item stamped 'refuted' by splitting PDU-shipping from PDU-attach-per-MW is a genuine hidden move, and the 'squeezed from both ends' framing (whyMissable) is not in the ledger. Falls short of 4 because busbar substitution in dense GPU racks is a known industry debate a diligent founder tracking NVIDIA reference designs could surface."
+    },
+    "mechanismDepth": {
+      "score": 2,
+      "note": "All three hops carry refs and the base-decline hop is solid, but the load-bearing arrow — 'sharply reduced rack-PDU attach' — is undercut by the risk's own SuperPOD evidence showing 528 rPDUs in a pod-level BOM (busbar covers compute racks, not network/storage/mgmt). A hostile partner asking 'why?' at that arrow gets a partially conceded answer, per the likelihood rationale itself."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The secondary premise (2pp/year enterprise decline) has two independent corroborating sources, but the key attach-reduction premise is contradicted by the attached NVIDIA AC-power RA and the evidenceStatus is honestly marked 'contested' with a documented revision from 0.40 to 0.33. Honest contestation on the load-bearing claim caps this at 2."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations change near-term action: a 5–8 integrator attach-rate teardown and Year-1 positioning toward the air-cooled refresh tier both alter sequencing and spend within two quarters. Indicators (reference-architecture defaults, Vertiv/Schneider segment commentary) have concrete thresholds and are monitorable."
+    }
+  }
+}

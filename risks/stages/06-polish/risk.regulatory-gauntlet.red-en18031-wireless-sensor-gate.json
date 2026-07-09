@@ -1,0 +1,39 @@
+{
+  "inputsHash": "d8b6da0607635fcb118012adc78097b269cca7fb484f2e607d44e48752a91db9",
+  "generatedAt": "2026-07-08T21:47:20.224Z",
+  "data": {
+    "title": "One WiFi sensor forces EU radio security review, adds 2 quarters",
+    "narrative": "The model assumes the smart PDU can start selling right away and win 1% of its market in Year 1. But if it ships with any radio, an EU cybersecurity rule in force since 1 August 2025 requires a notified body to certify it, adding a 4 to 6 month wait. That queue shortens the selling window from 12 months to 6 to 8, cutting the Year-1 number roughly in half.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Product ships with a radio, triggering the EU rule live since August 2025.",
+        "refs": [
+          "profile:Product",
+          "profile:Stage"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Access-control settings force notified-body review; late start loses Year-1 deals.",
+        "refs": [
+          "digest:refine-demand-discontinuity.prelet-pipeline-lockout#c0",
+          "digest:refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c2",
+          "ledger:obtainableFactor"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Shorter selling window cuts the 1% Year-1 share about in half.",
+        "refs": [
+          "ledger:obtainableFactor",
+          "digest:obtainable-benchmark#c5",
+          "digest:refine-execution-window.som-window-semantics-mismatch#c4"
+        ]
+      }
+    ],
+    "whyMissable": "The rule reads as being about radios, so this power-distribution team overlooks it, and nobody owns the requirement triggered by a cheap wireless sensor.",
+    "falsifier": "Proof the launch product is wired-only, or an assessment showing its access-control design needs only self-declaration with a certificate in hand before first shipment.",
+    "likelihoodRationale": "Wireless sensing is common in current smart-PDU designs and the certification traps are documented, but a wired-only launch fully avoids the gate. Timing, restrictions, and the 12 to 20 week lead time are confirmed, so we raise likelihood from 0.35 to 0.40, bounded by not knowing if the launch product ships a radio."
+  }
+}

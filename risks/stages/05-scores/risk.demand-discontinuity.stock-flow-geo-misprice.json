@@ -1,0 +1,26 @@
+{
+  "inputsHash": "a6e2632589641b0df92e6fa051688a2dbd6a988b46467a191687836c878d944d",
+  "generatedAt": "2026-07-08T05:30:23.826Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names exact nodes and values (geo.NL 0.28 → 0.18, geo.PL 0.07 → 0.11), specific instruments (Jan-2024 decree, Amsterdam 350 MVA cap to 2030, Het Hogeland/Hollands Kroon exemptions), and dated indicators with numeric thresholds. Perturbations and mitigations are quantified against the venture's Year-1 window."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The stock-vs-flow reframe — that two sources agreeing within 3% is 'the trap' because both measure the wrong quantity — is a genuine structural insight beyond band-edge quibbling, as the whyMissable field articulates. Docked one point because the Dutch hyperscale ban itself is widely publicized and a well-read founder plausibly knows it; the novelty is the mapping to Year-1 orderable demand, not the trigger."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "All three steps carry refs and the trigger→propagation→model-impact chain is independently plausible. One hop is softer than presented: the ban forecloses hyperscale (70+ MW), yet the risk's own evidence (DDA 2026) shows NL colocation still growing 7%/12% CAGR — the likelihood rationale concedes this magnitude gap, but the mechanism step asserts 'administratively foreclosed' more strongly than the colocation-relevant data supports."
+    },
+    "evidenceQuality": {
+      "score": 4,
+      "note": "Key premise (ban in force + flow reallocating eastward) has multiple independent corroborators: official gazette text, Greenberg Traurig, DC Byte, C&W, Rabobank, Baker McKenzie, and DDA 2026 showing NL trailing the European average. The likelihood revision (0.55→0.62) honestly flags what remains unquantified (NL-vs-CE-7 additions shares)."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly reorders next-two-quarter spend — Frankfurt-first/Warsaw-second GTM, NL as retrofit-only, and a one-analyst-week rebuild of geo weights on an additions basis. All three indicators name a source and a numeric threshold, making the position monitorable via the stated DDA/PMR/permit-register signals."
+    }
+  }
+}

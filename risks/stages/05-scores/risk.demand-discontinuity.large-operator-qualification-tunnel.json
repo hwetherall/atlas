@@ -1,0 +1,26 @@
+{
+  "inputsHash": "544169640cf196c94c6b28c1f286f9e77cf43b76443f36eaa6d5d461f9ddefc9",
+  "generatedAt": "2026-07-08T05:30:23.825Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names exact ledger nodes with values (cust.operator-large 0.40, cust.oem 0.22, cust.distributor 0.13, shape.cr3 ~0.55), the 83% pre-let figure, 12–24 month qualification timelines against a 12-month YAM window, and concrete actors (Equinix, NTT GDC, Rexel, Sonepar) in indicators. Every claim is pinned to a node or number."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The core insight — that channel size and channel entry speed are different variables and the model only encodes the first ('the size of a channel and the speed of entry into it are different variables') — reframes the largest node as foreclosed rather than merely uncertain, and adds the wrinkle that Year-1 demand collapses onto the zero-evidence 0.35 indirect cells. However, long enterprise-hardware qualification cycles are known territory for experienced hardware founders, so it falls short of 'would never have it on their list'."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Each of the three steps carries refs (ledger:cust.operator-large's own 'internal estimate' flag, digest:geo-DE#c21 for pre-let 83%, ledger:shape.cr3) and each arrow is independently plausible. The one soft link is the 12–24 month duration itself, which the likelihood rationale concedes 'remains uncorroborated by direct quantitative evidence' — a hostile partner asking 'why 12+ months?' gets a base-rate assertion, not a citation."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "Sources confirm formal qualification/prequalification gates exist (Achilles/Google, TÜV, OCP Ready), but the load-bearing quantitative premise — durations exceeding the 12-month window — has no direct source, and OCP Ready qualifies colo facilities for hyperscalers rather than hardware vendors onto AVLs, making it partially off-target. The likelihood rationale is honest about this gap and revised only modestly (0.55→0.58), which earns the well-argued-prior credit but not corroboration on the key premise."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "If true, it inverts the stated first-channel choice this quarter: the mitigations reroute Year-1 revenue through OEM white-label and start operator qualification in parallel for Year 2, both immediate sequencing changes. Indicators are concretely monitorable (procurement portal timelines, 'no pilot-pod agreement within 4 months of launch', distributor line-card openings)."
+    }
+  }
+}

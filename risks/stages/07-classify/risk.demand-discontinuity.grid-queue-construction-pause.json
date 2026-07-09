@@ -1,0 +1,10 @@
+{
+  "inputsHash": "9f5b006d1eff7008359212996a4627ab6fc51c6533791958e48dd8e3090d6b1c",
+  "generatedAt": "2026-07-08T18:18:24.244Z",
+  "data": {
+    "resolution": "risk",
+    "settleTest": "Only H1-2026 actuals on whether Frankfurt and Amsterdam energizations convert on schedule (under-construction MW going live at or above prior-year rate) would settle whether Year-1 orders slip — this is a future demand gate that hasn't bound yet, not a mis-stated current number.",
+    "proposedCorrection": null,
+    "researchQueries": []
+  }
+}

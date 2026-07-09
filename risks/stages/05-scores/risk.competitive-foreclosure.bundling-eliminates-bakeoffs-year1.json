@@ -1,0 +1,26 @@
+{
+  "inputsHash": "094e8f04de1476adac5ec14d4c1ddfacb8b5ad4a88aa2c2a633156f73f4203a9",
+  "generatedAt": "2026-07-08T05:30:23.824Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (obtainableFactor 0.03 → 0.005), the actors (Schneider, Vertiv, Eaton, Legrand), quantified anchors (TryBuildCo ~0.1% of SAM, Tractian ~$200K vs $14.9B), and a measurable indicator threshold (<30% standalone opportunities). Instruments, values and a YAM impact (~five-sixths cut) are all pinned down."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The 'band edge could be true' portion is visible in the ledger, but the risk supplies a NEW sector-specific reason — bundled fit-out procurement means no standalone evaluation occurs — a question the percentage-of-SAM framing never poses, as whyMissable itself articulates. Docked one point because the corpus's own benchmark contradictions ('every concrete datapoint... screams this') were already on the page for a careful reader."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Each hop (bundle pricing power → growth concentrated in packaged new-builds → obtainableFactor assumes evaluations that don't occur) carries refs and is independently plausible. The quantitative jump to '≤0.5% of SAM' leans on generic hardware-entrant base rates rather than a measured standalone-slice fraction, which the risk itself admits remains uncertain."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Two independent vendor reference designs (Vertiv 360AI, Schneider RD48) corroborate the bundling premise, and the risk honestly surfaces contradicting standalone tenders and folds them into a held likelihood of 0.55. However, the evidence proves bundles EXIST, not that standalone bake-offs are RARE — the load-bearing frequency claim rests on inference, and the contradicting tenders directly bear on it."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The mitigations reshape the next two quarters: retarget Year-1 entirely to retrofit RFQs, run a 90-day bottom-up pipeline model, and pursue BOM-template placement. The falsifier and indicators (CRM opportunity coding, tender-document coding, earnings-call attach-rate commentary) make it monitorable on the stated timeline."
+    }
+  }
+}

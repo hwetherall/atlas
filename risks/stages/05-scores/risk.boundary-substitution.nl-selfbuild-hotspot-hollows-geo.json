@@ -1,0 +1,26 @@
+{
+  "inputsHash": "cd3adf0442c7388f56e1d4f6fb6714f806a6d0c3be7cca45ef04a9c94bbbc388",
+  "generatedAt": "2026-07-08T05:30:23.826Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (geo.NL), its derivation (951/3,451 MW → 0.28, band 0.24–0.31), the CBRE 60% self-build figure, Amsterdam's ~70% NL concentration, named sites (Middenmeer, Eemshaven), and a concrete perturbation to 0.21. Nothing here is generic."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The claim is not 'geo.NL could be at band edge' — it attacks the apportionment method itself (euros-per-MW treated as constant), which the whyMissable field correctly notes no ledger source even measures. Docked one point because busway/self-build substitution appears elsewhere in the model (digest:seg-mix refs), so the coupling to geography is a clever recombination rather than a fully hidden discovery."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at every hop: sourced self-build concentration → architecture-setting halls plus Amsterdam hyperscale absorption → MW-only apportionment overstates NL PDU-euros. Falls short of 4 because the propagation step's key quantitative link (NL PDU-euro/MW actually below DE's) is asserted from priors, and the 0.28→0.21 magnitude is not derived from anything stated."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The trigger premise is independently corroborated (CBRE press release + DCD coverage) and the substitution-leading character has supporting stances (Pure DC lease, OCP-Ready Amsterdam), with honest acknowledgment in the likelihood rationale that the load-bearing intensity claim remains unverified. The moratorium source partially contradicts the '70% Amsterdam' sub-premise, which the rationale concedes — good honesty, but the central quantitative premise still rests on inference."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes near-term action: the strategic mitigation reweights Year-1 GTM toward DE/CH, and the information mitigation (per-country PDU-intensity cut) is a next-quarter spend decision. Indicators are concrete and monitorable (TenderNed tenders, CBRE quarterly, NL self-build vs colo additions)."
+    }
+  }
+}

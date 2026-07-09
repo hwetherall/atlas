@@ -1,0 +1,270 @@
+{
+  "inputsHash": "56582956507063ef4e2e203f6287f0725dd11e20fe7bdde26269ecf71a60881e",
+  "generatedAt": "2026-07-08T18:42:52.968Z",
+  "data": {
+    "claims": [
+      {
+        "id": "geo-NL#c0",
+        "claim": "Amsterdam has 852 MW of operational data-center capacity",
+        "number": 852,
+        "unit": "MW",
+        "sourceTitle": "Cushman & Wakefield: European data centre growth is shifting | NL | Cushman & Wakefield",
+        "url": "https://www.cushmanwakefield.com/en/netherlands/news/2026/04/emea-datacentre-update-h2-2025",
+        "excerpt": "Amsterdam, with 852 MW of operational capacity, has less room for further expansion",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-NL#c1",
+        "claim": "EMEA operational data-center capacity exceeded 11.4 GW by end of 2025, up 19% year-on-year",
+        "number": 11.4,
+        "unit": "GW",
+        "sourceTitle": "Cushman & Wakefield: European data centre growth is shifting | NL | Cushman & Wakefield",
+        "url": "https://www.cushmanwakefield.com/en/netherlands/news/2026/04/emea-datacentre-update-h2-2025",
+        "excerpt": "By the end of 2025, operational capacity across EMEA exceeded 11.4 GW (+19% year-on-year)",
+        "tags": [
+          "base-rate",
+          "demand"
+        ]
+      },
+      {
+        "id": "geo-NL#c2",
+        "claim": "Total EMEA development pipeline increased more than 25% to nearly 15 GW",
+        "number": 15,
+        "unit": "GW",
+        "sourceTitle": "Cushman & Wakefield: European data centre growth is shifting | NL | Cushman & Wakefield",
+        "url": "https://www.cushmanwakefield.com/en/netherlands/news/2026/04/emea-datacentre-update-h2-2025",
+        "excerpt": "the total development pipeline increased by more than 25% to nearly 15 GW",
+        "tags": [
+          "demand",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-NL#c3",
+        "claim": "EMEA capacity currently under construction has plateaued at around 2.5 GW",
+        "number": 2.5,
+        "unit": "GW",
+        "sourceTitle": "Cushman & Wakefield: European data centre growth is shifting | NL | Cushman & Wakefield",
+        "url": "https://www.cushmanwakefield.com/en/netherlands/news/2026/04/emea-datacentre-update-h2-2025",
+        "excerpt": "Capacity currently under construction has plateaued at around 2.5 GW",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "geo-NL#c4",
+        "claim": "Amsterdam data-center vacancy fell from 24% to almost 9% over five years",
+        "number": 9,
+        "unit": "%",
+        "sourceTitle": "Data centres | CBRE Netherlands",
+        "url": "https://www.cbre.nl/en-gb/insights/books/nl-real-estate-market-outlook-2025/data-centres",
+        "excerpt": "this has led to a significant decrease in vacancy in and around Amsterdam: from 24% to almost 9%",
+        "tags": [
+          "demand",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-NL#c5",
+        "claim": "Amsterdam is the third largest colocation data centre hub in Europe with more than 500 MW capacity",
+        "number": 500,
+        "unit": "MW",
+        "sourceTitle": "Data centres | CBRE Netherlands",
+        "url": "https://www.cbre.nl/en-gb/insights/books/nl-real-estate-market-outlook-2025/data-centres",
+        "excerpt": "With a capacity of more than 500 megawatts, Amsterdam is currently the third largest colocation data centre hub in Europe",
+        "tags": [
+          "competition",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-NL#c6",
+        "claim": "DC Byte lists Amsterdam total supply (Live, Under Construction, Committed, Early Stage) at 1,849 MW",
+        "number": 1849,
+        "unit": "MW",
+        "sourceTitle": "Amsterdam | DC Byte",
+        "url": "https://www.dcbyte.com/market/amsterdam/",
+        "excerpt": "Supply: 1,849 MW\n\nTotal Supply is the sum of four supply categories: Live, Under Construction, Committed, and Early Stage.",
+        "tags": [
+          "structure",
+          "demand"
+        ]
+      },
+      {
+        "id": "geo-NL#c7",
+        "claim": "An amended decree bans new hyperscale data centres (<10 hectares/70+MW) in the Netherlands except in Het Hogeland and Hollands Kroon",
+        "number": 70,
+        "unit": "MW",
+        "sourceTitle": "Amsterdam | DC Byte",
+        "url": "https://www.dcbyte.com/market/amsterdam/",
+        "excerpt": "an amended decree has meant that no new hyperscale data centres (<10 hectares/70+ MW) are allowed to be constructed in the Netherlands, except for a few locations in the municipalities of Het Hogeland (e.g. Eemshaven) and Hollands Kroon (e.g. Agriport)",
+        "tags": [
+          "regulation"
+        ]
+      },
+      {
+        "id": "geo-NL#c8",
+        "claim": "Amsterdam's draft umbrella zoning plan proposes a maximum connection capacity of 350 MVA within the municipality until 2030",
+        "number": 350,
+        "unit": "MVA",
+        "sourceTitle": "Amsterdam | DC Byte",
+        "url": "https://www.dcbyte.com/market/amsterdam/",
+        "excerpt": "a recent draft umbrella zoning plan suggesting that 350 MVA is the new maximum connection capacity within the municipality until 2030",
+        "tags": [
+          "regulation"
+        ]
+      },
+      {
+        "id": "geo-NL#c9",
+        "claim": "Power distribution firms report no power available for data centres until 2030",
+        "number": 2030,
+        "unit": "year",
+        "sourceTitle": "Amsterdam | DC Byte",
+        "url": "https://www.dcbyte.com/market/amsterdam/",
+        "excerpt": "many power distributions firms saying that they have no power available until 2030, thus limiting development",
+        "tags": [
+          "regulation",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-NL#c10",
+        "claim": "Total Dutch colocation capacity reached 924 megawatts in 2024",
+        "number": 924,
+        "unit": "MW",
+        "sourceTitle": "Ten Years of State of the Dutch Data Centers: A Decade of Growth and Challenges - Dutch Data Center Association",
+        "url": "https://www.dutchdatacenters.nl/en/nieuws/ten-years-of-state-of-the-dutch-data-centers-a-decade-of-growth-and-challenges/",
+        "excerpt": "In 2024, the total colocation capacity reached 924 megawatts.",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-NL#c11",
+        "claim": "For 2025 the Dutch data center sector expects record investment of more than €1.4 billion",
+        "number": 1.4,
+        "unit": "€ billion",
+        "sourceTitle": "Ten Years of State of the Dutch Data Centers: A Decade of Growth and Challenges - Dutch Data Center Association",
+        "url": "https://www.dutchdatacenters.nl/en/nieuws/ten-years-of-state-of-the-dutch-data-centers-a-decade-of-growth-and-challenges/",
+        "excerpt": "For 2025, the sector expects a record investment of more than €1.4 billion.",
+        "tags": [
+          "demand",
+          "execution"
+        ]
+      },
+      {
+        "id": "geo-NL#c12",
+        "claim": "The Amsterdam Metropolitan Area (MRA) accounts for approximately 70% of Dutch colocation capacity",
+        "number": 70,
+        "unit": "%",
+        "sourceTitle": "Ten Years of State of the Dutch Data Centers: A Decade of Growth and Challenges - Dutch Data Center Association",
+        "url": "https://www.dutchdatacenters.nl/en/nieuws/ten-years-of-state-of-the-dutch-data-centers-a-decade-of-growth-and-challenges/",
+        "excerpt": "the Amsterdam Metropolitan Area (MRA) still accounts for approximately 70% of colocation capacity",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "geo-NL#c13",
+        "claim": "Dutch data center market expanded from 1,489.0 MW to 1,638.0 MW between 2021 and 2023, a 4.9% CAGR",
+        "number": 1638,
+        "unit": "MW",
+        "sourceTitle": "Netherlands GDC2025 | CleanBridge",
+        "url": "https://www.cleanbridge.co/insights/energy-transition/cleanbridge-global-data-center-market-report-2025/regional-market-overviews-gdc2025/netherlands-gdc2025/",
+        "excerpt": "Between 2021 and 2023, the market expanded from 1,489.0MW to 1,638.0MW, reflecting a CAGR of 4.9% (Dutch Data Center Association, 2024) (Dutch Data Center Association, 2023).",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-NL#c14",
+        "claim": "The digital infrastructure industry contributes approximately €25.0 billion to the Dutch economy",
+        "number": 25,
+        "unit": "€ billion",
+        "sourceTitle": "Netherlands GDC2025 | CleanBridge",
+        "url": "https://www.cleanbridge.co/insights/energy-transition/cleanbridge-global-data-center-market-report-2025/regional-market-overviews-gdc2025/netherlands-gdc2025/",
+        "excerpt": "the digital infrastructure industry contributes approximately €25.0 Bn ($26.9 Bn) to the national economy",
+        "tags": [
+          "demand"
+        ]
+      },
+      {
+        "id": "geo-NL#c15",
+        "claim": "A moratorium on Amsterdam data center development began in 2019 and was lifted in 2020",
+        "number": 2019,
+        "unit": "year",
+        "sourceTitle": "Amsterdam | DC Byte",
+        "url": "https://www.dcbyte.com/market/amsterdam/",
+        "excerpt": "Major growth was seen between 2010 and 2018 and was then curtailed by a moratorium in 2019. Since the moratorium was lifted in 2020, development has picked up but the rate of activity has reduced",
+        "tags": [
+          "regulation"
+        ]
+      },
+      {
+        "id": "geo-NL#c16",
+        "claim": "Pure DC signed a lease for a 78MW hyperscale campus in Westpoort, Amsterdam, securing 100MVA of power via a private substation",
+        "number": 78,
+        "unit": "MW",
+        "sourceTitle": "Amsterdam to Host 78MW Hyperscale Campus Following €1B Pure DC Investment",
+        "url": "https://www.thefastmode.com/technology-solutions/46509-amsterdam-to-host-78mw-hyperscale-campus-following-1b-pure-dc-investment",
+        "excerpt": "A hyperscale customer is leasing the entire 78MW campus, situated in Westpoort, Amsterdam...secured planning permissions, and 100MVA of power via a private substation.",
+        "tags": [
+          "execution",
+          "demand"
+        ]
+      },
+      {
+        "id": "geo-NL#c17",
+        "claim": "Netherlands data center portfolio report covers 147 facilities (129 existing, 18 upcoming) across 47 regions",
+        "number": 147,
+        "unit": "facilities",
+        "sourceTitle": "Netherlands Data Centers Portfolio: Existing & Upcoming Data Centers in Netherlands",
+        "url": "https://www.arizton.com/market-reports/netherlands-data-center-portfolio",
+        "excerpt": "Discover Insights on 147 Data Center Facilities Across 47 Key Regions in the Netherlands...129 Existing Data Centers\n\n18 Upcoming Data Centers",
+        "tags": [
+          "structure"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "CleanBridge reports the Dutch data center market at 1,638.0 MW in 2023, roughly 1.7x higher than the DDA's 924 MW colocation figure (2024) and the Statista 951 MW figure used to derive geo.NL's 0.28 ratio — likely reflecting a broader 'total data center' scope (including enterprise/non-colo) versus the colocation-only scope the node relies on, but the gap is unreconciled.",
+        "nodes": [
+          "geo.NL"
+        ]
+      },
+      {
+        "text": "Cushman & Wakefield's Amsterdam operational capacity of 852 MW is inconsistent with DDA's implied Amsterdam-region figure (≈70% of 924 MW national colocation ≈ 647 MW), suggesting either scope differences (all DC types vs colocation-only) or source disagreement within the same region feeding the node's cross-check.",
+        "nodes": [
+          "geo.NL"
+        ]
+      },
+      {
+        "text": "DC Byte's Amsterdam 'Total Supply' of 1,849 MW includes Live+Under Construction+Committed+Early Stage capacity, far exceeding the ~852 MW operational figure and the national 924-951 MW colocation baselines the node's derivation relies on — a pipeline-vs-operational mismatch that could distort the ratio if pipeline figures are inadvertently used.",
+        "nodes": [
+          "geo.NL"
+        ]
+      },
+      {
+        "text": "Regulatory caps (no new hyperscale <10ha/70MW+ sites outside Het Hogeland/Hollands Kroon; Amsterdam's proposed 350 MVA connection ceiling until 2030; power unavailable until 2030) constrain NL capacity growth independent of demand, which could invalidate any assumption that NL's share of CE-7 capacity (currently 0.28) will scale proportionally with regional AI/cloud demand growth.",
+        "nodes": [
+          "geo.NL"
+        ]
+      }
+    ],
+    "absences": [
+      "No explicit CE-7 (or other seven-country) total MW breakdown was found in these results to independently verify the 3,451 MW denominator used in the node's apportionment.",
+      "No source explained or reconciled the small but persistent discrepancy between Statista's 951 MW (2025) and DDA's 924 MW (2024) figures for Dutch colocation capacity.",
+      "No MW-level breakdown for secondary Dutch regions (Groningen, South Holland, North Brabant, Rotterdam, Eindhoven) was found, despite these being repeatedly cited as growth areas — only the ~70% Amsterdam Metropolitan Area share is quantified.",
+      "No updated 2025/2026 national colocation capacity figure (beyond the 2024 924 MW DDA figure) was found to corroborate Statista's 2025 951 MW estimate.",
+      "No quantification of total available or contracted grid capacity (in MW/MVA) at a national level was found, despite repeated qualitative references to grid congestion and power unavailability limiting growth."
+    ]
+  }
+}

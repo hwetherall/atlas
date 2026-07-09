@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "59496f2409188cb30c2ebc2fcf8b31e0b894dc8e58b7a0331c9be89d1adb95fa",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"Bundled PDUs shrink the winnable pool below the model's floor\",\n \"narrative\": \"The model assumes there is a pool of standalone rack-PDU purchases a new entrant can compete for, sized at 0.5 to 3% of the market. But the incumbents who sell the $23B power and $26B cooling packages bundle the PDUs inside those deals, and the only standalone tenders found were tiny and barely contested. That pushes the real Year-1 share to about 0.3%, below the model's own 0.5% floor.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"Incumbents bundle PDUs into power and cooling deals at zero margin\",\n   \"refs\": [\n    \"digest:cust-mix#c2\",\n    \"digest:cust-mix#c3\",\n    \"ledger:shape.cr3\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Leftover standalone tenders are small, sole-sourced, or barely contested\",\n   \"refs\": [\n    \"digest:obtainable-benchmark#c1\",\n    \"digest:obtainable-benchmark#c6\",\n    \"digest:obtainable-benchmark#c7\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"Real Year-1 share drops to about 0.3%, below the floor\",\n   \"refs\": [\n    \"ledger:obtainableFactor\",\n    \"digest:obtainable-benchmark#c10\",\n    \"digest:obtainable-benchmark#c0\"\n   ]\n  }\n ],\n \"falsifier\": \"A logged pipeline of five or more standalone, multi-vendor rack-PDU tenders in CE-7, each at least €250K, within any six-month window, where a non-incumbent can bid.\",\n \"category\": \"execution\",\n \"evidence\": [\n  {\n   \"title\": \"Beschaffung von Stromverteilereinheiten (PDU) — Direct Award, Stadt Zürich\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"it-beschaffung.ch / Stadt Zürich OIZ\",\n   \"date\": \"2024-07-04\",\n   \"excerpt\": \"Beschaffung von 900 Stromverteilereinheiten... Awards: Riedo Networks AG CHF 1,996,000. Marktabklärungen zeigten, dass nur eine Firma PDU anbieten kann... Die Vergabe erfolgt somit freihändig.\",\n   \"url\": \"https://www.it-beschaffung.ch/564/beschaffung-von-stromverteilereinheiten-pdu\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Serviceable Obtainable Market (SOM): How to Calculate It\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Prospeo\",\n   \"date\": null,\n   \"excerpt\": \"SOM is the revenue you can realistically capture in 1-3 years. Not a fantasy percentage of SAM.\",\n   \"url\": \"https://prospeo.io/s/serviceable-obtainable-market\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"SAM vs SOM: Key Differences Explained\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"VC Beast\",\n   \"date\": \"2026-03-13\",\n   \"excerpt\": \"SOM is the portion of SAM you can realistically capture in a defined time period (usually 3-5 years)... Typical SOM is 1-5% of SAM for early-stage companies.\",\n   \"url\": \"https://vcbeast.com/compare/sam-vs-som\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"obtainableFactor\",\n  \"label\": \"Year-1 obtainable share of SAM\",\n  \"kind\": \"assumption\",\n  \"value\": 0.01,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"triangulated\",\n  \"dimension\": null,\n  \"dimensionValue\": null,\n  \"sensitivityRange\": {\n   \"low\": 0.005,\n   \"high\": 0.03\n  },\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Benchmark anchoring\",\n   \"expression\": \"Prospeo assigns 1% of SAM to YEAR 1 (3% and 5% are Years 2–3) — the prior 3% read the Year-2 figure as Year 1. Corrected to 1%; the Tractian comparable (first-year ~$1.2M against a multi-$B market) sits below 1%.\",\n   \"crossCheck\": \"Early-procurement mechanism (DC electrical gear locked 12–24mo before fit-out) independently supports ≤2%; open 2026 EU rack-PDU tenders keep 2–3% inside the band.\"\n  },\n  \"provenance\": {\n   \"rationale\": \"Refinement cycle 1 caught the benchmark-period misread — the value now follows the source's own Year-1 figure, band 0.5–3%.\",\n   \"promotionPath\": \"Replace with pipeline-based model once first CE deals close (win-rate × cycle time × capacity).\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"Addressable markets — SOM benchmarks\",\n    \"sourceType\": \"analyst-estimate\",\n    \"publisher\": \"Prospeo\",\n    \"date\": null,\n    \"excerpt\": \"SOM benchmarks that won't get you laughed out of the room: 1% of SAM in Year 1, 3% in Year 2, 5% in Year 3.\",\n    \"attached\": true\n   },\n   {\n    \"title\": \"Serviceable Obtainable Market (SOM) — early-stage ranges\",\n    \"sourceType\": \"analyst-estimate\",\n    \"publisher\": \"IdeaPlan\",\n    \"date\": \"2024\",\n    \"excerpt\": \"For early-stage companies, SOM is typically 1-5% of SAM. For growing companies with product-market fit, SOM can reach 10-20% of SAM.\",\n    \"attached\": true\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"risk\",\"settleTest\":\"Only observing whether standalone, multi-vendor rack-PDU tenders actually materialize in CE-7 over the next 6-24 months (the falsifier itself is a forward pipeline count) settles this. Whether incumbents continue to bundle at zero margin and whether contestable standalone demand emerges is a market-unfolding question, not a purchasable fact about today.\",\"proposedCorrection\":null,\"researchQueries\":[]}",
+  "usage": {
+    "prompt_tokens": 3232,
+    "completion_tokens": 158,
+    "total_tokens": 3390,
+    "cost": 0.02011,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.02011,
+      "upstream_inference_prompt_cost": 0.01616,
+      "upstream_inference_completions_cost": 0.00395
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T21:52:37.783Z"
+}

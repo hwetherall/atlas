@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { FactNode, Ledger } from "@/lib/schema";
+import type { Risk } from "@/lib/riskSchema";
 import type { ScenarioAction, ScenarioState } from "@/lib/useScenario";
 import { informationValue, swingTam } from "@/lib/voi";
 import { formatEUR } from "@/lib/format";
@@ -23,6 +24,7 @@ interface Props {
   state: ScenarioState;
   dispatch: React.Dispatch<ScenarioAction>;
   onOpenDashboard: () => void;
+  risks?: Risk[]; // register errors feed the Verify-next refinement queue
 }
 
 // Which equation term a fact feeds — drives hover/selection highlighting.
@@ -35,7 +37,7 @@ function termOf(node: FactNode | null | undefined): EquationTerm | null {
   return null; // shape facts sit outside the funnel
 }
 
-export default function FactBank({ ledger, state, dispatch, onOpenDashboard }: Props) {
+export default function FactBank({ ledger, state, dispatch, onOpenDashboard, risks }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [hoveredNode, setHoveredNode] = useState<FactNode | null>(null);
   const node = selectedId ? (ledger.find((n) => n.id === selectedId) ?? null) : null;
@@ -69,15 +71,32 @@ export default function FactBank({ ledger, state, dispatch, onOpenDashboard }: P
     return { total, crossChecked, flagged, sources };
   }, [ledger]);
 
-  // Top-3 verification targets: biggest swing × weakest evidence.
+  // Facts the risk engine flagged as ERRORS (with a concrete hypothesis) —
+  // these jump the verification queue: a targeted doubt beats a generic band.
+  const errorByNode = useMemo(() => {
+    const map = new Map<string, Risk>();
+    for (const r of risks ?? []) {
+      if (r.resolution !== "error") continue;
+      const nodeId = r.proposedCorrection?.nodeId ?? r.targetNodes[0];
+      if (nodeId && !map.has(nodeId)) map.set(nodeId, r);
+    }
+    return map;
+  }, [risks]);
+
+  // Verification targets: error-flagged facts first, then biggest swing ×
+  // weakest evidence (VOI).
   const verifyNext = useMemo(() => {
-    return ledger
+    const byVoi = ledger
       .map((n) => ({ node: n, voi: informationValue(ledger, state.current, n.id) }))
-      .filter((x) => x.voi > 0)
-      .sort((a, b) => b.voi - a.voi)
-      .slice(0, 3)
-      .map((x) => ({ node: x.node, swing: swingTam(ledger, state.current, x.node.id) }));
-  }, [ledger, state.current]);
+      .sort((a, b) => b.voi - a.voi);
+    const flagged = byVoi.filter((x) => errorByNode.has(x.node.id));
+    const rest = byVoi.filter((x) => !errorByNode.has(x.node.id) && x.voi > 0);
+    return [...flagged, ...rest].slice(0, 4).map((x) => ({
+      node: x.node,
+      swing: swingTam(ledger, state.current, x.node.id),
+      error: errorByNode.get(x.node.id) ?? null,
+    }));
+  }, [ledger, state.current, errorByNode]);
 
   const highlightTerm = termOf(hoveredNode) ?? termOf(node);
 
@@ -120,15 +139,23 @@ export default function FactBank({ ledger, state, dispatch, onOpenDashboard }: P
         <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-3">
           Verify next
         </span>
-        {verifyNext.map(({ node: n, swing }) => (
+        {verifyNext.map(({ node: n, swing, error }) => (
           <button
             key={n.id}
             type="button"
             onClick={() => setSelectedId(n.id)}
-            className="rounded-md border border-hairline bg-card px-2.5 py-1 text-xs text-ink-2 transition-colors hover:border-accent/40 hover:text-accent-ink"
+            title={error ? `Risk engine: ${error.title}` : undefined}
+            className={`rounded-md border px-2.5 py-1 text-xs transition-colors hover:border-accent/40 hover:text-accent-ink ${
+              error
+                ? "border-fact-red-line bg-fact-red-tint text-ink-2"
+                : "border-hairline bg-card text-ink-2"
+            }`}
           >
-            <span className="mr-1 text-fact-red">⚑</span>
-            {n.label} · up to ±{formatEUR(swing)} on TAM
+            <span className="mr-1 text-fact-red">{error ? "▲" : "⚑"}</span>
+            {n.label} ·{" "}
+            {error?.proposedCorrection
+              ? `flagged: likely ${error.proposedCorrection.value}, not ${n.value}`
+              : `up to ±${formatEUR(swing)} on TAM`}
           </button>
         ))}
       </div>

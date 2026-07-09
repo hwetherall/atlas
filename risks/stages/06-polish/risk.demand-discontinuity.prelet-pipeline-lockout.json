@@ -1,0 +1,37 @@
+{
+  "inputsHash": "3ed41ccdb2d12ea381f7bebe9b5570c25170a017d1792004490a9f8345d1df21",
+  "generatedAt": "2026-07-08T17:41:08.707Z",
+  "data": {
+    "title": "Most Year-1 rack-PDU orders are already awarded to rivals",
+    "narrative": "The model assumes the venture can win 3% of its serviceable market in Year 1, as if the order book were open. But 83% of the near-term data-center pipeline is already pre-let, and in those builds the rack-PDU choice is locked at design, 12 to 24 months before commissioning. That leaves only replacement and spot buys, a flow under 1% of the market, so the Year-1 number is several times too high.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Vacancy hits record low 6.3%, pipeline is 83% pre-let.",
+        "refs": [
+          "digest:geo-DE#c21",
+          "digest:geo-DE#c20"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Large operators buy power on multi-year deals with incumbents.",
+        "refs": [
+          "profile:Stage",
+          "ledger:cust.operator-large",
+          "ledger:shape.cr3"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Pre-let lockout cuts reachable Year-1 demand below the band.",
+        "refs": [
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "3% sits in the middle of published Year-1 benchmarks, so it reads as conservative, hiding that most of that sliver was awarded before launch day.",
+    "falsifier": "Two or more CE fit-out tenders with 2026 delivery where the rack-PDU line is still open to new vendors and the venture can bid.",
+    "likelihoodRationale": "The 83% pre-let and 6.3% vacancy figures are now confirmed by JLL and other sources, strengthening the trigger. Uncertainty remains on how much replacement demand in the installed base survives, so full lockout is unlikely but material compression is probable."
+  }
+}

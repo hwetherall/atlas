@@ -1,0 +1,26 @@
+{
+  "inputsHash": "f977eb8476be47e2501f99501ec78deea7dac129975a1e6abd5a405da2fc9bac",
+  "generatedAt": "2026-07-08T05:30:23.824Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact statutes (MessEG/MessEV), regulator (PTB), certification duration (12–18 months vs the YAM window), quantified exposure (geo.DE at 0.50 of funnel, ~1,955 MW, 0.55 serviceableFactor, 0.82 perturbation), and named incumbents (Bachmann, Rittal, Legrand/Raritan). Instruments, actors, values, and dates are all pinned to ledger nodes."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable field makes a credible case: the compliance sweep covers product safety and energy law (LVD, EMC, EN 50600), while legal metrology only bites when meter output becomes an invoice line — a different legal family entirely. Docked one point because MID/Eichrecht billing requirements are well-known in adjacent German markets (EV charging), so a founder selling metered hardware into DE has some chance of stumbling on it."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (MessEG billing requirement → EED-driven demand for invoice-grade data → reach haircut on the DE half) with refs at every arrow, and each link is independently plausible. The weakest hop — whether tenant billing actually anchors at PDU outlets rather than RPP/busway — is contested by the risk's own evidence, and while the likelihood rationale acknowledges this, the mechanism steps themselves don't fully absorb it."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The legal trigger (geeichte Zähler mandatory for kWh billing) has ≥2 independent corroborating sources plus PTB confirmation of the conformity regime. But the load-bearing exposure premise — that DE colo billing rides on PDU outlet metering — is contradicted by the risk's own matismart citation (RPP/busway placement); the honest 'contradicts' stance and revised likelihood save it from a lower score."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations directly change near-term sequencing and spend: a cheap legal opinion plus five billing-practice interviews this quarter, repositioning metering as telemetry, and starting PTB type-examination in parallel with launch. Both indicators (Eichrecht clauses in DE tenders, competitor MID SKUs) are concrete and monitorable via stated venues."
+    }
+  }
+}

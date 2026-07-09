@@ -1,0 +1,25 @@
+{
+  "inputsHash": "b8a9613d4521758a6853685ce9bf430d82fa8483399dddfac908363225987b1b",
+  "generatedAt": "2026-07-08T18:16:35.892Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "Cross-vendor reconciliation of European colocation MW today: CBRE Q4 2024 (4,726MW operational / 5.8GW year-end) vs. summed Statista 2024 country figures (~7.6GW) under a matched scope definition. This is a purchasable/existing-dataset comparison that settles whether the Statista series double-counts or uses an incompatible scope — no time needs to pass.",
+    "proposedCorrection": {
+      "nodeId": "tamBase",
+      "value": 245,
+      "low": 180,
+      "high": 400,
+      "rationale": "Statista's ~7.6GW European base overstates CBRE's ~5.8GW by ~1.3x, so the Central-Europe MW share and the resulting rack-PDU base should be scaled down by roughly that factor (320→~245), with the band shifted down correspondingly."
+    },
+    "researchQueries": [
+      {
+        "query": "CBRE Europe Data Centres Figures Q4 2024 per-country operational colocation MW for Germany, Poland, Austria, Czechia and total European supply",
+        "kind": "confirming"
+      },
+      {
+        "query": "DC Byte or PMR 2024–2025 country-level colocation capacity MW for Central Europe compared against Statista scale-colocation country figures under a matched >=20MW definition",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "inputsHash": "5105e39a14605c69bd9c67dd015ae7a07c55b09c8ddf12576e32c427e7c1d977",
+  "generatedAt": "2026-07-08T21:47:53.231Z",
+  "data": {
+    "title": "EU Cyber Resilience Act cuts networked PDU sales in Year 1",
+    "narrative": "The model assumes the PDU clears the old CE and TUV compliance stack and can be quoted into 2026 tenders. But the Cyber Resilience Act adds new duties from 11 September 2026 and full conformity from 11 December 2027, and data-center buyers are already demanding CRA-readiness in 2026 bids. That pushes Year-1 share below the 1% pace the number assumes.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "CRA duties start Sept 2026 and Dec 2027, inside the entry window",
+        "refs": [
+          "profile:Product",
+          "profile:Stage",
+          "ledger:serviceableFactor"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Buyers add CRA-readiness clauses to 2026 bids for durable gear",
+        "refs": [
+          "digest:serviceable-benchmark#c4",
+          "digest:serviceable-benchmark#c13",
+          "ledger:serviceableFactor"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Entrant lacks the certification, so it drops off shortlists",
+        "refs": [
+          "digest:refine-demand-discontinuity.prelet-pipeline-lockout#c0",
+          "digest:refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c0",
+          "ledger:obtainableFactor"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Reachable demand shrinks and Year-1 share falls below 1%",
+        "refs": [
+          "ledger:serviceableFactor",
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "CE marking already looks like a checked box, but the CRA changes the conformity route and buyers enforce it in 2026 bids while the founder's calendar reads 2027.",
+    "falsifier": "Three 2026 data-center PDU bids with no CRA or SBOM requirement, plus confirmation networked PDUs stay in the CRA self-assessment class.",
+    "likelihoodRationale": "The CRA dates and product scope are enacted law, not forecast. Remaining doubt is whether remote-management PDUs need third-party assessment and how hard buyers push CRA-readiness in 2026 specs, so the estimate eases from 0.55 to 0.50."
+  }
+}

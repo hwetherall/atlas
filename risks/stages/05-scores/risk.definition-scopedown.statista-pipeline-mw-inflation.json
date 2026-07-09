@@ -1,0 +1,26 @@
+{
+  "inputsHash": "1e738ac89690b3ac555a0b3a3ab1f84a8f762c5c5657b1689b75db3c7f723dcc",
+  "generatedAt": "2026-07-08T05:30:23.824Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names exact figures (Statista ~7.6GW sum vs CBRE 4,726MW/5.8GW, Germany 1,737→2,167MW, the 39.8% CE-7 multiplier, €320M tamBase), specific sources, dates, and thresholds (Frankfurt+Berlin <200MW delivered in 2026). Nodes, actors, and instruments are all pinned down."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable is genuinely good: per-country cross-checks (BMWK, DDCA, Mordor) each validate a ratio while none reconciles the Statista level against an independent Europe total — a scope error hidden by internal consistency. Docked one point because the evidence revision shows a mundane explanation (30-country vs top-15 coverage) a careful reader of CBRE's own footnote could have caught."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-hop chain (scope gap → growth-market-skewed inflation → overstated CE-7 numerator on energized basis) with refs at every link and a correct micro-foundation that PDUs are bought at fit-out per energized MW. The middle hop — that the padding concentrates in CE rather than FLAPD — is inferred from two year-over-year deltas, not measured, and the risk's own rationale concedes this."
+    },
+    "evidenceQuality": {
+      "score": 1,
+      "note": "The load-bearing premise (Statista's Germany figure is pipeline-padded) is contradicted by three independent sources (GDA ~1,955MW, firstcolo 1.3GW+, CBRE Frankfurt 1.02GW live), and the stated falsifier is partially satisfied per the risk's own evidence revision. The corroborated magnitude gap and the honest downward revision to 0.22 keep it above 0, but the interpretation the perturbation rests on is materially weakened."
+    },
+    "decisionRelevance": {
+      "score": 3,
+      "note": "Concrete near-term actions (one analyst-week rebuild of the CE-7 apportionment on CBRE delivered-capacity series; pacing hires to fit-out starts) and monitorable indicators in named quarterly publications. Falls short of 4 because a 0.85 scale on tamBase alone may not force a spend change this year, and the contested evidence means the information mitigation is the only clearly justified move."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "inputsHash": "b22d295a5083026dc278ff523f7ed67f932abffe7f241dd3b3aaa6dbc2f00301",
+  "generatedAt": "2026-07-08T21:55:35.747Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "The directly-scoped IndexBox EU Rack PDUs report (country tables) or the Mordor/Grand View global rack-PDU base with a defensible Europe/CE regional split — a purchasable existing dataset that pins the 2025/2026 base today.",
+    "proposedCorrection": {
+      "nodeId": "tamBase",
+      "value": 330,
+      "low": 280,
+      "high": 400,
+      "rationale": "The scope-down uses Grand View's global $2.81B, but Mordor's more recent figure ($2.78B→$3.01B 2026) and Germany-alone forecasts ($509.6M by 2031) suggest the €360M band top is too tight; widening to €400M and re-centering to €330M reflects a defensible CE rack-PDU base without importing the broad PDU+PSU category error."
+    },
+    "researchQueries": [
+      {
+        "query": "IndexBox EU rack PDU country tables 2025/2026 headline market value Germany France Netherlands, isolating intelligent/managed rack PDUs from broader power & cable management",
+        "kind": "confirming"
+      },
+      {
+        "query": "Mordor Intelligence and Grand View data center rack PDU market Europe regional share 2025/2026 — does the Central-Europe-7 slice fall at or below €360M?",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

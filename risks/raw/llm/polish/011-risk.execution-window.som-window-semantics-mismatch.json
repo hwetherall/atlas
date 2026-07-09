@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "8469f32a71e525972e906fe1510f949fc494b072dd060df95a52dbee81c6bb84",
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are the editor on a risk report. Rewrite the prose fields of one risk to the target register below. You are rewriting WORDS, not content: keep every load-bearing fact, name, number and date; never add claims; keep each mechanism step's \"step\" type and copy its \"refs\" array VERBATIM.\n\nYou are writing for a busy executive who will read 27 of these in one sitting.\nRules:\n- TITLE: one idea, ≤ 75 characters, plain words. Name the thing and the\n  direction it moves. Banned words: scope-down, denominator, normalization,\n  launder, phantom, semantics, conflate, misallocation, apportion.\n- NARRATIVE: 2–4 short sentences, in this shape: (1) what the model assumes,\n  (2) what we found instead — keep the single most important number,\n  (3) what it means for the Year-1 number. At most one number per sentence.\n  No parentheticals, no em-dash chains, no nested clauses.\n- MECHANISM steps: ≤ 12 words each, plain verbs, no jargon.\n- WHY-MISSABLE and FALSIFIER: one sentence each.\n- LIKELIHOOD RATIONALE: ≤ 2 sentences.\n- Keep every fact, name, number and date that carries the argument; cut\n  everything else. Never soften, hedge, or add new claims or numbers.\n\nWORKED EXAMPLE of the target register:\nBEFORE: \"The obtainableFactor was 'triangulated' from generic SOM heuristics —\nbut the benchmark sources themselves disagree on what period the percentage\ndescribes. Wise defines SOM as a 3–5-year capture window; Prospeo and IdeaPlan\nframe 1–3 years. Applied to a single pre-launch year, the same literature\nimplies numbers an order of magnitude lower...\"\nAFTER: \"The model says the venture can win 3% of its serviceable market in\nYear 1. But the benchmarks that 3% comes from describe what companies capture\nover 3–5 years, not 12 months. The one comparable hardware entrant we found\nstarted far lower in its first year. If the clock is wrong, the Year-1 number\nis several times too high.\""
+    },
+    {
+      "role": "user",
+      "content": "THE RISK (context, do not rewrite): perturbation [{\"nodeId\":\"obtainableFactor\",\"op\":\"set\",\"value\":0.006,\"note\":\"Year-1 obtainable re-anchored on first-period analogues rather than multi-year SOM heuristics\"}], likelihood 0.6, category model-structure\n\nFIELDS TO REWRITE:\n{\n \"title\": \"The 3% Year-1 obtainable is a 3–5-year benchmark wearing a 12-month clock\",\n \"narrative\": \"The obtainableFactor was 'triangulated' from generic SOM heuristics — but the benchmark sources themselves disagree on what period the percentage describes. Wise defines SOM as a 3–5-year capture window; Prospeo and IdeaPlan frame 1–3 years. Applied to a single pre-launch year, the same literature implies numbers an order of magnitude lower: TryBuildCo's own worked example lands at ~0.1% of SAM, and the one real industrial hardware entrant found (Tractian) started at ~$200K against a $14.9B market. The model's 0.01–0.05 band brackets the wrong quantity — it brackets a multi-year share, not a first-12-months share for a company that starts the year without certs, channel, or references.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"The benchmarks behind the 3% mid-band describe 1–3 or 3–5 year capture windows, not the first 12 months the profile specifies\",\n   \"refs\": [\n    \"digest:obtainable-benchmark#c1\",\n    \"digest:obtainable-benchmark#c4\",\n    \"profile:Stage\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"When the same sources are read at the Year-1 grain, observed and worked-example first-period shares fall to 0.1% of SAM and below — orders of magnitude under the curated band's 1% floor\",\n   \"refs\": [\n    \"digest:obtainable-benchmark#c5\",\n    \"digest:obtainable-benchmark#c6\",\n    \"digest:obtainable-benchmark#c7\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"obtainableFactor 0.03 overstates Year-1 capture by roughly 5x; YAM scales linearly with it while TAM/SAM stay untouched\",\n   \"refs\": [\n    \"ledger:obtainableFactor\"\n   ]\n  }\n ],\n \"whyMissable\": \"The node was already revised DOWN (from 6% to 3%) and is labelled 'triangulated' with two agreeing sources — it looks like the conservative, well-handled assumption. The flaw is not the number's level but the time-unit mismatch between the benchmark's window and the model's, which no sensitivity band expresses.\",\n \"falsifier\": \"Any named DC-hardware or comparable industrial B2B entrant with a documented first-12-months revenue at or above 1% of its stated SAM in a market with incumbent CR3 near 0.55.\",\n \"likelihoodRationale\": \"Every source that quantifies a real first period (TryBuildCo example, Tractian) sits far below 1%, and the digests found zero sector-specific Year-1 benchmarks supporting 3%; countervailing: AI-driven demand growth may lift new-entrant win rates above historical analogues. [evidence revision: Four independent SOM definitions confirm the 3–5-year framing behind the benchmark, and the one comparable industrial-hardware entrant (Tractian) started far below 1% of SAM and took years to scale, strengthening both the trigger and propagation premises. No falsifying entrant surfaced. Raising from 0.45 to 0.60; not higher because the year-1 SAM-share magnitudes are inferred by triangulation rather than a direct sector-specific year-1 benchmark, and demand-growth/AI tailwinds remain an unquantified countervailing factor.]\"\n}\n\nEmit JSON: { title, narrative, mechanism: [{step, text, refs}], whyMissable, falsifier, likelihoodRationale }"
+    }
+  ],
+  "content": "{\"title\":\"Year-1 market share is set by a 3-5 year benchmark, too high\",\"narrative\":\"The model says the venture wins 3% of its serviceable market in Year 1. But the benchmarks behind that 3% describe what companies capture over 1 to 5 years, and the one real comparable entrant, Tractian, started at about 0.1% of its market. Read at a 12-month grain, the Year-1 number is roughly 5 times too high.\",\"mechanism\":[{\"step\":\"trigger\",\"text\":\"The 3% benchmark describes 1 to 5 year windows, not 12 months\",\"refs\":[\"digest:obtainable-benchmark#c1\",\"digest:obtainable-benchmark#c4\",\"profile:Stage\"]},{\"step\":\"propagation\",\"text\":\"Real first-year shares fall to 0.1%, far below the 1% floor\",\"refs\":[\"digest:obtainable-benchmark#c5\",\"digest:obtainable-benchmark#c6\",\"digest:obtainable-benchmark#c7\"]},{\"step\":\"model-impact\",\"text\":\"A 3% rate overstates Year-1 revenue by about 5 times\",\"refs\":[\"ledger:obtainableFactor\"]}],\"whyMissable\":\"The number was already cut from 6% to 3% and labelled well-sourced, so it looks conservative, but the real flaw is the mismatched time window no sensitivity band shows.\",\"falsifier\":\"Any named comparable industrial B2B entrant with documented first-year revenue at or above 1% of its stated market.\",\"likelihoodRationale\":\"Every source measuring a real first year, including Tractian, sits far below 1%, and no sector-specific Year-1 benchmark supports 3%. AI-driven demand growth could lift new-entrant win rates above these analogues.\"}",
+  "usage": {
+    "prompt_tokens": 2617,
+    "completion_tokens": 577,
+    "total_tokens": 3194,
+    "cost": 0.02751,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.02751,
+      "upstream_inference_prompt_cost": 0.013085,
+      "upstream_inference_completions_cost": 0.014425
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T17:40:39.540Z"
+}

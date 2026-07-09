@@ -1,0 +1,26 @@
+{
+  "inputsHash": "6086bcc9a54dc35a6455fd85c198ed3d49dcb5ca13e81e8e03ab273666807d48",
+  "generatedAt": "2026-07-08T05:30:23.824Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact ledger nodes (tamBase, geo.PL, geo.DE), the 39.8% CE-of-Europe step, concrete values (7.6GW Statista sum vs CBRE 4,726MW/5.8GW, PMR ~200MW Poland vs 3,451MW CE-7), the vendor definition at issue, and a quantified perturbation (scale 0.8). Nothing here is generic."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The core insight — normalization to 1.00 makes the geo axis immune to absolute error while the same series leaks a scope inflation into tamBase via a derivation expression — is a genuine structural catch the whyMissable field justifies well. Docked one point because the raw sum-exceeds-CBRE discrepancy already sits in digest:geo-region-denominator, so a careful reader had the raw material even if not the synthesis."
+    },
+    "mechanismDepth": {
+      "score": 4,
+      "note": "Three-step chain (unverified single scope → corroborated directional error via PMR → non-cancelling absolute CE fraction inside tamBase) is referenced at each hop and answers the hostile 'why doesn't normalization save you?' explicitly. The residual uncertainty about uniform vs concentrated inflation is honestly flagged in the likelihood rationale rather than papered over."
+    },
+    "evidenceQuality": {
+      "score": 4,
+      "note": "The key premise has multiple independent corroborations: Statista's OWN methodology note confirming 'powered shells' in scale-colocation, two CBRE figures establishing the sum-exceeds-total arithmetic, and PMR/Atman regional checks — with an attached-evidence trail and a stance table. The revisedFrom 0.35→0.45 with explicit reasoning shows honest calibration rather than confidence inflation."
+    },
+    "decisionRelevance": {
+      "score": 3,
+      "note": "Mitigations are concrete and near-term (buy one scope-consistent dataset, rebuild TAM bottom-up from energized MW), and indicators name specific monitorable releases (CBRE quarterly PDFs, EUDCA 2026) with thresholds. Falls short of 4 because a 20% tamBase haircut sharpens the sizing narrative but the risk doesn't show it re-sequencing operational spend beyond the modest data purchase."
+    }
+  }
+}

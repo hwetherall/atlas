@@ -1,0 +1,25 @@
+{
+  "inputsHash": "b8bc57e1b2087d9777ddd0a0f1a075b83f0c012d2b40cd44f6d9c8be63ade5f0",
+  "generatedAt": "2026-07-08T18:19:39.153Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "German colo billing practice: whether tenant power is invoiced at facility-feed/RPP MID-certified meters with PDU metering treated as informational — settleable today via German colo billing specs, MessEG/MID applicability docs, and a handful of operator billing interviews.",
+    "proposedCorrection": {
+      "nodeId": "serviceableFactor",
+      "value": 0.45,
+      "low": 0.38,
+      "high": 0.55,
+      "rationale": "If measured-kWh billing in Germany legally requires MID/MessEG-certified meters the entrant lacks, the metered-billing use case in the German half (~50% of funnel) is unreachable in Year 1, lowering the serviceable share from 0.55 toward the low end."
+    },
+    "researchQueries": [
+      {
+        "query": "German MessEG/MessEV and MID conformity requirements for sub-metering used to invoice colocation tenants on measured kWh — does a PDU-embedded meter require calibration/eichung to produce a legally valid invoice?",
+        "kind": "confirming"
+      },
+      {
+        "query": "German colocation operators (e.g., NTT, Digital Realty, Equinix DE) billing methodology: are tenants billed on facility-feed/RPP certified meters or on breaker-amperage/contracted capacity, with PDU per-outlet metering used only for monitoring?",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

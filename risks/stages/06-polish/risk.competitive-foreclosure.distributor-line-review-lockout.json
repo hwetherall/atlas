@@ -1,0 +1,39 @@
+{
+  "inputsHash": "1274ae742d4f3b43eebe4cc5b3f29dff4baacfcf6931fe800ddfe29b2cd1ec64",
+  "generatedAt": "2026-07-08T21:50:05.450Z",
+  "data": {
+    "title": "Distributor channel is locked shut for Year 1",
+    "narrative": "The model treats the 0.13 distributor cell as an easy open channel. But that channel runs on annual line reviews, and Legrand owns both intelligent-PDU brands, Raritan and Server Technology, giving one vendor two slots on every line card. A pre-launch entrant arrives mid-cycle and cannot get listed until the next review, which lands after Year 1. That cell should contribute nothing to the Year-1 number.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Distributors decide line cards once a year, at set reviews.",
+        "refs": [
+          "digest:cust-mix#c7",
+          "digest:cr3-vendors#c4",
+          "ledger:cust.distributor"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Venture launches mid-cycle, so no distributor can list it.",
+        "refs": [
+          "profile:Stage",
+          "digest:cust-mix#c13",
+          "ledger:cust.distributor"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "The 0.13 cell adds nothing to Year-1 demand.",
+        "refs": [
+          "ledger:cust.distributor",
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "Distribution looks like the easy channel and 0.13 looks too small to check, but annual reviews close it for exactly the 12 months Year 1 measures.",
+    "falsifier": "A named distributor like Rexel or Sonepar confirming in writing it can list a new intelligent-PDU line within two quarters without waiting for the annual review.",
+    "likelihoodRationale": "Annual line reviews and Legrand's ownership of both PDU brands are confirmed facts. But three 2025-2026 cases show European distributors onboarding new PDU vendors outside a rigid annual gate, lowering likelihood from 0.45 to 0.30."
+  }
+}

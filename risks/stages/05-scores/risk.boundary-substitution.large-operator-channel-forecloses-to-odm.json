@@ -1,0 +1,26 @@
+{
+  "inputsHash": "55714c995ff72b137730c265c28df89af06e5f21d1839c854ccda7d51094906f",
+  "generatedAt": "2026-07-08T05:30:23.824Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names ledger nodes and values (cust.operator-large 0.40, cust.oem 0.22, perturbation to 0.28 below the 0.33 band floor), specific actors (Schneider/Vertiv/Eaton, Foxconn/Quanta/Wiwynn), and concrete monitoring venues (TED, OCP Summit). The mechanism steps each carry refs into the ledger and digest."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable field correctly identifies that the team's needs-source flag would drive them to validate the 0.40 number, while the actual risk is the category boundary (direct-buy vs integrated-rack) moving during the entry window — a new reason, not a band-edge claim. Docked one point because ODM rack integration for AI capacity is a widely reported industry trend a well-read founder might connect."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (procurement shifts to integrated racks → BOM slots locked by white-label incumbents → direct-sale pool overstated under YAM's obtainableFactor) with refs at every link. The claim that a pre-launch entrant 'cannot contest these slots inside 12 months' is plausible from incumbent share data but asserted rather than independently demonstrated."
+    },
+    "evidenceQuality": {
+      "score": 4,
+      "note": "Multiple independent corroborating sources on the key relocation premise (Schneider-Foxconn integration deal, Wiwynn/hyperscaler ODM shift, NVIDIA DSX consortium), and the contradicting evidence (Jülich discrete PDU tender, DayOne Finland bid) is honestly surfaced and explicitly folded into the revised 0.35→0.40 likelihood rationale. This is the disciplined handling the anchor rewards."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly reshapes the already-planned CE operator interviews this quarter (adding a procurement-structure module per the information mitigation) and proposes opening an OEM qualification track against cust.oem, which currently has no channel plan. Both indicators name monitorable venues with thresholds."
+    }
+  }
+}

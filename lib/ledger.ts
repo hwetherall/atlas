@@ -26,23 +26,23 @@ const rawLedger: FactNode[] = [
     id: "tamBase",
     label: "Central Europe rack-PDU market, all segments/buyers",
     kind: "estimated",
-    value: 320,
+    value: 300,
     unit: "EUR_M",
     confidence: "inferred",
-    asOf: AS_OF,
-    sensitivityRange: { low: 240, high: 520 },
+    asOf: "2026-07-08", // refinement cycle 1 (risks/refine.review.md)
+    sensitivityRange: { low: 240, high: 360 },
     skillId: "tam-base-sizing",
-    maturity: "single-source",
+    maturity: "triangulated",
     derivation: {
       method: "Top-down scope-down from the global rack-PDU base",
       expression:
-        "Global rack-PDU $2.81B (Grand View, 2025) × Europe ≈ 30% [est.; NA = 38% per same source] ≈ $843M ≈ €775M @0.92 (Jul 2026) × CE-7 = 39.8% of Europe colo MW (Statista 2025) ≈ €310M → curated €320M",
+        "Global rack-PDU $2.81B (Grand View, 2025) × Europe ≈ 30% [est.; NA = 38% per same source] ≈ $843M ≈ €775M @0.92 (Jul 2026) × CE-7 = 39.8% of Europe colo MW (Statista 2025) ≈ €310M → curated €300M",
       crossCheck:
-        "Europe DC PDUs+PSUs $2.45B 2024 (BIS/R&M, broader scope) × ~55% PDU share × 39.8% CE ≈ €495M — sets the high end of the band",
+        "Refinement cycle 1: the prior €495M ceiling (BIS/R&M €2.45B) measures PDUs+PSUs combined — a broader category growing 21% CAGR vs intelligent-PDU 10–12% (IndexBox). Contaminated ceiling removed; band top lowered to €360M.",
     },
     provenance: {
       rationale:
-        "No public Europe- or CE-scoped rack-PDU figure exists; both sizing chains are scope-downs from adjacent scopes → wide band, top value-of-information.",
+        "No public Europe- or CE-scoped rack-PDU figure exists; the scope-down chain anchors the value, and refinement cycle 1 killed the inflated PDUs+PSUs cross-check ceiling.",
       promotionPath:
         "Commission the IndexBox EU Rack PDUs report (country tables) to pin the EU base directly.",
     },
@@ -441,17 +441,21 @@ const rawLedger: FactNode[] = [
     value: 0.29,
     unit: "ratio",
     confidence: "inferred",
-    asOf: AS_OF,
+    asOf: "2026-07-08", // refinement cycle 1: band added (value confirmed)
     dimension: "segment",
     dimensionValue: "enterprise",
+    sensitivityRange: { low: 0.24, high: 0.3 },
     skillId: "segment-decomposition",
-    maturity: "single-source",
+    maturity: "triangulated",
     derivation: {
       method: "Capacity-split rescaling",
       expression: "Synergy end-2025 enterprise on-premise 32% × 0.91 = 0.29",
+      crossCheck:
+        "Refinement cycle 1: NVIDIA's B300 reference architectures ship rack PDUs in both AC and DC variants (3 per rack / 160 per pod) — GPU growth is PDU-consuming. Value confirmed; downside band covers dense busbar deployments.",
     },
     provenance: {
-      rationale: "Single publisher's series (declining 37→32% through 2025); on-prem PDU refresh demand may lag capacity share → inferred.",
+      rationale:
+        "Single publisher's capacity series, but the 'GPU pods skip PDUs' doubt was refuted by vendor reference architectures (refinement cycle 1) → value confirmed with a downside band.",
     },
     evidence: [
       {
@@ -670,22 +674,24 @@ const rawLedger: FactNode[] = [
     id: "obtainableFactor",
     label: "Year-1 obtainable share of SAM",
     kind: "assumption",
-    value: 0.03,
+    value: 0.01,
     unit: "ratio",
     confidence: "inferred",
-    asOf: AS_OF,
+    asOf: "2026-07-08", // refinement cycle 1 (risks/refine.review.md)
     source: { note: "year-1 win-rate × ramp × capacity" },
-    sensitivityRange: { low: 0.01, high: 0.05 },
+    sensitivityRange: { low: 0.005, high: 0.03 },
     skillId: "year1-obtainable-model",
     maturity: "triangulated",
     derivation: {
       method: "Benchmark anchoring",
       expression:
-        "Year-1 SOM benchmarks: 1% of SAM (Prospeo); early-stage range 1–5% (IdeaPlan) → curated 3% mid-band",
-      crossCheck: "Prior 6% assumption sat above every year-1 benchmark found — revised down",
+        "Prospeo assigns 1% of SAM to YEAR 1 (3% and 5% are Years 2–3) — the prior 3% read the Year-2 figure as Year 1. Corrected to 1%; the Tractian comparable (first-year ~$1.2M against a multi-$B market) sits below 1%.",
+      crossCheck:
+        "Early-procurement mechanism (DC electrical gear locked 12–24mo before fit-out) independently supports ≤2%; open 2026 EU rack-PDU tenders keep 2–3% inside the band.",
     },
     provenance: {
-      rationale: "Two independent benchmark sources agree on 1–5%, but both are generic (not DC-hardware-specific) → inferred.",
+      rationale:
+        "Refinement cycle 1 caught the benchmark-period misread — the value now follows the source's own Year-1 figure, band 0.5–3%.",
       promotionPath: "Replace with pipeline-based model once first CE deals close (win-rate × cycle time × capacity).",
     },
     evidence: [

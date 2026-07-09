@@ -1,0 +1,25 @@
+{
+  "inputsHash": "64a5e65d653d24e1059c7543e69c792e432d52cfeea8d95c15dfe8a3cc2d01b5",
+  "generatedAt": "2026-07-08T21:54:05.187Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "The commissioned IndexBox EU Rack PDUs country-table report (or an equivalent directly-scoped Europe/CE rack-PDU figure) would settle this today — it pins the base directly rather than relying on a global anchor × unsourced 30% hop. This is a definitional/scope-mismatch about today's market, not a future unfolding.",
+    "proposedCorrection": {
+      "nodeId": "tamBase",
+      "value": 300,
+      "low": 200,
+      "high": 360,
+      "rationale": "The Europe share is an unsourced analyst guess and the global anchor itself ranges $1.58B–$4.8B, so the lower bound must widen to ~€200M to honestly reflect the contested inputs until the directly-scoped EU figure is commissioned."
+    },
+    "researchQueries": [
+      {
+        "query": "IndexBox 'Rack PDUs Market in the European Union' country tables — headline EU rack-PDU market value in EUR for 2024/2025",
+        "kind": "confirming"
+      },
+      {
+        "query": "Grand View Research or QY Research regional breakdown giving Europe's revenue share of the global data center rack-PDU market (to test whether 30% or a much lower/higher share holds)",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

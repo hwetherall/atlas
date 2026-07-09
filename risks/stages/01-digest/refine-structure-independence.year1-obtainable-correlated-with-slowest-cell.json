@@ -1,0 +1,149 @@
+{
+  "inputsHash": "34afb5c7c3f5536813ea57a075e8680acfe47599aa97c3db38dcbcb1b79973c6",
+  "generatedAt": "2026-07-08T19:08:12.370Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-structure-independence.year1-obtainable-correlated-with-slowest-cell#c0",
+        "claim": "Dell'Oro counts roughly 40 vendors now competing in the coolant distribution unit (CDU) segment of the liquid-cooling market",
+        "number": 40,
+        "unit": "vendors",
+        "sourceTitle": "Market at the Boiling Point: Is the CDU Space Becoming Saturated? - Dell'Oro Group",
+        "url": "https://www.delloro.com/market-at-the-boiling-point-is-the-cdu-space-becoming-saturated/",
+        "excerpt": "With around 40 vendors rushing into coolant distribution units, liquid cooling is surging—but how many players can the market sustain?",
+        "tags": [
+          "competition",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.year1-obtainable-correlated-with-slowest-cell#c1",
+        "claim": "Dell'Oro reports the Direct Liquid Cooling (DLC) market grew 156% year-over-year in Q2 2025",
+        "number": 156,
+        "unit": "percent YoY",
+        "sourceTitle": "Market at the Boiling Point: Is the CDU Space Becoming Saturated? - Dell'Oro Group",
+        "url": "https://www.delloro.com/market-at-the-boiling-point-is-the-cdu-space-becoming-saturated/",
+        "excerpt": "the Data Center Direct Liquid Cooling (DLC) market surged 156 percent year-over-year in 2Q 2025 and is projected to reach close to $6 billion by 2029",
+        "tags": [
+          "demand",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.year1-obtainable-correlated-with-slowest-cell#c2",
+        "claim": "Dell'Oro projects the DLC market to reach close to $6 billion by 2029",
+        "number": 6,
+        "unit": "USD billion",
+        "sourceTitle": "Market at the Boiling Point: Is the CDU Space Becoming Saturated? - Dell'Oro Group",
+        "url": "https://www.delloro.com/market-at-the-boiling-point-is-the-cdu-space-becoming-saturated/",
+        "excerpt": "projected to reach close to $6 billion by 2029, fueled by the relentless growth of accelerated computing workloads",
+        "tags": [
+          "demand"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.year1-obtainable-correlated-with-slowest-cell#c3",
+        "claim": "NVIDIA states its 800 VDC power architecture transition for 1MW+ racks begins in 2027",
+        "number": 2027,
+        "unit": "year",
+        "sourceTitle": "NVIDIA 800 VDC Architecture Will Power the Next Generation of AI Factories | NVIDIA Technical Blog",
+        "url": "https://developer.nvidia.com/blog/nvidia-800-v-hvdc-architecture-will-power-the-next-generation-of-ai-factories/",
+        "excerpt": "NVIDIA is leading the transition to 800 VDC data center power infrastructure to support 1 MW IT racks and beyond, starting in 2027.",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.year1-obtainable-correlated-with-slowest-cell#c4",
+        "claim": "NVIDIA's 800VDC architecture is projected to cut total cost of ownership by up to 30% and maintenance costs by up to 70%",
+        "number": 30,
+        "unit": "percent TCO reduction",
+        "sourceTitle": "NVIDIA 800 VDC Architecture Will Power the Next Generation of AI Factories | NVIDIA Technical Blog",
+        "url": "https://developer.nvidia.com/blog/nvidia-800-v-hvdc-architecture-will-power-the-next-generation-of-ai-factories/",
+        "excerpt": "improve end-to-end efficiency by up to 5%, reduce maintenance costs by up to 70%, and lower cooling expenses, enabling sustainable growth and cutting total cost of ownership by up to 30%",
+        "tags": [
+          "substitution",
+          "demand"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.year1-obtainable-correlated-with-slowest-cell#c5",
+        "claim": "Specific vendors achieved NVIDIA RVL qualification status for CDU and SSD components in 2024, illustrating the AVL/RVL gating mechanism",
+        "number": 2024,
+        "unit": "year",
+        "sourceTitle": "NVIDIA Supply Chain Certification — Grokipedia",
+        "url": "https://grokipedia.com/page/NVIDIA_Supply_Chain_Certification",
+        "excerpt": "in 2024, vendors like LITEON achieved RVL status for high-capacity in-row CDU liquid cooling systems designed to support NVIDIA's accelerated computing demands, while Micron Technology qualified its 9550 PCIe Gen5 SSDs for the RVL on the same platform",
+        "tags": [
+          "structure",
+          "regulation"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.year1-obtainable-correlated-with-slowest-cell#c6",
+        "claim": "Industry analysis says self-driven B2B buyer journeys before sales contact have grown from ~57% to over 90% of the purchase process",
+        "number": 90,
+        "unit": "percent of buyer journey",
+        "sourceTitle": "Stalled at the Gatekeeper: The Hidden Friction in Complex Data Center Sales",
+        "url": "https://www.dcsmi.com/blog/stalled-at-the-gatekeeper-the-hidden-friction-in-complex-data-center-sales",
+        "excerpt": "For decades, commercial teams anchored their strategies on a classic piece of CEB/Gartner data: the idea that B2B buyers complete roughly 57% of their journey before contacting sales... that self-driven journey has blown past 90%.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.year1-obtainable-correlated-with-slowest-cell#c7",
+        "claim": "Wiwynn, an ODM selling racks directly to hyperscalers, reports doubling revenue alongside negative cash flow — illustrating the direct-to-hyperscaler sales model's economics",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "[6669] Wiwynn: The Heavy Metal Behind AI - Silba",
+        "url": "https://silbadeepdives.substack.com/p/6669-wiwynn-the-heavy-metal-behind",
+        "excerpt": "Revenue is doubling, cash flow is negative. The brutal economics of the ODM Direct model",
+        "tags": [
+          "competition",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.year1-obtainable-correlated-with-slowest-cell#c8",
+        "claim": "Over 20 industry partners are aligning with NVIDIA's Vera Rubin/Kyber ecosystem ahead of the 1MW/800VDC rack transition, indicating a broad supplier field competing for early qualification slots",
+        "number": 20,
+        "unit": "partner companies",
+        "sourceTitle": "Nvidia prepares data center industry for 1MW racks and 800-volt DC power architectures - DCD",
+        "url": "https://www.datacenterdynamics.com/en/news/nvidia-prepares-data-center-industry-for-1mw-racks-and-800-volt-dc-power-architectures/",
+        "excerpt": "Nvidia has announced more than a dozen partners as it looks to prepare the data center industry for 800-volt DC power architectures and rack densities of 1MW.",
+        "tags": [
+          "competition",
+          "structure"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "Dell'Oro's count of ~40 vendors competing for CDU/rack-power business implies a naive equal-share benchmark of ~2.5% per entrant, which sits near the top of obtainableFactor's 0.5–3% band rather than validating the 1% point estimate — suggesting the true first-year capture for a new entrant amid this crowding could plausibly be lower than 1% if incumbents capture disproportionate share, contradicting the node's anchor toward 1%.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      },
+      {
+        "text": "The reported 156% YoY growth of the DLC/liquid-cooling SAM and NVIDIA's 2027 architecture shift mean the SAM denominator itself is moving rapidly; a static 1% 'Year-1 obtainable share' assumption does not account for whether Year 1 is measured against a rapidly inflating or still-nascent SAM, which the node's derivation does not address.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      },
+      {
+        "text": "The finding that B2B buyer journeys are now ~90% self-driven before sales contact (versus historical 57%) reinforces the node's cross-check that DC electrical gear is locked 12–24 months pre-fit-out, but pushes toward the lower end of the sensitivity band (0.5%) rather than the corrected 1% central estimate, since even more of the addressable decision is settled before a new entrant's sales motion can influence it.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      }
+    ],
+    "absences": [
+      "No documented first-year market-capture percentages for rack-PDU/CDU hardware entrants selling directly to hyperscale/large operators through NVIDIA AVL/RVL qualification were found — the searches returned qualification-process descriptions (RVL/AVL mechanics) but no share-of-market outcome data.",
+      "No source quantified the actual duration (in months) of the AVL/RVL qualification gate itself, leaving the node's '12–24mo lock-in before fit-out' cross-check uncorroborated by this search pass.",
+      "No comparable-entrant case study (e.g., a named rack-PDU or CDU startup's actual Year-1 revenue divided by SAM) was located; existing examples (Wiwynn, SuperX, FuriosaAI, Crusoe) describe scale, funding, or shipment milestones but not first-year SAM-share figures.",
+      "The search did not surface any benchmark dataset explicitly measuring 'first-year market capture for comparable DC-hardware entrants selling direct to large operators' as requested by the query intent — the closest analogues (CDU vendor count, DLC market growth rate) are market-level, not entrant-level, statistics."
+    ]
+  }
+}

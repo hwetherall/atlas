@@ -1,0 +1,26 @@
+{
+  "inputsHash": "e9e97fe66f7058862a6fbcd9b43cd98e86faae13d3f367af0f3650f2e2b8815f",
+  "generatedAt": "2026-07-08T05:30:23.826Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the actors (Legrand/Raritan/Server Technology, Vertiv-Geist, Schneider), the exact node (serviceableFactor 0.55 → perturbed to 0.38, below the 0.45 band edge), the affected sockets (enterprise 29%, colocation 18%), and a concrete falsifier (Omdia 2025 vendor-share table)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable case is genuine: the digest lists Raritan and Server Technology as separate top players and serviceableFactor was framed purely as a regulatory haircut, so the integration-lock tranche was never on the list. Docked one point because Legrand's 2015/2017 acquisitions are widely known in the data-center power industry, so a domain-fluent founder plausibly has this."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at each hop (whole-market CR3 proxy → DCIM/API-locked replacement demand → serviceableFactor below band), and each link is independently plausible. The load-bearing propagation hop — that incumbents win renewals without a selection event — asserts a lock magnitude that the risk's own stances (Redfish DSP2056, Modius normalization) show is contestable, so it would not fully survive a hostile 'why?' at that arrow."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The trigger fact (Legrand owns both brands) has ≥2 independent corroborating sources, but the key propagation premise (integration lock removing TAM) rests on one qualitative Modius piece and is actively contradicted by three listed stances (Redfish, DCIM normalization, Mordor 'Medium' concentration). The risk is honest — evidenceStatus 'contested' and likelihood revised down 0.35→0.30 — which earns the middle score rather than 0-1."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes next-two-quarter actions: pre-launch Redfish/SNMP plus top-3 DCIM certified integrations, redirecting GTM to greenfield mid-market/colo builds, and an immediate information buy (Omdia table) tied to voiNodeId serviceableFactor. Both indicators (RFQ compatibility clauses ≥50%, Legrand earnings-call cross-sell commentary) are concretely monitorable."
+    }
+  }
+}

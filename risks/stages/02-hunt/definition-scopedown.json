@@ -1,0 +1,432 @@
+{
+  "inputsHash": "0c7c3574f6c7775ee5885a6b3e211e613d6708059f72ff6dbaa2d515d0baff2b",
+  "generatedAt": "2026-07-08T19:37:59.728Z",
+  "data": {
+    "hypotheses": [
+      {
+        "id": "intelligent-subset-inflation",
+        "title": "The €300M base counts the non-intelligent majority of a market the venture cannot sell into",
+        "narrative": "The venture sells intelligent rack PDUs, but tamBase anchors on Grand View's $2.81B 'rack PDU' figure — and Grand View itself states the NON-intelligent segment held the largest revenue share in 2025. IndexBox confirms the split is real by selling 'Rack PDUs' and 'Intelligent Rack PDUs' as separate EU reports. The scope-down chain carefully audited geography and FX but never audited product type: roughly half the €300M base is basic/metered units the product line does not address. TAM, SAM and YAM all inherit a ~2x product-scope inflation while the ledger label ('rack-PDU market, all segments/buyers') reads as if it were scope-matched.",
+        "category": "fact",
+        "targetNodes": [
+          "tamBase"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Grand View's own segmentation of the $2.81B anchor reports the non-intelligent rack-PDU segment held the largest 2025 revenue share, while the venture's product is intelligent PDUs only",
+            "refs": [
+              "digest:tam-global-crosscheck#c2",
+              "ledger:tamBase",
+              "profile:Product"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "Independent sizings of the intelligent-only subset run $2.1B (GIA 2024) to $3.0B (MRF 2025) against $1.7–3.9B for total rack-PDU — and IndexBox maintains distinct EU reports for 'Rack PDUs' vs 'Intelligent Rack PDUs', confirming the vendor community treats them as different products with different bases",
+            "refs": [
+              "digest:tam-global-crosscheck#c12",
+              "digest:tam-global-crosscheck#c13",
+              "digest:tam-base#c14"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The €300M CE base carries the full-category value; the venture-relevant intelligent-only base is materially smaller, and every downstream funnel stage (SAM €165M, YAM €1.65M) inherits the inflation because serviceableFactor haircuts reach, not product scope",
+            "refs": [
+              "ledger:tamBase",
+              "ledger:serviceableFactor"
+            ]
+          }
+        ],
+        "whyMissable": "The label 'rack-PDU market' looks perfectly scope-matched to a rack-PDU vendor — the refinement cycle even proved its diligence by removing the PDUs+PSUs ceiling, creating the impression definitional contamination was handled. The remaining contamination sits inside the anchor's own segmentation table, one level below the headline number anyone reads.",
+        "expectedObviousness": "medium",
+        "falsifier": "A scope-pure European source (IndexBox EU Intelligent Rack PDUs headline, or an Omdia segment table) showing intelligent/monitored/switched PDUs at ≥75% of European rack-PDU revenue — i.e., Europe's revenue mix is intelligent-dominated even if global unit mix is not.",
+        "likelihood": {
+          "value": 0.5,
+          "rationale": "The anchor source directly states non-intelligent held the largest revenue share globally; the offset is that intelligent units carry 3–5x ASPs and European colo/hyperscale buyers skew intelligent, so the revenue-weighted European intelligent share plausibly lands at 45–60% rather than below 40%",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "tamBase",
+            "op": "scale",
+            "value": 0.55,
+            "note": "Restrict the base to the intelligent-PDU-relevant revenue share of the rack-PDU category (~55% revenue-weighted in Europe)"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Intelligent vs non-intelligent revenue split in the next Grand View / Mordor rack-PDU report vintage",
+            "where": "Grand View Research rack-PDU report segment tables; Mordor Intelligence Intelligent PDU report",
+            "threshold": "Non-intelligent still ≥45% of European revenue",
+            "updates": "increases"
+          },
+          {
+            "signal": "ASP spread between basic/metered and switched/outlet-metered SKUs on incumbent price lists",
+            "where": "Vertiv Geist, Raritan/Legrand, and APC published EU price lists",
+            "threshold": "Basic-unit volumes dominating distributor stock at <€500 ASP while intelligent SKUs sit >€1,500",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Commission the IndexBox EU Intelligent Rack PDUs report and difference it against the general EU Rack PDUs report to isolate the venture-relevant base",
+            "type": "information",
+            "voiNodeId": "tamBase",
+            "note": "Two $4,000 reports collapse the product-scope ambiguity that the ±40% band silently absorbs"
+          },
+          {
+            "action": "Add a metered-only downmarket SKU to the roadmap so the non-intelligent half of the base is addressable rather than excluded",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Converts a TAM-definition problem into a product-line decision"
+          }
+        ]
+      },
+      {
+        "id": "europe-30pct-arithmetic-ghost",
+        "title": "The 'Europe ≈ 30%' hop is an inserted number; two sourced regional shares imply Europe is ≤24%",
+        "narrative": "The single most load-bearing hop in tamBase — Europe's share of the global rack-PDU market — is stated by no source. Grand View publishes only NA = 38%; MarketIntelo puts Asia-Pacific at 38.2% and calls it the DOMINANT region. If both regional leaders hold ~38%, Europe plus rest-of-world share a ~24% residual, and Europe alone plausibly sits at 20–23%, not 30%. The 30% was inferred from NA's share alone, before the APAC datapoint existed in the corpus. A 7-point regional-share error moves the base ~23% by itself, and unlike the tornado's band it is a directional bias, not symmetric noise.",
+        "category": "fact",
+        "targetNodes": [
+          "tamBase"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "No retrieved source states a Europe share of the global rack-PDU market; the chain inserts ≈30% by analogy to Grand View's NA = 38%",
+            "refs": [
+              "digest:tam-base#c1",
+              "ledger:tamBase"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "MarketIntelo independently reports Asia-Pacific dominated the rack-PDU market with 38.2% revenue share; NA 38% + APAC 38.2% leaves ≤23.8% for Europe, MEA and LatAm combined, capping Europe well below the inserted 30%",
+            "refs": [
+              "digest:tam-global-crosscheck#c7",
+              "digest:tam-global-crosscheck#c1"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "tamBase is linear in the Europe-share hop: 30%→23% cuts the CE base ~23%, compounding with (not covered by) the ±20% band, and dragging SAM and YAM down proportionally",
+            "refs": [
+              "ledger:tamBase",
+              "ledger:serviceableFactor"
+            ]
+          }
+        ],
+        "whyMissable": "The expression reads like sourced arithmetic — '$2.81B × Europe ≈ 30% [est.; NA = 38% per same source]' — so a reviewer sees a citation next to the hop and assumes the 30% is anchored. The bracketed 'est.' is the only tell that the decisive multiplier is invented, and the corroborating APAC datapoint lives in a different publisher's report the model never joined against.",
+        "expectedObviousness": "medium",
+        "falsifier": "A published regional revenue table for the rack-PDU category (Grand View regional chapter, IndexBox world-vs-EU headline pair, or Omdia) showing Europe at ≥28% of global revenue.",
+        "likelihood": {
+          "value": 0.4,
+          "rationale": "Two independent sources sum NA+APAC to ~76%, directly constraining Europe below 30%; the counterweight is that MarketIntelo's category scope may differ from Grand View's, so the two shares may not be strictly additive",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "tamBase",
+            "op": "scale",
+            "value": 0.77,
+            "note": "Europe share corrected from 30% to ~23% residual; all other hops held constant"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Europe regional revenue share in any rack-PDU-specific report vintage",
+            "where": "Grand View rack-PDU report regional segmentation; IndexBox world benchmark report vs EU report headline ratio",
+            "threshold": "Europe stated or derivable at <27%",
+            "updates": "increases"
+          },
+          {
+            "signal": "EMEA vs Americas vs APAC rack-power revenue mix in incumbent disclosures",
+            "where": "Vertiv 10-K segment reporting; Legrand annual report data-center line commentary",
+            "threshold": "EMEA rack-power consistently <25% of global segment revenue",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Purchase the IndexBox EU Rack PDUs report and the world benchmark report together to compute Europe's share directly instead of inferring it",
+            "type": "information",
+            "voiNodeId": "tamBase",
+            "note": "This is the exact hop the ledger's own promotionPath targets; the affordance table already prices the information at €30M of TAM swing"
+          },
+          {
+            "action": "Rebuild tamBase bottom-up (CE MW × €-per-MW PDU intensity from vendor fit-out BOMs) so the regional-share hop is bypassed entirely",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": "A second independent method converts the untestable 30% into a cross-checkable intensity assumption"
+          }
+        ]
+      },
+      {
+        "id": "colo-denominator-geography-misallocation",
+        "title": "Colo-only apportionment plants the flag in Germany/NL while 35–40% of PDU demand sits in non-colo load with a different country mix",
+        "narrative": "Every geo share divides colo MW by colo MW, but rack-PDU demand tracks TOTAL installed IT load — and the non-colo remainder is not distributed like colocation. Germany's installed load (BMWK >2,700MW) exceeds its colo figure by ~1,000MW, Switzerland is self-operation-heavy (installed-basis share 0.13 vs 0.08), and Poland's better-corroborated installed-load figure yields 0.10 vs 0.07. EUDCA confirms the gap is continental: colo+hyperscale is only about two-thirds of Europe's IT power. A venture that builds its Year-1 named-account plan on the colo-derived map will staff Frankfurt and Amsterdam while a third of the actual PDU spend — enterprise and self-operated halls in CH, PL, AT — never appears on its target list.",
+        "category": "model-structure",
+        "targetNodes": [
+          "geo.DE",
+          "geo.NL",
+          "geo.CH",
+          "geo.PL"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "EUDCA: commercial colo+hyperscale provides just over two-thirds of Europe's IT power — so roughly a third of PDU-consuming load is outside the colo scope every geo.* ratio is built on",
+            "refs": [
+              "digest:geo-region-denominator#c11",
+              "ledger:geo.DE"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "The colo-vs-installed divergence is country-specific, not uniform: DE's installed-load method gives 0.42 vs colo 0.50, CH's self-operated stock pushes it to ~0.13 vs 0.08, and PL's triangulated 660MW installed load implies ~0.10 vs 0.07 — the €300M gets reallocated across countries, not just rescaled",
+            "refs": [
+              "ledger:geo.DE",
+              "ledger:geo.CH",
+              "ledger:geo.PL"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The Year-1 plan sells through large operators (colo-centric by construction), so the misallocated map inflates the reachable share of DE/NL and hides demand in CH/PL enterprise halls; the funnel's geography mix shifts against the venture's channel build",
+            "refs": [
+              "profile:Who is the primary buyer you'll sell through first?",
+              "ledger:geo.NL",
+              "digest:geo-region-denominator#c14"
+            ]
+          }
+        ],
+        "whyMissable": "Each geo node already discloses its colo-vs-installed crossCheck divergence, so the issue looks acknowledged — but it is acknowledged as per-country BAND WIDTH, not as a correlated, same-direction reallocation across all countries at once. Bands on independent nodes cannot express 'the whole dimension is measured in the wrong denominator'.",
+        "expectedObviousness": "medium",
+        "falsifier": "A single-scope, single-source table of total installed IT load for all CE-7 countries (e.g., EUDCA country profiles) whose per-country shares match the current colo-based shares within ±3 percentage points.",
+        "likelihood": {
+          "value": 0.45,
+          "rationale": "The scope gap is documented in the ledger's own crossChecks for four of seven countries and corroborated continentally by EUDCA; the uncertainty is whether non-colo PDU spend per MW is comparable to colo (enterprise refresh cycles are slower, partially offsetting the reallocation)",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "geo.DE",
+            "op": "set",
+            "value": 0.42,
+            "note": "Installed-load method share; mix shift, deliberately not renormalized"
+          },
+          {
+            "nodeId": "geo.NL",
+            "op": "set",
+            "value": 0.24,
+            "note": "NL colo-heavy market loses relative weight under installed-load scope"
+          },
+          {
+            "nodeId": "geo.CH",
+            "op": "set",
+            "value": 0.13,
+            "note": "Self-operated Swiss stock enters the denominator"
+          },
+          {
+            "nodeId": "geo.PL",
+            "op": "set",
+            "value": 0.1,
+            "note": "Mordor/R&M-corroborated 660MW installed load"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Publication of country-level installed IT power (not colo-only) for CE-7",
+            "where": "EUDCA 'State of European Data Centres' country profiles; BMWK/Bitkom German landscape updates",
+            "threshold": "Any CE country's installed-load share diverging >5pp from its colo share",
+            "updates": "increases"
+          },
+          {
+            "signal": "Origin of inbound PDU demand by facility type in early pipeline",
+            "where": "Venture's own CRM plus PMR Poland commercial-DC series and CBRE Suisse commercial-vs-self-operated splits",
+            "threshold": ">25% of qualified CE demand coming from enterprise/self-operated sites the colo map does not list",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Reconcile all seven countries onto one installed-load scope before locking Year-1 territory and account assignments",
+            "type": "information",
+            "voiNodeId": "geo.DE",
+            "note": "The DE node carries the largest band swing (−€24M TAM at the low edge) and is the cheapest to resolve — two public sources already bracket it"
+          },
+          {
+            "action": "Add an enterprise/self-operated sales motion (TÜV-certified retrofit bundle) for CH and PL alongside the large-operator channel",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Hedges the plan against the denominator being wrong without waiting for the data"
+          }
+        ]
+      },
+      {
+        "id": "stock-vs-flow-intensity-mismatch",
+        "title": "tamBase apportions revenue by standing MW, but PDU revenue follows new-build flow — which is concentrating outside CE-7",
+        "narrative": "The CE-7 = 39.8%-of-Europe hop divides standing colocation stock by standing stock. But rack-PDU revenue is fit-out-driven: it is earned when MW are delivered or refreshed, not while they sit installed. CBRE shows the flow concentrating away from CE: 57% of 2025's 937MW of new European supply lands in FLAPD (of which only Frankfurt and Amsterdam are CE-7), 85% of take-up is FLAPD, London alone exceeds 1GW and is Europe's largest market, and double-digit growth in secondary markets is going to Milan and Madrid — not Warsaw or Vienna. If CE-7's share of European capacity ADDITIONS is meaningfully below its 39.8% share of stock, the €300M systematically overstates where 2026 PDU purchase orders will actually be written, even if every input number is individually correct.",
+        "category": "model-structure",
+        "targetNodes": [
+          "tamBase"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "European colo revenue-generating activity is flow-shaped: 937MW of new supply in 2025, 57% of it in FLAPD, and 85% of take-up in FLAPD — a distribution measurably different from the standing-stock table the CE-7 ratio is computed from",
+            "refs": [
+              "digest:geo-region-denominator#c6",
+              "digest:geo-region-denominator#c7",
+              "digest:geo-region-denominator#c9"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "London (>1GW, Europe's largest market) and Frankfurt together represent roughly half of European supply, and CBRE's tracked secondary-growth markets are Milan and Madrid — so the growth increment that a 9% CAGR is made of accrues disproportionately to non-CE-7 geographies, while CE-7's standing stock skews toward older, lower-density halls with slower PDU refresh",
+            "refs": [
+              "digest:geo-region-denominator#c3",
+              "digest:geo-region-denominator#c8",
+              "digest:geo-region-denominator#c19"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The 39.8% stock ratio overstates CE-7's share of near-term PDU revenue; tamBase should be read as a stock-weighted ceiling, with the flow-weighted (order-relevant) base materially lower — a bias no band edge in the tornado captures because it is a method error, not parameter noise",
+            "refs": [
+              "ledger:tamBase",
+              "digest:geo-region-denominator#c4"
+            ]
+          }
+        ],
+        "whyMissable": "Stock apportionment is the standard top-down move and every input is sourced and recent — nothing on the page looks estimated. The rot is in an unstated physical assumption (PDU € per standing MW is uniform across regions and vintages) that no source states because no source measures it; you only see it by asking what event actually generates a PDU invoice.",
+        "expectedObviousness": "low",
+        "falsifier": "CBRE's 2025–26 delivery pipeline (or Statista's 2026-vintage country deltas) showing CE-7 capturing ≥38% of new European colocation MW delivered — i.e., flow share matching stock share.",
+        "likelihood": {
+          "value": 0.35,
+          "rationale": "The FLAPD concentration of additions and take-up is well documented, but Frankfurt and Amsterdam are themselves FLAPD members inside CE-7, which claws back part of the flow; the net CE-7 flow deficit vs its stock share is real but plausibly 5–10 points rather than catastrophic",
+          "basis": "judgment"
+        },
+        "perturbation": [
+          {
+            "nodeId": "tamBase",
+            "op": "scale",
+            "value": 0.8,
+            "note": "Re-weight the CE-7 share from standing stock toward capacity-additions flow (~32% vs 39.8%)"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "CE-7 share of new European colocation MW delivered per quarter",
+            "where": "CBRE 'Europe Data Centres Figures' quarterly PDFs (new supply by market)",
+            "threshold": "CE-7 markets (Frankfurt, Amsterdam, Zurich, Warsaw, Vienna, Prague) <35% of tracked deliveries for two consecutive quarters",
+            "updates": "increases"
+          },
+          {
+            "signal": "Growth differential between CE-7 and non-CE secondary markets",
+            "where": "Statista Europe colocation power by country, 2026 vintage vs 2025; CBRE secondary-markets commentary (Milan, Madrid)",
+            "threshold": "Non-CE secondary markets adding MW at ≥2x the CE-7 ex-DE/NL rate",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Rebuild the CE base on a two-component model: refresh revenue on standing stock plus fit-out revenue on the CBRE delivery pipeline, priced per MW from vendor BOMs",
+            "type": "information",
+            "voiNodeId": "tamBase",
+            "note": "Separates the stock-vs-flow question the current single ratio conflates"
+          },
+          {
+            "action": "Position Year-1 offering around retrofit/refresh of CE-7's older standing stock (where stock-based sizing IS the right measure) rather than new-build tenders",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Aligns go-to-market with the component of the TAM the model measures correctly"
+          }
+        ]
+      },
+      {
+        "id": "band-top-contaminated-comparator",
+        "title": "The €360M ceiling was set with the same contaminated-category trick it claimed to remove — the real base may sit above the band and the plan is sized for the wrong market",
+        "narrative": "Refinement cycle 1 lowered the band top from €495M to €360M by comparing the BIS ceiling's 21% growth against a '10–12% intelligent-PDU CAGR (IndexBox)'. But that 10–12% figure comes from IndexBox's €8.5–9.5B EU 'Power and Cable Management' report — a category several times broader than rack PDUs — so the correction that purged one contaminated number imported another. Meanwhile Germany alone is forecast at $509.6M in a PDU category by 2031, already exceeding the entire CE-7 base, and the global anchors span $1.7–3.94B, a 2.3x spread wider than the band. If the true CE base sits at €400M+, the failure mode is not embarrassment — it is a Year-1 plan whose certification scope, channel headcount, and manufacturing commitments were sized for €165M of SAM while incumbents scale into the €80–120M the model never showed the board.",
+        "category": "fact",
+        "targetNodes": [
+          "tamBase"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "The band-top-lowering comparator ('10–12% intelligent-PDU CAGR, IndexBox') is sourced from the EU Power and Cable Management report — a €8.5–9.5B multi-category basket — not a rack-PDU report, replicating the exact definitional bundling the refinement flagged in the BIS ceiling",
+            "refs": [
+              "digest:tam-base#c4",
+              "ledger:tamBase"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "Independent evidence points above the band: Germany's broader-PDU forecast alone reaches $509.6M by 2031, and same-category 2025 global anchors span $1.7B to $3.94B — a spread that exceeds the ±20% band and makes the €360M cap an artifact of one contested comparison rather than a bound",
+            "refs": [
+              "digest:tam-base#c9",
+              "digest:tam-global-crosscheck#c4",
+              "digest:tam-global-crosscheck#c9"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "With tamBase capped at €360M, SAM and the Year-1 obtainable plan are calibrated low; under-sizing systematically under-provisions certification breadth (serviceable reach) and channel capacity in the launch window, which is unrecoverable in a market where gear is specified 12–24+ months ahead",
+            "refs": [
+              "ledger:tamBase",
+              "ledger:serviceableFactor",
+              "ledger:obtainableFactor"
+            ]
+          }
+        ],
+        "whyMissable": "Downward refinements read as rigor — 'we caught an inflated ceiling and cut it' is exactly what a diligent team wants on the record, so nobody audits the comparator that justified the cut. Upside error also feels safe ('conservative is fine'), hiding that under-sizing misallocates real resources: too-narrow cert scope and too-thin channel for the market that actually exists.",
+        "expectedObviousness": "low",
+        "falsifier": "The IndexBox EU Rack PDUs report headline (once purchased) landing at or below €360M for the 2025/2026 EU base, confirming the lowered ceiling despite the contaminated comparator.",
+        "likelihood": {
+          "value": 0.3,
+          "rationale": "Multiple broader-category datapoints point above the band, but each carries the same definitional contamination in the upward direction; the honest read is that the ceiling is unproven rather than proven wrong",
+          "basis": "judgment"
+        },
+        "perturbation": [
+          {
+            "nodeId": "tamBase",
+            "op": "set",
+            "value": 420,
+            "note": "Base above the current band top, consistent with the Germany-alone $509.6M signal and the upper global anchors"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Directly-scoped EU/DE rack-PDU headline figures",
+            "where": "IndexBox EU Rack PDUs and Germany Rack PDUs reports ($4,000 each); Omdia rack-PDU vendor share table",
+            "threshold": "EU headline >€400M or Germany >€180M",
+            "updates": "increases"
+          },
+          {
+            "signal": "Incumbent EMEA rack-power growth outrunning the model's 9% CAGR",
+            "where": "Vertiv and Legrand quarterly earnings calls, EMEA data-center product-line commentary",
+            "threshold": "Two consecutive quarters of >15% YoY EMEA rack-power growth",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Commission the IndexBox EU Rack PDUs report to fix the base directly — it resolves this hypothesis and the Europe-share hop simultaneously",
+            "type": "information",
+            "voiNodeId": "tamBase",
+            "note": "The ledger's own promotionPath; a $4,000 spend against a €60M+ band question"
+          },
+          {
+            "action": "Build the Year-1 operating plan with staged capacity options (certification scope and contract manufacturing volumes expandable at 6-month gates) rather than fixed to the €165M SAM",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": "Makes the plan robust to the base being above the band without pre-committing capital"
+          }
+        ]
+      }
+    ]
+  }
+}

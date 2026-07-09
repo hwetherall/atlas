@@ -1,0 +1,40 @@
+{
+  "inputsHash": "1b090dd8be719ebd46d6fbdd7fc7d1b59ec91efd96b4e8736b59cabf2180734b",
+  "generatedAt": "2026-07-08T17:38:51.572Z",
+  "data": {
+    "title": "One vendor's colo definition inflates the European market base",
+    "narrative": "The model builds every geography and the 39.8% Central-Europe share of tamBase from a single Statista series. But adding up Statista's 2024 country figures gives about 7.6GW, more than CBRE's 5.8GW for all of Europe. If that series counts capacity that isn't really there, tamBase is sized too high.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Statista's country colo figures use an unverified, unmatched scope",
+        "refs": [
+          "digest:geo-region-denominator#c1",
+          "digest:geo-region-denominator#c3",
+          "digest:geo-region-denominator#c5"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "PMR data shows the region roughly five times smaller",
+        "refs": [
+          "digest:geo-PL#c13",
+          "digest:geo-PL#c14",
+          "ledger:geo.PL"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Fixing the scope shrinks the Central-Europe slice and tamBase",
+        "refs": [
+          "ledger:tamBase",
+          "ledger:geo.DE",
+          "digest:geo-region-denominator#c5"
+        ]
+      }
+    ],
+    "whyMissable": "Each geography carries a cross-check, but every check uses a different scope, and forcing the shares to add to one hides any error in the absolute level.",
+    "falsifier": "A second vendor such as DC Byte or CBRE reproducing Statista's per-country 2025 colocation MW within about 15% under an identical definition.",
+    "likelihoodRationale": "CBRE's figures confirm the sum exceeds the total, and Statista's own note admits 'scale colocation' includes powered shells that would not buy racks as modeled. It stays below certainty because no source reproduces per-country MW under one definition to pin the tamBase impact."
+  }
+}

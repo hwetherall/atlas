@@ -1,0 +1,40 @@
+{
+  "inputsHash": "6b37b70e2d7a0e92afffd2c3b0c9d9dfec961077b8d9470fcd20df7bf440fb3e",
+  "generatedAt": "2026-07-08T21:50:45.950Z",
+  "data": {
+    "title": "German energy-reporting rules push incumbent-DCIM gates into PDU tenders",
+    "narrative": "The model assumes the entrant can serve 55% of the market once its product passes standard certification. But German and EU energy-reporting laws lead operators to demand certified metering accuracy plus validated links to incumbent DCIM software, which a new entrant lacks. That drops the reachable share to 45% in the German market, cutting the Year-1 number.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "German and EU reporting deadlines recur, forcing operators to produce auditable energy data.",
+        "refs": [
+          "digest:serviceable-benchmark#c12",
+          "digest:serviceable-benchmark#c10",
+          "digest:geo-DE#c11"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Operators require certified accuracy and named-DCIM links in PDU tenders.",
+        "refs": [
+          "digest:refine-competitive-foreclosure.oem-cell-odm-price-foreclosure#c5",
+          "ledger:serviceableFactor",
+          "digest:serviceable-benchmark#c11"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Reachable share falls below 45% for an unvalidated entrant.",
+        "refs": [
+          "ledger:serviceableFactor",
+          "digest:serviceable-benchmark#c3",
+          "ledger:geo.DE"
+        ]
+      }
+    ],
+    "whyMissable": "The laws bind operators, not vendors, so a founder scanning for product rules finds nothing and only sees the gate in lost tenders.",
+    "falsifier": "German or Dutch 2026 colo PDU specs showing no certified-accuracy or named-DCIM requirement, or DCIM suites accepting open-protocol PDU data for filings without vendor validation.",
+    "likelihoodRationale": "The reporting deadlines are enacted, but evidence shows open protocols like Redfish are the prevailing integration path and no tender confirmed the DCIM gate. This weakens but does not refute the mechanism, warranting a modest downward revision from 0.3."
+  }
+}

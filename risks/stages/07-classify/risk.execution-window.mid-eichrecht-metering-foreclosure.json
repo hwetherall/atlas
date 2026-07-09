@@ -1,0 +1,19 @@
+{
+  "inputsHash": "ec21b61af43c55d25fc81463696098506da7816de53decb8c040a7ededee311e",
+  "generatedAt": "2026-07-08T21:54:18.231Z",
+  "data": {
+    "resolution": "risk",
+    "settleTest": "Only the passage of time settles this: whether MID/certification actually forecloses German tenant re-billing demand in Year 1 depends on the venture's certification timeline, whether colocation operators use kWh vs capacity-tier billing, and how demand responds — none of which is fixed by a purchasable report. The legal requirement (MID) is documented today, but the load-bearing claim is that this forecloses reachable Year-1 share, which is a forward market-response gate.",
+    "proposedCorrection": null,
+    "researchQueries": [
+      {
+        "query": "Survey German colocation operators (e.g., Interxion/Digital Realty DE, NTT Frankfurt, Equinix FR) on whether tenant power is billed per-kWh (MID-triggering) versus flat capacity-tier or breaker-amperage allocation",
+        "kind": "falsifying"
+      },
+      {
+        "query": "PTB and MID module B/D certification lead-time and cost for power metering instruments (WG 2.34) for a new PDU entrant, confirming multi-quarter timeline missing Year 1",
+        "kind": "confirming"
+      }
+    ]
+  }
+}

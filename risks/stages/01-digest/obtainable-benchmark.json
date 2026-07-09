@@ -1,0 +1,196 @@
+{
+  "inputsHash": "f0cd9c5e92f5aeec02537bc4a38e10189bd8095c42839770d3c70f47f375ea19",
+  "generatedAt": "2026-07-08T18:48:10.733Z",
+  "data": {
+    "claims": [
+      {
+        "id": "obtainable-benchmark#c0",
+        "claim": "Prospeo's SOM benchmark assigns 1% of SAM to Year 1, 3% to Year 2, and 5% to Year 3",
+        "number": 1,
+        "unit": "percent",
+        "sourceTitle": "Serviceable Obtainable Market (SOM): How to Calculate It",
+        "url": "https://prospeo.io/s/serviceable-obtainable-market",
+        "excerpt": "SOM benchmarks that won't get you laughed out of the room: 1% of SAM in Year 1, 3% in Year 2, 5% in Year 3.",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "obtainable-benchmark#c1",
+        "claim": "Prospeo defines SOM as revenue realistically captured over 1-3 years, not a single-year figure",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Serviceable Obtainable Market (SOM): How to Calculate It",
+        "url": "https://prospeo.io/s/serviceable-obtainable-market",
+        "excerpt": "SOM is the revenue you can realistically capture in 1-3 years. Not a fantasy percentage of SAM.",
+        "tags": [
+          "definition"
+        ]
+      },
+      {
+        "id": "obtainable-benchmark#c2",
+        "claim": "IdeaPlan states early-stage companies typically capture 1-5% of SAM as SOM",
+        "number": 5,
+        "unit": "percent",
+        "sourceTitle": "Serviceable Obtainable Market (SOM) — early-stage ranges",
+        "url": "https://www.ideaplan.io/glossary/serviceable-obtainable-market-som",
+        "excerpt": "For early-stage companies, SOM is typically 1-5% of SAM.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "obtainable-benchmark#c3",
+        "claim": "IdeaPlan states growing companies with product-market fit can reach 10-20% of SAM",
+        "number": 20,
+        "unit": "percent",
+        "sourceTitle": "Serviceable Obtainable Market (SOM) — early-stage ranges",
+        "url": "https://www.ideaplan.io/glossary/serviceable-obtainable-market-som",
+        "excerpt": "For growing companies with product-market fit, SOM can reach 10-20% of SAM.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "obtainable-benchmark#c4",
+        "claim": "IdeaPlan states market leaders in well-defined categories may achieve 30%+ of SAM, and winner-take-most market leaders can exceed 40%",
+        "number": 40,
+        "unit": "percent",
+        "sourceTitle": "Serviceable Obtainable Market (SOM) — early-stage ranges",
+        "url": "https://www.ideaplan.io/glossary/serviceable-obtainable-market-som",
+        "excerpt": "Market leaders in well-defined categories may achieve 30%+ of SAM. These percentages vary by market structure: in winner-take-most markets (like cloud infrastructure), the leader can capture 40%+ of SAM",
+        "tags": [
+          "base-rate",
+          "competition"
+        ]
+      },
+      {
+        "id": "obtainable-benchmark#c5",
+        "claim": "IdeaPlan defines SOM as the portion of SAM capturable typically within one to three years, not specifically Year 1",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Serviceable Obtainable Market (SOM) — early-stage ranges",
+        "url": "https://www.ideaplan.io/glossary/serviceable-obtainable-market-som",
+        "excerpt": "Serviceable Obtainable Market (SOM) is the portion of the Serviceable Addressable Market (SAM) that a company can realistically capture in the near term, typically within one to three years.",
+        "tags": [
+          "definition"
+        ]
+      },
+      {
+        "id": "obtainable-benchmark#c6",
+        "claim": "Wise defines SOM as the realistic share of SAM expected to be captured over three to five years, not one year",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Calculating market size with TAM, SAM and SOM for startups - Wise",
+        "url": "https://wise.com/gb/blog/tam-sam-vs-som",
+        "excerpt": "Serviceable Obtainable Market (SOM): The realistic share of SAM you expect to capture in the next three to five years, accounting for competition and your execution capacity.",
+        "tags": [
+          "definition"
+        ]
+      },
+      {
+        "id": "obtainable-benchmark#c7",
+        "claim": "TryBuildCo's worked example yields SOM of $3.2M against SAM of $3.2B — a 0.1% ratio, describing 'year 1-2' capture",
+        "number": 3.2,
+        "unit": "million USD (SOM), against $3.2B SAM",
+        "sourceTitle": "How to Calculate TAM SAM SOM for Your Startup (With Real Examples) | TryBuildCo",
+        "url": "https://trybuild.co/how-to-calculate-tam-sam-som",
+        "excerpt": "TAM: $58B\nSAM: $3.2B\nSOM: $3.2M",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "obtainable-benchmark#c8",
+        "claim": "TryBuildCo frames SOM as 'What you'll actually capture year 1-2'",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "How to Calculate TAM SAM SOM for Your Startup (With Real Examples) | TryBuildCo",
+        "url": "https://trybuild.co/how-to-calculate-tam-sam-som",
+        "excerpt": "SOM — Serviceable Obtainable Market\nWhat you'll actually capture year 1-2",
+        "tags": [
+          "definition"
+        ]
+      },
+      {
+        "id": "obtainable-benchmark#c9",
+        "claim": "WorthBuild cites the pitch-deck cliché of claiming 1% of a large market as a red flag investors dislike",
+        "number": 1,
+        "unit": "percent",
+        "sourceTitle": "How to Calculate SOM (Serviceable Obtainable Market) for Your Startup — Blog | WorthBuild",
+        "url": "https://worthbuild.io/blog/how-to-calculate-som-serviceable-obtainable-market-for-your-startup",
+        "excerpt": "You've probably heard the pitch deck cliché: \"If we capture just 1% of this $50 billion market…\" Investors hear this dozens of times a week, and it makes most of them cringe.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "obtainable-benchmark#c10",
+        "claim": "Tractian's revenue grew from $200K to $32.2M over four years, not a discrete first-year figure",
+        "number": 200000,
+        "unit": "USD (starting revenue)",
+        "sourceTitle": "Tractian: How Two Sons of Factory Engineers Built a $32M Business on Sensors That Predict Breakdowns — Solopreneur",
+        "url": "https://solopreneuro.com/en/ideas/tractian-maintenance-ai",
+        "excerpt": "The company grew from $200K to $32M in revenue over four years and serves more than 1,000 plants, including John Deere, Caterpillar, and Goodyear.",
+        "tags": [
+          "base-rate",
+          "execution"
+        ]
+      },
+      {
+        "id": "obtainable-benchmark#c11",
+        "claim": "Tractian's addressable predictive-maintenance market is cited at $14.9B by 2026",
+        "number": 14.9,
+        "unit": "billion USD",
+        "sourceTitle": "Tractian: How Two Sons of Factory Engineers Built a $32M Business on Sensors That Predict Breakdowns — Solopreneur",
+        "url": "https://solopreneuro.com/en/ideas/tractian-maintenance-ai",
+        "excerpt": "Market $14.9 млрд к 2026 году (предиктивное обслуживание, по данным MarketsandMarkets)",
+        "tags": [
+          "demand",
+          "structure"
+        ]
+      },
+      {
+        "id": "obtainable-benchmark#c12",
+        "claim": "Deploy 95 reports 30% of deployed industrial hardware systems were never fully accepted by customers, requiring uninstallation",
+        "number": 30,
+        "unit": "percent",
+        "sourceTitle": "The Economics of POC - by Trista Li - Deploy 95",
+        "url": "https://deploy95.substack.com/p/the-economics-of-poc",
+        "excerpt": "Thirty percent of deployed systems were never fully accepted: customers would sign, we'd deploy, and six months later, it came back. We were sending teams to uninstall while trying to hit revenue targets.",
+        "tags": [
+          "execution",
+          "base-rate"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "Multiple SOM definitions (Prospeo, IdeaPlan, Wise, TryBuildCo) describe the obtainable-share percentage as accruing over a 1-3 or 3-5 year window, not specifically 'Year 1' — the node's anchoring of the 1% figure strictly to Year 1 may overstate precision the sources don't actually support at single-year granularity.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      },
+      {
+        "text": "TryBuildCo's worked example produces an SOM/SAM ratio of ~0.1% ($3.2M/$3.2B), which falls below the node's stated low end of 0.5%, suggesting the 0.5-3% sensitivity band may not bracket all realistic obtainable-share outcomes.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      },
+      {
+        "text": "The node's cross-check cites 'Tractian comparable (first-year ~$1.2M against a multi-$B market)' but the attached Tractian source only reports starting revenue of $200K growing to $32M over four years — no explicit first-year $1.2M figure appears in the evidence, so the cross-check number is unverified against the cited source.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      }
+    ],
+    "absences": [
+      "No industry-specific (DC electrical gear, rack-PDU, or predictive-maintenance hardware) Year-1 obtainable-share benchmark was found — only generic SaaS/startup SOM heuristics (1-5%, 10-20%, 30%+) appear across sources.",
+      "No first-year revenue or market-share figures for comparable early-stage hardware entrants (only Tractian's aggregated four-year trajectory from $200K to $32M) were located to validate a Year-1-specific capture rate.",
+      "No quantification of how the cited 12-24 month early-procurement lock-in cycle for DC electrical gear translates into a bounded Year-1 obtainable-share percentage.",
+      "No competitor-level market-share breakdown (e.g., for Cognex, Keyence, Matrox, FANUC, ABB, KUKA, Yaskawa, or rack-PDU vendors) was found that would allow a bottom-up validation of the 1% Year-1 assumption."
+    ]
+  }
+}

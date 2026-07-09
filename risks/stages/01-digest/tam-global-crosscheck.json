@@ -1,0 +1,236 @@
+{
+  "inputsHash": "c20fa3706c411023b8979771a93f02253f0f46d88c28b6ede9af3687ac145f58",
+  "generatedAt": "2026-07-08T19:14:21.106Z",
+  "data": {
+    "claims": [
+      {
+        "id": "tam-global-crosscheck#c0",
+        "claim": "Global rack-PDU market size estimated at $2.81B in 2025, projected to reach $5.87B by 2033 at 9.7% CAGR (2026-2033)",
+        "number": 2.81,
+        "unit": "USD_B",
+        "sourceTitle": "Data Center Rack Power Distribution Unit Market Report 2033",
+        "url": "https://www.grandviewresearch.com/industry-analysis/data-center-rack-power-distribution-unit-pdu-market",
+        "excerpt": "The global data center rack power distribution unit market size was estimated at USD 2.81 billion in 2025 and is projected to reach USD 5.87 billion by 2033, growing at a CAGR of 9.7% from 2026 to 2033.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c1",
+        "claim": "North America held 38.0% revenue share of the global rack-PDU market",
+        "number": 0.38,
+        "unit": "ratio",
+        "sourceTitle": "Data Center Rack Power Distribution Unit Market Report 2033",
+        "url": "https://www.grandviewresearch.com/industry-analysis/data-center-rack-power-distribution-unit-pdu-market",
+        "excerpt": "North America held 38.0% revenue share of the global data center rack power distribution unit market.",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c2",
+        "claim": "Non-intelligent segment held the largest revenue share of the global rack-PDU market in 2025",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Data Center Rack Power Distribution Unit Market Report 2033",
+        "url": "https://www.grandviewresearch.com/industry-analysis/data-center-rack-power-distribution-unit-pdu-market",
+        "excerpt": "By rack type, non-intelligent segment held the largest revenue share in 2025.",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c3",
+        "claim": "Mordor Intelligence: rack-PDU market grows from $2.78B (2025) to $3.01B (2026) to $4.62B (2031) at 8.96% CAGR (2026-2031)",
+        "number": 8.96,
+        "unit": "pct",
+        "sourceTitle": "Data Center Rack Power Distribution Unit (PDU) Market Size, Share, Trends",
+        "url": "https://www.mordorintelligence.com/industry-reports/data-center-rack-pdu-market",
+        "excerpt": "The data center rack power distribution unit (PDU) market size is expected to increase from USD 2.78 billion in 2025 to USD 3.01 billion in 2026 and reach USD 4.62 billion by 2031, growing at a CAGR of 8.96% over 2026-2031.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c4",
+        "claim": "MarketsandMarkets: broader Data Center PDU market (rack PDU + floor PDU) valued at $3.94B in 2025, projected $14.23B by 2032 at 19.5% CAGR (2026-2032)",
+        "number": 19.5,
+        "unit": "pct",
+        "sourceTitle": "Data Center PDU Market Size, Share, Latest Trends & Growth Analysis, 2025-2032",
+        "url": "https://www.marketsandmarkets.com/Market-Reports/data-center-pdu-market-183927907.html",
+        "excerpt": "According to Marketsandmarkets, the data center PDU market size was valued USD 3.94 biliion in 2025 and is project to reach USD 14.23 billion by 2032, growing at a CAGR of 19.5% from 2026 to 2032.",
+        "tags": [
+          "base-rate",
+          "definition",
+          "substitution"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c5",
+        "claim": "Insight Partners: global rack-PDU market projected to reach $3.57B by 2034 from $2.03B in 2025 at 7.28% CAGR (2026-2034)",
+        "number": 7.28,
+        "unit": "pct",
+        "sourceTitle": "Data Center Rack PDU Market Size, Growth & Trends by 2034",
+        "url": "https://www.theinsightpartners.com/reports/data-center-rack-pdu-market",
+        "excerpt": "The global Data Center Rack PDU Market size is projected to reach US$ 3.57 billion by 2034 from US$ 2.03 billion in 2025. The market is anticipated to register a CAGR of 7.28% during the forecast period 2026-2034.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c6",
+        "claim": "MarketIntelo: global Rack PDU market valued at $3.2B in 2025, projected to reach $5.4B by 2034 at 6.8% CAGR; Asia Pacific held 38.2% revenue share",
+        "number": 6.8,
+        "unit": "pct",
+        "sourceTitle": "Rack PDU Market Research Report 2034",
+        "url": "https://marketintelo.com/report/rack-pdu-market",
+        "excerpt": "The Rack PDU market, valued at $3.2 billion in 2025, is projected to reach $5.4 billion by 2034, representing a steady compound annual growth rate of 6.8%.",
+        "tags": [
+          "base-rate",
+          "competition"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c7",
+        "claim": "MarketIntelo: Asia Pacific dominated global rack PDU market with 38.2% revenue share",
+        "number": 38.2,
+        "unit": "pct",
+        "sourceTitle": "Rack PDU Market Research Report 2034",
+        "url": "https://marketintelo.com/report/rack-pdu-market",
+        "excerpt": "Asia Pacific dominated with 38.2% revenue share",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c8",
+        "claim": "Introspective Market Research: rack PDU market valued at $1.98B in 2024, projected $4.18B by 2032 at 9.8% CAGR (2025-2032)",
+        "number": 9.8,
+        "unit": "pct",
+        "sourceTitle": "Data Center Rack PDU Market Outlook: Growth and Insights",
+        "url": "https://introspectivemarketresearch.com/reports/data-center-rack-pdu-market/",
+        "excerpt": "Data Center Rack PDU Market Size Was Valued at USD 1.98 Billion in 2024, and is Projected to Reach USD 4.18 Billion by 2032, Growing at a CAGR of 9.8% From 2025-2032.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c9",
+        "claim": "LP Information: global rack-PDU market predicted to grow from $1,697M (2025) to $2,333M (2031) at 5.4% CAGR (2025-2031)",
+        "number": 5.4,
+        "unit": "pct",
+        "sourceTitle": "Global Data Center Rack Power Distribution Unit (PDU) Market Growth 2025-2031 - LP Information",
+        "url": "https://www.lpinformationdata.com/reports/1683043/data-center-rack-power-distribution-unit--pdu",
+        "excerpt": "The global Data Center Rack Power Distribution Unit (PDU) market size is predicted to grow from US$ 1697 million in 2025 to US$ 2333 million in 2031; it is expected to grow at a CAGR of 5.4% from 2025 to 2031.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c10",
+        "claim": "Mordor Intelligence Intelligent PDU market: table states 2025-2030 growth rate of 3.52% CAGR while analysis text states the same period reflects a 9.44% CAGR",
+        "number": 3.52,
+        "unit": "pct",
+        "sourceTitle": "Intelligent PDU Market Size, Share & 2030 Trends Report",
+        "url": "https://www.mordorintelligence.com/industry-reports/intelligent-pdu-market",
+        "excerpt": "Growth Rate (2025 - 2030) | 3.52% CAGR ... The intelligent PDU market size is USD 3.52 billion in 2025 and is forecast to reach USD 5.53 billion by 2030, reflecting a 9.44% CAGR.",
+        "tags": [
+          "base-rate",
+          "definition"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c11",
+        "claim": "Research and Markets: rack-PDU market estimated at $2.78B in 2025, expected to reach $4.08B by 2030 at 8.01% CAGR (2025-2030)",
+        "number": 8.01,
+        "unit": "pct",
+        "sourceTitle": "Data Center Rack Power Distribution Unit (PDU) - Market Share Analysis, Industry Trends & Statistics, Growth Forecasts (2025 - 2030)",
+        "url": "https://www.researchandmarkets.com/reports/4773675/data-center-rack-power-distribution-unit-pdu",
+        "excerpt": "The Data Center Rack Power Distribution Unit Market size is estimated at USD 2.78 billion in 2025, and is expected to reach USD 4.08 billion by 2030, at a CAGR of 8.01% during the forecast period (2025-2030).",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c12",
+        "claim": "Global Industry Analysts: global Intelligent PDU market estimated at $2.1B in 2024, projected $3.2B by 2030 at 6.8% CAGR; Germany forecast to grow at ~5.2% CAGR",
+        "number": 6.8,
+        "unit": "pct",
+        "sourceTitle": "Intelligent PDU",
+        "url": "https://www.marketresearch.com/Global-Industry-Analysts-v1039/Intelligent-PDU-42596267/",
+        "excerpt": "The global market for Intelligent PDU estimated at US$2.1 Billion in the year 2024, is expected to reach US$3.2 Billion by 2030, growing at a CAGR of 6.8% over the analysis period 2024-2030... Within Europe, Germany is forecast to grow at approximately 5.2% CAGR.",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c13",
+        "claim": "Market Research Future: Intelligent PDU Market Size estimated at $2.831B in 2024, projected to grow to $3.025B in 2025",
+        "number": 3.025,
+        "unit": "USD_B",
+        "sourceTitle": "Intelligent PDU Market Size, Share, Report & Growth 2035",
+        "url": "https://www.marketresearchfuture.com/reports/intelligent-pdu-market-33786",
+        "excerpt": "the Intelligent PDU Market Size was estimated at 2.831 USD Billion in 2024. The Intelligent PDU industry is projected to grow from 3.025 USD Billion in 2025 to 5.87",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c14",
+        "claim": "PRNewswire (2023): global Intelligent PDU market estimated at $1.7B in 2022, projected to reach $2.9B by 2030 at 7% CAGR; Germany forecast ~5.3% CAGR",
+        "number": 7,
+        "unit": "pct",
+        "sourceTitle": "Global Intelligent PDU Strategic Market Report 2023: Rise in Modular Datacenters to Spur Market Demand",
+        "url": "https://www.prnewswire.com/news-releases/global-intelligent-pdu-strategic-market-report-2023-rise-in-modular-datacenters-to-spur-market-demand-301744640.html",
+        "excerpt": "The global market for Intelligent PDU estimated at US$1.7 Billion in the year 2022, is projected to reach a revised size of US$2.9 Billion by 2030, growing at a CAGR of 7% over the analysis period 2022-2030... Within Europe, Germany is forecast to grow at approximately 5.3% CAGR.",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "tam-global-crosscheck#c15",
+        "claim": "GVR global rack-PDU market segmented by Rack Type, Region (incl. Europe), and Segment Forecasts; Asia Pacific noted as fastest-growing region",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Data Center Rack Power Distribution Unit Market Report 2033",
+        "url": "https://www.grandviewresearch.com/industry-analysis/data-center-rack-power-distribution-unit-pdu-market",
+        "excerpt": "North America: Largest market in 2025 - Asia Pacific: Fastest grow",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "shape.cagr's derivation claims a tight 8-10% consensus band across 'three independent publishers,' but the fuller set of global rack/intelligent-PDU reports surfaced here spans a much wider range — from 5.4% (LP Information) and 6.8% (MarketIntelo; Global Industry Analysts) up to 19.5% (MarketsandMarkets, broader Data Center PDU scope) and even an internally-contradictory 3.52%/9.44% figure from Mordor's own Intelligent PDU report — undermining the tightness of the stated consensus.",
+        "nodes": [
+          "shape.cagr"
+        ]
+      },
+      {
+        "text": "tamBase's scope-down chain anchors on Grand View Research's $2.81B 2025 global rack-PDU figure, but other publishers report substantially different 2025 global market sizes for ostensibly the same category — Insight Partners $2.03B, LP Information $1.697B, MarketIntelo $3.2B, MarketsandMarkets (broader, rack+floor) $3.94B — implying the anchor carries more uncertainty than the stated ±40% sensitivity band reflects.",
+        "nodes": [
+          "tamBase"
+        ]
+      },
+      {
+        "text": "MarketsandMarkets' 'Data Center PDU' figure explicitly combines Rack PDU and Floor PDU segments and grows at 19.5% CAGR — a scope-contamination risk analogous to the BIS/R&M PDUs+PSUs ceiling that tamBase's refinement cycle 1 already flagged and excluded, suggesting similar caution is needed before treating any single global 'PDU market' headline number as clean rack-PDU-only data.",
+        "nodes": [
+          "tamBase"
+        ]
+      }
+    ],
+    "absences": [
+      "No Central Europe-specific or country-level (Germany, Poland, CE-7) rack-PDU market size figure was found in the global-scope searches — only Germany-specific CAGR figures for the narrower Intelligent PDU sub-segment (5.2-5.3%) surfaced, not absolute size.",
+      "No source separated 'rack PDU' cleanly from 'floor PDU' or 'PDU+PSU' scope consistently — most reports mix definitions (MarketsandMarkets explicitly includes Floor PDU; BIS/R&M includes PSUs), so a scope-pure global or regional rack-PDU-only base figure remains unconfirmed.",
+      "No regional (Europe- or CE-specific) revenue-share breakdown was found for the rack-PDU category itself — only global NA (38%) and APAC (38.2%) shares were reported, leaving Europe's true share of the global rack-PDU pie unquantified directly.",
+      "No source reconciled the wide 2025 global market-size estimates ($1.7B-$3.94B) or explained the discrepancy; none of the reports cross-referenced competing figures."
+    ]
+  }
+}

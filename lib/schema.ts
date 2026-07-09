@@ -40,7 +40,7 @@ export const sensitivityRangeSchema = z.object({
 });
 export type SensitivityRange = z.infer<typeof sensitivityRangeSchema>;
 
-const isoDate = z
+export const isoDate = z
   .string()
   .regex(/^\d{4}-\d{2}-\d{2}$/, "asOf must be an ISO date (YYYY-MM-DD)");
 

@@ -1,0 +1,25 @@
+{
+  "inputsHash": "0d8a030fd8305700db6d0556a2ea71ff95fe706dacf2545b7f9bc1fab8cc8ac7",
+  "generatedAt": "2026-07-08T18:20:12.882Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "Vendor rack-PDU revenue per colo megawatt for the Netherlands vs CE-7 average (from PDU vendor country splits like Vertiv/Legrand/Schneider or a colo fit-out BOM dataset) — a purchasable/obtainable dataset that would confirm today whether NL's PDU-euro intensity per MW differs from average.",
+    "proposedCorrection": {
+      "nodeId": "geo.NL",
+      "value": 0.24,
+      "low": 0.2,
+      "high": 0.28,
+      "rationale": "NL's 0.28 rests on raw colo-MW share, but a disproportionate share of hyperscaler self-build/busway halls in NL buys fewer discrete PDUs per MW, so the PDU-euro weight should be scaled down toward the low end of its current band."
+    },
+    "researchQueries": [
+      {
+        "query": "PDU vendor (Vertiv, Legrand/Raritan, Schneider APC) Netherlands rack-PDU revenue or units per installed colo megawatt vs European average, 2024-2025",
+        "kind": "confirming"
+      },
+      {
+        "query": "Netherlands colocation fit-out bill-of-materials showing discrete rack-PDU spend per MW comparable to Germany/France (CE-7) despite hyperscaler self-build share",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

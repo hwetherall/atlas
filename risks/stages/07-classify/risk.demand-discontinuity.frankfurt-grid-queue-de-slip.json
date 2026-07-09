@@ -1,0 +1,25 @@
+{
+  "inputsHash": "d687915591c2e6b9d01296f34660f4ffd2eb809e213f698cf455f54749990174",
+  "generatedAt": "2026-07-08T21:52:45.758Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A current Frankfurt-vs-Germany capacity dataset (e.g., Statista/BMWK metro-level split) showing Frankfurt's actual share of German colocation/IT power today — this is a knowable present fact, not a future event.",
+    "proposedCorrection": {
+      "nodeId": "geo.DE",
+      "value": 0.42,
+      "low": 0.4,
+      "high": 0.5,
+      "rationale": "The claim's load-bearing '75% of German capacity in Frankfurt' concentration is overstated — FLAP-D data shows Frankfurt at roughly 55–65% of German colo capacity, so DE share should sit at the installed-IT-load low end (0.42) rather than the colo-scope 0.50, but the correction is a today's-share fact, not the future slip."
+    },
+    "researchQueries": [
+      {
+        "query": "Frankfurt data center colocation IT power MW 2025 as share of total Germany capacity (Statista, CBRE, JLL FLAP-D report)",
+        "kind": "confirming"
+      },
+      {
+        "query": "German data center capacity distribution 2025 Frankfurt vs Berlin Munich Hamburg — is Frankfurt below 70% of national capacity",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "inputsHash": "fa770c017244f798aa9bd4aaa72f5e077889707f000b33916f98a1649221ddf3",
+  "generatedAt": "2026-07-08T21:51:33.359Z",
+  "data": {
+    "title": "Geography weights overstate Netherlands, understate Switzerland",
+    "narrative": "The model splits geography by colocation megawatts, then applies that split to the 29% enterprise slice. But colocation covers only about two-thirds of Europe's IT power, and enterprise machine rooms sit where industry is, not where Amsterdam campuses are. So the Netherlands cell counts enterprise demand that physically sits in German and Swiss server rooms, and anyone staffing a DACH channel off these weights will pick the wrong countries.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Colocation covers only two-thirds of Europe's IT power.",
+        "refs": [
+          "digest:geo-region-denominator#c11",
+          "ledger:geo.NL"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "The missing third sits elsewhere; Switzerland runs 0.13 versus 0.08.",
+        "refs": [
+          "ledger:geo.CH",
+          "ledger:geo.DE",
+          "ledger:seg.enterprise"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Netherlands is overstated, Switzerland undersized, across the 29% enterprise slice.",
+        "refs": [
+          "ledger:geo.NL",
+          "ledger:geo.CH",
+          "ledger:seg.enterprise"
+        ]
+      }
+    ],
+    "whyMissable": "Each axis is well-sourced on its own, so every ledger row passes review, and the error appears only when the two axes are multiplied together.",
+    "falsifier": "A country-level installed-load table showing the Netherlands share of total load near its colocation share of 0.28, meaning the missing third distributes the same way.",
+    "likelihoodRationale": "The colocation-versus-installed gap already shows up in the ledger's own checks for Germany, Switzerland, Austria and Poland, all in the predicted direction. The Netherlands magnitude is still unconfirmed, so confidence rises only modestly above the prior."
+  }
+}

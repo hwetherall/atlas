@@ -1,0 +1,39 @@
+{
+  "inputsHash": "bd98b00d797fc81cb0b1b54bc9485979bfb426ce1838209e5fa37bbaff90ca50",
+  "generatedAt": "2026-07-08T21:48:21.577Z",
+  "data": {
+    "title": "Big buyers lock specs early, emptying the Year-1 sales window",
+    "narrative": "The model assumes the venture wins 1% of its market in Year 1 from many independent buyers arriving steadily. But the chosen corner is a few large Frankfurt and Amsterdam campus fit-outs whose electrical parts are specified at tender, long before delivery. Capacity delivering in the first 12 months was already specced in 2024–25. So the truly winnable share this year is far below the 1% benchmark, and the Year-1 number is overstated.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "A few flagship campuses dominate Year-1 demand, specced early",
+        "refs": [
+          "digest:geo-region-denominator#c3",
+          "digest:geo-region-denominator#c6",
+          "ledger:obtainableFactor"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Large operators set specs upstream, so smooth-arrival assumption fails",
+        "refs": [
+          "ledger:geo.DE",
+          "ledger:cust.operator-large",
+          "digest:geo-region-denominator#c9"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Average 1% benchmark overstates winnable share for this cell",
+        "refs": [
+          "ledger:obtainableFactor",
+          "profile:Stage"
+        ]
+      }
+    ],
+    "whyMissable": "This node was already fixed once from 3% to 1% and looks like the most-scrubbed number, but the real error is the link between big buyers and early spec-lock, which no single band captures.",
+    "falsifier": "Two or more large-operator rack-PDU procurements in the first 12 months, open to new vendors and running from bid to delivery inside that window.",
+    "likelihoodRationale": "Pipeline data directly documents lumpy projects and early spec-lock in this cell, and no vendor-open procurement fitting a 12-month cycle surfaced. Held below 0.7 because short-cycle refresh demand in existing Frankfurt stock is unmeasured and could rescue the average."
+  }
+}

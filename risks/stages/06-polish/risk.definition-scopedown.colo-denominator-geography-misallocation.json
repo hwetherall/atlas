@@ -1,0 +1,39 @@
+{
+  "inputsHash": "ad2e35b33839322a7a7cae5e7976f8b912958827229aafd5b45cdbe50863f9df",
+  "generatedAt": "2026-07-08T21:51:05.862Z",
+  "data": {
+    "title": "Country map uses colo-only demand, overweighting Germany and NL",
+    "narrative": "The model splits demand by country using colo megawatts divided by colo megawatts. But rack-PDU demand tracks total installed IT load, and about a third of that load sits outside colocation with a different country mix. Germany's installed load exceeds its colo figure by about 1,000MW, so a colo-based map overstates Germany and the Netherlands in the Year-1 plan.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "EUDCA: colo and hyperscale is only two-thirds of Europe's power.",
+        "refs": [
+          "digest:geo-region-denominator#c11",
+          "ledger:geo.DE"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Gap varies by country, shifting the €300M across markets.",
+        "refs": [
+          "ledger:geo.DE",
+          "ledger:geo.CH",
+          "ledger:geo.PL"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Plan overweights Germany and NL, misses Swiss and Polish demand.",
+        "refs": [
+          "profile:Who is the primary buyer you'll sell through first?",
+          "ledger:geo.NL",
+          "digest:geo-region-denominator#c14"
+        ]
+      }
+    ],
+    "whyMissable": "Each country node discloses its colo-versus-installed gap as a width band, so the problem looks handled, but bands cannot show that the whole dimension moves the same wrong way at once.",
+    "falsifier": "A single-source table of total installed IT load for all CE-7 countries whose per-country shares match the current colo-based shares within 3 percentage points.",
+    "likelihoodRationale": "The gap is documented in the ledger's own checks for four of seven countries and confirmed continentally by EUDCA. What remains unclear is whether non-colo demand per megawatt matches colo, which partly offsets the shift, so likelihood is set at 0.50."
+  }
+}

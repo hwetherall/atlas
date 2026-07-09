@@ -1,0 +1,39 @@
+{
+  "inputsHash": "add269cee7ef94ba406c8e17d6222e30b8067b8bd767bec9b63fd1e1e24b29e7",
+  "generatedAt": "2026-07-08T17:41:50.980Z",
+  "data": {
+    "title": "Many scaled rivals plus import price floor push Year-1 share to floor",
+    "narrative": "The model assumes the entrant can win 0.03 of its obtainable share in Year 1, drawn from a single 15.8% Schneider datapoint. But the evidence shows five to seven co-equal scaled vendors and 60–70% import dependence in Eastern Europe setting a low price floor. That structure means more players able to price-match any pilot win, and the model prices their response at zero. This pins Year-1 obtainable share at the 0.01 floor, not the 0.03 mid.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "First bids meet 5–7 scaled incumbents and a low import price floor",
+        "refs": [
+          "digest:cr3-vendors#c5",
+          "digest:cr3-vendors#c6",
+          "ledger:shape.cr3"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Incumbents discount and bundle inside accounts; model sets response to zero",
+        "refs": [
+          "digest:cr3-vendors#c1",
+          "digest:obtainable-benchmark#c9",
+          "ledger:obtainableFactor"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Lower win-rates cut Year-1 share to 0.01 floor, not 0.03 mid",
+        "refs": [
+          "ledger:obtainableFactor",
+          "digest:obtainable-benchmark#c0"
+        ]
+      }
+    ],
+    "whyMissable": "'Medium concentration' reads as a friendly middle, but fragmentation among scaled incumbents means more rivals able to price-match any niche the entrant opens.",
+    "falsifier": "Entrant win-rate at least 30% across the first 10 contested bids, with no material price concession beyond plan.",
+    "likelihoodRationale": "Incumbent in-account price defense is near-universal for new entrants, and the corpus documents the multi-incumbent structure and import price floor. The offset is that intelligent-PDU differentiation sometimes escapes pure price competition, so the leap to the 0.01 floor stays partly inferential."
+  }
+}

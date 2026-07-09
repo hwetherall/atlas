@@ -3,7 +3,8 @@
 import { useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion, Variants } from "framer-motion";
-import { ledger } from "@/lib/ledger"; // self-validates at module load (fails loudly at boot)
+import { ledger as liveLedger } from "@/lib/ledger"; // self-validates at module load (fails loudly at boot)
+import type { Ledger } from "@/lib/schema"
 import { delta, evaluate, sensitivity } from "@/lib/compute";
 import { deriveGraph } from "@/lib/graph";
 import { FLAGS } from "@/lib/flags";
@@ -41,6 +42,9 @@ interface Props {
   // Scenario state is lifted to app/page.tsx and shared with the Fact Bank.
   state: ScenarioState;
   dispatch: React.Dispatch<ScenarioAction>;
+  // The demo renders the dashboard twice: against the original model (rev 1)
+  // and the refinement-corrected one (rev 2, the default).
+  ledger?: Ledger;
 }
 
 // Numbered band header — gives the page a scannable, report-like structure.
@@ -56,7 +60,7 @@ function SectionKicker({ n, children }: { n: string; children: React.ReactNode }
   );
 }
 
-export default function Dashboard({ state, dispatch }: Props) {
+export default function Dashboard({ state, dispatch, ledger = liveLedger }: Props) {
   const { current: cur, baseline: base } = state;
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
 

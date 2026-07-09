@@ -1,0 +1,25 @@
+{
+  "inputsHash": "5958f91ca8256aa8f0d3c15420799d5e2762ec4228d7f0ac3dfaea978d358061",
+  "generatedAt": "2026-07-08T21:53:41.261Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A Europe- or CE-7-scoped segment capacity split from CBRE, Synergy, or JLL showing hyperscale-owned share of CE-7 megawatts today. This is a purchasable/publishable dataset describing today's geographic distribution of installed capacity, not a future market outcome.",
+    "proposedCorrection": {
+      "nodeId": "seg.hyperscale",
+      "value": 0.33,
+      "low": 0.28,
+      "high": 0.4,
+      "rationale": "CBRE's evidence that ~60% of European hyperscale self-build capacity sits in Ireland, Netherlands, Sweden, and Belgium (outside CE-7) means the global 48%×0.91 carve-out overstates CE-7 hyperscale share by roughly a third; rescaling to CE-7 geography lands near 33%."
+    },
+    "researchQueries": [
+      {
+        "query": "CBRE or JLL Central & Eastern Europe (Warsaw, Prague, Budapest, Bucharest, Vienna) data center market report giving hyperscale self-build vs colocation vs enterprise capacity share of CE-7 megawatts",
+        "kind": "confirming"
+      },
+      {
+        "query": "Synergy Research or DatacenterDynamics regional split showing hyperscale-owned capacity at 40% or more of Central Europe / CEE installed megawatts",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

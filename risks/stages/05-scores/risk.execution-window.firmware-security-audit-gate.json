@@ -1,0 +1,26 @@
+{
+  "inputsHash": "636a45e491995ae96ea56677269a4b1ec67f7f07530510b0ef8ea4ca76726c6f",
+  "generatedAt": "2026-07-08T21:38:19.329Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names both target ledger nodes with quantified perturbations (0.8 on serviceableFactor, 0.5 on obtainableFactor), specific instruments (SBOM, PSIRT, IEC 62443-4-1, CRA Dec-2027), named operators (Equinix, Digital Realty, NorthC), and audit-cycle timing (1–2 quarters per operator). Indicators carry concrete thresholds ('≥2 of first 3 RFQs requiring SBOM')."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable field makes a genuine hiding argument: the founder's 'certifications' line looks handled (CE/TÜV scheduled and budgeted) while the buyer-side gate surfaces only as a questionnaire attached to the first RFQ, and the per-operator (not per-product) nature is the real novelty. Docked one point because the likelihood rationale itself concedes security prequalification is 'standard practice' at large buyers, so an infrastructure-savvy founder plausibly has it."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-hop chain (buyer-side prequal → per-operator audit cycles inside the YAM window → serial PO delay plus foreclosed accounts) is referenced at each step and distinguishes the two model impacts cleanly. The narrative's CRA phase-in link is weaker than presented — the risk's own evidence dates binding obligations to Dec 2027 — so one arrow would not fully survive a hostile 'why now?'."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Multiple independent supports (NERC sourcing guide, SE 62443/SBOM playbook, Eaton framing) corroborate the existence of an operator-driven security gate, and the contradicting CRA-timing source is honestly incorporated via an explicit likelihood revision. Falls short of 4 because no source directly shows a CE colo operator conditioning AVL listing on SBOM/firmware attestation — the corroboration is adjacent (grid buyers, incumbent posture) rather than on the exact key premise."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations change near-term sequencing and spend: a pre-launch mock audit against two operators' supplier requirements and resequencing first sales through lighter-gated distributor/mid-market channels are both actionable within two quarters. Both indicators (RFQ questionnaire content, CRA standards docket) have stated locations and thresholds, making the risk monitorable."
+    }
+  }
+}

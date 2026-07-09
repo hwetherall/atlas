@@ -1,0 +1,26 @@
+{
+  "inputsHash": "52645e3aa68828debebdc407a323cbe2fd78c97acba0dd9aa65944adbf8a6e06",
+  "generatedAt": "2026-07-08T21:33:32.090Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact instrument (EU 2022/30), standard family (EN 18031-1/-2), applicability date (1 Aug 2025), NB lead times (12–20 weeks), target node (obtainableFactor), and a quantified perturbation (window 12→6–8 months, 0.5 scale). Actors (notified bodies, TÜV/DEKRA test houses) and dated thresholds are all present."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The genuinely non-obvious core is the harmonization-with-restrictions trap that forecloses self-declaration for common access-control designs — a nuance most EE-led compliance plans (LVD/EMC/EN 62368-1, per whyMissable) would miss. Docked one point because 'any radio triggers RED' is reasonably well known to hardware founders, even if the accessory-sensor pathway is well argued."
+    },
+    "mechanismDepth": {
+      "score": 4,
+      "note": "Each hop is referenced: radio → delegated act → restriction-forced NB certification → 12–20 week queue → compressed window, and the window→obtainable halving is grounded in the pre-let pipeline lockout and bake-off foreclosure digests rather than asserted. The chain honestly conditions on the launch-SKU configuration and states that conditionality in the likelihood rationale."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The regulatory premises (timing, restrictions, NB requirement, lead time) have ≥2 independent corroborating sources including EUR-Lex, SGS, and Nemko. But the load-bearing premise — that the launch SKU actually contains a radio — has zero product-side evidence and is only inferred as 'common,' which the likelihood rationale honestly concedes remains unresolved."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The mitigations (immediate RED applicability screen, de-content to wired-only launch SKU) directly change BOM and certification sequencing within the next quarter, well before first ship. Both indicators (NANDO queue quotes, radio-in-BOM with no NB slot 9 months pre-launch) are concrete and monitorable."
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "inputsHash": "73fbfe4640bb4375e56b09cbc9750eba68cd37125edb193c84820df893bc0a08",
+  "generatedAt": "2026-07-08T21:52:26.507Z",
+  "data": {
+    "resolution": "risk",
+    "settleTest": "Whether this specific venture's first three pilot deployments pass formal customer acceptance and survive two quarters without rollback — an outcome that only unfolds over the next 12–24 months. No purchasable report settles what THIS venture's acceptance rate will be; the reference-class 30% is a prior about future execution, not a correctable fact about today's market size or share definition.",
+    "proposedCorrection": null,
+    "researchQueries": []
+  }
+}

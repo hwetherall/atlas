@@ -1,0 +1,26 @@
+{
+  "inputsHash": "aa9e78612985c216d02be58e9ab2dc2c186271d2c501c88da6ea851e8a4f83ef",
+  "generatedAt": "2026-07-08T05:30:23.824Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names concrete nodes (obtainableFactor, shape.cagr), actors and numbers throughout: Frankfurt's 24–36-month queues and ~745 MW load, Amsterdam's 852 MW and 350 MVA draft cap, 78% DE/NL geo weight, and a quantified 0.5 scale perturbation. Dates and instruments (TenneT/Amprion disclosures, H1-2026 C&W update) are pinned to the 12-month YAM window."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "Grid congestion is a headline the risk itself concedes is 'known,' but the whyMissable field earns credit by showing the model prices it nowhere — shape.cagr is a smooth 9% trend while YAM is a first-12-months number, so a 2030-intact TAM masks a Year-1 delivery trough. The trend-vs-delivery-schedule distinction is a genuinely new reason, though a diligent founder tracking FLAP-D power news might get partway there (self-rated 'medium')."
+    },
+    "mechanismDepth": {
+      "score": 4,
+      "note": "Each hop is referenced and independently plausible: grid queues (digest:geo-DE#c20, geo-NL#c8) → 78% geographic concentration (ledger:geo.DE/NL) → PDU orders gated on energization, compiling to obtainableFactor rather than the trend node. The chain survives 'why?' at each arrow; the only soft spot is the asserted 0.5 magnitude, which the pipeline-calendar mitigation itself proposes to replace."
+    },
+    "evidenceQuality": {
+      "score": 4,
+      "note": "Three attached independent sources corroborate the key constraint premise (C&W's 2.5 GW plateau, Statista's 7–10 year lead times, Mainova's mid-2030s statement), and the stances honestly log contradicting evidence (AMS11 opening, new Amsterdam permit) which the likelihood rationale explicitly uses to cap the estimate at partial-slip. Evidence handling revised the prior transparently (0.4→0.45) rather than inflating it."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations change near-term sequencing and spend: re-derive Year-1 obtainable from a named-project energization calendar, open a Warsaw/Vienna beachhead, and shift SKU mix toward stock-and-ship replacement. All three indicators have named venues (TenneT dockets, JLL/C&W updates, Gemeente Amsterdam consultation) and explicit thresholds, making the risk monitorable within two quarters."
+    }
+  }
+}

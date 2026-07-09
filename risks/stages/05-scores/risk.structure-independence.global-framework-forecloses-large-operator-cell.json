@@ -1,0 +1,26 @@
+{
+  "inputsHash": "a9fed2b4f7e5e09eb7525c6b9b861dcace0398e5613d5c08ec401ba96c757800",
+  "generatedAt": "2026-07-08T05:30:23.825Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (cust.operator-large), the 0.40 spend share, specific accounts (Equinix, Digital Realty, Vertiv's major-customer list), the instrument (global AVLs/framework agreements), and the 12-month reachability window. The perturbation is a concrete 'exclude' op, not a vague haircut."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "Goes beyond 'the 0.40 band could be wide' by naming a NEW reason — reachability via HQ-negotiated frameworks, which the band structurally cannot express ('the share may be exactly 0.40 and still be zero for a regional entrant'). Docked one point because AVL gating at hyperscalers is reasonably known to founders selling into data-center infrastructure."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "All three hops carry refs and each is independently plausible: global AVL procurement → no channel evidence behind the 0.40 → first-buyer strategy targets a foreclosed cell. The propagation step is partly epistemic ('the model cannot distinguish') rather than causal, and the rationale itself concedes the mechanism 'weakens across the segment' below the apex accounts."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Key premise (framework procurement at top accounts) has ≥2 independent corroborations (Vertiv customer list, Generac global supply agreement, Google/Achilles prequalification), and the risk honestly flags contested status with contradicting Greenergy and European-bank-switch cases plus a downward likelihood revision. Falls short of 4 because the contradicting evidence directly undercuts uniform foreclosure across the segment the model bundles together."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly challenges the declared first-buyer GTM and Year-1 pipeline, with mitigations (procurement interviews probing local vs HQ sourcing, parallel OEM/white-label route) executable this quarter before GTM spend commits. Both indicators name concrete monitorable venues (supplier portals, TED tenders, Vertiv/Schneider earnings calls) with thresholds."
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "inputsHash": "5ef953b5fee01dc3d4685222736175f0901d767bf67945baa99daf910cb792e6",
+  "generatedAt": "2026-07-08T05:30:23.822Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact hop ('CE-7 = 39.8% of Europe colo MW (Statista)'), quantifies the stage-blend gap (DC Byte 1,849 MW vs 852 MW operational, 2.2x), gives a concrete perturbation (tamBase set to 250) and indicator thresholds (>20% DE/NL divergence, live share <55%). Actors, values, and instruments are all pinned down."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "It clears the 'band edge' trap by naming a NEW mechanism — stage-blending in the one CE-specific multiplier, which the ±40% band (built on global publisher spread) never priced — and whyMissable explains the false triangulation. Docked one point because 'vendor MW figures blend pipeline stages' is a known analyst failure mode that a diligent founder might check, even if the specific hop-targeting is sharp."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three referenced steps (blend demonstrated → apportionment inherits it → tamBase overstated orthogonally to band logic) with the 2.5 GW plateau explaining why phantom MW stays phantom in-window. The propagation link remains conditional ('if the Statista series leans toward committed'), and the risk's own likelihood note concedes that condition is weakly supported, so one arrow doesn't fully survive hostile 'why?'."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The trigger is well-sourced (DC Byte definition attached), but the load-bearing premise — that Statista specifically blends stages — is contradicted by the risk's own attached Statista excerpt (NL 915/951, DE 1,458/1,737, asterisked forecasts, consistent with CBRE anchors), marked 'contradicts' in stances. The honest 'contested' status and downward likelihood revision to 0.25 earn it the speculative-but-honest 2 rather than a 0."
+    },
+    "decisionRelevance": {
+      "score": 3,
+      "note": "Mitigations are actionable this quarter (commission the IndexBox report — already the ledger's promotion path — and rebuild apportionment on C&W/CBRE operational tables), with monitorable semi-annual indicators and thresholds. Falls short of 4 because the perturbation (250) lands inside the existing 240–520 band, so downstream decisions may not actually change even if confirmed."
+    }
+  }
+}

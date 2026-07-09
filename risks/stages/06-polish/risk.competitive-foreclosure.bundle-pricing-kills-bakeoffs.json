@@ -1,0 +1,40 @@
+{
+  "inputsHash": "cf1f4f27f94e583511c521b2cf6d2ee8736ba20a09d7c6011ff362626fb9b5df",
+  "generatedAt": "2026-07-08T21:48:03.611Z",
+  "data": {
+    "title": "Bundled PDUs shrink the winnable pool below the model's floor",
+    "narrative": "The model assumes there is a pool of standalone rack-PDU purchases a new entrant can compete for, sized at 0.5 to 3% of the market. But the incumbents who sell the $23B power and $26B cooling packages bundle the PDUs inside those deals, and the only standalone tenders found were tiny and barely contested. That pushes the real Year-1 share to about 0.3%, below the model's own 0.5% floor.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Incumbents bundle PDUs into power and cooling deals at zero margin",
+        "refs": [
+          "digest:cust-mix#c2",
+          "digest:cust-mix#c3",
+          "ledger:shape.cr3"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Leftover standalone tenders are small, sole-sourced, or barely contested",
+        "refs": [
+          "digest:obtainable-benchmark#c1",
+          "digest:obtainable-benchmark#c6",
+          "digest:obtainable-benchmark#c7"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Real Year-1 share drops to about 0.3%, below the floor",
+        "refs": [
+          "ledger:obtainableFactor",
+          "digest:obtainable-benchmark#c10",
+          "digest:obtainable-benchmark#c0"
+        ]
+      }
+    ],
+    "whyMissable": "The team already cut this number from 3% to 1%, so it reads as the most stress-tested figure when the real problem is that bundling removes winnable deals entirely.",
+    "falsifier": "A logged pipeline of five or more standalone, multi-vendor rack-PDU tenders in CE-7, each at least €250K, within any six-month window, where a non-incumbent can bid.",
+    "likelihoodRationale": "Bundling evidence and multi-year benchmark definitions both point below the floor, but retrofit and colo tenders do create some genuine standalone decisions the search may have missed. A surfaced CHF 2M standalone deal undercuts the tiny-tender claim, so the net revision is marginally downward."
+  }
+}

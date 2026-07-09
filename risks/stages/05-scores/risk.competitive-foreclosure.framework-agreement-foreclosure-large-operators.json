@@ -1,0 +1,26 @@
+{
+  "inputsHash": "6716d1454d3cbb1d4a067b99710639155ac2dd3fea7d86c9c6d986823c6e9066",
+  "generatedAt": "2026-07-08T05:30:23.823Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact ledger node (cust.operator-large, the 0.40 cell), the incumbents (Schneider, Vertiv, Eaton, Legrand), named end customers, the instrument (global framework agreements/AVLs), and the Year-1/12-month window. The perturbation is an explicit 'exclude' op, not a vague haircut."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The reframe from 'share hard to win' to 'cell contractually closed on a contract calendar' is genuinely hidden by the ledger's share-plus-band representation, as whyMissable argues, and the digest confirms no channel-structure data ever forced the question. Docked one point because 'hyperscalers buy via global frameworks' is reasonably well known to a competent founder in this space, even if its Year-1 modeling consequence is not."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at each hop (HQ frameworks → mid-cycle AVL closure → YAM built on unbiddable spend) would mostly survive hostile 'why?' probing. But the propagation step leans on absence of data, and the risk's own likelihood rationale concedes the 18–36 month qualification figure is overstated and OFCI shows owners procure outside single-vendor frameworks — so the 'total foreclosure' terminal claim is weaker than the chain asserts."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The core premise (HQ-level multi-year supply relationships with named large operators) has ≥2 independent supporting sources (Vertiv fact sheet, Telefónica case study/renewal), and the rationale honestly logs the contradicting OFCI source and revises likelihood accordingly. However the narrative's load-bearing 18–36 month qualification claim is contradicted by its own attached evidence (4–12 weeks / 3–6 months), which caps the score below 4."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes Year-1 GTM sequencing (re-sequence to mid/enterprise and integrators, defer large operators to a framework-renewal-timed track) — action within the next two quarters. Indicators are monitorable with concrete thresholds (≥3 of first 5 opportunities disqualified at vendor-list stage; earnings-call framework commentary)."
+    }
+  }
+}

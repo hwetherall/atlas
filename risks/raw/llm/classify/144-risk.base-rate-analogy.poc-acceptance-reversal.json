@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "8349367551c48d615c31ca6ee6c3e1f53f41a15f9fd7ed83497b01a87f5ece3a",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"A third of Year-1 hardware wins get returned, cutting realized share\",\n \"narrative\": \"The model assumes the venture keeps whatever small share it wins in Year 1. But in the reference class, 30% of deployed industrial hardware systems are never fully accepted and get pulled back out. That makes the Year-1 number roughly 30% too high, and the lost accounts also undercut the Year-2 benchmark that assumes they survive.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"30% of deployed industrial hardware systems were never fully accepted\",\n   \"refs\": [\n    \"digest:obtainable-benchmark#c12\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"First-year wins are pilots; PDU acceptance depends on post-install integration\",\n   \"refs\": [\n    \"profile:Stage\",\n    \"ledger:cust.operator-mid\",\n    \"digest:cr3-vendors#c4\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"obtainableFactor is gross; net of returns, Year-1 share drops 30%\",\n   \"refs\": [\n    \"ledger:obtainableFactor\",\n    \"digest:obtainable-benchmark#c0\"\n   ]\n  }\n ],\n \"falsifier\": \"The first three pilot deployments pass formal customer acceptance within 90 days of install, with no rollback in the following two quarters.\",\n \"category\": \"execution\",\n \"evidence\": [\n  {\n   \"title\": \"The Economics of POC\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Deploy 95 (Trista Li)\",\n   \"date\": \"2026-04-14\",\n   \"excerpt\": \"Thirty percent of deployed systems were never fully accepted: customers would sign, we’d deploy, and six months later, it came back. We were sending teams to uninstall while trying to hit revenue targets.\",\n   \"url\": \"https://deploy95.substack.com/p/the-economics-of-poc\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Cisco Survey Reveals Close to Three-Fourths of IoT Projects Are Failing\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Cisco\",\n   \"date\": \"2017-05-23\",\n   \"excerpt\": \"60 percent of IoT initiatives stall at the Proof of Concept (PoC) stage and only 26 percent of companies have had an IoT initiative that they considered a complete success. Even worse: a third of all completed projects were not considered a success.\",\n   \"url\": \"https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2017/m05/cisco-survey-reveals-close-to-three-fourths-of-iot-projects-are-failing.html\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Telefónica Germany upgrades data center operations with Vertiv PowerIT rPDUs\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Vertiv\",\n   \"date\": null,\n   \"excerpt\": \"Vertiv delivered Vertiv™ PowerIT switched rPDUs... deploying energy-efficient critical infrastructure solutions [under a] strong, multi-year partnership — illustrating that PDU acceptance in enterprise accounts leans heavily on an existing vendor track record.\",\n   \"url\": \"https://www.vertiv.com/495b0e/globalassets/content---assets-2025/documents/vertiv-telefonica_marketing-thought-leadership-case-study_emea-english.pdf\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"obtainableFactor\",\n  \"label\": \"Year-1 obtainable share of SAM\",\n  \"kind\": \"assumption\",\n  \"value\": 0.01,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"triangulated\",\n  \"dimension\": null,\n  \"dimensionValue\": null,\n  \"sensitivityRange\": {\n   \"low\": 0.005,\n   \"high\": 0.03\n  },\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Benchmark anchoring\",\n   \"expression\": \"Prospeo assigns 1% of SAM to YEAR 1 (3% and 5% are Years 2–3) — the prior 3% read the Year-2 figure as Year 1. Corrected to 1%; the Tractian comparable (first-year ~$1.2M against a multi-$B market) sits below 1%.\",\n   \"crossCheck\": \"Early-procurement mechanism (DC electrical gear locked 12–24mo before fit-out) independently supports ≤2%; open 2026 EU rack-PDU tenders keep 2–3% inside the band.\"\n  },\n  \"provenance\": {\n   \"rationale\": \"Refinement cycle 1 caught the benchmark-period misread — the value now follows the source's own Year-1 figure, band 0.5–3%.\",\n   \"promotionPath\": \"Replace with pipeline-based model once first CE deals close (win-rate × cycle time × capacity).\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"Addressable markets — SOM benchmarks\",\n    \"sourceType\": \"analyst-estimate\",\n    \"publisher\": \"Prospeo\",\n    \"date\": null,\n    \"excerpt\": \"SOM benchmarks that won't get you laughed out of the room: 1% of SAM in Year 1, 3% in Year 2, 5% in Year 3.\",\n    \"attached\": true\n   },\n   {\n    \"title\": \"Serviceable Obtainable Market (SOM) — early-stage ranges\",\n    \"sourceType\": \"analyst-estimate\",\n    \"publisher\": \"IdeaPlan\",\n    \"date\": \"2024\",\n    \"excerpt\": \"For early-stage companies, SOM is typically 1-5% of SAM. For growing companies with product-market fit, SOM can reach 10-20% of SAM.\",\n    \"attached\": true\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"risk\",\"settleTest\":\"Whether this specific venture's first three pilot deployments pass formal customer acceptance and survive two quarters without rollback — an outcome that only unfolds over the next 12–24 months. No purchasable report settles what THIS venture's acceptance rate will be; the reference-class 30% is a prior about future execution, not a correctable fact about today's market size or share definition.\",\"proposedCorrection\":null,\"researchQueries\":[]}",
+  "usage": {
+    "prompt_tokens": 3231,
+    "completion_tokens": 155,
+    "total_tokens": 3386,
+    "cost": 0.02003,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.02003,
+      "upstream_inference_prompt_cost": 0.016155,
+      "upstream_inference_completions_cost": 0.003875
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T21:52:26.005Z"
+}

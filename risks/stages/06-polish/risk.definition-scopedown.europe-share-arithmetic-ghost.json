@@ -1,0 +1,38 @@
+{
+  "inputsHash": "a43aa99ff11c74c34b4ebaa0eb412c6baf999034aa324e64ba8514a5167e164e",
+  "generatedAt": "2026-07-08T17:39:00.259Z",
+  "data": {
+    "title": "Europe's PDU share is likely 24%, not the 30% assumed",
+    "narrative": "The model builds its €320M chain by taking 30% of GVR's $2.81B global figure as Europe's share. But no source states that 30%, and the regional data points lower: the US alone is $579.7M of a $2.1B market, about 28% for one country. If Europe is closer to 24%, the Year-1 number and everything below it shrinks.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "The 30% Europe share is unsourced; GVR gives only 38% for North America",
+        "refs": [
+          "ledger:tamBase",
+          "digest:tam-global-crosscheck#c1"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "US alone is 28% of the global market, and Germany grows at half the global rate",
+        "refs": [
+          "digest:tam-global-crosscheck#c15",
+          "digest:tam-global-crosscheck#c13",
+          "digest:tam-global-crosscheck#c14",
+          "digest:tam-global-crosscheck#c0"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Europe at 24% shrinks the whole chain and SAM/YAM proportionally",
+        "refs": [
+          "ledger:tamBase"
+        ]
+      }
+    ],
+    "whyMissable": "The 30% hop looks sourced because it sits beside a real Grand View citation, but that citation only covers the 38% North America share.",
+    "falsifier": "Any primary source stating Europe's rack-PDU revenue share at 28% or higher, such as the Omdia Rack PDU Annual Tracker regional table.",
+    "likelihoodRationale": "Every regional datapoint in the corpus points below 30% for Europe, so the direction is evidenced. But no source directly measures Europe's rack-PDU share, so the exact 24% figure stays unobserved."
+  }
+}

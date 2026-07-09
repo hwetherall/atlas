@@ -1,0 +1,26 @@
+{
+  "inputsHash": "9a212128dd67df040df55e974e5e1c26f609a645e80c110c4b4d2c339e5cd214",
+  "generatedAt": "2026-07-08T21:36:10.568Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (tamBase), the exact hop (CE-7 = 39.8% of Europe), quantified flow data (937MW 2025 supply, 57% FLAPD, 85% take-up, London >1GW), a concrete perturbation (scale 0.8, ~32% vs 39.8%), and indicator thresholds ('<35% of tracked deliveries for two consecutive quarters')."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The stock-vs-flow method error is genuinely structural — 'a bias no band edge in the tornado captures' — and the hidden premise (uniform PDU €/MW across regions and vintages) is stated by no source. Docked one point because the flow-concentration clips live in the same digest (geo-region-denominator#c6–c9), so a careful reader had the raw material even if not the framing."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Trigger→propagation→impact each carries refs and the Frankfurt/Amsterdam clawback is honestly modeled in the likelihood rationale. But the propagation step's claim that CE-7 stock 'skews toward older, lower-density halls with slower PDU refresh' is asserted on a single ref without measurement, and the 0.8 scale magnitude is a judgment call rather than derived."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Multiple attached sources corroborate the FLAPD flow concentration with quotes, but DCD and TechMonitor are reporting CBRE's own figures, so the key premise ultimately traces to one publisher. The load-bearing uniformity assumption is honestly flagged as unmeasured ('no source states because no source measures it'), which is candid but caps corroboration."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations directly change near-term strategy — repositioning Year-1 toward retrofit/refresh of CE-7 standing stock vs new-build tenders — plus a concrete two-component TAM rebuild. Indicators are monitorable quarterly via CBRE delivery PDFs with explicit thresholds and a clean falsifier (CE-7 ≥38% of new MW)."
+    }
+  }
+}

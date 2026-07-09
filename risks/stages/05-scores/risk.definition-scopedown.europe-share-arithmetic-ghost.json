@@ -1,0 +1,26 @@
+{
+  "inputsHash": "fc1910cb7a8efc484ee2b34bdca727b90d14072a93411398468af03bcbe2a67c",
+  "generatedAt": "2026-07-08T05:30:23.824Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact unobserved multiplier (Europe ≈ 30% vs. GVR's stated NA = 38%), specific counter-datapoints (US $579.7M of $2.1B, Germany 5.2–5.3% CAGR vs. 9.7% global), a 0.8 perturbation on tamBase, and a priced mitigation ($4,000 IndexBox report). Indicators carry named venues (Omdia tracker, Vertiv 10-K) and numeric thresholds (<27%, >4pp gap)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "This is not band-edge pessimism: the whyMissable field explains that the '[est.; NA = 38% per same source]' bracket makes the hop look sourced when the citation covers only NA, and the risk supplies new directional evidence (US ~28% single-country, Germany at half global CAGR). A careful ledger auditor might still flag an unsourced multiplier, consistent with the risk's own 'medium' expectedObviousness."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (unsourced multiplier → residual skewed away from Europe by regional datapoints → multiplicative rescale of the scope-down funnel) is fully ref'd and each arrow is independently plausible. Slight weakness: the propagation step leans on intelligent-PDU regional figures to reason about the broader rack-PDU market without flagging that segment mismatch."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Three attached independent sources (GVR, GIA, Mordor) corroborate the directional premise, and the likelihood rationale honestly concedes that no source directly measures Europe's rack-PDU share and the Omdia falsifier was inaccessible. The precise ~24% magnitude is inferred from adjacent intelligent-PDU data, so the key premise is corroborated in direction but not in value."
+    },
+    "decisionRelevance": {
+      "score": 3,
+      "note": "The 0.8 scale on tamBase propagates through SAM/YAM, and the mitigations are executable this quarter (commission the $4k IndexBox report, rebuild tamBase bottom-up), with monitorable indicators tied to Omdia and Vertiv/Legrand disclosures. It changes information spend and TAM credibility now, but doesn't clearly reorder operational sequencing beyond the sizing exercise."
+    }
+  }
+}

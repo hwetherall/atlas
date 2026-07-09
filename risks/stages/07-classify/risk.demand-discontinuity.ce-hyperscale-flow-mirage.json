@@ -1,0 +1,25 @@
+{
+  "inputsHash": "644af96566bf8f97ab37079ed2877990faf0dc47e508bf323a11478575a846c5",
+  "generatedAt": "2026-07-08T21:55:17.209Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A Europe-scoped (or CE-7) hyperscale capacity split from CBRE or Synergy for Q4 2025 — an existing/purchasable dataset that would settle whether hyperscale's reachable share in Central Europe is ~0.44 or materially lower.",
+    "proposedCorrection": {
+      "nodeId": "seg.hyperscale",
+      "value": 0.22,
+      "low": 0.15,
+      "high": 0.3,
+      "rationale": "CBRE Q4-2025 data shows ~60% of Europe's operational hyperscale self-build sits in Ireland/Netherlands/Sweden/Belgium (largely outside the venture's CE reach), so the global-share carve-out overstates the reachable CE hyperscale segment by roughly half."
+    },
+    "researchQueries": [
+      {
+        "query": "CBRE Europe Data Centres Q4 2025 report country-level breakdown of hyperscale self-build capacity for Poland, Germany, Austria, Czech Republic (CE-7)",
+        "kind": "confirming"
+      },
+      {
+        "query": "Synergy Research or DatacenterDynamics 2026 data showing Central/Eastern Europe hyperscale campus pipeline reaching or exceeding 40% regional share (e.g., WBS Power Lublewo 3.2GW and other CE-7 groundbreakings)",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

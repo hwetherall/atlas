@@ -1,0 +1,26 @@
+{
+  "inputsHash": "3b8287e881ded8df3962b8d37d5fcf6dc691129ae20cc4b2c10119537425c86b",
+  "generatedAt": "2026-07-08T21:34:25.164Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names ledger nodes (geo.NL, obtainableFactor, cust.operator-large), a concrete perturbation (0.28→0.22), hard numbers (350 MVA cap, ~70% Amsterdam concentration, 26% vs 3.5% CAGR, grid queues to 2030), and named operators/indicators (Liander/TenneT, NorthC, Equinix AM). Dates and thresholds are stated for every indicator."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The camouflage argument — that Statista/DDA concordance within 3% validates the same capped stock rather than forward demand flow — is genuinely something a founder scanning 'triangulated' nodes would skip, per the whyMissable field. Docked one point because half the punchline (colo growth 'frozen' at ~3.5%) turns out to be a mismeasured input rather than a hidden structural insight."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at every hop (grid cap → growth migrates to framework-locked self-build → stock/flow mismatch in geo.NL), and each arrow is independently argued. But the propagation step's load-bearing claim of ~3.5% colo growth fails the hostile 'why?' — the risk's own evidence shows 13-16% colo growth, so the 'two-axis decay' collapses to a one-axis mix-shift."
+    },
+    "evidenceQuality": {
+      "score": 1,
+      "note": "The frozen-stock premise is directly contradicted by two strong attached sources (ResearchAndMarkets 13-16% colo CAGR; DDA 7%/yr and 12% forward), which per the anchors is disqualifying for the central claim. Saved from 0 only because the Amsterdam cap is corroborated by ≥3 independent sources and the risk honestly marks itself 'contested' and revises likelihood 0.4→0.32 with an explicit evidence-revision rationale."
+    },
+    "decisionRelevance": {
+      "score": 3,
+      "note": "Mitigations change near-term motion — retrofit-optimized SKU positioning and reweighting new-build GTM toward PL/CEE — and all three indicators name concrete venues and thresholds (e.g., self-build >50% of NL MW additions). Falls short of 4 because the contradicted colo-decay premise means the case for acting within the next two quarters, versus monitoring, is weakened by the risk's own revision."
+    }
+  }
+}

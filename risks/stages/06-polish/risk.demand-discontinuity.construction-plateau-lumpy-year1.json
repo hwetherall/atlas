@@ -1,0 +1,36 @@
+{
+  "inputsHash": "b6c5ac65196a36634fb5135802f3d5d22e3f87f131505d6af91d388a8a2ab6fa",
+  "generatedAt": "2026-07-08T21:46:35.770Z",
+  "data": {
+    "title": "Year-1 may hit a building lull the trend growth hides",
+    "narrative": "The model assumes Year-1 lands in an average demand year at 1% of the serviceable market. But EMEA capacity under construction has stalled at about 2.5 GW while the pipeline grew 25% to nearly 15 GW, so projects are stuck in planning. If 2026 is a digestion year, Year-1 order pace could be roughly half the assumed level.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "EMEA construction stalled at 2.5 GW; pipeline grew to 15 GW",
+        "refs": [
+          "digest:geo-NL#c3",
+          "digest:geo-NL#c2"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Cloud buys 61% of demand; a pause stalls orders",
+        "refs": [
+          "digest:geo-DE#c18",
+          "ledger:shape.cagr"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "A trough year roughly halves achievable Year-1 pace",
+        "refs": [
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "The growth rate looks solid across three publishers, but a smooth average hides which year of the cycle the launch actually lands in.",
+    "falsifier": "Cushman & Wakefield or JLL H1-2026 prints showing under-construction capacity above 2.5 GW with rising starts, or hyperscaler guidance re-accelerating 2026 European data-center capex.",
+    "likelihoodRationale": "The plateau and buyer concentration are documented, but the timing of a digestion year is a judgment call. Record 2026 hyperscaler leasing and an 83% pre-let pipeline point the other way, so we cut the estimate modestly from 0.35."
+  }
+}

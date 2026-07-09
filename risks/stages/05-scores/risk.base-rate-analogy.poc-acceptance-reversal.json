@@ -1,0 +1,26 @@
+{
+  "inputsHash": "dc772df25a2a6cb8a6c27fce49a04c70aa3642bb6a6d3b206983cf10825b0b5e",
+  "generatedAt": "2026-07-08T21:39:32.983Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (obtainableFactor 0.01), quantifies the haircut (scale 0.7), names DCIM platforms (Sunbird, EcoStruxure, Trellis), 90-day acceptance gates, and the Year-2 3% benchmark dependency. Indicators specify where to look (pilot MSA redlines, compatibility matrices) and concrete thresholds."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The gross-vs-net distinction — that the funnel has no node where post-deployment reversal can even be expressed — is a structural gap, not a band-edge complaint, and the whyMissable correctly notes that a 'conservative' 1% deters auditing. Falls short of 4 because acceptance risk in first-year hardware pilots is a known failure mode a diligent founder might list."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Each hop is referenced and independently plausible (pre-launch stage → pilots with acceptance clauses → DCIM/metering failures surfacing post-deployment → reversal killing Year-2 reference accounts), and the second-order effect on the staged benchmark is a genuine extra link. The weak arrow is applying an adjacent-class base rate directly as a 0.7 scale factor, which the risk's own rationale concedes is not PDU-specific."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The load-bearing 30% figure comes from one substack anecdote, and the 'corroborating' Cisco/Manufacturer sources measure different things (IoT project success perception, PoC-stage stalls) rather than post-deployment uninstall reversal; the Vertiv piece supports a side premise. The rationale is honest about adjacency and the stances field surfaces contradicting rPDU pilot successes, which earns the speculative-but-honest tier, not corroborated."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Both mitigations act in the next two quarters — pre-launch DCIM certification before first pilot ships, and instrumenting the first five pilots with formal acceptance gates — directly changing launch sequencing and spend. Indicators (MSA redline clauses, DCIM compatibility list presence) are concretely monitorable per the stated thresholds."
+    }
+  }
+}

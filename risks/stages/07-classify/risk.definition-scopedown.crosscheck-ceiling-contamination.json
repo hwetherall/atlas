@@ -1,0 +1,25 @@
+{
+  "inputsHash": "9a11cf047bd1aae69c6463cc8043dec2b3b0df69989aebe01c39fcb6e59af5ae",
+  "generatedAt": "2026-07-08T18:17:02.666Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "BIS/R&M segmentation of the Europe DC PDUs+PSUs $2.45B category showing the rack-PDU-only sub-segment share and its CAGR — a purchasable report line that settles whether the €495M cross-check measures rack-PDU or the broader PDU+PSU/DC-power category today.",
+    "proposedCorrection": {
+      "nodeId": "tamBase",
+      "value": 300,
+      "low": 240,
+      "high": 360,
+      "rationale": "The €495M ceiling derives from a broader PDU+PSU category growing 21.23% (substitute/DC-power layers included), not rack-PDU-only which grows 5.4–9.8%; removing that scope-mismatched ceiling lowers the band top from €520 to ~€360 anchored on the directly-scoped rack-PDU scope-down (€310–320)."
+    },
+    "researchQueries": [
+      {
+        "query": "BIS Research / Research and Markets 'Europe Data Center PDUs and PSUs Market 2025-2035' segmentation table isolating the rack-PDU sub-segment revenue and CAGR versus PSU/DC-power segments",
+        "kind": "confirming"
+      },
+      {
+        "query": "IndexBox 'Rack PDUs Market in the European Union' country-table headline figure and CAGR to test whether a directly-scoped EU rack-PDU base exceeds €360M or grows above 10%",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

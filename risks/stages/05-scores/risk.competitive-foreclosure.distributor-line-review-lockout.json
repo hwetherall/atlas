@@ -1,0 +1,26 @@
+{
+  "inputsHash": "c471a75079141d05c34a6e82a82f03a24d0e0e77c3838cd20aac2629936fc149",
+  "generatedAt": "2026-07-08T21:30:08.036Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (cust.distributor, 0.13), the actors (Legrand's Raritan + Server Technology, MaxPower, Rexel/Sonepar/Also), the timing gate (annual line reviews vs the 12-month YAM window), and a dated indicator set. Falsifier is concrete and addressed to named distributors."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The core insight — 'the cell is open in steady state but closed for precisely the YAM window because founders model channel share, not channel calendar' (whyMissable) — is a genuine timing reframe a founder reading the 0.13 cell would skip. Loses a point because the Legrand dual-brand consolidation half is already visible in the CR3 digest the risk itself cites."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-hop chain (line-card concentration → mid-cycle launch blocked by review timing and unfundable private-label terms → cell excluded) with refs at every step. The middle hop's rigidity assumption ('no CE distributor can list inside the window') does not survive hostile questioning given the risk's own contradicting cases, so it falls short of 4."
+    },
+    "evidenceQuality": {
+      "score": 1,
+      "note": "The load-bearing premise — mid-cycle lockout — is directly contradicted by three 2025-26 onboardings of new/startup intelligent-PDU vendors (Ethernetics/Aginode, Schleifenbauer at EDP and Mayflex) and the rolling-review source in the risk's own stances. The honest 'contested' status and 0.45→0.30 revision keep it above 0, but the decisive claim fails while only the background friction (Legrand consolidation, master-distributor structure) is corroborated."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations directly re-sequence the next two quarters: a channel audit (voiNodeId cust.distributor), private-label entry as an alternative route, and deferring distributor outreach to Year-2 rather than burning Year-1 capacity. Both indicators (line-card composition, Legrand EMEA program terms) are monitorable at named venues with thresholds."
+    }
+  }
+}

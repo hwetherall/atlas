@@ -1,0 +1,25 @@
+{
+  "inputsHash": "9b4af937a0720bfbe6754011e8b04493a0836f7d72d3417a04dcccd513415d2c",
+  "generatedAt": "2026-07-08T21:54:51.815Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "NVIDIA's own published AC Power Reference Architecture for the DGX SuperPOD B300 (dated 2025-10-30) specifies 432 DGX rPDU + 96 management PDUs per pod — a purchasable/inspectable BOM that settles whether dense AI racks consume PDUs today. This is a document that exists now, not a future market outcome.",
+    "proposedCorrection": {
+      "nodeId": "seg.enterprise",
+      "value": 0.29,
+      "low": 0.24,
+      "high": 0.3,
+      "rationale": "NVIDIA's flagship B300 reference architecture ships heavy per-rack PDU content (432 rPDU + 96 mgmt PDUs per pod) as a first-class AC variant, so the 'GPU pods skip PDUs' doubt is correctly refuted and the 0.29 value with 0.24 downside band already covers dense busbar deployments — no change warranted."
+    },
+    "researchQueries": [
+      {
+        "query": "NVIDIA DGX SuperPOD B300 AC Power Reference Architecture rack PDU count per pod (Raritan PX3-5091R) 2025-2026 BOM",
+        "kind": "confirming"
+      },
+      {
+        "query": "Enterprise on-premise AI GPU pod deployments 2026 using DC busbar power shelves with zero or minimal rack PDUs (GB200 NVL72 install BOMs)",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

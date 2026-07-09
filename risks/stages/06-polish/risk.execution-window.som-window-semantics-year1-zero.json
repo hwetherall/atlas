@@ -1,0 +1,46 @@
+{
+  "inputsHash": "dc96f5451a1d59f6fee1085d310f35a9033fdaf95e574463354cdce0ee2dcfce",
+  "generatedAt": "2026-07-08T21:46:51.213Z",
+  "data": {
+    "title": "Year-1 capture of 1% is really a 3-year total; too high",
+    "narrative": "The model says the venture wins 1% of its serviceable market in Year 1. But the benchmarks behind that 1% describe capture over 1 to 5 years, and the one worked example in them lands at 0.1% of SAM. Because the venture is pre-launch and only sells for part of Year 1, the true number is a fraction of the back half of the year. The Year-1 figure is 2 to 3 times too high.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Benchmarks define the 1% share as accruing over years.",
+        "refs": [
+          "digest:obtainable-benchmark#c1",
+          "digest:obtainable-benchmark#c5",
+          "digest:obtainable-benchmark#c6",
+          "ledger:obtainableFactor"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "The one worked example yields just 0.1% of SAM.",
+        "refs": [
+          "digest:obtainable-benchmark#c7",
+          "digest:obtainable-benchmark#c10"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Pre-launch venture sells only 6 to 9 months in Year 1.",
+        "refs": [
+          "profile:Stage",
+          "profile:What obtainable horizon should Year-1 (YAM) assume?"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "A 1% factor overstates real Year-1 capture 2 to 3 times.",
+        "refs": [
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "The number was already cut from 3% to 1% and marked triangulated, so it reads as the fixed conservative case while the real error is the time frame of its sources.",
+    "falsifier": "A comparable early-stage data-center hardware entrant documented capturing at least 1% of its serviceable market within its first 12 months from launch.",
+    "likelihoodRationale": "Three of four benchmark sources frame the percentage as multi-year, and the single worked example sits far below the band floor. The offsetting uncertainty is that the venture may have pre-launch pipeline the model does not credit, so the nudge is bounded to 0.58."
+  }
+}

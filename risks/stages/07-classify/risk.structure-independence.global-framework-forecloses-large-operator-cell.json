@@ -1,0 +1,25 @@
+{
+  "inputsHash": "81000897ec4a675ebd8e1abac72f8b2af1b37c32650222b2c20950a6229581e1",
+  "generatedAt": "2026-07-08T18:17:27.803Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "Procurement-scope documentation for Central European operators (hyperscaler/colo country teams) showing whether rack-PDU vendor selection happens at global HQ vs. regional level, plus the share of the '40% large-operator' cell that is actually globally-contracted and unreachable in 12 months. This is knowable today from published vendor lists, procurement portals (e.g., Achilles), and a handful of operator/distributor interviews — no time needs to pass.",
+    "proposedCorrection": {
+      "nodeId": "cust.operator-large",
+      "value": 0.25,
+      "low": 0.18,
+      "high": 0.33,
+      "rationale": "The 0.40 figure conflates all large-operator PDU spend with reachable spend; the globally-contracted hyperscale/pan-EU colo portion (Equinix, Digital Realty, hyperscalers on Achilles-style global lists) is not addressable by a CE regional team in Year 1, so the accessible large-operator cell should be marked down to the regionally-sourced remainder."
+    },
+    "researchQueries": [
+      {
+        "query": "Do Central European colocation providers (e.g., Greenergy Estonia, Atman Poland, GTS/Vantage regional sites) source rack PDUs at country level, and what documented cases exist of a new PDU vendor entering an approved list via a regional pilot within 12 months?",
+        "kind": "confirming"
+      },
+      {
+        "query": "What share of Equinix and Digital Realty rack-PDU purchasing across EMEA is locked to HQ-signed multi-year global vendor contracts (Vertiv/Legrand/Schneider) with no regional deviation authority?",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

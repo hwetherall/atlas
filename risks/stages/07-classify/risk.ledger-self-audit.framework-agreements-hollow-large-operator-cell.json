@@ -1,0 +1,25 @@
+{
+  "inputsHash": "b4f1e27bfad372f4fcaefcc6c5ecf200cadb82b513627b31bdea3ec7d6acf70b",
+  "generatedAt": "2026-07-08T21:55:09.591Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "The share node measures exposure (large operators = 0.40 of PDU spend), but the load-bearing claim is that a portion of that spend is non-contestable today because it runs through standing frameworks/SCAs/bundles. This is settleable now: procurement-model documentation (SCA/framework announcements, vendor case studies showing standardized full-suite deals) plus a handful of structured operator/distributor interviews establish what fraction of large-operator PDU spend is bought via multi-year frameworks vs. discrete contestable bids. That is today's market structure, not a future unfolding.",
+    "proposedCorrection": {
+      "nodeId": "cust.operator-large",
+      "value": 0.24,
+      "low": 0.18,
+      "high": 0.33,
+      "rationale": "The 0.40 conflates exposure with contestability; evidence (Digital Realty SCA, Eaton standardized full-suite colo deals) shows a large share of large-operator spend is locked in multi-year frameworks/bundles, so contestable Year-1 share should be roughly halved to ~0.24."
+    },
+    "researchQueries": [
+      {
+        "query": "What fraction of hyperscale/colo (e.g., Digital Realty, Equinix, AWS, Microsoft) PDU and rack-power spend in 2024-2025 was procured under multi-year Supply Capacity Agreements or global framework/bundle contracts vs. discrete solicitations?",
+        "kind": "confirming"
+      },
+      {
+        "query": "Instances in 2024-2025 where hyperscale or large colo operators awarded PDU-only contracts to non-incumbent regional vendors via open competitive bake-offs outside existing framework agreements.",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

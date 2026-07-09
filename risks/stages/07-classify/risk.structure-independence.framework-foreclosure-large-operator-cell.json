@@ -1,0 +1,25 @@
+{
+  "inputsHash": "3471c46d777ec45a30eca0eb06688c6c53b2e614b061060bf11e33b735c1a4be",
+  "generatedAt": "2026-07-08T21:53:24.978Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A sourced buyer-mix breakdown for CE-region rack-PDU spend that separates contestable/open-tender contracts from HQ-level global frameworks and OEM rack bundles — obtainable today via 3 structured operator/distributor interviews plus procurement-channel analyst data. This settles what share of the 40% is actually reachable in Year 1, a fact about today's contracting structure, not a future market shift.",
+    "proposedCorrection": {
+      "nodeId": "cust.operator-large",
+      "value": 0.18,
+      "low": 0.1,
+      "high": 0.28,
+      "rationale": "The 0.40 conflates PDU consumption with contestable procurement; documented HQ frameworks and OEM rack bundles close off most large-operator spend to a regional entrant, so the reachable direct-buyer share is materially lower."
+    },
+    "researchQueries": [
+      {
+        "query": "Procurement structure for rack PDUs among large CE-region data center operators — share of spend via HQ global frameworks/OEM rack bundles vs open regional tenders (interviews with 3 operators + 2 distributors)",
+        "kind": "confirming"
+      },
+      {
+        "query": "Evidence of large operators (e.g., Digital Realty, Switch, regional colos) running open, vendor-neutral rack-PDU tenders for 2026 builds that a new regional entrant could bid on",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

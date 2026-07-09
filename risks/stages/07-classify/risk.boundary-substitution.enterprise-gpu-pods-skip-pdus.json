@@ -1,0 +1,25 @@
+{
+  "inputsHash": "f4e5c4fd20e13a60932eae8cdbb9a730111739cec57a36fb5208d524d6bdfa78",
+  "generatedAt": "2026-07-08T18:17:14.345Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "NVIDIA's own DGX SuperPOD B300 Reference Architecture (dated 2025-10-30) shows the flagship GPU deployment shipping in standard EIA racks with three 2U rack PDUs each — a purchasable/published artifact that directly settles whether GPU racks skip PDUs today. Combined with the Grand View PDU market report attributing growth to AI/GPU workloads, the load-bearing premise ('GPU growth arrives PDU-less') is falsified now, not over time.",
+    "proposedCorrection": {
+      "nodeId": "seg.enterprise",
+      "value": 0.29,
+      "low": 0.24,
+      "high": 0.29,
+      "rationale": "The claim's mechanism (GPU racks skip PDUs) is contradicted by NVIDIA's B300 reference architecture using rack PDUs, so the full 0.29 remains defensible as PDU-addressable; only a modest downside band reflects residual busbar/DB-mix uncertainty rather than the claimed structural haircut."
+    },
+    "researchQueries": [
+      {
+        "query": "NVIDIA DGX SuperPOD B300 and GB200/GB300 reference architectures: share of deployments using rack PDU AC power vs DC busbar power shelves",
+        "kind": "falsifying"
+      },
+      {
+        "query": "Grand View / Omdia rack PDU market reports quantifying AI/GPU-driven enterprise on-premise rack PDU attach rates 2024-2026",
+        "kind": "confirming"
+      }
+    ]
+  }
+}

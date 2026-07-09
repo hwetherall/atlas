@@ -1,0 +1,444 @@
+{
+  "inputsHash": "14f6347dd934d3bdffa79c2b49b1a0730ff1515057587aa3cb99e2e61ea79932",
+  "generatedAt": "2026-07-08T20:14:21.627Z",
+  "data": {
+    "hypotheses": [
+      {
+        "id": "framework-agreements-hollow-large-operator-cell",
+        "title": "Global framework agreements and bundled fit-outs foreclose the 0.40 large-operator cell the whole GTM is aimed at",
+        "narrative": "The venture's stated first buyer is large operators, and cust.operator-large carries the biggest single channel weight (0.40) — a needs-source internal estimate with two-decimal precision. The corpus shows what that cell actually looks like from inside procurement: PDU spend at large operators flows through multi-year global framework agreements and integrated rack/power/cooling bundles (Digital Realty–Schneider style frameworks, all-in integrator contracts), not discrete PDU line items a regional entrant can bid. If half the 0.40 is procured this way, the model's most reachable-looking cell is structurally closed in Year 1 — and the conservative 1% obtainableFactor is being applied to a SAM that contains spend no entrant can contest at any price.",
+        "category": "competitive",
+        "targetNodes": [
+          "cust.operator-large"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Large operators consolidate power-equipment purchasing into global frameworks and integrator bundles; Vertiv's own partner material lists hyperscalers, telcos and colo REITs as house accounts under standing agreements",
+            "refs": [
+              "digest:cust-mix#c12",
+              "ledger:cust.operator-large"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "The 0.40 share was derived from 'hyperscale+colo ≈ 62% buy direct' — but the only quantitative datapoint behind the channel axis (a supplier's 30%-of-orders figure) measures DC exposure, not buyer-type contestability, and no source quantifies what fraction of 'direct' spend is framework-locked",
+            "refs": [
+              "digest:cust-mix#c0",
+              "ledger:cust.operator-large"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The contestable portion of the large-operator cell is materially below 0.40; SAM built on the full cell overstates reachable spend for the profile's chosen first buyer, and Year-1 pipeline math against it fails silently",
+            "refs": [
+              "ledger:cust.operator-large",
+              "profile:Who is the primary buyer you'll sell through first?",
+              "ledger:serviceableFactor"
+            ]
+          }
+        ],
+        "whyMissable": "'Large operators buy direct' is the founder's own GTM answer, and 0.40 looks like the biggest, most accessible cell. The surface appearance is a channel decision already made; what it hides is that 'direct' at these accounts means procured inside integrated frameworks the entrant cannot bid into — the cell exists, but not for them.",
+        "expectedObviousness": "low",
+        "falsifier": "Three or more CE large-operator PDU procurements in the next 12 months run as discrete, multi-vendor bake-offs and won by vendors outside the incumbent framework holders.",
+        "likelihood": {
+          "value": 0.45,
+          "rationale": "Every procurement case study retrieved (Jülich, Schneider–Foxconn, Iren–Dell, Digital Realty–Schneider) shows bundled or framework purchasing; no counter-example of a contested standalone PDU line at a large operator surfaced in any search pass. Uncertainty is about the foreclosed fraction, not the mechanism.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "cust.operator-large",
+            "op": "set",
+            "value": 0.18,
+            "note": "Framework- and bundle-foreclosed portion (~half) of the direct large-operator cell removed from contestable spend; siblings deliberately not re-normalized — this is absolute shrinkage of reachable spend, not a mix-shift"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Structure of large-operator PDU procurement: discrete lots vs bundled fit-out packages",
+            "where": "TED (Tenders Electronic Daily) filtered for PDU/rack-power CPV codes in DE/NL/PL; Digital Realty and Equinix supplier-announcement pages",
+            "threshold": "<2 standalone, multi-bidder PDU lots from CE large operators over two consecutive quarters",
+            "updates": "increases"
+          },
+          {
+            "signal": "New or renewed multi-year power-infrastructure framework agreements between colo REITs/hyperscalers and Schneider/Vertiv/Eaton",
+            "where": "Schneider and Vertiv quarterly earnings calls and press rooms; operator capex-call commentary",
+            "threshold": "≥2 new CE-relevant frameworks announced in 12 months",
+            "updates": "increases"
+          },
+          {
+            "signal": "Approved-vendor-list (AVL) openings at CE colocation operators",
+            "where": "Operator supplier-qualification portals (Equinix, NTT, Data4, Atman)",
+            "threshold": "Any AVL round explicitly inviting new rack-PDU vendors",
+            "updates": "decreases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Run 5 structured procurement interviews at CE large operators to split the 0.40 cell into framework-locked vs contestable spend",
+            "type": "information",
+            "voiNodeId": "cust.operator-large",
+            "note": "Directly replaces the unsourced 0.40 with an evidence-based contestable share — the single highest-leverage number for the stated GTM"
+          },
+          {
+            "action": "Re-sequence Year-1 GTM toward mid-market colo and enterprise retrofit, where discrete PDU purchasing is documented, and treat large operators as a Year-2+ AVL-qualification play",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Aligns the ramp with the cells that are actually contestable pre-brand"
+          },
+          {
+            "action": "Pursue sub-supplier status inside one integrator's bundle (rack integrator or fit-out contractor) rather than competing against the bundle",
+            "type": "contractual",
+            "voiNodeId": null,
+            "note": "Converts the foreclosure mechanism into a channel"
+          }
+        ]
+      },
+      {
+        "id": "colo-denominator-misallocates-geography",
+        "title": "Normalizing colo-only shares to 1.00 launders a scope mismatch: the €300M is geographically misallocated away from where PDU demand actually sits",
+        "narrative": "Every geo.* share divides colo MW by colo MW, but rack-PDU demand tracks total installed IT load — and the gap between the two scopes is large and uneven by country. Germany's installed load (>2,700MW BMWK, 2,980MW Bitkom) is ~1,000MW above its colo figure; Switzerland's installed base (850.6MW) is 3x its colo number; Poland's installed-load figure (660MW) is corroborated by three independent sources versus one Statista colo point. Re-derived on installed load, DE falls toward 0.42 while CH and PL roughly double. TAM barely moves — which is exactly the trap: the headline is stable while the country-level plan (sales hires, certifications, distributor selection) is calibrated to the wrong map. Because the shares are normalized to sum 1.00, the axis looks internally consistent and no single node flags the systematic bias.",
+        "category": "model-structure",
+        "targetNodes": [
+          "geo.DE",
+          "geo.CH",
+          "geo.PL"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "EUDCA-scale evidence confirms colo+hyperscale is only ~two-thirds of Europe's IT power, so a colo-only apportionment omits a third of PDU-consuming load — and the omitted share varies by country (self-operation-heavy CH and AT vs colo-heavy NL)",
+            "refs": [
+              "digest:geo-region-denominator#c11",
+              "ledger:geo.CH"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "Country ratios re-derived on installed load diverge from the curated values: Poland's 660MW installed figure (Mordor, ResearchAndMarkets, Prime East all agree) yields ~0.10 vs curated 0.07; Switzerland's 850.6MW yields ~0.13 vs 0.08; Germany's own crossCheck already lands at 0.42 vs curated 0.50",
+            "refs": [
+              "digest:geo-PL#c0",
+              "digest:geo-PL#c15",
+              "digest:geo-alpine#c0",
+              "ledger:geo.DE"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The geography axis reallocates: the Germany-first assumption embedded in geo.DE=0.50 overweights DE by up to 8 points of TAM while underweighting the two countries where the entrant faces the least incumbent framework density — a wrong-map error the normalized, clean-summing shares conceal",
+            "refs": [
+              "ledger:geo.DE",
+              "ledger:geo.PL",
+              "ledger:geo.CH"
+            ]
+          }
+        ],
+        "whyMissable": "The shares sum neatly to 1.00, DE and NL carry 'triangulated' maturity, and the axis passes every internal consistency check. Normalization is doing the hiding: it makes a colo-scoped numerator over a colo-scoped denominator look like a validated market map, when both sides of the fraction omit 35-40% of the demand-bearing load — unevenly.",
+        "expectedObviousness": "low",
+        "falsifier": "A single consistent-scope installed-IT-load country table across CE-7 (e.g., PMR series or EUDCA 2026 country profiles) confirming DE at ~50% and PL/CH at ≤0.08/0.09 of the regional total.",
+        "likelihood": {
+          "value": 0.5,
+          "rationale": "The DE, CH, and PL crossChecks in the ledger itself already point the same direction (0.42, 0.13, 0.10), and the PL installed-load figure is triple-corroborated; the open question is only the magnitude of the reallocation, not its sign.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "geo.DE",
+            "op": "set",
+            "value": 0.42,
+            "note": "Installed-load method (BMWK crossCheck) — mix-shift leg 1"
+          },
+          {
+            "nodeId": "geo.CH",
+            "op": "set",
+            "value": 0.13,
+            "note": "Installed-base method (Mordor 850.6MW, self-operation-heavy) — mix-shift leg 2"
+          },
+          {
+            "nodeId": "geo.PL",
+            "op": "set",
+            "value": 0.1,
+            "note": "Triple-corroborated 660MW installed-load scope — mix-shift leg 3"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Publication of a consistent-scope CE country capacity series (installed IT load, all facility types)",
+            "where": "EUDCA 'State of European Data Centres' country profiles; PMR commercial-DC series releases",
+            "threshold": "Any table showing DE <45% of CE-7 installed load",
+            "updates": "increases"
+          },
+          {
+            "signal": "Ratio of non-colo (enterprise/self-operated) to colo capacity additions by country",
+            "where": "BMWK/Bitkom German DC updates; CBRE Suisse annual data-center figures",
+            "threshold": "Non-colo share of additions >40% in CH or DE",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Buy or build one consistent-scope installed-load table for CE-7 (the exact promotion path the ledger names but never executed) before committing country-level sales and certification spend",
+            "type": "information",
+            "voiNodeId": "geo.DE",
+            "note": "De-risks the largest geography leaf; the same table simultaneously resolves CH and PL"
+          },
+          {
+            "action": "Stage country entry so that certification and channel investments in PL and CH are decision-gated on the installed-load view rather than the colo view",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": "Prevents sunk GTM cost against the possibly-wrong DE-heavy map"
+          }
+        ]
+      },
+      {
+        "id": "europe-thirty-percent-arithmetic-ghost",
+        "title": "A hostile reviewer strikes the unsourced 'Europe ≈ 30%' hop and the €300M loses its floor, not just its band",
+        "narrative": "The tamBase derivation looks disciplined — a refinement cycle even killed a contaminated €495M ceiling. But its load-bearing hop, 'Europe ≈ 30% of global', is an inserted analyst estimate: Grand View publishes only North America's 38% and no source in any search pass gives a Europe or CE rack-PDU figure. Worse, the global anchor itself is unsettled — same-category estimates run from $1.697B to $5.3B (QY Research $3.255B and Strategic Market Research $5.3B sit in this venture's own digest), a spread wider than the model's ±20% band. A diligence partner strikes the 30%, pairs the lowest credible global anchor with a conservative Europe share, and lands near €200M — below the band's floor — and the model has no sourced fact with which to push back. The band communicates 'we've bounded the uncertainty'; the derivation chain shows the uncertainty was never bounded, only anchored to one publisher's number times an invented ratio.",
+        "category": "fact",
+        "targetNodes": [
+          "tamBase"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Diligence cross-references the global anchor: QY Research puts the global data-center PDU market at $3,255M while Strategic Market Research says $5.3B for rack PDUs alone and other publishers go as low as $1.7B — the primary anchor is one draw from a >2x distribution",
+            "refs": [
+              "digest:cust-mix#c9",
+              "digest:cust-mix#c11",
+              "ledger:tamBase"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "With the anchor contested, the unsourced 'Europe ≈ 30%' multiplier and the Statista-based '39.8% of Europe colo MW' CE-7 step (itself scope-inflated vs CBRE's 4,726MW top-15 Europe figure) cannot rescue the chain — every hop is either single-source or inserted",
+            "refs": [
+              "ledger:tamBase",
+              "digest:geo-region-denominator#c5",
+              "digest:geo-region-denominator#c0"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "tamBase's effective uncertainty is wider and skewed below the stated 240–360 band; every downstream number inherits a base that cannot survive its first hostile audit, which matters most when the model is used to raise capital or justify CE manufacturing capacity",
+            "refs": [
+              "ledger:tamBase",
+              "ledger:serviceableFactor"
+            ]
+          }
+        ],
+        "whyMissable": "The refinement-cycle narrative makes the base look stress-tested — a contaminated ceiling was found and removed, which reads as rigor. But the refinement fixed the cross-check while leaving the primary chain's weakest hop (the inserted Europe share) untouched, and even the comparator used to lower the ceiling was itself drawn from a broader-category report. The audit trail creates confidence the audit never earned.",
+        "expectedObviousness": "medium",
+        "falsifier": "The commissioned IndexBox EU rack-PDU country tables (the ledger's own named promotion path) placing the CE-7 base at €270M or above.",
+        "likelihood": {
+          "value": 0.4,
+          "rationale": "The 2.3x global anchor spread and the unsourced Europe hop are documented facts; whether the true value sits below the band floor (vs merely being unverifiable) is a judgment call — the Germany-alone $509.6M broader-PDU figure cuts the other way, so the distribution is wide in both directions but the defensibility failure is certain.",
+          "basis": "judgment"
+        },
+        "perturbation": [
+          {
+            "nodeId": "tamBase",
+            "op": "set",
+            "value": 210,
+            "note": "Low-credible-anchor reconstruction: bottom-quartile global rack-PDU estimate × conservative Europe share × unchanged CE-7 step — the number a hostile reviewer writes in the margin"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "IndexBox EU rack-PDU report headline (currently paywalled) or any second Europe-scoped rack-PDU figure",
+            "where": "IndexBox price list / report catalog; Omdia and Dell'Oro rack-power publication schedules",
+            "threshold": "Any directly-scoped EU figure implying CE-7 <€250M",
+            "updates": "increases"
+          },
+          {
+            "signal": "Convergence or further divergence of next-vintage global rack-PDU estimates",
+            "where": "Grand View, Mordor, QY Research 2026 report refreshes",
+            "threshold": "Next-vintage spread across publishers remaining >1.8x",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Commission the IndexBox EU rack-PDU country tables now — the ledger's own promotion path — before the model is shown to any external audience",
+            "type": "information",
+            "voiNodeId": "tamBase",
+            "note": "Collapses the widest structural uncertainty in the model for the price of one report"
+          },
+          {
+            "action": "Build a bottom-up cross-check: CE-7 installed MW × racks/MW × PDUs/rack × ASP, so the top-down chain has an independent second method rather than a contaminated comparator",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": "A 2-method triangulation survives diligence even if each method is imprecise"
+          }
+        ]
+      },
+      {
+        "id": "oem-cell-double-squeeze-foreclosure",
+        "title": "The 0.22 OEM/integrator cell is squeezed from both sides — branded incumbents win the spec, Taiwanese ODMs win the white-label — leaving no seat for a CE entrant",
+        "narrative": "cust.oem carries 0.22 of the buyer mix with no derivation, no evidence rows, and needs-source maturity — yet it silently props up 22% of the SAM as a fallback channel if large operators prove hard. The corpus says the cell is real but not contestable: every integrator case study found shows integrators selecting branded incumbents on certification, DCIM compatibility and support, while the actual white-label volume is already served by established OEM/ODM specialists (Digipower-class manufacturers) competing on Asian cost structures. A new CE industrial entrant is neither the trusted brand nor the cost-floor ODM. This is not a smaller cell — it is a cell that exists for other players, which is why the correct model operation is exclusion, not shrinkage.",
+        "category": "boundary",
+        "targetNodes": [
+          "cust.oem"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Rack integrators and distributors source PDUs either as branded components (feature/cert/DCIM-driven) or as private-label from dedicated ODM houses whose entire business is OEM/ODM design at scale",
+            "refs": [
+              "digest:cust-mix#c13",
+              "digest:cust-mix#c14"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "A pre-launch CE entrant fails both selection filters simultaneously: no installed-base/DCIM ecosystem to win the branded path, no volume cost position to win the white-label path — and no source quantifies any historical case of a new regional entrant capturing integrator share",
+            "refs": [
+              "digest:cust-mix#c14",
+              "ledger:cust.oem"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The 0.22 cell should be treated as foreclosed for the Year-1 horizon; SAM and the YAM pipeline built on four contestable channels actually rest on at most three, concentrating execution risk on the already-fragile large-operator cell",
+            "refs": [
+              "ledger:cust.oem",
+              "ledger:cust.operator-large",
+              "ledger:obtainableFactor"
+            ]
+          }
+        ],
+        "whyMissable": "The OEM channel reads as a diversification hedge — 'if direct is slow, we white-label.' Qualitative documentation that the channel exists (buyer's guides listing OEM/private-label options) masquerades as evidence that it is open; the founder's risk list checks 'multiple channels' without asking who actually wins each one.",
+        "expectedObviousness": "medium",
+        "falsifier": "Two CE rack integrators or master distributors confirming open white-label PDU sourcing rounds with a realistic qualification path for a new regional manufacturer at viable margins.",
+        "likelihood": {
+          "value": 0.35,
+          "rationale": "Integrator preference for branded incumbents is consistently documented across the retrieved case studies, and the ODM cost squeeze is structural; but the cell is entirely unquantified, and a differentiated intelligent-PDU feature set could crack specific integrators — foreclosure is likely partial rather than total.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "cust.oem",
+            "op": "exclude",
+            "value": null,
+            "note": "Cell treated as unavailable to this entrant in the modeled window — foreclosure, not shrinkage; distinct from lowering the share"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Brand composition of PDUs in CE integrator rack-build catalogs and reference designs",
+            "where": "Rittal/nVent/regional integrator configurators and partner catalogs; Vertiv and Legrand partner-program case studies",
+            "threshold": "Zero non-top-5 PDU brands appearing in new integrator reference builds over two quarters",
+            "updates": "increases"
+          },
+          {
+            "signal": "ODM expansion into Europe (local stock, CE/TÜV-certified white-label lines)",
+            "where": "Digipower and peer ODM product/price lists; distributor line-card announcements (e.g., master distributors adding Asian PDU lines)",
+            "threshold": "≥1 major CE distributor adding an ODM white-label PDU line",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Test the cell directly: solicit white-label RFQ terms from 3 CE integrators/distributors to establish real qualification requirements and margin floors",
+            "type": "information",
+            "voiNodeId": "cust.oem",
+            "note": "Converts an evidence-free 0.22 into a priced, dated go/no-go on the channel"
+          },
+          {
+            "action": "If foreclosed, rebalance the funnel to mid/enterprise direct plus distributor pull-through, and re-cost the Year-1 plan against a 3-channel SAM",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Better to shrink the plan deliberately than discover the phantom channel in Q3"
+          }
+        ]
+      },
+      {
+        "id": "nl-frozen-colo-stock-share-decay",
+        "title": "NL's 0.28 is a share of a stock that regulation has frozen — growth migrates to self-build hyperscale the entrant reaches through a different (foreclosed) door",
+        "narrative": "geo.NL looks like the model's safest node: Statista and the Dutch Data Center Association agree within 3%. But both measure the same thing — the existing colo stock — and that stock is capped: Amsterdam's 350 MVA ceiling and grid connections unavailable until 2030 freeze the region holding ~70% of Dutch colo capacity, while NL hyperscale self-build grows at a forecast ~26% CAGR against colo's ~3.5%. The 0.28 therefore describes where the market was, not where the next five years of PDU purchase orders will originate. Worse, the demand that does grow in NL arrives via hyperscale self-build procurement — exactly the framework-locked channel already flagged as least contestable — so the entrant's effective NL opportunity decays on two axes at once: the reachable segment shrinks and the growing segment is behind a closed door.",
+        "category": "exogenous",
+        "targetNodes": [
+          "geo.NL"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Dutch grid and municipal policy (Amsterdam MVA ceiling, hyperscale siting restrictions, power connection queues to 2030) caps new colo capacity in the region that concentrates ~70% of NL colocation",
+            "refs": [
+              "ledger:geo.NL",
+              "digest:geo-NL#c7",
+              "digest:geo-NL#c8"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "NL demand growth shifts to hyperscale self-build (forecast ~26% CAGR vs colo ~3.5%), a segment measured outside the colo-scoped Statista/DDA figures and procured through global frameworks rather than contestable regional purchasing",
+            "refs": [
+              "digest:geo-NL#c13",
+              "digest:geo-region-denominator#c18",
+              "ledger:cust.operator-large"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "geo.NL's 0.28 overstates the entrant's forward-looking NL opportunity: the triangulated agreement between sources validates the frozen stock, not the flow of new PDU demand the Year-1 ramp actually sells into",
+            "refs": [
+              "ledger:geo.NL",
+              "ledger:obtainableFactor"
+            ]
+          }
+        ],
+        "whyMissable": "NL is the model's best-corroborated geography node — two independent sources within 3% earns 'triangulated' maturity and drops off the risk list. The agreement is the camouflage: both sources measure the same capped stock with the same scope, so their concordance says nothing about whether that stock generates purchasable demand over the venture's window.",
+        "expectedObviousness": "low",
+        "falsifier": "2026 Statista/DDA updates showing NL colocation MW additions at or above the CE-7 average rate, alongside evidence of Amsterdam-region grid connections being granted before 2030.",
+        "likelihood": {
+          "value": 0.4,
+          "rationale": "The regulatory caps and the colo-vs-self-build growth differential are documented; the uncertainty is timing — legacy-stock refresh cycles (PDU replacement in existing halls) partially offset frozen new-build demand, so the decay is probable but gradual within 12 months.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "geo.NL",
+            "op": "set",
+            "value": 0.22,
+            "note": "Forward-weighted NL share: frozen colo stock discounted for capped additions, with self-build growth excluded as channel-foreclosed; siblings not raised — this is absolute erosion of reachable NL demand, not a mix-shift"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Amsterdam-region grid connection grants and the Amsterdam MVA ceiling's status",
+            "where": "Liander/TenneT congestion maps and connection-queue publications; Amsterdam municipality data-center policy docket",
+            "threshold": "Ceiling extended or queue lengthening beyond 2030",
+            "updates": "increases"
+          },
+          {
+            "signal": "Split of NL capacity additions between colocation and hyperscale self-build",
+            "where": "Dutch Data Center Association annual 'State of the Dutch Data Centers' report; DC Byte NL market updates",
+            "threshold": "Self-build >50% of NL MW additions in the next report vintage",
+            "updates": "increases"
+          },
+          {
+            "signal": "PDU refresh/retrofit tender activity from existing Amsterdam-area colos",
+            "where": "Operator capex commentary (NorthC, Iron Mountain NL, Equinix AM-campus announcements)",
+            "threshold": "Visible retrofit programs at ≥3 AMS operators",
+            "updates": "decreases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Size the NL retrofit/refresh opportunity separately from new-build: survey PDU installed-age profiles across Amsterdam colos to quantify replacement demand the frozen stock still generates",
+            "type": "information",
+            "voiNodeId": "geo.NL",
+            "note": "Replacement demand in a capped market can be attractive precisely because incumbents deprioritize it — but it must be measured, not assumed"
+          },
+          {
+            "action": "Shift NL positioning to retrofit-optimized SKUs (form-factor compatibility, hot-swap metering) and weight new-build GTM toward PL/CEE where capacity additions are unconstrained",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Matches product-market motion to where the demand flow, not the demand stock, sits"
+          }
+        ]
+      }
+    ]
+  }
+}

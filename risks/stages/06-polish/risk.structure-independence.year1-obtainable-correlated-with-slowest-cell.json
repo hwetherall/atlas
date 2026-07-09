@@ -1,0 +1,38 @@
+{
+  "inputsHash": "df7a9fa6d395651067360055eed542bfd29b5360191a4edb1a6f6647d94bfe71",
+  "generatedAt": "2026-07-08T17:42:01.097Z",
+  "data": {
+    "title": "Selling to slow large operators cuts Year-1 capture tenfold",
+    "narrative": "The model says the venture wins 3% of its serviceable market in Year 1, spread evenly across buyers. But the venture has chosen to focus Year 1 on large operators, the slowest buyers, whose qualification cycle runs longer than the 12-month horizon. Comparable hardware entrants started near 0.001% of the market in their first year. That points to a Year-1 revenue number roughly ten times too high.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Year-1 plan targets large operators held by incumbents with qualification gates",
+        "refs": [
+          "profile:Who is the primary buyer you'll sell through first?",
+          "profile:Stage",
+          "digest:cust-mix#c9"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "The 3% rests on generic SOM benchmarks ignoring these buyers' cycle length",
+        "refs": [
+          "ledger:obtainableFactor",
+          "ledger:cust.operator-large"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Focused on the slowest buyers, Year-1 revenue is overstated tenfold",
+        "refs": [
+          "ledger:obtainableFactor",
+          "digest:cust-mix#c0"
+        ]
+      }
+    ],
+    "whyMissable": "The factor was already cut from 6% to 3%, so the assumption looks double-checked, but that revision never addressed how the buyer choice slows the pace.",
+    "falsifier": "A documented case of a new rack-PDU or comparable hardware entrant closing 3% of a regional market within 12 months selling direct to large operators, or the venture's first order completing in under 6 months.",
+    "likelihoodRationale": "Independent benchmarks show multi-year capture windows and hardware entrants near 0.001% of market, plus documented incumbent lock at large accounts, all pointing below the 1% floor for this buyer strategy. Benchmarks treating 3% as a Year-2 figure slightly recalibrate the framing but leave the prior 0.6 unchanged."
+  }
+}

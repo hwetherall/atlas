@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "13319759e5662615d2b4ced2e9992ed93715764d31c91abdc13c517d676ac578",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"Two channels worth 35% can't open inside Year 1\",\n \"narrative\": \"The model assumes 35% of sales flow through OEM/integrator and distributor channels in the first year. But both channels admit new suppliers only on annual cycles that require certifications and references the venture does not have on day 1. That means the market the Year-1 percentage is applied to is much smaller than the model shows.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"Distributor listing opens once a year and needs certifications first.\",\n   \"refs\": [\n    \"ledger:cust.distributor\",\n    \"profile:Stage\",\n    \"digest:serviceable-benchmark#c13\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Integrators pick known brands with certs and support history.\",\n   \"refs\": [\n    \"ledger:cust.oem\",\n    \"digest:cr3-vendors#c4\",\n    \"digest:cr3-vendors#c7\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"Both cells hold 35% but stay closed all year.\",\n   \"refs\": [\n    \"ledger:cust.oem\",\n    \"ledger:cust.distributor\"\n   ]\n  }\n ],\n \"falsifier\": \"A signed distributor listing or OEM supply agreement with committed volumes, effective within the venture's first six months.\",\n \"category\": \"execution\",\n \"evidence\": [\n  {\n   \"title\": \"Vertiv Partner Program Home / EMEA Brochure\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Vertiv\",\n   \"date\": \"2024\",\n   \"excerpt\": \"participation in the Program is open only to approved companies; consolidate and track field and on-line training certifications in one location\",\n   \"url\": \"https://www.vertiv.com/49858a/globalassets/documents/brochures/vertiv-partner-program-emea-2024-en.pdf\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Micas Networks Signs First Distributor Agreement in Japan with SB C&S\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Micas Networks\",\n   \"date\": \"2026-02-26\",\n   \"excerpt\": \"Micas Networks Inc. ... has signed its first distributor agreement in Japan with SB C&S Corp — a new data center hardware entrant securing distribution access at market entry, not deferred to a next annual cycle.\",\n   \"url\": \"https://micasnetworks.com/company/news/sbcs20260226\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Centiel enters U.S. data center market through strategic partnership and framework agreement\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"EQS News / Centiel SA\",\n   \"date\": \"2026-06-10\",\n   \"excerpt\": \"signed a multi-year strategic distribution agreement ... For the current financial year, Centiel expects initial low double digit millions — a distribution agreement with committed volumes effective in the current year.\",\n   \"url\": \"https://www.eqs-news.com/news/ad-hoc/centiel-enters-u-s-data-center-market-through-strategic-partnership-and-multi-million-dollar-framework-agreement/40c538b1-9e4b-4936-9f17-aeb4ff311a15\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"cust.oem\",\n  \"label\": \"OEM / integrator\",\n  \"kind\": \"estimated\",\n  \"value\": 0.22,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"needs-source\",\n  \"dimension\": \"customerType\",\n  \"dimensionValue\": \"oem-integrator\",\n  \"sensitivityRange\": null,\n  \"funnelActive\": true,\n  \"derivation\": null,\n  \"provenance\": {\n   \"rationale\": \"OEM/ODM white-label supply is well documented qualitatively (rack-integrator channel) but unquantified → internal estimate.\",\n   \"promotionPath\": \"Validate buyer mix with 3 CE operator/distributor interviews.\"\n  },\n  \"evidence\": []\n },\n {\n  \"id\": \"cust.distributor\",\n  \"label\": \"Distributor\",\n  \"kind\": \"estimated\",\n  \"value\": 0.13,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"needs-source\",\n  \"dimension\": \"customerType\",\n  \"dimensionValue\": \"distributor\",\n  \"sensitivityRange\": null,\n  \"funnelActive\": true,\n  \"derivation\": null,\n  \"provenance\": {\n   \"rationale\": \"Master-distributor models exist (documented qualitatively) but indirect share is unquantified → internal estimate.\",\n   \"promotionPath\": \"Validate buyer mix with 3 CE operator/distributor interviews.\"\n  },\n  \"evidence\": []\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"risk\",\"settleTest\":\"Only the passage of the venture's first year settles whether these channels actually open — a signed distributor listing or OEM supply agreement with committed volumes effective within the first six months. This is a future execution outcome (channel timing/gate binding), not a knowable-today market fact. The evidence itself shows both outcomes are possible: some new entrants (Micas, Centiel) secured distribution at entry, while other programs (Vertiv) gate on certifications. Which path this venture lands on depends on how the next 12 months unfold.\",\"proposedCorrection\":null,\"researchQueries\":[]}",
+  "usage": {
+    "prompt_tokens": 2850,
+    "completion_tokens": 205,
+    "total_tokens": 3055,
+    "cost": 0.019375,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.019375,
+      "upstream_inference_prompt_cost": 0.01425,
+      "upstream_inference_completions_cost": 0.005125
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T21:53:15.982Z"
+}

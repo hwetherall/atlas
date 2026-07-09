@@ -1,0 +1,44 @@
+{
+  "inputsHash": "18268be1a44b5d7f51089eb532bfd01ef1d5d6b639d3c83e97b5c1db4b0866c5",
+  "generatedAt": "2026-07-08T21:47:10.143Z",
+  "data": {
+    "title": "Year-1 sales limited to old sites; new builds already locked",
+    "narrative": "The model assumes a 9% growth market means the venture can win 1% of the full market in Year 1. But new data centers pick their power vendors at design freeze, before launch, so every site coming online in Year 1 already chose its supplier. That leaves only retrofit and refresh sales, a much smaller pool, which makes the Year-1 number too high.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "New builds lock power vendors at design freeze, before launch.",
+        "refs": [
+          "ledger:obtainableFactor",
+          "profile:Stage"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Growth sits in locked new builds, leaving only refresh sales.",
+        "refs": [
+          "ledger:shape.cagr",
+          "digest:obtainable-benchmark#c12"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Generic 1% benchmarks assume the whole market is reachable.",
+        "refs": [
+          "digest:obtainable-benchmark#c0",
+          "digest:obtainable-benchmark#c2"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Applying 1% to full market overstates reachable Year-1 share.",
+        "refs": [
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "The plan reads 1% as conservative because the market is growing, but the growing part is the least reachable in 12 months and no node separates committed demand from contestable demand.",
+    "falsifier": "Documented cases of new data centers running competitive rack-PDU selection within 6 months of fit-out, or an operator confirming PDUs are bought late as a commodity separate from the electrical design freeze.",
+    "likelihoodRationale": "Early electrical lock-in for new builds is well-documented and matches the ledger's own 12-24 month assumption. But no source shows whether rack PDUs ride the frozen bill or are bought late as a commodity, keeping the likelihood near a coin flip."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "inputsHash": "79847cb1111d7ef64bfd3b7514924b98d9bebeb0ab6fa8b85424386404f4d846",
+  "generatedAt": "2026-07-08T21:37:31.367Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (obtainableFactor), competing values (1% vs 0.1% TryBuildCo example vs 0.3% corrected, 0.5% band floor), named sources (Prospeo, IdeaPlan, Wise, Tractian), the $200K-vs-$1.2M discrepancy, and a concrete perturbation to 0.003. Nothing hand-waved; every claim is pinned to a number or source."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable field identifies a genuine trap: the node is marked 'triangulated' and a prior refinement 'caught' a period misread, so the team believes window semantics are settled — the risk shows the fix repeated the same error class one level down, plus the Tractian cross-check number doesn't exist in its source. Falls short of 4 because the risk's own stances show the Prospeo anchor page explicitly labels 1% as 'Year 1', so a careful reader could defend the model's framing."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "All three steps carry refs and the propagation step (both cross-checks failing on inspection) is independently verifiable and strong. The trigger step wobbles under hostile questioning because the load-bearing Prospeo benchmark page itself states '1% of SAM in Year 1' — the risk's own likelihood rationale concedes this weakens the 'pure period-mismatch' arrow."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "Multiple attached sources corroborate the multi-year SOM semantics and the Tractian $200K start, but the central premise ('the 1% anchor is a 36-month number') is directly contradicted by the anchor source's own 'Year 1' phrasing, which the risk honestly lists as a contradicting stance and uses to revise likelihood from 0.55 to 0.45. Honest contested framing earns credit, but the key premise remains disputed by a strong source."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The 3x perturbation to obtainableFactor and mitigations (bottom-up pipeline model before committing the Year-1 plan; re-denominating Year-1 targets in design-wins) directly change planning and investor communication in the next two quarters. Indicators are concrete and monitorable: median quote-to-PO cycle in own CRM at month 6 with a >9-month threshold, plus comparable-entrant revenue disclosures."
+    }
+  }
+}

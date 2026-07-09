@@ -1,0 +1,26 @@
+{
+  "inputsHash": "d7b254f459a10d41a43f17b413c6c0464de6b151143e6af013ee567542e22265",
+  "generatedAt": "2026-07-08T05:30:23.823Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names concrete gates (stiftung EAR, EORI, LVD/EMC, EU 2024/1364 in force May 2024, EED 2024/1791), the exact target node (obtainableFactor, curated 0.03), a quantified perturbation (scale 0.5), and indicators with numeric thresholds (>10 weeks EAR, >8 weeks test slots). This is fully anchored, not gestural."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The core reframe — compliance is priced as a static haircut inside serviceableFactor but the real risk is a schedule that deletes the compounding front of the ramp — is a genuine axis the model lacks, per the whyMissable field. Falls short of 4 because 'first-time EU entry takes cert time' is on most founders' lists even if the nonlinearity framing is not."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (gates larger than ledger cites → serialized qualification eats the harvest window → obtainable share halves independent of demand) with refs at each hop, and the trigger step names why the model's own timeline hides it. Docked one point because the strict serialization claim is partially undermined by the risk's own mitigation ('start registrations in parallel now'), so a hostile partner would puncture the 'must be sequential' link."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The gates' existence has strong corroboration (stiftung EAR primary source, TFTIOR, EORI requirement), but the load-bearing quantum — a full two-quarter slip — is contradicted by its own cited CE lead times of 2-12 weeks, and the rationale honestly revises to 'roughly one-quarter+' while the perturbation still scales by 0.5. Honest 'contested' labeling and the 0.55→0.48 revision earn credit, but the unreconciled perturbation caps it."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations directly change next-two-quarter sequencing and spend: commission the compliance-gap audit and start registrations pre-launch, or contract a distributor's WEEE/EORI stack, all before the Year-1 clock starts. Both indicators (EAR processing time, TÜV lab lead times) are monitorable with stated thresholds and the falsifier is a dated dossier."
+    }
+  }
+}

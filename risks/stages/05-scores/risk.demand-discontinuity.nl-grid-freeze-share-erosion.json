@@ -1,0 +1,26 @@
+{
+  "inputsHash": "9e992544ce23fa3114a34c41df39835abdbec41553c845087829469fa1a83a1a",
+  "generatedAt": "2026-07-08T21:44:43.958Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (geo.NL = 0.28), the instruments (Staatscourant 2023-35432 hyperscale ban, Amsterdam's 350 MVA draft zoning cap to 2030), the geography split (~70% of colo in MRA), the window (Year-1), and a concrete perturbation (0.28 → 0.20 without sibling re-normalization). Falsifier and indicators carry numeric thresholds (>80 MW new commissioned, ≤950 MW national colo)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable is genuinely strong: the node's ~3% Statista/DDA agreement makes it look solved, and the failure is metric choice (stock vs. contestable flow), not band-edge quibbling — a new reason as the rubric demands. Docked one point because the Dutch hyperscale ban and Amsterdam grid freeze are widely publicized, so a diligent founder selling into NL plausibly has the regulatory facts, if not the stock-vs-flow reframe."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (ban/cap/grid unavailability → Amsterdam holds 70% of colo so caps bind the bulk → contestable Year-1 share << 0.28) with refs at every arrow. The weakest link — 'flow of new fit-outs approaches zero' — is undercut by the risk's own cited DDA growth shift to Groningen/South Holland/North Brabant, which the likelihood rationale concedes makes the freeze 'partial rather than total'."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The regulatory premises have ≥2 independent corroborations (Staatscourant primary source, DC Byte, Greenberg Traurig), but the load-bearing 'flow ≈ zero' step is contradicted by the DDA's €1.4bn 2025 record investment and Stedin's Zeeland capacity release — both honestly surfaced as 'contradicts' stances with a documented likelihood revision (0.55 → 0.50) and 'contested' status. Strong on the trigger, contested on the propagation."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes near-term action: the mitigations redirect NL go-to-market to Eemshaven/Agriport exception zones and commission grid-queue data to replace the stock-based 0.28, and the perturbation shrinks nearly a third of the funnel. Both indicators are monitorable at named venues (Gemeente Amsterdam docket, DDA annual report) with explicit thresholds."
+    }
+  }
+}

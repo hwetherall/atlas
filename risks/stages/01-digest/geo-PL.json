@@ -1,0 +1,231 @@
+{
+  "inputsHash": "b5260e751f94c7a3c5ada69a7c86c2f9dfa17355ba9947aff5421ff7af88216f",
+  "generatedAt": "2026-07-08T18:44:05.292Z",
+  "data": {
+    "claims": [
+      {
+        "id": "geo-PL#c0",
+        "claim": "Poland data center market base year installed IT load in 2025 is 660 megawatt, growing at 7.28% CAGR to 998.34 MW by 2030.",
+        "number": 660,
+        "unit": "MW",
+        "sourceTitle": "Poland Data Center Market Size, Trends & Forecast, 2031",
+        "url": "https://www.mordorintelligence.com/industry-reports/poland-data-center-market",
+        "excerpt": "Base Year Market Size (2025) | 660 megawatt",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-PL#c1",
+        "claim": "Mordor projects Poland's installed IT load to reach 998.34 MW by 2030 at 7.28% CAGR (2026-2031).",
+        "number": 998.34,
+        "unit": "MW",
+        "sourceTitle": "Poland Data Center Market Size, Trends & Forecast, 2031",
+        "url": "https://www.mordorintelligence.com/industry-reports/poland-data-center-market",
+        "excerpt": "Market Volume (2030) | 998.34 megawatt\n| Growth Rate (2026 - 2031) | 7.28% CAGR",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-PL#c2",
+        "claim": "DC Byte estimates total Polish data center supply (Live, Under Construction, Committed, Early Stage) at 605 MW across 69 facilities.",
+        "number": 605,
+        "unit": "MW",
+        "sourceTitle": "Poland | DC Byte",
+        "url": "https://www.dcbyte.com/market/poland/",
+        "excerpt": "Supply: 605 MW\n\nTotal Supply is the sum of four supply categories: Live, Under Construction, Committed, and Early Stage.\n\nFacilities: 69",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-PL#c3",
+        "claim": "DC Byte reports Poland's market grew from 184 MW in 2020 to 481 MW of total capacity in 2024.",
+        "number": 481,
+        "unit": "MW",
+        "sourceTitle": "Poland | DC Byte",
+        "url": "https://www.dcbyte.com/market/poland/",
+        "excerpt": "going from 184 MW in 2020 to 481 MW of total capacity in 2024 with most of the growth occurring in Warsaw",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-PL#c4",
+        "claim": "Prime East cites Poland's installed data center IT load growing from roughly 660 MW in 2025 to 930-1,000 MW by 2030, ~7% CAGR conservative estimate.",
+        "number": 930,
+        "unit": "MW",
+        "sourceTitle": "Poland's Data Center Power Demand to 2030 - Prime East",
+        "url": "https://prime-east.com/polands-data-center-power-demand-to-2030-what-microsoft-and-googles-investments-mean-for-investors/",
+        "excerpt": "Poland's installed data center IT load is forecast to grow from roughly 660 MW in 2025 to between 930 and 1,000 MW by 2030 a compound annual growth rate of around 7% on the conservative measure.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-PL#c5",
+        "claim": "Arizton values Polish data center market at $1.16 billion in 2024, projecting $2.78 billion by 2030 at ~15.7% CAGR.",
+        "number": 1.16,
+        "unit": "USD billion",
+        "sourceTitle": "Poland's Data Center Power Demand to 2030 - Prime East",
+        "url": "https://prime-east.com/polands-data-center-power-demand-to-2030-what-microsoft-and-googles-investments-mean-for-investors/",
+        "excerpt": "market researcher Arizton values the Polish data center market at USD 1.16 billion in 2024 and projects USD 2.78 billion by 2030, a CAGR near 15.7%",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-PL#c6",
+        "claim": "Warsaw is expected to expand capacity by roughly 67% cumulatively over 2025-2030.",
+        "number": 67,
+        "unit": "percent",
+        "sourceTitle": "Poland's Data Center Power Demand to 2030 - Prime East",
+        "url": "https://prime-east.com/polands-data-center-power-demand-to-2030-what-microsoft-and-googles-investments-mean-for-investors/",
+        "excerpt": "Warsaw alone is expected to expand capacity by roughly 67% cumulatively over 2025–2030.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-PL#c7",
+        "claim": "Poland's data center capacity has grown from approximately 70MW in 2020 to 220MW today (as of 2026 conference remarks).",
+        "number": 220,
+        "unit": "MW",
+        "sourceTitle": "Poland's Data Center Boom: 3.2GW, Below-€10M Builds, and Europe's Largest Energy Construction Site - datacenterHawk",
+        "url": "https://datacenterhawk.com/resources/hawktalks/poland-s-data-center-boom-3-2gw-below-10m-builds-and-europe-s-largest-energy-construction-site",
+        "excerpt": "Poland's data center capacity has grown from approximately 70MW in 2020 to 220MW today, driven primarily by the arrival of all three major hyperscalers.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-PL#c8",
+        "claim": "Market projections point to 500-600MW by 2030 for Poland, roughly three times current capacity.",
+        "number": 600,
+        "unit": "MW",
+        "sourceTitle": "Poland's Data Center Boom: 3.2GW, Below-€10M Builds, and Europe's Largest Energy Construction Site - datacenterHawk",
+        "url": "https://datacenterhawk.com/resources/hawktalks/poland-s-data-center-boom-3-2gw-below-10m-builds-and-europe-s-largest-energy-construction-site",
+        "excerpt": "Market projections point to 500-600MW by 2030, roughly three times current capacity.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-PL#c9",
+        "claim": "Three unusually large Polish data center projects have been announced: 500MW in central Poland, 950MW in Western Pomerania, and a 3.2GW opportunity on the north coast.",
+        "number": 3200,
+        "unit": "MW",
+        "sourceTitle": "Poland's Data Center Boom: 3.2GW, Below-€10M Builds, and Europe's Largest Energy Construction Site - datacenterHawk",
+        "url": "https://datacenterhawk.com/resources/hawktalks/poland-s-data-center-boom-3-2gw-below-10m-builds-and-europe-s-largest-energy-construction-site",
+        "excerpt": "a 500MW development in central Poland, a 950MW project in Western Pomerania (150km from Berlin), and a 3.2GW opportunity on Poland's north coast",
+        "tags": [
+          "execution",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-PL#c10",
+        "claim": "Arizton reports Poland data center market size valued at USD 1.28 billion in 2025, expected to reach USD 3.15 billion by 2031 at 16.19% CAGR.",
+        "number": 1.28,
+        "unit": "USD billion",
+        "sourceTitle": "Poland Data Center Market Size, Investment, Share & Growth Report",
+        "url": "https://www.arizton.com/market-reports/poland-data-center-market",
+        "excerpt": "THE POLAND DATA CENTER MARKET SIZE WAS VALUED AT USD 1.28 BILLION IN 2025 AND IS EXPECTED TO REACH USD 3.15 BILLION BY 2031, GROWING AT A CAGR OF 16.19% DURING THE FORECAST PERIOD.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-PL#c11",
+        "claim": "PMR data states total power capacity of commercial data centers in Poland exceeded 200 MW in 2024, more than one-third of total CEE region capacity.",
+        "number": 200,
+        "unit": "MW",
+        "sourceTitle": "Polish Data Center Market 2025-2030: PMR & Atman Insight - Atman",
+        "url": "https://atman.pl/en/blog-post/polish-data-center-market-2025-2030-pmr-atman-insight/",
+        "excerpt": "the total power capacity of commercial data centers in Poland exceeded 200 MW in 2024. This accounts for more than one-third of the total capacity across the entire Central and Eastern European (CEE) region.",
+        "tags": [
+          "competition",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-PL#c12",
+        "claim": "PMR/Atman projects Polish data center total capacity could surpass 600 MW by the end of 2030 if current growth rate persists.",
+        "number": 600,
+        "unit": "MW",
+        "sourceTitle": "Polish Data Center Market 2025-2030: PMR & Atman Insight - Atman",
+        "url": "https://atman.pl/en/blog-post/polish-data-center-market-2025-2030-pmr-atman-insight/",
+        "excerpt": "the total capacity of the Polish data center market could surpass 600 MW by the end of 2030",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-PL#c13",
+        "claim": "MarkWide Research values Poland data center market at $2.8 Billion in 2026, forecast to reach $9.55 Billion by 2035 at 14.60% CAGR.",
+        "number": 2.8,
+        "unit": "USD billion",
+        "sourceTitle": "Poland Data Center Market Size, Share, and Industry Trends Forecast 2026-2036 | MarkWide Research",
+        "url": "https://markwideresearch.com/poland-data-center-market",
+        "excerpt": "The Poland Data Center Market valued at $2.8 Billion in 2026 is forecast to scale to $9.55 Billion by 2035, progressing at a 14.60% CAGR throughout the forecast period.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-PL#c14",
+        "claim": "ResearchAndMarkets projects Poland data center market to grow from USD 1.89 billion in 2025 to USD 2.17 billion in 2026, reaching USD 4.29 billion by 2031 at 14.63% CAGR.",
+        "number": 1.89,
+        "unit": "USD billion",
+        "sourceTitle": "Poland Data Center - Market Share Analysis, Industry Trends & Statistics, Growth Forecasts (2026-2031)",
+        "url": "https://www.researchandmarkets.com/reports/5907692/poland-data-center-market-share-analysis",
+        "excerpt": "The Poland data center market is expected to grow from USD 1.89 billion in 2025 to USD 2.17 billion in 2026 and is forecast to reach USD 4.29 billion by 2031 at 14.63% CAGR over 2026-2031.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-PL#c15",
+        "claim": "ResearchAndMarkets states Poland's installed IT load capacity is forecast to rise from 660 MW in 2025 to 930 MW in 2030, a 7.34% CAGR.",
+        "number": 930,
+        "unit": "MW",
+        "sourceTitle": "Poland Data Center - Market Share Analysis, Industry Trends & Statistics, Growth Forecasts (2026-2031)",
+        "url": "https://www.researchandmarkets.com/reports/5907692/poland-data-center-market-share-analysis",
+        "excerpt": "the nation's installed IT load capacity is forecast to rise from 660 MW in 2025 to 930 MW in 2030, a 7.34% CAGR that signals a pivot toward AI-optimized, high-density deployments",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "PMR/Atman's claim that Poland's ~200 MW (2024) commercial DC capacity is 'more than one-third of the total capacity across the entire CEE region' implies a CEE-wide capacity of roughly 600 MW — starkly at odds with the geo.PL derivation's denominator of Statista's CE-7 colo capacity of 3,451 MW (2025). A ~6x gap between these CEE-region totals undermines confidence in the 0.07 ratio's denominator.",
+        "nodes": [
+          "geo.PL"
+        ]
+      },
+      {
+        "text": "datacenterHawk's 'current' Poland capacity figure of 220 MW (2026) closely matches Statista's 228 MW colo estimate (2025) used in the geo.PL derivation, but DC Byte reports 481 MW (2024) and 605 MW total supply for a seemingly similar colocation-inclusive scope — a ~2-3x discrepancy among sources purporting to measure comparable current capacity, which the derivation does not address.",
+        "nodes": [
+          "geo.PL"
+        ]
+      },
+      {
+        "text": "Mordor's own 660 MW (2025) installed-load figure, cited in the geo.PL cross-check as producing a ~0.10 ratio, is corroborated by ResearchAndMarkets (660 MW→930 MW, 7.34% CAGR) and Prime East (660 MW→930-1000 MW, ~7% CAGR), suggesting the 'installed load' scope is well-supported by multiple independent sources — arguably deserving more weight than the single Statista colo figure anchoring the 0.07 point estimate.",
+        "nodes": [
+          "geo.PL"
+        ]
+      }
+    ],
+    "absences": [
+      "No source provides a country-by-country CE-7/CEE colocation capacity breakdown to independently verify Statista's 3,451 MW regional denominator used in the geo.PL derivation.",
+      "No single consistent-scope (e.g., PMR commercial-DC) capacity series was found covering multiple CE countries, despite the node's stated promotion path requiring exactly this.",
+      "No reconciliation across sources of the wide range of 'current' Poland capacity figures (200 MW, 220 MW, 228 MW, 481 MW, 605 MW, 660 MW) by segment (colocation vs. installed IT load vs. commercial DC vs. total supply).",
+      "No quantified grid-capacity or power-availability constraint figures despite repeated qualitative references to 'grid capacity' and a 'gap between data center demand and available grid capacity' as the defining risk variable.",
+      "No data on actual utilization/occupancy rates for Polish colocation supply, only aggregate capacity and demand narratives."
+    ]
+  }
+}

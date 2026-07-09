@@ -1,0 +1,37 @@
+{
+  "inputsHash": "aa5197e0394d25e1e50cb4ad68cb48467d868edb83952881896646eef352934a",
+  "generatedAt": "2026-07-08T17:39:40.044Z",
+  "data": {
+    "title": "Enterprise growth ships as GPU racks that skip PDUs",
+    "narrative": "The model treats the whole enterprise segment, 29% of the market, as PDU-buying legacy halls on slow refresh cycles. But Synergy says enterprise capacity was flat for years and is only growing now because of GPU infrastructure, and that growth arrives as pre-built GPU racks with in-rack power, not field PDUs. The legacy stock that actually buys PDUs is declining two points a year toward 19% by 2031. Booking all 0.29 as PDU-addressable overstates the Year-1 enterprise number.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Synergy: enterprise growth now comes only from GPU capacity",
+        "refs": [
+          "digest:seg-mix#c20",
+          "digest:seg-mix#c2"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "GPU racks ship pre-built with power shelves, skipping PDUs; legacy PDU stock falls to 19% by 2031",
+        "refs": [
+          "digest:seg-mix#c22",
+          "digest:seg-mix#c5"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Counting all 0.29 as PDU-addressable overstates the sellable Year-1 slice",
+        "refs": [
+          "ledger:seg.enterprise",
+          "digest:seg-mix#c3"
+        ]
+      }
+    ],
+    "whyMissable": "The enterprise share looks like a boring, declining number, yet its stable 0.29 is propped up by GPU racks that never buy the product.",
+    "falsifier": "Enterprise refresh data showing rack PDUs attached to new AI GPU deployments at rates like general IT racks.",
+    "likelihoodRationale": "Synergy's GPU-growth claim and the 2-point yearly decline are sourced, but NVIDIA's reference design ships a traditional PDU variant and analysts tie PDU demand to AI density. Lowered toward that contradicting evidence, but not to the floor since the legacy-versus-pod split and the power-shelf option remain real."
+  }
+}

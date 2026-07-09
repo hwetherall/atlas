@@ -1,0 +1,26 @@
+{
+  "inputsHash": "5adfe9346a51944ed5a41f6a44cc2fdf4156655aa04c09262d41c7c546663783",
+  "generatedAt": "2026-07-08T05:30:23.825Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names exact nodes (geo.NL 0.28, geo.CH 0.08), hard numbers (DE 2,700 MW installed vs 1,737 MW colo; CH 274 vs ~850 MW), the 0.29 enterprise segment share, and proposed perturbation values with rationale. Actors and instruments (Statista colo table, BMWK, CBRE Suisse) are all identified."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The core insight — that geo.NL's 'triangulated' green status certifies precision of the wrong denominator, and that the error is invisible because shares still sum to 1.0 — is genuinely hidden by surface appearance. Held below 4 because the ledger's own cross-checks already show CH (0.08 vs 0.13) and DE (0.42 vs 0.53) diverging by scope, so a careful reader had a thread to pull."
+    },
+    "mechanismDepth": {
+      "score": 4,
+      "note": "Three-step chain (colo-scoped denominator → excludes exactly the 0.29 enterprise slice by construction → misallocates ~29% of TAM across countries) is referenced at every hop and each link is independently plausible; the directional bias (hubs up, self-op-heavy countries down) is argued, not asserted. A hostile 'why?' at each arrow has an answer with a ledger or digest ref."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The load-bearing scope-mismatch premise has multiple corroborating sources (BMWK for DE, CBRE Suisse explicitly excluding self-operated capacity, Mordor for CH installed base), and the likelihood rationale is honest about what remains unverified. Held at 3 because the NL-inflation side is admittedly not independently quantified, and two sources are weak vehicles (Mordor analyst estimate, europesays syndication)."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes country entry sequencing and channel spend (per-segment sequencing: CH/DE enterprise vs NL colo) via a cheap dual-denominator recompute the team can do next quarter. Indicators (BMWK/CBRE installed-load vs colo shares, >5pp divergence threshold) are concrete and monitorable."
+    }
+  }
+}

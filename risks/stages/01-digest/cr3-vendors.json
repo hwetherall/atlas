@@ -1,0 +1,196 @@
+{
+  "inputsHash": "62c09443fe583d4c132870a175fd38402174629dce536b73ba739955fbb45cf9",
+  "generatedAt": "2026-07-08T18:37:53.809Z",
+  "data": {
+    "claims": [
+      {
+        "id": "cr3-vendors#c0",
+        "claim": "APC by Schneider Electric led competitive landscape with 15.8% market share in the rack PDU market.",
+        "number": 15.8,
+        "unit": "%",
+        "sourceTitle": "Data Center Rack Power Distribution Unit (PDU) Market Research Report 2034",
+        "url": "https://dataintelo.com/report/data-center-rack-power-distribution-unit-pdu-market",
+        "excerpt": "APC by Schneider Electric led competitive landscape with 15.8% market share",
+        "tags": [
+          "competition",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "cr3-vendors#c1",
+        "claim": "Rack PDU key players named as Schneider Electric SE, Vertiv Group Corp., Eaton Corporation plc, ABB Ltd, Legrand SA with medium market concentration.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Data Center Rack PDU Market — key players",
+        "url": "https://www.mordorintelligence.com/industry-reports/data-center-rack-pdu-market",
+        "excerpt": "Key players: Schneider Electric SE, Vertiv Group Corp., Eaton Corporation plc, ABB Ltd, Legrand SA. Market concentration: Medium.",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "cr3-vendors#c2",
+        "claim": "Mordor Intelligence lists a 'Top 5' rack PDU company set (not a top-3), naming the same five vendors in unranked order.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Top Data Center Rack Power Distribution Unit (PDU) Companies - Key Players & More",
+        "url": "https://www.mordorintelligence.com/industry-reports/data-center-rack-pdu-market/companies",
+        "excerpt": "KEY PLAYERS Schneider Electric SE Vertiv Group Corp. Eaton Corporation plc ABB Ltd Legrand SA ... Top 5 Data Center Rack Power Distribution Unit (PDU) Companies",
+        "tags": [
+          "competition",
+          "structure"
+        ]
+      },
+      {
+        "id": "cr3-vendors#c3",
+        "claim": "Broader Power Distribution Unit market structure is described as Semi-Consolidated (P&S Intelligence), a different scope/term than the rack-PDU-specific 'Medium' concentration label.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Power Distribution Unit Market Size, and Growth Report, 2032",
+        "url": "https://www.psmarketresearch.com/market-analysis/power-distribution-unit-market",
+        "excerpt": "Market Structure | Semi-Consolidated",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "cr3-vendors#c4",
+        "claim": "Broader PDU market top players list includes Eaton, Schneider, ABB, Siemens, Server Technology, Raritan, and HPE, with Vertiv noted only via its Geist brand as holding 'strong presence' rather than being named a top-3 leader.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Power Distribution Unit Market Size, Growth and Forecast 2032",
+        "url": "https://www.credenceresearch.com/report/power-distribution-unit-market",
+        "excerpt": "Top players in the Power Distribution Unit market include Eaton Corporation, Schneider Electric, ABB Ltd., Siemens AG, Server Technology, Raritan Inc., and Hewlett Packard Enterprise... Vertiv, with its Geist brand, also holds strong presence in high-density and modular infrastructure deployments.",
+        "tags": [
+          "competition"
+        ]
+      },
+      {
+        "id": "cr3-vendors#c5",
+        "claim": "North America leads the global (broader) PDU market with a 34.5% share in 2024.",
+        "number": 34.5,
+        "unit": "%",
+        "sourceTitle": "Power Distribution Unit Market Size, Growth and Forecast 2032",
+        "url": "https://www.credenceresearch.com/report/power-distribution-unit-market",
+        "excerpt": "North America leads the global market with a 34.5% share in 2024, driven by extensive hyperscale data center growth",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "cr3-vendors#c6",
+        "claim": "MarketsAndMarkets market snapshot for the data center PDU market lists six named companies including nVent, an additional vendor not in the Mordor five-name set.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Data Center PDU Market Size, Share, Latest Trends & Growth Analysis, 2025-2032",
+        "url": "https://www.marketsandmarkets.com/Market-Reports/data-center-pdu-market-183927907.html",
+        "excerpt": "Schneider Electric (France) Eaton (Ireland) Vertiv Group Corp. (US) Legrand (France) ABB (Switzerland) nVent (UK)",
+        "tags": [
+          "competition",
+          "structure"
+        ]
+      },
+      {
+        "id": "cr3-vendors#c7",
+        "claim": "GlobeNewswire industry report frames the PDU market as led by seven named vendors including Tripp Lite and Siemens alongside Schneider, Eaton, ABB, Legrand, Vertiv.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Power Distribution Unit Industry Report 2026-2035",
+        "url": "https://www.globenewswire.com/news-release/2026/02/26/3245815/28124/en/Power-Distribution-Unit-Industry-Report-2026-2035-A-7-11-Billion-Market-by-2030-with-Schneider-Electric-Eaton-ABB-Legrand-Tripp-Lite-Vertiv-and-Siemens-Leading.html",
+        "excerpt": "A $7.11 Billion Market by 2030 with Schneider Electric, Eaton, ABB, Legrand, Tripp Lite, Vertiv, and Siemens Leading",
+        "tags": [
+          "competition"
+        ]
+      },
+      {
+        "id": "cr3-vendors#c8",
+        "claim": "A separate PDU market report states Schneider Electric and Eaton Corporation (only two names) led the competitive landscape, omitting Vertiv from the leadership framing.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Power Distribution Unit Market Research Report 2034",
+        "url": "https://marketintelo.com/report/power-distribution-unit-market",
+        "excerpt": "Schneider Electric and Eaton Corporation led competitive landscape",
+        "tags": [
+          "competition"
+        ]
+      },
+      {
+        "id": "cr3-vendors#c9",
+        "claim": "Yet another PDU market report variant states Schneider Electric SE alone led the competitive landscape.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Power Distribution Units Market Research Report 2034",
+        "url": "https://marketintelo.com/report/power-distribution-units-market",
+        "excerpt": "Schneider Electric SE led competitive landscape",
+        "tags": [
+          "competition"
+        ]
+      },
+      {
+        "id": "cr3-vendors#c10",
+        "claim": "Omdia's 2025 Rack PDU Annual Market Analysis explicitly includes vendor shares using 2024 as base year, but full content is subscription-gated.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Rack PDU Annual Market Analysis – 2025 Omdia",
+        "url": "https://omdia.tech.informa.com/om136696/rack-pdu-annual-market-analysis--2025",
+        "excerpt": "Analyzes the Rack PDU Annual Tracker – 2025 update and includes forecast and vendor shares. Uses 2024 as a base year, with historical data back to 2017 and forecasts to 2030.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "cr3-vendors#c11",
+        "claim": "Omdia report access is restricted to subscribers; non-subscribers only see the abstract.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Rack PDU Annual Market Analysis – 2025 Omdia",
+        "url": "https://omdia.tech.informa.com/om136696/rack-pdu-annual-market-analysis--2025",
+        "excerpt": "Please Note: Only individuals with an active subscription will be able to access the full article. All other readers will be directed to the abstract and would need to subscribe.",
+        "tags": [
+          "execution"
+        ]
+      },
+      {
+        "id": "cr3-vendors#c12",
+        "claim": "Intelligent PDU sub-market (adjacent to rack PDU) is also described only as 'Medium' concentration with no numeric CR figure.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Intelligent PDU Market Size, Share & 2030 Trends Report",
+        "url": "https://www.mordorintelligence.com/industry-reports/intelligent-pdu-market",
+        "excerpt": "Market Concentration | Medium",
+        "tags": [
+          "structure"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "The node's derivation assumes consistent top-3 identity (Schneider, Vertiv, Eaton) across sources, but the Credence Research broader-PDU-market source ranks Eaton, Schneider, ABB, Siemens, Server Technology, Raritan and HPE as top players and mentions Vertiv only via its Geist brand as having 'strong presence' — not confirmed as a top-3 leader.",
+        "nodes": [
+          "shape.cr3"
+        ]
+      },
+      {
+        "text": "Two marketintelo report variants give conflicting single/double-leader framings ('Schneider Electric and Eaton Corporation led' vs 'Schneider Electric SE led'), which is inconsistent with the node's implicit assumption that leadership among the top-3 (Schneider, Vertiv, Eaton) is stable and well-established across sources.",
+        "nodes": [
+          "shape.cr3"
+        ]
+      },
+      {
+        "text": "The node conflates the rack-PDU-specific 'Medium' concentration label (Mordor Intelligence) with the broader total-PDU-market 'Semi-Consolidated' label (P&S Intelligence) as if they describe the same market, when they are different market scopes.",
+        "nodes": [
+          "shape.cr3"
+        ]
+      }
+    ],
+    "absences": [
+      "No search result provides a numeric CR3 (combined top-3 share) for the rack-PDU market; the only hard percentage found is the single 15.8% figure for the #1 vendor (APC/Schneider).",
+      "No numeric market share was found for the #2 or #3 ranked rack-PDU vendor (Vertiv, Eaton), leaving the extrapolation from a single data point unverified.",
+      "The Omdia Rack PDU Annual Market Analysis 2025, which explicitly states it 'includes forecast and vendor shares' using 2024 as base year, is paywalled/subscription-only and its actual vendor-share figures were not retrievable in these results.",
+      "No HHI or other explicit concentration index was found in any source; all concentration descriptions are qualitative labels ('Medium', 'Semi-Consolidated') rather than computed ratios.",
+      "Vendor lists vary in composition across sources (some add nVent, Siemens, Tripp Lite, Server Technology, Raritan, HPE), so no single authoritative 'top 3' vendor set with matching market-share percentages was found."
+    ]
+  }
+}

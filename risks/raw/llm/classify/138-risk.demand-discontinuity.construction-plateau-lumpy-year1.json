@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "ec91a576f465377551d24cd8bdb51e6fd69bbc729d45456ef49111a06e2b5a08",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"Year-1 may hit a building lull the trend growth hides\",\n \"narrative\": \"The model assumes Year-1 lands in an average demand year at 1% of the serviceable market. But EMEA capacity under construction has stalled at about 2.5 GW while the pipeline grew 25% to nearly 15 GW, so projects are stuck in planning. If 2026 is a digestion year, Year-1 order pace could be roughly half the assumed level.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"EMEA construction stalled at 2.5 GW; pipeline grew to 15 GW\",\n   \"refs\": [\n    \"digest:geo-NL#c3\",\n    \"digest:geo-NL#c2\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Cloud buys 61% of demand; a pause stalls orders\",\n   \"refs\": [\n    \"digest:geo-DE#c18\",\n    \"ledger:shape.cagr\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"A trough year roughly halves achievable Year-1 pace\",\n   \"refs\": [\n    \"ledger:obtainableFactor\"\n   ]\n  }\n ],\n \"falsifier\": \"Cushman & Wakefield or JLL H1-2026 prints showing under-construction capacity above 2.5 GW with rising starts, or hyperscaler guidance re-accelerating 2026 European data-center capex.\",\n \"category\": \"exogenous\",\n \"evidence\": [\n  {\n   \"title\": \"Cushman & Wakefield: European data centre growth is shifting\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Cushman & Wakefield\",\n   \"date\": \"2026-04-28\",\n   \"excerpt\": \"the total development pipeline increased by more than 25% to nearly 15 GW. In practice, however, delivery is lagging behind. Capacity currently under construction has plateaued at around 2.5 GW.\",\n   \"url\": \"https://www.cushmanwakefield.com/en/netherlands/news/2026/04/emea-datacentre-update-h2-2025\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"1Q 2026 EMEA Data Center Market Report\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"datacenterHawk\",\n   \"date\": null,\n   \"excerpt\": \"Hyperscalers returned to Europe at record scale... 767MW Q1 absorption (record)\",\n   \"url\": \"https://datacenterhawk.com/resources/market-insights/1q-2026-emea-data-center-market-report\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"EMEA year end data centre report 2025\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"JLL\",\n   \"date\": \"2026-03-30\",\n   \"excerpt\": \"FLAP-D vacancy hits record low of 6.3%, pipeline is 83% pre-let. Capacity is being absorbed faster than it can be replaced.\",\n   \"url\": \"https://www.jll.com/en-uk/insights/emea-data-centre-report\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"obtainableFactor\",\n  \"label\": \"Year-1 obtainable share of SAM\",\n  \"kind\": \"assumption\",\n  \"value\": 0.01,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"triangulated\",\n  \"dimension\": null,\n  \"dimensionValue\": null,\n  \"sensitivityRange\": {\n   \"low\": 0.005,\n   \"high\": 0.03\n  },\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Benchmark anchoring\",\n   \"expression\": \"Prospeo assigns 1% of SAM to YEAR 1 (3% and 5% are Years 2–3) — the prior 3% read the Year-2 figure as Year 1. Corrected to 1%; the Tractian comparable (first-year ~$1.2M against a multi-$B market) sits below 1%.\",\n   \"crossCheck\": \"Early-procurement mechanism (DC electrical gear locked 12–24mo before fit-out) independently supports ≤2%; open 2026 EU rack-PDU tenders keep 2–3% inside the band.\"\n  },\n  \"provenance\": {\n   \"rationale\": \"Refinement cycle 1 caught the benchmark-period misread — the value now follows the source's own Year-1 figure, band 0.5–3%.\",\n   \"promotionPath\": \"Replace with pipeline-based model once first CE deals close (win-rate × cycle time × capacity).\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"Addressable markets — SOM benchmarks\",\n    \"sourceType\": \"analyst-estimate\",\n    \"publisher\": \"Prospeo\",\n    \"date\": null,\n    \"excerpt\": \"SOM benchmarks that won't get you laughed out of the room: 1% of SAM in Year 1, 3% in Year 2, 5% in Year 3.\",\n    \"attached\": true\n   },\n   {\n    \"title\": \"Serviceable Obtainable Market (SOM) — early-stage ranges\",\n    \"sourceType\": \"analyst-estimate\",\n    \"publisher\": \"IdeaPlan\",\n    \"date\": \"2024\",\n    \"excerpt\": \"For early-stage companies, SOM is typically 1-5% of SAM. For growing companies with product-market fit, SOM can reach 10-20% of SAM.\",\n    \"attached\": true\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"risk\",\"settleTest\":\"Only H1-2026 and full-year 2026 market prints (Cushman/JLL/datacenterHawk) can reveal whether 2026 is actually a digestion year with construction stalled and order pace halved — this depends on how the next 6-12 months unfold, not on a fact knowable today.\",\"proposedCorrection\":null,\"researchQueries\":[]}",
+  "usage": {
+    "prompt_tokens": 3081,
+    "completion_tokens": 133,
+    "total_tokens": 3214,
+    "cost": 0.01873,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01873,
+      "upstream_inference_prompt_cost": 0.015405,
+      "upstream_inference_completions_cost": 0.003325
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T21:51:46.395Z"
+}

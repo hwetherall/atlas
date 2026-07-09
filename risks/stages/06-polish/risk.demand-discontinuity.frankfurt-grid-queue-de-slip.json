@@ -1,0 +1,38 @@
+{
+  "inputsHash": "87e9461a4d65309c6278036e30649cd249518670056ac29855ff9152548ee164",
+  "generatedAt": "2026-07-08T21:48:12.009Z",
+  "data": {
+    "title": "Frankfurt grid queue could push half the Year-1 orders to 2027",
+    "narrative": "The model treats Germany as a diversified half of the market. But Frankfurt hosts about 75% of German capacity, so roughly 37% of Year-1 demand routes through one metro where grid connections now wait 24–36 months. If Frankfurt's 542 MW under construction slips past 2026, the largest tranche of Year-1 orders moves to 2027–28.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Frankfurt grid connections wait 24–36 months; 542 MW awaits energization",
+        "refs": [
+          "digest:geo-DE#c15",
+          "digest:geo-DE#c8",
+          "digest:geo-DE#c14"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Frankfurt is 75% of German capacity; deferred energization defers the biggest orders",
+        "refs": [
+          "digest:geo-DE#c1",
+          "ledger:geo.DE"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "DE share falls to 0.42 and Year-1 pace drops with it",
+        "refs": [
+          "ledger:geo.DE",
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "The ledger tracks country shares but has no metro dimension, so the fact that half the funnel routes through one grid queue is invisible.",
+    "falsifier": "Grid operator commitments or Frankfurt data showing live IT load stepping up by more than 100 MW within Year-1.",
+    "likelihoodRationale": "Queue lengths and near-zero vacancy are documented, and projects under construction usually hold secured grid slots, so slippage hits planning-stage projects harder. New capacity is also migrating to sites outside the Frankfurt queue, which caps the upward revision."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "50a0ea0cde7bbf89a6127bfa9ed6e885f8c7feba8e0bd8a56387adf7e41a3596",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"Base counts basic PDUs the venture cannot sell, halving the market\",\n \"narrative\": \"The model assumes the venture can sell into the full €300M rack-PDU market. But Grand View, the source of that figure, says the non-intelligent segment held the largest revenue share in 2025, and the venture sells only intelligent PDUs. About half the €300M is basic units the product cannot address, so the Year-1 number is inflated about 2x.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"Grand View says non-intelligent PDUs held the largest 2025 share.\",\n   \"refs\": [\n    \"digest:tam-global-crosscheck#c2\",\n    \"ledger:tamBase\",\n    \"profile:Product\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Vendors sell intelligent and basic PDUs as separate products.\",\n   \"refs\": [\n    \"digest:tam-global-crosscheck#c12\",\n    \"digest:tam-global-crosscheck#c13\",\n    \"digest:tam-base#c14\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"SAM €165M and YAM €1.65M both inherit the inflation.\",\n   \"refs\": [\n    \"ledger:tamBase\",\n    \"ledger:serviceableFactor\"\n   ]\n  }\n ],\n \"falsifier\": \"A European source showing intelligent PDUs at 75% or more of rack-PDU revenue.\",\n \"category\": \"fact\",\n \"evidence\": []\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"tamBase\",\n  \"label\": \"Central Europe rack-PDU market, all segments/buyers\",\n  \"kind\": \"estimated\",\n  \"value\": 300,\n  \"unit\": \"EUR_M\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"triangulated\",\n  \"dimension\": null,\n  \"dimensionValue\": null,\n  \"sensitivityRange\": {\n   \"low\": 240,\n   \"high\": 360\n  },\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Top-down scope-down from the global rack-PDU base\",\n   \"expression\": \"Global rack-PDU $2.81B (Grand View, 2025) × Europe ≈ 30% [est.; NA = 38% per same source] ≈ $843M ≈ €775M @0.92 (Jul 2026) × CE-7 = 39.8% of Europe colo MW (Statista 2025) ≈ €310M → curated €300M\",\n   \"crossCheck\": \"Refinement cycle 1: the prior €495M ceiling (BIS/R&M €2.45B) measures PDUs+PSUs combined — a broader category growing 21% CAGR vs intelligent-PDU 10–12% (IndexBox). Contaminated ceiling removed; band top lowered to €360M.\"\n  },\n  \"provenance\": {\n   \"rationale\": \"No public Europe- or CE-scoped rack-PDU figure exists; the scope-down chain anchors the value, and refinement cycle 1 killed the inflated PDUs+PSUs cross-check ceiling.\",\n   \"promotionPath\": \"Commission the IndexBox EU Rack PDUs report (country tables) to pin the EU base directly.\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"Data Center Rack PDU Market Size | Industry Report, 2033\",\n    \"sourceType\": \"industry-report\",\n    \"publisher\": \"Grand View Research\",\n    \"date\": \"2025\",\n    \"excerpt\": \"The global data center rack power distribution unit market size was estimated at USD 2.81 billion in 2025 and is projected to reach USD 5.87 billion by 2033... North America held 38.0% revenue share.\",\n    \"attached\": true\n   },\n   {\n    \"title\": \"Europe Data Center PDUs and PSUs Market 2025–2035\",\n    \"sourceType\": \"industry-report\",\n    \"publisher\": \"Research and Markets / BIS Research\",\n    \"date\": \"2025\",\n    \"excerpt\": \"The Europe data center PDUs and PSUs market is projected to reach $20.05 billion by 2035 from $2.45 billion in 2024 — a broader category (PDUs + PSUs) used as the cross-check ceiling.\",\n    \"attached\": true\n   },\n   {\n    \"title\": \"IndexBox — Rack PDUs Market in the European Union (country tables)\",\n    \"sourceType\": \"pending\",\n    \"publisher\": \"IndexBox\",\n    \"date\": null,\n    \"excerpt\": \"The directly-scoped EU rack-PDU report exists but its headline figure is paywalled — commissioning it would collapse the ±40% band.\",\n    \"attached\": false\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"error\",\"settleTest\":\"The Grand View (or IndexBox EU) rack-PDU report's segment split table showing intelligent vs. basic/non-intelligent revenue share for 2025 — a purchasable existing dataset that directly settles what fraction of the €300M is addressable.\",\"proposedCorrection\":{\"nodeId\":\"tamBase\",\"value\":150,\"low\":120,\"high\":210,\"rationale\":\"If the venture sells only intelligent PDUs and non-intelligent held the largest 2025 share, the addressable base is roughly half the all-segment €300M figure, so the funnel base should reflect the intelligent-only segment.\"},\"researchQueries\":[{\"query\":\"Grand View Research 2025 Data Center Rack PDU market report — revenue split between intelligent (monitored/switched/metered) and non-intelligent (basic) PDUs, Europe segment\",\"kind\":\"confirming\"},{\"query\":\"IndexBox EU Rack PDUs country tables or Frost & Sullivan Europe rack-PDU segmentation showing intelligent PDU share of rack-PDU revenue at or above 75%\",\"kind\":\"falsifying\"}]}",
+  "usage": {
+    "prompt_tokens": 2796,
+    "completion_tokens": 387,
+    "total_tokens": 3183,
+    "cost": 0.023655,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.023655,
+      "upstream_inference_prompt_cost": 0.01398,
+      "upstream_inference_completions_cost": 0.009675
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T21:53:48.240Z"
+}

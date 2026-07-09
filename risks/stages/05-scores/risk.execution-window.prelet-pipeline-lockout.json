@@ -1,0 +1,26 @@
+{
+  "inputsHash": "b85d4a8ba88fb07e2b683ddaebf810d602c07802dad1c4e01504d791ce394837",
+  "generatedAt": "2026-07-08T21:35:19.539Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (obtainableFactor), a concrete perturbation (set to 0.005), the 12–24mo lock-in window from the ledger's own crossCheck, the 9% CAGR, and monitorable instruments (TED DE/NL tenders, Equinix/Digital Realty/Vertiv commentary) with numeric thresholds. Actors, values, and timing are all pinned down."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The ledger's crossCheck already concedes '12–24mo lock-in', so the raw fact is partially in the model; the new contribution is the structural double-count — that the CAGR's growth sits entirely in the pre-committed pipeline and 'the model has no node that separates committed-pipeline demand from contestable demand'. That inversion of 'growth as tailwind' is genuinely hidden by the surface framing, but it builds on a disclosed ledger fact rather than something fully novel."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Four-step chain with refs at every arrow (design freeze → growth concentrated in pre-committed pipeline → benchmark assumes full SAM reachable → obtainableFactor double-counts), and each hop is independently argued. The one hop a hostile partner would attack — whether PDUs specifically ride the frozen BOM or are bought late as commodity — is inferential, as the rationale itself admits ('the PDU-coupling link... is still inferential')."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "≥3 independent sources (Build.inc, Construction Business Outlook, VAWN) corroborate the trigger of early electrical lock-in, but the load-bearing PDU-coupling premise has only 'silent' stances — the PDU sourcing guides 'describe RFQ processes without timing relative to design freeze'. The risk is honest about this gap in its revised likelihood rationale, which earns credit but caps the score below 4."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The mitigation to 'target the installed-base refresh cycle' and re-map the 2026–27 pipeline by procurement stage directly changes Year-1 GTM sequencing and product focus, and the perturbation (0.005 vs band) materially moves the revenue case. Indicators specify concrete venues (TED tenders, capex calls) with thresholds ('≥3 of 4 sampled tenders'), making it monitorable within the next two quarters."
+    }
+  }
+}

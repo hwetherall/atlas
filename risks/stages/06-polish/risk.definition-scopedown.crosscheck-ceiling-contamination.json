@@ -1,0 +1,39 @@
+{
+  "inputsHash": "1bf999e543dccfc87c7e38acebdd0c58434a47e108702ebb0894248cfadc0d2f",
+  "generatedAt": "2026-07-08T17:39:29.875Z",
+  "data": {
+    "title": "The €495M cross-check ceiling measures a rival market, not ours",
+    "narrative": "The model uses a €495M ceiling to justify the top of its market band, worth an extra €3.3M in Year 1. But that figure grows at 21% a year, while every rack-PDU source shows 5.4 to 9.8%. That fast growth belongs to a substitute technology the model is supposed to exclude, so the band's upside is not real.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "The €495M ceiling base grows 21.23% yearly, far above rack-PDU rates.",
+        "refs": [
+          "digest:tam-base#c2",
+          "digest:tam-base#c3",
+          "digest:tam-global-crosscheck#c7",
+          "digest:tam-global-crosscheck#c6"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Extra growth comes from the excluded power-shelf substitute; the 55% share is unsourced.",
+        "refs": [
+          "ledger:tamBase",
+          "digest:tam-base#c4",
+          "digest:tam-base#c5"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "The real range is €240 to 320; the €520 edge is false upside.",
+        "refs": [
+          "ledger:tamBase"
+        ]
+      }
+    ],
+    "whyMissable": "The cross-check is labeled as broader scope, so its wide band reads as honest uncertainty rather than a different market at one edge.",
+    "falsifier": "BIS/R&M segmentation showing the PDU-only segment at 55% or more of the category and growing 10% CAGR or less.",
+    "likelihoodRationale": "The growth mismatch is arithmetic and visible in the cited excerpts, and the 55% share is admitted as unsourced. The open question is how much of the excess growth is substitute revenue versus report optimism, raising likelihood from 0.45 to 0.52."
+  }
+}

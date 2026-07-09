@@ -1,0 +1,156 @@
+{
+  "inputsHash": "8b280d0664b049211a59df7e2a5c5742b99d3a7776c08f67263292d24d60becf",
+  "generatedAt": "2026-07-08T18:57:35.059Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-execution-window.som-window-semantics-mismatch#c0",
+        "claim": "Prospeo states SOM benchmark is 1% of SAM in Year 1, 3% in Year 2, 5% in Year 3",
+        "number": 1,
+        "unit": "ratio",
+        "sourceTitle": "Addressable Markets: TAM, SAM & SOM Guide (2026)",
+        "url": "https://prospeo.io/s/addressable-markets",
+        "excerpt": "SOM benchmarks that won't get you laughed out of the room: 1% of SAM in Year 1, 3% in Year 2, 5% in Year 3.",
+        "tags": [
+          "base-rate",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-execution-window.som-window-semantics-mismatch#c1",
+        "claim": "Prospeo elsewhere frames realistic SOM as 1-5% of SAM over a 36-month (three-year) window, not as a Year-1-only figure",
+        "number": 5,
+        "unit": "ratio",
+        "sourceTitle": "TAM vs SAM vs SOM: Definitions, Formulas & 2026 Guide",
+        "url": "https://prospeo.io/s/tam-vs-sam-vs-som",
+        "excerpt": "What's a realistic SOM? 1-5% of SAM over 36 months for early-stage companies. If you're claiming 10%+, investors will push back.",
+        "tags": [
+          "definition",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-execution-window.som-window-semantics-mismatch#c2",
+        "claim": "Prospeo's own worked example applies a 1% Year 1 capture rate to derive SOM from SAM",
+        "number": 1,
+        "unit": "ratio",
+        "sourceTitle": "TAM SAM SOM Example: Real Numbers for 2026",
+        "url": "https://prospeo.io/s/tam-sam-som-example",
+        "excerpt": "Apply a 1% Year 1 capture rate and your SOM is ~$2.7M.",
+        "tags": [
+          "base-rate",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-execution-window.som-window-semantics-mismatch#c3",
+        "claim": "IdeaPlan states SOM is typically 1-5% of SAM for early-stage companies, without specifying a year",
+        "number": null,
+        "unit": "ratio",
+        "sourceTitle": "Serviceable Obtainable Market (SOM) — early-stage ranges",
+        "url": null,
+        "excerpt": "For early-stage companies, SOM is typically 1-5% of SAM. For growing companies with product-market fit, SOM can reach 10-20% of SAM.",
+        "tags": [
+          "base-rate",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-execution-window.som-window-semantics-mismatch#c4",
+        "claim": "Tractian's revenue grew from $200K to $32M over four years, implying a starting-point figure far below the $1.2M cited elsewhere",
+        "number": 200000,
+        "unit": "USD",
+        "sourceTitle": "Tractian: How Two Sons of Factory Engineers Built a $32M Business on Sensors That Predict Breakdowns — Solopreneur",
+        "url": "https://solopreneuro.com/en/ideas/tractian-maintenance-ai",
+        "excerpt": "The company grew from $200K to $32M in revenue over four years and serves more than 1,000 plants, including John Deere, Caterpillar, and Goodyear.",
+        "tags": [
+          "base-rate",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-execution-window.som-window-semantics-mismatch#c5",
+        "claim": "Tractian reported $1.2M in ARR after a stated 10x growth event, with a $3.7M funding round at a $15M valuation",
+        "number": 1200000,
+        "unit": "USD",
+        "sourceTitle": "LATAM SaaS + IoT Grows 10x to $1.2m in ARR, $3.7m Round at $15m Valuation",
+        "url": "https://blog.getlatka.com/latam-saas-iot-grows-10x-to-1-2m-in-arr-3-7m-round-at-15m-valuation/",
+        "excerpt": "TRACTIAN Grows 10x to $1.2m in ARR, $3.7m Round at $15m Valuation",
+        "tags": [
+          "base-rate",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-execution-window.som-window-semantics-mismatch#c6",
+        "claim": "Predictive maintenance market (Tractian's comparable SAM/TAM category) is sized at $14.9B by 2026 per MarketsandMarkets",
+        "number": 14900,
+        "unit": "USD million",
+        "sourceTitle": "Tractian: How Two Sons of Factory Engineers Built a $32M Business on Sensors That Predict Breakdowns — Solopreneur",
+        "url": "https://solopreneuro.com/en/ideas/tractian-maintenance-ai",
+        "excerpt": "Market $14.9 млрд к 2026 году (предиктивное обслуживание, по данным MarketsandMarkets)",
+        "tags": [
+          "demand"
+        ]
+      },
+      {
+        "id": "refine-execution-window.som-window-semantics-mismatch#c7",
+        "claim": "Tractian has raised $200 million in total funding and serves more than 1,500 manufacturers",
+        "number": 200,
+        "unit": "USD million",
+        "sourceTitle": "Tractian Funding | $32.2M Revenue | Complete Analysis | Extruct AI",
+        "url": "https://www.extruct.ai/hub/tractian-com/",
+        "excerpt": "The company says it serves more than 1,500 manufacturers and has raised $200 million in total funding.",
+        "tags": [
+          "base-rate",
+          "competition"
+        ]
+      },
+      {
+        "id": "refine-execution-window.som-window-semantics-mismatch#c8",
+        "claim": "Samsara reported $1.9B in FY26 ARR with 30% YoY growth, illustrating a mature-stage obtainable-share trajectory unlike an early-stage Year-1 SOM",
+        "number": 1.9,
+        "unit": "USD billion",
+        "sourceTitle": "Samsara's FY26 Shows Accelerated Growth at Scale as AI Platform Delivers Clear Benefits to Organizations Powering the Global Economy",
+        "url": "https://www.samsara.com/company/news/press-releases/q4-fiscal-year-2026-results",
+        "excerpt": "$1.9B in FY26 ARR1, 30% YoY growth, representing a year of durable and efficient growth",
+        "tags": [
+          "competition",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-execution-window.som-window-semantics-mismatch#c9",
+        "claim": "Prospeo's SOM guide reports investors spend an average of 3 minutes 44 seconds on an entire pitch deck, underscoring benchmark figures are meant as quick heuristics rather than precise year-specific definitions",
+        "number": 3.73,
+        "unit": "minutes",
+        "sourceTitle": "Addressable Markets: TAM, SAM & SOM Guide (2026)",
+        "url": "https://prospeo.io/s/addressable-markets",
+        "excerpt": "Investors spend 3 minutes and 44 seconds on your entire pitch deck.",
+        "tags": [
+          "definition"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "Prospeo publishes two inconsistent SOM framings on its own site: one page gives staged annual benchmarks (1% Year 1, 3% Year 2, 5% Year 3, summing to 9% cumulative by Year 3), while another page frames the realistic SOM as a flat '1-5% of SAM over 36 months' — i.e., a single three-year aggregate range rather than a sequential per-year build. The obtainableFactor node's derivation treats 1% as a clean, isolated Year-1 figure, but the source itself is not internally consistent about whether these percentages are annual snapshots or cumulative three-year ranges.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      },
+      {
+        "text": "The obtainableFactor derivation cites 'the Tractian comparable (first-year ~$1.2M against a multi-$B market)' as supporting evidence that ≤1% is plausible, but the sourced Tractian data shows revenue starting at $200K (not $1.2M) and reaching $1.2M in ARR only after a reported '10x' growth event in a 2022 funding article — meaning $1.2M was not clearly a first-year figure, undermining the specific number used in the cross-check.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      }
+    ],
+    "absences": [
+      "No first-year (or any-year) revenue figures were found for data-center-specific hardware entrants (e.g., rack-PDU or DC electrical gear vendors) — the only comparables returned (Tractian, Samsara, Augury) are general industrial IoT/fleet-management companies, not the intended DC hardware category.",
+      "No quantified revenue or ARR figures were found for Augury despite it being surfaced as a candidate comparable — its page contains only qualitative claims ('1.1B+ hours of real machine readings') with no dollar-denominated first-year or obtainable-share data.",
+      "The node derivation's cross-check claims about 'early-procurement mechanism (DC electrical gear locked 12-24mo before fit-out)' and 'open 2026 EU rack-PDU tenders' were not corroborated or found anywhere in the returned search results — these specific supporting facts remain unsourced from this query pass.",
+      "No source was found stating Tractian's or any comparable company's SOM as an explicit percentage of its own stated SAM/TAM in Year 1, which is the specific benchmark needed to validate the 1% figure against a real-world outcome rather than a stated aspiration."
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "inputsHash": "cd8d835197574743e540376e17c24ef9b9d5c673dc25b133df1afa8a6e0af0ba",
+  "generatedAt": "2026-07-08T21:29:43.858Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact ledger node (cust.oem), the 0.22→0.08 quantitative move, specific actors (Digipower, Legrand/Raritan/Server Technology, Vertiv), and monitorable thresholds ('≥30% below entrant unit cost', '≥3 consecutive quarters'). Only missing element is dated triggers, but the falsifier is time-boxed to launch year."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The reframe in whyMissable — that two documented entry routes are 'two separately-owned gates' rather than redundancy — is exactly the kind of surface appearance that hides the risk from a founder reading the ledger's 0.22 cell. Held back from 4 because 'incumbents win on ecosystem, ODMs win on cost' is a squeeze pattern a competent hardware founder could plausibly generate."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Trigger→propagation→model-impact each carries refs (digest:cust-mix#c13/c14, digest:cr3-vendors, ledger nodes) and each hop survives a 'why?' — brand-spec gated by DCIM/support assets, price-spec gated by ODM cost curve. The final hop to ~0.08 is the weak arrow: the 'a third of the cell' fraction is asserted, not derived, as the rationale itself admits."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Both qualitative prongs have ≥2 independent corroborations (Digipower for ODM incumbency; Raritan, Server Technology, Vertiv, advanceddatacentre for incumbent-brand integrator selection), and the rationale honestly flags the small case-study sample and the unsourced 0.22→0.08 quantum. The load-bearing addressability number remains uncorroborated, which caps this below 4."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The design-in probe with 3 CE integrators and the MID-metering differentiation directly change channel sequencing and product spend in the next two quarters, replacing the unsourced addressability premise with observed gate criteria. Both indicators have named venues (case-study pages, exhibitor announcements) and explicit thresholds, so the risk is monitorable as stated."
+    }
+  }
+}

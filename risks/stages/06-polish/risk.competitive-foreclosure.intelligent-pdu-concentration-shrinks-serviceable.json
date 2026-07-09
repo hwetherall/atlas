@@ -1,0 +1,39 @@
+{
+  "inputsHash": "1a6873ae696a8b087f3d0f3fd274dab1ef9ebb47d2c1e9cf144d4f2ed90539fc",
+  "generatedAt": "2026-07-08T21:50:37.085Z",
+  "data": {
+    "title": "Intelligent-PDU market is more locked up than headline shows",
+    "narrative": "The model keeps 55% of demand reachable, based only on meeting regulations like EN 50600 and CE/TÜV. But the venture actually sells intelligent PDUs, where Legrand owns two of the leading brands and buyers lock their specs to specific vendors. That means true reachable demand falls toward 40%, cutting the Year-1 serviceable market.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Legrand owns Raritan and Server Technology; Vertiv holds Geist",
+        "refs": [
+          "digest:cr3-vendors#c4",
+          "digest:cr3-vendors#c0",
+          "ledger:shape.cr3"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Buyers write specs around their DCIM system, blocking outsiders",
+        "refs": [
+          "digest:cust-mix#c13",
+          "digest:cr3-vendors#c12",
+          "digest:cr3-vendors#c10"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Reachable share drops from 0.55 toward 0.40",
+        "refs": [
+          "ledger:serviceableFactor",
+          "profile:Product"
+        ]
+      }
+    ],
+    "whyMissable": "The team has both a haircut and a concentration figure, so both boxes look ticked, but the two numbers describe different scopes and no node links them, leaving the DCIM spec-lock in the seam between them.",
+    "falsifier": "An Omdia table showing intelligent-PDU top-3 share below 50%, or three or more operator specs requiring only open protocols like SNMP or Redfish with no vendor-certified list.",
+    "likelihoodRationale": "The ownership consolidation is documented and DCIM compatibility is a known buying criterion, but the actual spec-locked share of demand is unmeasured. Published open protocols like Redfish and Modbus weaken the lock-in premise, so likelihood drops modestly from 0.35."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "inputsHash": "7c5c02038c643df6877f786ea7660820559f51af423f45cfb90ffda292476875",
+  "generatedAt": "2026-07-08T18:19:17.795Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "The venture's actual sales cycle documentation for large-operator qualification (AVL/RVL gating timelines) plus a benchmark dataset of first-year market capture for comparable DC-hardware entrants selling direct to large operators — all knowable today, not dependent on future market unfolding.",
+    "proposedCorrection": {
+      "nodeId": "obtainableFactor",
+      "value": 0.005,
+      "low": 0.001,
+      "high": 0.01,
+      "rationale": "Generic SOM benchmarks (1–5%) ignore that large-operator qualification cycles (NVIDIA AVL/RVL) exceed the 12-month horizon; a hardware-specific Year-1 capture for the slowest buyers is closer to 0.1–1%, so the 3% mid-band should be revised down ~5–10x."
+    },
+    "researchQueries": [
+      {
+        "query": "Documented first-year market capture rates for rack-PDU or CDU hardware entrants selling direct to hyperscale/large data-center operators through NVIDIA AVL/RVL qualification",
+        "kind": "confirming"
+      },
+      {
+        "query": "Cases of new data-center hardware vendors closing 3% of a regional serviceable market within 12 months via direct sales to large operators despite qualification gates",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

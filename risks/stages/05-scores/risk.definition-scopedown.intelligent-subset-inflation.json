@@ -1,0 +1,26 @@
+{
+  "inputsHash": "4fea4cf0efe6bde4881f00bd12630a85de28e833ea2eda36d780f6b6afc4530e",
+  "generatedAt": "2026-07-08T21:29:18.782Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact anchor ($2.81B Grand View), the contaminated values (€300M base, SAM €165M, YAM €1.65M), the competing intelligent-only sizings ($2.1B GIA, $3.0B MRF), specific report SKUs (IndexBox EU pair), and a quantified perturbation (scale 0.55). Actors, instruments, and numbers are all pinned to ledger nodes and digest cites."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable is genuinely adversarial: the label 'rack-PDU market' reads scope-matched to a rack-PDU vendor, and the prior removal of the PDUs+PSUs ceiling created false confidence that definitional contamination was handled. Falls short of 4 because a founder auditing the anchor's own segmentation table — the standard first cross-check on a TAM anchor — could plausibly find it."
+    },
+    "mechanismDepth": {
+      "score": 4,
+      "note": "Three-hop chain (anchor's own segmentation → independent intelligent-only sizings and separate report SKUs → downstream inheritance because serviceableFactor haircuts reach, not product scope) with refs at every step. The likelihood rationale preemptively answers the hostile 'why 0.55 not 0.4?' by naming the 3–5x ASP offset and European buyer skew."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "≥2 independent sources (GIA sizing, IndexBox separate EU reports, Omdia basic/networked segmentation, 6Wresearch product-type taxonomy) corroborate that the intelligent subset is a distinct, smaller base. But the load-bearing quantitative premise — the ~55% European revenue-weighted intelligent share — is inferred rather than sourced, the IndexBox quotes are only report titles, and one stance is silent."
+    },
+    "decisionRelevance": {
+      "score": 3,
+      "note": "A ~2x cut to TAM/SAM/YAM within the perturbation, a cheap ($8k) information mitigation, and a roadmap-level strategic option (metered SKU) all bear on near-term choices, with monitorable indicators (report vintages, incumbent EU price lists). Stops short of 4 because it primarily corrects the market narrative rather than forcing a specific spend or sequencing change in the next two quarters."
+    }
+  }
+}

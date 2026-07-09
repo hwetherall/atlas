@@ -1,0 +1,26 @@
+{
+  "inputsHash": "67e2649250ed9d43965867c554166f90cd774cd2b196f3886fc3cbd43e4f08b1",
+  "generatedAt": "2026-07-08T21:43:47.988Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the metro (Frankfurt), the queue (24–36 months), quantified pipeline (542 MW UC / 383 MW planning), 2.2% vacancy, DE=0.50 with Frankfurt ~75%, the 0.42 low bound, and a concrete 0.6x obtainableFactor perturbation. Instruments (PDU POs at fit-out), regulation (EnEfG), and dated windows are all specified."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The 'whyMissable' field correctly identifies that the ledger has no metro dimension, so a country-level DE share reads as diversified when ~37% physically routes through one interconnection queue — a genuine structural blind spot. Falls short of 4 because Frankfurt's dominance of German DC capacity is well-known industry context a diligent founder might surface, and the risk's own stances (NTT FRA6, Rhine-Main migration) show the concentration is already partially dissolving."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Each hop is referenced and independently plausible: queue sets energization dates → energization gates fit-outs → PDU POs land at fit-out → Year-1 obtainable pace compresses while the 2030 CAGR survives on paper. The weak link, acknowledged in the risk's own rationale, is that UC projects typically hold secured allocations and new capacity is migrating outside the single queue — so the '37% through one substation queue' hop would take damage under hostile questioning."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The key premise (24–36-month waits, near-zero utility capacity, EnEfG friction) has multiple independent corroborating sources, and the risk honestly logs contradicting stances (TenneT/Uniper switchyard, NTT FRA6 relocation) and revised likelihood accordingly. Held to 3 because the corroborating publishers (innobu, KiTalent) are lower-tier, and the contradicting evidence undermines the load-bearing concentration framing, not just timing."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The mitigations directly resequence next-two-quarter activity: energization-date audit of the 542 MW cohort, Year-1 territory rebalance toward Berlin/CEE, and a retrofit SKU that decouples revenue from new grid connections. Indicators carry named venues (JLL prints, TenneT/Amprion disclosures) and explicit thresholds (<+50 MW over two half-year prints, ≥2-quarter re-guides), making it monitorable as stated."
+    }
+  }
+}

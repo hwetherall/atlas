@@ -1,0 +1,25 @@
+{
+  "inputsHash": "5ae07c43724f51e2692870f9544bdc44f3d76730077e8941ac1750d834599a5b",
+  "generatedAt": "2026-07-08T18:20:03.635Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A total-installed-load (colo + enterprise on-premise + self-operated) country split for CE-7 with published MW figures per country (BMWK for DE, CBRE/Mordor for CH, DDA for NL) — an existing/purchasable dataset that fixes the denominator scope today.",
+    "proposedCorrection": {
+      "nodeId": "geo.CH",
+      "value": 0.11,
+      "low": 0.08,
+      "high": 0.14,
+      "rationale": "Switzerland is self-operation-heavy (Mordor 850.6 MW installed vs 274 MW colo; CBRE 340 MW commercial only), so a total-installed-load denominator raises CH from 0.08 toward ~0.11-0.13, and correspondingly deflates the Amsterdam-hub-inflated NL weight."
+    },
+    "researchQueries": [
+      {
+        "query": "CE-7 (NL, DE, CH, plus others) total installed data-center IT load including enterprise on-premise and self-operated capacity — per-country MW breakdown from BMWK, CBRE Suisse, and Dutch Data Center Association 2025",
+        "kind": "confirming"
+      },
+      {
+        "query": "Statista/CBRE evidence that colocation IT power tracks total installed load proportionally across NL, DE and CH such that enterprise on-premise share is geographically uniform (~29% everywhere)",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

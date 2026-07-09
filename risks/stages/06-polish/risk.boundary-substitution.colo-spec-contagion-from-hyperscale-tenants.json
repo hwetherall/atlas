@@ -1,0 +1,37 @@
+{
+  "inputsHash": "2c30566d81cf1a24e9fe7308e6dafdf13a0fbccdd503ec12dde7d2a408552dbd",
+  "generatedAt": "2026-07-08T21:48:32.213Z",
+  "data": {
+    "title": "Colo power gear follows AI tenants out of category",
+    "narrative": "The model treats colocation as the safe harbor for rack PDUs and gives it a zero sensitivity band, so it never appears in the tornado. But CBRE shows European colo demand being outstripped by hyperscaler and AI tenants, and in wholesale prelet halls the tenant, not the operator, dictates the rack power design. If those tenants specify busway and power shelves inside leased halls, the colo PDU content leaves the category while operator capacity keeps growing 19% a year. The one segment the model calls certain is the one with the hidden contagion path.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "AI tenants filling colo halls also dictate wholesale power specs",
+        "refs": [
+          "digest:seg-mix#c15",
+          "digest:seg-mix#c13"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Tenants pick busway, so colo PDU content falls despite growth",
+        "refs": [
+          "digest:seg-mix#c18",
+          "digest:seg-mix#c16"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Null band hides all downside for the colo slice",
+        "refs": [
+          "ledger:seg.colocation",
+          "digest:seg-mix#c1"
+        ]
+      }
+    ],
+    "whyMissable": "Colocation looks like the segment where rack PDUs are mandatory, and its null band keeps it out of every sensitivity view the team reviews.",
+    "falsifier": "Fit-out specs from 2026 CE wholesale colo preleases in Frankfurt and Amsterdam showing rack PDUs, not busway, as standard in AI-density halls.",
+    "likelihoodRationale": "Tenant spec authority in wholesale preleases is documented and the buyer cohort is the migrating one, but retail and standard-density wholesale colo stay PDU-native. The AI signing surge is heavily Nordic rather than Frankfurt or Amsterdam, so the risk sits in the AI-density growth tranche; revised from 0.30 to 0.34."
+  }
+}

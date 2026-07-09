@@ -1,0 +1,208 @@
+{
+  "inputsHash": "be50190c0f8af31ef3adc2332d2e1f2884c885a9beb227d7baa7d69e15281221",
+  "generatedAt": "2026-07-08T19:11:33.655Z",
+  "data": {
+    "claims": [
+      {
+        "id": "serviceable-benchmark#c0",
+        "claim": "Generic startup guidance recommends SOM (not SAM) capture benchmarks of 1% of SAM in Year 1, 3% in Year 2, 5% in Year 3 — no equivalent SAM-as-%-of-TAM benchmark is given.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Addressable Markets: TAM, SAM & SOM Guide (2026)",
+        "url": "https://prospeo.io/s/addressable-markets",
+        "excerpt": "SOM benchmarks that won't get you laughed out of the room: 1% of SAM in Year 1, 3% in Year 2, 5% in Year 3.",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c1",
+        "claim": "Cross-check heuristic: top-down and bottom-up market estimates should land within 2x of each other to be considered healthy.",
+        "number": 2,
+        "unit": "x multiple",
+        "sourceTitle": "Addressable Markets: TAM, SAM & SOM Guide (2026)",
+        "url": "https://prospeo.io/s/addressable-markets",
+        "excerpt": "Cross-check rule of thumb: if your top-down and bottom-up estimates land within 2x of each other, your assumptions are healthy. If they're 10x apart, something's broken.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c2",
+        "claim": "Alternative version of the same heuristic uses a 3x tolerance band instead of 2x.",
+        "number": 3,
+        "unit": "x multiple",
+        "sourceTitle": "Serviceable Addressable Market: How to Calculate SAM",
+        "url": "https://prospeo.io/s/serviceable-addressable-market",
+        "excerpt": "validate by checking that your top-down and bottom-up estimates stay within 3x of each other",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c3",
+        "claim": "SAM is defined generically as the realistically reachable portion of TAM given current product/go-to-market, not a fixed universal ratio.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "SAM (serviceable addressable market) | GrowPanel",
+        "url": "https://growpanel.io/academy/sam/",
+        "excerpt": "SAM (Serviceable Addressable Market) is the portion of the market you can realistically serve with your current product and go-to-market constraints—typically defined by who you sell to, where you can sell, and what you can actually support and deliver.",
+        "tags": [
+          "definition",
+          "structure"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c4",
+        "claim": "Compliance/regulatory requirements are explicitly listed as one of several qualitative factors that shrink TAM into SAM, alongside geography and product readiness — not quantified into a single percentage.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "SAM (serviceable addressable market) | GrowPanel",
+        "url": "https://growpanel.io/academy/sam/",
+        "excerpt": "Compliance and risk: regulatory requirements (SOC 2, HIPAA, GDPR), procurement realities.",
+        "tags": [
+          "definition",
+          "regulation"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c5",
+        "claim": "A free TAM/SAM/SOM calculator tool leaves the SAM 'segment %' input blank/zero by default, requiring the user to supply their own percentage rather than offering an industry benchmark.",
+        "number": 0,
+        "unit": "%",
+        "sourceTitle": "TAM SAM SOM Calculator 2026 | Free Market Size Analysis | IdeaProof",
+        "url": "https://ideaproof.io/calculators/market-size",
+        "excerpt": "SAM · Serviceable\n\n—\n\nTAM × 0% segment",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c6",
+        "claim": "Generic TAM/SAM/SOM frameworks are described as unreliable specifically for technical/industrial B2B hardware markets because they ignore application-specific requirements and buyer complexity.",
+        "number": 300,
+        "unit": "% overestimate",
+        "sourceTitle": "Niche B2B Market Sizing Guide: TAM SAM SOM Framework for Technical Sales Team - GrowthBeaver",
+        "url": "https://growthbeaver.com/tam-sam-som-calculator-niche-b2b-markets/",
+        "excerpt": "Most TAM calculators give you fantasy numbers. Here's why yours probably overestimate by 300%.",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c7",
+        "claim": "Generic B2B market sizing errors (not specific to hardware/serviceable share) are estimated to cost businesses up to $15M annually.",
+        "number": 15000000,
+        "unit": "USD/year",
+        "sourceTitle": "Addressable Markets: TAM, SAM & SOM Guide (2026)",
+        "url": "https://prospeo.io/s/addressable-markets",
+        "excerpt": "Inaccurate addressable market estimates cost businesses up to $15M annually.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c8",
+        "claim": "EU Regulation 2019/424 establishes ecodesign requirements gating the placing on the market and putting into service of servers and online data storage products.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "COMMISSION REGULATION (EU) 2019/424",
+        "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A02019R0424-20210501",
+        "excerpt": "This Regulation establishes ecodesign requirements for the placing on the market and putting into service of servers and online data storage products.",
+        "tags": [
+          "regulation"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c9",
+        "claim": "From 1 January 2023, minimum PSU efficiency for multi-output units must be at least 90%/94%/91% at 20%/50%/100% load, and power factor at least 0.95 at 50% load — a hard compliance gate for server hardware entering the EU market.",
+        "number": 94,
+        "unit": "%",
+        "sourceTitle": "ANNEX II Ecodesign requirements",
+        "url": "https://webgate.ec.europa.eu/reqs2/public/v2/requirement/auxi/eu/32019R0424_stdecoserver_annex_2.pdf/",
+        "excerpt": "Minimum PSU efficiency Minimum power factor % of rated load 10 % 20 % 50 % 100 % 50 % Multi output — 90 % 94 % 91 % 0,95",
+        "tags": [
+          "regulation"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c10",
+        "claim": "The EU's Energy Efficiency Directive imposes a collective energy consumption reduction target of at least 11.7% by 2030 versus 2020 projections, with specific disclosure/waste-heat-reuse requirements on datacenter operators.",
+        "number": 11.7,
+        "unit": "%",
+        "sourceTitle": "The EU's Energy Efficiency Directive and Its Impact on Datacenters",
+        "url": "https://www.cov.com/-/media/files/corporate/publications/2025/04/the-eus-energy-efficiency-directive-and-its-impact-on-datacenters.pdf",
+        "excerpt": "Imposes on Member States a collective energy consumption reduction target of at least 11,7% in 2030 compared to the projections of the EU reference scenario for 2020",
+        "tags": [
+          "regulation"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c11",
+        "claim": "EN 50600 is a holistic European standard covering data center planning, construction, and operation (power, cooling, security) — a facility-level certification distinct from product-level ecodesign rules.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "EN 50600 – European standard for data centers | TÜV NORD",
+        "url": "https://www.tuev-nord.de/en/services/auditing-and-certification/en-50600/",
+        "excerpt": "The European standard EN 50600 provides comprehensive guidelines for the planning, construction, and operation of data centers, focusing on power supply, air conditioning, and security infrastructure.",
+        "tags": [
+          "regulation",
+          "structure"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c12",
+        "claim": "A separate EU delegated regulation (2024/1364) establishes the first phase of a common Union rating scheme for data centres, adding another regulatory layer beyond ecodesign/EN 50600.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Commission Delegated Regulation (EU) 2024/1364",
+        "url": "https://eur-lex.europa.eu/eli/reg_del/2024/1364",
+        "excerpt": "Commission Delegated Regulation (EU) 2024/1364 of 14 March 2024 on the first phase of the establishment of a common Union rating scheme for data centres",
+        "tags": [
+          "regulation"
+        ]
+      },
+      {
+        "id": "serviceable-benchmark#c13",
+        "claim": "A market-entry consultancy lists the full certification/compliance stack required for EU hardware market entry as WEEE, CE, TÜV, Grüner Punkt, FCC, ROHS plus customs barriers (EORI, custom-forms) — broader than the cert set named in the node's derivation.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Bridge to Europe - Services",
+        "url": "https://www.b-to-e.com/services/",
+        "excerpt": "Necessary certifications (WEEE, CE, TÜV, Grüner Punkt, FCC, ROHS)\n- Market entry barriers (EORI, custom-forms)",
+        "tags": [
+          "regulation",
+          "execution"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "The node's derivation asserts 'No public SAM/TAM benchmark for B2B hardware exists' — this search confirms the absence directly: all SAM/TAM ratio content found is generic startup/SaaS methodology (2x-3x cross-check rules, 1%/3%/5% SOM capture curves), none specific to B2B hardware or quantifying a serviceable-share number, and one calculator even defaults the SAM segment input to 0% rather than a benchmark.",
+        "nodes": [
+          "serviceableFactor"
+        ]
+      },
+      {
+        "text": "The node's rationale bundles EN 50600, ecodesign 2019/424, and CE/TÜV together as one 'EU cert stack' justifying <1.0 serviceable share, but the search results show these are distinct regulatory layers operating at different levels (product ecodesign vs. facility construction/operation standard vs. a newer 2024 data-centre rating scheme vs. general product compliance like CE/WEEE/RoHS/FCC) — the stack is broader and more fragmented than the single justification implies, and none of them individually implies a specific percentage haircut.",
+        "nodes": [
+          "serviceableFactor"
+        ]
+      },
+      {
+        "text": "Industry guidance repeatedly warns that top-down vs. bottom-up market-size estimates should be validated to stay within 2x-3x of each other, yet the node has no bottom-up estimate to cross-check its top-down 0.55 assumption against, leaving the sensitivity range (0.45-0.65) methodologically unvalidated by this standard.",
+        "nodes": [
+          "serviceableFactor"
+        ]
+      }
+    ],
+    "absences": [
+      "No public SAM-as-%-of-TAM benchmark specific to B2B hardware, servers, or data center equipment vendors was found — all numeric SAM/SOM benchmarks located are generic SaaS/B2B software heuristics (e.g., 1%/3%/5% SOM capture, 2x-3x top-down/bottom-up tolerance).",
+      "No bottom-up channel-coverage model (named accounts × reachable share) or any sourced quantification tying EU certification/regulatory requirements to a specific serviceable-market percentage was found.",
+      "No quantitative estimate of how much of the addressable market is excluded specifically by EN 50600, ecodesign 2019/424, or CE/TÜV certification requirements — only qualitative existence and content of the standards themselves.",
+      "No data-center or server-hardware-specific TAM/SAM/SOM case study or industry report with a stated serviceable ratio was returned despite the query targeting B2B hardware benchmarks."
+    ]
+  }
+}

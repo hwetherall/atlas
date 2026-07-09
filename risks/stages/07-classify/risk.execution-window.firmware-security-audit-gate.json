@@ -1,0 +1,19 @@
+{
+  "inputsHash": "01bef95748366fb005896206f95c9f1930124ddca4be56603427022bd16cb5ee",
+  "generatedAt": "2026-07-08T21:52:21.900Z",
+  "data": {
+    "resolution": "risk",
+    "settleTest": "Only the actual Year-1 procurement timeline settles this: whether large CE operators issue rack-PDU RFQs requiring security prequalification before a first PO, and whether the venture's audit cycles land inside or outside its selling window. That unfolds over the next 12-24 months — no purchasable report fixes today's serviceable/obtainable ratios, since the load-bearing claim is about how the buyer gate delays orders going forward.",
+    "proposedCorrection": null,
+    "researchQueries": [
+      {
+        "query": "Rack-PDU RFQs from EU colocation operators (Equinix, Digital Realty, NTT) 2024-2025 — do tender documents mandate IEC 62443 or vendor security prequalification as a listing precondition?",
+        "kind": "confirming"
+      },
+      {
+        "query": "Cases of new-entrant networked power hardware vendors winning first EU data-center PO on CE/TUV alone without completing a separate security audit cycle",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

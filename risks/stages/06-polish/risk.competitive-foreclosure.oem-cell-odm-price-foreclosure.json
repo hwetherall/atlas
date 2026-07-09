@@ -1,0 +1,39 @@
+{
+  "inputsHash": "5dccffa97b93141a538281b83dd400674a722d8acd1255d8d73ffd313de14068",
+  "generatedAt": "2026-07-08T17:43:10.525Z",
+  "data": {
+    "title": "OEM/integrator channel is owned by cheaper Asian ODMs",
+    "narrative": "The model books 22% of PDU spend to the OEM/integrator channel as if it were open to win. But that channel is where Taiwanese and Chinese ODMs like Digipower and GETEKnet already sell white-label PDUs at cost points a Central European manufacturer cannot match. Integrator deals are decided on unit cost, so this spend is out of reach on day one. Counting it overstates the serviceable market.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Asian ODMs already supply OEM/integrator PDUs as white-label goods.",
+        "refs": [
+          "digest:cust-mix#c11",
+          "digest:cust-mix#c12",
+          "digest:cust-mix#c13"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Integrators buy on lowest cost; the entrant cannot match ODM prices.",
+        "refs": [
+          "profile:Product",
+          "profile:Company",
+          "ledger:cust.oem"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "The 22% cell is priced out, inflating serviceable spend.",
+        "refs": [
+          "ledger:cust.oem",
+          "ledger:serviceableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "The label 'OEM/integrator' reads like home turf for a manufacturer, hiding that it is where cheaper ODM rivals set the price.",
+    "falsifier": "Quotes showing the venture can price within 10–15% of ODM white-label at integrator volumes, or an integrator win awarded on features rather than cost.",
+    "likelihoodRationale": "The ODM white-label channel is directly documented in the corpus, and the entrant's cost disadvantage is a robust pattern. But some integrators pay premiums for EU origin and short lead times, keeping likelihood near the prior with a slight uptick."
+  }
+}

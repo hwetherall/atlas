@@ -1,0 +1,38 @@
+{
+  "inputsHash": "a876cac364724570cb814cffe1f22038c27ab147868cff3d3119590eb42dd418",
+  "generatedAt": "2026-07-08T21:51:14.209Z",
+  "data": {
+    "title": "Large operators buy through frameworks the entrant cannot bid",
+    "narrative": "The model assumes large operators are the first buyer and gives that group the biggest channel weight at 0.40. But we found their power-equipment spend runs through multi-year global framework agreements and bundled rack contracts, not discrete bids a regional entrant can win. If half that 0.40 is bought this way, the Year-1 reachable spend is far smaller than the SAM claims.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Large operators buy power gear through standing frameworks and bundles.",
+        "refs": [
+          "digest:cust-mix#c12",
+          "ledger:cust.operator-large"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "The 0.40 share rests on one figure measuring exposure, not contestability.",
+        "refs": [
+          "digest:cust-mix#c0",
+          "ledger:cust.operator-large"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Contestable spend is below 0.40, so Year-1 pipeline math overstates.",
+        "refs": [
+          "ledger:cust.operator-large",
+          "profile:Who is the primary buyer you'll sell through first?",
+          "ledger:serviceableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "The founder's own answer says large operators buy direct, so 0.40 looks like the biggest, most accessible cell rather than one closed to entrants.",
+    "falsifier": "Three or more large-operator PDU purchases in the next 12 months run as open multi-vendor bake-offs won by non-incumbent vendors.",
+    "likelihoodRationale": "Every procurement case found showed bundled or framework buying, with no contested standalone PDU deal at a large operator. The open question is how much is foreclosed, not whether the mechanism exists."
+  }
+}

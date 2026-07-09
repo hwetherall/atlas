@@ -1,0 +1,40 @@
+{
+  "inputsHash": "b52fc7655ff3406e7379a987f9da72241d06fb6859d3cdcf105951012eb1a93b",
+  "generatedAt": "2026-07-08T21:47:00.666Z",
+  "data": {
+    "title": "Large-operator sales are locked up by long-term framework deals",
+    "narrative": "The model names large operators as the first buyer and prices that cell at 40% of spend. But those operators buy rack power through multi-year framework contracts, like the Digital Realty–Schneider $373M deal, that remove the tender from the market for the whole term. If most of that 40% is already under contract, the Year-1 beachhead is closed and the number shifts onto slower cells.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Large operators extend multi-year framework deals with incumbent vendors",
+        "refs": [
+          "digest:cust-mix#c12",
+          "digest:cr3-vendors#c1",
+          "ledger:cust.operator-large"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "No open bid reaches the market during the contract term",
+        "refs": [
+          "profile:Stage",
+          "ledger:cust.operator-large",
+          "digest:cust-mix#c0"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "The reachable large-operator share falls from 40% to about 20%",
+        "refs": [
+          "ledger:cust.operator-large",
+          "ledger:obtainableFactor",
+          "digest:cust-mix#c0"
+        ]
+      }
+    ],
+    "whyMissable": "'Large operators buy direct' reads as good news, hiding that direct buying at this scale means locked framework contracts, not open sales.",
+    "falsifier": "Two or more large operators issuing open, multi-vendor rack-PDU bids within the next 12 months.",
+    "likelihoodRationale": "Multiple documented deals point the same way, so the mechanism is real. What is uncertain is how much operator spend is locked, and the vendor's own claim of a multi-vendor environment argues against full foreclosure."
+  }
+}

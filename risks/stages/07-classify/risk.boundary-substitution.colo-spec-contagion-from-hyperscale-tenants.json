@@ -1,0 +1,19 @@
+{
+  "inputsHash": "d04927373af57b51e8f0c3aa80d98d7f6b299d1a914b5d904ccbd7f200963cc3",
+  "generatedAt": "2026-07-08T21:52:55.791Z",
+  "data": {
+    "resolution": "risk",
+    "settleTest": "Only future 2026+ wholesale prelet fit-out specifications from Frankfurt/Amsterdam AI-density halls, showing whether tenants actually specify busway versus rack PDUs, would settle this — that is a market design shift that hasn't yet resolved, not a knowable-today number.",
+    "proposedCorrection": null,
+    "researchQueries": [
+      {
+        "query": "Frankfurt and Amsterdam 2026 wholesale colocation prelease fit-out specifications: busway vs rack PDU standard in AI-density halls",
+        "kind": "confirming"
+      },
+      {
+        "query": "European colocation operators retaining rack PDU procurement control in AI tenant leases 2025-2026 CBRE Synergy",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

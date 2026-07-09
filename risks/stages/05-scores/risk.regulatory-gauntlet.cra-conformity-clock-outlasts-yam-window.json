@@ -1,0 +1,26 @@
+{
+  "inputsHash": "e2da6a38266893d89eb527e2baabbcf46d50e78dbf5a6a1e011c68b79c11897e",
+  "generatedAt": "2026-07-08T21:41:45.067Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the regulation (EU 2024/2847), exact dates (11 Sep 2026 reporting, 11 Dec 2027 conformity), actors (CEN/CENELEC, ENISA, notified bodies, colo procurement), and ties them to specific ledger values (serviceableFactor 0.55, obtainableFactor 1% Year-1 anchor) with quantified perturbations (0.4, 0.006). Indicators cite concrete venues (TED, JTC 13 work programme, incumbent price lists)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable is genuinely good: 'CE marking' reads as a checked box while the conformity ROUTE (SBOM, CVD, possible third-party assessment) changes, and buyers enforce it 1–2 years before the legal deadline. Docked one point because the risk's own evidence revision concedes the two most surprising claims — important-product classification and 2026 front-running — are softened or unevidenced, and self-labels expectedObviousness 'medium'."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Four-step chain with refs at every hop, correctly linking the shortlist-scarcity digest to why one missing artifact removes the entrant from the 1% anchor. But the load-bearing propagation hop — 'procurement specs are already demanding CRA-readiness attestations today' — is asserted by compliance vendors only and the risk's own Vertiv spec stance is 'silent' (cites UL/FCC/IEEE, no CRA), so a hostile 'why?' at that arrow gets an admitted gap."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The trigger (dates, in-scope status) has ≥2 independent sources, but two sub-premises are contradicted by the risk's own stances: Implementing Regulation 2025/2392 puts ~90% of products in self-assessment and Annex III lists routers/switches but not PDUs, undermining the notified-body-queue escalation. The front-running premise driving the perturbations has no direct RFQ evidence; the honest downward revision to 0.5 earns credit but the key propagation premise remains speculative."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations change near-term spend and sequencing: commission a CRA classification gap assessment before design freeze, build SBOM/CVD artifacts into the launch release, and redirect Year-1 pipeline toward buyers not yet writing CRA clauses. Both indicators (TED tender clauses, JTC 13 / implementing-act docket) are concretely monitorable with stated thresholds, and the falsifier is checkable within one sales cycle."
+    }
+  }
+}

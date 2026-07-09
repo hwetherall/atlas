@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "c41be0c4697c2be7aa998c601c2f9482a3a9ad23c47b235306f889aecf524d54",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"Intelligent-PDU market is more locked up than headline shows\",\n \"narrative\": \"The model keeps 55% of demand reachable, based only on meeting regulations like EN 50600 and CE/TÜV. But the venture actually sells intelligent PDUs, where Legrand owns two of the leading brands and buyers lock their specs to specific vendors. That means true reachable demand falls toward 40%, cutting the Year-1 serviceable market.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"Legrand owns Raritan and Server Technology; Vertiv holds Geist\",\n   \"refs\": [\n    \"digest:cr3-vendors#c4\",\n    \"digest:cr3-vendors#c0\",\n    \"ledger:shape.cr3\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Buyers write specs around their DCIM system, blocking outsiders\",\n   \"refs\": [\n    \"digest:cust-mix#c13\",\n    \"digest:cr3-vendors#c12\",\n    \"digest:cr3-vendors#c10\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"Reachable share drops from 0.55 toward 0.40\",\n   \"refs\": [\n    \"ledger:serviceableFactor\",\n    \"profile:Product\"\n   ]\n  }\n ],\n \"falsifier\": \"An Omdia table showing intelligent-PDU top-3 share below 50%, or three or more operator specs requiring only open protocols like SNMP or Redfish with no vendor-certified list.\",\n \"category\": \"model-structure\",\n \"evidence\": [\n  {\n   \"title\": \"Schneider Electric and Vertiv are Leading Players in the Data Centre PDU Market\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"MarketsandMarkets\",\n   \"date\": null,\n   \"excerpt\": \"Schneider Electric (France), Vertiv (US), Eaton (Ireland), Legrand (France), and ABB (Switzerland) are among the major players in the data center PDU market. Market participants are expanding their intelligent PDU portfolios\",\n   \"url\": \"https://www.marketsandmarkets.com/ResearchInsight/data-center-pdu-companies.asp\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Redfish for Power Distribution Equipment (DSP2056 v1.1.0)\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"DMTF\",\n   \"date\": \"2025-02-05\",\n   \"excerpt\": \"Redfish for Power Distribution Equipment — a published, vendor-neutral management standard for PDUs, indicating open-protocol interoperability rather than closed vendor spec-lock.\",\n   \"url\": \"https://www.dmtf.org/sites/default/files/standards/documents/DSP2056_1.1.0.pdf\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"A YANG Model for SmartPDU Monitoring and Control\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"IETF (Huawei/Telefonica)\",\n   \"date\": \"2025-10-20\",\n   \"excerpt\": \"Current SmartPDU solutions are largely proprietary... The proposed YANG model provides a vendor-neutral framework for configuration, monitoring, and control of intelligent power distribution systems.\",\n   \"url\": \"https://www.potaroo.net/ietf/ids/draft-ahc-green-smartpdu-yang-00.txt\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"serviceableFactor\",\n  \"label\": \"Serviceable share of TAM\",\n  \"kind\": \"assumption\",\n  \"value\": 0.55,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"needs-source\",\n  \"dimension\": null,\n  \"dimensionValue\": null,\n  \"sensitivityRange\": {\n   \"low\": 0.45,\n   \"high\": 0.65\n  },\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Reachability assumption\",\n   \"expression\": \"No public SAM/TAM benchmark for B2B hardware exists; EU cert stack (EN 50600, ecodesign 2019/424, CE/TÜV) justifies < 1.0 but doesn't quantify 0.55\"\n  },\n  \"provenance\": {\n   \"rationale\": \"Assumption leaf — channel + regulatory reach; EU certification barriers documented qualitatively only.\",\n   \"promotionPath\": \"Bottom-up channel-coverage model (named accounts × reachable share) → sourced serviceable %.\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"EU ecodesign requirements for servers and data storage (2019/424)\",\n    \"sourceType\": \"industry-report\",\n    \"publisher\": \"EUR-Lex\",\n    \"date\": \"2019\",\n    \"excerpt\": \"EU ecodesign and certification requirements gate which demand is regulatory-clear for a new entrant — the qualitative basis of the serviceable haircut.\",\n    \"attached\": true\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"error\",\"settleTest\":\"An Omdia or IHS Markit intelligent-PDU market-share table showing current top-3 (Legrand/Raritan+ServerTech, Vertiv/Geist, Schneider) concentration, plus a sample of current EU operator PDU RFQs showing whether specs require vendor-certified lists or accept open protocols (SNMP/Redfish/DSP2056) — both are existing/purchasable artifacts settling today's reachable share.\",\"proposedCorrection\":{\"nodeId\":\"serviceableFactor\",\"value\":0.45,\"low\":0.4,\"high\":0.55,\"rationale\":\"Intelligent-PDU segment is concentrated among a few vendor/DCIM ecosystems that skew procurement to certified lists, so regulatory-clearance-only reachability of 0.55 overstates true addressable share; but published open standards (Redfish DSP2056, IETF YANG) cap the lock-in, warranting ~0.45 rather than 0.40.\"},\"researchQueries\":[{\"query\":\"Omdia / IHS Markit intelligent rack PDU market share by vendor 2024 — Legrand (Raritan, Server Technology), Vertiv (Geist), Schneider top-3 concentration\",\"kind\":\"confirming\"},{\"query\":\"EU data center operator PDU RFQ / tender specifications 2024-2025 requiring only open protocols SNMP or Redfish with no vendor-certified PDU list\",\"kind\":\"falsifying\"}]}",
+  "usage": {
+    "prompt_tokens": 2945,
+    "completion_tokens": 500,
+    "total_tokens": 3445,
+    "cost": 0.027225,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.027225,
+      "upstream_inference_prompt_cost": 0.014725,
+      "upstream_inference_completions_cost": 0.0125
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T21:54:32.549Z"
+}

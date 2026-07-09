@@ -1,0 +1,25 @@
+{
+  "inputsHash": "c708a9fa1148ff349db28768e5f9a98c00201c13808cb631c141e4aa56a8abb4",
+  "generatedAt": "2026-07-08T21:54:33.052Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "An Omdia or IHS Markit intelligent-PDU market-share table showing current top-3 (Legrand/Raritan+ServerTech, Vertiv/Geist, Schneider) concentration, plus a sample of current EU operator PDU RFQs showing whether specs require vendor-certified lists or accept open protocols (SNMP/Redfish/DSP2056) — both are existing/purchasable artifacts settling today's reachable share.",
+    "proposedCorrection": {
+      "nodeId": "serviceableFactor",
+      "value": 0.45,
+      "low": 0.4,
+      "high": 0.55,
+      "rationale": "Intelligent-PDU segment is concentrated among a few vendor/DCIM ecosystems that skew procurement to certified lists, so regulatory-clearance-only reachability of 0.55 overstates true addressable share; but published open standards (Redfish DSP2056, IETF YANG) cap the lock-in, warranting ~0.45 rather than 0.40."
+    },
+    "researchQueries": [
+      {
+        "query": "Omdia / IHS Markit intelligent rack PDU market share by vendor 2024 — Legrand (Raritan, Server Technology), Vertiv (Geist), Schneider top-3 concentration",
+        "kind": "confirming"
+      },
+      {
+        "query": "EU data center operator PDU RFQ / tender specifications 2024-2025 requiring only open protocols SNMP or Redfish with no vendor-certified PDU list",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

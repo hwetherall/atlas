@@ -1,0 +1,39 @@
+{
+  "inputsHash": "a99ca9239b633cdf5d55b9ee9be33ea73e25f6709e6312e85c2d11f9588bfa19",
+  "generatedAt": "2026-07-08T21:51:42.067Z",
+  "data": {
+    "title": "Market ceiling may be too low; plan sized for wrong market",
+    "narrative": "The model caps the market base at €360M, cut down from €495M using a 10–12% growth rate. But that growth rate comes from a €8.5–9.5B report covering a far broader category than rack PDUs, so the fix imported the same error it claimed to remove. Germany alone is forecast at $509.6M by 2031, already above the whole base. If the true base sits at €400M or more, the Year-1 plan is sized for the wrong market.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "The growth rate used to cut the ceiling came from a broad multi-category report, not rack PDUs.",
+        "refs": [
+          "digest:tam-base#c4",
+          "ledger:tamBase"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Germany alone reaches $509.6M by 2031 and global anchors span $1.7B to $3.94B.",
+        "refs": [
+          "digest:tam-base#c9",
+          "digest:tam-global-crosscheck#c4",
+          "digest:tam-global-crosscheck#c9"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "A low base sizes the Year-1 plan too small for certification and channel needs.",
+        "refs": [
+          "ledger:tamBase",
+          "ledger:serviceableFactor",
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "Cutting an inflated ceiling reads as rigor, so nobody audits the number that justified the cut.",
+    "falsifier": "A dedicated rack-PDU report showing the EU base at or below €360M for 2025/2026.",
+    "likelihoodRationale": "Several broader datapoints point above the band, but each carries the same category-breadth uncertainty. The true rack-PDU base remains untested behind paywalled reports, so the ceiling is unproven rather than proven wrong."
+  }
+}

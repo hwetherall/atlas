@@ -1,0 +1,26 @@
+{
+  "inputsHash": "66afb752a9e54894f4ba07a40944ae60e9fba53e9024aee5947f8940b5427e5a",
+  "generatedAt": "2026-07-08T05:30:23.826Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names concrete regimes and actors (stiftung EAR 2–4 months, LUCID/VerpackG, EORI, Swiss SENS), quantifies impact (serviceableFactor 0.55→0.42, geo.CH at 0.08 of funnel excluded), and ties it to the 12-month YAM window with a DE+NL=0.78 sequencing plan. Nodes, numbers, actors, and instruments are all present."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The digest's own tension flag (c12) already pushes serviceableFactor toward 0.45, so the band-edge portion is partly in-model; the genuinely additive insight is the serialization-against-clock mechanism and the CH exclude, which per whyMissable only surfaces when a compliance Gantt is built against the sales plan. Novel dynamic, but built on a tension the ledger already surfaces."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (per-country registration gates → stepwise lawful reach inside the YAM window → sub-band Year-1 reach and CH foreclosure) is referenced at each hop and plausible. The load-bearing serialization claim is not fully defended — the risk's own contractual mitigation (authorized-rep parallelization) and its falsifier concede the stacks may run in parallel."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Multiple independent sources corroborate mandatory pre-sale registration, 8–10 week EAR lead times, the foreign Bevollmächtigter requirement, and Switzerland's separate SENS regime, with an honest 'silent' stance on EORI and a transparent 0.5→0.55 revision. However, the key serialization premise itself is inferred from individual requirements rather than directly evidenced, and one cited source carries a dubious 2026 date."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations dictate immediate action — file DE/NL registrations now (0.78 of funnel), defer CH/PL to Year 2, contract an importer-of-record — all inside the next two quarters. Indicators (EAR processing >3 months, incumbent Swiss SKU structures) are concrete and monitorable as stated."
+    }
+  }
+}

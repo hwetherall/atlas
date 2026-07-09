@@ -1,0 +1,25 @@
+{
+  "inputsHash": "23c645d43685f99d7deed80d35c5508dcdea673bd8addae53fca83006902c23b",
+  "generatedAt": "2026-07-08T21:53:48.742Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "The Grand View (or IndexBox EU) rack-PDU report's segment split table showing intelligent vs. basic/non-intelligent revenue share for 2025 — a purchasable existing dataset that directly settles what fraction of the €300M is addressable.",
+    "proposedCorrection": {
+      "nodeId": "tamBase",
+      "value": 150,
+      "low": 120,
+      "high": 210,
+      "rationale": "If the venture sells only intelligent PDUs and non-intelligent held the largest 2025 share, the addressable base is roughly half the all-segment €300M figure, so the funnel base should reflect the intelligent-only segment."
+    },
+    "researchQueries": [
+      {
+        "query": "Grand View Research 2025 Data Center Rack PDU market report — revenue split between intelligent (monitored/switched/metered) and non-intelligent (basic) PDUs, Europe segment",
+        "kind": "confirming"
+      },
+      {
+        "query": "IndexBox EU Rack PDUs country tables or Frost & Sullivan Europe rack-PDU segmentation showing intelligent PDU share of rack-PDU revenue at or above 75%",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

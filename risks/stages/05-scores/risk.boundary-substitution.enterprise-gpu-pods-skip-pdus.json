@@ -1,0 +1,26 @@
+{
+  "inputsHash": "cf744531bb36a3668fc0875de09aff87ef7a9f6f51fe0ae85bf9a6f54459a186",
+  "generatedAt": "2026-07-08T05:30:23.823Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (seg.enterprise 0.29), sourced trajectory (2pp/yr decline toward 19% by 2031), form factors (OEM GPU pods, power shelves vs discrete PDUs), a quantified perturbation (0.29→0.21), and named actors/venues for monitoring (Dell/HPE/Lenovo earnings, also/Ingram sell-through)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable is genuine: enterprise looks like the 'boring' PDU-sticky base, and the ledger books the full 0.29 as addressable with no legacy-vs-pod decomposition, so the composition trap is not visible from the model itself. Falls short of 4 because 'AI capacity ships pre-integrated' is a reasonably known industry pattern a diligent founder might surface."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at every hop (digest:seg-mix#c20/c22/c5, ledger:seg.enterprise), and each link is independently articulated. The propagation step ('bypassing the discrete rack-PDU purchase entirely') is the weak arrow — the risk's own NVIDIA evidence shows PDU-based AI racks coexisting, so it would take damage under hostile questioning."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The load-bearing bypass premise is directly contradicted by the attached NVIDIA reference architecture (three 2U PDUs per rack) and three analyst sources attributing PDU demand growth to AI density. Saved from lower by honest handling: evidenceStatus 'contested', likelihood revised 0.35→0.24 with the contradiction quoted in the rationale, and the surviving premise (single-source share with no decomposition) remains valid."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The perturbation (0.29→0.21) directly shrinks Year-1 addressable market, and the strategic mitigation (target retrofit/refresh rather than new-build AI capacity) changes near-term pipeline focus and product form-factor spend. Both indicators have named venues and concrete thresholds (e.g., rack-scale systems >~50% of enterprise AI revenue mix), making it monitorable this year."
+    }
+  }
+}

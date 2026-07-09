@@ -1,0 +1,40 @@
+{
+  "inputsHash": "6705a568247adcd21b053a88ed0076aa0015d7d17c7c85e4ecd268e8a74ba099",
+  "generatedAt": "2026-07-08T21:48:42.558Z",
+  "data": {
+    "title": "Germany hyperscale-owned share is far below the 44% we assumed",
+    "narrative": "The model spreads Synergy's global 48% hyperscale share flat onto Central Europe. But about 60% of Europe's hyperscaler self-build sits in Ireland, the Netherlands, Sweden and Belgium, three of which are outside CE-7. So the implied German hyperscale cell, roughly 22% of the market, mostly does not exist as hyperscale-owned sites, and the Year-1 beachhead is much smaller.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Synergy's 48% hyperscale share is global, not regional.",
+        "refs": [
+          "digest:seg-mix#c0",
+          "digest:seg-mix#c14",
+          "ledger:seg.hyperscale"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "In CE-7 hyperscale demand is leased, counted twice with colo.",
+        "refs": [
+          "digest:seg-mix#c13",
+          "digest:geo-region-denominator#c7",
+          "digest:geo-region-denominator#c9"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Real buyer is the colo operator, needing colo-grade product.",
+        "refs": [
+          "ledger:seg.hyperscale",
+          "ledger:seg.colocation",
+          "profile:Who is the primary buyer you'll sell through first?"
+        ]
+      }
+    ],
+    "whyMissable": "The node looks solid because it was triangulated across Synergy vintages into a tight band, but the error is geographic, not numeric, and no band on a global figure catches a regional composition mistake.",
+    "falsifier": "A Europe- or CE-scoped split from Synergy, CBRE or JLL showing hyperscale-owned capacity at 40% or more of CE-7 total.",
+    "likelihoodRationale": "The 60%-outside-CE self-build concentration is directly sourced and Frankfurt is a documented colo hub, not a self-build one. Residual doubt is only how much leased hyperscale capacity to attribute to the hyperscale buyer for PDU specs; revised up from 0.4 to 0.5."
+  }
+}

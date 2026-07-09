@@ -1,0 +1,26 @@
+{
+  "inputsHash": "583b00bd437bbc7ff2972c61f3c81acd318f69a3478d43dda3cd7702be0803b1",
+  "generatedAt": "2026-07-08T21:31:25.952Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names four ledger nodes with exact before/after shares (DE 0.50→0.42, CH 0.08→0.13, PL 0.07→0.10), cites BMWK's >2,700MW and PL's 660MW figures, and ties the impact to a concrete Year-1 named-account plan in Frankfurt/Amsterdam. Perturbations and indicators carry explicit thresholds (>5pp divergence, >25% off-map pipeline)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable field concedes each geo node already discloses its colo-vs-installed crossCheck, so raw ingredients were on the ledger; the genuine addition is reframing per-country band width as a correlated same-direction reallocation that bands on independent nodes cannot express. A careful founder might have assembled it, but the correlated-structure framing is a real step beyond reading the bands."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three mechanism steps each carry refs and are independently plausible (EUDCA scope gap → country-specific divergence → colo-centric channel misses CH/PL demand). The weak arrow — whether non-colo halls consume PDU spend per MW at colo-like intensity — is honestly flagged in the likelihood rationale but not closed, so a hostile 'why?' at that link only gets an admission of uncertainty."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The denominator-gap premise has multiple independent primary sources (BMWK 2,700MW, EUDCA two-thirds, germandatacenters, Arizton CH), all attached with supporting stances. But the load-bearing premise for decision impact — comparable PDU spend per MW outside colo — has no direct evidence, which the risk itself concedes ('genuinely unresolved')."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes Year-1 territory lockdown and account assignments (mitigation 1) and proposes a near-term CH/PL enterprise sales motion (mitigation 2) — both next-two-quarter sequencing decisions. Indicators are monitorable via named sources (EUDCA country profiles, own CRM) with concrete thresholds."
+    }
+  }
+}

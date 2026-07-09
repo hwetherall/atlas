@@ -1,0 +1,133 @@
+{
+  "inputsHash": "d8fd445c9012bbd28beb6f10e134eeb36801f7d279986ce8eb9a7f2a279e397a",
+  "generatedAt": "2026-07-08T18:50:03.431Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c0",
+        "claim": "Jülich AI inference tender bundles PDUs into a single rack-infrastructure line item alongside CDUs, IT hardware, and software rather than as a discrete operator-selected purchase",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Jarvis Eine Zentrale Plattform Für Ki Inferenz... Germany Tender",
+        "url": "https://www.globaltenders.com/tender-detail/jarvis-eine-zentrale-plattform-f%C3%BCr-ki-infer-b3IRfCnbzDpiNXn3",
+        "excerpt": "Rack infrastructure, including power distribution units (Pdu) and cooling distribution units (Cdu) optimized for the offered it equipment.",
+        "tags": [
+          "structure",
+          "substitution"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c1",
+        "claim": "Estimated value of the Jülich JARVIS AI-inference procurement bundling PDU/CDU with IT hardware",
+        "number": 23100000,
+        "unit": "EUR",
+        "sourceTitle": "Germania Jülich JARVIS eine zentrale Plattform für KI Inferenz",
+        "url": "https://www.licitatia.ro/germania---jlich-jarvis-eine-zentrale-plattform-fr-ki-inferenzacquisition-of-ai-inference-it-equipment-including-hardware-and-mandatory-software-rack-infrastructure-including-power-distribution-units--11093637-restricted.html",
+        "excerpt": "Valoare estimata : 23,100,000 EUR | Tip anunt: UE | ID: 11093637 | Data publicarii : 01.07.2026",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c2",
+        "claim": "Schneider Electric and Foxconn are merging rack integration capability with power/cooling systems into jointly produced hardware for AI data centres",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Schneider Electric and Foxconn to Partner on AI Data Centres | Data Centre Magazine",
+        "url": "https://datacentremagazine.com/news/schneider-electric-and-foxconn-to-partner-on-ai-data-centres",
+        "excerpt": "The collaboration merges Foxconn's global manufacturing capacity and advanced AI rack integration capabilities with Schneider Electric's power, cooling and energy management systems.",
+        "tags": [
+          "structure",
+          "substitution",
+          "competition"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c3",
+        "claim": "Schneider-Foxconn partnership aims to co-develop reference architectures and modular power/cooling skids, with production beginning later in 2026",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Schneider Electric & Foxconn team up on AI data centres",
+        "url": "https://datacenter.news/story/schneider-electric-foxconn-team-up-on-ai-data-centres",
+        "excerpt": "The arrangement centres on co-developing reference architectures for AI data centres, pointing to a more standardised approach as operators face rising demand for computing capacity.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c4",
+        "claim": "Neocloud operator Iren signed a $1.6bn contract with Dell for air-cooled Blackwell systems, an integrator/OEM deal rather than an operator-direct component tender",
+        "number": 1.6,
+        "unit": "billion USD",
+        "sourceTitle": "Iren taps Dell Technologies for Nvidia Blackwell servers under $1.6bn contract - DCD",
+        "url": "https://www.datacenterdynamics.com/en/news/iren-taps-dell-technologies-for-nvidia-blackwell-servers-under-16bn-contract/",
+        "excerpt": "AI cloud firm Iren has signed a $1.6bn contract with Dell to acquire air-cooled Blackwell systems.",
+        "tags": [
+          "execution",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c5",
+        "claim": "Wiwynn (an ODM) identifies liquid cooling and power delivery, not GPU supply, as the current AI infrastructure bottleneck, with pressures possibly extending to 2028",
+        "number": 2028,
+        "unit": "year",
+        "sourceTitle": "Wiwynn AI & Data Center Energy 2026, $4.75B Ecolab Deal - EnkiAI",
+        "url": "https://enkiai.com/data-center/wiwynn-ai-power-cooling/",
+        "excerpt": "Server original design manufacturer (ODM) Wiwynn has identified emerging bottlenecks in liquid cooling and power delivery systems, warning that these supply pressures could extend to 2028",
+        "tags": [
+          "substitution",
+          "demand"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c6",
+        "claim": "AI server rack power density now regularly exceeds 100kW, described as a more than 10x increase",
+        "number": 100,
+        "unit": "kW",
+        "sourceTitle": "Wiwynn AI & Data Center Energy 2026, $4.75B Ecolab Deal - EnkiAI",
+        "url": "https://enkiai.com/data-center/wiwynn-ai-power-cooling/",
+        "excerpt": "The power density of AI server racks now regularly exceeds 100 k W, a more than 10 x inc",
+        "tags": [
+          "demand",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c7",
+        "claim": "One supplier's report attributes 30% of its 2025 orders to data centers, cited as qualitative channel context rather than a buyer-side direct-purchase share",
+        "number": 30,
+        "unit": "percent",
+        "sourceTitle": "Data center growth driving power equipment sales",
+        "url": null,
+        "excerpt": "One leading supplier reported data centers as its biggest growth driver, accounting for 30% of orders in 2025 — qualitative channel context only.",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "The node's derivation asserts 'large operators buy direct' to justify a 0.40 direct-purchase share, but the tender and partnership evidence actually found (Jülich JARVIS tender bundling PDU/CDU into one IT-equipment line item; Schneider-Foxconn co-developing integrated rack/power/cooling hardware; Iren's $1.6bn all-in Dell contract) shows PDU spend being procured as embedded integrator/OEM packages, not as operator-selected discrete lines.",
+        "nodes": [
+          "cust.operator-large"
+        ]
+      },
+      {
+        "text": "The evidence attached to the node (Alexander Group: 30% of one supplier's 2025 orders were data centers) measures a supplier's order composition, not the buyer-side channel split (direct vs. integrator-embedded) that the 0.40 estimate purports to represent — a mismatch between cited evidence and claimed metric.",
+        "nodes": [
+          "cust.operator-large"
+        ]
+      }
+    ],
+    "absences": [
+      "No procurement records or channel-mix data from any specific large operator (hyperscaler, colo, neocloud) quantifying the share of 2026-27 PDU spend that is a discrete, operator-selected direct-purchase line versus embedded in integrator/incumbent rack deals.",
+      "No breakdown, percentage, or dollar figure isolating PDU value within any of the found bundled contracts (Jülich tender, Foxconn-Schneider partnership, Iren-Dell deal) — PDUs appear only as line-item mentions inside larger IT/rack packages, never separately priced or channel-attributed.",
+      "No interview, survey, or filing-based data on how many large operators tender PDUs independently of their server/rack/integrator contracts for AI-density halls specifically.",
+      "The search surfaced only forward-looking partnership announcements and single-instance tender documents, not a cross-operator comparison (2-3 operators) that the intent specifically requested."
+    ]
+  }
+}

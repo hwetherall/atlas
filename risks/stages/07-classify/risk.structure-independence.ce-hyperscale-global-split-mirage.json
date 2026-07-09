@@ -1,0 +1,25 @@
+{
+  "inputsHash": "30685a71bdcf0e6da922b9e37c1b480849027034fce0df8cc994b277c376a0e8",
+  "generatedAt": "2026-07-08T21:53:03.609Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A Europe- or CE-7-scoped hyperscale ownership/capacity split from Synergy, CBRE or JLL showing what share of CE-7 (or Germany) data center capacity is hyperscale-owned self-build vs leased colocation — a purchasable regional report that exists today and settles the number.",
+    "proposedCorrection": {
+      "nodeId": "seg.hyperscale",
+      "value": 0.22,
+      "low": 0.15,
+      "high": 0.3,
+      "rationale": "CBRE data shows 60% of Europe's hyperscale self-build sits in Ireland, Netherlands, Sweden, Belgium (mostly outside CE-7) and Synergy notes ~half of hyperscale capacity is leased not owned, so the German/CE-7 hyperscale-owned cell is far below the flat-applied global 44%."
+    },
+    "researchQueries": [
+      {
+        "query": "CBRE or JLL Germany/Frankfurt data center report giving hyperscale self-build owned capacity as a share of total CE-7 or German market",
+        "kind": "confirming"
+      },
+      {
+        "query": "Synergy Research Europe-scoped or CE-7 hyperscale capacity split showing hyperscale-owned share at 40% or more of regional total",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

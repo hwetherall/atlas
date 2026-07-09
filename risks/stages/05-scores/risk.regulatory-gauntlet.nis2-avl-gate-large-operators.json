@@ -1,0 +1,26 @@
+{
+  "inputsHash": "2871669019966e4ad156a9485822c408a239b4f7afd152070a391eef0d92fba6",
+  "generatedAt": "2026-07-08T05:30:23.824Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact ledger node (cust.operator-large at 0.40), the legal instrument (NIS2 Art. 21(2)(d), German transposition in force Dec 2025), the specific certifications (ISO 27001, IEC 62443-4-1/-4-2), a quantified perturbation (0.40→0.28), and named operators for monitoring (Equinix/NTT/Vantage/Data4)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable argument is genuine: NIS2 regulates operators not vendors, so a vendor-side regulatory scan misses it and it 'arrives disguised as a procurement questionnaire.' Docked one point because supply-chain security clauses cascading into supplier questionnaires is a known pattern a security-aware founder selling networked devices might anticipate, consistent with the risk's own 'medium' expectedObviousness."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (legal duty → procurement operationalization → AVL failure → channel shrink) with refs at each hop and the honest admission that the uncertain link is 'share of spend behind hard gates versus soft questionnaires.' That exact link is the one a hostile partner attacks, and the risk's own STACK evidence shows it doesn't always hold, so it's not fully load-bearing at every arrow."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The regulatory trigger is well-corroborated (Mayer Brown on German transposition, multiple Art. 21 sources), but the load-bearing premise — a binary certification gate the entrant 'cannot pass' — is supported mainly by vendor-marketing sources (nis2-templates.com) while the only primary operator artifact (STACK) contradicts it by showing self-declaration onboarding. Credit for flagging evidenceStatus 'contested' and revising likelihood downward accordingly."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes next-two-quarter actions: start scope-limited ISO 27001 now given 9–12 month lead time, re-sequence Year 1 to OEM/integrator channel, and run the three procurement interviews tied to the node's promotion path. Indicators (operator supplier portals, BSI/NCSC-NL guidance) are concrete and monitorable with stated thresholds."
+    }
+  }
+}

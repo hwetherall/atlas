@@ -1,0 +1,165 @@
+{
+  "inputsHash": "b564f818a810159f0507f062eb4575705154fc1a5fb851e6e0a32616f72d0158",
+  "generatedAt": "2026-07-08T18:56:12.304Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-definition-scopedown.intelligent-subset-inflation#c0",
+        "claim": "IndexBox published a dedicated 'Intelligent Rack PDUs' market report for the European Union (2026 baseline, forecast to 2035), but it is paywalled behind a $4,000 single-user license.",
+        "number": 4000,
+        "unit": "USD",
+        "sourceTitle": "Intelligent Rack PDUs Market in the European Union | Report - IndexBox",
+        "url": "https://www.indexbox.io/store/european-union-intelligent-rack-pdus-market-analysis-forecast-size-trends-and-insights/",
+        "excerpt": "This report provides a comprehensive 2026 baseline analysis and projects the market's trajectory through to 2035, examining the complex interplay of hyperscale data center expansion, edge computing proliferation, and r",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-definition-scopedown.intelligent-subset-inflation#c1",
+        "claim": "IndexBox's broader 'Rack PDUs' EU report frames the market as transitioning from basic power distribution to intelligent, monitored, connected solutions — implying the intelligent subset is a growing share but no % disclosed.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Rack PDUs Market in the European Union | Report - IndexBox",
+        "url": "https://www.indexbox.io/store/european-union-rack-pdus-market-analysis-forecast-size-trends-and-insights/",
+        "excerpt": "the market is characterized by a transition from basic power distribution to intelligent, monitored, and connected solutions that provide data center and IT facility managers with granular control and operational insight",
+        "tags": [
+          "definition",
+          "substitution"
+        ]
+      },
+      {
+        "id": "refine-definition-scopedown.intelligent-subset-inflation#c2",
+        "claim": "IndexBox maintains a separate country-level Germany Rack PDUs report distinct from its Germany Intelligent Rack PDUs report, implying the two are sold/segmented separately but neither snippet discloses the intelligent share.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Rack PDUs Market in Germany | Report - IndexBox",
+        "url": "https://www.indexbox.io/store/germany-rack-pdus-market-analysis-forecast-size-trends-and-insights/",
+        "excerpt": "Characterized by high technological adoption and stringent efficiency standards, the market is navigating a complex landscape defined by the relentless expansion of data center",
+        "tags": [
+          "structure",
+          "regulation"
+        ]
+      },
+      {
+        "id": "refine-definition-scopedown.intelligent-subset-inflation#c3",
+        "claim": "Germany Intelligent Rack PDUs IndexBox report exists as a distinct product but its executive summary snippet gives no numeric intelligent-share or market-size figure.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Intelligent Rack PDUs Market in Germany | Report - IndexBox",
+        "url": "https://www.indexbox.io/store/germany-intelligent-rack-pdus-market-analysis-forecast-size-trends-and-insights/",
+        "excerpt": "The German market for Intelligent Rack Power Distribution Units (PDUs) stands as a critical and sophisticated segment within the broader data center infrastructure landscape. Char",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-definition-scopedown.intelligent-subset-inflation#c4",
+        "claim": "IndexBox also sells an Eastern Europe Intelligent Rack PDUs report, indicating IndexBox segments 'Eastern Europe' separately from Germany/EU, but no CE-7-aligned geography or figure is given.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Intelligent Rack PDUs Market in Eastern Europe | Report - IndexBox",
+        "url": "https://www.indexbox.io/store/eastern-europe-intelligent-rack-pdus-market-analysis-forecast-size-trends-and-insights/",
+        "excerpt": "The Eastern European market for Intelligent Rack Power Distribution Units (PDUs) is undergoing a significant transformation, driven by the region's accelerating digitalization and the strategic expansion of data infrastructure",
+        "tags": [
+          "structure",
+          "demand"
+        ]
+      },
+      {
+        "id": "refine-definition-scopedown.intelligent-subset-inflation#c5",
+        "claim": "IndexBox's EU 'Data Center Power Distribution Units' report (broader than rack PDUs specifically) cites demand drivers, regulatory pressure, and technological evolution but discloses no size figure in the snippet.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Data Center Power Distribution Units Market in European Union | Report - IndexBox",
+        "url": "https://www.indexbox.io/store/european-union-data-center-power-distribution-units-market-analysis-forecast-size-trends-and-insights/",
+        "excerpt": "the market is characterized by a complex interplay of robust demand drivers, stringent regulatory pressures, and rapid technological evolution. The transition towards high-density computing, driven by art",
+        "tags": [
+          "demand",
+          "regulation"
+        ]
+      },
+      {
+        "id": "refine-definition-scopedown.intelligent-subset-inflation#c6",
+        "claim": "Omdia's Rack PDU Market Tracker 2025 uses 2024 as its base year and forecasts to 2030, but access to vendor shares/regional splits requires an active subscription.",
+        "number": 2024,
+        "unit": "base_year",
+        "sourceTitle": "Rack PDU Market Tracker – 2025 - Omdia",
+        "url": "https://omdia.tech.informa.com/om129351/rack-pdu-market-tracker--2025",
+        "excerpt": "This is the annual update to the Rack PDU Tracker, including updated forecasts and vendor shares. It uses 2024 as a base year and forecasts to 2030.",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-definition-scopedown.intelligent-subset-inflation#c7",
+        "claim": "Omdia's Rack PDU Annual Market Analysis 2025 spans historical data back to 2017 with forecasts to 2030, but detailed figures are subscription-gated.",
+        "number": 2017,
+        "unit": "start_year",
+        "sourceTitle": "Rack PDU Annual Market Analysis – 2025 Omdia",
+        "url": "https://omdia.tech.informa.com/om136696/rack-pdu-annual-market-analysis--2025",
+        "excerpt": "Analyzes the Rack PDU Annual Tracker – 2025 update and includes forecast and vendor shares. Uses 2024 as a base year, with historical data back to 2017 and forecasts to 2030.",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-definition-scopedown.intelligent-subset-inflation#c8",
+        "claim": "Omdia's own market taxonomy splits the global rack-PDU market into 'Basic rack PDUs' and 'Networked rack PDUs' — not 'intelligent' vs standard — a different segmentation label than IndexBox's 'Intelligent Rack PDUs' framing.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Intelligence Service (Omdia Data Center Rack Systems brochure)",
+        "url": "https://omdia.tech.informa.com/-/media/tech/omdia/brochures/cloud-data-ctr/data_center-rack-systems-intelligence-service.pdf",
+        "excerpt": "Basic rack PDUs Networked rack PDUs\n\nThe global market for rack PDUs by product segments",
+        "tags": [
+          "definition",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-definition-scopedown.intelligent-subset-inflation#c9",
+        "claim": "BIS Research confirms the precise Europe PDUs+PSUs combined figure: $2,455.7 million in 2024 growing to $20,056.7 million by 2035 at a 21.23% CAGR — the broader category the curated node explicitly excluded as a contaminated ceiling.",
+        "number": 21.23,
+        "unit": "%_CAGR",
+        "sourceTitle": "Europe Data Center Power Distribution Units and Power Supply Units Market: Focus on Application, Product, and Country - Analysis and Forecast, 2025-2035",
+        "url": "https://www.giiresearch.com/report/bis1769473-europe-data-center-power-distribution-units-power.html",
+        "excerpt": "The Europe data center PDUs and PSUs market is projected to reach $20,056.7 million by 2035 from $2,455.7 million in 2024, growing at a CAGR of 21.23% during the forecast period 2025-2035.",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "The curated node (tamBase) already flags the BIS/giiresearch $2,455.7M (2024) PDUs+PSUs figure at 21.23% CAGR as a 'contaminated ceiling' distinct from the intelligent-PDU segment's cited 10–12% CAGR (IndexBox), yet no source in this batch independently confirms that 10–12% intelligent-PDU CAGR — it remains an unverified input driving the node's band-narrowing logic.",
+        "nodes": [
+          "tamBase"
+        ]
+      },
+      {
+        "text": "Omdia's public taxonomy (Basic vs Networked rack PDUs) does not match the IndexBox 'Rack PDUs' vs 'Intelligent Rack PDUs' split referenced in the node's derivation chain, raising a definitional risk that the 'intelligent' share used to scope tamBase may not be measuring the same product boundary across sources.",
+        "nodes": [
+          "tamBase"
+        ]
+      },
+      {
+        "text": "IndexBox sells six separate country/segment reports (EU Rack PDUs, EU Intelligent Rack PDUs, Germany Rack PDUs, Germany Intelligent Rack PDUs, Eastern Europe Intelligent Rack PDUs, EU Data Center PDUs) that could directly settle the CE-7 base and intelligent share per the node's stated promotion path, yet all six remain unpurchased/paywalled — the promotion path is confirmed viable but still unexecuted.",
+        "nodes": [
+          "tamBase"
+        ]
+      }
+    ],
+    "absences": [
+      "No numeric intelligent/switched PDU share of Germany or Central Europe rack-PDU revenue was found in any accessible snippet — all IndexBox country reports are paywalled at the headline-figure level.",
+      "No CE-7-scoped rack-PDU market size (in EUR or USD) was disclosed by any source in this batch; IndexBox's 'Eastern Europe' geography does not map cleanly onto the CE-7 definition used in the node.",
+      "Omdia's Rack PDU Market Tracker 2025 and Annual Market Analysis 2025 — the two reports most likely to carry granular regional vendor-share and product-segment data — require an active subscription; no regional or intelligent-share breakdown was retrievable from public snippets.",
+      "No source in this batch independently corroborates or refutes the IndexBox-sourced '10–12% CAGR' intelligent-PDU growth rate cited in the node's cross-check derivation.",
+      "No confirmation was found of the 39.8% CE-7-of-Europe-colo-MW figure (Statista 2025) used in the node's top-down scope-down chain."
+    ]
+  }
+}

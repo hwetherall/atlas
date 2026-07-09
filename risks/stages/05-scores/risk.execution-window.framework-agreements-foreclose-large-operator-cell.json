@@ -1,0 +1,26 @@
+{
+  "inputsHash": "bb9703280793f501e4463c618aa3281500d2e57c07e2af705722865aa099927a",
+  "generatedAt": "2026-07-08T21:36:33.065Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (cust.operator-large), its 0.40 value, a quantified perturbation to 0.2, named actors (Vertiv/Equinix, Schneider–Digital Realty), a 12–24 month window, and concrete monitoring venues (TED, earnings calls)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "Goes beyond 'the cell might be smaller' by inverting the model's own encoded assumption — 'buys direct' is reframed from access advantage to foreclosure — and whyMissable explains how the surface fact hides it. Falls short of 4 because incumbent account lock-in at hyperscalers is a known industry pattern a well-read founder might surface."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (entrenched frameworks → unsourced channel-split evidence gap → contestable cell halved) is referenced at each hop and honestly flags that the 0.40 measures spend, not contestability. The final quantitative claim ('roughly half') is asserted rather than derived, which a hostile partner would attack."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Multiple independent sources (Schneider/Digital Realty and Compass agreements, Eaton–Microsoft framework, a tender framework explicitly scoping PDUs) corroborate that framework procurement covering PDUs exists, and the risk honestly lists contradicting regional-win cases. Held at 3 because the load-bearing quantitative premise — the share of PDU spend actually foreclosed — remains unmeasured, as the rationale itself admits."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly proposes re-sequencing GTM (mid-market/OEM first, large operators deferred to Year-2 via partnership) and a near-term VOI action tied to the ledger's promotionPath — both actionable within two quarters. Indicators (TED PDU-lot bidder counts, framework announcements) give a concrete monitoring path."
+    }
+  }
+}

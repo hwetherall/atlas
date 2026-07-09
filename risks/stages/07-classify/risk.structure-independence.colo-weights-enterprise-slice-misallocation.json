@@ -1,0 +1,25 @@
+{
+  "inputsHash": "3818842916365ac6c09ad9be8735daafd803271cef18e9959afec9c63d280a41",
+  "generatedAt": "2026-07-08T21:55:26.532Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A country-level total installed IT-load table (colocation + enterprise/self-operated) for the CE-7 set — e.g., BMWK/German Datacenters, CBRE Suisse, and Dutch DCA figures reconciled — showing each country's share of total load versus its colocation-only share. This exists today and would settle whether applying colo weights to the enterprise slice mis-locates enterprise demand.",
+    "proposedCorrection": {
+      "nodeId": "geo.CH",
+      "value": 0.13,
+      "low": 0.1,
+      "high": 0.15,
+      "rationale": "Switzerland's market is self-operation-heavy (CBRE: 340 MW commercial vs Mordor 850.6 MW total incl. self-operated); the enterprise slice should use installed-base weights (~0.13), not colocation-only (0.08), which understate DACH enterprise rooms."
+    },
+    "researchQueries": [
+      {
+        "query": "CE-7 country-level total installed data center IT power including self-operated/enterprise rooms 2025 (BMWK Germany 2,700 MW, CBRE Suisse Switzerland, Dutch DCA Netherlands) — reconcile shares of total vs colocation-only",
+        "kind": "confirming"
+      },
+      {
+        "query": "Netherlands enterprise on-premise / self-operated data center IT power outside Amsterdam metro 2024-2025 — does NL total-load share stay near its 0.28 colocation share",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "inputsHash": "df1ff0bda6af1370c78da4760fc9492940ca2c6405b3e2bbca4b26ee8b15581f",
+  "generatedAt": "2026-07-08T21:28:28.394Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names ledger nodes (cust.operator-large at 0.40, obtainableFactor), specific instruments (ISO 27001, IEC 62443-4-1, TÜV/CB), named contracts (Digital Realty/Schneider $373M, Iren/Dell), a 12–18 month cycle, and quantified perturbations (0.40→0.25, obtainableFactor→0.007). Actors, values, and timelines are all pinned down."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "Goes beyond 'the 0.40 could be low' by supplying a NEW mechanism the ledger lacks: AVL qualification is a buyer-side norm 'on no regulatory checklist' and the whyMissable field notes the channel split is admittedly unsourced, so nothing in the model contradicts the comfortable reading. A seasoned enterprise-sales founder would suspect slow procurement, so not a full 4, but the framework-foreclosure layer (spend never tendered at PDU line-item level) is genuinely hidden."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (qualification gate → framework/bundle lock-up → contestable share and Year-1 pace collapse) with refs at each hop and independently plausible links. One hop is softer: the 12–18 month AVL cycle is asserted as 'standard' rather than sourced, and the rationale itself admits the framework contracts are UPS/switchgear-centric, not PDU line-item, leaving an inference gap at the propagation step."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The framework-procurement premise has ≥2 independent corroborations (PRNewswire and DCD on the Schneider/DR SCA, plus the HD Hyundai $1.1B deal) and the rationale is honest about the unresolved <6-month CE-colo question. But the load-bearing AVL cycle-time claim lacks a direct source, the evidence is PDU-adjacent rather than PDU-specific, and the Qianlima tender's 'contradicts' labeling is confused (its quote actually shows qualification/authorization requirements)."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes near-term sequencing and spend: start ISO 27001/62443 certification now alongside CRA work, consider entering via an already-qualified integrator instead of direct AVL, and run three procurement interviews (which is also the ledger's own promotionPath). Indicators (supplier-portal qualification terms, framework announcements) are concrete and monitorable."
+    }
+  }
+}

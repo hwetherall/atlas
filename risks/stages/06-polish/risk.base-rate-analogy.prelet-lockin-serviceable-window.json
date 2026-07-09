@@ -1,0 +1,38 @@
+{
+  "inputsHash": "bf6b86d51e494700bd6305b9e8234bfffa554f777eed29a3bae4b3a3662f0a42",
+  "generatedAt": "2026-07-08T21:50:26.965Z",
+  "data": {
+    "title": "Serviceable share ignores timing, overstating Year-1 demand",
+    "narrative": "The model sets serviceable reach at 0.55, treating reach as a fixed property. But for data-center electrical gear, demand that invoices in the next 12 months was already specified at design stage, and the entrant's EU compliance stack takes 6-9 months before it can even bid. Demand that is both open and reachable in Year 1 is closer to 0.35, so the Year-1 number is too high.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Rack-power specs for 2026 capacity were locked before launch.",
+        "refs": [
+          "ledger:obtainableFactor",
+          "ledger:shape.cagr"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Entrant cannot bid until EU certifications clear in 6-9 months.",
+        "refs": [
+          "digest:serviceable-benchmark#c13",
+          "digest:serviceable-benchmark#c11",
+          "profile:Stage"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Reach of 0.55 counts demand unreachable in Year 1; effective share near 0.35.",
+        "refs": [
+          "ledger:serviceableFactor",
+          "digest:serviceable-benchmark#c1"
+        ]
+      }
+    ],
+    "whyMissable": "The number looks handled because it already discounts 45% of the market and cites the regulatory stack, but it checks the level, not the timing.",
+    "falsifier": "Three or more EU operator RFQs for rack PDUs in the next two quarters that accept vendors certifying mid-tender and award within 9 months of publication.",
+    "likelihoodRationale": "Data-center hardware sales cycles of 12-18 months and certification of 6-9 months are well-established. The open question is what fraction of demand is spot-contestable, which no source quantifies."
+  }
+}

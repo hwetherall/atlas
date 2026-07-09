@@ -1,0 +1,26 @@
+{
+  "inputsHash": "3035022d74a58b5362d5a78c220b9d047c812c7733589f57f0d81b70268e4d82",
+  "generatedAt": "2026-07-08T21:28:01.224Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the node (geo.NL 0.28), the 951MW colo base, Amsterdam's ~70% share, the 24% vs 19% growth differential, hyperscaler global-framework procurement, and the first-12-months window, with a concrete perturbation to 0.22. Actors, values, and instruments are all pinned."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The core move — that the ledger's best-triangulated node is misleading because two sources agreeing on colo stock says nothing about forward demand composition — is a genuine cross-node insight the whyMissable articulates well. Falls short of 4 because the ingredients (seg-mix digest entries c12–c14 on self-build growth) are already in the model; a diligent founder could plausibly assemble it."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three referenced steps each survive a 'why?': growth accrues outside the measured colo base, self-build procures via global specs unreachable to a regional entrant, so the 0.28 apportionment overstates biddable demand. Docked one point because the load-bearing 24%-vs-19% differential is admitted unconfirmed and the channel-inaccessibility hop leans on a single digest citation."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Amsterdam grid constraints and the colo-stock baseline have ≥2 independent corroborations (DDCA, NL Times/ING, DCD), and the rationale honestly flags the unconfirmed growth differential and the Schleifenbauer/markwideresearch contradiction on channel reachability. That contradiction touches the key premise, so not a clean 4."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes near-term sequencing (DE-first entry, NL reweighted to an Amsterdam retail-colo refresh play) and gates NL channel spend on a bottom-up reachable-demand model. Indicators are concrete and monitorable via DDCA reports and Liander/TenneT connection-queue publications with stated thresholds."
+    }
+  }
+}

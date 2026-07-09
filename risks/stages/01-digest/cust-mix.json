@@ -1,0 +1,233 @@
+{
+  "inputsHash": "845ba029131417064cb87f633fc2930914c4c0097b9143583943ac1032b196ed",
+  "generatedAt": "2026-07-08T18:38:53.474Z",
+  "data": {
+    "claims": [
+      {
+        "id": "cust-mix#c0",
+        "claim": "One leading supplier reported data centers as its biggest growth driver, accounting for 30% of orders in 2025",
+        "number": 30,
+        "unit": "%",
+        "sourceTitle": "The Industrial Sales Model Wasn't Built for Data Centers",
+        "url": "https://www.alexandergroup.com/insights/manufacturing-the-industrial-sales-model-wasnt-built-for-data-centers/",
+        "excerpt": "One leading supplier reported data centers as its biggest growth driver, accounting for 30% of orders in 2025.",
+        "tags": [
+          "demand",
+          "competition"
+        ]
+      },
+      {
+        "id": "cust-mix#c1",
+        "claim": "Total data center equipment and infrastructure spending projected to approach $1 trillion by end of decade",
+        "number": 1000,
+        "unit": "$B",
+        "sourceTitle": "The Industrial Sales Model Wasn't Built for Data Centers",
+        "url": "https://www.alexandergroup.com/insights/manufacturing-the-industrial-sales-model-wasnt-built-for-data-centers/",
+        "excerpt": "Total data center equipment and infrastructure spending is projected to approach $1 trillion by the end of the decade.",
+        "tags": [
+          "base-rate",
+          "demand"
+        ]
+      },
+      {
+        "id": "cust-mix#c2",
+        "claim": "Power equipment segment reaching approximately $23 billion in 2025",
+        "number": 23,
+        "unit": "$B",
+        "sourceTitle": "The Industrial Sales Model Wasn't Built for Data Centers",
+        "url": "https://www.alexandergroup.com/insights/manufacturing-the-industrial-sales-model-wasnt-built-for-data-centers/",
+        "excerpt": "power equipment reaching approximately $23 billion and cooling adding another $26 billion in 2025",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "cust-mix#c3",
+        "claim": "Cooling segment adding approximately $26 billion in 2025",
+        "number": 26,
+        "unit": "$B",
+        "sourceTitle": "The Industrial Sales Model Wasn't Built for Data Centers",
+        "url": "https://www.alexandergroup.com/insights/manufacturing-the-industrial-sales-model-wasnt-built-for-data-centers/",
+        "excerpt": "power equipment reaching approximately $23 billion and cooling adding another $26 billion in 2025",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "cust-mix#c4",
+        "claim": "Data center substation market segmented by Channel Partners into OEMs and TSO/DSO",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Data Center Substation Market Size, Share, Trends, 2034",
+        "url": "https://www.fortunebusinessinsights.com/data-center-substation-market-111347",
+        "excerpt": "By Channel Partners (OEMs and TSO/DSO)",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "cust-mix#c5",
+        "claim": "Data center substation market segmented by facility type into enterprise, colocation, hyperscale",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Data Center Substation Market Size, Share, Trends, 2034",
+        "url": "https://www.fortunebusinessinsights.com/data-center-substation-market-111347",
+        "excerpt": "By Data Center Type (Enterprise Data Centers, Colocation Data Centers, and Hyperscale Data Centers)",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "cust-mix#c6",
+        "claim": "Djibouti transformer market segmented by Channel Partners into OEMs, Distributors, Online Retailers, Electrical Contractors",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Djibouti Data Center Transformer Market (2025-2031) | Trends & Competitive Landscape",
+        "url": "https://www.6wresearch.com/industry-report/djibouti-data-center-transformer-market",
+        "excerpt": "By Channel Partners (OEMs, Distributors, Online Retailers, Electrical Contractors)",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "cust-mix#c7",
+        "claim": "MaxPower operates as a Master Distributor supplying reseller partners with power protection and critical infrastructure",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "MaxPower Corporation",
+        "url": "https://maxpowercorp.com/",
+        "excerpt": "MaxPower is a Master Distributor that offers power protection and critical infrastructure solutions to our reseller partners.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "cust-mix#c8",
+        "claim": "U.S. rack-mount PDU market segmented by Installation Type including Direct Sales",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "U.S. Data Center Rack Mount Power Distribution Equipment Market Size, Share, and Analysis Report 2033",
+        "url": "https://www.databridgemarketresearch.com/reports/us-data-center-rack-mount-power-distribution-equipment-market",
+        "excerpt": "By Installation Type (Direct Sales, System \"",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "cust-mix#c9",
+        "claim": "Global Data Center PDU market estimated at $3,255 million in 2025, projected to reach $4,760 million by 2032",
+        "number": 3255,
+        "unit": "$M",
+        "sourceTitle": "Data Center PDU (Power Distribution Unit)- Global Market Share and Ranking, Overall Sales and Demand Forecast 2026-2032 - QY Research",
+        "url": "https://www.qyresearch.com/reports/6097932/data-center-pdu--power-distribution-unit",
+        "excerpt": "The global market for Data Center PDU (Power Distribution Unit) was estimated to be worth US$ 3255 million in 2025 and is projected to reach US$ 4760 million, growing at a CAGR of 5.7% from 2026 to 2032.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "cust-mix#c10",
+        "claim": "Global IDC Power Equipment market estimated at $36,600 million in 2025, projected to reach $69,350 million",
+        "number": 36600,
+        "unit": "$M",
+        "sourceTitle": "IDC Power Equipment - Global Market Share and Ranking, Overall Sales and Demand Forecast 2026-2032 - QY Research",
+        "url": "https://www.qyresearch.com/reports/6096035/idc-power-equipment",
+        "excerpt": "The global market for IDC Power Equipment was estimated to be worth US$ 36600 million in 2025 and is projected to reach US$ 69350 million, growing at a CAGR of 9.7% from 2026 to 2032.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "cust-mix#c11",
+        "claim": "Data Center Rack PDU market valued at $5.3 billion in 2024, projected to reach $8.4 billion by 2030",
+        "number": 5.3,
+        "unit": "$B",
+        "sourceTitle": "Data Center Rack Power Distribution Unit (PDU) Market",
+        "url": "https://www.strategicmarketresearch.com/market-report/data-center-rack-power-distribution-unit-market",
+        "excerpt": "The market, valued at USD 5.3 billion in 2024 , is projected to reach USD 8.4 billion by 2030 , experiencing a CAGR of 8.9% during the forecast period from 2024 to 2030",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "cust-mix#c12",
+        "claim": "Vertiv lists major customers spanning hyperscalers, telecoms, and enterprises",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Vertiv Partner Program",
+        "url": "https://www.vertiv.com/49858a/globalassets/documents/brochures/vertiv-partner-program-emea-2024-en.pdf",
+        "excerpt": "MAJOR CUSTOMERS Alibaba, Alstom, America Movil, AT&T, China Mobile, Equinix, Ericsson, Reliance, Siemens, Telefonica, Tencent, Verizon and Vodafone",
+        "tags": [
+          "competition",
+          "structure"
+        ]
+      },
+      {
+        "id": "cust-mix#c13",
+        "claim": "Intelligent PDU buyer's guide notes OEM and private-label options for distributors",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Intelligent PDU Buyer's Guide for Data Center Procurement",
+        "url": "https://www.idcpdu.com/news/industry-news/what-is-an-intelligent-pdu-a-data-center-buyer-s.html",
+        "excerpt": "5.2 OEM and private-label options for distributors",
+        "tags": [
+          "structure",
+          "substitution"
+        ]
+      },
+      {
+        "id": "cust-mix#c14",
+        "claim": "Digipower supports global OEM partners and infrastructure operators via OEM/ODM design",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Digipower Manufacturing Inc.",
+        "url": "https://digipower.com.tw/",
+        "excerpt": "our extensive PDU portfolio, including advanced per-outlet managed PDUs, supports global OEM partners and infrastructure operators in optimizing power efficiency, reducing downtime, and scaling operations. By combining OEM/ODM design expertise with rigorous quality assurance",
+        "tags": [
+          "structure",
+          "substitution"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "cust.operator-large derives its 0.40 buyer-share estimate partly from the Alexander Group 30%-of-orders figure, but that figure measures one supplier's overall data-center-driven order share, not a breakdown by buyer type (operator vs OEM vs distributor); the source excerpt itself is flagged as 'qualitative channel context only,' so it cannot support a quantified 0.40 large-operator channel share.",
+        "nodes": [
+          "cust.operator-large"
+        ]
+      },
+      {
+        "text": "None of the retrieved sources substantiate the 'hyperscale+colo ≈ 62% of capacity (Synergy)' figure cited in the cust.operator-large derivation, nor do any sources provide percentage splits for operator-mid, OEM/integrator, or distributor channels — all four node values (0.40/0.25/0.22/0.13) remain unsourced internal estimates with no corroborating quantitative evidence found in this search pass.",
+        "nodes": [
+          "cust.operator-large",
+          "cust.operator-mid",
+          "cust.oem",
+          "cust.distributor"
+        ]
+      },
+      {
+        "text": "Channel-partner taxonomies vary by equipment sub-segment: substations are split into OEMs vs TSO/DSO, transformers into OEMs/Distributors/Online Retailers/Electrical Contractors, and rack PDUs into Direct Sales/System integrators — none report share percentages, and the inconsistent taxonomy across equipment types undermines applying a single unified operator/mid/OEM/distributor split (0.40/0.25/0.22/0.13) uniformly across the whole power-equipment category.",
+        "nodes": [
+          "cust.operator-large",
+          "cust.operator-mid",
+          "cust.oem",
+          "cust.distributor"
+        ]
+      }
+    ],
+    "absences": [
+      "No search result provided a percentage breakdown of PDU or power-equipment spend by buyer type (large operator, mid/enterprise, OEM/integrator, distributor) — only qualitative channel-partner category names were found.",
+      "No corroboration was found for the 'Synergy hyperscale+colo ≈ 62% of capacity' figure used in the cust.operator-large derivation.",
+      "No source quantified what fraction of a supplier's data-center-driven revenue flows through direct large-operator sales versus OEM or distributor channels — the closest figure (30% of orders) measures total DC exposure, not channel mix.",
+      "No distributor-specific revenue share (e.g., for master distributors like MaxPower) was found relative to total data center power equipment spend.",
+      "No report found that segments the same power-equipment market simultaneously by both data-center-type (hyperscale/colo/enterprise) and channel-partner type with matched percentages, which would be needed to triangulate buyer mix directly."
+    ]
+  }
+}

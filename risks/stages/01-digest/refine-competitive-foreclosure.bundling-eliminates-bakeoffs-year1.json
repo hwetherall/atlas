@@ -1,0 +1,163 @@
+{
+  "inputsHash": "2f08768cc6b80ffcebf9e8ac438ebdfa472cab528d5d4b01cb51b3ff02043194",
+  "generatedAt": "2026-07-08T18:51:49.309Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c0",
+        "claim": "Utah State University rack-level PDU RFP awarded to low bidder at $57,900 against only one other bidder",
+        "number": 57900,
+        "unit": "USD",
+        "sourceTitle": "Bid Results on Uu207787178 Rack Level Power Distribution Units",
+        "url": "https://www.utahbids.net/bid-result/uu207787178_rack_level_power_distribution_units-14458370",
+        "excerpt": "Intellivex Data Center Solutions is the apparent low bidder on the Utah State University's UU207787178 Rack Level Power Distribution Units solicitation, with a low bid of $57,900.00 USD. Bids were opened on October 30, 2025",
+        "tags": [
+          "base-rate",
+          "competition"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c1",
+        "claim": "Only one competing bid was recorded against the low bidder on the Utah rack-PDU RFP",
+        "number": 113331.3,
+        "unit": "USD",
+        "sourceTitle": "Bid Results on Uu207787178 Rack Level Power Distribution Units",
+        "url": "https://www.utahbids.net/bid-result/uu207787178_rack_level_power_distribution_units-14458370",
+        "excerpt": "Additional bidders include: Malor & Company Inc: $113,331.30 USD",
+        "tags": [
+          "competition",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c2",
+        "claim": "University of Utah PDU solicitation specified a sole vendor/model with explicit 'No substitutions' clause",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Bid Results on Enlogic Power Distribution Units",
+        "url": "https://www.utahbids.net/bid-result/enlogic_power_distribution_units-14182081",
+        "excerpt": "Vendor must have the ability to provide the specific equipment listed below. No substitutions. Model: EN6952-0000-i Enlogic, iPDU (EN6 Series) Outlet Switched and Metered, 208VAC, 3-phase, 60 A",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c3",
+        "claim": "The sole-sourced Enlogic PDU RFP was awarded at $129,775.09",
+        "number": 129775.09,
+        "unit": "USD",
+        "sourceTitle": "Bid Results on Enlogic Power Distribution Units",
+        "url": "https://www.utahbids.net/bid-result/enlogic_power_distribution_units-14182081",
+        "excerpt": "Intellivex Data Center Solutions is the apparent low bidder on the University of Utah - Purchasing's Enlogic Power Distribution Units solicitation, with a low bid of $129,775.09 USD. Bids were opened on June 5, 2025",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c4",
+        "claim": "Naval Research Laboratory issued a sources-sought notice for six modular PDUs as part of computer room infrastructure replacement",
+        "number": 6,
+        "unit": "units",
+        "sourceTitle": "SAM.gov",
+        "url": "https://sam.gov/workspace/contract/opp/6dfb31aa3a6b4e7aa1b8865b85db032a/view",
+        "excerpt": "The Cyber Operations Division at the Naval Research Laboratory (NRL) located at 4555 Overlook Ave SW, Washington DC, has a requirement to install six (6) Modular Power Distribution Units (PDUs) as part of its ongoing efforts to replace antiquated computer room infrastructure",
+        "tags": [
+          "demand",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c5",
+        "claim": "A federal small-business set-aside buy bundled 9 data center racks with 39 PDUs into a single procurement rather than a standalone PDU contest",
+        "number": 39,
+        "unit": "units",
+        "sourceTitle": "Buy View",
+        "url": "https://marketplace.unisonglobal.com/fbweb/fbobuyDetails.do?token=%3D%3DQuNg6sF2CAgciyTnvWJue0QAAAAAHeAAgAgTFCGg%2FFzzqQbJAAyVXBA0Or",
+        "excerpt": "This procurement is for 9 data center racks and 39 data center power distribution units (PDUs).",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c6",
+        "claim": "ZincFive's estimated annual revenue is currently $26.9M per year (growjo estimate, spans NiZn battery/UPS products, not PDU-specific)",
+        "number": 26.9,
+        "unit": "USD million/year",
+        "sourceTitle": "ZincFive: Revenue, Competitors, Alternatives",
+        "url": "https://growjo.com/company/ZincFive",
+        "excerpt": "ZincFive's estimated annual revenue is currently $26.9M per year.(i)",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c7",
+        "claim": "ZincFive SPAC merger values the company at approximately $752 million pro forma enterprise value",
+        "number": 752,
+        "unit": "USD million",
+        "sourceTitle": "ZincFive bets on revenue record in US$752 million SPAC merger - Energy-Storage.News",
+        "url": "https://www.energy-storage.news/zincfive-bets-on-revenue-track-record-in-us752-million-spac-merger-after-2021-cohort-struggles/",
+        "excerpt": "The transaction values ZincFive at approximately US$752 million on a pro forma enterprise value basis.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c8",
+        "claim": "ZincFive reports surpassing one gigawatt of mission-critical power solutions delivered and contracted across multiple continents",
+        "number": 1,
+        "unit": "GW",
+        "sourceTitle": "ZincFive announces 1GW of mission-critical data center power solutions delivered and contracted - DCD",
+        "url": "https://www.datacenterdynamics.com/en/product-news/zincfive-announces-1gw-of-mission-critical-data-center-power-solutions/",
+        "excerpt": "ZincFive, the world leader in nickel-zinc (NiZn) battery-based solutions for immediate power applications, has surpassed one gigawatt (GW) in power delivered and contracted across multiple continents",
+        "tags": [
+          "demand",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c9",
+        "claim": "Enlogic's estimated annual revenue is $5.0-25M per Owler company profile",
+        "number": 25,
+        "unit": "USD million/year",
+        "sourceTitle": "Enlogic's Competitors, Revenue, Number of Employees, Funding, Acquisitions & News - Owler Company Profile",
+        "url": "https://www.owler.com/company/enlogic",
+        "excerpt": "Est. Annual Revenue $5.0-25M",
+        "tags": [
+          "base-rate"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "The obtainableFactor node's crossCheck claims 'open 2026 EU rack-PDU tenders keep 2-3% inside the band,' but the only concrete standalone PDU procurements found in this search were small (~$58K-$130K) US university/DoD bids with 1-2 bidders and one explicitly sole-sourced ('No substitutions'), not a body of open, contestable EU tenders supporting a 2-3% share.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      },
+      {
+        "text": "A PDU procurement specifying a single named vendor/model with 'No substitutions' is direct evidence that some 'standalone' RFPs are not actually contestable, which would push the truly-contestable share of SAM below even the 1% Year-1 anchor rather than validating the 0.5-3% band as open competition.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      },
+      {
+        "text": "The Unison federal buy bundling 9 racks with 39 PDUs into one award (rather than a standalone PDU RFP) illustrates the bundling-forecloses-bakeoffs mechanism this group was tasked to quantify, but no channel-split percentage was found to confirm how much total PDU volume this bundling pattern represents versus standalone contests.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      }
+    ],
+    "absences": [
+      "No count of contestable standalone rack/row-PDU RFPs over the last 24 months was found — only a handful of individual bid-result pages (2 Utah bids, 1 DoD sources-sought, 1 federal marketplace buy) with no aggregation into a pipeline count.",
+      "No win-rate data for any vendor across multiple PDU RFPs was found.",
+      "No cycle-time (RFP-to-award duration) data was found beyond single bid-open dates on isolated solicitations.",
+      "No capacity (deliverable volume/production capacity) data tied to PDU procurement pipelines was found.",
+      "No share-of-channel split (fraction of PDU volume moving through vendor bundles vs. standalone contests) was found or quantified anywhere in the results.",
+      "No first-year revenue-as-percentage-of-SAM figure was found for any comparable entrant (Enlogic, ZincFive) — only absolute revenue/valuation estimates untethered to a stated SAM, so the 'is 3% Year-1 share attainable' question posed by the second query remains unanswered.",
+      "No data distinguishing what fraction of the underlying SAM is even open to competitive bid versus locked via specification-narrowing ('No substitutions') clauses was found."
+    ]
+  }
+}

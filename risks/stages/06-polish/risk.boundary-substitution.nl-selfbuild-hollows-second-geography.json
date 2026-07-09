@@ -1,0 +1,38 @@
+{
+  "inputsHash": "8bff7d0f169af27328ce6bc99953a83addbdd63bda74d312c9927e05d806a85e",
+  "generatedAt": "2026-07-08T21:49:20.648Z",
+  "data": {
+    "title": "NL's 28% weight rests on capped colo; growth is out of reach",
+    "narrative": "The model gives the Netherlands 28% of the base and treats it as the safest geography, with Statista and the Dutch Data Center Association agreeing within 3%. But that agreement measures old colocation stock, and Dutch demand is shifting to self-build that grows 24% a year and buys through hyperscaler channels a new entrant cannot reach. So the venture's second-largest geography sits on a slice that is capped, and the Year-1 reachable demand is far smaller than 28% implies.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "NL growth moves to self-build outside the colo base",
+        "refs": [
+          "digest:seg-mix#c14",
+          "digest:seg-mix#c12",
+          "ledger:geo.NL"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Self-build buys through global specs entrants cannot bid",
+        "refs": [
+          "digest:seg-mix#c13",
+          "digest:seg-mix#c18"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "The 0.28 weight overstates reachable Dutch demand at launch",
+        "refs": [
+          "ledger:geo.NL",
+          "profile:Stage"
+        ]
+      }
+    ],
+    "whyMissable": "NL has the cleanest source agreement in the ledger, so it looks like the one geography nobody needs to recheck, even though that agreement only confirms old colo stock and hides the shift to self-build.",
+    "falsifier": "2026 NL capacity-addition data showing new Dutch MW using rack PDUs bought through channels open to regional vendors at rates matching the 28% weight.",
+    "likelihoodRationale": "The self-build concentration and Amsterdam constraints are well sourced, but real colo refresh demand remains reachable, so the question is whether NL supports 0.28 or closer to 0.20–0.22. The 24% versus 19% growth gap was not independently confirmed, so we revised up modestly from 0.35 to 0.40."
+  }
+}

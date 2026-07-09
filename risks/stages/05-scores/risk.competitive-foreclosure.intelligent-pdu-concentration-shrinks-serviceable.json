@@ -1,0 +1,26 @@
+{
+  "inputsHash": "63c739b3ac28509274ed66e0afd3ddda88b8e52632e54dc5ac13900e5575a7ba",
+  "generatedAt": "2026-07-08T21:38:44.224Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names specific actors and brands (Legrand/Raritan/Server Technology, Vertiv/Geist, Schneider), exact node values (shape.cr3=0.55, serviceableFactor 0.55→0.40), and concrete monitoring instruments (Omdia vendor-share table, TED tender annexes, Equinix/NTT design guides). Nothing in the perturbation or indicators is generic."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The scope-mismatch argument — blended CR3 is broader than the product market while serviceableFactor's regulatory logic is narrower than reality, with the DCIM spec-lock falling in the seam — is a genuinely new reason, not a band-edge claim. Docked one point because intelligent-PDU brand consolidation itself is well-known and a diligent founder might reach the spec-lock question from the cust-mix digest cited."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at every hop (consolidation → spec-locked procurement → serviceableFactor omission), and each link is independently plausible. The propagation step honestly concedes the spec-locked fraction is 'real but unmeasured,' so the 0.55→0.40 magnitude rests on judgment rather than a defended quantity — a hostile 'why 0.40?' has no answer in the chain."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The load-bearing spec-lock premise is contradicted by four cited sources (Redfish DSP2056, IETF YANG draft, Schneider Modbus map, ATEN SNMP), which the risk itself flags via evidenceStatus 'contested' and a likelihood revision from 0.35 to 0.28. The contradictions show open standards exist, not that procurement is spec-open, and the concentration premise has two corroborating sources — so honest-contested rather than refuted."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations change spend and sequencing within two quarters: buying the named Omdia report, pre-launch Redfish/DCIM certification, and a 20-spec sampling exercise are all immediately actionable. Both indicators (TED spec language, Legrand certification-program announcements) are concretely monitorable with stated thresholds."
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "d18de3a4917c00fc30387af939ebd6e22dffc5d16bdaed69bc12ead52b53cb4b",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"Distributor channel is locked shut for Year 1\",\n \"narrative\": \"The model treats the 0.13 distributor cell as an easy open channel. But that channel runs on annual line reviews, and Legrand owns both intelligent-PDU brands, Raritan and Server Technology, giving one vendor two slots on every line card. A pre-launch entrant arrives mid-cycle and cannot get listed until the next review, which lands after Year 1. That cell should contribute nothing to the Year-1 number.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"Distributors decide line cards once a year, at set reviews.\",\n   \"refs\": [\n    \"digest:cust-mix#c7\",\n    \"digest:cr3-vendors#c4\",\n    \"ledger:cust.distributor\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Venture launches mid-cycle, so no distributor can list it.\",\n   \"refs\": [\n    \"profile:Stage\",\n    \"digest:cust-mix#c13\",\n    \"ledger:cust.distributor\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"The 0.13 cell adds nothing to Year-1 demand.\",\n   \"refs\": [\n    \"ledger:cust.distributor\",\n    \"ledger:obtainableFactor\"\n   ]\n  }\n ],\n \"falsifier\": \"A named distributor like Rexel or Sonepar confirming in writing it can list a new intelligent-PDU line within two quarters without waiting for the annual review.\",\n \"category\": \"competitive\",\n \"evidence\": [\n  {\n   \"title\": \"Aginode partners with Ethernetics to supply intelligent PDUs for data centres\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Aginode\",\n   \"date\": \"2026-06-01\",\n   \"excerpt\": \"Aginode teams up with Ethernetics BV, a Belgian-based start-up developing patented energy saving power distribution units, to announce a technical and commercial partnership in the field of Intelligent Power Distribution Units (PDUs)\",\n   \"url\": \"https://www.aginode.net/newsroom/news/details/2026/06/aginode-partners-ethernetics-supply-intelligent-pdus-data-centres\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Schleifenbauer Advanced PDUs Now Available at EDP Europe Distribution!\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"EDP Europe / Approved Business\",\n   \"date\": \"2025-06-12\",\n   \"excerpt\": \"EDP Europe is now an official distributor of Schleifenbauer’s advanced, intelligent PDUs!\",\n   \"url\": \"https://www.approvedbusiness.co.uk/articles/40679\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"CMS Distribution expands its power and energy portfolio through a strategic partnership with Legrand\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"CMS Distribution\",\n   \"date\": \"2026-04-14\",\n   \"excerpt\": \"CMS already has an established relationship with Legrand as a distributor of Raritan, one of Legrand’s key brands and a global leader in data centre infrastructure management. Raritan specialises in intelligent rack power distribution units (PDUs)\",\n   \"url\": \"https://www.cmsdistribution.com/press-release/cms-distribution-expands-its-power-and-energy-portfolio-through-a-strategic-partnership-with-legrand\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"cust.distributor\",\n  \"label\": \"Distributor\",\n  \"kind\": \"estimated\",\n  \"value\": 0.13,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"needs-source\",\n  \"dimension\": \"customerType\",\n  \"dimensionValue\": \"distributor\",\n  \"sensitivityRange\": null,\n  \"funnelActive\": true,\n  \"derivation\": null,\n  \"provenance\": {\n   \"rationale\": \"Master-distributor models exist (documented qualitatively) but indirect share is unquantified → internal estimate.\",\n   \"promotionPath\": \"Validate buyer mix with 3 CE operator/distributor interviews.\"\n  },\n  \"evidence\": []\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"risk\",\"settleTest\":\"Only the timing of actual distributor line-review cycles and whether the entrant gets listed within Year 1 will settle this — that is a future channel-adoption event, not a knowable-today number. Distributor listing decisions unfold over the next 12 months and depend on the entrant's launch date and each distributor's review calendar.\",\"proposedCorrection\":null,\"researchQueries\":[]}",
+  "usage": {
+    "prompt_tokens": 2678,
+    "completion_tokens": 140,
+    "total_tokens": 2818,
+    "cost": 0.01689,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01689,
+      "upstream_inference_prompt_cost": 0.01339,
+      "upstream_inference_completions_cost": 0.0035
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T21:54:09.846Z"
+}

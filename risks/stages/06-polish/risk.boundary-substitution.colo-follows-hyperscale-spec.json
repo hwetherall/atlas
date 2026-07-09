@@ -1,0 +1,38 @@
+{
+  "inputsHash": "bfa5c7c5910213cdd5f17c9c83a65f6a83de3706f8b5aea7730149f26175a101",
+  "generatedAt": "2026-07-08T17:40:21.464Z",
+  "data": {
+    "title": "Wholesale colocation buys what its hyperscale tenants tell it to",
+    "narrative": "The model treats colocation as an independent segment worth 0.18 that buys PDUs and hedges against hyperscale substitution. But CBRE reports European colo take-up is driven by hyperscalers leasing wholesale capacity, where the tenant sets the rack-power spec. If those tenants standardize on busway and power-shelf fit-outs, the colo slice's PDU content falls while its share stays fixed, overstating the Year-1 number.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "CBRE says colo growth comes from hyperscale and AI tenants",
+        "refs": [
+          "digest:seg-mix#c24",
+          "digest:seg-mix#c15"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Wholesale tenants set busway rack specs; landlords fit to spec",
+        "refs": [
+          "digest:seg-mix#c14",
+          "ledger:seg.colocation"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "seg.colocation's 0.18 has no sensitivity band for falling PDU content",
+        "refs": [
+          "ledger:seg.colocation",
+          "digest:seg-mix#c1",
+          "digest:seg-mix#c7"
+        ]
+      }
+    ],
+    "whyMissable": "Founders point to colocation as the hedge against hyperscale risk, but in the growing wholesale part the hyperscale tenant, not the landlord, chooses the rack power.",
+    "falsifier": "Fit-out specs or tenant BOMs from 2026 wholesale colo deals in Frankfurt or Amsterdam showing rack PDUs at retail-colo rates.",
+    "likelihoodRationale": "CBRE documents hyperscale-driven colo absorption in Europe, and tenant-specified fit-out is standard in wholesale leases. But retail and enterprise colo stay PDU-native, capping how much of the 0.18 slice converts within 12 months."
+  }
+}

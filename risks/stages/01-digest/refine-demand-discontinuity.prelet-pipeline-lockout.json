@@ -1,0 +1,168 @@
+{
+  "inputsHash": "dcfad89a75eec8e61144557c249b0a3fd1ad8ec510d1c525497bbed02eb0ab4c",
+  "generatedAt": "2026-07-08T18:56:47.122Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-demand-discontinuity.prelet-pipeline-lockout#c0",
+        "claim": "Power transformer lead times from major manufacturers have reached 48-60 months in 2026, with Tier 1 suppliers booked through 2030.",
+        "number": 60,
+        "unit": "months",
+        "sourceTitle": "Data Center Electrical Procurement: Why the Order Has to Come Before the Design | Insights | Build",
+        "url": "https://build.inc/insights/data-center-electrical-procurement-sequence-workflow",
+        "excerpt": "Power transformer lead times from major manufacturers have reached 48-60 months in 2026, with Tier 1 suppliers booked through 2030.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-demand-discontinuity.prelet-pipeline-lockout#c1",
+        "claim": "Generator step-up transformers average 144 weeks lead time.",
+        "number": 144,
+        "unit": "weeks",
+        "sourceTitle": "Data Center Electrical Procurement: Why the Order Has to Come Before the Design | Insights | Build",
+        "url": "https://build.inc/insights/data-center-electrical-procurement-sequence-workflow",
+        "excerpt": "Generator step-up transformers average 144 weeks. Tier 1 suppliers -- ABB, Siemens Energy, Hitachi Energy -- have backlogs extending to 2030 and beyond.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-demand-discontinuity.prelet-pipeline-lockout#c2",
+        "claim": "Switchgear runs 52 to 65 weeks, transformers 52 to 80 weeks, and some utility interconnections take 18 to 36 months in multi-phase data center builds.",
+        "number": 80,
+        "unit": "weeks",
+        "sourceTitle": "Data Center Design Management for Phases",
+        "url": "https://www.irecruit.co/insights/data-center-owners-design-management-de-risk-multi-phase-builds",
+        "excerpt": "with switchgear at 52 to 65 weeks, transformers at 52 to 80 weeks, and some utility interconnections taking 18 to 36 months, one late decision can push out Ready for Service (RFS) and affect the next phase too.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-demand-discontinuity.prelet-pipeline-lockout#c3",
+        "claim": "MV switchgear can run 52 to 65 weeks, transformers 60+ weeks, and IST often takes 6 to 12 weeks.",
+        "number": 65,
+        "unit": "weeks",
+        "sourceTitle": "Data Center Lead Times: PM Guide",
+        "url": "https://www.irecruit.co/insights/how-data-center-construction-project-managers-manage-equipment-lead-times",
+        "excerpt": "MV switchgear can run 52 to 65 weeks, transformers 60+ weeks, and IST often takes 6 to 12 weeks and does not shrink just because more labor shows up.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-demand-discontinuity.prelet-pipeline-lockout#c4",
+        "claim": "Late design changes can add 4 to 8 weeks to long-lead submittals.",
+        "number": 8,
+        "unit": "weeks",
+        "sourceTitle": "Data Center Lead Times: PM Guide",
+        "url": "https://www.irecruit.co/insights/how-data-center-construction-project-managers-manage-equipment-lead-times",
+        "excerpt": "I push long-lead submittals early because late design changes can add 4 to 8 weeks.",
+        "tags": [
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-demand-discontinuity.prelet-pipeline-lockout#c5",
+        "claim": "On hyperscale work, a missed energization window can cost tens of millions of dollars per month.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Data Center Lead Times: PM Guide",
+        "url": "https://www.irecruit.co/insights/how-data-center-construction-project-managers-manage-equipment-lead-times",
+        "excerpt": "On hyperscale work, a missed energization window can cost tens of millions of dollars per month.",
+        "tags": [
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-demand-discontinuity.prelet-pipeline-lockout#c6",
+        "claim": "A full hyperscale development cycle runs 18 to 30 months in favorable markets and 4 to 7 years in constrained jurisdictions.",
+        "number": 30,
+        "unit": "months",
+        "sourceTitle": "How Hyperscale Data Centers Move From Site Discovery to FID",
+        "url": "https://www.globaldatacenterhub.com/p/how-to-underwrite-the-hyperscale",
+        "excerpt": "A full cycle runs 18 to 30 months in favorable markets and 4 to 7 years in constrained jurisdictions.",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-demand-discontinuity.prelet-pipeline-lockout#c7",
+        "claim": "Microsoft froze 1.5 GW of self-build capacity in 2025 and withdrew from more than 2 GW of LOIs.",
+        "number": 1.5,
+        "unit": "GW",
+        "sourceTitle": "How Hyperscale Data Centers Move From Site Discovery to FID",
+        "url": "https://www.globaldatacenterhub.com/p/how-to-underwrite-the-hyperscale",
+        "excerpt": "Microsoft froze 1.5 GW of self-build capacity in 2025 and withdrew from more than 2 GW of LOIs.",
+        "tags": [
+          "demand",
+          "competition"
+        ]
+      },
+      {
+        "id": "refine-demand-discontinuity.prelet-pipeline-lockout#c8",
+        "claim": "Compass Datacenters abandoned a $25 billion Virginia project.",
+        "number": 25,
+        "unit": "USD billion",
+        "sourceTitle": "How Hyperscale Data Centers Move From Site Discovery to FID",
+        "url": "https://www.globaldatacenterhub.com/p/how-to-underwrite-the-hyperscale",
+        "excerpt": "Compass Datacenters abandoned a $25 billion Virginia project.",
+        "tags": [
+          "demand"
+        ]
+      },
+      {
+        "id": "refine-demand-discontinuity.prelet-pipeline-lockout#c9",
+        "claim": "HOCHTIEF's NTT Berlin data center contract covers a 36 MW facility, with first data halls handed over in 2028 and full completion targeted for 2029, from a summer 2026 construction start.",
+        "number": 36,
+        "unit": "MW",
+        "sourceTitle": "HOCHTIEF wins contract to build a data center for NTT in Berlin",
+        "url": "https://www.hochtief.com/news-media/press-releases/press-release/hochtief-wins-contract-to-build-a-data-center-for-ntt-in-berlin",
+        "excerpt": "construction is scheduled to begin in summer 2026, with the first data halls set to be handed over in 2028. Full completion is targeted for 2029.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-demand-discontinuity.prelet-pipeline-lockout#c10",
+        "claim": "A schedule can be effectively lost before a single foundation is poured because a transformer with a 65-week lead time wasn't released before the topology was finalized.",
+        "number": 65,
+        "unit": "weeks",
+        "sourceTitle": "From Electrical Design to Energization | Construction Business Outlook",
+        "url": "https://constructionbusinessoutlook.com/from-electrical-design-to-energization/",
+        "excerpt": "the schedule can be effectively lost before a single foundation is poured, not because of labor, weather, or permitting, but because a transformer with a 65-week lead time wasn't released before the topology was finalized.",
+        "tags": [
+          "structure",
+          "execution"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "The obtainableFactor cross-check assumes DC electrical gear is 'locked 12–24mo before fit-out,' but the raw evidence shows transformer lead times of 48–60 months (and GSU transformers averaging 144 weeks/~2.8 years) with Tier-1 backlogs to 2030 — implying design/procurement lock-in occurs far earlier than the 12–24 month window the node uses to justify a ≤2% ceiling, which would push the truly reachable share even lower than the node's 0.5–3% band.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      },
+      {
+        "text": "The group intent asserts a structural fact (JLL/EG-confirmed 83% pre-let share) should settle the obtainableFactor correction, but none of the retrieved sources mention pre-let percentage or rack-PDU-specific design-lock timing — the claim that 'reachable flow is <1%' is asserted in the intent but not evidenced by the search results returned.",
+        "nodes": [
+          "obtainableFactor"
+        ]
+      }
+    ],
+    "absences": [
+      "No source confirms the JLL/EG figure of 83% pre-let share of near-term DC pipeline cited in the intent — this specific statistic was not found in the search results.",
+      "No source specifies the exact design stage at which rack-PDU/busway vendor selection occurs (as distinct from switchgear/transformer procurement) or whether it can change post-pre-let.",
+      "No Central European 2026-delivery tender was found showing rack-PDU/busway procurement remaining open to new vendors after shell pre-let — the tenders surfaced (servers, cabinets, cables) were generic IT/network procurement, not rack-PDU-specific fit-out packages tied to pre-let status.",
+      "No quantification of what fraction of the DC pipeline's electrical BOM value is attributable specifically to rack-PDU/busway line items versus switchgear, transformers, or UPS."
+    ]
+  }
+}

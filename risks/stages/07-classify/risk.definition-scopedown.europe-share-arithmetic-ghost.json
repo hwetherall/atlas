@@ -1,0 +1,25 @@
+{
+  "inputsHash": "34fce6482bb135bbcea62405936f3ff484abc88233b433beed43f49298ee9bda",
+  "generatedAt": "2026-07-08T18:16:43.673Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A primary regional revenue table for the data-center rack-PDU market (e.g., GVR's own regional breakdown, Omdia Rack PDU Annual Tracker, or the IndexBox EU Rack PDUs report) stating Europe's share of the global rack-PDU base as of 2025. This is a purchasable/existing dataset that fixes today's number, not something only time reveals.",
+    "proposedCorrection": {
+      "nodeId": "tamBase",
+      "value": 256,
+      "low": 205,
+      "high": 416,
+      "rationale": "Applying a 24% Europe share (vs. the unsourced 30%) to the $2.81B global base scales the €320M chain and its band down by ~0.8× to ~€256M."
+    },
+    "researchQueries": [
+      {
+        "query": "Grand View Research or Omdia data center rack PDU market regional revenue share Europe 2025 percentage",
+        "kind": "confirming"
+      },
+      {
+        "query": "IndexBox EU rack PDU market size country tables 2025 Europe revenue share of global rack PDU market 28% or higher",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

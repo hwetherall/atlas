@@ -1,0 +1,302 @@
+{
+  "inputsHash": "5563f9890ac04c9b2b4e2ba63372216b454b2123386f02b6de33e1ef9815bd99",
+  "generatedAt": "2026-07-08T19:10:36.036Z",
+  "data": {
+    "claims": [
+      {
+        "id": "seg-mix#c0",
+        "claim": "Hyperscale operators account for 48% of worldwide data center capacity at end of Q4 2025",
+        "number": 48,
+        "unit": "%",
+        "sourceTitle": "Hyperscale Operators to Account for 67% of all Data Center Capacity by 2031 | Synergy Research Group",
+        "url": "https://www.srgresearch.com/articles/hyperscale-operators-to-account-for-67-of-all-data-center-capacity-by-2031",
+        "excerpt": "they now account for 48% of the worldwide capacity of all data centers",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-mix#c1",
+        "claim": "Non-hyperscale colocation accounts for 20% of total capacity at end-2025",
+        "number": 20,
+        "unit": "%",
+        "sourceTitle": "Hyperscale Operators to Account for 67% of all Data Center Capacity by 2031 | Synergy Research Group",
+        "url": "https://www.srgresearch.com/articles/hyperscale-operators-to-account-for-67-of-all-data-center-capacity-by-2031",
+        "excerpt": "With non-hyperscale colocation capacity accounting for another 20% of total capacity, that leaves enterprise on-premise data centers with just 32% of the total.",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-mix#c2",
+        "claim": "Enterprise on-premise data centers hold 32% of total capacity at end-2025",
+        "number": 32,
+        "unit": "%",
+        "sourceTitle": "Hyperscale Operators to Account for 67% of all Data Center Capacity by 2031 | Synergy Research Group",
+        "url": "https://www.srgresearch.com/articles/hyperscale-operators-to-account-for-67-of-all-data-center-capacity-by-2031",
+        "excerpt": "leaves enterprise on-premise data centers with just 32% of the total",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-mix#c3",
+        "claim": "On-premise capacity share was 56% in 2018",
+        "number": 56,
+        "unit": "%",
+        "sourceTitle": "Hyperscale Operators to Account for 67% of all Data Center Capacity by 2031 | Synergy Research Group",
+        "url": "https://www.srgresearch.com/articles/hyperscale-operators-to-account-for-67-of-all-data-center-capacity-by-2031",
+        "excerpt": "This is in stark contrast to 2018, when 56% of data center capacity was in on-premise facilities.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-mix#c4",
+        "claim": "2031 forecast: hyperscale share reaches 67%, on-premise falls to 19%",
+        "number": 67,
+        "unit": "%",
+        "sourceTitle": "Hyperscale Operators to Account for 67% of all Data Center Capacity by 2031 | Synergy Research Group",
+        "url": "https://www.srgresearch.com/articles/hyperscale-operators-to-account-for-67-of-all-data-center-capacity-by-2031",
+        "excerpt": "Looking ahead to 2031, hyperscale operators will account for 67% of all capacity, while on-premise will drop to just 19%.",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "seg-mix#c5",
+        "claim": "On-premise share is projected to drop about two percentage points per year",
+        "number": 2,
+        "unit": "pp/year",
+        "sourceTitle": "Hyperscale Operators to Account for 67% of all Data Center Capacity by 2031 | Synergy Research Group",
+        "url": "https://www.srgresearch.com/articles/hyperscale-operators-to-account-for-67-of-all-data-center-capacity-by-2031",
+        "excerpt": "on-premise share of the total will drop by around two percentage points per year",
+        "tags": [
+          "structure",
+          "substitution"
+        ]
+      },
+      {
+        "id": "seg-mix#c6",
+        "claim": "Q1 2025 vintage: hyperscale 44%, colocation 22%, on-premise 34%",
+        "number": 44,
+        "unit": "%",
+        "sourceTitle": "The World's Total Data Center Capacity is Shifting Rapidly to Hyperscale Operators | Synergy Research Group",
+        "url": "https://www.srgresearch.com/articles/the-worlds-total-data-center-capacity-is-shifting-rapidly-to-hyperscale-operators",
+        "excerpt": "they now account for 44% of the worldwide capacity of all data centers... With non-hyperscale colocation capacity accounting for another 22% of capacity, that leaves on-premise data centers with just 34% of the total.",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-mix#c7",
+        "claim": "2024 vintage (Aug 2024): hyperscale 41%, colocation 22%, on-premise 37%",
+        "number": 41,
+        "unit": "%",
+        "sourceTitle": "Hyperscale Operators and Colocation Continue to Drive Huge Changes in Data Center Capacity Trends | Synergy Research Group",
+        "url": "https://www.srgresearch.com/articles/hyperscale-operators-and-colocation-continue-to-drive-huge-changes-in-data-center-capacity-trends",
+        "excerpt": "they now account for 41% of the worldwide capacity of all data centers... With non-hyperscale colocation capacity accounting for another 22% of capacity, that leaves on-premise data centers with just 37% of the total.",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-mix#c8",
+        "claim": "On-premise capacity dropped from 56% in 2018 to 32% by end-2025, projected 19% by 2031",
+        "number": 32,
+        "unit": "%",
+        "sourceTitle": "Data Center Market Share Face-Off: Hyperscalers Vs. Colo Vs. Enterprise",
+        "url": "https://www.crn.com/news/data-center/2026/data-center-market-share-face-off-hyperscalers-vs-colocation-vs-enterprise",
+        "excerpt": "In 2018, on-premise data centers for enterprises accounted for 56 percent share of all data center capacity. By the end of 2025, that market dropped to 32 percent share and is expected to fall to just 19 percent by 2031.",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "seg-mix#c9",
+        "claim": "Hyperscalers will have 14x as much capacity by 2031 versus 2018",
+        "number": 14,
+        "unit": "x",
+        "sourceTitle": "Data Center Market Share Face-Off: Hyperscalers Vs. Colo Vs. Enterprise",
+        "url": "https://www.crn.com/news/data-center/2026/data-center-market-share-face-off-hyperscalers-vs-colocation-vs-enterprise",
+        "excerpt": "In 2031 hyperscalers will have 14-times as much capacity in their data center footprint as they had back in 2018",
+        "tags": [
+          "base-rate",
+          "demand"
+        ]
+      },
+      {
+        "id": "seg-mix#c10",
+        "claim": "CIO Dive corroborates 2018-56%, 2031-19% enterprise on-prem trajectory and 67% hyperscale by 2031",
+        "number": 67,
+        "unit": "%",
+        "sourceTitle": "Hyperscalers will own two-thirds of data center capacity by 2031 | CIO Dive",
+        "url": "https://www.ciodive.com/news/hyperscalers-two-thirds-data-center-capacity-2031/817016/",
+        "excerpt": "Hyperscalers including Google, Microsoft and AWS will account for 67% of data center capacity by 2031... Enterprise on-prem data centers will drop from 56% of total data center capacity in 2018 to 19% by 2031",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "seg-mix#c11",
+        "claim": "Alternative source states hyperscale sites constitute about 44% of installed capacity (~523 hyperscale sites) as of early 2024, with colocation serving ~5,186 locations",
+        "number": 44,
+        "unit": "%",
+        "sourceTitle": "Data Centre (Data Centers) Market Size, Share, Demand To 2035",
+        "url": "https://www.marketreportsworld.com/market-reports/data-centre-data-centers-market-14713424",
+        "excerpt": "Hyperscale sites constitute about 44% of installed capacity, while colocation facilities serve approximately 5,186 locations worldwide as of 2024.",
+        "tags": [
+          "definition",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-mix#c12",
+        "claim": "Europe hyperscaler self-build capacity to reach 4.2GW in 2026, 24% YoY growth",
+        "number": 24,
+        "unit": "%",
+        "sourceTitle": "New hyperscaler capacity to outpace colocation in Europe - Data Centre & Network News",
+        "url": "https://dcnnmagazine.com/business/real-estate/new-hyperscaler-capacity-to-outpace-colocation-in-europe/",
+        "excerpt": "hyperscaler self-build capacity across Europe is expected to reach 4.2GW this year, representing 24% year-on-year growth compared to 2025.",
+        "tags": [
+          "demand",
+          "competition"
+        ]
+      },
+      {
+        "id": "seg-mix#c13",
+        "claim": "Top 15 European colocation markets expected to grow 19% YoY, remaining significantly larger than hyperscale self-build despite slower growth",
+        "number": 19,
+        "unit": "%",
+        "sourceTitle": "New hyperscaler capacity to outpace colocation in Europe - Data Centre & Network News",
+        "url": "https://dcnnmagazine.com/business/real-estate/new-hyperscaler-capacity-to-outpace-colocation-in-europe/",
+        "excerpt": "the top 15 European colocation data centre markets are expected to grow 19% year-on-year. Despite slower growth relative to new hyperscaler self-builds, the European colocation segment will remain significantly larger.",
+        "tags": [
+          "competition",
+          "structure"
+        ]
+      },
+      {
+        "id": "seg-mix#c14",
+        "claim": "60% of Europe's operational hyperscaler self-build capacity is concentrated in Ireland, Netherlands, Sweden, and Belgium as of Q4 2025",
+        "number": 60,
+        "unit": "%",
+        "sourceTitle": "New hyperscaler capacity to outpace colocation in Europe - Data Centre & Network News",
+        "url": "https://dcnnmagazine.com/business/real-estate/new-hyperscaler-capacity-to-outpace-colocation-in-europe/",
+        "excerpt": "As of Q4 2025, approximately 60% of Europe's operational hyperscaler self-build capacity is located in Ireland, the Netherlands, Sweden, and Belgium.",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "seg-mix#c15",
+        "claim": "CBRE: European colocation take-up expected to outstrip new supply in 2025 driven by hyperscaler and AI/HPC demand",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Data Centres | CBRE",
+        "url": "https://www.cbre.com/insights/books/european-real-estate-market-outlook-2025/data-centres",
+        "excerpt": "Take-up of colocation data centre space in Europe is expected to outstrip new supply in 2025 given strong demand from hyperscalers and providers of AI and high‑performance computing services.",
+        "tags": [
+          "demand",
+          "competition"
+        ]
+      },
+      {
+        "id": "seg-mix#c16",
+        "claim": "European data centre supply across five largest markets expected to grow 20% YoY in 2025 despite power constraints",
+        "number": 20,
+        "unit": "%",
+        "sourceTitle": "Data Centres | CBRE",
+        "url": "https://www.cbre.com/insights/books/european-real-estate-market-outlook-2025/data-centres",
+        "excerpt": "data centre supply across Europe's five largest markets is expected to grow by a record 20% year-on-year in 2025.",
+        "tags": [
+          "demand",
+          "structure"
+        ]
+      },
+      {
+        "id": "seg-mix#c17",
+        "claim": "Savills: enterprises have little choice but to rely on hyperscalers for AI due to GPU cost/complexity, cloud tightening grip on AI market",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "EMEA Data Centres",
+        "url": "https://pdf.euro.savills.co.uk/european/european-commercial-markets/spotlight-eu-data-centre---2025.pdf",
+        "excerpt": "The cloud has been steadily tightening its grip on the Artificial Intelligence (AI) market, as the economics and complexity of training generative AI models have left most enterprises with little choice but to rely on hyperscalers.",
+        "tags": [
+          "substitution",
+          "demand"
+        ]
+      },
+      {
+        "id": "seg-mix#c18",
+        "claim": "Colocation share of total capacity will slowly decrease even as colocation capacity itself grows at near double-digit rates annually",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Hyperscale Operators to Account for 67% of all Data Center Capacity by 2031 | Synergy Research Group",
+        "url": "https://www.srgresearch.com/articles/hyperscale-operators-to-account-for-67-of-all-data-center-capacity-by-2031",
+        "excerpt": "While colocation share of total capacity will slowly decrease, colocation capacity will continue to increase each year at near double-digit rates.",
+        "tags": [
+          "structure",
+          "substitution"
+        ]
+      },
+      {
+        "id": "seg-mix#c19",
+        "claim": "On-premise capacity is receiving a boost from GenAI and GPU infrastructure after a sustained period of no growth",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Hyperscale Operators to Account for 67% of all Data Center Capacity by 2031 | Synergy Research Group",
+        "url": "https://www.srgresearch.com/articles/hyperscale-operators-to-account-for-67-of-all-data-center-capacity-by-2031",
+        "excerpt": "After a sustained period of essentially no growth, on-premise data center capacity is receiving something of a boost thanks to GenAI applications and GPU infrastructure.",
+        "tags": [
+          "demand",
+          "substitution"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "seg.colocation is flagged 'single-source' with no sensitivityRange, yet Synergy's own vintages show colocation share moving between 20% (end-2025) and 22% (Q1-2025, and 2024) — a real observed range that isn't captured in the node's null band.",
+        "nodes": [
+          "seg.colocation"
+        ]
+      },
+      {
+        "text": "An alternative market report gives hyperscale share as ~44% of installed capacity based on a site count of ~523 hyperscale facilities, versus Synergy's capacity-based 1,360 large hyperscale data centers and 48% share — different definitional bases (site-count vs measured capacity) for the same headline percentage, raising definitional-consistency risk for seg.hyperscale.",
+        "nodes": [
+          "seg.hyperscale"
+        ]
+      },
+      {
+        "text": "Synergy's own 2031 forecast trajectory (hyperscale 67%, enterprise on-premise 19% globally) implies an enterprise share of roughly 0.17 once the 0.91 carve-out factor is applied — below the current seg.enterprise low band of 0.24, suggesting the static triangulated value and its sensitivity range may not hold over the model's forward horizon.",
+        "nodes": [
+          "seg.enterprise",
+          "seg.hyperscale"
+        ]
+      },
+      {
+        "text": "CBRE Europe-specific data shows hyperscaler self-build growing faster (24% YoY) than colocation (19% YoY) in 2026, which could mean the Europe-scoped split diverges from a flat 0.91 rescaling of the global Synergy split rather than tracking it proportionally — the promotion path assumes rescaling captures Europe dynamics, but growth-rate divergence suggests otherwise.",
+        "nodes": [
+          "seg.hyperscale",
+          "seg.colocation"
+        ]
+      }
+    ],
+    "absences": [
+      "No source provides a Europe/CE-scoped capacity split by hyperscale/colocation/enterprise percentage — all precise splits found are global (Synergy), leaving the 0.91 'edge+telecom carve-out' factor itself unverified by any direct Europe source.",
+      "No independent corroboration of Synergy's capacity-share percentages from a second data-center capacity tracker (e.g., CBRE, JLL, Cushman) was found — colocation and enterprise shares remain single-publisher dependent.",
+      "No quantified breakdown of how much of the on-premise/enterprise 'GPU/GenAI boost' translates into percentage-point share change was found — only qualitative language ('something of a boost').",
+      "No source quantifies telecom or edge-specific capacity share separately, despite the derivation relying on an implicit 9% 'edge+telecom carve-out'.",
+      "Searches did not surface a report segmenting European colocation vs hyperscale by absolute capacity share (%) comparable to Synergy's global figures — only growth-rate comparisons (24% vs 19% YoY) were found, not share-of-total percentages."
+    ]
+  }
+}

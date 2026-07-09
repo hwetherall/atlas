@@ -1,0 +1,39 @@
+{
+  "inputsHash": "e828029089c77761627bec8f713b9c65d61ce87bdfb2ebbae95d956970e8ff2f",
+  "generatedAt": "2026-07-08T17:40:49.886Z",
+  "data": {
+    "title": "EU Cyber Resilience Act could block Year-1 tenders with big operators",
+    "narrative": "The model assumes a networked PDU sells like any CE-marked product, backed by EN 50600, ecodesign 2019/424 and CE/TÜV. But the Cyber Resilience Act covers this product too, its reporting duties start 11 September 2026 inside the first year, and large operators are already writing CRA clauses into 2026 tenders. A pre-launch entrant cannot show a credible CRA file that fast, so both reachable demand and Year-1 pace are overstated.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "CRA covers networked PDUs: reporting from Sep 2026, conformity from Dec 2027.",
+        "refs": [
+          "profile:Product",
+          "profile:Stage",
+          "digest:serviceable-benchmark#c10"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Large operators demand CRA readiness in 2026 tenders, screening out the entrant.",
+        "refs": [
+          "ledger:cust.operator-large",
+          "digest:serviceable-benchmark#c12",
+          "digest:serviceable-benchmark#c13"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Cert stack omits CRA, so reach and Year-1 pace look too high.",
+        "refs": [
+          "ledger:serviceableFactor",
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "The CRA reads like another CE marking and its Dec 2027 deadline sits outside the year, so it gets filed under later, while buyers actually ask 12 to 18 months early.",
+    "falsifier": "A sample of 2026 large-operator power tenders with no CRA or SBOM clauses, plus proof the PDU is default class with self-assessment and a file completable before launch.",
+    "likelihoodRationale": "The dates and product scope are enacted law, so the trigger is solid. But severity depends on the PDU being a higher risk class needing scarce notified bodies, and roughly 90% of products self-assess, so the screen-out is weaker than claimed; nudge down from 0.45."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "inputsHash": "8141da439c99b3ef0d17af029ba3d4ada09b2b40c7f295a2d3646240c1093e69",
+  "generatedAt": "2026-07-08T21:43:04.530Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names both instruments (EnEfG §12, EU 2024/1364) with filing dates (31 March, 15 May), the three incumbent DCIM suites, the exact node (serviceableFactor 0.55 vs 0.45 band floor), and the 50% German cell. Perturbation and falsifier are concrete and testable."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable is genuine: both laws bind operators, not vendors, so a product-law regulatory scan finds nothing — the risk names a NEW transmission channel (contractual spec creep) rather than just band-edge pessimism on serviceableFactor. Falls short of 4 because DCIM-integration lock-in as a challenger-hardware barrier is a known pattern a diligent founder in this space might already track."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at every hop, and the model-impact step honestly cites the ledger's admission that 0.55 lacks a bottom-up cross-check. The propagation hop — that filings require vendor-specific DCIM validation rather than open-protocol ingestion — would not fully survive a hostile 'why?', as the risk's own Redfish evidence shows."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The trigger is doubly corroborated (EnEfG text, Commission announcement), but the load-bearing foreclosure premise is contradicted by three sources (Vertiv/CPI Redfish guides, DMTF standard) surfaced by the risk's own falsifying search. The honest 'contested' status and downward likelihood revision from 0.3 to 0.22 keep this at 2 rather than lower — contradiction weakens but does not directly refute tender-level gating."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The information mitigation (audit 10 German/Dutch specs) is executable this quarter and directly resolves the contested premise on serviceableFactor; the operational mitigation (DCIM certification + Redfish/EnEfG field mapping) changes product sequencing now. All three indicators name monitorable venues with thresholds."
+    }
+  }
+}

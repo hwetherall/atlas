@@ -1,0 +1,25 @@
+{
+  "inputsHash": "8d9086e92159e2171ac205b7fa021a4642397ba434ef06e2955b3093afb2273d",
+  "generatedAt": "2026-07-08T18:19:53.249Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "An Omdia or Mordor intelligent-PDU vendor-share table showing Legrand-owned Raritan + Server Technology combined share, plus the top-3 concentration measured on the intelligent-PDU segment specifically — an existing purchasable dataset that settles today's concentration figure.",
+    "proposedCorrection": {
+      "nodeId": "serviceableFactor",
+      "value": 0.4,
+      "low": 0.3,
+      "high": 0.5,
+      "rationale": "Consolidating Raritan and Server Technology under one owner raises effective top-vendor concentration and adds monitoring-integration switching costs, lowering the reachable serviceable fraction below the current 0.45 low edge."
+    },
+    "researchQueries": [
+      {
+        "query": "Omdia/Mordor 2025 intelligent-PDU market share table: combined Raritan + Server Technology (Legrand) share and top-3 concentration in the intelligent-PDU segment",
+        "kind": "confirming"
+      },
+      {
+        "query": "Operator/DCIM evidence that open protocols (SNMP, Redfish, Modbus) make swapping intelligent-PDU vendors routine without re-integrating the monitoring layer",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

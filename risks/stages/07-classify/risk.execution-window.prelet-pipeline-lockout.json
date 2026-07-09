@@ -1,0 +1,19 @@
+{
+  "inputsHash": "f51cf9532e09f3f0c1d4f6a43a489cc62d144e36a724fd3e9e34d98197daeaf1",
+  "generatedAt": "2026-07-08T21:52:09.871Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "The load-bearing part is a claim about how rack-PDU procurement works TODAY: whether PDUs are locked at electrical design freeze or bought late as a commodity. An operator/procurement-schedule dataset or a week of expert calls with data-center facilities buyers would settle whether the reachable Year-1 pool excludes new builds. This is a fact about the present procurement structure, not a future market unfolding.",
+    "proposedCorrection": null,
+    "researchQueries": [
+      {
+        "query": "Data center procurement timeline for rack-mount PDUs vs. transformers/switchgear: do operators (Digital Realty, Equinix, QTS) select rack PDUs at electrical design freeze or during fit-out?",
+        "kind": "confirming"
+      },
+      {
+        "query": "Cases of new hyperscale/colo data centers running competitive rack-PDU tenders within 6 months of energization, or rack PDUs treated as commodity in-stock items separate from the 48-60mo transformer design freeze",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "inputsHash": "38aeefb1dff6acb42a0752b7a6590466e3df66a13e06362efbd085c518c4acb2",
+  "generatedAt": "2026-07-08T18:18:53.127Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A bottom-up Year-1 pipeline dataset for standalone rack/row-PDU procurements in the target segment (count of contestable RFPs, win-rate, cycle time, capacity) versus total SAM, cross-checked against a share-of-channel split showing what fraction of PDU volume moves through vendor bundles vs. standalone contests. This is knowable today from procurement records and channel data — no future event needs to unfold.",
+    "proposedCorrection": {
+      "nodeId": "obtainableFactor",
+      "value": 0.01,
+      "low": 0.001,
+      "high": 0.03,
+      "rationale": "The generic 1–5% SOM benchmarks are not DC-hardware-specific; the concrete hardware entrant started near 0.001% and most PDU volume ships inside integrated bundles (Vertiv 360AI, Schneider RD48) leaving only retrofit/standalone sockets contestable, so the mid-band should drop from 3% toward 1% with a much wider low tail.},"
+    },
+    "researchQueries": [
+      {
+        "query": "Count of standalone rack/row-PDU procurements (e.g., UtahBids, SAM.gov, GovSpend) issued as separate RFPs vs. those embedded in integrated data-center fit-out awards over the last 24 months, to estimate the contestable share of PDU spend.",
+        "kind": "confirming"
+      },
+      {
+        "query": "First-year revenue-share-of-SAM achieved by recent standalone data-center power hardware entrants (e.g., Enlogic, ZincFive, comparable startups) to test whether a fair-contest Year-1 share near 3% is actually attainable.",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "inputsHash": "b91a17654ee2772d4925ff0dd4ef247d787bed8e35b90eccf0d1c81c21a9de0e",
+  "generatedAt": "2026-07-08T17:39:58.452Z",
+  "data": {
+    "title": "Large operators are buying whole racks, not the PDUs we sell",
+    "narrative": "The model assumes the venture sells PDUs direct to large operators, its biggest buyer at a 0.40 weight. But large operators now buy AI-density capacity as whole racks from integrators, where the PDU is just a line item locked to incumbents under multi-year deals. That demand moves to a channel the venture cannot sell through, so the Year-1 direct-sale pool is overstated.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Large operators now buy AI capacity as integrated racks, not separate PDUs.",
+        "refs": [
+          "profile:Who is the primary buyer you'll sell through first?",
+          "digest:seg-mix#c0",
+          "digest:seg-mix#c1",
+          "ledger:cust.operator-large"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Rack PDU slots go to incumbents like Schneider under long deals.",
+        "refs": [
+          "digest:cr3-vendors#c0",
+          "digest:cr3-vendors#c6",
+          "digest:cr3-vendors#c7",
+          "ledger:cust.oem"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "The 0.40 direct-sale pool is partly unreachable, so it overstates Year-1.",
+        "refs": [
+          "ledger:cust.operator-large",
+          "ledger:cust.oem",
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "The team will try to verify whether 0.40 is the right number, but the real issue is that the line between buying PDUs direct and buying whole racks is moving during the entry window, so even a correct 2025 split is soon wrong.",
+    "falsifier": "Procurement records from 2–3 large operators showing PDUs still tendered as a discrete direct-purchase line, operator-selected, for their 2026–27 capacity including AI-density halls.",
+    "likelihoodRationale": "Integrated-rack buying is documented for hyperscale AI and the buyer-mix has no evidence to resist the shift. But European colo operators still run discrete PDU bids, so migration is real but not total within 12 months."
+  }
+}

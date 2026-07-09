@@ -1,0 +1,26 @@
+{
+  "inputsHash": "5ad0858a2251381d58ad9bd164bb56f618012355fd2c1c74540f08fc9a7d8dca",
+  "generatedAt": "2026-07-08T21:42:12.449Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the target node (obtainableFactor 0.5–3% band), dollar figures ($23B power, $26B cooling, $58K–$130K tenders, CHF ~2M award), actors (Vertiv, Schneider, Riedo, Stadt Zürich), and instruments/venues (TED CPV lots, earnings calls) with a concrete perturbation to 0.3%. The falsifier is quantified (≥5 tenders ≥€250K in 6 months)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "This is not a band-edge complaint: the compositional argument that bundling shrinks the contestable DENOMINATOR (per whyMissable, 'a smaller pie of decisions, not a smaller slice of spend') and the discovery that the 1% benchmark's own sources define SOM as multi-year cumulative are genuinely new reasons. Docked one point because the team already stress-tested this node (3%→1%) and 'incumbents bundle' is a hypothesis a competent hardware founder would at least have on the list."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at every arrow, and the benchmark-semantics leg (Prospeo 1–3yr, Wise 3–5yr, TryBuildCo ~0.1%) survives interrogation. But the trigger — incumbents cross-subsidising PDUs to zero incremental margin — is asserted; the risk's own rationale admits 'the core zero-margin bundling mechanism remains unevidenced.'"
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "Sole-sourcing and spec-locked tenders are corroborated (Zurich direct award, SSC 'Raritan or equivalent'), and the SOM-window semantics have multiple sources, but the narrative's 'only tiny ($58K–$130K)' premise is directly undercut by the CHF ~2M deal in its own evidence, and VC Beast's 1–5% band contradicts 'both legs point below.' The honest contested status and downward likelihood revision (0.4→0.38) keep this at 2 rather than lower."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations change near-term sequencing and spend: a 12-month TED/RFQ contestable-tender census (explicit VOI on obtainableFactor) and a pivot to tenant-side/retrofit purchase moments where bundles can't hide the PDU. Both indicators are monitorable now via TED lot composition and Vertiv/Schneider earnings commentary with stated thresholds."
+    }
+  }
+}

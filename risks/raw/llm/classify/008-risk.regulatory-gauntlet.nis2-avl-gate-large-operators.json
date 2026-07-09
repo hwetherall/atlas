@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "288e7e45d8921c2e3e3909df65babe99e4364b7a111f0a7bac616c6db3ed0506",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"EU security rules gate large operators, cutting Year-1 channel\",\n \"narrative\": \"The model assumes large operators are the first channel, worth 40% of the buyer mix. But under NIS2, in force in Germany, these operators must demand ISO 27001 and IEC 62443 proof from vendors, and a pre-launch entrant holds none of it. So the reachable large-operator slice in Year 1 is far smaller than 40%.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"NIS2 makes large operators demand vendor security certifications for networked gear.\",\n   \"refs\": [\n    \"profile:Product\",\n    \"ledger:cust.operator-large\",\n    \"digest:serviceable-benchmark#c12\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Uncertified new entrant fails approved-vendor onboarding, sales shift to integrators.\",\n   \"refs\": [\n    \"ledger:cust.operator-large\",\n    \"ledger:cust.oem\",\n    \"digest:serviceable-benchmark#c13\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"Reachable large-operator share in Year 1 is well below 40%.\",\n   \"refs\": [\n    \"ledger:cust.operator-large\",\n    \"profile:Stage\"\n   ]\n  }\n ],\n \"falsifier\": \"Onboarding documents from two or more large operators showing rack-power vendors admitted on self-declaration without ISO 27001 or IEC 62443.\",\n \"category\": \"execution\",\n \"evidence\": [\n  {\n   \"title\": \"NIS2 Article 21(2)(d) Is Changing Your B2B Contracts: A Supplier's Guide\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"NIS2-Templates.com\",\n   \"date\": \"2026-05-27\",\n   \"excerpt\": \"Your EU customer just sent a security addendum and a 30-question cybersecurity questionnaire... suddenly someone is asking whether you have ISO 27001 certification and a 24-hour incident notification procedure.\",\n   \"url\": \"https://www.nis-2-templates.com/for-suppliers/\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Declaration for Critical Vendors\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"STACK Infrastructure\",\n   \"date\": \"2024-02\",\n   \"excerpt\": \"The purpose of the declaration is to gather relevant information regarding potential Critical Vendors considered by STACK Infrastructure... We kindly ask you to fill in this form and return it together with documentation requested\",\n   \"url\": \"https://www.stackinfra.com/wp-content/uploads/2022/02/Declaration-for-Critical-Vendors.pdf\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Cyber Rules for Essential and Important Entities Take Effect in Germany (NIS2 Implementing Law)\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Mayer Brown\",\n   \"date\": \"2025-12-15\",\n   \"excerpt\": \"The national law implementing the NIS2 Directive in Germany entered into force on 6 December 2025. In-scope entities... require timely action.\",\n   \"url\": \"https://www.mayerbrown.com/en/insights/publications/2025/12/cyber-rules-for-essential-and-important-entities-take-effect-in-germany-nis2-implementing-law\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"cust.operator-large\",\n  \"label\": \"Large operators\",\n  \"kind\": \"estimated\",\n  \"value\": 0.4,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"needs-source\",\n  \"dimension\": \"customerType\",\n  \"dimensionValue\": \"operator-large\",\n  \"sensitivityRange\": {\n   \"low\": 0.33,\n   \"high\": 0.47\n  },\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Qualitative channel triangulation\",\n   \"expression\": \"Hyperscale+colo ≈ 62% of capacity (Synergy) and large operators buy direct → dominant buyer ≈ 0.40 of PDU spend\"\n  },\n  \"provenance\": {\n   \"rationale\": \"Report segmentations name the channels (direct/OEM/distributor) but publish no percentages → internal estimate.\",\n   \"promotionPath\": \"Validate buyer mix with 3 CE operator/distributor interviews.\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"Data center growth driving power equipment sales\",\n    \"sourceType\": \"analyst-estimate\",\n    \"publisher\": \"Alexander Group\",\n    \"date\": \"2026-06-19\",\n    \"excerpt\": \"One leading supplier reported data centers as its biggest growth driver, accounting for 30% of orders in 2025 — qualitative channel context only.\",\n    \"attached\": true\n   },\n   {\n    \"title\": \"CE operator & distributor interviews\",\n    \"sourceType\": \"pending\",\n    \"publisher\": null,\n    \"date\": null,\n    \"excerpt\": \"Three structured interviews would replace this qualitative split with a sourced one.\",\n    \"attached\": false\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"risk\",\"settleTest\":\"Only observing how large operators actually onboard an uncertified pre-launch entrant over Year 1 settles this — whether they enforce ISO 27001/IEC 62443 as a hard gate or admit on self-declaration/conditional waivers. NIS2 being in force today does not settle vendor onboarding behavior, which unfolds through each operator's procurement response over the coming 12-24 months.\",\"proposedCorrection\":null,\"researchQueries\":[{\"query\":\"STACK Infrastructure, NTT, or Equinix Germany approved-vendor onboarding requirements 2026: do rack-power/PDU suppliers need ISO 27001 or IEC 62443 certification at contract signing versus remediation timeline?\",\"kind\":\"confirming\"},{\"query\":\"Examples of uncertified or pre-launch power-equipment vendors admitted to EU hyperscale/colo procurement in 2025-2026 via self-declaration, conditional approval, or integrator pass-through under NIS2\",\"kind\":\"falsifying\"}]}",
+  "usage": {
+    "prompt_tokens": 2989,
+    "completion_tokens": 354,
+    "total_tokens": 3343,
+    "cost": 0.023795,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.023795,
+      "upstream_inference_prompt_cost": 0.014945,
+      "upstream_inference_completions_cost": 0.00885
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T18:17:43.621Z"
+}

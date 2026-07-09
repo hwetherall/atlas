@@ -1,0 +1,26 @@
+{
+  "inputsHash": "c669e1bed87419fdb3753dba3ff21e47355ab905ecf18547bd7c675bba5e14fc",
+  "generatedAt": "2026-07-08T21:37:05.523Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact ledger node (tamBase), the exact unsourced hop ('Europe ≈ 30%'), specific publishers and figures (GVR NA 38%, QY, SMR $5.3B), a perturbation value (€200-210M vs 240–360 band), and a named falsifier path (IndexBox EU tables at ≥€270M)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "This is not 'the band edge could be true' — it names a NEW reason the floor itself is fictitious: an inserted analyst ratio multiplied on a >2x-contested anchor, hidden by a refinement cycle that 'reads as rigor' (whyMissable). A founder who read the ledger might still trust the audited-looking chain, though a careful one auditing tamBase's sourcing could plausibly find the unsourced hop."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (contested anchor → unrescued multiplier → below-band skew) with refs at every hop, and the propagation step preempts the obvious rescue via the Statista/CBRE cross-check. The 'scope-inflated vs CBRE' sub-claim and the exact reconstruction to €210 are asserted rather than fully derived, so one hostile 'why?' lands."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The load-bearing premise (GVR publishes only NA 38%, no Europe figure; global anchors diverge) is corroborated by 3+ attached sources, and the falsifier's silent stance is honestly recorded. But the narrative's QY figure ($3,255M) contradicts its own attached excerpt ($1,582M), and the SMR $4.8B is broader-category PDU, so the '>2x spread' partly commits the scope-mixing sin the risk itself condemns."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The primary mitigation (commission the IndexBox tables before any external audience sees the model) is a specific, cheap, this-quarter spend decision on the ledger's own promotion path, plus a bottom-up second method. Both indicators have named venues and numeric thresholds (CE-7 <€250M; spread >1.8x), making it directly monitorable."
+    }
+  }
+}

@@ -1,0 +1,441 @@
+{
+  "inputsHash": "cba930d9f7ed2e7d54b37ce670464e1f509ca898b39b8317f6aee8aa6f07caae",
+  "generatedAt": "2026-07-08T19:34:54.389Z",
+  "data": {
+    "hypotheses": [
+      {
+        "id": "framework-foreclosure-large-operator-cell",
+        "title": "Global framework agreements dissolve the 'large operator direct' cell the venture plans to enter first",
+        "narrative": "The funnel counts 40% of PDU spend as 'large operators' — the venture's declared first buyer. But the number is a capacity-share proxy, not a channel reality. The documented procurement pattern for exactly these buyers is HQ-level global frameworks and integrator bundles: pan-European colos and hyperscalers sign multi-year power-chain packages with Schneider/Vertiv-class suppliers or take PDUs embedded in OEM/ODM rack builds. A regional entrant never sees an RFP for that spend. The cell exists as consumption; it barely exists as a contestable transaction. The independence assumption geography × segment × buyer hides that the biggest buyer cell and the least reachable procurement route are the same cell.",
+        "category": "competitive",
+        "targetNodes": [
+          "cust.operator-large",
+          "cust.oem"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Large operators consolidate rack-power procurement into global frameworks and integrated OEM/ODM packages: Vertiv's named major customers span Equinix and global telecoms, PDU vendors explicitly market OEM/private-label channels, and ODMs like Digipower supply operators via white-label design programs",
+            "refs": [
+              "digest:cust-mix#c12",
+              "digest:cust-mix#c13",
+              "digest:cust-mix#c14"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "The 0.40 cell was derived from 'hyperscale+colo ≈ 62% of capacity and large operators buy direct' — a consumption share, not a channel split; the only attached datapoint (30% of one supplier's orders) measures DC exposure, not who signs the PO. Spend transacted under frameworks negotiated outside CE is recorded in this cell but is foreclosed to a pre-launch regional entrant",
+            "refs": [
+              "ledger:cust.operator-large",
+              "digest:cust-mix#c0"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "cust.operator-large 0.40 overstates the discrete-buyer share of PDU spend; the funnel keeps 40% of TAM inside the venture's first channel while the real contestable route runs through OEM/integrator packages — a different sell with different economics",
+            "refs": [
+              "ledger:cust.operator-large",
+              "ledger:cust.oem",
+              "profile:Who is the primary buyer you'll sell through first?"
+            ]
+          }
+        ],
+        "whyMissable": "The buyer-mix row reads as a demand split, and 'large operators buy direct' matches sales intuition. The ledger flags the node 'needs-source', which reads as a precision problem to fix with interviews — not a reachability problem. The number can be right about who consumes PDUs and still wrong about who awards the contract.",
+        "expectedObviousness": "medium",
+        "falsifier": "Three CE large operators confirming they run discrete, vendor-open rack-PDU RFPs (not framework call-offs or integrator bundles) for their 2026 fit-outs.",
+        "likelihood": {
+          "value": 0.45,
+          "rationale": "Every procurement case surfaced in the corpus (framework agreements, all-in integrated contracts, bundled IT line items) points toward embedded procurement; no counterexample of a discrete open large-operator PDU tender in CE was found. Uncertainty remains on what fraction of the cell is framework-covered.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "cust.operator-large",
+            "op": "set",
+            "value": 0.2,
+            "note": "Half of the 'large operator direct' cell is framework/bundle-foreclosed to a new regional entrant"
+          },
+          {
+            "nodeId": "cust.oem",
+            "op": "set",
+            "value": 0.33,
+            "note": "Mix-shift: that spend re-appears in the OEM/integrator channel, which requires a different go-to-market"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "New pan-European power-chain framework agreements covering rack power announced by Equinix, Digital Realty, Vantage or NTT",
+            "where": "Operator procurement press releases and capital-markets-day supplier disclosures",
+            "threshold": "≥1 additional multi-year framework explicitly including rack PDUs",
+            "updates": "increases"
+          },
+          {
+            "signal": "Incumbents' revenue mix shifting from discrete products to 'integrated solutions' in DC segment commentary",
+            "where": "Schneider Electric and Vertiv quarterly earnings calls, DC segment discussion",
+            "threshold": "Solutions/bundled share of DC revenue growing while standalone product lines flatten",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Run structured procurement-route interviews with 3 CE large-operator sourcing leads: is rack-PDU spend a discrete RFP line or a framework call-off?",
+            "type": "information",
+            "voiNodeId": "cust.operator-large",
+            "note": "Replaces the capacity-share proxy with an actual channel split — the ledger's own promotion path, but asked about route-to-contract, not just mix"
+          },
+          {
+            "action": "Build the OEM/rack-integrator channel as the primary Year-1 route (white-label or co-brand into integrator rack builds) instead of direct operator sales",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Enters the cell where the spend actually transacts"
+          },
+          {
+            "action": "Pursue approved-vendor / second-source status on one operator framework rather than competing against it",
+            "type": "contractual",
+            "voiNodeId": null,
+            "note": "Frameworks typically mandate dual-sourcing; second-source slots are the crack in the foreclosure"
+          }
+        ]
+      },
+      {
+        "id": "colo-weights-enterprise-slice-misallocation",
+        "title": "Colo-MW geography weights are wrong by construction for the 29% enterprise slice — the Netherlands cell is partly phantom",
+        "narrative": "Every geo share was apportioned on Statista colocation MW, but the segment axis includes 29% enterprise on-premise demand — and enterprise machine rooms are distributed by industrial base, not by where Amsterdam colo campuses stand. EUDCA's own framing says colo+hyperscale is only about two-thirds of Europe's IT power; the missing third has a different map. NL is the most colo-concentrated market in the set (~70% of its capacity in Amsterdam metro), while Switzerland is self-operation-heavy (installed-base method gives 0.13 vs the curated 0.08) and Germany's installed load exceeds its colo figure by ~1,000MW. Multiplying colo-weighted geography by an enterprise segment share manufactures enterprise PDU demand in the Netherlands that physically sits in German and Swiss machine rooms. Anyone sizing a DACH enterprise channel off these weights will staff the wrong countries.",
+        "category": "model-structure",
+        "targetNodes": [
+          "geo.NL",
+          "geo.CH",
+          "seg.enterprise"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Commercial colocation + hyperscale provide only ~two-thirds of Europe's total IT power — roughly a third of real rack-PDU-consuming load (enterprise on-prem) is invisible to the colo-MW denominator the geo shares were built on",
+            "refs": [
+              "digest:geo-region-denominator#c11",
+              "ledger:geo.NL"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "The non-colo third is not distributed like the colo two-thirds: NL capacity is colo-hub concentrated, while CH's installed-base cross-check already runs to 0.13 vs the curated 0.08 and DE's installed load exceeds colo by ~1,000MW; the funnel nonetheless multiplies the same colo-derived geo vector against seg.enterprise = 0.29",
+            "refs": [
+              "ledger:geo.CH",
+              "ledger:geo.DE",
+              "ledger:seg.enterprise"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "For ~29% of segment scope the geo weights systematically overstate NL and understate CH (and DE at the installed-load scope) — geo.NL = 0.28 counts an enterprise slice that is not there, so the NL×enterprise cell is partly phantom and the CH×enterprise cell is undersized",
+            "refs": [
+              "ledger:geo.NL",
+              "ledger:geo.CH",
+              "ledger:seg.enterprise"
+            ]
+          }
+        ],
+        "whyMissable": "Both axes are individually well-sourced — Statista for geography, Synergy for segment — so each ledger row passes review on its own. The error exists only in the product of the two axes; no single node carries it, no band covers it, and the ledger's colo-vs-installed cross-checks read as per-country noise rather than a systematic per-segment misallocation.",
+        "expectedObviousness": "low",
+        "falsifier": "A consistent country-level installed-IT-load table (e.g., EUDCA country profiles) showing NL's share of CE-7 total installed load ≈ its colo share (~0.28) — i.e., the non-colo third distributes the same way the colo two-thirds does.",
+        "likelihood": {
+          "value": 0.5,
+          "rationale": "The colo-vs-installed divergence is already documented in the ledger's own cross-checks for DE, CH, AT and PL (all diverging in the direction this hypothesis predicts); only the magnitude and the NL side are unconfirmed.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "geo.NL",
+            "op": "set",
+            "value": 0.23,
+            "note": "NL weight corrected for its near-zero enterprise on-prem contribution to the 29% slice"
+          },
+          {
+            "nodeId": "geo.CH",
+            "op": "set",
+            "value": 0.11,
+            "note": "Mix-shift: self-operated Swiss load reallocated in — a reallocation, not a shrink; the risk is misdirected go-to-market, not lost TAM"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Publication of installed-load vs colocation country splits for CE-7",
+            "where": "EUDCA 'State of European Data Centres' country profiles; BMWK/Bitkom German installed-load updates",
+            "threshold": "DE/CH installed-load shares diverging >5pp from their colo shares",
+            "updates": "increases"
+          },
+          {
+            "signal": "Enterprise-segment pipeline geography vs model weights in early selling",
+            "where": "Venture's own CRM: country origin of enterprise/mid-operator inbound and distributor leads",
+            "threshold": "Enterprise leads from CH+DE running >2x their model-weighted share vs NL",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Commission or assemble a single-scope installed-IT-load table across CE-7 (the ledger's own promotion path) to re-derive geo weights per segment rather than globally",
+            "type": "information",
+            "voiNodeId": "geo.CH",
+            "note": "One consistent scope resolves NL/CH/DE simultaneously"
+          },
+          {
+            "action": "Split the v2 model's geography axis by segment: colo-weighted geo for hyperscale/colo demand, installed-load-weighted geo for enterprise — and weight the enterprise channel build toward DE/CH industrial accounts",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": "Removes the independence assumption where it is demonstrably false"
+          }
+        ]
+      },
+      {
+        "id": "ce-hyperscale-global-split-mirage",
+        "title": "The DE×hyperscale anchor cell is a mirage: CE-7's hyperscale-owned share is far below the rescaled global 44%",
+        "narrative": "seg.hyperscale rescales Synergy's global 48% flat onto Central Europe. But ~60% of Europe's operational hyperscaler self-build capacity sits in Ireland, the Netherlands, Sweden and Belgium — three of the four outside CE-7. Inside CE, hyperscale presence is mostly leased capacity inside Frankfurt and Amsterdam colo campuses, which Statista's 'colocation and scale colocation' figure already counts on the geography axis as colo MW. The cube therefore double-books the same megawatts — hyperscale on the segment axis, colo on the geo axis — and the implied beachhead cell (DE 0.50 × hyperscale 0.44 ≈ 22% of TAM as 'German hyperscale') largely does not exist as hyperscale-owned facilities. The real buyer of that capacity's PDUs is the colo operator or its integrator, with colo-grade requirements: tenant billing metering, multi-tenant DCIM. A product roadmap and sales motion built for hyperscale custom SKUs in Germany aims at a cell the market never populated.",
+        "category": "model-structure",
+        "targetNodes": [
+          "seg.hyperscale",
+          "seg.colocation"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Synergy's 48% hyperscale share is global; CBRE-sourced reporting places ~60% of Europe's operational hyperscaler self-build in Ireland, Netherlands, Sweden and Belgium — a geography that barely overlaps CE-7 — while the model applies the global split flat with a 0.91 carve-out",
+            "refs": [
+              "digest:seg-mix#c0",
+              "digest:seg-mix#c14",
+              "ledger:seg.hyperscale"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "Within CE-7, hyperscale demand is predominantly leased: European colocation remains significantly larger than self-build, FLAPD colo hubs (Frankfurt, Amsterdam in CE) absorb the hyperscale take-up, and the Statista geo denominator counts that same 'scale colocation' MW as colo — so the segment axis and geo axis book the same capacity to different segments",
+            "refs": [
+              "digest:seg-mix#c13",
+              "digest:geo-region-denominator#c7",
+              "digest:geo-region-denominator#c9"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "seg.hyperscale 0.44 overstates CE hyperscale-owned demand and understates the colo-operator cell; the venture's implied DE×hyperscale×large-operator beachhead is materially smaller, and the real buyers need colo-grade product (billing metering, multi-tenant DCIM), not hyperscale custom builds",
+            "refs": [
+              "ledger:seg.hyperscale",
+              "ledger:seg.colocation",
+              "profile:Who is the primary buyer you'll sell through first?"
+            ]
+          }
+        ],
+        "whyMissable": "seg.hyperscale is the best-dressed node on the segment axis — 'triangulated' across multiple Synergy vintages with a tight 0.40–0.48 band. The flaw is not the number but its geography: a global capacity split cannot survive contact with a region whose hyperscale capacity is leased rather than owned, and no band on a correctly-triangulated global figure covers a regional composition error.",
+        "expectedObviousness": "low",
+        "falsifier": "A Europe- or CE-scoped capacity split (Synergy, CBRE or JLL) showing hyperscale-owned/self-build capacity ≥40% of CE-7 total — i.e., the global split does transfer.",
+        "likelihood": {
+          "value": 0.4,
+          "rationale": "The 60%-outside-CE self-build concentration is directly sourced, and Frankfurt's status as a colo (not self-build) hub is well documented; residual uncertainty is how much leased hyperscale capacity should still be attributed to the hyperscale buyer for PDU-spec purposes.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "seg.hyperscale",
+            "op": "set",
+            "value": 0.3,
+            "note": "Hyperscale-owned CE share corrected for the self-build concentration outside CE-7"
+          },
+          {
+            "nodeId": "seg.colocation",
+            "op": "set",
+            "value": 0.3,
+            "note": "Mix-shift: leased 'scale colocation' capacity re-attributed to the colo-operator segment where the PDU purchasing decision actually sits"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Hyperscale self-build MW announced/operational by country",
+            "where": "CBRE quarterly 'Europe Data Centres Figures'; hyperscaler capex-call site announcements for DE/PL/AT",
+            "threshold": "CE-7 self-build share of Europe rising above ~25% would weaken the risk; staying ≤20% confirms it",
+            "updates": "decreases"
+          },
+          {
+            "signal": "Publication of a Europe-scoped hyperscale/colo/enterprise capacity split",
+            "where": "Synergy Research Europe releases; EUDCA State of European Data Centres",
+            "threshold": "Europe hyperscale-owned share reported <35%",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Buy or derive a Europe-scoped segment split (Synergy Europe cut or CBRE self-build vs colo series) before locking the product roadmap to hyperscale requirements",
+            "type": "information",
+            "voiNodeId": "seg.hyperscale",
+            "note": "Directly de-risks the largest segment node with a regionally-scoped source"
+          },
+          {
+            "action": "Spec the launch product for colo-operator requirements — billing-grade tenant metering, multi-tenant DCIM integration, retrofit form factors — since the CE cell that actually exists is colo-operated capacity serving hyperscale tenants",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Aligns the product with the real buyer of the double-booked megawatts"
+          }
+        ]
+      },
+      {
+        "id": "stock-weighted-tam-misses-fitout-flow",
+        "title": "TAM is apportioned on capacity stock, but PDU revenue follows fit-out flow — and the flow is concentrating outside CE-7",
+        "narrative": "The €300M base scopes Europe down to CE-7 using 39.8% of Europe's colocation MW stock. But PDUs are bought at fit-out: revenue tracks new capacity delivered plus refresh, not standing stock. Europe's new-supply flow is heavily skewed — 57% of 2025's 937MW of new colo supply and 85% of take-up land in FLAPD, of which only Frankfurt and Amsterdam are CE-7; the UK alone (1,772MW, Europe's largest market) plus Paris, Dublin and fast-growing secondary markets like Milan and Madrid sit entirely outside the denominator's numerator. If CE-7's share of European fit-out flow is meaningfully below its 39.8% stock share, the €300M base is biased high in a way the 240–360 band — built from global-anchor and FX uncertainty — was never designed to cover.",
+        "category": "fact",
+        "targetNodes": [
+          "tamBase"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "European new colo supply is flow-concentrated: 937MW expected in 2025, 57% of it in FLAPD, with 85% of take-up in FLAPD — only two of the five FLAPD markets (Frankfurt, Amsterdam) are inside CE-7",
+            "refs": [
+              "digest:geo-region-denominator#c6",
+              "digest:geo-region-denominator#c7",
+              "digest:geo-region-denominator#c9"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "The tamBase chain converts Europe→CE-7 using the 39.8% stock share of colo MW; but the UK (1,772MW, larger than Germany), France, Ireland and seven secondary markets exceeding 100MW are absorbing a disproportionate share of the new-build fit-outs where PDU purchase orders are generated",
+            "refs": [
+              "digest:geo-region-denominator#c1",
+              "digest:geo-region-denominator#c19",
+              "ledger:tamBase"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "CE-7's share of European rack-PDU revenue is lower than its share of installed stock; the 39.8% apportionment hop biases the €300M base high independently of the global-anchor uncertainty the sensitivity band encodes",
+            "refs": [
+              "ledger:tamBase"
+            ]
+          }
+        ],
+        "whyMissable": "The band 240–360 looks like it already covers 'TAM smaller', so the risk reads as priced-in. But the band was constructed from the global anchor spread and FX, not from the stock-vs-flow choice in the regional apportionment hop — two independent error sources cannot share one band, and the digest's own tensions note the CE-7 denominator is uncorroborated by any independent source.",
+        "expectedObviousness": "medium",
+        "falsifier": "A vendor-share or shipment-based regional table (e.g., the pending Omdia vendor table or IndexBox EU country tables) showing CE-7 at ≈38–40% of European rack-PDU revenue — matching the stock share.",
+        "likelihood": {
+          "value": 0.4,
+          "rationale": "The flow concentration in FLAPD/UK is directly sourced and large (85% of take-up), but part of the flow does land in Frankfurt/Amsterdam, and refresh demand on standing stock partially tracks the stock share — the net bias is real but of uncertain magnitude.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "tamBase",
+            "op": "scale",
+            "value": 0.85,
+            "note": "CE-7 revenue share corrected from stock-weighted 39.8% toward a flow-weighted apportionment"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "CE-7 share of quarterly European new colo supply deliveries",
+            "where": "CBRE 'Europe Data Centres Figures' quarterly reports (market-level MW delivered)",
+            "threshold": "CE-7 (Frankfurt+Amsterdam+secondary CE) sustained below ~35% of European deliveries for 2 consecutive quarters",
+            "updates": "increases"
+          },
+          {
+            "signal": "Directly-scoped EU rack-PDU country revenue data",
+            "where": "IndexBox EU Rack PDUs report country tables (the ledger's own pending source); Omdia vendor-share regional cut",
+            "threshold": "CE-7 revenue share reported below 35% of Europe",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Commission the IndexBox EU rack-PDU country tables to replace the stock-apportionment hop with directly-scoped country revenue",
+            "type": "information",
+            "voiNodeId": "tamBase",
+            "note": "Collapses both the ±40% band and the stock-vs-flow ambiguity in one purchase"
+          },
+          {
+            "action": "Keep UK/France certification and channel options warm in the launch plan so the venture can follow the fit-out flow if CE-7's share proves flow-diluted",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Cheap optionality against a structurally smaller home region"
+          }
+        ]
+      },
+      {
+        "id": "frankfurt-cycle-lockout-year1",
+        "title": "Buyer concentration × procurement timing empties the Year-1 window in the exact cell the ramp assumes",
+        "narrative": "The 1%-of-SAM Year-1 benchmark implicitly assumes demand arrives smoothly from many independent buyers. But the venture's chosen cell — DE-heavy geography (0.50) times large operators (0.40) — is the lumpiest corner of the cube: a handful of Frankfurt/Amsterdam campus fit-outs whose electrical BoM, PDUs included, is specified at design and tender stage long before delivery. Capacity delivering in the venture's first 12 months was specced in 2024–25; capacity being specced now delivers after the window closes. The correlation between concentration and procurement timing means the truly contestable slice of SAM in months 0–12 is far below what a market-average benchmark implies — the YAM can miss even at the band's low end without a single node being 'wrong'.",
+        "category": "execution",
+        "targetNodes": [
+          "obtainableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Year-1 demand in the target cell is dominated by a few flagship fit-outs: Frankfurt alone is a 1.2GW market and Europe's 937MW of 2025 new supply is concentrated in a handful of campuses whose electrical procurement is locked at tender, well before the venture's launch window opens",
+            "refs": [
+              "digest:geo-region-denominator#c3",
+              "digest:geo-region-denominator#c6",
+              "ledger:obtainableFactor"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "With geo.DE=0.50 and cust.operator-large=0.40, the obtainable pool is not thousands of independent purchase decisions but a short list of lumpy, pre-committed projects — 85% of European take-up flows through FLAPD-scale operators whose specs are set upstream — so the smooth-arrival assumption behind the 1%-of-SAM benchmark fails precisely in this cell",
+            "refs": [
+              "ledger:geo.DE",
+              "ledger:cust.operator-large",
+              "digest:geo-region-denominator#c9"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "obtainableFactor 0.01 is a market-average Year-1 benchmark applied to a cell whose months-0–12 contestable share approaches zero; YAM is overstated for this specific geography×buyer mix even inside the stated 0.005–0.03 band",
+            "refs": [
+              "ledger:obtainableFactor",
+              "profile:Stage"
+            ]
+          }
+        ],
+        "whyMissable": "obtainableFactor was already caught and corrected once (3%→1%) and now carries 'triangulated' maturity with a conservative-looking band — it reads as the most-scrubbed node in the funnel. The residual error is not the level but the correlation between buyer concentration and procurement timing, which no single-node sensitivity band can encode.",
+        "expectedObviousness": "medium",
+        "falsifier": "Two or more CE large-operator rack-PDU procurements in the venture's first 12 months that are open to unlisted vendors and run from RFQ to award to delivery inside that same window.",
+        "likelihood": {
+          "value": 0.55,
+          "rationale": "Project lumpiness and upstream spec-lock in the target cell are directly documented in the pipeline data; the open question is only whether refresh/retrofit demand inside standing Frankfurt stock provides enough short-cycle volume to rescue the average.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "obtainableFactor",
+            "op": "set",
+            "value": 0.004,
+            "note": "Year-1 contestable share conditioned on the DE×large-operator cell's spec-lock timing, below the generic band low"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Rack-PDU line items in EU-visible tenders with award-to-delivery under 12 months",
+            "where": "TED (Tenders Electronic Daily) and operator supplier portals (Equinix/Digital Realty vendor registration → time to first RFQ)",
+            "threshold": "Zero vendor-open short-cycle PDU tenders in CE over two consecutive quarters",
+            "updates": "increases"
+          },
+          {
+            "signal": "Ratio of CE capacity breaking ground (spec now, deliver later) vs delivering (specced already)",
+            "where": "CBRE quarterly pipeline figures; Frankfurt/Amsterdam construction-start announcements on operator capex calls",
+            "threshold": "Deliveries dominated by projects specced ≥18 months prior",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Audit the 2026–27 CE fit-out pipeline for spec-lock dates: which projects have not yet frozen their rack-power BoM and when do their tenders open",
+            "type": "information",
+            "voiNodeId": "obtainableFactor",
+            "note": "Converts the benchmark into a pipeline-based obtainable model — the node's own promotion path"
+          },
+          {
+            "action": "Re-weight Year-1 targeting toward brownfield refresh and retrofit in standing Frankfurt/Amsterdam stock, where PDU swap-outs transact inside 12 months without waiting for a new-build tender cycle",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": "Buys revenue in the only short-cycle sub-pool of the chosen cell"
+          }
+        ]
+      }
+    ]
+  }
+}

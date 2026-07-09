@@ -1,0 +1,164 @@
+{
+  "inputsHash": "912707e698275c4c182783c758df79504d1d1bfd341214cda7efb16521c9b700",
+  "generatedAt": "2026-07-08T19:00:29.418Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c0",
+        "claim": "MessEG (Mess- und Eichgesetz) governs the placing on the market, provision, and use of measuring devices including calibration (Eichung), most recently amended by an Act of 23 October 2024",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Gesetz über das Inverkehrbringen und die Bereitstellung von Messgeräten auf dem Markt, ihre Verwendung und Eichung sowie über Fertigpackungen (Mess- und Eichgesetz - MessEG)",
+        "url": "https://www.gesetze-im-internet.de/messeg/MessEG.pdf",
+        "excerpt": "Mess- und Eichgesetz vom 25. Juli 2013 (BGBl. I S. 2722, 2723), das zuletzt durch Artikel 38 des Gesetzes vom 23. Oktober 2024 (BGBl. 2024 I Nr. 323) geändert worden ist",
+        "tags": [
+          "regulation",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c1",
+        "claim": "Since MessEG/MessEV entered force (1 Jan 2015), new supply measuring devices are placed on the market by manufacturers as conformity-assessed devices bearing MID marking and are deemed calibrated ('geeicht') under MessEG without separate first-calibration",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Infoblatt Versorgungsmessgeräte",
+        "url": "https://www.lbme.nrw.de/system/files/media/document/file/e_info_versorgungsmessgeraete_2023-03-29.pdf",
+        "excerpt": "werden neue Versorgungsmessgeräte vom Hersteller als konformitätsbewertete Messgeräte (mit MID-Kennzeichnung, siehe Rückseite) unter Mitwirkung einer vom Hersteller gewählten Konformitätsbewertungsstelle in Verkehr gebracht... Diese Messgeräte gelten im Sinne des MessEG als geeicht.",
+        "tags": [
+          "regulation",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c2",
+        "claim": "Users of measuring devices used for billing purposes must register them with the responsible calibration authority within six weeks",
+        "number": 6,
+        "unit": "weeks",
+        "sourceTitle": "Anzeigepflicht für Messgeräte nach MessEG und MessEV | GOSSEN METRAWATT",
+        "url": "https://www.gossenmetrawatt.de/wissen/energiemanagement-mit-system/anzeigepflicht-fuer-messgeraete-nach-messeg-und-messev/",
+        "excerpt": "sind Messgeräteverwender verpflichtet Messgeräte, die zu Abrechnungszwecken dienen, binnen sechs Wochen an die zuständige Eichbehörde zu melden.",
+        "tags": [
+          "regulation",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c3",
+        "claim": "A calibrated MID meter used to sell electricity by measured kWh to a sub-tenant within a facility qualifies as a measuring device under §32 MessEG, explicitly citing sub-metering to a sub-tenant as an example",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Anzeigepflicht für Messgeräte nach MessEG und MessEV | GOSSEN METRAWATT",
+        "url": "https://www.gossenmetrawatt.de/wissen/energiemanagement-mit-system/anzeigepflicht-fuer-messgeraete-nach-messeg-und-messev/",
+        "excerpt": "Wenn also z. B. mit einem geeichten MID-Zähler Strom nach abgegebener kWh verkauft wird – beispielsweise an einen Untermieter in einer Anlage - handelt es sich um ein oder mehrere Messgeräte im Sinne von § 32 MessEG.",
+        "tags": [
+          "regulation",
+          "substitution",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c4",
+        "claim": "MessEG/MessEV require measured values used for billing to be determined by a calibrated measuring device with secure, verifiable data records, but the law provides no implementation procedure/instrument for validation, leading to three divergent market approaches (S.A.F.E., SAM modules, full system certification)",
+        "number": 3,
+        "unit": "approaches",
+        "sourceTitle": "Eichrecht Implementation - Deep dive into German Measurement and Calibration Law - E-Mobility Simplified",
+        "url": "https://www.emobilitysimplified.com/2022/03/eichrecht-implementation-deep-dive-into.html",
+        "excerpt": "the law fails to offer any implementation recommendations on the procedure/ instrument to validate the data. As a result, 3 different approaches available in the market: S.A.F.E initiative...SAM (Storage and Display Modules)...The 'Innogy' Solution",
+        "tags": [
+          "regulation",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c5",
+        "claim": "German metrology authorities (AGME) clarified in Jan 2026 that a permanently installed MID-compliant meter can be sufficient in clearly defined one-to-one billing scenarios, while mobile MID meters integrated into charging cables do not meet requirements",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Legally Compliant Billing: Retrofitting MID Meters or Using Calibration Law-Compliant Wallboxes?",
+        "url": "https://charge-repay.io/en/blog/mid-zaehler-nachruesten-vs-eichrechtskonforme-wallbox/",
+        "excerpt": "a permanently installed MID‑compliant meter can be sufficient in clearly defined one‑to‑one scenarios. Mobile MID meters integrated into charging cables, however, do not meet the requirements and are not permitted according to AGME.",
+        "tags": [
+          "regulation"
+        ]
+      },
+      {
+        "id": "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c6",
+        "claim": "A Frankfurt colo pricing example (Digital Realty FRA18) shows billing structured as a base power allowance (3 kW included) plus an excess-usage fee charged per 0.1 kW increment above that threshold, rather than pure metered-kWh invoicing",
+        "number": 0.1,
+        "unit": "kW increments",
+        "sourceTitle": "Full Rack Colocation in Digital Realty FRA18 Frankfurt",
+        "url": "https://www.voxility.com/colocation/prices/Full+Rack+Colocation+in+Digital+Realty+FRA18+Frankfurt",
+        "excerpt": "Each additional 0,1 kW power draw above 3 kW included is charged with an excessive usage fee of $15544/0,1 kW",
+        "tags": [
+          "execution",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c7",
+        "claim": "A colo monitoring vendor describes current industry practice as energy billing based on estimates, with manual rack-level allocation and estimation where measurement points are missing",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Colocation Data Centre Monitoring – Vaiking",
+        "url": "https://vaiking.de/en/branchen/colocation",
+        "excerpt": "03Energy billing based on estimates. End of month: energy data export from three systems, manual allocation at rack level, estimates where measurement points are missing.",
+        "tags": [
+          "execution",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c8",
+        "claim": "Meter-to-cash billing adoption in Germany has grown, particularly in the energy supply industry, following a change in the law in 2023",
+        "number": 2023,
+        "unit": "year",
+        "sourceTitle": "Meter-to-Cash (M2C) in Germany: An overview | Stripe",
+        "url": "https://stripe.com/en-de/resources/more/meter-to-cash-germany",
+        "excerpt": "This increased popularity is particularly notable in the energy supply industry, as a result of a change in the law in 2023.",
+        "tags": [
+          "regulation",
+          "demand"
+        ]
+      },
+      {
+        "id": "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c9",
+        "claim": "None of the retrieved Equinix, Digital Realty, or NTT Germany data-center materials specify whether tenant billing uses facility-feed/RPP MID-certified meters versus PDU-level metering",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Germany Data Centers, Colocation & AI-Ready Infrastructure",
+        "url": "https://www.equinix.com/data-centers/europe-colocation/germany-colocation",
+        "excerpt": "Deploy closer to customers and partners across Germany and the EU. Store and process data in secure, AI-ready data centers with direct connections to all major clouds and networks.",
+        "tags": [
+          "structure"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "The GOSSEN METRAWATT example states that any MID-calibrated meter used to sell electricity per measured kWh to a sub-tenant (e.g., in a colo facility) itself falls under §32 MessEG obligations — implying PDU-level sub-metering used for tenant billing would need to be MID-compliant, not merely 'informational' as the query's premise assumes. This complicates serviceableFactor's qualitative EU-cert-stack rationale, which treats regulatory reach as a single haircut rather than distinguishing facility-feed vs. PDU billing compliance paths.",
+        "nodes": [
+          "serviceableFactor"
+        ]
+      },
+      {
+        "text": "Vaiking's disclosure that current colo industry billing is often 'based on estimates' with manual rack-level allocation directly contradicts the search intent's premise that tenant power is reliably invoiced at facility-feed/RPP MID-certified meters, suggesting the regulatory-clear billing practice assumed in serviceableFactor's derivation may not be uniformly true across German operators.",
+        "nodes": [
+          "serviceableFactor"
+        ]
+      },
+      {
+        "text": "The Digital Realty/Voxility pricing model (fixed kW allowance + per-0.1kW overage fee) is a capacity/threshold-based billing structure, not a pure MID-certified metered-kWh invoice — this is a distinct billing paradigm from both the 'facility-feed MID meter' and 'PDU-as-informational' framings posed in the query, indicating the underlying regulatory/commercial reality may be more heterogeneous than either node assumption captures.",
+        "nodes": [
+          "serviceableFactor"
+        ]
+      }
+    ],
+    "absences": [
+      "No German colocation operator (Equinix, Digital Realty, NTT, or others) publicly discloses or confirms whether tenant power is billed via facility-feed/RPP MID-certified meters versus PDU-level metering treated as informational — the core question of the intent remains unanswered by any retrieved source.",
+      "No operator billing interviews were found despite being an explicitly targeted source type in the query design.",
+      "No MessEG/MID applicability determination specifically for data-center colocation PDU sub-metering (as opposed to EV charging or general supply metering) was found — all regulatory guidance retrieved addresses electricity/water/gas supply meters or EV charging, not colo rack-level PDU billing.",
+      "No quantification exists of what share of German colo capacity or contracts use MID-certified sub-metering versus estimate-based/capacity-tier billing, leaving the serviceableFactor regulatory haircut (0.55, range 0.45–0.65) without an empirical anchor from this metering-specific investigation.",
+      "No cost or compliance-burden estimate was found for retrofitting PDU-level meters to MID/Eichrecht standards in a colo context, which would be needed to assess whether metering compliance materially reduces serviceable demand."
+    ]
+  }
+}

@@ -1,0 +1,284 @@
+{
+  "inputsHash": "179e413fb954f025899cd62335f21fc8fafa7f508d633dfac8b9a24b9b47f39c",
+  "generatedAt": "2026-07-08T19:09:19.134Z",
+  "data": {
+    "claims": [
+      {
+        "id": "seg-edge-telecom#c0",
+        "claim": "Global edge data center market size estimate for 2024",
+        "number": 12.36,
+        "unit": "USD billion",
+        "sourceTitle": "Edge Data Center Market Size, Trends | Industry Report 2033",
+        "url": "https://www.grandviewresearch.com/industry-analysis/edge-data-center-market-report",
+        "excerpt": "The global edge data center market size was estimated at USD 12.36 billion in 2024 and is projected to reach USD 109.91 billion by 2033, growing at a CAGR of 28.9% from 2025 to 2033.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c1",
+        "claim": "Global edge data center market size estimate for 2025-2026",
+        "number": 16.11,
+        "unit": "USD billion",
+        "sourceTitle": "Edge Data Center Market Size & Share | Global Report [2034]",
+        "url": "https://www.fortunebusinessinsights.com/edge-data-center-market-109043",
+        "excerpt": "The global edge data center market size of USD 16.11 billion in 2025 and is projected to expand from USD 19.47 billion in 2026 to USD 88.89 billion by 2034, growing at a CAGR of 20.90% over the forecast period.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c2",
+        "claim": "Mordor Intelligence edge data center market size for 2025-2026",
+        "number": 18.08,
+        "unit": "USD billion",
+        "sourceTitle": "Edge Data Center Market Size Growth & Forecast, 2031",
+        "url": "https://www.mordorintelligence.com/industry-reports/edge-data-center-market",
+        "excerpt": "The edge data center market size was valued at USD 18.08 billion in 2025 and estimated to grow from USD 22.21 billion in 2026 to reach USD 62.18 billion by 2031, at a CAGR of 22.87% during the forecast period (2026-2031).",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c3",
+        "claim": "Coherent Market Insights edge data center market size for 2026",
+        "number": 46.86,
+        "unit": "USD billion",
+        "sourceTitle": "Edge Data Center Market Share & Opportunities 2026-2033",
+        "url": "https://www.coherentmarketinsights.com/industry-reports/edge-data-center-market",
+        "excerpt": "The global edge data center market is estimated to be valued at USD 46.86 Bn in 2026 and is expected to reach USD 157.42 Bn by 2033, exhibiting a compound annual growth rate (CAGR) of 18.9% from 2026 to 2033.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c4",
+        "claim": "Electroiq edge data center market size for 2024",
+        "number": 15.46,
+        "unit": "USD billion",
+        "sourceTitle": "Edge Data Center Statistics By Market, Revenue And Facts (2025)",
+        "url": "https://electroiq.com/stats/edge-data-center-statistics/",
+        "excerpt": "In 2024, the world's edge data center market was valued at US$15.46 billion and is expected to reach US$84.41 billion by 2034, growing at a CAGR of 18.5%.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c5",
+        "claim": "Market Research Future edge data center market size for 2025-2026",
+        "number": 19.35,
+        "unit": "USD billion",
+        "sourceTitle": "Edge Data Center Market Size, Trends | Industry Report - 2035",
+        "url": "https://www.marketresearchfuture.com/reports/edge-data-center-market-4180",
+        "excerpt": "The Edge Data Center Market reached USD 19.35 billion in 2025, and this trajectory is set to accelerate — from an estimated USD 23.43 billion in 2026 to USD 131.18 billion by 2035, reflecting a compound annual growth rate of 21.1% across the forecast window",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c6",
+        "claim": "Total data center market size for 2025 (Precedence Research)",
+        "number": 386.71,
+        "unit": "USD billion",
+        "sourceTitle": "Data Center Market Size to Hit USD 1,103.70 Billion by 2035",
+        "url": "https://www.precedenceresearch.com/data-center-market",
+        "excerpt": "Revenue, 2025\n\nUSD 386.71 Bn\n\nForecast Year, 2035\n\nUSD 1,103.70 Bn\n\nCAGR, 2026 - 2035\n\n11.06%",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c7",
+        "claim": "Total data center market size for 2024 with network infrastructure the largest segment",
+        "number": 416.09,
+        "unit": "USD billion",
+        "sourceTitle": "Data Center Market Statistics 2026: AI, $416B Market & the Power Ceiling",
+        "url": "https://technologychecker.io/blog/data-center-market-statistics-ai",
+        "excerpt": "The total data center market earned $416.09 billion in 2024, with network infrastructure ($239.68B) the largest segment.",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c8",
+        "claim": "Global data center power market size for 2025",
+        "number": 22.77,
+        "unit": "USD billion",
+        "sourceTitle": "Data Center Power Market Size, Share | Industry Report 2033",
+        "url": "https://www.grandviewresearch.com/industry-analysis/data-center-power-market",
+        "excerpt": "The global data center power market size was estimated at USD 22.77 billion in 2025 and is projected to reach USD 71.76 billion by 2033, growing at a CAGR of 15.7% from 2026 to 2033.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c9",
+        "claim": "IT & Telecom segment expected to grow fastest CAGR in data center power market",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Data Center Power Market Size, Share | Industry Report 2033",
+        "url": "https://www.grandviewresearch.com/industry-analysis/data-center-power-market",
+        "excerpt": "By end use, the IT & Telecom segment is expected to grow at the fastest CAGR from 2026 to 2033.",
+        "tags": [
+          "demand"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c10",
+        "claim": "IT & telecom application segment holds 34.6% share of data center power market",
+        "number": 34.6,
+        "unit": "percent",
+        "sourceTitle": "Data Center Power Market | Global Market Analysis Report - 2035",
+        "url": "https://www.futuremarketinsights.com/reports/data-center-power-market",
+        "excerpt": "Solution will dominate with a 57.4% market share, while IT & telecom will lead the application segment with a 34.6% share.",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c11",
+        "claim": "Global telecom power systems market size for 2025",
+        "number": 6.8,
+        "unit": "USD billion",
+        "sourceTitle": "Telecom Power Systems Market Research Report 2034",
+        "url": "https://dataintelo.com/report/telecom-power-systems-market",
+        "excerpt": "Global telecom power systems market valued at $6.8 billion in 2025\n- Expected to reach $13.1 billion by 2034 at a CAGR of 7.6%",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c12",
+        "claim": "Telecom power systems market segmented by end-user including telecom towers and data centers",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Telecom Power Systems Market Research Report 2034",
+        "url": "https://dataintelo.com/report/telecom-power-systems-market",
+        "excerpt": "End-User (Telecom Towers, Data Centers, and Others)",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c13",
+        "claim": "Offsite data center power infrastructure market size for 2024",
+        "number": 13.4,
+        "unit": "USD billion",
+        "sourceTitle": "Offsite Data Center Power Infrastructure Market Report 2024-2029",
+        "url": "https://www.marketsandmarkets.com/Market-Reports/offsite-data-center-power-infrastructure-market-49294491.html",
+        "excerpt": "The global offsite data center power infrastructure market is estimated at USD 13.4 billion in 2024, with a projected growth to USD 35.4 billion by 2030, exhibiting a Compound Annual Growth Rate (CAGR) of 17.6%.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c14",
+        "claim": "Global data center power infrastructure market size for 2025 (GII/GMI)",
+        "number": 43.8,
+        "unit": "USD billion",
+        "sourceTitle": "Data Center Power Infrastructure Market Opportunity, Growth Drivers, Industry Trend Analysis, and Forecast 2026 - 2035",
+        "url": "https://www.giiresearch.com/report/gmi2071211-data-center-power-infrastructure-market.html",
+        "excerpt": "The Global Data Center Power Infrastructure Market was valued at USD 43.8 billion in 2025 and is estimated to grow at a CAGR of 9.5% to reach USD 108.1 billion by 2035.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c15",
+        "claim": "Local-processing mandates in over 40 countries steer edge budgets toward distributed architectures",
+        "number": 40,
+        "unit": "countries",
+        "sourceTitle": "Edge Data Center Market Size Growth & Forecast, 2031",
+        "url": "https://www.mordorintelligence.com/industry-reports/edge-data-center-market",
+        "excerpt": "Local-processing mandates in more than 40 countries continue to steer budgets toward distributed architectures that keep data within national borders.",
+        "tags": [
+          "regulation"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c16",
+        "claim": "Micro data centers segment holds largest edge market share in 2026",
+        "number": 36.3,
+        "unit": "percent",
+        "sourceTitle": "Edge Data Center Market Share & Opportunities 2026-2033",
+        "url": "https://www.coherentmarketinsights.com/industry-reports/edge-data-center-market",
+        "excerpt": "The micro data centers segment leads the market holding an estimated share of 36.3% in 2026.",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c17",
+        "claim": "North America held 34.4% revenue share of global edge data center market in 2024",
+        "number": 34.4,
+        "unit": "percent",
+        "sourceTitle": "Edge Data Center Market Size, Trends | Industry Report 2033",
+        "url": "https://www.grandviewresearch.com/industry-analysis/edge-data-center-market-report",
+        "excerpt": "North America held a 34.4% revenue share of the global edge data center market in 2024.",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c18",
+        "claim": "Rectifiers held largest component share of telecom power systems market in 2025",
+        "number": 31.4,
+        "unit": "percent",
+        "sourceTitle": "Telecom Power Systems Market Research Report 2034",
+        "url": "https://dataintelo.com/report/telecom-power-systems-market",
+        "excerpt": "Rectifiers held the largest component share at 31.4% in 2025",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "seg-edge-telecom#c19",
+        "claim": "Asia Pacific dominated telecom power systems market with 38.7% revenue share in 2025",
+        "number": 38.7,
+        "unit": "percent",
+        "sourceTitle": "Telecom Power Systems Market Research Report 2034",
+        "url": "https://dataintelo.com/report/telecom-power-systems-market",
+        "excerpt": "Asia Pacific dominated with 38.7% revenue share in 2025",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "Cached edge market sizes for adjacent/overlapping years diverge by nearly 4x (GVR $12.36B in 2024 vs Coherent $46.86B in 2026, both pre-2026 vintage), meaning any absolute-$-based carve-out ratio used to derive seg.edge's ~5% share is highly sensitive to which vendor's edge-market figure is paired with the total DC market denominator.",
+        "nodes": [
+          "seg.edge"
+        ]
+      },
+      {
+        "text": "The total DC market denominator itself varies across sources for nearby years ($386.71B in 2025 per Precedence vs $416.09B in 2024 per TechnologyChecker), compounding uncertainty in any edge-$-over-total-$ carve-out calculation feeding seg.edge.",
+        "nodes": [
+          "seg.edge"
+        ]
+      },
+      {
+        "text": "FMI's cited 34.6% IT&Telecom share is confirmed to apply only to the 'data center power' sub-market (a $15.2B-$31.2B market per FMI, vs GVR's $22.77B-$71.76B estimate for the same nominal sub-market), not the total DC market — reinforcing the node's own caveat that this figure cannot be used as a clean telecom-of-total-DC share, and also showing the power sub-market itself is inconsistently sized across vendors.",
+        "nodes": [
+          "seg.telecom"
+        ]
+      },
+      {
+        "text": "Dataintelo's $6.8B telecom power systems market explicitly segments end-users into 'Telecom Towers, Data Centers, and Others,' confirming this figure is broader than data-center-only telecom demand and cannot serve as a clean numerator for a telecom-share-of-DC-market ratio, as the node's promotion path requires.",
+        "nodes": [
+          "seg.telecom"
+        ]
+      }
+    ],
+    "absences": [
+      "No source publishes edge data center market size as a percentage/share of the total data center market — every edge report (GVR, Fortune Business Insights, Mordor, Coherent, electroiq, MRFR) reports only absolute USD figures.",
+      "No source publishes a telecom-only (excluding towers/off-grid sites) share of the total data center market or of data center power spend.",
+      "No vintage-matched pair of edge-market-$ and total-DC-market-$ for the same year/publisher was found, preventing a clean single-source carve-out calculation.",
+      "No operator-capex breakdown isolating telecom-operator data-center spend from broader telecom power infrastructure (towers, off-grid sites) was found."
+    ]
+  }
+}

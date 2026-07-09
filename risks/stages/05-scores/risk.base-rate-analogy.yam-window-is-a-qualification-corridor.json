@@ -1,0 +1,26 @@
+{
+  "inputsHash": "e67bf18c09e660f0b0c9d664aa749c8e5461fc9a5a3a3ff7501ff9c89a621d38",
+  "generatedAt": "2026-07-08T05:30:23.823Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (obtainableFactor 0.03, revised from 0.06), a dated compliance stack (CE/TÜV, ecodesign 2019/424, WEEE/EORI, 6–9 mo), a 12–18 mo sales cycle, and a quantified perturbation to 0.006 with reference-class datapoints (~0.1%, ~0.001%, 30% POC failure). Actors, instruments, values, and windows are all concrete."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The core insight — the benchmark's denominator is a 1–3/3–5 year capture window while the YAM window is 12 months, so a mid-band 'conservative' factor silently imports years 2–3 — is a definitional mismatch the model does not contain, and whyMissable correctly notes the down-revision from 0.06 actively camouflages it. A very rigorous founder auditing benchmark definitions could find it, so not a full 4."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (cert corridor consumes months 1–9 → residual window cannot contain a 12–18 mo DC sales cycle → pilot-only Year-1 revenue) with refs at every hop, each independently plausible. The 6–9 month cert duration and the 5x magnitude are inferential, as the likelihood rationale itself concedes ('no source provides certification-duration months')."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Two independent sources (TryBuildCo, WorthBuild) directly corroborate the load-bearing timeframe-mismatch premise, plus primary EU regulation for the conformity requirement — but they are low-authority blog/calculator sources. The Tractian ~0.001% datapoint in the narrative is unsupported by its own stance (marked silent, quoting ~8% share), which weakens one leg of the reference class."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The perturbation (0.03→0.006) is a 5x SOM cut, and mitigations change near-term sequencing: start the cert stack pre-launch or license a pre-certified OEM platform, and replace the heuristic with a bottom-up pipeline model. Both indicators have concrete thresholds (compliance by month 6; pilot-to-PO >6 mo or <70% acceptance) that are monitorable within two quarters."
+    }
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "inputsHash": "e5203d0aba487c44f4639a6182b6c6b1bbde86e0e9c27b7bf78f605daa5ae3c8",
+  "generatedAt": "2026-07-08T18:41:44.631Z",
+  "data": {
+    "claims": [
+      {
+        "id": "geo-DE#c0",
+        "claim": "Germany has 1,955.0MW of total IT capacity, one of the largest data center markets in Europe.",
+        "number": 1955,
+        "unit": "MW",
+        "sourceTitle": "Germany GDC2025 | CleanBridge",
+        "url": "https://www.cleanbridge.co/insights/energy-transition/cleanbridge-global-data-center-market-report-2025/regional-market-overviews-gdc2025/germany-gdc2025/",
+        "excerpt": "Germany is one of the largest data center markets in Europe, boasting 1,955.0MW of total IT capacity, largely owing to its thriving tech sector, economic importance and centralised location within continental Europe.",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-DE#c1",
+        "claim": "Frankfurt hosts close to 75% of Germany's IT capacity.",
+        "number": 75,
+        "unit": "%",
+        "sourceTitle": "Germany GDC2025 | CleanBridge",
+        "url": "https://www.cleanbridge.co/insights/energy-transition/cleanbridge-global-data-center-market-report-2025/regional-market-overviews-gdc2025/germany-gdc2025/",
+        "excerpt": "Frankfurt dominates Germany's data center market, hosting close to 75.0% of the country's IT capacity, largely driven by the data processing demands of its financial district.",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "geo-DE#c2",
+        "claim": "Germany has over 240 Data Centre facilities, over 900k m2 of raised floor space, and over 1,400 MW of Data Centre Customer Power (DCCP) as of mid-2025.",
+        "number": 1400,
+        "unit": "MW",
+        "sourceTitle": "Germany Data Centre Landscape 2025-2028 - Research and Markets",
+        "url": "https://www.researchandmarkets.com/reports/5264689/germany-data-centre-landscape-2025-2028",
+        "excerpt": "There are over 240 Data Centre facilities - with over 900k m2 of Data Centre raised floor space and over 1,400 MW of Data Centre Customer Power (DCCP) in total - forecast as of mid-2025.",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-DE#c3",
+        "claim": "Frankfurt area accounts for over 60% of the German DC market; Berlin has a 6.5% share.",
+        "number": 60,
+        "unit": "%",
+        "sourceTitle": "Germany Data Centre Landscape 2025-2028 - Research and Markets",
+        "url": "https://www.researchandmarkets.com/reports/5264689/germany-data-centre-landscape-2025-2028",
+        "excerpt": "The Frankfurt area is seeing substantial new Data Centre build outs and now accounts for over 60%. Berlin currently with a 6.5% share will see significant growth over the next five years.",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "geo-DE#c4",
+        "claim": "Germany remains the second largest Data Centre market in Europe behind the UK.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Germany Data Centre Landscape 2025-2028 - Research and Markets",
+        "url": "https://www.researchandmarkets.com/reports/5264689/germany-data-centre-landscape-2025-2028",
+        "excerpt": "Overall, the German market remains the second largest Data Centre market in Europe behind the UK.",
+        "tags": [
+          "competition"
+        ]
+      },
+      {
+        "id": "geo-DE#c5",
+        "claim": "Germany projected to reach 2,330 MW domestic data center power capacity by 2030, with 6.6% CAGR 2025-2030.",
+        "number": 2330,
+        "unit": "MW",
+        "sourceTitle": "Data Center Germany",
+        "url": "https://www.gtai.de/en/invest/industries/digital-economy/data-center",
+        "excerpt": "2,330 MW domestic data center power capacity by 2030 ... 6.6 % CAGR for the period 2025 to 2030",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-DE#c6",
+        "claim": "Colocation and hyperscale data centers contribute EUR 10.4bn to German GDP, with 529 data center companies and 210,000 workers.",
+        "number": 10.4,
+        "unit": "EUR bn",
+        "sourceTitle": "Data Center Germany",
+        "url": "https://www.gtai.de/en/invest/industries/digital-economy/data-center",
+        "excerpt": "EUR 10.4 bn colocation and hyperscale data center contribution to GDP ... 529 data center companies in Germany ... 210,000 Workforce",
+        "tags": [
+          "demand",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-DE#c7",
+        "claim": "Germany DC market sized at USD 9.12bn (2025) growing to USD 20.22bn by 2031 at 14.18% CAGR.",
+        "number": 9.12,
+        "unit": "USD bn",
+        "sourceTitle": "Germany Data Center Market Size & Share Outlook to 2031",
+        "url": "https://www.mordorintelligence.com/industry-reports/germany-data-center-market",
+        "excerpt": "Base Year Market Size (2025) | USD 9.12 Billion ... Market Size (2031) | USD 20.22 Billion | Growth Rate (2026 - 2031) | 14.18% CAGR",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-DE#c8",
+        "claim": "Frankfurt IT Load is 745 MW, with 542 MW under construction and 383 MW in planning.",
+        "number": 745,
+        "unit": "MW",
+        "sourceTitle": "German data center market: Addressing rising demand",
+        "url": "https://www.jll.com/en-de/insights/german-data-center-market-addressing-rising-demand",
+        "excerpt": "Frankfurt IT Load: 745 MWUnder construction: 542 MWIT-Load in planning: 383 MW",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-DE#c9",
+        "claim": "Berlin IT Load is 92 MW, with 76 MW under construction and 219 MW in planning.",
+        "number": 92,
+        "unit": "MW",
+        "sourceTitle": "German data center market: Addressing rising demand",
+        "url": "https://www.jll.com/en-de/insights/german-data-center-market-addressing-rising-demand",
+        "excerpt": "Berlin IT Load: 92 MWUnder construction: 76 MWIT-Load in planning: 219 MW",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-DE#c10",
+        "claim": "Germany has 1,994 data centers, of which 309 are colocation data centers (69% of capacity in colocation), totaling 1,955 MW of IT power, with 831 MW in Frankfurt colocation data centers.",
+        "number": 1994,
+        "unit": "data centers",
+        "sourceTitle": "DATA CENTER IMPACT REPORT DEUTSCHLAND",
+        "url": "https://www.germandatacenters.com/fileadmin/images/DCIRD-24/Data-Center-Impact-Report-Deutschland-2024_EN.pdf",
+        "excerpt": "1,994 data centers* thereof 309 colocation data centers thereof 69 % in colocation data centers ... 1,955 MW IT power in Germany approx. ... 831 MW IT power in Frankfurt colocation data centers",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-DE#c11",
+        "claim": "88% of energy use in German colocation data centers comes from renewable energy.",
+        "number": 88,
+        "unit": "%",
+        "sourceTitle": "DATA CENTER IMPACT REPORT DEUTSCHLAND",
+        "url": "https://www.germandatacenters.com/fileadmin/images/DCIRD-24/Data-Center-Impact-Report-Deutschland-2024_EN.pdf",
+        "excerpt": "88 % Energy use from RE in colocation data centers",
+        "tags": [
+          "regulation"
+        ]
+      },
+      {
+        "id": "geo-DE#c12",
+        "claim": "Germany DC market valued at USD 7.65bn in 2025, reaching USD 14.73bn by 2031 at 11.54% CAGR; power capacity to exceed 524 MW by 2031.",
+        "number": 524,
+        "unit": "MW",
+        "sourceTitle": "Germany Data Center Market Size, Growth, Investments & Opportunities 2031",
+        "url": "https://www.arizton.com/market-reports/germany-data-center-market-2025",
+        "excerpt": "THE GERMANY DATA CENTER MARKET SIZE WAS VALUED AT USD 7.65 BILLION IN 2025 AND IS EXPECTED TO REACH USD 14.73 BILLION BY 2031 ... Power Capacity to Exceed 524 MW by 2031",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-DE#c13",
+        "claim": "Frankfurt data center market valued at 1.39 thousand MW in 2025, growing to 2.03 thousand MW by 2031 at 6.77% CAGR.",
+        "number": 1390,
+        "unit": "MW",
+        "sourceTitle": "Frankfurt Data Center Market Share & Size 2031 Outlook",
+        "url": "https://www.mordorintelligence.com/industry-reports/frankfurt-data-center-market",
+        "excerpt": "Base Year Market Size (2025) | 1.39 Thousand megawatt ... Market Volume (2031) | 2.03 Thousand megawatt | Growth Rate (2026 - 2031) | 6.77% CAGR",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-DE#c14",
+        "claim": "Frankfurt data center market was valued at 1.30 thousand MW in 2025, supported by 745 MW live capacity, 542 MW under construction, and 383 MW in advanced planning; vacancy near 2.2%.",
+        "number": 1300,
+        "unit": "MW",
+        "sourceTitle": "Frankfurt Data Center - Market Share Analysis, Industry Trends & Statistics, Growth Forecasts (2026 - 2031)",
+        "url": "https://www.marketresearch.com/Mordor-Intelligence-LLP-v4018/Frankfurt-Data-Center-Share-Trends-43842040/",
+        "excerpt": "The Frankfurt data center market was valued at 1.30 thousand MW in 2025 ... supported by 745 MW live capacity, 542 MW under construction, and 383 MW in advanced planning ... vacancy rate remains near 2.2%",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-DE#c15",
+        "claim": "Frankfurt carries around 745 MW of IT load, with grid connections facing 24-to-36-month waits and FLAP-D prices rising 12% in 2026.",
+        "number": 745,
+        "unit": "MW",
+        "sourceTitle": "Data Centres in 2026: Power Becomes the Decisive Asset-Class Question",
+        "url": "https://neospaces.de/en/insights/germany-data-center-market-2026-05-31",
+        "excerpt": "Frankfurt carries around 745 MW of IT load, yet grid connections face 24-to-36-month waits and FLAP-D prices rise 12 percent in 2026.",
+        "tags": [
+          "execution",
+          "regulation"
+        ]
+      },
+      {
+        "id": "geo-DE#c16",
+        "claim": "Frankfurt hosts more than 130 data centre facilities; DE-CIX routes roughly 90% of intra-German and 35% of European internet traffic; Frankfurt market estimated at around 1.3 GW of IT load in 2025, growing to 1.8 GW by 2030 at 6.78% CAGR.",
+        "number": 1.3,
+        "unit": "GW",
+        "sourceTitle": "Frankfurt Data Centres: FRA1 Power Constraints and Pipeline Migration",
+        "url": "https://neospaces.de/en/insights/frankfurt-data-center-fra1-power-2026-q2",
+        "excerpt": "Frankfurt hosts more than 130 data centre facilities per Datacentermap ... Market size: per Mordor Intelligence the Frankfurt market is estimated at around 1.3 GW of IT load in 2025, growing to 1.8 GW by 2030 (CAGR 6.78%).",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-DE#c17",
+        "claim": "Germany, already Europe's largest data center market, has nearly 500 facilities listed.",
+        "number": 500,
+        "unit": "facilities",
+        "sourceTitle": "Germany's Distributed Data Center Growth from Frankfurt to Berlin",
+        "url": "https://www.datacenterknowledge.com/data-center-site-selection/germany-s-data-center-market-expands-amid-power-regulatory-pressures",
+        "excerpt": "Germany, already Europe's largest data center market with nearly 500 facilities listed, is entering a new phase of expansion as AI, machine learning, 5G, and cloud services intensify demand.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-DE#c18",
+        "claim": "Public cloud providers accounted for about 61% of 2025 EMEA data center take-up, with AI-related workload at roughly 12%.",
+        "number": 61,
+        "unit": "%",
+        "sourceTitle": "Germany's Distributed Data Center Growth from Frankfurt to Berlin",
+        "url": "https://www.datacenterknowledge.com/data-center-site-selection/germany-s-data-center-market-expands-amid-power-regulatory-pressures",
+        "excerpt": "Across EMEA, public cloud providers accounted for about 61% of 2025 take-up, with AI-related workload at roughly 12%, according to an October 2025 Knight Frank/DC Byte report.",
+        "tags": [
+          "demand"
+        ]
+      },
+      {
+        "id": "geo-DE#c19",
+        "claim": "FLAP-D vacancy hits record low of 6.3%, with pipeline 83% pre-let.",
+        "number": 6.3,
+        "unit": "%",
+        "sourceTitle": "EMEA​ year end data centre report 2025",
+        "url": "https://www.jll.com/en-uk/insights/emea-data-centre-report",
+        "excerpt": "FLAP-D vacancy hits record low of 6.3%, pipeline is 83% pre-let. Capacity is being absorbed faster than it can be replaced.",
+        "tags": [
+          "demand",
+          "competition"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "Arizton's forecast that Germany's DC 'Power Capacity' will only 'Exceed 524 MW by 2031' is nearly an order of magnitude below both BMWK's cross-check figure (>2,700 MW installed, already reached by March 2025) and Statista's colo-only figure (1,737 MW) used as the node's primary input — suggesting Arizton is measuring a narrower or different capacity metric, which if conflated could badly distort the DE ratio.",
+        "nodes": [
+          "geo.DE"
+        ]
+      },
+      {
+        "text": "GTAI projects Germany will reach only 2,330 MW of domestic data center power capacity 'by 2030', a lower figure than BMWK's claim that Germany already had 'an installed IT power demand of over 2,700 MW' as of March 2025 — the two government-adjacent/industry sources disagree on whether current or even 2030 capacity exceeds ~2,300-2,700 MW, undermining confidence in the 0.42 low-end cross-check derived from the BMWK figure.",
+        "nodes": [
+          "geo.DE"
+        ]
+      },
+      {
+        "text": "Frankfurt capacity estimates diverge sharply within the same search set: JLL and neospaces cite Frankfurt 'IT Load: 745 MW' (live), while Mordor Intelligence estimates the Frankfurt market at '1.30 thousand MW' to '1.39 thousand megawatt' in 2025 — nearly double — implying the same colo-vs-total-installed scope ambiguity the node itself flags as unresolved (promotionPath: 'Reconcile colo vs total-installed scopes').",
+        "nodes": [
+          "geo.DE"
+        ]
+      },
+      {
+        "text": "Facility counts for Germany diverge by roughly 4x: BMWK/Impact Report cite 'over 2,000 data centres' / '1,994 data centers', while Datacenterknowledge states Germany has 'nearly 500 facilities listed' — indicating no stable base-rate unit of measurement (facility count) exists for cross-validating the MW-based capacity apportionment used in the node.",
+        "nodes": [
+          "geo.DE"
+        ]
+      },
+      {
+        "text": "CleanBridge's total IT capacity figure for Germany (1,955.0 MW) and the German Data Center Impact Report's figure (also 1,955 MW IT power, but explicitly including only 309 colocation DCs among 1,994 total DCs) sit close to Statista's 1,737 MW colo-only figure used in the node, but it is unclear whether 1,955 MW represents colo-only or total (colo+enterprise) capacity — the ambiguity the node's derivation already acknowledges.",
+        "nodes": [
+          "geo.DE"
+        ]
+      }
+    ],
+    "absences": [
+      "No source in this search set independently corroborates the CE-7 total colocation capacity denominator (3,451 MW) used in the node's top-down apportionment — all cross-referenced reports discuss Germany in isolation, not the CE-7 basket (DE, NL, CH, PL, CZ, AT).",
+      "No report explicitly breaks down what share of Germany's >2,700 MW 'installed IT power demand' (BMWK) is colocation versus enterprise/hyperscale self-built capacity — exactly the reconciliation the node's promotionPath calls for, and it remains unfound.",
+      "No time series of Germany's DC capacity growth (e.g., year-over-year MW additions 2022-2025) was found to validate that the 2025 snapshot values (1,737 MW colo, >2,700 MW installed) are representative rather than a point-in-time anomaly amid rapid AI-driven buildout.",
+      "No vendor-revenue-based market-share split for Germany (the reconciliation method the node's promotionPath specifies) appeared in any of the retrieved sources; all found figures are MW-capacity or facility-count based, not revenue-based.",
+      "No granular breakdown of secondary German markets (Munich, Hamburg, Dusseldorf) with MW figures was found, despite multiple sources noting their emerging growth — leaving Frankfurt/Berlin as the only quantified sub-national data points."
+    ]
+  }
+}

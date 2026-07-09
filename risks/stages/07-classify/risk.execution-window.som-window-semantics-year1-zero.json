@@ -1,0 +1,25 @@
+{
+  "inputsHash": "1f9427b33a28814c31506b73235700afbb95efb64286a287ab082d075954ea26",
+  "generatedAt": "2026-07-08T21:51:54.078Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "The source documents themselves (Prospeo, IdeaPlan) settle whether the 1% benchmark refers to Year-1 capture or cumulative 36-month capture — this is a definitional reading of existing, attached artifacts, resolvable today by reading the sources rather than waiting for market events.",
+    "proposedCorrection": {
+      "nodeId": "obtainableFactor",
+      "value": 0.01,
+      "low": 0.005,
+      "high": 0.03,
+      "rationale": "The ledger already reconciled the benchmark-period misread by adopting Prospeo's explicit Year-1 = 1% figure (with 3% and 5% for Years 2–3), and the Tractian comparable plus early-procurement mechanism keep the 0.5–3% band intact, so the claim's premise that 1% is a 3-year total is contradicted by the source's own Year-1 assignment."
+    },
+    "researchQueries": [
+      {
+        "query": "Prospeo addressable-market guide exact phrasing: '1% of SAM in Year 1, 3% in Year 2, 5% in Year 3' — confirm the 1% is assigned to Year 1 specifically",
+        "kind": "confirming"
+      },
+      {
+        "query": "IdeaPlan and Prospeo SOM definitions stating early-stage SOM of 1-5% of SAM is a cumulative 12-36 month figure rather than a single Year-1 capture",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

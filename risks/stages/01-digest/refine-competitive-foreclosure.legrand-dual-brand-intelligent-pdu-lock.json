@@ -1,0 +1,212 @@
+{
+  "inputsHash": "49dc377b23a077a5bbbd1cf77a8456dc0e3748749f8a6d4022c405d243d8c4d6",
+  "generatedAt": "2026-07-08T18:52:39.805Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c0",
+        "claim": "Intelligent PDU market size estimated at $3.52 billion in 2025",
+        "number": 3.52,
+        "unit": "USD billion",
+        "sourceTitle": "Intelligent PDU Market Size, Share & 2030 Trends Report",
+        "url": "https://www.mordorintelligence.com/industry-reports/intelligent-pdu-market",
+        "excerpt": "Market Size (2025) | USD 3.52 Billion",
+        "tags": [
+          "demand",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c1",
+        "claim": "Intelligent PDU market forecast to reach $5.53 billion by 2030",
+        "number": 5.53,
+        "unit": "USD billion",
+        "sourceTitle": "Intelligent PDU Market Size, Share & 2030 Trends Report",
+        "url": "https://www.mordorintelligence.com/industry-reports/intelligent-pdu-market",
+        "excerpt": "Market Size (2030) | USD 5.53 Billion",
+        "tags": [
+          "demand",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c2",
+        "claim": "Mordor lists Growth Rate (2025-2030) as 3.52% CAGR for intelligent PDU market",
+        "number": 3.52,
+        "unit": "% CAGR",
+        "sourceTitle": "Intelligent PDU Market Size, Share & 2030 Trends Report",
+        "url": "https://www.mordorintelligence.com/industry-reports/intelligent-pdu-market",
+        "excerpt": "Growth Rate (2025 - 2030) | 3.52% CAGR",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c3",
+        "claim": "Mordor's own narrative text states a 9.44% CAGR for the same 2025-2030 period, contradicting the table's 3.52% figure",
+        "number": 9.44,
+        "unit": "% CAGR",
+        "sourceTitle": "Intelligent PDU Market Size, Share & 2030 Trends Report",
+        "url": "https://www.mordorintelligence.com/industry-reports/intelligent-pdu-market",
+        "excerpt": "is forecast to reach USD 5.53 billion by 2030, reflecting a 9.44% CAGR",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c4",
+        "claim": "Mordor rates intelligent-PDU market concentration as 'Medium'",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Intelligent PDU Market Size, Share & 2030 Trends Report",
+        "url": "https://www.mordorintelligence.com/industry-reports/intelligent-pdu-market",
+        "excerpt": "Market Concentration | Medium",
+        "tags": [
+          "competition",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c5",
+        "claim": "Broader data center PDU market valued at $3.94 billion in 2025 per MarketsandMarkets",
+        "number": 3.94,
+        "unit": "USD billion",
+        "sourceTitle": "Data Center PDU Market Size, Share, Latest Trends & Growth Analysis, 2025-2032",
+        "url": "https://www.marketsandmarkets.com/Market-Reports/data-center-pdu-market-183927907.html",
+        "excerpt": "the data center PDU market size was valued USD 3.94 biliion in 2025 and is project to reach USD 14.23 billion by 2032, growing at a CAGR of 19.5%",
+        "tags": [
+          "demand",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c6",
+        "claim": "Data center PDU market projected to reach $14.23 billion by 2032 at 19.5% CAGR",
+        "number": 14.23,
+        "unit": "USD billion",
+        "sourceTitle": "Data Center PDU Market Size, Share, Latest Trends & Growth Analysis, 2025-2032",
+        "url": "https://www.marketsandmarkets.com/Market-Reports/data-center-pdu-market-183927907.html",
+        "excerpt": "USD 14.23 BN MARKET SIZE, 2032 CAGR 19.5% (2026-2032)",
+        "tags": [
+          "demand",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c7",
+        "claim": "Legrand's Server Technology (2017) and Raritan (2015) acquisitions consolidated the #1/#2 rack-PDU positions in North America",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Legrand (LR) — jimmy·research",
+        "url": "https://jimmyresearch.com/entities/legrand/",
+        "excerpt": "Legrand's Server Technology (2017) and Raritan (2015) acquisitions consolidated the #1 / #2 rack-PDU positions in North America.",
+        "tags": [
+          "competition",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c8",
+        "claim": "Data center exposure is approximately 30% of Legrand's projected 2026 sales",
+        "number": 30,
+        "unit": "%",
+        "sourceTitle": "Legrand (LR) — jimmy·research",
+        "url": "https://jimmyresearch.com/entities/legrand/",
+        "excerpt": "fastest-growing CAC 40 industrial on AI data-center exposure (DC is ~30% of 2026 sales)",
+        "tags": [
+          "demand",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c9",
+        "claim": "Mordor's top-5 PDU company list names Schneider Electric, Vertiv, Eaton, ABB, and Legrand with no share percentages disclosed",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Top Data Center Rack Power Distribution Unit (PDU) Companies - Key Players & More",
+        "url": "https://www.mordorintelligence.com/industry-reports/data-center-rack-pdu-market/companies",
+        "excerpt": "KEY PLAYERS Schneider Electric SE Vertiv Group Corp. Eaton Corporation plc ABB Ltd Legrand SA",
+        "tags": [
+          "competition",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c10",
+        "claim": "A European bank transitioned intelligent PDU vendors while maintaining a single unified control platform across legacy and new hardware",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Data Centre PDU Migration & Rack Security | European Bank Case Study",
+        "url": "https://advanceddatacentre.com/case-studies/european-bank-pdu-migration/",
+        "excerpt": "The solution had to support both legacy and new PDUs simultaneously, while keeping power monitoring, environmental data, and security workflows under one roof.",
+        "tags": [
+          "substitution",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c11",
+        "claim": "PDU control software notes there is still no single simple way to communicate with all PDUs across brands despite SNMP support",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "pdudaemon/pdudaemon",
+        "url": "https://github.com/pdudaemon/pdudaemon/",
+        "excerpt": "Though many support SNMP, there's still no single simple way to communicate with all PDUs if you have a mix of brands.",
+        "tags": [
+          "substitution"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c12",
+        "claim": "Standardized protocols solve device communication but not the data-mapping problem when devices vary by model or firmware",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "DCIM Device Templates: Adapt Any Device Without Coding - Modius, Inc.",
+        "url": "https://modius.com/blog/made-it-myself/",
+        "excerpt": "Standard protocols like Modbus, SNMP, and BACnet solve the communication problem between DCIM and devices — but they do not solve the data mapping problem.",
+        "tags": [
+          "substitution"
+        ]
+      },
+      {
+        "id": "refine-competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock#c13",
+        "claim": "Protocol diversity across SNMP, Modbus, and BACnet creates operational complexity and fragmented visibility requiring DCIM normalization",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Protocol Diversity in Data Centers: DCIM Solutions - Modius, Inc.",
+        "url": "https://modius.com/blog/simplifying-data-center-operations-how-modius-opendata-tackles-protocol-diversity/",
+        "excerpt": "Protocol diversity—the use of multiple device communication standards like SNMP, Modbus, and BACnet across data center infrastructure—creates operational complexity, fragmented visibility, and increased risk.",
+        "tags": [
+          "substitution",
+          "structure"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "Mordor rates intelligent-PDU market concentration as only 'Medium,' which undercuts a foreclosure thesis (Legrand's Raritan+Server Technology dual-brand lock) that would justify treating serviceable demand as regulatorily gated and haircut to 0.45–0.65 primarily via EU certification barriers rather than competitive structure.",
+        "nodes": [
+          "serviceableFactor"
+        ]
+      },
+      {
+        "text": "Mordor Intelligence's own report gives two conflicting CAGR figures for the same 2025-2030 intelligent-PDU forecast period (3.52% in the summary table vs. 9.44% in the narrative text), undermining reliability of using this source to quantify serviceable/addressable growth.",
+        "nodes": [
+          "serviceableFactor"
+        ]
+      },
+      {
+        "text": "Evidence of PDU vendor switching (bank case study achieving unified control across legacy/new vendors) is in tension with evidence that mixed-brand PDU communication still lacks a single simple standard and that protocol standardization does not solve data-mapping/integration friction — meaning the degree of vendor lock (relevant to the Legrand dual-brand foreclosure concern underlying serviceableFactor) is empirically ambiguous, not settled either way.",
+        "nodes": [
+          "serviceableFactor"
+        ]
+      }
+    ],
+    "absences": [
+      "No Omdia or Mordor vendor-share table was found showing Legrand-owned Raritan + Server Technology's combined share of the intelligent-PDU segment specifically; Omdia's Rack PDU Market Tracker/Annual Analysis pages return only paywalled abstracts with vendor shares locked behind subscription.",
+      "No numeric top-3 (or top-5) concentration percentage for the intelligent-PDU segment was found; Mordor only supplies a qualitative 'Medium' concentration label with no percentage breakdown.",
+      "No quantified figure for Legrand's own combined (Raritan+Server Technology) rack-PDU or intelligent-PDU market share was found in any source — only a qualitative claim that the acquisitions 'consolidated the #1/#2 rack-PDU positions in North America.'",
+      "No quantified cost or time estimate for switching intelligent-PDU vendors (re-integration effort into the monitoring/DCIM layer) was found; only qualitative case-study and protocol-interoperability narratives exist, with no benchmark figure to support or refute the serviceableFactor's regulatory-based (vs. competitive-lock-based) haircut rationale."
+    ]
+  }
+}

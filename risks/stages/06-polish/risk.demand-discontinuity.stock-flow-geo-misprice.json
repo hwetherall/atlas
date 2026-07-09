@@ -1,0 +1,39 @@
+{
+  "inputsHash": "edfafcc1b0f3bde94fe0b09c77e3f7ae3b5138158362b51ffa27082654edc23c",
+  "generatedAt": "2026-07-08T17:43:20.701Z",
+  "data": {
+    "title": "NL geo share too high: Dutch ban redirects new-build revenue",
+    "narrative": "The model sets the Netherlands at 28% of geographic share, based on a 2025 installed-capacity snapshot. But a pre-launch entrant sells into new build-outs, and since early 2024 the Netherlands bans new hyperscale data centres outside two municipalities. Weighting Year-1 sales at a 0.28 NL share points the venture at the geography commissioning the least new capacity, so the Year-1 number is skewed toward the wrong market.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Since early 2024 the Netherlands bans new large hyperscale sites.",
+        "refs": [
+          "digest:geo-NL#c7",
+          "digest:geo-NL#c8"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "New fit-out flow shifts to Germany, Poland and CEE instead.",
+        "refs": [
+          "digest:geo-NL#c0",
+          "digest:geo-NL#c16",
+          "ledger:geo.NL"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Year-1 demand tracks new capacity, so NL's 0.28 overstates it.",
+        "refs": [
+          "ledger:geo.PL",
+          "ledger:geo.other",
+          "profile:Stage"
+        ]
+      }
+    ],
+    "whyMissable": "The NL node looks safest because two sources agree within 3%, but both measure standing stock, which is the wrong quantity for a Year-1 revenue model.",
+    "falsifier": "DDA's 2026 State of the Dutch Data Centers showing NL colocation additions at or above 28% of total CE-7 additions for the year.",
+    "likelihoodRationale": "The ban, the Amsterdam connection cap, and Cushman & Wakefield's investment-shifting statement are all in force today, so the direction is clear. DDA 2026 shows NL growth trailing the European average, though the two exempt municipalities and retrofit keep some NL flow alive."
+  }
+}

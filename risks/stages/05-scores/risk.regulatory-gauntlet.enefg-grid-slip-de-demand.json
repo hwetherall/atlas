@@ -1,0 +1,26 @@
+{
+  "inputsHash": "d5e5592a185973ce87e45babef6a55cb1648ebeb1c93fc149968acdf76dd3e8a",
+  "generatedAt": "2026-07-08T05:30:23.824Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the statute (EnEfG §11, PUE ≤1.2, mid-2026 commencement), quantified frictions (24–36-month Frankfurt grid waits, 6.3% vacancy, 83% pre-let), and the exact ledger nodes with values (geo.DE 0.50, obtainableFactor 0.03) plus dated perturbations. Actors (Vantage, NTT GDC, TenneT/Amprion) and instruments are all identified."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The core inversion — that record-low vacancy and 83% pre-let mean NO replacement-demand slack to offset new-build slips, per whyMissable — is a genuine reframe of data the founder would file as upside, and it names new reasons (EnEfG rework, grid queues) rather than a band-edge claim. Not a 4 because German grid constraints and EnEfG are well-publicized headwinds a diligent founder tracking Frankfurt would plausibly have flagged."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (mandates+queues → fit-out/energization slip → smaller/slower Year-1 orderable slice) with refs at each hop and the key insight that PDU revenue recognizes at fit-out, not announcement. The final hop — design rework translating to 12-month PDU order slippage — remains inference, as the rationale itself concedes ('an inference rather than directly observed slippage')."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The key premises are multiply corroborated (statutory §11 text attached, neospaces + igorslab/Mainova on grid waits, JLL on vacancy/pre-let), and the risk honestly logs the contradicting anwalt.de source on the pending novelle and bounds its likelihood revision accordingly. The novelle could postpone the load-bearing regulatory trigger, which keeps this below a 4."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations directly change next-two-quarter sequencing and spend: reweight Year-1 pipeline to NL/PL, build a retrofit offer insensitive to energization slips, and a dated order-timing survey with voiNodeId geo.DE. Indicators (≥2 flagship 6+ month slips; BfEE/BAFA waiver practice) are concrete and monitorable."
+    }
+  }
+}

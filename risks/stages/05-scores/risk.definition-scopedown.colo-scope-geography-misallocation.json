@@ -1,0 +1,26 @@
+{
+  "inputsHash": "492a2851107a2ab0356d67c481542b8d8b059a1f9cc25a413254ddb26a5e197e",
+  "generatedAt": "2026-07-08T05:30:23.825Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names four exact geo nodes with paired colo-vs-installed values (DE 0.50 vs 0.42, CH 0.08 vs 0.13, PL 0.07 vs 0.10), cites BMWK >2,700MW vs 1,737MW colo, and ties them to a named channel (cust.operator-large in Frankfurt/Amsterdam) with concrete perturbation values. Nothing here is vague or actor-free."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The individual cross-checks are already in the ledger and bracketed in bands, but the risk's whyMissable names the genuinely new insight: all four scope errors are correlated in the same direction and interact with the segment split and channel choice across different ledger dimensions. A careful founder reviewing node-by-node could plausibly still miss the cross-dimensional aggregation, though the raw divergences were visible."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (single colo-MW apportionment → systematic same-direction divergence → compressed reachable share behind serviceableFactor) is fully referenced and each link plausible. The load-bearing hop — that enterprise PDU refresh demand tracks installed load rather than colo MW — is honestly flagged as unmeasured in the likelihood rationale, so it would take one hostile 'why?' the risk cannot yet answer."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The scope-divergence premise has ≥2 independent sources (BMWK and Bitkom/Borderstep both confirm ~2.7GW DE installed; Mordor for CH 850MW), and the evidence block matches the stances. But the decisive premise about demand tracking has only a well-argued prior with a stated falsifier and admitted absence of data (Omdia sources are 'silent'), capping this below 4."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly bears on the Year-1 channel plan: mitigation one is a near-zero-cost re-derivation of the geo split and mitigation two changes channel spend (Swiss/Austrian reseller) within the coming quarters. Indicators are concrete and monitorable — CRM geography vs model weights with a ≥30% outside-DE+NL threshold at 6 months."
+    }
+  }
+}

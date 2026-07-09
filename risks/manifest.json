@@ -1,0 +1,40 @@
+{
+  "runId": "722d64b0811a",
+  "generatedAt": "2026-07-08T21:55:36.033Z",
+  "models": {
+    "BASIC": "anthropic/claude-sonnet-5",
+    "SMART": "anthropic/claude-opus-4.8",
+    "POWER": "anthropic/claude-fable-5"
+  },
+  "judgeShuffleSeed": 1707,
+  "ledgerRev": "2428e977d50695f663ae4b6664dd9d860e9b5c61",
+  "usageByStage": {
+    "evidence": {
+      "calls": 54,
+      "promptTokens": 622944,
+      "completionTokens": 91085
+    },
+    "judge": {
+      "calls": 51,
+      "promptTokens": 276190,
+      "completionTokens": 72729
+    },
+    "polish": {
+      "calls": 32,
+      "promptTokens": 91429,
+      "completionTokens": 19965
+    },
+    "classify": {
+      "calls": 32,
+      "promptTokens": 106768,
+      "completionTokens": 11685
+    }
+  },
+  "counts": {
+    "emitted": 32,
+    "errors": 20,
+    "boardA": 12,
+    "boardB": 12,
+    "killed": 13
+  }
+}

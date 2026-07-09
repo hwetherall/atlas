@@ -1,0 +1,26 @@
+{
+  "inputsHash": "2d9ce30a4574300e5887849ef1c80241b56c82cc151a0d1f7158b7ad2534703f",
+  "generatedAt": "2026-07-08T05:30:23.825Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names both target nodes (cust.operator-large, cust.oem), exact values (0.40→0.27, oem→0.30 with a deliberate -5pp net), specific actors (Digipower, GETEKnet, Vertiv/Schneider EMEA), and concrete instruments (Frankfurt/Amsterdam RFQ packages, hyperscaler supplier portals). The falsifier is quantified (≥35% direct branded spend across three structured interviews)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "This is not 'the 0.40 might be low' — it names a NEW reason: the sole attached evidence is a company order-book stat answering a different question, and the volume is contractually routed through ODM design-win cycles the entrant cannot enter. The whyMissable is credible (the four shares sum to 1.00 and mirror capacity mix), though a diligent founder tracing evidence provenance might catch the misused stat."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at every hop (misused stat → documented ODM/white-label supply → shrunken Year-1 reachable spend), and each arrow is independently plausible. But the 0.40→0.27 magnitude and the '18–24 month qualification' figure are asserted rather than sourced, so the final hop would take damage from a hostile 'why exactly 0.27?'."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The qualitative premise (ODM/white-label channel exists) is corroborated by two attached vendor pages plus a private-label sourcing piece, but these are vendor self-descriptions and no source gives any numeric channel split for the load-bearing magnitude claim. The risk honestly flags the McKinsey contradiction (large buyers moving toward direct engagement) and marks itself contested with a revised likelihood, which earns the honest-absence-of-data tier."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly attacks the venture's declared 'large operators first' GTM per the profile field, and the mitigations (structured channel-split interviews, OEM variant, distributor hedge) are executable within two quarters. Indicators are concrete and monitorable (RFQ spec language in first 5 target accounts, incumbent channel-mix commentary, pre-integrated rack announcements)."
+    }
+  }
+}

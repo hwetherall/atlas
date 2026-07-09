@@ -1,0 +1,183 @@
+{
+  "inputsHash": "faaebe98d127d1b9f83d17f1e5dfea03bbdc7980e1091a28cef4fecf189a0368",
+  "generatedAt": "2026-07-08T19:02:25.442Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-structure-independence.ce-hyperscale-global-split-mirage#c0",
+        "claim": "Synergy Research global data center capacity split: hyperscale 48%, non-hyperscale colocation 20%, enterprise on-premise 32%, as of end-2025.",
+        "number": 48,
+        "unit": "%",
+        "sourceTitle": "Hyperscale Operators to Account for 67% of all Data Center Capacity by 2031 | Synergy Research Group",
+        "url": "https://www.srgresearch.com/articles/hyperscale-operators-to-account-for-67-of-all-data-center-capacity-by-2031",
+        "excerpt": "they now account for 48% of the worldwide capacity of all data centers... With non-hyperscale colocation capacity accounting for another 20% of total capacity, that leaves enterprise on-premise data centers with just 32% of the total.",
+        "tags": [
+          "structure",
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.ce-hyperscale-global-split-mirage#c1",
+        "claim": "CBRE: hyperscaler self-build capacity across Europe expected to reach 4.2 gigawatts in 2026, representing 24% year-on-year growth vs 2025.",
+        "number": 4.2,
+        "unit": "GW",
+        "sourceTitle": "New hyperscaler self-build capacity growth to outpace colocation supply growth in Europe | News | Institutional Real Estate, Inc.",
+        "url": "https://irei.com/news/new-hyperscaler-self-build-capacity-growth-to-outpace-colocation-supply-growth-in-europe/",
+        "excerpt": "the latest research shows hyperscaler self-build capacity across Europe is expected to reach 4.2 gigawatts this year, representing 24 percent year-on-year growth compared to 2025.",
+        "tags": [
+          "structure",
+          "demand"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.ce-hyperscale-global-split-mirage#c2",
+        "claim": "CBRE: as of Q4 2025, approximately 60% of Europe's operational hyperscaler self-build capacity is located in Ireland, the Netherlands, Sweden and Belgium — not Central European CE-7 countries.",
+        "number": 60,
+        "unit": "%",
+        "sourceTitle": "New hyperscaler self-build capacity growth to outpace colocation supply growth in Europe | News | Institutional Real Estate, Inc.",
+        "url": "https://irei.com/news/new-hyperscaler-self-build-capacity-growth-to-outpace-colocation-supply-growth-in-europe/",
+        "excerpt": "As of fourth quarter 2025, approximately 60 percent of Europe's operational hyperscaler self-build capacity is located in Ireland, the Netherlands, Sweden and Belgium.",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.ce-hyperscale-global-split-mirage#c3",
+        "claim": "CBRE: top 15 European colocation data center markets expected to grow 19% (implied YoY, compared against hyperscaler self-build growth of 24%).",
+        "number": 19,
+        "unit": "%",
+        "sourceTitle": "New hyperscaler self-build capacity growth to outpace colocation supply growth in Europe | News | Institutional Real Estate, Inc.",
+        "url": "https://irei.com/news/new-hyperscaler-self-build-capacity-growth-to-outpace-colocation-supply-growth-in-europe/",
+        "excerpt": "By comparison, the top 15 European colocation data center markets are expected to grow 19 per[cent]",
+        "tags": [
+          "structure",
+          "demand"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.ce-hyperscale-global-split-mirage#c4",
+        "claim": "CBRE 2025 outlook: data centre supply across Europe's five largest markets expected to grow by a record 20% year-on-year in 2025.",
+        "number": 20,
+        "unit": "%",
+        "sourceTitle": "Data Centres | CBRE",
+        "url": "https://www.cbre.com/insights/books/european-real-estate-market-outlook-2025/data-centres",
+        "excerpt": "data centre supply across Europe's five largest markets is expected to grow by a record 20% year-on-year in 2025.",
+        "tags": [
+          "demand",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.ce-hyperscale-global-split-mirage#c5",
+        "claim": "CBRE: London and Frankfurt expected to account for 2.5GW of capacity, approximately half of total European data centre supply.",
+        "number": 2.5,
+        "unit": "GW",
+        "sourceTitle": "Data Centres | CBRE",
+        "url": "https://www.cbre.com/insights/books/european-real-estate-market-outlook-2025/data-centres",
+        "excerpt": "London and Frankfurt are expected to account for 2.5GW of capacity, or approximately half of the total data centre supply in Europe",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.ce-hyperscale-global-split-mirage#c6",
+        "claim": "Structure Research: Frankfurt market worth just over €2b in 2024, projected to grow at a 5-year CAGR of 19.4%; hyperscale colocation growing at a five-year CAGR of 26.1%, retail colocation at 10.3%.",
+        "number": 19.4,
+        "unit": "% CAGR",
+        "sourceTitle": "Frankfurt DCI Report 2024: Data Centre Colocation, Hyperscale Cloud & Interconnection - Structure Research",
+        "url": "https://www.structureresearch.net/product/frankfurt-dci-report-2024-data-centre-colocation-hyperscale-cloud-interconnection/",
+        "excerpt": "This is a market that will be worth just over €2b in 2024 and is projected to grow at a 5-year CAGR of 19.4%. Hyperscale colocation is growing at a five-year CAGR of 26.1% and retail colocation is moving along at a 10.3% clip.",
+        "tags": [
+          "structure",
+          "demand"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.ce-hyperscale-global-split-mirage#c7",
+        "claim": "Structure Research: Frankfurt built-out capacity was nearly 650MW in 2022, projected to climb to over 900MW by end of 2024.",
+        "number": 650,
+        "unit": "MW",
+        "sourceTitle": "Frankfurt DCI Report 2024: Data Centre Colocation, Hyperscale Cloud & Interconnection - Structure Research",
+        "url": "https://www.structureresearch.net/product/frankfurt-dci-report-2024-data-centre-colocation-hyperscale-cloud-interconnection/",
+        "excerpt": "The current built-out capacity of the market was nearly 650MW in 2022 and is projected to climb to over 900MW by the end of 2024.",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.ce-hyperscale-global-split-mirage#c8",
+        "claim": "Structure Research: Frankfurt built-out capacity will exceed 1GW by end of 2025 and tip over 2GW in 2029; 2.7GW of credible future capacity tracked at various stages.",
+        "number": 1,
+        "unit": "GW",
+        "sourceTitle": "Frankfurt DCAI Report 2025: Data Centre Colocation, Hyperscale Cloud, AI & Interconnection - Structure Research",
+        "url": "https://www.structureresearch.net/product/frankfurt-dci-report-2025-data-centre-colocation-hyperscale-cloud-ai-interconnection/",
+        "excerpt": "Frankfurt built-out capacity will exceed 1GW by the end of 2025 and tip over 2GW in 2029. Structure Research is tracking 2.7GW of credible future capacity at various stages of construction/planning.",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.ce-hyperscale-global-split-mirage#c9",
+        "claim": "Mordor Intelligence: Poland hyperscale data center market size was USD 385.87 million in 2025, forecast to reach USD 2,374.49 million in 2031 at 35.37% CAGR; installed IT load grows from 564.11 MW to 1,086.70 MW at an 11.55% CAGR.",
+        "number": 385.87,
+        "unit": "USD million",
+        "sourceTitle": "Poland Hyperscale Data Center Market Growth Report 2031",
+        "url": "https://www.mordorintelligence.com/industry-reports/poland-hyperscale-data-center-market",
+        "excerpt": "The Poland hyperscale data center market size stood at USD 385.87 million in 2025 and is forecast to climb to USD 2,374.49 million in 2031, advancing at a striking 35.37% CAGR over the period while installed IT load grows from 564.11 MW to 1,086.70 MW at an 11.55% CAGR.",
+        "tags": [
+          "structure",
+          "demand"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.ce-hyperscale-global-split-mirage#c10",
+        "claim": "Arizton report covers 341 data center facilities (290 existing, 51 upcoming, 150 operators) across 4 Central & Eastern Europe countries (Austria, Czech Republic, Poland, and one more), but does not present a hyperscale-vs-colocation capacity split.",
+        "number": 341,
+        "unit": "facilities",
+        "sourceTitle": "Central & Eastern Europe Data Centers: Existing & Upcoming Data Centers",
+        "url": "https://www.arizton.com/market-reports/central-and-eastern-europe-data-center-portfolio",
+        "excerpt": "Discover Insights on 341 Data Center Facilities Across 4 Key Countries in Central & Eastern Europe... 290 Existing Data Centers 51 Upcoming Data Centers 150 Data Center Operators",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-structure-independence.ce-hyperscale-global-split-mirage#c11",
+        "claim": "EUDCA 'State of European Data Centres 2026' report contains dedicated sections 'Colocation in Europe' and 'Hyperscale-Owned Data Centres', but no numeric split was surfaced in the retrieved text.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "State of European Data Centres 2026",
+        "url": "https://www.eudca.org/documents/content/ZlZXb4bRSRefaEVqya2I_Aoea?download=0",
+        "excerpt": "Overview of the Data Centre Landscape 8 \nColocation in Europe 11 \nHyperscale-Owned Data Centres 24",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "CBRE finds ~60% of Europe's operational hyperscaler self-build capacity sits in Ireland, Netherlands, Sweden and Belgium — not in CE-7 markets — which undercuts the seg.hyperscale node's method of rescaling Synergy's *global* 44-48% hyperscale capacity share directly onto Central Europe via a flat 0.91 carve-out factor; if hyperscale self-build is disproportionately concentrated in Western/Northern Europe, CE's true hyperscale-owned share could be materially lower than the derived 0.44.",
+        "nodes": [
+          "seg.hyperscale"
+        ]
+      },
+      {
+        "text": "Structure Research's Frankfurt-specific data shows hyperscale colocation growing at 26.1% CAGR vs retail colocation at 10.3% CAGR — a regionally-grounded growth differential that could be used to sanity-check or refine the segment split, but it describes Frankfurt only, not CE-7, and is not reconcilable with the global Synergy-derived split used in seg.hyperscale and seg.colocation.",
+        "nodes": [
+          "seg.hyperscale",
+          "seg.colocation"
+        ]
+      }
+    ],
+    "absences": [
+      "No Europe- or CE-7-scoped capacity split (hyperscale-owned vs colocation share of operational MW) was found from CBRE, Structure Research, or Synergy — despite CE-7 country names (Poland, Czechia, Austria, Hungary) appearing explicitly in the query intent, none of the retrieved sources published a regional ownership-type percentage breakdown.",
+      "Structure Research's Frankfurt DCAI/DCI reports (2024, 2025) are paywalled ($8,500) and their public previews describe market value/CAGR by segment type but do not disclose a hyperscale-vs-colocation MW percentage split.",
+      "Arizton's CEE portfolio report catalogs facility counts and operators but its public preview does not break capacity down by ownership type (hyperscale self-build vs colocation).",
+      "EUDCA's 'State of European Data Centres 2026' has a dedicated 'Hyperscale-Owned Data Centres' chapter (p.24) that plausibly contains the needed split, but its content was not retrieved/quantified in these search results.",
+      "No Poland-, Czechia-, Austria-, or Hungary-specific hyperscale-owned-vs-colocation percentage figures were found; only Poland's aggregate hyperscale market value/MW growth (Mordor) surfaced, with no colocation comparator or ownership share stated."
+    ]
+  }
+}

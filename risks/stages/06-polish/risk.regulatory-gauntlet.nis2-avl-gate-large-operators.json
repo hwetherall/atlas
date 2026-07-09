@@ -1,0 +1,39 @@
+{
+  "inputsHash": "12c81669b4c44d1537128b2bbd6440dc830d9e53973d1de9644f52ab47b6a044",
+  "generatedAt": "2026-07-08T17:40:08.159Z",
+  "data": {
+    "title": "EU security rules gate large operators, cutting Year-1 channel",
+    "narrative": "The model assumes large operators are the first channel, worth 40% of the buyer mix. But under NIS2, in force in Germany, these operators must demand ISO 27001 and IEC 62443 proof from vendors, and a pre-launch entrant holds none of it. So the reachable large-operator slice in Year 1 is far smaller than 40%.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "NIS2 makes large operators demand vendor security certifications for networked gear.",
+        "refs": [
+          "profile:Product",
+          "ledger:cust.operator-large",
+          "digest:serviceable-benchmark#c12"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Uncertified new entrant fails approved-vendor onboarding, sales shift to integrators.",
+        "refs": [
+          "ledger:cust.operator-large",
+          "ledger:cust.oem",
+          "digest:serviceable-benchmark#c13"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Reachable large-operator share in Year 1 is well below 40%.",
+        "refs": [
+          "ledger:cust.operator-large",
+          "profile:Stage"
+        ]
+      }
+    ],
+    "whyMissable": "NIS2 regulates operators not vendors, so it never shows on a vendor checklist and arrives as a procurement questionnaire after two quarters are gone.",
+    "falsifier": "Onboarding documents from two or more large operators showing rack-power vendors admitted on self-declaration without ISO 27001 or IEC 62443.",
+    "likelihoodRationale": "Large regulated buyers in finance, telecom and energy have all turned their own compliance duties into supplier certification demands, and NIS2 makes operators the next case. Direct evidence (STACK) shows some onboarding runs on self-declaration, so a slight downward nudge applies."
+  }
+}

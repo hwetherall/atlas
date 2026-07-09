@@ -1,0 +1,25 @@
+{
+  "inputsHash": "f691ec24147c6b97b8977b2ed988a89182b223197eee66646af7aeed5ad7db13",
+  "generatedAt": "2026-07-08T21:53:11.666Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A CE-region OEM/integrator channel buyer-mix dataset (or 3-5 distributor/integrator interviews plus incumbent-vs-ODM design-win records) quantifying the fraction of intelligent-PDU integrator business open to non-incumbent, non-ODM entrants — this exists today and would settle the 0.22 vs 0.08 dispute without waiting for the market to unfold.",
+    "proposedCorrection": {
+      "nodeId": "cust.oem",
+      "value": 0.08,
+      "low": 0.05,
+      "high": 0.14,
+      "rationale": "Integrator case studies show incumbent selection on DCIM/certification/support and white-label going to Asian ODMs, so the genuinely-open fraction is roughly a third of the modeled 0.22 cell.value."
+    },
+    "researchQueries": [
+      {
+        "query": "CE-region (Germany, UK) colocation and rack-integrator PDU procurement: share of intelligent-PDU design-ins awarded to non-incumbent, non-ODM vendors 2023-2024 (Raritan/Vertiv/APC vs entrants)",
+        "kind": "confirming"
+      },
+      {
+        "query": "Documented design-in or white-label PDU deals or open RFQs where a CE integrator/OEM selected a non-incumbent intelligent PDU on merit rather than Raritan, Vertiv, APC, or a low-cost Taiwanese ODM like DigiPower",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

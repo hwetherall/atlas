@@ -1,0 +1,26 @@
+{
+  "inputsHash": "8374529dd0a8a4dbdb295208ffe6b6b813f2e8d02f1b37471ec88dd10b055ab0",
+  "generatedAt": "2026-07-08T21:40:49.667Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names both ledger nodes with their values (cust.oem 0.22, cust.distributor 0.13, 35% of funnel), the 12-month YAM window, named actors (Rexel, Sonepar, Vertiv, Legrand/MIND Park), and quantified perturbations (exclude distributor, oem→0.11). Nothing here is a placeholder."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The reframe from 'what share of each channel' to 'these cells have an opening date and the plan cannot intersect it' is a genuinely new reason beyond the ledger's admitted-unsourced shares, as the whyMissable field argues. Falls short of 4 because 'new entrants struggle to get on distributor line-cards without certs' is on many competent hardware founders' lists already."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (calendar-gated listing → brand/cert-gated integrator selection → SAM shrinkage) with refs at every arrow and each link independently plausible. The strictest link — 'annual cycle cannot be compressed within 12 months' — is exactly where the risk's own evidence revision admits counterexamples exist, so the chain does not fully survive hostile 'why?' at that arrow."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The gating premise is corroborated (Vertiv approved-companies clause, Legrand/MIND Park brand selection), but the load-bearing 'calendar-foreclosed in Year 1' amplifier is contradicted by the risk's own Micas and Centiel citations, and evidenceStatus is honestly marked contested with a downward revision to 0.33. Honest handling of contradiction earns 2, not more, since the amplifier drives both perturbations."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The mitigations directly change next-two-quarter sequencing (concentrate Year-1 on direct cells, start cert dossier month 1) and prescribe cheap immediate information work pricing the unsourced 0.22/0.13 cells. Both indicators are concretely monitorable with stated thresholds, and the falsifier is crisp."
+    }
+  }
+}

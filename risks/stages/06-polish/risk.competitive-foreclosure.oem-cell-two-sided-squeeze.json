@@ -1,0 +1,39 @@
+{
+  "inputsHash": "77c01bea81f4a6753bf700b039c52e94c61561f26759103e90975b4bd7d69300",
+  "generatedAt": "2026-07-08T21:48:52.182Z",
+  "data": {
+    "title": "OEM/integrator channel closes from both sides, cutting share",
+    "narrative": "The model assumes the venture can win 0.22 of the OEM/integrator channel in Year 1. But every integrator case study we found picks incumbent brands on certification, DCIM fit and support, while white-label demand goes to low-cost Asian ODMs the entrant cannot match. The genuinely open fraction may be about 0.08, roughly a third of the modeled cell. If so, the channel-mix and Year-1 number are too high.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Integrators pick PDU brands on features and support ecosystems",
+        "refs": [
+          "digest:cust-mix#c14",
+          "digest:cust-mix#c13",
+          "ledger:cust.oem"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Entrant lacks incumbent ecosystem and ODM cost position",
+        "refs": [
+          "digest:cr3-vendors#c4",
+          "digest:cr3-vendors#c1",
+          "profile:Company"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Addressable OEM share falls from 0.22 to about 0.08",
+        "refs": [
+          "ledger:cust.oem",
+          "ledger:cust.operator-large"
+        ]
+      }
+    ],
+    "whyMissable": "The cell looks doubly open because both branded and white-label routes are documented, but each is a separately-held gate and the proof sits in different source types.",
+    "falsifier": "One CE integrator or OEM signing a design-in or white-label deal with the entrant, or a documented RFQ evaluating a non-incumbent intelligent PDU on merit within Year 1.",
+    "likelihoodRationale": "Every integrator case study shows incumbent-brand selection and no source quantifies an open OEM share, but the sample is small and behavior for differentiated intelligent PDUs is untested. The 0.22 to 0.08 claim remains unsourced, so confidence in the direction is only modestly raised."
+  }
+}

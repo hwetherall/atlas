@@ -1,0 +1,39 @@
+{
+  "inputsHash": "468351d893fafa4f422ea4997bf681d458754bf3649978c08f13f66c4a00c83b",
+  "generatedAt": "2026-07-08T21:49:01.091Z",
+  "data": {
+    "title": "Two channels worth 35% can't open inside Year 1",
+    "narrative": "The model assumes 35% of sales flow through OEM/integrator and distributor channels in the first year. But both channels admit new suppliers only on annual cycles that require certifications and references the venture does not have on day 1. That means the market the Year-1 percentage is applied to is much smaller than the model shows.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Distributor listing opens once a year and needs certifications first.",
+        "refs": [
+          "ledger:cust.distributor",
+          "profile:Stage",
+          "digest:serviceable-benchmark#c13"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Integrators pick known brands with certs and support history.",
+        "refs": [
+          "ledger:cust.oem",
+          "digest:cr3-vendors#c4",
+          "digest:cr3-vendors#c7"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Both cells hold 35% but stay closed all year.",
+        "refs": [
+          "ledger:cust.oem",
+          "ledger:cust.distributor"
+        ]
+      }
+    ],
+    "whyMissable": "Channel shares look like a mix question, so reviewers debate the percentages instead of asking whether the channels are even open this year.",
+    "falsifier": "A signed distributor listing or OEM supply agreement with committed volumes, effective within the venture's first six months.",
+    "likelihoodRationale": "Annual listing cycles and brand-based integrator selection are standard for this class of hardware entering EU distribution. Some Asian PDU entrants have compressed one cycle with EU-stock commitments, so the cells are not fully closed, revising likelihood from 0.4 to 0.33."
+  }
+}

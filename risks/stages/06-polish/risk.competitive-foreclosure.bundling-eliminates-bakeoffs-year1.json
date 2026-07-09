@@ -1,0 +1,40 @@
+{
+  "inputsHash": "ae7a3c4ea3a0ebfbcf05d2947a7431cff56c48e5c9ad7c93cf2dff015c0a97c2",
+  "generatedAt": "2026-07-08T17:41:30.295Z",
+  "data": {
+    "title": "Rivals bundle PDUs, so the head-to-head bake-off rarely happens",
+    "narrative": "The model assumes the venture wins 3% of its market in Year 1 because buyers run a fair PDU contest it can enter. But the biggest datapoint we found, a real hardware entrant, started near 0.001% of its market, far below the assumed band. If most growth is sold inside vendor bundles with no separate contest, the Year-1 number is several times too high.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Big vendors sell PDUs inside larger integrated packages at near-zero margin",
+        "refs": [
+          "digest:cr3-vendors#c6",
+          "digest:cust-mix#c2",
+          "ledger:shape.cr3"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "New builds buy bundled, so standalone contests exist mainly in retrofits",
+        "refs": [
+          "ledger:shape.cagr",
+          "digest:obtainable-benchmark#c5",
+          "digest:obtainable-benchmark#c6",
+          "digest:obtainable-benchmark#c4"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Limited to standalone contests, real Year-1 pace cuts the number by five-sixths",
+        "refs": [
+          "ledger:obtainableFactor",
+          "digest:obtainable-benchmark#c8"
+        ]
+      }
+    ],
+    "whyMissable": "The 3% looks safe because it was already cut from 6% and sits between two cited benchmarks, but both benchmarks are generic startup rules that never ask how often a standalone PDU contest occurs.",
+    "falsifier": "In the first two quarters, at least two operator opportunities reach a standalone PDU bake-off, or a bottom-up pipeline model independently supports 3% of the market within 12 months.",
+    "likelihoodRationale": "Every concrete Year-1 datapoint sits far below the 1–5% band and bundle-selling is standard, but standalone tenders do still appear. These offset, so likelihood holds at 0.55."
+  }
+}

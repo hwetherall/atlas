@@ -1,0 +1,26 @@
+{
+  "inputsHash": "59b47f2ef40a0b3c8e0db92a96902b92c67bfce28a97082de58ffbe1b6c86cc7",
+  "generatedAt": "2026-07-08T21:32:40.918Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact instrument (MID 2014/32/EU / MessEG, module B+D via notified body), the ledger nodes (serviceableFactor 0.55→0.45, geo.DE at 0.50), the buyer segment (colo re-billing), and the timing constraint (multi-quarter cert vs Year 1 funnel). Perturbation and indicators carry concrete numeric thresholds (≥30% of sampled DE tenders)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The conformity-regime-vs-accuracy-spec distinction is genuinely hidden — the whyMissable correctly notes a datasheet that 'meets billing-grade accuracy' actively masks the gate. Docked one point because the digest already flags the named cert set as narrower than the real EU stack, so a careful reader was pointed in this direction even if not at this instrument."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Every hop is referenced (trigger→buyer overlap→cert timeline→serviceableFactor impact) and each is independently plausible. But a hostile partner asking 'what fraction of DE colo demand is actually per-kWh PDU-billed?' hits an admitted unquantified gap (the risk's own likelihood rationale concedes capacity-tier billing may dominate), which makes the flat set-to-0.45 perturbation partly arbitrary."
+    },
+    "evidenceQuality": {
+      "score": 4,
+      "note": "The key premise — billed sub-metering requires MID conformity in Germany — is corroborated by an official Länder eichamt document (LBME NRW), PTB's module B/D process page, and independent industry sources (Inteb, EDP Europe, ChargePoint). Notably honest: it includes the Vaiking quote supporting estimate-based billing, the main fact that would weaken its own magnitude claim."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes next-two-quarter sequencing: start MID module certification pre-launch in parallel with CE/TÜV and reposition a non-billing DE SKU, plus a cheap information buy (legal opinion + two operator interviews) against the named voiNode. Both indicators (DE tender billing basis, PTB/eichamt guidance) are concretely monitorable with stated thresholds."
+    }
+  }
+}

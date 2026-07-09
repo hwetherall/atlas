@@ -1,0 +1,26 @@
+{
+  "inputsHash": "2b16085462ff74d59a6dc552c1569ba496608d9215ea8c60804c54cf040b9838",
+  "generatedAt": "2026-07-08T21:26:47.960Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names concrete values (~2.5 GW under construction vs ~15 GW pipeline, 61% public-cloud take-up), actors (three-four hyperscaler capex committees), the exact ledger node (obtainableFactor's 1%-of-SAM anchor), and a dated window (2026, 2-4 quarter pause). The perturbation is a specific 0.5 scale with a stated rationale."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable is genuine: the 8-10% CAGR is triangulated and 'looks solid', annual lumpiness never appears in a CAGR, and the plateau statistic lives in a real-estate H2 update outside PDU market reports — a new reason, not a band-edge complaint. Docked one point because 'AI capex digestion year' is a widely discussed macro worry a well-read founder might already carry."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Each hop is referenced and individually plausible: plateau shows conversion (not demand) binds → 61% buyer concentration synchronizes fit-out starts → PDU orders follow fit-out → obtainableFactor's on-trend assumption breaks. The propagation step still rests on the conditional 'if 2026 is a digestion year', which the risk's own contradicting evidence (record absorption, 83% pre-let) leaves unestablished, so it wouldn't fully survive a hostile 'why now?'."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The structural trigger has 2+ independent corroborations (Cushman & Wakefield, TechCentral, Colliers), but the load-bearing timing premise — a trough inside the launch window — is directly contradicted by strong sources the risk itself attaches (datacenterHawk record Q1 leasing, JLL 83% pre-let). Honest handling (evidenceStatus 'contested', likelihood revised 0.35→0.30 with reasoning) keeps this at 2 rather than lower."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The mitigations change near-term sequencing and spend: anchoring Year-1 revenue on retrofit/replacement demand and keeping manufacturing commitments flexible are next-two-quarter decisions, plus a fit-out tracker with a named voiNodeId. Both indicators are monitorable at stated venues with explicit thresholds (≥2 hyperscalers guiding EU DC capex flat-to-down; UC ≤2.5 GW for two consecutive C&W prints)."
+    }
+  }
+}

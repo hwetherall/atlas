@@ -1,0 +1,41 @@
+{
+  "inputsHash": "42b72c46ec157deb5ede5702b6190907299ec66a4476ba059119b93b476d574a",
+  "generatedAt": "2026-07-08T17:40:59.282Z",
+  "data": {
+    "title": "German and Dutch grid queues stall the venture's Year-1 deliveries",
+    "narrative": "The model assumes demand grows at a steady 9% and treats Year-1 orders as if they follow that trend. But 78% of the target market sits in Germany and the Netherlands, where new capacity is stuck: Frankfurt faces 24–36-month grid-connection waits and Amsterdam caps new connections at 350 MVA until 2030. Orders land when sites get power, not when the trend rises. If 2026 energizations slip, Year-1 orders slip with them.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Frankfurt grid waits run 24–36 months; Amsterdam caps connections at 350 MVA",
+        "refs": [
+          "digest:geo-DE#c20",
+          "digest:geo-NL#c8",
+          "digest:geo-NL#c3"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Germany and Netherlands are 78% of demand; Frankfurt dominates German base",
+        "refs": [
+          "ledger:geo.DE",
+          "ledger:geo.NL",
+          "digest:geo-DE#c1",
+          "digest:geo-DE#c4"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "The 9% trend is a 2030 figure; delayed power cuts Year-1 orders",
+        "refs": [
+          "ledger:shape.cagr",
+          "ledger:obtainableFactor",
+          "profile:Stage"
+        ]
+      }
+    ],
+    "whyMissable": "Grid congestion is a known headline that looks priced in, but the model uses a smooth 9% trend and a generic benchmark that capture none of it.",
+    "falsifier": "H1-2026 evidence that Frankfurt and Amsterdam energizations convert on schedule, with under-construction capacity going live at or above the prior year's rate.",
+    "likelihoodRationale": "Queue lengths and the 2.5 GW construction plateau are documented in current reporting. Some 2026 deliveries hold secured connections, such as Pure DC's 100 MVA substation in Amsterdam, so a partial rather than total slip is most likely."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "inputsHash": "368217e22de37279ec1d5a325be5d0cb0aeb95480d4512c5327bec6aa64a4d22",
+  "generatedAt": "2026-07-08T05:30:23.825Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (obtainableFactor), the exact quantities (0.03 mid-band vs a 0.006 re-anchor, 0.1%-of-SAM worked example, Tractian's $200K vs $14.9B), and the specific benchmark sources whose time windows conflict. Indicators specify concrete venues (Rexel/Sonepar line cards, DCD launch coverage) and thresholds."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable is genuine: the node was already revised down and labelled 'triangulated', so it looks like the handled assumption, and the flaw is a time-unit semantics mismatch no sensitivity band expresses. Loses a point because 'Year-1 obtainable is optimistic' is on many competent reviewers' lists even if the specific window-mismatch framing is new."
+    },
+    "mechanismDepth": {
+      "score": 4,
+      "note": "Three-step chain (benchmarks describe 3–5yr windows → same sources read at Year-1 grain yield ≤0.1% → 0.03 overstates ~5x, propagating linearly to YAM only) with digest/ledger refs at every arrow. Each hop is independently checkable and the model-impact step correctly scopes what stays untouched (TAM/SAM)."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The load-bearing premise — that the benchmark percentages describe multi-year windows — has ≥4 independent corroborating stances (Wise, AIN, vcbeast, waveup). The quantitative Year-1 inference rests on one blog-grade analogue (Tractian via 'Solopreneur') plus a worked example, and the likelihood rationale honestly flags the absence of a direct sector-specific Year-1 benchmark."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly reshapes the next two quarters: mitigations call for replacing the heuristic with a bottom-up capacity model before committing the Year-1 plan, and re-basing hiring/inventory on a 0.5–1% case. Both indicators (time-to-first-PO, distributor line-card listings) are monitorable in public sources with stated thresholds."
+    }
+  }
+}

@@ -5,4 +5,6 @@ export const FLAGS = {
   // The guided demo intro (wizard → thinking → graph reveal). Flip to false to
   // boot straight to the dashboard during development.
   intro: true,
+  // The risk register tab (curated lib/risks.ts). One-line hide for demo day.
+  riskRegister: true,
 } as const;

@@ -1,0 +1,37 @@
+{
+  "inputsHash": "67b2813c7d994b2086a0daa6ff85b20358a968c0aa56427c9f232a2588fe5e9b",
+  "generatedAt": "2026-07-08T21:47:37.834Z",
+  "data": {
+    "title": "A third of Year-1 hardware wins get returned, cutting realized share",
+    "narrative": "The model assumes the venture keeps whatever small share it wins in Year 1. But in the reference class, 30% of deployed industrial hardware systems are never fully accepted and get pulled back out. That makes the Year-1 number roughly 30% too high, and the lost accounts also undercut the Year-2 benchmark that assumes they survive.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "30% of deployed industrial hardware systems were never fully accepted",
+        "refs": [
+          "digest:obtainable-benchmark#c12"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "First-year wins are pilots; PDU acceptance depends on post-install integration",
+        "refs": [
+          "profile:Stage",
+          "ledger:cust.operator-mid",
+          "digest:cr3-vendors#c4"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "obtainableFactor is gross; net of returns, Year-1 share drops 30%",
+        "refs": [
+          "ledger:obtainableFactor",
+          "digest:obtainable-benchmark#c0"
+        ]
+      }
+    ],
+    "whyMissable": "The revenue number already looks conservative at 1% of market, so no one checks whether that 1% stays booked.",
+    "falsifier": "The first three pilot deployments pass formal customer acceptance within 90 days of install, with no rollback in the following two quarters.",
+    "likelihoodRationale": "The 30% non-acceptance rate now has the primary source plus two independent industrial-IoT datasets, and zero support track record raises the entrant's exposure. Revised up from 0.35 to 0.40, bounded because the base rate comes from adjacent classes and PDUs are simpler hardware."
+  }
+}

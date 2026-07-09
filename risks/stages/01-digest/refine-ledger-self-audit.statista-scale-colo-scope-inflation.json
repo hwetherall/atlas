@@ -1,0 +1,260 @@
+{
+  "inputsHash": "30c41648512099fcf2631db8f5ab9b90db54c258554e6e592b48be7847d17cea",
+  "generatedAt": "2026-07-08T18:59:18.660Z",
+  "data": {
+    "claims": [
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c0",
+        "claim": "CBRE recorded 4,726MW of European colocation supply in Q4 2024",
+        "number": 4726,
+        "unit": "MW",
+        "sourceTitle": "Europe Data Centres Figures Q4 2024",
+        "url": "https://assoimmobiliare-be.afterpixel.com/app/uploads/2025/02/Europe-Data-Centres-Figures-Q4-2024.pdf",
+        "excerpt": "4,726MW European colocation supply 470MW European colocation availability 341MW European colocation take-up",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c1",
+        "claim": "CBRE recorded 470MW of European colocation availability in Q4 2024",
+        "number": 470,
+        "unit": "MW",
+        "sourceTitle": "Europe Data Centres Figures Q4 2024",
+        "url": "https://assoimmobiliare-be.afterpixel.com/app/uploads/2025/02/Europe-Data-Centres-Figures-Q4-2024.pdf",
+        "excerpt": "4,726MW European colocation supply 470MW European colocation availability 341MW European colocation take-up",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c2",
+        "claim": "CBRE's July 2024 report projected 5.8GW of data centre capacity across Europe by end of 2024",
+        "number": 5.8,
+        "unit": "GW",
+        "sourceTitle": "European Data Centres Overview | CBRE",
+        "url": "https://www.cbre.com/insights/reports/european-data-centres-overview",
+        "excerpt": "5.8GW Data centre capacity expected across Europe by the end of 2024",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c3",
+        "claim": "CBRE expects almost 1GW (937MW) of new European data centre supply in 2025, which would represent 20% growth on total supply",
+        "number": 937,
+        "unit": "MW",
+        "sourceTitle": "Europe Data Centres Figures Q4 2024",
+        "url": "https://assoimmobiliare-be.afterpixel.com/app/uploads/2025/02/Europe-Data-Centres-Figures-Q4-2024.pdf",
+        "excerpt": "CBRE expects almost 1GW of new data centre supply to be delivered (937MW) in 2025... total supply will have grown 20% by year end.",
+        "tags": [
+          "demand",
+          "execution"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c4",
+        "claim": "Providers added a record 655MW of new data center supply in Europe for full-year 2024",
+        "number": 655,
+        "unit": "MW",
+        "sourceTitle": "CBRE Europe Data Centers Report for Q4 2024 - Knowledge Hub",
+        "url": "https://blog.ocolo.io/cbre-europe-data-centers-report-for-q4-2024/",
+        "excerpt": "Providers added a record 655MW of new data center supply in Europe for the full year.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c5",
+        "claim": "European colocation take-up (706MW) exceeded new supply (655MW) in 2024, the fourth such occurrence in eight years",
+        "number": 706,
+        "unit": "MW",
+        "sourceTitle": "New Investment in Europe's Data Centre Markets to Hit New Heights in 2025 | CBRE UK",
+        "url": "https://www.cbre.co.uk/press-releases/europes-data-centre-markets-to-hit-new-heights",
+        "excerpt": "demand for colocation data centre space continued to outstrip supply, at 706MW and 655MW respectively",
+        "tags": [
+          "demand"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c6",
+        "claim": "Statista's Germany 2024 colocation+scale-colocation IT power figure is 1,458MW",
+        "number": 1458,
+        "unit": "MW",
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "| 2024 | 1,660 | 1,458 | 915 | 760 | 485 | 352 | 267 | 243 | 240 | 197 |",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c7",
+        "claim": "Statista's Poland 2024 colocation+scale-colocation IT power figure is 197MW",
+        "number": 197,
+        "unit": "MW",
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "| 2024 | ... | 197 | 190 | 157 | 115 | 91 | 77 | 65 |",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c8",
+        "claim": "Statista's Austria 2024 colocation+scale-colocation IT power figure is 65MW and Czech Republic is 77MW",
+        "number": 65,
+        "unit": "MW",
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "91 | 77 | 65 | 64 | 53 | 35 | 34 |",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c9",
+        "claim": "Summed across all 30 listed countries, Statista's 2024 colocation+scale-colocation figures total approximately 7,630MW for Europe",
+        "number": 7630,
+        "unit": "MW",
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "| 2024 | 1,660 | 1,458 | 915 | 760 | 485 | 352 | 267 | 243 | 240 | 197 | 190 | 157 | 115 | 91 | 77 | 65 | 64 | 53 | 35 | 34 | 32 | 28 | 26 | 17 | 14 | 14 | 14 | 12 | 10 | 5 |",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c10",
+        "claim": "Summed across all 30 listed countries, Statista's 2025 colocation+scale-colocation figures total approximately 8,676MW for Europe",
+        "number": 8676,
+        "unit": "MW",
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "| 2025 | 1,772 | 1,737 | 951 | 813 | 543 | 451 | 363 | 274 | 286 | 228 | 226 | 198 | 167 | 105 | 79 | 68 | 64 | 65 | 56 | 34 | 32 | 31 | 27 | 18 | 18 | 17 | 14 | 13 | 20 | 6 |",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c11",
+        "claim": "DC Byte's current Poland total supply figure (Live+UC+Committed+Early Stage) is 605MW",
+        "number": 605,
+        "unit": "MW",
+        "sourceTitle": "Poland | DC Byte",
+        "url": "https://www.dcbyte.com/market/poland/",
+        "excerpt": "Supply: 605 MW\n\nTotal Supply is the sum of four supply categories: Live, Under Construction, Committed, and Early Stage.",
+        "tags": [
+          "base-rate",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c12",
+        "claim": "DC Byte states Poland's market grew from 184MW in 2020 to 481MW of total capacity in 2024",
+        "number": 481,
+        "unit": "MW",
+        "sourceTitle": "Poland | DC Byte",
+        "url": "https://www.dcbyte.com/market/poland/",
+        "excerpt": "The market has grown significantly in the past four years, going from 184 MW in 2020 to 481 MW of total capacity in 2024",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c13",
+        "claim": "Statista's country-level series is explicitly titled as combining colocation and scale colocation IT power supply, not colocation alone",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Europe: Colocation data center power by country 2031| Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "Colocation and scale colocation data center IT power supply in Europe from 2024 to 2031, by country (in megawatts)",
+        "tags": [
+          "definition",
+          "structure"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c14",
+        "claim": "Statista's own breakdown shows standard colocation and scale colocation as two separate categories of European data center IT power volume, with exact shares paywalled",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Europe: Data center IT power by type 2025| Statista",
+        "url": "https://www.statista.com/statistics/1659694/europe-data-center-power-by-type/",
+        "excerpt": "Standard colocation data centers accounted for around ******* of total European data center IT power volume in 2025, while scale colocation data centers, which lease capacity at a larger scale, accounted for a further ** percent.",
+        "tags": [
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c15",
+        "claim": "CBRE defines Europe's primary markets as FLAPD (Frankfurt, London, Amsterdam, Paris, Dublin) and secondary markets including Berlin, Brussels, Madrid, Milan, Munich, Oslo, Stockholm, Warsaw, Vienna and Zurich",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "CBRE Europe Data Centers Report for Q4 2024 - Knowledge Hub",
+        "url": "https://blog.ocolo.io/cbre-europe-data-centers-report-for-q4-2024/",
+        "excerpt": "Europe's primary data center markets are FLAPD – Frankfurt, London, Amsterdam, Paris and Dublin\n\nSecondary markets include Berlin, Brussels, Madrid, Milan, Munich, Oslo, Stockholm, Warsaw, Vienna and Zurich.",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c16",
+        "claim": "CEE region (broader than CE-7, includes Russia) hosts 285+ existing data centers, with Russia's existing capacity exceeding 665MW",
+        "number": 665,
+        "unit": "MW",
+        "sourceTitle": "Central & Eastern Europe Colocation Data Center Portfolio Analysis Report 2025",
+        "url": "https://www.businesswire.com/news/home/20260107650773/en/Central-Eastern-Europe-Colocation-Data-Center-Portfolio-Analysis-Report-2025-285-Existing-Data-Centers-with-Russia-Romania-Poland-and-Austria-Having-a-Strong-Presence---ResearchAndMarkets.com",
+        "excerpt": "Russia dominates the existing market with a power capacity of more than 665+ MW driven by major players like Rostelecom, IXcellerate, ATOMDATA (Rosatom).",
+        "tags": [
+          "base-rate",
+          "competition"
+        ]
+      },
+      {
+        "id": "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c17",
+        "claim": "Poland and Russia together account for more than 65% of upcoming IT power capacity in the CEE region",
+        "number": 65,
+        "unit": "%",
+        "sourceTitle": "Central & Eastern Europe Colocation Data Center Portfolio Analysis Report 2025",
+        "url": "https://www.businesswire.com/news/home/20260107650773/en/Central-Eastern-Europe-Colocation-Data-Center-Portfolio-Analysis-Report-2025-285-Existing-Data-Centers-with-Russia-Romania-Poland-and-Austria-Having-a-Strong-Presence---ResearchAndMarkets.com",
+        "excerpt": "Poland and Russia together account for more than 65% of the Upcoming IT power Capacity.",
+        "tags": [
+          "competition",
+          "demand"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "Statista's summed 2024 country-level colocation+scale-colocation total (~7,630MW) exceeds CBRE's Q4 2024 point figure of 4,726MW by ~61% and even exceeds CBRE's own forward-looking '5.8GW by end of 2024' figure by ~32%. Since tamBase's derivation explicitly leans on 'CE-7 = 39.8% of Europe colo MW (Statista 2025)' as a scaling step, and Statista's series is titled 'colocation AND scale colocation' (a broader category than plain colocation), the denominator used to derive the CE-7 share may itself be scope-inflated relative to the CBRE-anchored figures used elsewhere in the chain — echoing the same PDUs+PSUs contamination pattern the node's refinement cycle 1 already flagged and removed for the ceiling.",
+        "nodes": [
+          "tamBase"
+        ]
+      },
+      {
+        "text": "DC Byte's Poland figure (481MW total capacity in 2024, or 605MW current total supply including pipeline) is more than double Statista's Poland figure for the same year (197MW in 2024), which runs in the opposite direction from the aggregate Statista-vs-CBRE mismatch — suggesting Statista's per-country splits are not uniformly inflated versus other trackers, and the scope/definition gap varies unpredictably by country rather than being a clean single multiplier that could be applied to correct tamBase's CE-7 share.",
+        "nodes": [
+          "tamBase"
+        ]
+      },
+      {
+        "text": "CBRE's own two 2024 figures diverge: its July 2024 report forecast '5.8GW data centre capacity expected across Europe by end of 2024,' while its Q4 2024 report recorded only 4,726MW of operational colocation supply — a roughly 1.1GW (23%) forecast-vs-actual gap from the same vendor, raising the question of which CBRE figure (if either) is the correct anchor for cross-checking the Statista-derived Europe colo MW base used in tamBase.",
+        "nodes": [
+          "tamBase"
+        ]
+      }
+    ],
+    "absences": [
+      "No purchasable dataset or country table was found that directly reconciles Statista's colocation+scale-colocation MW definition against CBRE's colocation supply definition on a matched scope — the query's stated goal of settling whether Statista double-counts was not resolved.",
+      "Statista's own split between 'standard colocation' and 'scale colocation' shares of European IT power (needed to test whether summing both categories double-counts against CBRE's single 'colocation supply' figure) is paywalled/asterisked in the search results.",
+      "No CE-7-specific (as opposed to individual-country or pan-Europe) MW aggregate was found from CBRE or DC Byte that could be directly compared to the 39.8% CE-7 share of Statista's Europe colo MW figure used in tamBase's derivation.",
+      "No clarification was found on whether CBRE's 4,726MW 'colocation supply' figure includes hyperscale/scale-colocation leased capacity (the category Statista tracks separately as 'scale colocation'), leaving the fundamental scope-comparability question unanswered.",
+      "No 2025 or later CBRE aggregate European colocation MW figure was found to compare against Statista's 2025 country-level sum (~8,676MW), which is the vintage tamBase's derivation cites ('Statista 2025')."
+    ]
+  }
+}

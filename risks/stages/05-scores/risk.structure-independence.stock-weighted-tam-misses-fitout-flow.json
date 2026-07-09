@@ -1,0 +1,26 @@
+{
+  "inputsHash": "1b5c456e596756ec3d0930b82e39ba21407c3d038027755a5337ef91fc249a98",
+  "generatedAt": "2026-07-08T21:43:25.441Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact apportionment hop (39.8% stock share on tamBase), quantified flow data (937MW, 57% FLAPD, 85% take-up, UK 1,772MW), a concrete perturbation (scale 0.85), and dated CBRE sources with named falsifier datasets (IndexBox, Omdia). Nothing generic here."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "This is not 'tamBase could be at band edge' — it names a NEW error source (stock-weighted vs flow-weighted apportionment) and argues the 240–360 band was built from global-anchor/FX spread and cannot cover it. A founder who read the ledger might question CE-7 scoping, but the stock-vs-flow distinction with the band-composition argument is a genuine addition."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (flow concentration → stock-based apportionment mismatch → high-biased base) with refs at every hop, and the rationale honestly names offsetting forces (Frankfurt/Amsterdam inside CE-7, refresh tracking stock). Falls short of 4 because the load-bearing step — CE-7's flow share being meaningfully below 39.8% — is inferred from MW deliveries, not demonstrated in PDU revenue terms."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The flow-concentration trigger has multiple attached sources with quotes (57% FLAPD, London+Frankfurt ~half of 2025 supply), though DCD merely relays the same CBRE report so independence is partial. The decisive premise (CE-7 PDU revenue share < stock share) is unverified, and the risk honestly flags the falsifier data as pending — corroborated trigger, speculative magnitude."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations specify a near-term information purchase (IndexBox country tables collapsing both the band and the apportionment ambiguity) and keeping UK/France certification options warm, directly changing sequencing and spend. Indicators are monitorable via quarterly CBRE deliveries with a concrete <35% threshold."
+    }
+  }
+}

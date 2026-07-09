@@ -1,0 +1,39 @@
+{
+  "inputsHash": "f7f638c21bf6d043e18f2806af4d6c9353093cd52defe8bf5dfda1f22944afaa",
+  "generatedAt": "2026-07-08T21:49:10.111Z",
+  "data": {
+    "title": "Biggest buyer group buys through frameworks, not direct sales",
+    "narrative": "The model assumes large operators are the venture's first direct buyer, counting 40% of PDU spend in that cell. But that 40% measures who consumes PDUs, not who signs a contestable contract. The documented buying pattern is HQ-level global frameworks and OEM rack bundles a regional entrant never gets to bid on. If most of that spend is closed off, the funnel keeps 40% of the market inside a channel the venture cannot actually reach in Year 1.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Large operators buy rack power through global frameworks and OEM bundles.",
+        "refs": [
+          "digest:cust-mix#c12",
+          "digest:cust-mix#c13",
+          "digest:cust-mix#c14"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "The 40% is a consumption share, not who signs contracts.",
+        "refs": [
+          "ledger:cust.operator-large",
+          "digest:cust-mix#c0"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Funnel keeps 40% in an unreachable channel with different economics.",
+        "refs": [
+          "ledger:cust.operator-large",
+          "ledger:cust.oem",
+          "profile:Who is the primary buyer you'll sell through first?"
+        ]
+      }
+    ],
+    "whyMissable": "The row reads as a demand split, and the ledger's 'needs-source' flag looks like a precision fix rather than a reachability problem.",
+    "falsifier": "Three large operators confirming they run open, vendor-neutral rack-PDU tenders for their 2026 builds.",
+    "likelihoodRationale": "Every buying case in the corpus points to framework and bundle procurement, with no example of an open large-operator tender in the region. Strong corroboration raised confidence from 0.45 to 0.50, but no region-specific evidence and two counter-signals cap the increase."
+  }
+}

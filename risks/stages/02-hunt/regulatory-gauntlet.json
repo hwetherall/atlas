@@ -1,0 +1,470 @@
+{
+  "inputsHash": "7a1069653ba67a23f301ef3a2e3ca9f1971847517a6fb701d3106bfea68575cf",
+  "generatedAt": "2026-07-08T20:05:10.869Z",
+  "data": {
+    "hypotheses": [
+      {
+        "id": "cra-conformity-clock-outlasts-yam-window",
+        "title": "Cyber Resilience Act (Reg. EU 2024/2847): the conformity clock for a networked PDU, started today, ends after the Year-1 window closes",
+        "narrative": "An intelligent PDU is a 'product with digital elements' under the CRA. Vulnerability-handling and 24h ENISA incident-reporting obligations apply from 11 September 2026 and full conformity (CE marking against CRA essential requirements, SBOM, coordinated vulnerability disclosure, support-period declaration) from 11 December 2027 — squarely overlapping a pre-launch venture's first 12 months. The harmonized standards CEN/CENELEC must deliver are not yet published, and remote-management functionality risks classifying the product as an 'important product' requiring third-party assessment through a notified-body queue that does not yet exist at scale. Worse, data-center buyers front-run: because PDUs installed in 2026 live in racks past 2027, procurement specs are already demanding CRA-readiness attestations today. The serviceableFactor's 0.55 haircut was built on the old CE/TÜV/ecodesign stack; it prices none of this, and the obtainableFactor's 1% Year-1 pace assumes the product can be quoted into 2026 tenders at all.",
+        "category": "exogenous",
+        "targetNodes": [
+          "serviceableFactor",
+          "obtainableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "CRA obligations land inside the entry window: reporting duties from Sept 2026, full conformity Dec 2027, with harmonized standards unpublished and notified-body capacity unbuilt — a fixed regulatory calendar colliding with a pre-launch stage",
+            "refs": [
+              "profile:Product",
+              "profile:Stage",
+              "ledger:serviceableFactor"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "Large operators and colos, whose gear outlives the 2027 deadline, insert CRA-readiness clauses into 2026 RFQs; the existing cert-stack rationale for serviceableFactor ('justifies <1.0 but doesn't quantify 0.55') already shows the model treats compliance as a static haircut, not a moving gate",
+            "refs": [
+              "digest:serviceable-benchmark#c4",
+              "digest:serviceable-benchmark#c13",
+              "ledger:serviceableFactor"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "Year-1 tenders that are contestable at all are already scarce and pre-locked 12–24+ months ahead; adding a certification artifact the entrant cannot yet produce removes it from the shortlists that make up the 1% anchor",
+            "refs": [
+              "digest:refine-demand-discontinuity.prelet-pipeline-lockout#c0",
+              "digest:refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c0",
+              "ledger:obtainableFactor"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "Reach shrinks (CRA-gated demand exits the serviceable pool) and pace slows (Year-1 obtainable share falls below the 1% anchor while incumbents ship CRA-ready roadmaps)",
+            "refs": [
+              "ledger:serviceableFactor",
+              "ledger:obtainableFactor"
+            ]
+          }
+        ],
+        "whyMissable": "'CE marking' is already a checked box on the founder's compliance list, and the CRA presents itself as just another CE regulation. The trap is procedural, not substantive: the conformity ROUTE changes (SBOM, vulnerability process, possible third-party assessment) and buyers enforce it via procurement one to two years before the legal deadline — so the risk bites in 2026 sales cycles while the founder's calendar says 'deadline 2027'.",
+        "expectedObviousness": "medium",
+        "falsifier": "Three 2026 CE data-center PDU RFQs (operator or colo) whose specification documents contain no CRA/cyber-conformity or SBOM requirement, plus confirmation that networked PDUs fall in the CRA default (self-assessment) class.",
+        "likelihood": {
+          "value": 0.55,
+          "rationale": "The CRA dates and product scope are enacted law, not forecast; residual uncertainty is only the important-product classification of remote-management PDUs and how aggressively CE buyers front-run the 2027 deadline in 2026 specs.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "serviceableFactor",
+            "op": "set",
+            "value": 0.4,
+            "note": "CRA-gated (attestation-demanding) demand exits the entrant's reachable pool until conformity artifacts exist"
+          },
+          {
+            "nodeId": "obtainableFactor",
+            "op": "set",
+            "value": 0.006,
+            "note": "Year-1 pace falls below the 1% anchor as 2026 shortlists require CRA-readiness"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "CRA harmonized-standards progress for network/management devices and the important-product classification of remote-access equipment",
+            "where": "CEN/CENELEC JTC 13 work programme and the EU Official Journal harmonized-standards citations; Commission CRA implementing-act docket",
+            "threshold": "Networked PDUs / remote management listed under Annex III important products, or harmonized standards slipping past mid-2026",
+            "updates": "increases"
+          },
+          {
+            "signal": "CRA/SBOM clauses appearing in data-center electrical RFQs and incumbent price lists",
+            "where": "TED (Tenders Electronic Daily) EU data-center fit-out tenders; Schneider/Vertiv/Eaton product-security pages and price-list footnotes announcing CRA-ready SKUs",
+            "threshold": "≥2 CE tenders requiring vendor SBOM/CRA attestation, or an incumbent marketing 'CRA-ready' as a differentiator",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Commission a CRA classification and gap assessment (product class, assessment route, notified-body need) with a certified test house now, before design freeze",
+            "type": "information",
+            "voiNodeId": "serviceableFactor",
+            "note": "Determines whether third-party assessment — the long pole — is required at all"
+          },
+          {
+            "action": "Build the SBOM, secure-development and vulnerability-disclosure artifacts into the launch release and sell them as a differentiator against incumbents' legacy firmware",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Turns the 2026 buyer front-running from a gate into a wedge"
+          },
+          {
+            "action": "Sequence Year-1 pipeline toward buyers not yet writing CRA clauses (mid-market enterprise retrofit) while conformity completes",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": null
+          }
+        ]
+      },
+      {
+        "id": "mid-eichrecht-billing-metering-forecloses-german-colo",
+        "title": "MID (2014/32/EU, MI-003) + German MessEG §32: billing-grade PDU metering in German colo is legally foreclosed without a legal-metrology approval the entrant cannot obtain in-window",
+        "narrative": "Half of this TAM is Germany, and the pitch of an INTELLIGENT PDU is metering. But the moment a colo uses PDU-level kWh data to bill sub-tenants, the meter falls under legal metrology: MID conformity (Annex MI-003) plus German MessEG obligations including §32 registration — a module B+D type-approval path through PTB/notified bodies that routinely takes 12–24 months and constrains the metering hardware design itself. The corpus already surfaced this (Eichrecht metering foreclosure) and noted that serviceableFactor's single qualitative haircut does not distinguish billing-grade from monitoring-grade demand. The kill path: the entrant's flagship feature is exactly the feature that is illegal to use for its highest-value purpose in its largest geography, so German colo tenders that specify 'MID-compliant outlet metering' — increasingly standard as EnEfG pushes operators toward measured billing — are closed to it. The 0.50 DE share silently assumes all German demand is equally reachable.",
+        "category": "boundary",
+        "targetNodes": [
+          "geo.DE",
+          "serviceableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "German colos shift from estimate/capacity-tier billing toward measured kWh billing (EnEfG cost pressure), and any meter used for sub-tenant billing must be MID-conformant and MessEG-registered — a named legal-metrology instrument, not a product feature",
+            "refs": [
+              "digest:refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c3",
+              "digest:refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c7",
+              "digest:geo-DE#c11"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "German colo tenders begin specifying MID-class outlet metering; the entrant, lacking type approval, is disqualified at spec stage from the billing-grade slice of the German market — which is the premium, intelligence-led slice it targets — while Germany is 0.50 of the CE base with Frankfurt colo alone at 831 MW",
+            "refs": [
+              "ledger:geo.DE",
+              "digest:geo-DE#c10",
+              "digest:refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c6"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The effective German share addressable to this entrant is materially below 0.50, and the serviceableFactor's undifferentiated 0.55 haircut double-hides it because the ledger itself admits the regulatory haircut has no empirical anchor",
+            "refs": [
+              "ledger:geo.DE",
+              "ledger:serviceableFactor",
+              "digest:serviceable-benchmark#c4"
+            ]
+          }
+        ],
+        "whyMissable": "±1% billing-grade accuracy reads as a spec-sheet feature, and the founder's compliance list covers CE/LVD/EMC — product law. Legal metrology is a separate legal regime with its own notified bodies, its own timeline, and no CE-marking overlap; nothing on a competitor's datasheet reveals that its 'MID' badge took a two-year approval cycle and a constrained hardware design. The model's geography split, built on capacity MW, is structurally blind to which MW require which legal class of meter.",
+        "expectedObviousness": "low",
+        "falsifier": "A survey of German colo billing practice showing measured per-kWh sub-tenant billing remains marginal (capacity-tier/estimate-based dominating) AND no MID-metering requirement in a sample of 2026 German colo PDU specifications — or evidence the entrant's meter module already carries MID type approval.",
+        "likelihood": {
+          "value": 0.3,
+          "rationale": "The legal obligation is documented (MessEG §32 applies to billing meters), but the share of German colo demand that actually specifies MID-grade PDU metering in-window is unquantified — billing practice is heterogeneous per the corpus.",
+          "basis": "judgment"
+        },
+        "perturbation": [
+          {
+            "nodeId": "geo.DE",
+            "op": "set",
+            "value": 0.42,
+            "note": "Billing-grade metered PDU demand in German colo is foreclosed to a non-MID entrant; effective DE share drops toward the installed-load low end"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "MID/Eichrecht metering clauses in German colo fit-out and PDU procurement specs",
+            "where": "German colo operator RFQs (NTT GDC, maincubes, Telehouse Frankfurt vendor portals); DKE/PTB legal-metrology dockets on data-center sub-metering",
+            "threshold": "MID-compliant outlet metering named as mandatory in ≥2 German colo PDU specs",
+            "updates": "increases"
+          },
+          {
+            "signal": "Incumbents marketing MID-certified PDU meter modules as a line item",
+            "where": "Rittal/Bachmann/Schleifenbauer price lists and German product pages (MID variants carry distinct SKUs)",
+            "threshold": "MID variants appearing as the default rather than premium option in German channel price lists",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Commission a legal-metrology scoping opinion plus a 10-tender audit of German colo PDU specs to quantify the billing-grade share of DE demand",
+            "type": "information",
+            "voiNodeId": "geo.DE",
+            "note": "Directly resolves how much of the 0.50 DE cell is MID-gated"
+          },
+          {
+            "action": "Design the meter as a socketed, separately-approvable MID module (or integrate an already-MID-certified third-party metering chip/module) so the PDU inherits an existing approval",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": "Decouples the 12–24 month metrology clock from the product launch clock"
+          },
+          {
+            "action": "Position Year-1 in monitoring-grade (non-billing) use cases and non-German markets while the MID path runs",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": null
+          }
+        ]
+      },
+      {
+        "id": "red-en18031-wireless-sensor-gate",
+        "title": "RED cybersecurity delegated act (EU 2022/30, applicable since 1 Aug 2025): one WiFi sensor port drags the PDU into EN 18031 conformity and adds two quarters to launch",
+        "narrative": "If the intelligent PDU ships with any radio — WiFi management fallback, BLE commissioning, wireless environmental sensors — it is radio equipment, and since 1 August 2025 the Radio Equipment Directive's cybersecurity delegated act applies in full. Conformity runs against EN 18031-1/-2, which are harmonized only WITH RESTRICTIONS: where the restrictions bite (e.g., password/access-control configurations), self-declaration is unavailable and a notified body must issue an EU-type examination certificate. For a pre-launch team this is not a 2027 problem like the CRA — it is a today problem that gates the very first shipment. The obtainableFactor's 1% Year-1 anchor already sits on a corrected, fragile benchmark; a 4–6 month notified-body queue on top of an already pre-let, slow-procurement market compresses the sellable window from 12 months to 6–8.",
+        "category": "execution",
+        "targetNodes": [
+          "obtainableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "The launch configuration includes a radio (wireless sensors / BLE commissioning), pulling the product under the RED cybersecurity delegated act — in force since 1 Aug 2025, i.e., before the venture's first shipment",
+            "refs": [
+              "profile:Product",
+              "profile:Stage"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "EN 18031's harmonization restrictions force notified-body involvement for common access-control configurations; certificate lead time lands mid-window, and the market's own procurement clock (gear locked 12–24+ months pre-fit-out, few contestable standalone tenders) means a late start forfeits most Year-1 bake-offs",
+            "refs": [
+              "digest:refine-demand-discontinuity.prelet-pipeline-lockout#c0",
+              "digest:refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c2",
+              "ledger:obtainableFactor"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The Year-1 obtainable share, whose 1% value already rests on a benchmark-period correction and a shaky Tractian comparable, is cut roughly in half by a shortened selling window",
+            "refs": [
+              "ledger:obtainableFactor",
+              "digest:obtainable-benchmark#c5",
+              "digest:refine-execution-window.som-window-semantics-mismatch#c4"
+            ]
+          }
+        ],
+        "whyMissable": "RED reads as a law about radios, and this is a power-distribution company; the risk hides in an accessory feature (a wireless sensor accessory or BLE setup app) that the electrical engineering team considers trivial. The compliance plan covers LVD/EMC/EN 62368-1 for the PDU itself; nobody owns the delegated act triggered by the cheapest component on the BOM.",
+        "expectedObviousness": "low",
+        "falsifier": "Confirmation that the launch SKU is wired-only (no radio in any shipping configuration), or an EN 18031 assessment showing the chosen access-control design falls entirely within the harmonized (self-declaration) scope with certificate in hand before first customer ship.",
+        "likelihood": {
+          "value": 0.35,
+          "rationale": "Conditional on product configuration: wireless sensing/commissioning is common in current intelligent-PDU designs, and the EN 18031 restriction traps are documented, but a wired-only launch SKU fully avoids the gate.",
+          "basis": "judgment"
+        },
+        "perturbation": [
+          {
+            "nodeId": "obtainableFactor",
+            "op": "scale",
+            "value": 0.5,
+            "note": "Selling window compressed from 12 to ~6–8 months by notified-body lead time"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "EN 18031 harmonization restrictions status (whether the OJ listing's restrictions are lifted or extended)",
+            "where": "EU Official Journal harmonized-standards citations under RED; NANDO database queue times for RED cybersecurity notified bodies",
+            "threshold": "Notified-body lead quotes >4 months, or restrictions extended into 2026",
+            "updates": "increases"
+          },
+          {
+            "signal": "Own-product radio scope decision and test-house booking",
+            "where": "Internal launch BOM review; test-house (TÜV/DEKRA) quotation and slot calendar for EN 18031",
+            "threshold": "Radio in launch SKU with no notified-body slot booked 9 months pre-launch",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Run an immediate RED applicability screen on every launch configuration and get a written EN 18031 gap assessment from a notified body",
+            "type": "information",
+            "voiNodeId": "obtainableFactor",
+            "note": "Converts an unknown certification clock into a dated one"
+          },
+          {
+            "action": "De-content the launch SKU to wired-only (Ethernet/serial), shipping wireless sensing as a post-certification accessory",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": "Removes the gate from the critical path entirely"
+          }
+        ]
+      },
+      {
+        "id": "avl-framework-qualification-forecloses-large-operator-cell",
+        "title": "Buyer-side procurement norms (AVL qualification, ISO 27001/IEC 62443 attestations, global frameworks) close the chosen 40% large-operator beachhead for the entire Year-1 window",
+        "narrative": "The venture's stated beachhead is large operators — modeled as 40% of PDU spend. But that cell is not entered by winning a bake-off; it is entered by surviving an approved-vendor-list qualification: vendor security questionnaires demanding ISO 27001 and secure-development (IEC 62443-4-1) attestations, TÜV/CB-scheme type-test reports, factory audits, and financial-viability checks — a 12–18 month cycle that no law mandates and no market report prices. On top of that, the corpus shows the cell's spend is increasingly channelled through multi-year global frameworks (Digital Realty's $373M Schneider agreement, Iren's all-in Dell contract) and integrator bundles, meaning much of the nominal 0.40 is never tendered at PDU line-item level at all. The 0.40 value is an unsourced internal estimate; the reachable-in-window fraction of it is far smaller. The model books the beachhead as the largest cell; procurement norms make it the slowest.",
+        "category": "competitive",
+        "targetNodes": [
+          "cust.operator-large",
+          "obtainableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "Large-operator procurement requires AVL qualification artifacts (ISO 27001 / secure-development attestations, TÜV/CB reports, audits) that a pre-launch entrant does not yet hold — a buyer-side norm, not a legal instrument, so it appears on no regulatory checklist",
+            "refs": [
+              "profile:Company",
+              "ledger:cust.operator-large",
+              "digest:serviceable-benchmark#c13"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "The spend that does move moves through global frameworks and integrator bundles rather than contestable PDU line items — the corpus documents Digital Realty/Schneider, Iren/Dell and Jülich-style bundling — so even qualified challengers see few discrete PDU decisions in a 12-month window",
+            "refs": [
+              "digest:refine-structure-independence.global-framework-forecloses-large-operator-cell#c0",
+              "digest:refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c0",
+              "digest:cust-mix#c0"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The contestable large-operator cell is materially below 0.40 and the Year-1 pace within it approaches zero; since this is the declared primary channel, the YAM is effectively being earned from the other 60% of the buyer mix",
+            "refs": [
+              "ledger:cust.operator-large",
+              "ledger:obtainableFactor",
+              "profile:Product"
+            ]
+          }
+        ],
+        "whyMissable": "The follow-up answer 'we sell to large operators first' is recorded as a strategy choice, and the 0.40 cell makes it look like the biggest pond. AVL cycle time and framework lock-up are procurement plumbing — invisible in every market report the model cites (the channel split is admitted to be entirely unsourced), so nothing in the ledger contradicts the comfortable reading.",
+        "expectedObviousness": "medium",
+        "falsifier": "Two CE large operators confirming a fast-track vendor-qualification path (<6 months) for PDU suppliers and at least one 2026 PDU tender from a large CE operator that is open to non-AVL vendors.",
+        "likelihood": {
+          "value": 0.45,
+          "rationale": "Framework/bundled procurement at large operators is directly evidenced in the corpus (named contracts), and 12–18 month AVL cycles are standard for critical-power vendors; uncertainty is whether specific CE colos run lighter qualification for rack-level gear.",
+          "basis": "evidence"
+        },
+        "perturbation": [
+          {
+            "nodeId": "cust.operator-large",
+            "op": "set",
+            "value": 0.25,
+            "note": "Framework- and bundle-locked spend removed: contestable direct large-operator share for a new entrant"
+          },
+          {
+            "nodeId": "obtainableFactor",
+            "op": "set",
+            "value": 0.007,
+            "note": "Year-1 pace re-weighted toward slower-to-qualify channels"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "AVL qualification requirements and cycle times quoted in operator supplier-onboarding portals",
+            "where": "Equinix/Digital Realty/NTT GDC supplier registration portals; Vantage/CyrusOne EU procurement contacts",
+            "threshold": "Mandatory ISO 27001 or 12+ month qualification stated for electrical-fit-out vendors",
+            "updates": "increases"
+          },
+          {
+            "signal": "Share of PDU spend announced inside multi-year framework or integrated-rack deals",
+            "where": "Operator capex calls and press releases (Digital Realty, Iren-class contracts); Schneider/Vertiv earnings commentary on framework backlog",
+            "threshold": "≥1 new CE operator announcing a global power-train framework covering rack PDUs",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Run three structured CE operator/distributor procurement interviews focused specifically on AVL cycle time and framework coverage of PDU line items",
+            "type": "information",
+            "voiNodeId": "cust.operator-large",
+            "note": "This is also the ledger's own promotionPath for the whole customer dimension"
+          },
+          {
+            "action": "Enter the large-operator cell through an already-qualified integrator/OEM as channel (white-label or co-brand) rather than direct AVL qualification",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": "Trades margin for window; converts a 15-month gate into a purchase order"
+          },
+          {
+            "action": "Start ISO 27001 / secure-development certification now, in parallel with CRA artifacts, since the same evidence serves both the legal and procurement gates",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": null
+          }
+        ]
+      },
+      {
+        "id": "enefg-eed-reporting-spec-creep-dcim-lock",
+        "title": "EnEfG §12 + EED Delegated Reg 2024/1364 reporting duties spec-crawl into PDU tenders as certified-accuracy + incumbent-DCIM-integration requirements",
+        "narrative": "Germany's Energy Efficiency Act obliges data centers to file energy and efficiency data to the Energieeffizienzregister annually (31 March), and the EU's 2024/1364 rating scheme adds a parallel Union-level reporting layer (annual 15 May filings). Neither instrument names PDUs — which is precisely why the model ignores them. But operators discharge these duties through their monitoring chain, so 2026 PDU specifications in Germany and beyond increasingly require certified metering accuracy classes plus validated integration with the incumbent DCIM suites (EcoStruxure, Vertiv Environet, Sunbird) that generate the filings. A new entrant's PDU without a certified accuracy declaration and pre-validated DCIM connectors fails the spec even when its own telemetry is superior — the reporting laws convert the incumbents' software ecosystems into a de facto certification the entrant lacks. The serviceableFactor's 0.55 was set against a product-law cert stack; it does not price an ecosystem-integration gate that binds hardest in the 50% German cell.",
+        "category": "model-structure",
+        "targetNodes": [
+          "serviceableFactor"
+        ],
+        "mechanism": [
+          {
+            "step": "trigger",
+            "text": "EnEfG and EU 2024/1364 reporting deadlines recur annually through the venture's window, forcing operators to produce auditable energy data — with German colo already publicizing energy metrics (88% RE share) as a compliance posture",
+            "refs": [
+              "digest:serviceable-benchmark#c12",
+              "digest:serviceable-benchmark#c10",
+              "digest:geo-DE#c11"
+            ]
+          },
+          {
+            "step": "propagation",
+            "text": "Operators push the compliance burden down into procurement specs: certified metering accuracy and named-DCIM integration become mandatory line items in PDU tenders, and the incumbent suites' validation programs (run by the same top-3 vendors) become gatekeepers for challenger hardware",
+            "refs": [
+              "digest:refine-competitive-foreclosure.oem-cell-odm-price-foreclosure#c5",
+              "ledger:serviceableFactor",
+              "digest:serviceable-benchmark#c11"
+            ]
+          },
+          {
+            "step": "model-impact",
+            "text": "The serviceable share of TAM for an unvalidated entrant sits below the 0.45 band floor in reporting-bound geographies — and the ledger itself concedes the 0.55 has no bottom-up cross-check to catch this",
+            "refs": [
+              "ledger:serviceableFactor",
+              "digest:serviceable-benchmark#c3",
+              "ledger:geo.DE"
+            ]
+          }
+        ],
+        "whyMissable": "Both instruments bind OPERATORS, not vendors — a founder scanning for laws that name their product finds nothing and files these under 'customer's problem'. The transmission is contractual spec language, not law, so it never appears in a regulatory scan; it appears in lost tenders, one quarter too late.",
+        "expectedObviousness": "medium",
+        "falsifier": "A sample of 2026 German/Dutch colo PDU specifications showing no certified-accuracy or named-DCIM-integration requirements, or evidence that major DCIM suites accept open-protocol (SNMP/Redfish) PDU data for EnEfG/EED filings without vendor-specific validation.",
+        "likelihood": {
+          "value": 0.3,
+          "rationale": "The reporting obligations and deadlines are enacted; the spec-creep transmission into PDU tenders is plausible and consistent with documented integrator behavior (branded-incumbent selection on DCIM compatibility) but not yet directly evidenced at tender level.",
+          "basis": "judgment"
+        },
+        "perturbation": [
+          {
+            "nodeId": "serviceableFactor",
+            "op": "set",
+            "value": 0.45,
+            "note": "Reporting-bound demand requiring validated DCIM integration exits the entrant's reachable pool"
+          }
+        ],
+        "indicators": [
+          {
+            "signal": "Accuracy-class and DCIM-integration clauses in CE colo PDU specifications",
+            "where": "German colo RFQs and framework specs (Frankfurt operators); Bundesstelle für Energieeffizienz / Energieeffizienzregister guidance updates on required data granularity",
+            "threshold": "Rack/outlet-level certified metering named in register guidance or ≥2 tenders",
+            "updates": "increases"
+          },
+          {
+            "signal": "Openness of incumbent DCIM validation programs to third-party PDUs",
+            "where": "Schneider EcoStruxure and Vertiv Environet partner/compatibility lists; Sunbird supported-device database",
+            "threshold": "Third-party PDU additions stalling or program fees/queues lengthening",
+            "updates": "increases"
+          },
+          {
+            "signal": "EU 2024/1364 second-phase requirements",
+            "where": "Commission delegated-act docket for the data-centre rating scheme",
+            "threshold": "Phase-2 draft mandating sub-facility (rack-level) energy granularity",
+            "updates": "increases"
+          }
+        ],
+        "mitigations": [
+          {
+            "action": "Audit 10 recent German/Dutch colo PDU specs for accuracy-class and DCIM clauses to size the gated fraction of the serviceable pool",
+            "type": "information",
+            "voiNodeId": "serviceableFactor",
+            "note": null
+          },
+          {
+            "action": "Prioritize certification into the two dominant DCIM compatibility programs and ship native Redfish/SNMP profiles mapped to EnEfG/EED reporting fields as a product feature",
+            "type": "operational",
+            "voiNodeId": null,
+            "note": "Makes compliance reporting a selling point instead of a gate"
+          },
+          {
+            "action": "Co-market with a DCIM-independent monitoring vendor targeting operators who resent incumbent suite lock-in",
+            "type": "strategic",
+            "voiNodeId": null,
+            "note": null
+          }
+        ]
+      }
+    ]
+  }
+}

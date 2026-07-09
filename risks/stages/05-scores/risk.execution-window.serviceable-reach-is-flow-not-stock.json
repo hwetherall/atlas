@@ -1,0 +1,26 @@
+{
+  "inputsHash": "2a288a9e9c662bcd5d2954b16ade64a2b80b40d5f0821254a22448976d15e775",
+  "generatedAt": "2026-07-08T05:30:23.824Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names exact nodes (serviceableFactor, geo.CH, geo.DE), quantifies the correction (0.55 → 0.30–0.35 via a DE+NL one-distributor footprint), and pins Switzerland at 8% of TAM with its non-EU conformity path. The perturbation, falsifier (≥55% CE-7 geo-weight coverage in Q1 post-launch), and thresholds are all concrete."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "This is not 'band edge could be true' — the whyMissable names a NEW structural reason: the 0.45–0.65 band brackets steady state while the funnel's missing time axis hides that Year-1 reach starts near zero and ramps. Docked one point because 'SOM is capacity-built, not a SAM fraction' is a fairly standard sizing critique a diligent founder might independently raise."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Each hop is referenced and separately plausible: unanchored leaf → reach components (certs, channel, languages) verifiably unbuilt at launch → proportional SAM/YAM contraction. The final quantification to 0.30–0.35 is asserted rather than derived from a geo-weight sum, which is where a hostile 'why exactly 0.35?' would land."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The sources corroborate only the general principle (SOM is built bottom-up; most launches miss Year-1 targets) — Prospeo/Scalarly are generic sizing blogs and the Memphasys analogue is an unrelated IVF distributor deal in Thailand. The 'corroborated' label overstates it; nothing directly tests the 45–65% premise for this vendor's segment, so this is an honest well-argued prior, not multi-source corroboration of the key premise."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes next-two-quarter sequencing: pursue a pan-CE master distributor, defer CH/CEE, and rebase YAM on the DE/NL footprint. Both indicators (signed distributor coverage at launch, Swiss authorized-rep status) are externally monitorable with stated thresholds."
+    }
+  }
+}

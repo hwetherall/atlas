@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "9380c6198a7a28476ccc5a90eee76bc0f3c5d74b77194c92b99612896ef32701",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"Colo power gear follows AI tenants out of category\",\n \"narrative\": \"The model treats colocation as the safe harbor for rack PDUs and gives it a zero sensitivity band, so it never appears in the tornado. But CBRE shows European colo demand being outstripped by hyperscaler and AI tenants, and in wholesale prelet halls the tenant, not the operator, dictates the rack power design. If those tenants specify busway and power shelves inside leased halls, the colo PDU content leaves the category while operator capacity keeps growing 19% a year. The one segment the model calls certain is the one with the hidden contagion path.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"AI tenants filling colo halls also dictate wholesale power specs\",\n   \"refs\": [\n    \"digest:seg-mix#c15\",\n    \"digest:seg-mix#c13\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Tenants pick busway, so colo PDU content falls despite growth\",\n   \"refs\": [\n    \"digest:seg-mix#c18\",\n    \"digest:seg-mix#c16\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"Null band hides all downside for the colo slice\",\n   \"refs\": [\n    \"ledger:seg.colocation\",\n    \"digest:seg-mix#c1\"\n   ]\n  }\n ],\n \"falsifier\": \"Fit-out specs from 2026 CE wholesale colo preleases in Frankfurt and Amsterdam showing rack PDUs, not busway, as standard in AI-density halls.\",\n \"category\": \"boundary\",\n \"evidence\": [\n  {\n   \"title\": \"European Real Estate Market Outlook 2025 — Data Centres\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"CBRE\",\n   \"date\": \"2025\",\n   \"excerpt\": \"Take-up of colocation data centre space in Europe is expected to outstrip new supply in 2025 given strong demand from hyperscalers and providers of AI and high-performance computing services.\",\n   \"url\": \"https://www.cbre.com/insights/books/european-real-estate-market-outlook-2025/data-centres\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Vertiv PowerBar Track busway (double-stack) for AI colocation and hyperscale\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Data Centre Insight / Vertiv\",\n   \"date\": \"2026-03-04\",\n   \"excerpt\": \"The solution is designed to address rapidly evolving AI workloads within colocation and hyperscale data centres. Power distribution 'must keep pace' with AI and HPC scale demands.\",\n   \"url\": \"https://datacentreinsight.co.uk/2026/03/04/vertiv-announces-scalable-high-capacity-double-stack-busway-system-that-preserves-white-space-for-growing-ai-data-centre-demands/\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Signings for AI Data Centre Capacity in Europe More Than Treble\",\n   \"sourceType\": \"analyst-estimate\",\n   \"publisher\": \"CBRE UK\",\n   \"date\": \"2025-11-13\",\n   \"excerpt\": \"Signings for AI-focused colocation capacity reached 414MW in the first nine months of 2025, up from 133MW compared to the same period in 2024. More than half (57%) was signed in the Nordics.\",\n   \"url\": \"https://www.cbre.co.uk/press-releases/signings-for-ai-data-centre-capacity-in-europe-more-than-treble-in-first-nine-months-of-2025\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"seg.colocation\",\n  \"label\": \"Colocation\",\n  \"kind\": \"estimated\",\n  \"value\": 0.18,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"single-source\",\n  \"dimension\": \"segment\",\n  \"dimensionValue\": \"colocation\",\n  \"sensitivityRange\": null,\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Capacity-split rescaling\",\n   \"expression\": \"Synergy end-2025 non-hyperscale colocation 20% × 0.91 = 0.18\"\n  },\n  \"provenance\": {\n   \"rationale\": \"Single publisher's capacity series (20–22% across vintages), global scope applied to CE → inferred.\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"Hyperscale operators to account for 67% of all data center capacity by 2031\",\n    \"sourceType\": \"industry-report\",\n    \"publisher\": \"Synergy Research Group\",\n    \"date\": \"2026\",\n    \"excerpt\": \"Non-hyperscale colocation capacity accounting for another 20% of total capacity (end-2025).\",\n    \"attached\": true\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"risk\",\"settleTest\":\"Only future 2026+ wholesale prelet fit-out specifications from Frankfurt/Amsterdam AI-density halls, showing whether tenants actually specify busway versus rack PDUs, would settle this — that is a market design shift that hasn't yet resolved, not a knowable-today number.\",\"proposedCorrection\":null,\"researchQueries\":[{\"query\":\"Frankfurt and Amsterdam 2026 wholesale colocation prelease fit-out specifications: busway vs rack PDU standard in AI-density halls\",\"kind\":\"confirming\"},{\"query\":\"European colocation operators retaining rack PDU procurement control in AI tenant leases 2025-2026 CBRE Synergy\",\"kind\":\"falsifying\"}]}",
+  "usage": {
+    "prompt_tokens": 2870,
+    "completion_tokens": 260,
+    "total_tokens": 3130,
+    "cost": 0.02085,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.02085,
+      "upstream_inference_prompt_cost": 0.01435,
+      "upstream_inference_completions_cost": 0.0065
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T21:52:55.290Z"
+}

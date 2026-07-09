@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "f1598c327606264a66f60005902b5bf2f1e65cbe538cbac3b0f26bff935a80fd",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"EU compliance delays could erase first-half revenue\",\n \"narrative\": \"The model assumes the venture can sell from day 1 of a 12-month window. But we found the product must first clear a stack of EU compliance gates that run one after another before it can quote. A two-quarter delay does not cut the Year-1 number in half evenly. It deletes the front of the ramp, where revenue compounds.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"EU entry needs more gates than the model lists: CE, RoHS, WEEE, EORI, plus 2024 rules.\",\n   \"refs\": [\n    \"digest:serviceable-benchmark#c10\",\n    \"digest:serviceable-benchmark#c8\",\n    \"digest:serviceable-benchmark#c9\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Each gate must clear before quoting; the delay eats the best half.\",\n   \"refs\": [\n    \"profile:Stage\",\n    \"digest:serviceable-benchmark#c6\",\n    \"ledger:serviceableFactor\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"Year-1 share halves or worse versus the assumed 0.03.\",\n   \"refs\": [\n    \"ledger:obtainableFactor\"\n   ]\n  }\n ],\n \"falsifier\": \"A complete dated compliance dossier plus one distributor or operator listing before the Year-1 clock starts.\",\n \"category\": \"execution\",\n \"evidence\": [\n  {\n   \"title\": \"Which obligations do producers of electrical and electronic equipment have?\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"stiftung elektro-altgeräte register\",\n   \"date\": null,\n   \"excerpt\": \"Before you can sell electrical and electronic equipment in Germany, you have to be registered as a producer at the authority stiftung ear... If you have to be registered as a foreign company... you need to have a so-called authorised representative.\",\n   \"url\": \"https://www.stiftung-ear.de/en/topic-areas/find-out-your-obligation-as-a-producer/which-obligations-do-producers-of-electrical-and-electronic-equipment-have/\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Full Process & Lead Time of EU CE Certification\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Blue Asia Labs\",\n   \"date\": \"2026-05-28\",\n   \"excerpt\": \"EMC + LVD: AC-powered regular products. LVD takes 2 ~ 4 working days for long-term operation tests. Total lead time: 2 ~ 3 weeks.\",\n   \"url\": \"https://www.blueasialabs.com/shouyehuandeng/full-process-amp-lead-time-of-eu-ce-certification\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Pre-Shipment Compliance Review for Importer of Record\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"TFTIOR\",\n   \"date\": \"2026-05-21\",\n   \"excerpt\": \"A product that looks secondary in a procurement list can be the product that stops the shipment... the issue date of a Declaration of Conformity matters. A declaration issued after shipment departure may not cleanly evidence compliance at the time of import.\",\n   \"url\": \"https://tftior.com/pre-shipment-compliance-review-ior/\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"obtainableFactor\",\n  \"label\": \"Year-1 obtainable share of SAM\",\n  \"kind\": \"assumption\",\n  \"value\": 0.03,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"triangulated\",\n  \"dimension\": null,\n  \"dimensionValue\": null,\n  \"sensitivityRange\": {\n   \"low\": 0.01,\n   \"high\": 0.05\n  },\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Benchmark anchoring\",\n   \"expression\": \"Year-1 SOM benchmarks: 1% of SAM (Prospeo); early-stage range 1–5% (IdeaPlan) → curated 3% mid-band\",\n   \"crossCheck\": \"Prior 6% assumption sat above every year-1 benchmark found — revised down\"\n  },\n  \"provenance\": {\n   \"rationale\": \"Two independent benchmark sources agree on 1–5%, but both are generic (not DC-hardware-specific) → inferred.\",\n   \"promotionPath\": \"Replace with pipeline-based model once first CE deals close (win-rate × cycle time × capacity).\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"Addressable markets — SOM benchmarks\",\n    \"sourceType\": \"analyst-estimate\",\n    \"publisher\": \"Prospeo\",\n    \"date\": null,\n    \"excerpt\": \"SOM benchmarks that won't get you laughed out of the room: 1% of SAM in Year 1, 3% in Year 2, 5% in Year 3.\",\n    \"attached\": true\n   },\n   {\n    \"title\": \"Serviceable Obtainable Market (SOM) — early-stage ranges\",\n    \"sourceType\": \"analyst-estimate\",\n    \"publisher\": \"IdeaPlan\",\n    \"date\": \"2024\",\n    \"excerpt\": \"For early-stage companies, SOM is typically 1-5% of SAM. For growing companies with product-market fit, SOM can reach 10-20% of SAM.\",\n    \"attached\": true\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"risk\",\"settleTest\":\"Only the passage of the Year-1 clock reveals whether the compliance gates actually delay first quoting by two quarters and how much front-loaded revenue is lost — the timing of gate clearance versus the sales ramp is an unfolding execution event, not a knowable-today fact. A compliance dossier could confirm gate existence but not settle whether the ramp is deleted, which depends on future sequencing and market response.\",\"proposedCorrection\":null,\"researchQueries\":[]}",
+  "usage": {
+    "prompt_tokens": 3079,
+    "completion_tokens": 171,
+    "total_tokens": 3250,
+    "cost": 0.01967,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.01967,
+      "upstream_inference_prompt_cost": 0.015395,
+      "upstream_inference_completions_cost": 0.004275
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T18:18:41.181Z"
+}

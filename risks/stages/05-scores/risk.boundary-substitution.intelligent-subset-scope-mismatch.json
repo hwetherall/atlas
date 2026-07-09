@@ -1,0 +1,26 @@
+{
+  "inputsHash": "14ac8868c1ce62a4c7abe8581ecaacfca1c4f1cca27324838f7ffcdf2566f4c2",
+  "generatedAt": "2026-07-08T21:45:04.792Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (tamBase, €300M, ±40% band), the specific reports (IndexBox EU Intelligent Rack PDUs vs Rack PDUs, Omdia tracker), the misattributed 10–12% growth figure, and a quantified 0.65 perturbation. Nothing vague; even the paywall price is cited."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The inward-facing boundary error is genuinely new — every prior boundary discussion was about excluded substitutes, and whyMissable correctly argues the ±40% band creates false comfort over an orthogonal, stackable error. Docked one point because a product-vs-TAM-scope check is a standard diligence move a careful founder might run, even if the ledger doesn't flag it."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at each hop, including the sharp catch that the 10–12% growth figure traces to a far broader power-and-cable-management report. The decisive link — that the subset fraction is materially below 1.0 — is honestly acknowledged as unquantified, so the chain survives 'why?' at every arrow except the magnitude."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Two independent vendors (IndexBox and Omdia) corroborate the taxonomy split that the trigger rests on, with attached excerpts and stance quotes. Falls short of 4 because the load-bearing quantitative premise — intelligent revenue share meaningfully below the category — is paywalled and unresolved, which the likelihood rationale honestly concedes."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Offers a ~$4–8K information purchase (the correct sub-report) and a concrete portfolio change (add metered-only SKU tier at launch) that would alter next-quarter spend and product sequencing. Both indicators are monitorable via named public sources with explicit thresholds."
+    }
+  }
+}

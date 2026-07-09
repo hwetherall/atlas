@@ -1,0 +1,19 @@
+{
+  "inputsHash": "b23bbe11408952445c47669207a797a613a01f020374afc56ce3a095eb4c84f2",
+  "generatedAt": "2026-07-08T21:52:02.970Z",
+  "data": {
+    "resolution": "risk",
+    "settleTest": "Only the unfolding of the next 12 months settles this: whether large operators actually issue open, multi-vendor rack-PDU tenders during current framework terms, or keep spend locked. No purchasable dataset today states what fraction of the 40% is contract-foreclosed for rack-PDU specifically — the cited deals cover UPS/switchgear/skids, not rack PDUs, and even those preserve 'multi-vendor' flexibility. The claim hinges on future tender behavior, a foreclosure gate that may or may not bind.",
+    "proposedCorrection": null,
+    "researchQueries": [
+      {
+        "query": "Do Digital Realty, Equinix, or major hyperscalers' 2025-2026 framework/SCA agreements (Schneider $373M, HD Hyundai $1.1B) explicitly cover rack-level PDUs, or only UPS/switchgear/skids — and do they name single-source or multi-vendor terms?",
+        "kind": "confirming"
+      },
+      {
+        "query": "Are there open, multi-vendor rack-PDU tenders issued by large operators (e.g., EU 2026 data-center rack-PDU RFPs) during active framework terms, indicating rack PDUs remain competitively bid outside long-term deals?",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

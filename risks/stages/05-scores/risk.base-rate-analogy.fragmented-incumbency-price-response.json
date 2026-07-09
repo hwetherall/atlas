@@ -1,0 +1,26 @@
+{
+  "inputsHash": "3b2b044acca0e68a943f55efaf6397080f42183c0ed86d2ee7f14543ae127369",
+  "generatedAt": "2026-07-08T05:30:23.825Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names seven incumbents, the 15.8% Schneider datapoint behind shape.cr3's 0.55, the 60–70% Eastern Europe import floor, and the exact 0.01-vs-0.03 obtainableFactor band values, plus concrete geographies (Poland, Germany, Netherlands) in indicators and mitigations. Actors, numbers, and target nodes are all pinned."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The core insight — that 'medium/semi-consolidated' is WORSE for an entrant than tight CR3 because more scaled players can price-match, and that the model implicitly prices incumbent response at zero — inverts the friendly surface reading, as whyMissable argues. It targets a band edge, but supplies a genuinely new structural reason rather than restating the band."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three referenced steps (multi-incumbent field + import floor → in-account bundle discounting → depressed win-rate/stretched cycles → band-floor capture) each cite digests and ledger nodes and are individually plausible. The final quantitative leap to exactly 0.01 vs 0.03 is admitted in the rationale as 'partly inferential,' so the last arrow is softer than the others."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Multi-incumbent structure and the import floor each have ≥2 independent corroborating sources (MarketsandMarkets, Credence, Mordor, IndexBox), and the auction study supports the reference class. But the load-bearing premise — magnitude of incumbent in-account price response — is unquantified by any source, and one stance (World Bank: entrants bid systematically aggressively) cuts against the depressed-win-rate conclusion."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations directly reorder near-term spend: buy the Omdia share table before committing pipeline, reposition pricing off the import floor, and lock a Poland distribution exclusive — all executable within two quarters. Both indicators (distributor rebate lists >10%, CRM loss-reason share >50%) are concrete and monitorable with stated thresholds."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "inputsHash": "10ddbf3ad73080984d1dce24983e313f454f6b1b5b7e6f06e4cdc1c6325d6e90",
+  "generatedAt": "2026-07-08T18:20:23.322Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A channel share study or set of CE distributor/operator interviews quantifying what fraction of PDU spend actually flows through OEM/integrator white-label channels contestable by a regional manufacturer — this is a knowable fact about today's channel structure, not a future event.",
+    "proposedCorrection": {
+      "nodeId": "cust.oem",
+      "value": 0.05,
+      "low": 0,
+      "high": 0.1,
+      "rationale": "If the OEM/integrator channel is structurally locked to low-cost Asian ODMs on unit cost, most of the 22% is not serviceable for a Central European entrant, so the addressable slice should be marked down to a small cost-insensitive/feature-driven residual."
+    },
+    "researchQueries": [
+      {
+        "query": "Share of European data center PDU OEM/integrator channel supplied by Taiwanese/Chinese ODMs (Digipower, GETEKnet) vs regional/branded vendors (Panduit, Schneider, Rittal) 2024-2025",
+        "kind": "confirming"
+      },
+      {
+        "query": "Integrator PDU procurement awarded on features/certification/local support rather than unit cost in Central Europe — case studies of branded PDU wins in rack-integration deals",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

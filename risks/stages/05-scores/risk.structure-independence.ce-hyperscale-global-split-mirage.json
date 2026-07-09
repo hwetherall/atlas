@@ -1,0 +1,26 @@
+{
+  "inputsHash": "e75ee5823b22563e2d05c1cc789315c186f348cd198fbab35c5408b85d61c50c",
+  "generatedAt": "2026-07-08T21:37:55.806Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names both ledger nodes (seg.hyperscale, seg.colocation), the exact arithmetic of the phantom cell (0.50 × 0.44 ≈ 22% of TAM), the four countries holding ~60% of self-build, and the real buyer's product requirements (tenant billing metering, multi-tenant DCIM)."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The band-edge trap is avoided: per whyMissable, the node is 'triangulated' and tightly banded, and the flaw is a geographic composition error plus axis double-booking that no band on a global figure covers. A founder skeptical of global-to-regional rescaling might get partway there, so it stops short of fully hidden."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Every hop (global split misapplied → leased-vs-owned in CE → same MW booked on both axes → wrong beachhead and buyer) carries refs and is independently plausible. The final quantitative leap from '60% self-build outside CE' to seg.hyperscale=0.3 is under-pinned, and the risk's own rationale concedes the buyer-attribution hop is 'genuinely ambiguous'."
+    },
+    "evidenceQuality": {
+      "score": 4,
+      "note": "Three independent attached sources (CBRE-via-DCD verbatim on the 60% concentration, Synergy on ~half of hyperscale capacity being leased, Structure Research on Frankfurt hyperscale colocation) corroborate the key premise, and the likelihood rationale honestly documents the revision from 0.4 to 0.5 with residual uncertainty stated."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations directly change near-term spend and sequencing — buy a Europe-scoped split before locking the roadmap, and re-spec the launch product for colo-operator requirements — and both indicators (CBRE quarterly self-build MW, Europe-scoped segment splits) are monitorable with stated thresholds."
+    }
+  }
+}

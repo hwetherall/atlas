@@ -1,0 +1,37 @@
+{
+  "inputsHash": "9c69ba8c44c984a4a3e5df4ffd112b69acf3d8c399c042163d9358be96d2c575",
+  "generatedAt": "2026-07-08T17:39:48.972Z",
+  "data": {
+    "title": "Big-operator sales locked up by global contracts, out of reach",
+    "narrative": "The model gives large operators 40% of buyer spend and plans to sell to them first. But hyperscalers and pan-European colos like Equinix and Digital Realty pick rack-PDU vendors through global contracts signed at headquarters on multi-year cycles. A Central European regional team cannot reach that spend in 12 months, so the Year-1 pipeline is built on buyers the venture cannot access.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Big operators buy PDUs through global vendor lists and contracts.",
+        "refs": [
+          "digest:cust-mix#c9",
+          "digest:cust-mix#c0"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "The 40% share rests on one supplier's order stat, not channel data.",
+        "refs": [
+          "ledger:cust.operator-large",
+          "digest:cust-mix#c0"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "This buyer cell is closed, yet the first-sale strategy targets it.",
+        "refs": [
+          "profile:Who is the primary buyer you'll sell through first?",
+          "ledger:cust.operator-large"
+        ]
+      }
+    ],
+    "whyMissable": "Selling to big operators first looks like the safe, high-credibility move, and the wide uncertainty band hides that the share can be exactly 40% and still zero for a regional entrant.",
+    "falsifier": "Two or more Central European large operators confirming country-level PDU sourcing power, plus a documented case of a new vendor entering their approved list via a regional pilot within 12 months.",
+    "likelihoodRationale": "Global procurement at top hyperscale and colo accounts is well documented, and the trigger is strongly supported. But regional CE colos like Greenergy do buy PDUs through local partners and switch vendors, so the cell is not uniformly closed; net small downward adjustment."
+  }
+}

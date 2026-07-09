@@ -1,0 +1,26 @@
+{
+  "inputsHash": "41ac0a77a828e54bf70fdf784b425720dc2f2c467bcb0a20d6942b96253469f0",
+  "generatedAt": "2026-07-08T05:30:23.824Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (serviceableFactor 0.55, band 0.45–0.65), five specific omitted instruments (WEEE, RoHS, EORI, 2024/1364, EED 2024/1791), a concrete perturbation to 0.38, and monitoring loci (Frankfurt/Amsterdam/Warsaw tender packages). Actors, values, and the 12-month window are all pinned down."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "This is not a bare band-edge claim: the whyMissable field names a NEW definitional failure ('segments we intend to serve' vs 'tenders we can prequalify for in Year 1') plus a regulatory stack the node's own citations omit. Docked one point because the 'B2B SAM analogues sit near 12%' half of the argument is a generic benchmark a diligent founder might raise."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at each hop: unanchored assumption + omitted instruments → tender prequalification gates on the declared first channel → serviceable share below the 0.45 floor. The weak arrow is propagation — that EED/2024/1364 obligations actually appear in equipment-level prequalification lists is asserted rather than evidenced, and the risk's own indicator #1 admits this is still to be observed."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Two independent sources (trade.gov, Schleifenbauer) corroborate that the omitted regulations are real and mandatory, and the likelihood rationale is honest that the corpus 'does not quantify the venture-specific serviceable share below 0.45'. Docked because the load-bearing quantitative premise rests on a vendor marketing page and generic TAM/SAM blogs (the 12% is an illustrative example, not a measured benchmark)."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations directly change next-two-quarter spend and sequencing (front-load full cert stack, route via pre-qualified distributor, build the named bottom-up channel model), and the perturbation to 0.38 moves SAM/YAM beyond the tornado. Indicators carry concrete thresholds ('≥2 of first 5 target-account tenders', 'cert slipping past month 6') that make it monitorable."
+    }
+  }
+}

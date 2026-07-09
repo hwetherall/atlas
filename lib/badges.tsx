@@ -1,4 +1,5 @@
 import type { Confidence, Maturity, NodeKind } from "@/lib/schema";
+import type { EvidenceStatus, RiskCategory } from "@/lib/riskSchema";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Shared badge palette. Lifted out of FactsLedger / FactGraph so the ledger and
@@ -51,15 +52,79 @@ export const MATURITY_RANK: Record<Maturity, number> = {
   verified: 3,
 };
 
+// ── Risk register ─────────────────────────────────────────────────────────────
+// Reuses the fact-* token triads; hues group by flavor: construction attacks
+// (fact/model-structure/boundary — the "rocks") read violet/blue, world risks
+// read amber/red.
+
+export const CATEGORY_STYLE: Record<RiskCategory, string> = {
+  fact: "border-fact-blue-line bg-fact-blue-tint text-fact-blue",
+  "model-structure": "border-fact-violet-line bg-fact-violet-tint text-fact-violet",
+  boundary: "border-fact-violet-line bg-fact-violet-tint text-fact-violet",
+  exogenous: "border-fact-amber-line bg-fact-amber-tint text-fact-amber",
+  competitive: "border-fact-red-line bg-fact-red-tint text-fact-red",
+  execution: "border-fact-amber-line bg-fact-amber-tint text-fact-amber",
+};
+
+// Plain-language category labels — the raw enum ("fact", "boundary") reads as
+// jargon in the register; these say what part of the case the risk attacks.
+export const CATEGORY_LABEL: Record<RiskCategory, string> = {
+  fact: "shaky number",
+  "model-structure": "model structure",
+  boundary: "scope gap",
+  exogenous: "external shock",
+  competitive: "competition",
+  execution: "execution",
+};
+
+// Hover copy that explains each category in one line (schema §1).
+export const CATEGORY_TOOLTIP: Record<RiskCategory, string> = {
+  fact: "A number in the model could be wrong — its plausible band is real.",
+  "model-structure": "The multiplicative funnel itself could mis-shape the estimate.",
+  boundary: "Something left out of scope could actually matter.",
+  exogenous: "A shock from outside — macro, regulatory or demand.",
+  competitive: "Concentration, incumbent response or channel foreclosure.",
+  execution: "Entrant-side: ramp, certification, channel build.",
+};
+
+// Evidence status: how the risk fared against an external-evidence search.
+export const EVIDENCE_STATUS_STYLE: Record<EvidenceStatus, string> = {
+  corroborated: "border-fact-green-line text-fact-green",
+  contested: "border-fact-amber-line text-fact-amber",
+  speculative: "border-fact-red-line text-fact-red",
+};
+
+export const EVIDENCE_STATUS_LABEL: Record<EvidenceStatus, string> = {
+  corroborated: "backed by evidence",
+  contested: "evidence contested",
+  speculative: "no external evidence",
+};
+
+// A leading glyph so evidence reads as a status, not another category tag.
+export const EVIDENCE_STATUS_ICON: Record<EvidenceStatus, string> = {
+  corroborated: "✓",
+  contested: "!",
+  speculative: "?",
+};
+
+export const EVIDENCE_STATUS_TOOLTIP: Record<EvidenceStatus, string> = {
+  corroborated: "At least one independent source supports the key premise.",
+  contested: "A credible source disputes a non-load-bearing link — kept and flagged.",
+  speculative: "No external signal either way — kept, never silently dropped.",
+};
+
 export function Badge({
   className,
+  title,
   children,
 }: {
   className: string;
+  title?: string;
   children: React.ReactNode;
 }) {
   return (
     <span
+      title={title}
       className={`rounded border px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide ${className}`}
     >
       {children}

@@ -1,0 +1,26 @@
+{
+  "inputsHash": "a3fc8383a12ab3e6b619966f1818cb492d1f879b139ccfe8cf7b603985236d25",
+  "generatedAt": "2026-07-08T21:31:52.789Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (cust.operator-large), the 0.40 cell share, CR3 ≈ 0.55, the #1 vendor at 15.8%, and specific instruments (Digital Realty's $373M Schneider SCA, Iren's $1.6bn Dell contract), plus a concrete perturbation to 0.2. Falsifier and indicators name venues (TED, operator press releases) and thresholds."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable inverts the founder's own reading — 'large operators buy direct' is reframed from good news to a lock ('framework-direct'), which is a genuinely new reason, not a band-edge restatement. Falls short of 4 because framework consolidation at hyperscalers is a known industry pattern a well-read founder could plausibly surface."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (framework consolidation → renewal replaces open tender → 0.40 share overstates contestable spend) with refs at every step and corroborating detail (1-2 bidder tenders, 'No substitutions' clauses). The final quantification — 'roughly half foreclosed' — is asserted rather than derived, and the SCA's own multi-vendor language weakens the 'foreclosure, not mix shift' claim in the perturbation note."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "Two independent sources corroborate vendor consolidation, but the load-bearing premise — PDUs specifically buried inside frameworks — is undercut by the risk's own evidence: the SCA covers UPS/LVS/skids, not PDUs, and explicitly preserves a 'dynamic, multi-vendor environment' (flagged as contradicting in stances). The likelihood rationale honestly discloses this gap, which earns it a 2 rather than lower."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly attacks the stated first channel and prescribes near-term actions: instrumented procurement interviews (already flagged pending in the ledger) and re-sequencing to mid-size/retrofit with second-source entry. Both indicators (framework announcements, TED bidder counts) are monitorable this year."
+    }
+  }
+}

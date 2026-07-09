@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "2f8efd058bd38d759bc23ec4f9bfa6854b9fa0189736410a9083e2242ab946de",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"German billing rules block core PDU value in half the market\",\n \"narrative\": \"The model assumes the smart PDU's metering premium sells across all geography. But in Germany, half the modeled geography, meters used to bill tenants per kWh must be legally certified, not just accurate, and this venture is not certified. That certification takes multiple quarters, so the Year-1 reachable share drops to the band floor at 0.45.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"German law requires certified meters whenever billed per kilowatt-hour.\",\n   \"refs\": [\n    \"digest:serviceable-benchmark#c13\",\n    \"ledger:serviceableFactor\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Colocation operators re-billing tenants are the buyers paying the premium; Germany is half the geography.\",\n   \"refs\": [\n    \"ledger:geo.DE\",\n    \"ledger:seg.colocation\",\n    \"digest:serviceable-benchmark#c4\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"Certification takes multiple quarters, missing Year 1; German billing demand is foreclosed.\",\n   \"refs\": [\n    \"profile:Stage\",\n    \"digest:serviceable-benchmark#c8\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"The 0.55 factor includes demand it cannot reach; share falls to floor.\",\n   \"refs\": [\n    \"ledger:serviceableFactor\",\n    \"ledger:geo.DE\"\n   ]\n  }\n ],\n \"falsifier\": \"Two German colocation operators or the regulator confirm that PDU metering for tenant re-billing is exempt, or that capacity-tier billing makes certified metering commercially irrelevant.\",\n \"category\": \"boundary\",\n \"evidence\": [\n  {\n   \"title\": \"Is your sub-metering system MID compliant?\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Inteb\",\n   \"date\": \"2022-03-07\",\n   \"excerpt\": \"The consumption data from these sub-meters is then used to charge tenants for their personal energy use... all meters used for tenant recharging must comply with MID.\",\n   \"url\": \"https://weareinteb.co.uk/news/is-your-sub-metering-system-mid-compliant/\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"MID Approved Power Metering - EDP Europe\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"EDP Europe\",\n   \"date\": \"2023-10-24\",\n   \"excerpt\": \"MID ... will stipulate that all meters supplied and installed for private billing must be MID certified. EDP Europe’s MID approved power metering system enables data centre hosting operatives to comply with this new legislation.\",\n   \"url\": \"https://www.edpeurope.com/products/power-monitoring/power-distribution/intelligent-pdus/mid-approved-power-metering/\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Sector 3: Measuring Instruments Directive (MID) - PTB.de\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"PTB\",\n   \"date\": null,\n   \"excerpt\": \"EU type-examinations according to directive 2014/32/EU module B ... approvals of quality systems according to directive 2014/32/EU modules D, D1 ... Measuring instruments for electrical energy (WG 2.34)\",\n   \"url\": \"https://www.ptb.de/cms/en/metrological-services/kbs/kbs3.html\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"serviceableFactor\",\n  \"label\": \"Serviceable share of TAM\",\n  \"kind\": \"assumption\",\n  \"value\": 0.55,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"needs-source\",\n  \"dimension\": null,\n  \"dimensionValue\": null,\n  \"sensitivityRange\": {\n   \"low\": 0.45,\n   \"high\": 0.65\n  },\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Reachability assumption\",\n   \"expression\": \"No public SAM/TAM benchmark for B2B hardware exists; EU cert stack (EN 50600, ecodesign 2019/424, CE/TÜV) justifies < 1.0 but doesn't quantify 0.55\"\n  },\n  \"provenance\": {\n   \"rationale\": \"Assumption leaf — channel + regulatory reach; EU certification barriers documented qualitatively only.\",\n   \"promotionPath\": \"Bottom-up channel-coverage model (named accounts × reachable share) → sourced serviceable %.\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"EU ecodesign requirements for servers and data storage (2019/424)\",\n    \"sourceType\": \"industry-report\",\n    \"publisher\": \"EUR-Lex\",\n    \"date\": \"2019\",\n    \"excerpt\": \"EU ecodesign and certification requirements gate which demand is regulatory-clear for a new entrant — the qualitative basis of the serviceable haircut.\",\n    \"attached\": true\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"risk\",\"settleTest\":\"Only the passage of time settles this: whether MID/certification actually forecloses German tenant re-billing demand in Year 1 depends on the venture's certification timeline, whether colocation operators use kWh vs capacity-tier billing, and how demand responds — none of which is fixed by a purchasable report. The legal requirement (MID) is documented today, but the load-bearing claim is that this forecloses reachable Year-1 share, which is a forward market-response gate.\",\"proposedCorrection\":null,\"researchQueries\":[{\"query\":\"Survey German colocation operators (e.g., Interxion/Digital Realty DE, NTT Frankfurt, Equinix FR) on whether tenant power is billed per-kWh (MID-triggering) versus flat capacity-tier or breaker-amperage allocation\",\"kind\":\"falsifying\"},{\"query\":\"PTB and MID module B/D certification lead-time and cost for power metering instruments (WG 2.34) for a new PDU entrant, confirming multi-quarter timeline missing Year 1\",\"kind\":\"confirming\"}]}",
+  "usage": {
+    "prompt_tokens": 2965,
+    "completion_tokens": 370,
+    "total_tokens": 3335,
+    "cost": 0.024075,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.024075,
+      "upstream_inference_prompt_cost": 0.014825,
+      "upstream_inference_completions_cost": 0.00925
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T21:54:17.729Z"
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "stage": "compile",
+    "id": "risk.ledger-self-audit.colo-denominator-misallocates-geography",
+    "title": "Normalizing colo-only shares to 1.00 launders a scope mismatch: the €300M is geographically misallocated away from where PDU demand actually sits",
+    "reason": "perturbation is a no-op at the baseline scenario"
+  },
+  {
+    "stage": "judge",
+    "id": "risk.base-rate-analogy.som-window-cumulative-misread",
+    "title": "The 1% Year-1 anchor is a 36-month number wearing a 12-month label",
+    "reason": "merged into risk.execution-window.som-window-semantics-year1-zero: The cluster contains several mechanistically distinct risks despite shared funnel targets. I identify these true-duplica",
+    "mergedInto": "risk.execution-window.som-window-semantics-year1-zero"
+  },
+  {
+    "stage": "judge",
+    "id": "risk.regulatory-gauntlet.avl-framework-qualification-forecloses-large-operator-cell",
+    "title": "Buyer-side procurement norms (AVL qualification, ISO 27001/IEC 62443 attestations, global frameworks) close the chosen 40% large-operator beachhead for the entire Year-1 window",
+    "reason": "merged into risk.competitive-foreclosure.framework-agreements-close-first-buyer: The cluster contains several mechanistically distinct risks despite shared funnel targets. I identify these true-duplica",
+    "mergedInto": "risk.competitive-foreclosure.framework-agreements-close-first-buyer"
+  },
+  {
+    "stage": "judge",
+    "id": "risk.demand-discontinuity.prelet-lockout-year1-contestability",
+    "title": "83% pre-let pipeline plus long-lead electrical frameworks leave almost no contestable Year-1 PDU orders",
+    "reason": "merged into risk.execution-window.prelet-pipeline-lockout: The cluster contains several mechanistically distinct risks despite shared funnel targets. I identify these true-duplica",
+    "mergedInto": "risk.execution-window.prelet-pipeline-lockout"
+  },
+  {
+    "stage": "judge",
+    "id": "risk.ledger-self-audit.oem-cell-double-squeeze-foreclosure",
+    "title": "The 0.22 OEM/integrator cell is squeezed from both sides — branded incumbents win the spec, Taiwanese ODMs win the white-label — leaving no seat for a CE entrant",
+    "reason": "merged into risk.competitive-foreclosure.oem-cell-two-sided-squeeze: The first two write-ups (oem-cell-double-squeeze-foreclosure and oem-cell-two-sided-squeeze) are the same risk: identica",
+    "mergedInto": "risk.competitive-foreclosure.oem-cell-two-sided-squeeze"
+  },
+  {
+    "stage": "judge",
+    "id": "risk.ledger-self-audit.nl-frozen-colo-stock-share-decay",
+    "title": "NL's 0.28 is a share of a stock that regulation has frozen — growth migrates to self-build hyperscale the entrant reaches through a different (foreclosed) door",
+    "reason": "merged into risk.boundary-substitution.nl-selfbuild-hollows-second-geography: All three write-ups make the same core argument: geo.NL's 0.28 is well-triangulated but measures frozen/capped colo stoc",
+    "mergedInto": "risk.boundary-substitution.nl-selfbuild-hollows-second-geography"
+  },
+  {
+    "stage": "judge",
+    "id": "risk.demand-discontinuity.nl-grid-freeze-share-erosion",
+    "title": "The Netherlands' 0.28 slice is legally and electrically frozen for the entire Year-1 window",
+    "reason": "merged into risk.boundary-substitution.nl-selfbuild-hollows-second-geography: All three write-ups make the same core argument: geo.NL's 0.28 is well-triangulated but measures frozen/capped colo stoc",
+    "mergedInto": "risk.boundary-substitution.nl-selfbuild-hollows-second-geography"
+  },
+  {
+    "stage": "judge",
+    "id": "risk.boundary-substitution.intelligent-subset-scope-mismatch",
+    "title": "The venture sells intelligent PDUs; the TAM counts all rack PDUs — the category boundary mismatch is inside the model, not at its edge",
+    "reason": "merged into risk.definition-scopedown.intelligent-subset-inflation: Three distinct mechanisms appear, each with a duplicate pair. (1) Intelligent-subset scope inflation: the product sells ",
+    "mergedInto": "risk.definition-scopedown.intelligent-subset-inflation"
+  },
+  {
+    "stage": "judge",
+    "id": "risk.structure-independence.stock-weighted-tam-misses-fitout-flow",
+    "title": "TAM is apportioned on capacity stock, but PDU revenue follows fit-out flow — and the flow is concentrating outside CE-7",
+    "reason": "merged into risk.definition-scopedown.stock-vs-flow-intensity-mismatch: Three distinct mechanisms appear, each with a duplicate pair. (1) Intelligent-subset scope inflation: the product sells ",
+    "mergedInto": "risk.definition-scopedown.stock-vs-flow-intensity-mismatch"
+  },
+  {
+    "stage": "judge",
+    "id": "risk.definition-scopedown.europe-30pct-arithmetic-ghost",
+    "title": "The 'Europe ≈ 30%' hop is an inserted number; two sourced regional shares imply Europe is ≤24%",
+    "reason": "merged into risk.ledger-self-audit.europe-thirty-percent-arithmetic-ghost: Three distinct mechanisms appear, each with a duplicate pair. (1) Intelligent-subset scope inflation: the product sells ",
+    "mergedInto": "risk.ledger-self-audit.europe-thirty-percent-arithmetic-ghost"
+  },
+  {
+    "stage": "judge",
+    "id": "risk.regulatory-gauntlet.mid-eichrecht-billing-metering-forecloses-german-colo",
+    "title": "MID (2014/32/EU, MI-003) + German MessEG §32: billing-grade PDU metering in German colo is legally foreclosed without a legal-metrology approval the entrant cannot obtain in-window",
+    "reason": "merged into risk.execution-window.mid-eichrecht-metering-foreclosure: Two write-ups (mid-eichrecht-billing-metering-forecloses-german-colo and mid-eichrecht-metering-foreclosure) describe th",
+    "mergedInto": "risk.execution-window.mid-eichrecht-metering-foreclosure"
+  },
+  {
+    "stage": "judge",
+    "id": "risk.base-rate-analogy.framework-foreclosure-beachhead",
+    "title": "The chosen beachhead buys through global frameworks: half the large-operator cell is not a market for a regional entrant",
+    "reason": "merged into risk.ledger-self-audit.framework-agreements-hollow-large-operator-cell: All three write-ups describe the identical mechanism: global framework agreements and integrated rack/power/cooling bund",
+    "mergedInto": "risk.ledger-self-audit.framework-agreements-hollow-large-operator-cell"
+  },
+  {
+    "stage": "judge",
+    "id": "risk.execution-window.framework-agreements-foreclose-large-operator-cell",
+    "title": "Global framework agreements make the 0.40 large-operator cell mostly non-contestable in the venture's window",
+    "reason": "merged into risk.ledger-self-audit.framework-agreements-hollow-large-operator-cell: All three write-ups describe the identical mechanism: global framework agreements and integrated rack/power/cooling bund",
+    "mergedInto": "risk.ledger-self-audit.framework-agreements-hollow-large-operator-cell"
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "inputsHash": "2174fffe433610b21cfac633fe83a1e317e5080ca3510eaf9323f6407db072f1",
+  "generatedAt": "2026-07-08T21:27:35.857Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names cust.oem at 0.22 (22% of SAM), a concrete perturbation op ('exclude' not shrink), named actors (Digipower-class ODMs, Rittal/nVent/Vertiv/Legrand catalogs), and indicator thresholds ('zero non-top-5 brands over two quarters', '≥1 CE distributor adding an ODM line'). Instruments, actors and values are all pinned down."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "This is not 'the 0.22 might be lower' — it argues the cell structurally belongs to other players via a dual-filter squeeze, and the whyMissable field correctly identifies that channel-existence evidence masquerades as channel-openness evidence. A founder checking 'multiple channels' would plausibly miss it, though the self-rated 'medium' expectedObviousness and the flagged needs-source maturity mean an attentive reader was already suspicious of this cell."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at each arrow, and the two-sided filter (no brand/DCIM ecosystem AND no ODM cost floor) is independently plausible per step. The final hop to total foreclosure leans on absence of counterexamples ('no source quantifies any historical case'), which is the weakest link a hostile partner would attack — and the rationale itself concedes foreclosure is likely partial."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The squeeze setup is corroborated by multiple independent sources (Digipower/Newsunn on ODM cost floor; buyer's guides on cert/support selection), but the load-bearing 'total foreclosure' claim is contradicted by the risk's own attached evidence (open private-label sourcing rounds, the bank vendor-switch case). Credit for honest 'contested' status and a documented downward likelihood revision to 0.32."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The information mitigation (white-label RFQs to 3 CE integrators/distributors) is a priced, dated go/no-go executable this quarter, and exclusion of the cell would force re-costing the Year-1 plan against a 3-channel SAM. Both indicators are externally monitorable with explicit thresholds."
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "inputsHash": "495518485a13be81ef39027b05637bfcbb0200e40ab39ab14e84a7b5be819f04",
+  "generatedAt": "2026-07-08T21:49:47.714Z",
+  "data": {
+    "title": "CE-7 share is based on old racks, but new sales chase new builds",
+    "narrative": "The model splits Europe's colocation market by standing capacity, giving CE-7 a 39.8% share. But rack-PDU revenue is earned when new capacity is built or refreshed, and 57% of 2025's 937MW of new supply lands in FLAPD, outside most of CE-7. That means the €300M overstates where 2026 PDU orders will actually be written.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "New builds drive sales: 57% of 937MW lands in FLAPD",
+        "refs": [
+          "digest:geo-region-denominator#c6",
+          "digest:geo-region-denominator#c7",
+          "digest:geo-region-denominator#c9"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Growth goes to London, Milan and Madrid, not CE-7",
+        "refs": [
+          "digest:geo-region-denominator#c3",
+          "digest:geo-region-denominator#c8",
+          "digest:geo-region-denominator#c19"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "The 39.8% share overstates near-term PDU revenue for CE-7",
+        "refs": [
+          "ledger:tamBase",
+          "digest:geo-region-denominator#c4"
+        ]
+      }
+    ],
+    "whyMissable": "Splitting by standing capacity is the standard method and every input is sourced and recent, so the flaw hides in an unstated assumption that PDU revenue per standing MW is the same everywhere.",
+    "falsifier": "CBRE's 2025–26 pipeline showing CE-7 capturing 38% or more of new European colocation MW delivered.",
+    "likelihoodRationale": "Flow clearly concentrates in FLAPD, but Frankfurt and Amsterdam are CE-7 members inside FLAPD, so some flow returns to CE-7. The net deficit is real but likely 5–10 points, not catastrophic."
+  }
+}

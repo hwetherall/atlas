@@ -1,0 +1,19 @@
+{
+  "inputsHash": "a1155eca82c17fa6efc30d235b08b9042d8402bf513a8a35a036416f4df4e840",
+  "generatedAt": "2026-07-08T18:17:51.242Z",
+  "data": {
+    "resolution": "risk",
+    "settleTest": "The load-bearing claim is that 2026 wholesale colo fit-outs will standardize on busway/power-shelf and drop PDU content below the model's assumption. Only actual 2026 tenant BOMs and fit-out specs from Frankfurt/Amsterdam wholesale deals — which do not yet exist — would settle whether PDU content falls; the segment share itself (0.18) is a defensible today-value backed by Synergy's series.",
+    "proposedCorrection": null,
+    "researchQueries": [
+      {
+        "query": "CBRE and JLL European wholesale colocation fit-out specifications 2025-2026: busway vs rack-PDU power distribution standardization in Frankfurt and Amsterdam single-let facilities",
+        "kind": "confirming"
+      },
+      {
+        "query": "Retail vs wholesale colocation rack power distribution BOM comparison: evidence that hyperscale wholesale tenants still specify rack-mount PDUs at retail-colo intensity in European FLAP-D markets",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

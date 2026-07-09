@@ -1,0 +1,37 @@
+{
+  "inputsHash": "25bd0e841cd6c0fd245ad7664c551a53115a0cc0e38c86b3cf4c58696ea313fa",
+  "generatedAt": "2026-07-08T21:50:56.396Z",
+  "data": {
+    "title": "Enterprise PDU share overstated as AI racks shift to busbar",
+    "narrative": "The model assumes enterprise is a stable 0.29 slice of PDU demand, with the 'GPU pods skip PDUs' doubt marked confirmed. But NVIDIA's flagship dense design routes power via DC busbar with far fewer PDUs per rack, and the legacy base is losing about 2 percentage points of capacity share per year toward 19% by 2031. So the growing AI half buys the substitute while the shrinking legacy half stalls, pushing the realistic enterprise value below the model's own 0.24 low band.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Enterprise growth now comes from GPU pods using busbar, not PDUs.",
+        "refs": [
+          "digest:seg-mix#c19",
+          "ledger:seg.enterprise"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Growth side sheds PDUs; legacy base shrinks 2pp per year.",
+        "refs": [
+          "digest:seg-mix#c5",
+          "digest:seg-mix#c4"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Enterprise 0.29 falls below the 0.24 low band.",
+        "refs": [
+          "ledger:seg.enterprise",
+          "digest:seg-mix#c2"
+        ]
+      }
+    ],
+    "whyMissable": "The doubt was stamped 'refuted' in cycle 1, hiding that shipping PDU variants differs from actually using them in dense builds.",
+    "falsifier": "BOM or vendor data from 2026 enterprise GPU-pod deployments showing rack-PDU counts at or above the legacy 3-per-rack norm in most dense installs.",
+    "likelihoodRationale": "The 2pp/year decline and GPU-driven growth are well confirmed, but NVIDIA's own AC SuperPOD design shows high PDU counts on network and storage racks, undercutting the reduced-attach premise. That lowers the chance enterprise drops below 0.24 within 12 months, so I trim from 0.40 to 0.33."
+  }
+}

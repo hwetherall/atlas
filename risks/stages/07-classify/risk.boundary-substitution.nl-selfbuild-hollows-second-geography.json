@@ -1,0 +1,25 @@
+{
+  "inputsHash": "aefc588c799e079096c12880ebe80f2e7f3d3bf493b19a6422b284bdaa7f48c9",
+  "generatedAt": "2026-07-08T21:53:33.494Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "Existing 2024-2025 Dutch capacity datasets (CBRE/Structure Research self-build vs colo splits, plus DDA and Statista breakdowns) already quantify what share of Dutch DC demand is colo versus self-build/hyperscale and how much is reachable through open channels — a purchasable report and a week of analyst calls settle whether 28% overstates reachable demand today.",
+    "proposedCorrection": {
+      "nodeId": "geo.NL",
+      "value": 0.2,
+      "low": 0.15,
+      "high": 0.26,
+      "rationale": "The 28% weight apportions on colo stock, but a material and growing share of Dutch capacity is self-build/hyperscale bought through channels a new entrant cannot bid, so the reachable-demand weight should be discounted below the raw colo share."
+    },
+    "researchQueries": [
+      {
+        "query": "CBRE or Structure Research Netherlands data center market 2025: split of total IT capacity between third-party colocation and owner-operated/hyperscale self-build",
+        "kind": "confirming"
+      },
+      {
+        "query": "Dutch Data Center Association 2025 report on procurement channels for new Dutch MW: share of new capacity using rack PDUs/components sourced through distributors open to regional vendors",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

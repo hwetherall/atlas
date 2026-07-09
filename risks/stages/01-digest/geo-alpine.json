@@ -1,0 +1,272 @@
+{
+  "inputsHash": "3e9969b4acd116290848927acfb2a7c52106affe60537b4fb4b13a522365ca3d",
+  "generatedAt": "2026-07-08T18:45:27.831Z",
+  "data": {
+    "claims": [
+      {
+        "id": "geo-alpine#c0",
+        "claim": "Switzerland's installed data-center base was 850.60 MW in 2025, projected to grow to 950.91 MW by 2031 at 1.99% CAGR.",
+        "number": 850.6,
+        "unit": "MW",
+        "sourceTitle": "Switzerland Data Center Market Size & Growth to 2031",
+        "url": "https://www.mordorintelligence.com/industry-reports/switzerland-data-center-market",
+        "excerpt": "Base Year Market Size (2025) | 850.60 megawatt ... Market Volume (2031) | 950.91 megawatt | Growth Rate (2026 - 2031) | 1.99% CAGR",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-alpine#c1",
+        "claim": "Switzerland's commercial (non-self-operated) data-center capacity is 340 MW across 121 sites, totaling ~428,000 m² built area including 229,000 m² of IT white space.",
+        "number": 340,
+        "unit": "MW",
+        "sourceTitle": "CBRE Suisse publie les dernières tendances et chiffres du marché des datacenters en Suisse",
+        "url": "https://www.europesays.com/ch-fr/205273/",
+        "excerpt": "La capacité actuellement disponible sur le marché suisse des datacenters, hors infrastructures exploitées pour compte propre, s'élève à 340 MW et est répartie sur 121 sites. Ceux-ci occupent une surface totale bâtie d'environ 428'000 m², dont 229'000 m² de surfaces utiles IT",
+        "tags": [
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "geo-alpine#c2",
+        "claim": "Zurich region concentrates 61% (209 MW) of Switzerland's total commercial data-center capacity.",
+        "number": 209,
+        "unit": "MW",
+        "sourceTitle": "CBRE Suisse publie les dernières tendances et chiffres du marché des datacenters en Suisse",
+        "url": "https://www.europesays.com/ch-fr/205273/",
+        "excerpt": "Environ 61% de la capacité totale suisse, soit 209 MW, se concentre actuellement dans la région de Zurich.",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "geo-alpine#c3",
+        "claim": "The Lake Geneva region (Geneva and Vaud cantons) totals 60 MW, or 18% of Switzerland's national data-center capacity.",
+        "number": 60,
+        "unit": "MW",
+        "sourceTitle": "CBRE Suisse publie les dernières tendances et chiffres du marché des datacenters en Suisse",
+        "url": "https://www.europesays.com/ch-fr/205273/",
+        "excerpt": "La région lémanique (cantons de Genève et de Vaud) totalise quant à elle 60 MW, soit 18% de la capacité du pays.",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-alpine#c4",
+        "claim": "GTR announced a 24MW data-center facility (CH One) in Zurich, spanning 11,315 sqm across three data halls, first phase live 2028.",
+        "number": 24,
+        "unit": "MW",
+        "sourceTitle": "GTR plans 24MW data center in Zurich, Switzerland",
+        "url": "https://www.europesays.com/ch/93441/",
+        "excerpt": "The company this week announced CH One, a 24MW facility located in Zurich. The three-story facility will span 11,315 sqm (121,793 sq ft) across three data halls. The first phase is expected to go live in 2028.",
+        "tags": [
+          "execution",
+          "competition"
+        ]
+      },
+      {
+        "id": "geo-alpine#c5",
+        "claim": "Switzerland's data center market is valued at USD 2.9 billion (base year 2024, five-year historical analysis).",
+        "number": 2.9,
+        "unit": "USD billion",
+        "sourceTitle": "Switzerland Data Center Market | 2019 – 2030 - Ken Research",
+        "url": "https://www.kenresearch.com/switzerland-data-center-market",
+        "excerpt": "The Switzerland Data Center Market is valued at USD 2.9 billion, based on a five-year historical analysis.",
+        "tags": [
+          "base-rate",
+          "definition"
+        ]
+      },
+      {
+        "id": "geo-alpine#c6",
+        "claim": "Switzerland's data center market was valued at USD 960 million in 2025, expected to reach USD 2.47 billion by 2031 at 17.09% CAGR.",
+        "number": 960,
+        "unit": "USD million",
+        "sourceTitle": "Switzerland Data Center Market Size, Investment, Growth ... - Arizton",
+        "url": "https://www.arizton.com/market-reports/switzerland-data-center-market-size-analysis",
+        "excerpt": "THE SWITZERLAND DATA CENTER MARKET SIZE WAS VALUED AT USD 960 MILLION IN 2025 AND IS EXPECTED TO REACH USD 2.47 BILLION BY 2031, GROWING AT A CAGR OF 17.09% DURING THE FORECAST PERIOD.",
+        "tags": [
+          "base-rate",
+          "definition"
+        ]
+      },
+      {
+        "id": "geo-alpine#c7",
+        "claim": "Data centres could consume up to 15% of Swiss electricity by 2030.",
+        "number": 15,
+        "unit": "%",
+        "sourceTitle": "Can Switzerland's power grid keep up with its data centres? - SWI swissinfo.ch",
+        "url": "https://www.swissinfo.ch/eng/swiss-ai/can-switzerlands-power-grid-keep-up-with-its-data-centres/90710181",
+        "excerpt": "Hungry servers: data centres could consume up to 15% of Swiss electricity by 2030.",
+        "tags": [
+          "demand"
+        ]
+      },
+      {
+        "id": "geo-alpine#c8",
+        "claim": "Switzerland has among the highest number of data centres per capita in the world, and among the highest data-center electricity share in Europe.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Can Switzerland's power grid keep up with its data centres? - SWI swissinfo.ch",
+        "url": "https://www.swissinfo.ch/eng/swiss-ai/can-switzerlands-power-grid-keep-up-with-its-data-centres/90710181",
+        "excerpt": "In Switzerland, the number of data centres per capita is among the highest in the world, while the share of electricity they consume is among the highest in Europe.",
+        "tags": [
+          "base-rate"
+        ]
+      },
+      {
+        "id": "geo-alpine#c9",
+        "claim": "Austria's installed data-center base was 207 MW in 2025, projected to reach 342.54 MW by 2031 at 8.94% CAGR.",
+        "number": 207,
+        "unit": "MW",
+        "sourceTitle": "Austria Data Center Market Size & Share Outlook to 2031",
+        "url": "https://www.mordorintelligence.com/industry-reports/austria-data-center-market",
+        "excerpt": "Base Year Market Size (2025) | 207 megawatt ... Market Volume (2031) | 342.54 megawatt | Growth Rate (2026 - 2031) | 8.94% CAGR",
+        "tags": [
+          "base-rate",
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-alpine#c10",
+        "claim": "Austria's data center market was valued at USD 1.18 billion in 2025, expected to reach USD 1.86 billion by 2031 at 7.91% CAGR; power capacity projected to hit 33 MW by 2031.",
+        "number": 33,
+        "unit": "MW",
+        "sourceTitle": "Austria Data Center Market Size & Investment Growth Forecast 2031",
+        "url": "https://www.arizton.com/market-reports/austria-data-center-market",
+        "excerpt": "Market Area to Reach 129 Thousand Sq. Ft., Power Capacity to Hit 33 MW, and Colocation Revenue to Surpass USD 350 Million by 2031",
+        "tags": [
+          "base-rate",
+          "structure",
+          "definition"
+        ]
+      },
+      {
+        "id": "geo-alpine#c11",
+        "claim": "The cost of building a data center in Austria is typically estimated at around $11-$12 million per megawatt of IT load.",
+        "number": 11.5,
+        "unit": "USD million/MW",
+        "sourceTitle": "Austria Data Center Market - Investment Analysis & Growth Opportunities 2026-2031",
+        "url": "https://www.researchandmarkets.com/reports/5511428/austria-data-center-market-investment-analysis",
+        "excerpt": "The cost of building a data center in Austria is typically estimated at around $11-$12 million per megawatt (MW) of IT load, positioning it in the mid-to-upper range within Europe.",
+        "tags": [
+          "execution"
+        ]
+      },
+      {
+        "id": "geo-alpine#c12",
+        "claim": "Vienna has 12 data-center facilities totaling 750,245 sqft and 78 megawatts.",
+        "number": 78,
+        "unit": "MW",
+        "sourceTitle": "Vienna Data Centers & Colocation",
+        "url": "https://baxtel.com/data-center/vienna",
+        "excerpt": "Vienna has 12 facilities with 750,245 sqft and 78 megawatts.",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "geo-alpine#c13",
+        "claim": "Vienna's data-center power capacity grew 87% since 2022.",
+        "number": 87,
+        "unit": "%",
+        "sourceTitle": "Vienna Data Centers & Colocation",
+        "url": "https://baxtel.com/data-center/vienna",
+        "excerpt": "Vienna Power Growth Over Time +87% since 2022",
+        "tags": [
+          "base-rate",
+          "demand"
+        ]
+      },
+      {
+        "id": "geo-alpine#c14",
+        "claim": "Austria operates 28 registered colocation facilities per PeeringDB data (March 2026), with 22 concentrated in Vienna; Vienna accounts for 79% of national colocation capacity.",
+        "number": 79,
+        "unit": "%",
+        "sourceTitle": "Colocation Austria: VIX, Vienna Hub | RebootMonkey",
+        "url": "https://www.rebootmonkey.com/en/colocation/austria",
+        "excerpt": "Austria operates 28 registered colocation facilities according to PeeringDB data (March 2026), with 22 concentrated in Vienna and the remainder distributed across Graz, Linz, and Salzburg. Vienna accounts for 79% of national colocation capacity",
+        "tags": [
+          "structure",
+          "competition"
+        ]
+      },
+      {
+        "id": "geo-alpine#c15",
+        "claim": "Mordor Intelligence projects Austria's data center market to reach USD 1.1 billion by 2030, growing at 15.18% CAGR from a USD 474 million 2024 base; Vienna holds 74.2% of national market share; colocation represents 67.6% of Austrian data center revenue.",
+        "number": 1.1,
+        "unit": "USD billion",
+        "sourceTitle": "Colocation Austria: VIX, Vienna Hub | RebootMonkey",
+        "url": "https://www.rebootmonkey.com/en/colocation/austria",
+        "excerpt": "Mordor Intelligence projects Austria's data center market to reach USD 1.1 billion by 2030, growing at 15.18% CAGR from a USD 474 million 2024 base. Vienna holds 74.2% of that national market share, and colocation represents 67.6% of Austrian data center revenue.",
+        "tags": [
+          "base-rate",
+          "competition",
+          "definition"
+        ]
+      },
+      {
+        "id": "geo-alpine#c16",
+        "claim": "Vienna hosts over 80% of Austria's total IT capacity.",
+        "number": 80,
+        "unit": "%",
+        "sourceTitle": "Vienna's Data Centre Market: Navigating Growth, Challenges, and the Path Ahead | DC Byte",
+        "url": "https://www.dcbyte.com/news-blogs/vienna-data-centre-market-growth-challenges/",
+        "excerpt": "Vienna has long been the beating heart of the Austrian data centre market, hosting over 80% of the country's IT capacity.",
+        "tags": [
+          "structure"
+        ]
+      },
+      {
+        "id": "geo-alpine#c17",
+        "claim": "Vienna's data center market slowdown is driven by power constraints, escalating construction costs, and supply chain delays, causing it to be overshadowed by faster-growing European hubs.",
+        "number": null,
+        "unit": null,
+        "sourceTitle": "Vienna's Data Centre Market: Navigating Growth, Challenges, and the Path Ahead | DC Byte",
+        "url": "https://www.dcbyte.com/news-blogs/vienna-data-centre-market-growth-challenges/",
+        "excerpt": "Power constraints, escalating construction costs, and supply chain delays have significantly slowed the delivery of new capacity. As a result, Vienna is now being overshadowed by other European hubs that are growing at a much faster pace.",
+        "tags": [
+          "execution",
+          "regulation"
+        ]
+      }
+    ],
+    "tensions": [
+      {
+        "text": "Baxtel independently measures Vienna alone at 78 MW of colocation capacity, and multiple sources (RebootMonkey 79%, DC Byte >80%) place Vienna's share of national colocation capacity at ~80%. This implies Austria's national colocation total is roughly 97-100 MW, well above the ~68 MW colo figure implied in geo.AT's Statista-based apportionment (68 MW ÷ 3,451 MW = 0.02), suggesting the node's colo baseline may understate Austrian colocation capacity.",
+        "nodes": [
+          "geo.AT"
+        ]
+      },
+      {
+        "text": "Arizton projects Austria's power capacity to hit only 33 MW by 2031, while Mordor Intelligence (cited in geo.AT's own cross-check) projects 342.54 MW installed base by 2031 for the same country and year — a roughly 10x discrepancy in the same nominal metric (MW capacity), undermining confidence in either figure as a stable denominator/numerator for the ratio.",
+        "nodes": [
+          "geo.AT"
+        ]
+      },
+      {
+        "text": "Switzerland's data-center market valuation diverges sharply between sources: Ken Research cites USD 2.9 billion vs Arizton's USD 960 million for 2025 — a ~3x gap reflecting scope/definition inconsistency, echoing geo.CH's own provenance note that 'scope choice is decisive' for Swiss market sizing.",
+        "nodes": [
+          "geo.CH"
+        ]
+      },
+      {
+        "text": "CBRE Suisse's regional breakdown (Zurich 209 MW = 61%, Lake Geneva 60 MW = 18%) sums to 269 MW of the 340 MW commercial total (79%), leaving only 71 MW (21%) for all other Swiss regions combined — a concentration pattern not reflected in the node's flat 0.08 ratio applied uniformly across CE-7 comparison.",
+        "nodes": [
+          "geo.CH"
+        ]
+      }
+    ],
+    "absences": [
+      "No source in this batch independently confirms the Statista CE-7 colocation figures (CH 274 MW, AT 68 MW, CE-7 total 3,451 MW) that anchor both nodes' primary derivation.",
+      "No breakdown was found of Austria's self-operated (non-colocation) capacity comparable to CBRE's Swiss commercial-vs-self-operated split, leaving the AT node's installed-base vs colo-scope divergence unquantified on the Austrian side.",
+      "No current MW figure for Basel or other secondary Swiss hotspots beyond Zurich and Lake Geneva was found, despite Ken Research naming Basel as a dominant hub.",
+      "No data center count or capacity figures for Graz, Linz, or Salzburg were quantified, despite RebootMonkey naming them as secondary Austrian markets.",
+      "No search result reconciled the conflicting Austria CAGR figures (8.94% MW CAGR per Mordor's own MW report vs 15.18% revenue CAGR attributed to Mordor via RebootMonkey vs 7.91% value CAGR per Arizton)."
+    ]
+  }
+}

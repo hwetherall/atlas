@@ -1,0 +1,26 @@
+{
+  "inputsHash": "ea93a9109614ba6bab45dddd30a0c29496286a05c6ece8264b2587629839ea1d",
+  "generatedAt": "2026-07-08T21:33:06.982Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names ledger nodes (seg.hyperscale, cust.operator-large), the flat 0.91 carve-out, hard numbers (4.2 GW, +24% YoY, ~60% concentration, 0.44→0.32 perturbation), specific geographies and gating mechanisms (NL municipal ban, Frankfurt 24–36 month queue). Actors, instruments, and dates are all pinned."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable field names a genuine new reason — the global vintages are triangulated and the 0.91 haircut looks conservative, so the geographic skew of the flow has no ledger node to live in. Docked one point because 'global split rescaled onto a region' is a classic reviewer check that a strong founder might independently run."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Each hop is referenced (trigger data, CE gating via geo-NL/geo-DE digests, propagation into cust.operator-large) and survives 'why?' at each arrow. The counterflow — hyperscalers consuming CE colo pre-lets still generates in-scope PDU demand — is acknowledged in the likelihood rationale but weakens the perturbation's absolute-shrink claim without full quantification."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The 60%/4.2 GW premise is confirmed in two publications plus SRG on the global split, but the two key excerpts both derive from the same CBRE Q4-2025 report, so they are not fully independent. The risk honestly lists the Poland 3.2 GW campus as contradicting and admits no source quantifies CE-7's hyperscale-operated share."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly challenges the stated 'sell to large operators first' motion, with a strategic mitigation to rebalance the Year-1 pipeline toward CE-located colo/enterprise cells and a purchasable information fix (custom Synergy/DC Byte regional cut). Both indicators have quarterly-monitorable thresholds tied to named sources."
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "inputsHash": "0c75522cfdbf4457e30acf76e8218f2cd8d3c7b51c7b8b174f56f1f041b0f305",
+  "generatedAt": "2026-07-08T05:30:23.825Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (serviceableFactor 0.55 → 0.45/0.40), the specific instruments (2024/1364, EED 2024/1791, EnEfG, WEEE/RoHS/EORI), dated effective windows, and the DE/NL geographies carrying 0.50+0.28 of the geo split. Perturbation, falsifier, and indicator thresholds are all quantified."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The headline conclusion is 'factor at/below its own band edge', which the client has seen — but the risk supplies a genuinely new reason: the haircut's basis is a 2019-vintage 3-item list, and the binding 2024 instruments postdate the derivation, which the whyMissable explicitly identifies as the box-looks-ticked trap. Not a 4 because a founder tracking EU data-centre regulation would plausibly have 2024/1364 and EED on a watchlist."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at every hop (regulation → operator procurement questionnaires → per-artifact buyer-class foreclosure → serviceable share), and each link is independently plausible. The propagation hop — that missing artifacts foreclose whole buyer classes within 12 months — is inferential, which the risk's own likelihood rationale concedes (≥500kW scope, staggered EED deadlines), so it would take some damage under hostile questioning."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The regulatory-stack premise is corroborated by multiple independent sources (EUR-Lex, Commission announcement, DLA Piper, Covington, TÜV, Deutsche Recycling), and the evidence revision honestly separates the well-sourced stack from the only-inferential foreclosure-quantum claim. Falls short of 4 because the load-bearing quantitative premise — that this pushes the factor to 0.40 — has no direct source, only argument."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The mitigations change spend and sequencing within two quarters: a costed compliance-gap audit on the VOI node and a DE-first-then-NL certification order tied to the geo weights. Both indicators have concrete venues (DE/NL RFQs, EnEfG portal) and thresholds (≥2 RFQs in two quarters) making the risk monitorable as stated."
+    }
+  }
+}

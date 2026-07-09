@@ -1,0 +1,26 @@
+{
+  "inputsHash": "d19aefb0e37bfaf01fd2ca55e75345e82baabb25b478b9502a69125102b1043b",
+  "generatedAt": "2026-07-08T21:40:27.445Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names exact nodes (geo.NL, geo.CH, seg.enterprise), quantifies the misallocation (0.28→0.23 NL, 0.08→0.11 CH, ~1,000MW DE installed-vs-colo gap, 29% enterprise slice), and identifies the exact operational victim ('sizing a DACH enterprise channel'). Indicators cite concrete venues (EUDCA country profiles, own CRM) with numeric thresholds."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The core insight — the error lives only in the product of two individually well-sourced axes — is genuinely structural and, as whyMissable states, 'no single node carries it, no band covers it'. Docked one point because the ledger's own cross-checks (CH 0.13 vs 0.08, DE installed>colo) already flag the raw divergences; the novelty is reframing them as systematic rather than discovering them."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (colo denominator misses ~a third of load → non-colo third has a different geography → NL×enterprise cell is partly phantom) with refs at every hop and directionally consistent per-country cross-checks. The weakest link — that NL's enterprise on-prem contribution is 'near-zero' — is asserted rather than derived, so the final perturbation magnitude wouldn't fully survive a hostile 'why 0.23?'"
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The trigger premise is directly confirmed by EUDCA's own framing, and the DE colo-vs-installed divergence is corroborated by two independent official sources (BMWK, GDA) in the predicted direction. The NL phantom magnitude remains unquantified — honestly flagged in the likelihood rationale and given a clean falsifier — which keeps this below 4."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly changes near-term go-to-market: the mitigation weights 'the enterprise channel build toward DE/CH industrial accounts' instead of NL, altering staffing and sequencing within quarters. Both indicators are monitorable now (EUDCA country profiles; the venture's own CRM lead geography vs model weights)."
+    }
+  }
+}

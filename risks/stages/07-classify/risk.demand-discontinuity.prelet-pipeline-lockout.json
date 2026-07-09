@@ -1,0 +1,25 @@
+{
+  "inputsHash": "9d824bf46c1518cdef32d76e9566061ba18b7e21a44ce67e6964413f74e8205d",
+  "generatedAt": "2026-07-08T18:18:36.572Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "A structural fact settles this: what share of near-term DC pipeline is pre-let (JLL/EG confirm 83%) and whether rack-PDU is design-locked at that point. These are knowable today from industry reports and vendor specification-timing data — no future event needed. The claim asserts today's reachable flow is <1%, a correction to the obtainableFactor derivation.",
+    "proposedCorrection": {
+      "nodeId": "obtainableFactor",
+      "value": 0.01,
+      "low": 0.005,
+      "high": 0.02,
+      "rationale": "With 83% of pipeline pre-let and rack-PDU locked at design 12-24mo out, Year-1 reachable demand collapses to replacement/spot flow (~1% of SAM), so the generic 3% mid-band benchmark overstates obtainable share for a design-locked hardware market."
+    },
+    "researchQueries": [
+      {
+        "query": "At what design stage is the rack-PDU vendor selected in FLAP-D hyperscale and colocation builds, and can it change post-pre-let? Check Schneider/Vertiv/Legrand specification timelines and JLL pre-let commissioning lead times.",
+        "kind": "confirming"
+      },
+      {
+        "query": "Identify Central Europe 2026-delivery data-center fit-out tenders where rack-PDU/busway procurement remained open to new vendors after the shell was pre-let, e.g. via EU-tender portals or operator RFPs from NTT, Equinix, Digital Realty.",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

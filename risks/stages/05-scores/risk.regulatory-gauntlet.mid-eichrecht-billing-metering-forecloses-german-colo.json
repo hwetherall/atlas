@@ -1,0 +1,26 @@
+{
+  "inputsHash": "371697fbfee95b81fcab138e0bf942162e317e17f914eabc63184b0a94a264e6",
+  "generatedAt": "2026-07-08T21:30:32.710Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact legal instruments (MID Annex MI-003, MessEG §32, Module B+D via PTB), the 12–24 month approval window, the 0.50 geo.DE share, Frankfurt's 831 MW, and a concrete perturbation (geo.DE 0.50→0.42). Indicators name specific operators (NTT GDC, maincubes, Telehouse Frankfurt) and vendors (Rittal/Bachmann/Schleifenbauer) with thresholds."
+    },
+    "nonObviousness": {
+      "score": 2,
+      "note": "The narrative itself concedes 'the corpus already surfaced this (Eichrecht metering foreclosure)', so the core insight is already on a diligent reader's list. The genuinely new contribution — that the 0.50 DE share silently assumes uniform reachability and the serviceableFactor double-hides the billing/monitoring split — is a refinement, not a discovery."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain (EnEfG cost pressure → measured billing → MID-spec tenders → spec-stage disqualification) with refs at each arrow, and the model-impact step correctly identifies the double-counting risk with serviceableFactor. The trigger link is the weakest: the EnEfG→measured-billing shift is asserted, and the cited Orrick source is stanced 'silent' on billing practice."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "The legal premise (billing meters require MID conformity + MessEG §32 registration) has ≥2 independent corroborations (Landeseichamt, gesetze-im-internet, PTB, EDP Europe). The load-bearing demand premise — that German colo tenders actually specify MID in-window — is unresolved and partially contradicted by the risk's own attached Rittal source (colo PDU with only EMC/LVD), though the likelihood rationale honestly discounts for this."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Mitigations force near-term choices: a socketed/third-party MID metering module changes hardware design now, and the Year-1 monitoring-grade/non-German positioning changes sequencing this year; the 10-tender spec audit is a cheap VOI action on geo.DE. Both indicators are monitorable via named procurement portals and price lists with explicit thresholds."
+    }
+  }
+}

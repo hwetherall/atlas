@@ -1,0 +1,25 @@
+{
+  "inputsHash": "57c3e4cfdb692fed1a1571aff12b5734c7f7e87ea82230cf94452efbf75073b3",
+  "generatedAt": "2026-07-08T21:54:24.678Z",
+  "data": {
+    "resolution": "error",
+    "settleTest": "The entrant's EU certification timeline (EN 50600, ecodesign 2019/424, CE/TÜV lead times) and the share of 2026 data-center electrical-gear demand already spec-locked at design stage — both knowable today from certification bodies and design-cycle data, not future events.",
+    "proposedCorrection": {
+      "nodeId": "serviceableFactor",
+      "value": 0.35,
+      "low": 0.28,
+      "high": 0.45,
+      "rationale": "Serviceable share must exclude demand already spec-locked before launch and demand unreachable during the 6-9 month certification window, lowering effective Year-1 reach from 0.55 to ~0.35."
+    },
+    "researchQueries": [
+      {
+        "query": "Typical certification lead time for EN 50600 / ecodesign 2019/424 / CE-TÜV for rack PDUs and data-center electrical gear from a new EU entrant",
+        "kind": "confirming"
+      },
+      {
+        "query": "Share of 2026 EU data-center rack-power capacity procured via open mid-cycle RFQs that accept vendors certifying during tender, versus locked at design stage",
+        "kind": "falsifying"
+      }
+    ]
+  }
+}

@@ -1,0 +1,585 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// Refinement cycle 1 — the typed record of the loop's research pass, rendered
+// from risks/refine.json + the curation outcomes in risks/resolution-log.md.
+// Powers the demo's "Re-research" and "What changed" tabs. Every verdict was
+// adjudicated against fresh Exa evidence (raw: research/raw/refine-*.json);
+// ledger changes were applied by HUMAN curation — values never auto-flow.
+// ─────────────────────────────────────────────────────────────────────────────
+
+export type RefinementOutcome = "applied" | "folded" | "deferred" | "refuted";
+
+export interface RefinementEntry {
+  riskId: string;
+  title: string;
+  nodeId: string; // the ledger fact under test
+  rev1Value: number; // value in the ORIGINAL model (ledger rev 1)
+  proposed: { value: number; rationale: string } | null;
+  verdict: "confirm" | "adjust" | "refute";
+  verdictValue: number | null;
+  verdictLow: number | null;
+  verdictHigh: number | null;
+  verdictRationale: string;
+  evidence: { title: string; publisher: string | null; url: string; excerpt: string }[];
+  expectedYamLoss: number; // vs the rev-1 baseline
+  outcome: RefinementOutcome;
+  outcomeNote: string;
+  appliedValue?: number;
+}
+
+export const REFINEMENT_CYCLE1: RefinementEntry[] = [
+  {
+    "riskId": "risk.execution-window.som-window-semantics-mismatch",
+    "title": "Year-1 market share is set by a 3-5 year benchmark, too high",
+    "nodeId": "obtainableFactor",
+    "rev1Value": 0.03,
+    "proposed": {
+      "value": 0.01,
+      "rationale": "The cited Prospeo benchmark explicitly assigns 1% to Year 1 (3% is the Year-2 figure), and the one real comparable entrant (Tractian) started near 0.1%, so the Year-1 share should anchor at ~1% with a band spanning the observed 0.1% low to the 3% ceiling."
+    },
+    "verdict": "confirm",
+    "verdictValue": 0.01,
+    "verdictLow": 0.001,
+    "verdictHigh": 0.03,
+    "verdictRationale": "The ledger's own cited Prospeo source explicitly assigns 1% of SAM to Year 1, with 3% and 5% reserved for Years 2 and 3. The model's 3% is therefore the Year-2 figure read as a Year-1 figure, making the Year-1 share roughly 3x too high. Anchoring at 1% with a band of 0.1% to 3% follows directly from the benchmark text and the Tractian comparable, whose stated first-year ARR of about $1.2M sits far below 1% of a multi-billion-dollar predictive maintenance market.",
+    "evidence": [
+      {
+        "title": "Addressable Markets: TAM, SAM & SOM Guide (2026)",
+        "publisher": "Prospeo",
+        "url": "https://prospeo.io/s/addressable-markets",
+        "excerpt": "SOM benchmarks that won't get you laughed out of the room: 1% of SAM in Year 1, 3% in Year 2, 5% in Year 3."
+      },
+      {
+        "title": "TAM SAM SOM Example: Real Numbers for 2026",
+        "publisher": "Prospeo",
+        "url": "https://prospeo.io/s/tam-sam-som-example",
+        "excerpt": "Apply a 1% Year 1 capture rate and your SOM is ~$2.7M."
+      }
+    ],
+    "expectedYamLoss": 2.5343999999999993,
+    "outcome": "applied",
+    "outcomeNote": "Applied: obtainableFactor 0.03 → 0.01 (band 0.5–3%). The source's own Year-1 figure.",
+    "appliedValue": 0.01
+  },
+  {
+    "riskId": "risk.competitive-foreclosure.bundling-eliminates-bakeoffs-year1",
+    "title": "Rivals bundle PDUs, so the head-to-head bake-off rarely happens",
+    "nodeId": "obtainableFactor",
+    "rev1Value": 0.03,
+    "proposed": {
+      "value": 0.01,
+      "rationale": "The generic 1–5% SOM benchmarks are not DC-hardware-specific; the concrete hardware entrant started near 0.001% and most PDU volume ships inside integrated bundles (Vertiv 360AI, Schneider RD48) leaving only retrofit/standalone sockets contestable, so the mid-band should drop from 3% toward 1% with a much wider low tail.},"
+    },
+    "verdict": "refute",
+    "verdictValue": 0.03,
+    "verdictLow": 0.01,
+    "verdictHigh": 0.05,
+    "verdictRationale": "The proposal wants to cut the mid-band to 1% and open a 0.001% tail, but the fresh search does not support that. The procurement results show standalone rack/row-PDU contests do happen as separate RFPs, with named low bidders at Utah State and University of Utah and a Navy NRL sources-sought, which undercuts the 'no separate contest' bundle thesis. The revenue results for Enlogic and ZincFive give no Year-1 share figure, so the 0.001% anchor is unsupported. Absent any quantified contestable-share or win-rate data, the existing 1-5% benchmark band and 3% mid stand.",
+    "evidence": [
+      {
+        "title": "Bid Results on Rack Level Power Distribution Units",
+        "publisher": "UtahBids",
+        "url": "https://www.utahbids.net/bid-result/uu207787178_rack_level_power_distribution_units-14458370",
+        "excerpt": "Intellivex Data Center Solutions is the apparent low bidder on the Utah State University's UU207787178 Rack Level Power Distribution Units solicitation, with a low bid of $57,900.00 USD. Bids were opened on October 30, 2025"
+      },
+      {
+        "title": "Modular Power Distribution Units (PDUs)",
+        "publisher": "SAM.gov",
+        "url": "https://sam.gov/workspace/contract/opp/6dfb31aa3a6b4e7aa1b8865b85db032a/view",
+        "excerpt": "The Cyber Operations Division at the Naval Research Laboratory (NRL) ... has a requirement to install six (6) Modular Power Distribution Units (PDUs) as part of its ongoing efforts to replace antiquated computer room infrastructure"
+      }
+    ],
+    "expectedYamLoss": 2.42,
+    "outcome": "refuted",
+    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands."
+  },
+  {
+    "riskId": "risk.structure-independence.year1-obtainable-correlated-with-slowest-cell",
+    "title": "Selling to slow large operators cuts Year-1 capture tenfold",
+    "nodeId": "obtainableFactor",
+    "rev1Value": 0.03,
+    "proposed": {
+      "value": 0.005,
+      "rationale": "Generic SOM benchmarks (1–5%) ignore that large-operator qualification cycles (NVIDIA AVL/RVL) exceed the 12-month horizon; a hardware-specific Year-1 capture for the slowest buyers is closer to 0.1–1%, so the 3% mid-band should be revised down ~5–10x."
+    },
+    "verdict": "refute",
+    "verdictValue": 0.03,
+    "verdictLow": 0.01,
+    "verdictHigh": 0.05,
+    "verdictRationale": "The proposal claims comparable hardware entrants started near 0.001% and that AVL/RVL qualification exceeds the 12-month horizon, so Year-1 capture should be cut roughly tenfold to 0.5%. The search results confirm that NVIDIA AVL/RVL gates exist and that direct sales to large operators face heavy friction, but they contain no benchmark figure for first-year market capture. There is no dataset showing 0.001% or 0.1-1% first-year capture, so the proposed 0.5% value has no numerical support and rests only on the assertion itself. The claimed settle test evidence was not found, so the ledger's triangulated 3% mid-band and 1-5% band stand.",
+    "evidence": [
+      {
+        "title": "NVIDIA Supply Chain Certification",
+        "publisher": "Grokipedia",
+        "url": "https://grokipedia.com/page/NVIDIA_Supply_Chain_Certification",
+        "excerpt": "Central to this certification framework are the Recommended Vendor List (RVL) and Approved Vendor List (AVL), which serve as key tools for validating and qualifying vendors for specific hardware components, such as cooling distribution units (CDUs)"
+      },
+      {
+        "title": "Stalled at the Gatekeeper: The Hidden Friction in Complex Data Center Sales",
+        "publisher": "DCSMI",
+        "url": "https://www.dcsmi.com/blog/stalled-at-the-gatekeeper-the-hidden-friction-in-complex-data-center-sales",
+        "excerpt": "In today's hyper-dense, power-constrained, GPU-fueled infrastructure market, the traditional sales playbook isn't just outdated. It's an open invitation to margin evisceration."
+      }
+    ],
+    "expectedYamLoss": 2.3231999999999995,
+    "outcome": "refuted",
+    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands."
+  },
+  {
+    "riskId": "risk.demand-discontinuity.prelet-pipeline-lockout",
+    "title": "Most Year-1 rack-PDU orders are already awarded to rivals",
+    "nodeId": "obtainableFactor",
+    "rev1Value": 0.03,
+    "proposed": {
+      "value": 0.01,
+      "rationale": "With 83% of pipeline pre-let and rack-PDU locked at design 12-24mo out, Year-1 reachable demand collapses to replacement/spot flow (~1% of SAM), so the generic 3% mid-band benchmark overstates obtainable share for a design-locked hardware market."
+    },
+    "verdict": "adjust",
+    "verdictValue": 0.02,
+    "verdictLow": 0.01,
+    "verdictHigh": 0.03,
+    "verdictRationale": "The search confirms the core mechanism: data-center electrical gear is procured and locked early, before design is finalized, so pre-let builds do not represent open order books for new vendors. Multiple 2026 sources show gear is released against design gates 12-24 months or more ahead, with transformers and switchgear at 52-80 week lead times and orders placed before topology is set. This supports cutting the generic 3% benchmark for a design-locked hardware market. However, the specific 83% pre-let figure was not corroborated in these results, and the search also found open EU tenders where rack cabinets and PDUs are still being competed for delivery in 2026. That undercuts the harder claim that reachable flow is strictly below 1%. A modest cut to 2% with a wider band is defensible; the 1% floor is not fully evidenced.",
+    "evidence": [
+      {
+        "title": "Data Center Electrical Procurement: Why the Order Has to Come Before the Design",
+        "publisher": "Build",
+        "url": "https://build.inc/insights/data-center-electrical-procurement-sequence-workflow",
+        "excerpt": "The conventional development sequence treats electrical equipment procurement as a downstream task: finish design, secure permits, then buy the gear. For data centers in 2026, that sequence is obsolete."
+      },
+      {
+        "title": "How Data Center Owners Use Design Management to De-Risk Multi-Phase Builds",
+        "publisher": "iRecruit",
+        "url": "https://www.irecruit.co/insights/data-center-owners-design-management-de-risk-multi-phase-builds",
+        "excerpt": "owners cut risk by locking the basis of design early, tying equipment releases to design gates... With switchgear at 52 to 65 weeks, transformers at 52 to 80 weeks... one late decision can push out Ready for Service"
+      }
+    ],
+    "expectedYamLoss": 1.9359999999999997,
+    "outcome": "folded",
+    "outcomeNote": "Folded into the obtainableFactor correction — its 2% verdict sets the band top."
+  },
+  {
+    "riskId": "risk.structure-independence.global-framework-forecloses-large-operator-cell",
+    "title": "Big-operator sales locked up by global contracts, out of reach",
+    "nodeId": "cust.operator-large",
+    "rev1Value": 0.4,
+    "proposed": {
+      "value": 0.25,
+      "rationale": "The 0.40 figure conflates all large-operator PDU spend with reachable spend; the globally-contracted hyperscale/pan-EU colo portion (Equinix, Digital Realty, hyperscalers on Achilles-style global lists) is not addressable by a CE regional team in Year 1, so the accessible large-operator cell should be marked down to the regionally-sourced remainder."
+    },
+    "verdict": "refute",
+    "verdictValue": 0.4,
+    "verdictLow": 0.33,
+    "verdictHigh": 0.47,
+    "verdictRationale": "The proposal assumes big-operator PDU spend is locked at global HQ and unreachable regionally. The evidence points the other way. Greenergy, Estonia's leading colocation provider targeting 10 MW+ AI/HPC loads, sourced Vertiv rack PDUs through a local Estonian partner, A-Kaabel, and separately bought Delta and DC Solutions gear regionally. Even the largest colo, Digital Realty, uses a multi-vendor model preserving flexibility rather than a single locked global PDU vendor. Telefonica Germany likewise deployed Vertiv rPDUs at national level. These are exactly the regional, country-level buying paths a CE team can reach, so the 0.40 large-operator share and its 0.33 to 0.47 band should stand.",
+    "evidence": [
+      {
+        "title": "Greenergy and A-Kaabel deploy Vertiv rack PDUs to power scalable data center growth in Estonia",
+        "publisher": "Vertiv",
+        "url": "https://www.vertiv.com/48ebb0/globalassets/documents/case-studies/vertiv-greenergy-cs-en-emea-web.pdf",
+        "excerpt": "Now Estonia's leading colocation provider, Greenergy targets HPC and AI customers with IT loads exceeding 10 MW, prompting upgrades to its power and liquid cooling infrastructure. Since 2020, A-Kaabel has been an authorized sales and service partner for Vertiv in Estonia."
+      },
+      {
+        "title": "Digital Realty signs $373m data center power kit deal with Schneider Electric",
+        "publisher": "Nasdaq/PRNewswire",
+        "url": "https://www.nasdaq.com/press-release/schneider-electric-and-digital-realty-announce-373m-supply-capacity-agreement-meet",
+        "excerpt": "The strategic shift to an SCA model provides guaranteed capacity, economies of scale, and a dedicated LVS production line, while preserving the flexibility needed for a dynamic, multi-vendor environment to mitigate risk."
+      }
+    ],
+    "expectedYamLoss": 0.8870399999999996,
+    "outcome": "refuted",
+    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands."
+  },
+  {
+    "riskId": "risk.definition-scopedown.intelligent-subset-inflation",
+    "title": "TAM counts PDUs the venture doesn't sell; Germany grows half as fast",
+    "nodeId": "tamBase",
+    "rev1Value": 320,
+    "proposed": {
+      "value": 224,
+      "rationale": "The venture only sells intelligent PDUs, and the intelligent slice is ~75% of the global rack-PDU base ($2.1B of $2.81B), so the serviceable CE base is ~70% of the €320M headline (≈€224M) with the band scaled proportionally."
+    },
+    "verdict": "refute",
+    "verdictValue": 320,
+    "verdictLow": 240,
+    "verdictHigh": 520,
+    "verdictRationale": "The proposal rests on two specific numbers: an intelligent slice of $2.1B of $2.81B globally, and German intelligent growth of 5.2% vs 9%. Neither appears in the fresh results. The IndexBox reports that would carry the intelligent share are all paywalled, showing only price and executive-summary text with no percentage. The Omdia tracker splits basic vs networked PDUs but gives no accessible figure. Nothing found supports the ~75% intelligent share or the ~70% scaling, so the correction is not evidenced and the ledger value stands.",
+    "evidence": [
+      {
+        "title": "Intelligent Rack PDUs Market in the European Union",
+        "publisher": "IndexBox",
+        "url": "https://www.indexbox.io/store/european-union-intelligent-rack-pdus-market-analysis-forecast-size-trends-and-insights/",
+        "excerpt": "The European Union market for Intelligent Rack Power Distribution Units (PDUs) stands at a critical inflection point... Buy the report - $4,000"
+      },
+      {
+        "title": "Rack PDU Market Tracker – 2025",
+        "publisher": "Omdia",
+        "url": "https://omdia.tech.informa.com/om129351/rack-pdu-market-tracker--2025",
+        "excerpt": "Basic rack PDUs Networked rack PDUs The global market for rack PDUs by product segments"
+      }
+    ],
+    "expectedYamLoss": 0.6652799999999996,
+    "outcome": "refuted",
+    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands."
+  },
+  {
+    "riskId": "risk.competitive-foreclosure.oem-cell-odm-price-foreclosure",
+    "title": "OEM/integrator channel is owned by cheaper Asian ODMs",
+    "nodeId": "cust.oem",
+    "rev1Value": 0.22,
+    "proposed": {
+      "value": 0.05,
+      "rationale": "If the OEM/integrator channel is structurally locked to low-cost Asian ODMs on unit cost, most of the 22% is not serviceable for a Central European entrant, so the addressable slice should be marked down to a small cost-insensitive/feature-driven residual."
+    },
+    "verdict": "refute",
+    "verdictValue": 0.22,
+    "verdictLow": 0.22,
+    "verdictHigh": 0.22,
+    "verdictRationale": "The claim rests on integrator deals being decided purely on unit cost, so branded CE-scale vendors are shut out. The falsifying evidence shows the opposite: European integrator and colocation deals are repeatedly won by branded vendors on features, compatibility, lead time and local support, not lowest price. Vertiv, Schleifenbauer, Legrand and Raritan all win rack-integration deals in Central and Eastern Europe through integrator partners like A-Kaabel, SAGA, Technosector and DPI. Digipower and GETEKnet do exist as white-label ODMs, but nothing quantifies the contestable share, and no source supports marking the channel down to 5%. The proposed cut is not backed by evidence, so the ledger value stands as an unsourced estimate needing validation.",
+    "evidence": [
+      {
+        "title": "SAGA and Vertiv Integrate Racks and Monitored PDUs for Serbian Telecom Leader",
+        "publisher": "Vertiv",
+        "url": "https://www.vertiv.com/48ee7f/globalassets/documents/case-studies/vertiv-saga-case-study-mka4l0uksaga.pdf",
+        "excerpt": "a leading Serbian telecom company was searching for a server rack solution with fast delivery and monitored PDUs (power distribution units) compatible with their existing DCIM (Data Center Infrastructure Management) solution"
+      },
+      {
+        "title": "MIND Park Customer Case — Legrand specified by integrator Technosector",
+        "publisher": "Raritan/Legrand",
+        "url": "https://www1.raritan.com/rs/004-BTR-463/images/LDCS%20Magazine%202023-1%20EN%20Mind%20Park.pdf",
+        "excerpt": "Legrand Data Center Solutions technology has been specified by Technosector, a key partner for the site's owner, MIND Park... We are an integrator company, carrying out the complete fire safety, security and IT infrastructure"
+      }
+    ],
+    "expectedYamLoss": 0.6040319999999991,
+    "outcome": "refuted",
+    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands."
+  },
+  {
+    "riskId": "risk.definition-scopedown.europe-share-arithmetic-ghost",
+    "title": "Europe's PDU share is likely 24%, not the 30% assumed",
+    "nodeId": "tamBase",
+    "rev1Value": 320,
+    "proposed": {
+      "value": 256,
+      "rationale": "Applying a 24% Europe share (vs. the unsourced 30%) to the $2.81B global base scales the €320M chain and its band down by ~0.8× to ~€256M."
+    },
+    "verdict": "refute",
+    "verdictValue": 320,
+    "verdictLow": 240,
+    "verdictHigh": 520,
+    "verdictRationale": "The search results confirm only what the ledger already cites: GVR gives the $2.81B global base and North America at 38.0%, with no Europe percentage stated. No fresh source states Europe's share is 24%, and no regional revenue table was found. The US-being-28%-of-a-different-$2.1B-market point does not come from any result here and does not fix Europe's share. The proposed 24% is as unsourced as the ledger's 30%, so the correction lacks evidence to displace the standing value. The IndexBox EU and country reports exist but remain paywalled, so the number cannot be pinned yet.",
+    "evidence": [
+      {
+        "title": "Data Center Rack Power Distribution Unit Market Report 2033",
+        "publisher": "Grand View Research",
+        "url": "https://www.grandviewresearch.com/industry-analysis/data-center-rack-power-distribution-unit-pdu-market",
+        "excerpt": "The global data center rack power distribution unit market size was estimated at USD 2.81 billion in 2025... North America held 38.0% revenue share of the global data center rack power distribution unit market."
+      },
+      {
+        "title": "Rack PDUs Market in the World | Report",
+        "publisher": "IndexBox",
+        "url": "https://www.indexbox.io/store/world-rack-pdus-market-analysis-forecast-size-trends-and-insights/",
+        "excerpt": "World Rack PDUs Market 2026 Analysis and Forecast to 2035... Buy the report - $4,000"
+      }
+    ],
+    "expectedYamLoss": 0.5279999999999996,
+    "outcome": "refuted",
+    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands."
+  },
+  {
+    "riskId": "risk.competitive-foreclosure.legrand-dual-brand-intelligent-pdu-lock",
+    "title": "One owner controls two top PDU brands, shrinking reachable market",
+    "nodeId": "serviceableFactor",
+    "rev1Value": 0.55,
+    "proposed": {
+      "value": 0.4,
+      "rationale": "Consolidating Raritan and Server Technology under one owner raises effective top-vendor concentration and adds monitoring-integration switching costs, lowering the reachable serviceable fraction below the current 0.45 low edge."
+    },
+    "verdict": "refute",
+    "verdictValue": 0.55,
+    "verdictLow": 0.45,
+    "verdictHigh": 0.65,
+    "verdictRationale": "The Legrand ownership of Raritan and Server Technology is confirmed, and those brands hold the #1/#2 rack-PDU positions in North America. But the proposed cut to 0.40 rests on a claim that swapping a PDU forces re-integrating the monitoring layer, and the evidence points the other way. Standard protocols like SNMP, Modbus and Redfish let DCIM platforms normalize data across vendors, and a European bank case study shows a phased PDU vendor switch kept monitoring and security under one platform. Vendor concentration is real but the switching-cost lock-in that justified pushing below the 0.45 floor is not supported, so the ledger value stands.",
+    "evidence": [
+      {
+        "title": "Legrand (LR) — jimmy·research",
+        "publisher": "jimmy·research",
+        "url": "https://jimmyresearch.com/entities/legrand/",
+        "excerpt": "Legrand's Server Technology (2017) and Raritan (2015) acquisitions consolidated the #1 / #2 rack-PDU positions in North America."
+      },
+      {
+        "title": "Data Centre PDU Migration & Rack Security | European Bank Case Study",
+        "publisher": "Advanced Datacentre Systems",
+        "url": "https://advanceddatacentre.com/case-studies/european-bank-pdu-migration/",
+        "excerpt": "When a leading European bank decided to change its intelligent PDU supplier... The solution had to support both legacy and new PDUs simultaneously, while keeping power monitoring, environmental data, and security workflows under one roof."
+      }
+    ],
+    "expectedYamLoss": 0.48959999999999987,
+    "outcome": "refuted",
+    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands."
+  },
+  {
+    "riskId": "risk.ledger-self-audit.statista-scale-colo-scope-inflation",
+    "title": "One vendor's colo definition inflates the European market base",
+    "nodeId": "tamBase",
+    "rev1Value": 320,
+    "proposed": {
+      "value": 245,
+      "rationale": "Statista's ~7.6GW European base overstates CBRE's ~5.8GW by ~1.3x, so the Central-Europe MW share and the resulting rack-PDU base should be scaled down by roughly that factor (320→~245), with the band shifted down correspondingly."
+    },
+    "verdict": "refute",
+    "verdictValue": 320,
+    "verdictLow": 240,
+    "verdictHigh": 520,
+    "verdictRationale": "The claimed ~7.6GW Statista total does not hold up. Summing the Statista 2024 country figures gives roughly 7.7GW, but this is a colocation-plus-scale-colocation IT-power series covering all of Europe including UK, Nordics, and Southern/Eastern countries. CBRE's 5.8GW is expected capacity across only its top-15 tracked markets by end-2024, and its 4,726MW is operational supply in those same 15 markets. The two series measure different scopes and market sets, so the gap does not prove Statista double-counts real capacity. A CBRE-narrow-set versus Statista-all-Europe comparison is not the matched-scope reconciliation the settle test requires, so no scale-down is justified. The proposed 320 to 245 cut rests on an apples-to-oranges ratio.",
+    "evidence": [
+      {
+        "title": "Europe: Colocation data center power by country 2031",
+        "publisher": "Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "Colocation and scale colocation data center IT power supply in Europe from 2024 to 2031, by country (in megawatts) | 2024 | 1,660 | 1,458 | 915 | 760 | 485 | 352 | 267 | 243 | 240 | 197 ..."
+      },
+      {
+        "title": "European Data Centres Overview",
+        "publisher": "CBRE",
+        "url": "https://www.cbre.com/insights/reports/european-data-centres-overview",
+        "excerpt": "5.8GW Data centre capacity expected across Europe by the end of 2024"
+      }
+    ],
+    "expectedYamLoss": 0.4751999999999996,
+    "outcome": "refuted",
+    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands."
+  },
+  {
+    "riskId": "risk.definition-scopedown.crosscheck-ceiling-contamination",
+    "title": "The €495M cross-check ceiling measures a rival market, not ours",
+    "nodeId": "tamBase",
+    "rev1Value": 320,
+    "proposed": {
+      "value": 300,
+      "rationale": "The €495M ceiling derives from a broader PDU+PSU category growing 21.23% (substitute/DC-power layers included), not rack-PDU-only which grows 5.4–9.8%; removing that scope-mismatched ceiling lowers the band top from €520 to ~€360 anchored on the directly-scoped rack-PDU scope-down (€310–320)."
+    },
+    "verdict": "confirm",
+    "verdictValue": 300,
+    "verdictLow": 240,
+    "verdictHigh": 360,
+    "verdictRationale": "The fresh BIS/R&M source confirms the €2.45B Europe figure is the combined PDUs+PSUs category growing 21.23% CAGR, a much broader scope than rack-PDU only. Rack-PDU growth sits far lower, and the IndexBox EU rack-PDU cluster shows intelligent PDUs growing 10-12%, well below 21%. This confirms the €495M cross-check inherits the broader category's inflated scope and should not set the band top; anchoring on the directly-scoped rack-PDU scope-down of €310-320 supports lowering the high end to ~€360.",
+    "evidence": [
+      {
+        "title": "Europe Data Center Power Distribution Units and Power Supply Units Market",
+        "publisher": "BIS Research / GII Research",
+        "url": "https://www.giiresearch.com/report/bis1769473-europe-data-center-power-distribution-units-power.html",
+        "excerpt": "The Europe data center PDUs and PSUs market is projected to reach $20,056.7 million by 2035 from $2,455.7 million in 2024, growing at a CAGR of 21.23% during the forecast period 2025-2035."
+      },
+      {
+        "title": "European Union Power and Cable Management Market",
+        "publisher": "IndexBox",
+        "url": "https://www.indexbox.io/store/european-union-power-and-cable-management-market-analysis-forecast-size-trends-and-insights/",
+        "excerpt": "Managed and intelligent power distribution units (PDUs) represent the fastest-growing segment, expanding at 10–12% annually, as data center operators prioritize remote monitoring."
+      }
+    ],
+    "expectedYamLoss": 0.3431999999999996,
+    "outcome": "applied",
+    "outcomeNote": "Applied: tamBase €320M → €300M (band top €360M). Contaminated cross-check ceiling removed.",
+    "appliedValue": 300
+  },
+  {
+    "riskId": "risk.regulatory-gauntlet.eichrecht-metering-foreclosure",
+    "title": "German metering law blocks the PDU's billing feature in its biggest market",
+    "nodeId": "serviceableFactor",
+    "rev1Value": 0.55,
+    "proposed": {
+      "value": 0.45,
+      "rationale": "If measured-kWh billing in Germany legally requires MID/MessEG-certified meters the entrant lacks, the metered-billing use case in the German half (~50% of funnel) is unreachable in Year 1, lowering the serviceable share from 0.55 toward the low end."
+    },
+    "verdict": "refute",
+    "verdictValue": 0.55,
+    "verdictLow": 0.45,
+    "verdictHigh": 0.65,
+    "verdictRationale": "The German metering law claim is real for measured-kWh billing, but the evidence does not show that per-outlet PDU billing is the entrant's serviceable use case in Germany, nor that Germany is 'half the funnel.' German colo billing runs on contracted capacity or excess-usage fees at the rack, with PDU metering used for monitoring. That means MID certification gates one billing use case, not the whole German half, so the model's 0.55 stands within its existing band. The proposed cut to 0.45 rests on an unproven assumption that metered billing is the reachable market.",
+    "evidence": [
+      {
+        "title": "Anzeigepflicht für Messgeräte nach MessEG und MessEV",
+        "publisher": "Gossen Metrawatt",
+        "url": "https://www.gossenmetrawatt.de/wissen/energiemanagement-mit-system/anzeigepflicht-fuer-messgeraete-nach-messeg-und-messev/",
+        "excerpt": "Wenn also z. B. mit einem geeichten MID-Zähler Strom nach abgegebener kWh verkauft wird – beispielsweise an einen Untermieter in einer Anlage - handelt es sich um ein oder mehrere Messgeräte im Sinne von § 32 MessEG."
+      },
+      {
+        "title": "Full Rack Colocation in Digital Realty FRA18 Frankfurt",
+        "publisher": "Voxility",
+        "url": "https://www.voxility.com/colocation/prices/Full+Rack+Colocation+in+Digital+Realty+FRA18+Frankfurt",
+        "excerpt": "Each additional 0,1 kW power draw above 3 kW included is charged with an excessive usage fee of $15544/0,1 kW"
+      }
+    ],
+    "expectedYamLoss": 0.30412800000000006,
+    "outcome": "refuted",
+    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands."
+  },
+  {
+    "riskId": "risk.boundary-substitution.large-operator-channel-forecloses-to-odm",
+    "title": "Large operators are buying whole racks, not the PDUs we sell",
+    "nodeId": "cust.operator-large",
+    "rev1Value": 0.4,
+    "proposed": {
+      "value": 0.28,
+      "rationale": "If a material share of large-operator AI-density capacity is bought as integrated racks with PDU slots locked to incumbents, the reachable direct-sale pool is smaller than the 0.40 derived from 'large operators buy direct.'"
+    },
+    "verdict": "adjust",
+    "verdictValue": 0.32,
+    "verdictLow": 0.24,
+    "verdictHigh": 0.4,
+    "verdictRationale": "The confirming evidence shows a real shift toward integrated AI racks: Schneider and Foxconn are co-developing bundled power, cooling and rack systems for hyperscale operators, and Iren bought $1.6bn of Dell rack systems directly. This supports the claim that some large-operator AI-density power spend moves into integrator bundles the venture cannot sell through, so 0.40 is too high. But the falsifying tender evidence cuts the other way: the Jülich JARVIS tender explicitly lists PDUs as a discrete operator-selected line item open to bidders, showing direct PDU tendering still happens even for AI-density halls. Neither side offers a hard percentage, so a partial markdown to about 0.32 is warranted rather than the deeper 0.28.",
+    "evidence": [
+      {
+        "title": "Schneider Electric and Foxconn to Partner on AI Data Centres",
+        "publisher": "Data Centre Magazine",
+        "url": "https://datacentremagazine.com/news/schneider-electric-and-foxconn-to-partner-on-ai-data-centres",
+        "excerpt": "The companies plan to produce integrated hardware to help operators build AI facilities across multiple geographic regions with greater predictability."
+      },
+      {
+        "title": "Iren taps Dell Technologies for Nvidia Blackwell servers under $1.6bn contract",
+        "publisher": "DatacenterDynamics",
+        "url": "https://www.datacenterdynamics.com/en/news/iren-taps-dell-technologies-for-nvidia-blackwell-servers-under-16bn-contract/",
+        "excerpt": "AI cloud firm Iren has signed a $1.6bn contract with Dell to acquire air-cooled Blackwell systems."
+      }
+    ],
+    "expectedYamLoss": 0.25343999999999944,
+    "outcome": "deferred",
+    "outcomeNote": "Deferred: sum-to-1.00 share redistribution needs a donor-cell decision (conflicting sibling verdicts). Cycle 2 independently re-derived this correction — queued for next curation."
+  },
+  {
+    "riskId": "risk.boundary-substitution.nl-selfbuild-hotspot-hollows-geo",
+    "title": "Netherlands weight overcounts megawatts that buy the fewest PDUs",
+    "nodeId": "geo.NL",
+    "rev1Value": 0.28,
+    "proposed": {
+      "value": 0.24,
+      "rationale": "NL's 0.28 rests on raw colo-MW share, but a disproportionate share of hyperscaler self-build/busway halls in NL buys fewer discrete PDUs per MW, so the PDU-euro weight should be scaled down toward the low end of its current band."
+    },
+    "verdict": "refute",
+    "verdictValue": 0.28,
+    "verdictLow": 0.24,
+    "verdictHigh": 0.31,
+    "verdictRationale": "The ledger weight of 0.28 comes from a clean colo-megawatt share, 951 MW out of 3,451 MW, and the derivation already isolates colocation and excludes hyperscaler self-build capacity. The proposal argues self-build busway halls buy fewer PDUs, but the CBRE self-build figure describes owned hyperscale capacity, not the colo denominator the weight is built on, so it does not bear on the colo-based ratio. None of the fresh results supply a Netherlands rack-PDU-euro-per-MW figure that differs from the CE-7 average; the vendor and BOM sources return only paywalled report descriptions with no country intensity number. Without a purchasable intensity comparison showing NL below average, there is no basis to move the weight down.",
+    "evidence": [
+      {
+        "title": "Netherlands Data Center Rack PDU Market | Share & Size 2032",
+        "publisher": "6Wresearch",
+        "url": "https://www.6wresearch.com/industry-report/netherlands-data-center-rack-pdu-market",
+        "excerpt": "By End User (Small-scale Data Centers, Large-scale Data Centers, Hyperscale Data Centers, Colocation Providers)"
+      },
+      {
+        "title": "Netherlands Hyperscale Data Center Market Report 2031",
+        "publisher": "Mordor Intelligence",
+        "url": "https://www.mordorintelligence.com/industry-reports/netherlands-hyperscale-data-center-market",
+        "excerpt": "The Netherlands Hyperscale Data Center Market Report is Segmented by Data Center Type (Hyperscale Self-Build, Hyperscale Colocation)"
+      }
+    ],
+    "expectedYamLoss": 0.11827199999999949,
+    "outcome": "refuted",
+    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands."
+  },
+  {
+    "riskId": "risk.boundary-substitution.enterprise-gpu-pods-skip-pdus",
+    "title": "Enterprise growth ships as GPU racks that skip PDUs",
+    "nodeId": "seg.enterprise",
+    "rev1Value": 0.29,
+    "proposed": {
+      "value": 0.29,
+      "rationale": "The claim's mechanism (GPU racks skip PDUs) is contradicted by NVIDIA's B300 reference architecture using rack PDUs, so the full 0.29 remains defensible as PDU-addressable; only a modest downside band reflects residual busbar/DB-mix uncertainty rather than the claimed structural haircut."
+    },
+    "verdict": "confirm",
+    "verdictValue": 0.29,
+    "verdictLow": 0.24,
+    "verdictHigh": 0.29,
+    "verdictRationale": "The claim's core premise is that GPU growth arrives without PDUs. NVIDIA's own B300 reference architecture shows the opposite: the AC-powered variant ships 72 DGX B300 in standard racks each with three 2U rack PDUs, and even the DC busbar variant lists 160 rPDUs in its bill of materials. The DC busbar option only becomes default for the densest deployments; NVIDIA explicitly keeps the traditional PDU AC option for legacy centers. PDU market reports independently attribute growth to AI and GPU workloads, so GPU capacity is PDU-consuming, not PDU-skipping. The full 0.29 stays defensible as PDU-addressable, with a modest downside band for the share of dense deployments that move to busbar power shelves.",
+    "evidence": [
+      {
+        "title": "DGX SuperPOD with DGX B300 Systems, AC Power Reference Architecture",
+        "publisher": "NVIDIA",
+        "url": "https://docs.nvidia.com/dgx-superpod/reference-architecture/scalable-infrastructure-b300-xdr/latest/dgx-superpod-architecture.html",
+        "excerpt": "With DGX SuperPOD with DGX B300 systems, we utilize standard racks and with traditional power supplies and PDUs... Figure 2 shows 72 x NVIDIA DGX B300 PS systems in standard racks each with three (3) 2U rack PDUs for maximum redundancy."
+      },
+      {
+        "title": "DGX SuperPOD DGX B300 DC Busbar Reference Architecture — Major Components",
+        "publisher": "NVIDIA",
+        "url": "https://docs.nvidia.com/dgx-superpod/reference-architecture/scalable-infrastructure-b300/latest/components.html",
+        "excerpt": "For legacy datacenter without the possibility for DC busbar, it is still possible to build SuperPOD with traditional PDU and AC powered EIA racks... 160 rPDU for MGX rack PX4-57A7I2U-C8E7V2"
+      }
+    ],
+    "expectedYamLoss": 0.1013759999999995,
+    "outcome": "applied",
+    "outcomeNote": "Applied: value confirmed at 0.29; evidence-backed band 0.24–0.30 added.",
+    "appliedValue": 0.29
+  },
+  {
+    "riskId": "risk.structure-independence.ce-hyperscale-global-split-mirage",
+    "title": "CE hyperscale share set at 0.44 is too high; real weight is colocation",
+    "nodeId": "seg.hyperscale",
+    "rev1Value": 0.44,
+    "proposed": {
+      "value": 0.28,
+      "rationale": "CBRE/Structure Research show CE hyperscale self-build is concentrated outside CE-7 (60% in IE/NL/SE/BE) and hyperscalers in Frankfurt mostly rent colo, so the CE hyperscale-owned share is well below the 0.44 global figure and colocation carries more weight."
+    },
+    "verdict": "adjust",
+    "verdictValue": 0.35,
+    "verdictLow": 0.25,
+    "verdictHigh": 0.44,
+    "verdictRationale": "The CBRE data confirms the direction of the claim: about 60% of Europe's operational hyperscaler self-build capacity sits in Ireland, the Netherlands, Sweden and Belgium, none of which are Central Europe, and Frankfurt is described by Structure Research as a market with high barriers to self-build where hyperscalers rely on colocation. So a 0.44 hyperscale-owned share for CE is too high. But the evidence measures self-build only and does not give a clean CE-7 owned-vs-colo split; hyperscale demand still drives Frankfurt colocation heavily. The proposal's 0.28 point value is not directly supported by any cited figure, so a milder cut with a wider band better fits the evidence.",
+    "evidence": [
+      {
+        "title": "New hyperscaler self-build capacity growth to outpace colocation supply growth in Europe",
+        "publisher": "CBRE via Institutional Real Estate, Inc.",
+        "url": "https://irei.com/news/new-hyperscaler-self-build-capacity-growth-to-outpace-colocation-supply-growth-in-europe/",
+        "excerpt": "As of fourth quarter 2025, approximately 60 percent of Europe's operational hyperscaler self-build capacity is located in Ireland, the Netherlands, Sweden and Belgium."
+      },
+      {
+        "title": "Frankfurt DCAI Report 2025",
+        "publisher": "Structure Research",
+        "url": "https://www.structureresearch.net/product/frankfurt-dci-report-2025-data-centre-colocation-hyperscale-cloud-ai-interconnection/",
+        "excerpt": "Frankfurt continues to be a strong growth story driven by hyperscale cloud, strict data residency regulations, high barriers to entry for self-builds, and the ability to serve a"
+      }
+    ],
+    "expectedYamLoss": 0.061247999999998914,
+    "outcome": "deferred",
+    "outcomeNote": "Deferred: sum-to-1.00 share redistribution needs a donor-cell decision (conflicting sibling verdicts). Cycle 2 independently re-derived this correction — queued for next curation."
+  },
+  {
+    "riskId": "risk.structure-independence.colo-denominator-mispricing-enterprise-geography",
+    "title": "Colo-based geo weights inflate NL, hide Swiss and German demand",
+    "nodeId": "geo.CH",
+    "rev1Value": 0.08,
+    "proposed": {
+      "value": 0.11,
+      "rationale": "Switzerland is self-operation-heavy (Mordor 850.6 MW installed vs 274 MW colo; CBRE 340 MW commercial only), so a total-installed-load denominator raises CH from 0.08 toward ~0.11-0.13, and correspondingly deflates the Amsterdam-hub-inflated NL weight."
+    },
+    "verdict": "confirm",
+    "verdictValue": 0.11,
+    "verdictLow": 0.08,
+    "verdictHigh": 0.13,
+    "verdictRationale": "The Statista colo table gives CH 274 MW out of a CE-7 total that yields ~0.08. But Switzerland is heavily self-operated: Mordor puts installed base at 850.6 MW and CBRE at 340 MW commercial only, well above the 274 MW colo figure. A total-installed-load split raises CH toward ~0.11-0.13, while Germany's on-premise-heavy base (BMWK: over 2,700 MW installed vs 1,737 MW colo) and the Amsterdam-inflated NL weight also shift. This confirms the colo-only denominator understates Swiss weight; I trim the high to 0.13 to match the crosscheck rather than 0.14, which the evidence does not reach.",
+    "evidence": [
+      {
+        "title": "Status and development of the German data centre landscape – Executive Summary",
+        "publisher": "BMWK",
+        "url": "https://www.bundeswirtschaftsministerium.de/Redaktion/EN/Publikationen/Digitale-Welt/status-and-development-of-the-german-data-centre-landscape-executive-summary.pdf",
+        "excerpt": "With over 2,000 data centres and an installed IT power demand of over 2,700 MW, Germany is already the largest centre for digital infrastructure in Europe."
+      },
+      {
+        "title": "Europe: Colocation data center power by country 2031",
+        "publisher": "Statista",
+        "url": "https://www.statista.com/statistics/1659712/europe-colocation-data-center-power-by-country/",
+        "excerpt": "2025 | Germany 1,737 | Netherlands 951 | Switzerland 274"
+      }
+    ],
+    "expectedYamLoss": 0.03590399999999967,
+    "outcome": "deferred",
+    "outcomeNote": "Deferred: sum-to-1.00 share redistribution needs a donor-cell decision (conflicting sibling verdicts). Cycle 2 independently re-derived this correction — queued for next curation."
+  }
+];
+
+export const REFINEMENT_SUMMARY = {
+  "researched": 17,
+  "applied": 3,
+  "refuted": 10,
+  "folded": 1,
+  "deferred": 3
+} as const;

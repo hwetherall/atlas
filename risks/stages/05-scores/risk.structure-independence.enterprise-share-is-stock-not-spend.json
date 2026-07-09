@@ -1,0 +1,26 @@
+{
+  "inputsHash": "6f29831b9e1a27ff39a9074f06bc18f1ef0620ef34d886cd6fdc8247ebb4d10c",
+  "generatedAt": "2026-07-08T05:30:23.826Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (seg.enterprise 0.29), the source arithmetic (Synergy 32% × 0.91 carve-out), the decline trajectory (56%→32%→19%), a quantified perturbation (set to 0.18), and named vendors/publishers for indicators and falsifiers. Nothing is left vague."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The core insight — the model prices a stock share as a spend share, and the visibly-sourced 32% measures the wrong quantity — is genuinely hidden by the clean provenance, as whyMissable argues; the geo-axis-never-measured-enterprise compounding is a second novel point. Docked one because 'enterprise on-prem is declining and hyperscale drives PDU demand' is broadly known to any founder in this space, so the direction (if not the mechanism) would be on some lists."
+    },
+    "mechanismDepth": {
+      "score": 2,
+      "note": "The chain is fully referenced, but its load-bearing middle link — 'shrinking installed base generates minimal new-build PDU demand' — is undercut by the risk's own CRN evidence that absolute on-prem capacity is constant and receiving an AI/GPU boost, and the perturbation note's 'absolute shrinkage, not a mix-shift' contradicts that same source. The refresh-lag and colo-denominator legs survive hostile questioning; the flow-starvation leg does not."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "Two independent sources corroborate the trigger (share decline), but the key premise (enterprise spend share sits well below stock share) is unmeasured by any source, and CRN partially contradicts the flow logic — which the risk honestly flags via evidenceStatus 'contested' and a downward likelihood revision from 0.45 to 0.42. Honest speculative-with-caveat matches the 2 anchor."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "The mitigations change near-term action — exclude enterprise new-build from Year-1 pipeline, re-qualify via IT distributors, and a single VOI datapoint resolves a third of TAM — and both indicators name concrete monitorable venues (Synergy vintages, vendor earnings calls) with thresholds. The 0.29→0.18 perturbation is large enough to alter spend and sequencing this year."
+    }
+  }
+}

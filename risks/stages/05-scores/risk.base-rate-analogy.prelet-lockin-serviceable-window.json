@@ -1,0 +1,26 @@
+{
+  "inputsHash": "157b15141ee48d99a44bf05351f6ad00b43c2a1b9cc3099bb8d68ee2130bd553",
+  "generatedAt": "2026-07-08T21:33:57.926Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (serviceableFactor 0.55 → 0.35), the certification stack (WEEE, CE, TÜV, RoHS, EN 50600) with a 6-9 month clock, and monitorable venues (TED, TÜV NORD/SÜD queues, named operators NTT/Vantage/Data4). Quantities, actors, and timelines are all pinned to the YAM window."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The raw ingredients are in the ledger — the risk itself concedes 'the model's own cross-check admits 12-24 month procurement lock' — but the intersection argument (serviceable share is time-indexed, so 0.55 can be right in steady state and wrong for every month of year one) is a genuine structural insight the whyMissable field articulates well. Docked one point because a founder staring at the obtainableFactor cross-check is partway there."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Each hop (spec-lock trigger → compliance-gated bidding → window-adjusted serviceable share) carries refs and is independently plausible. But the landing value of 0.35 is asserted, not derived — a hostile 'why 0.35 and not 0.45 or 0.25?' has no answer in the risk, and the likelihood rationale admits no source quantifies the contestable fraction."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The strongest external quotes concern HV transformer lead times (48-60 months) and hyperscale build cycles, which corroborate an adjacent reference class rather than the load-bearing premise that rack-PDU demand is spec-locked pre-launch; two stances are 'silent' and the evidence array is empty despite an evidenceStatus of 'corroborated'. The rationale is honest about the absence of data on contestable share, which fits the speculative-but-well-argued anchor, not the ≥2-independent-sources anchor."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Both mitigations (start certification pre-launch to parallelize the cert→bid path, commission the window-adjusted bottom-up model the ledger's promotionPath already names) change sequencing and spend in the next two quarters, and the perturbation to 0.35 materially reprices year-one revenue. Indicators are concrete and checkable at TED and TÜV booking queues with explicit thresholds."
+    }
+  }
+}

@@ -1,0 +1,329 @@
+{
+  "inputsHash": "3e31399735ad5a9e8968375f41c2bf2ebebdcf01a8e841dc32ea947920870e9d",
+  "generatedAt": "2026-07-08T19:30:56.008Z",
+  "data": {
+    "tensions": [
+      {
+        "text": "The entire top-down geography chain divides into a CE-7 colocation denominator (Statista 'colocation AND scale colocation' summing to ~8,676MW Europe-wide, CE-7 = 3,451MW), but this scope is broader than CBRE's Q4-2024 colocation supply of 4,726MW (Europe top-15) and is uncorroborated at CE-7 level by any independent source. If the denominator is scope-inflated, every geo.* ratio and the '39.8% of Europe colo MW' step feeding tamBase are systematically biased.",
+        "nodes": [
+          "tamBase",
+          "geo.DE",
+          "geo.NL",
+          "geo.PL",
+          "geo.CH",
+          "geo.CZ",
+          "geo.AT",
+          "geo.other"
+        ],
+        "refs": [
+          "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c9",
+          "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c10",
+          "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c0",
+          "refine-ledger-self-audit.statista-scale-colo-scope-inflation#c13",
+          "refine-intelligent-subset-inflation#c9"
+        ]
+      },
+      {
+        "text": "The whole apportionment method uses a colocation-only numerator/denominator, but BMWK's German installed IT power (>2,700MW) is ~1,000MW above Statista's colo-only 1,737MW, Bitkom cites 2,980MW, and DCIRD 1,955MW — meaning 35-40% of real installed load sits outside colocation and non-colo shares vary by country. Since rack-PDU demand tracks total installed load (not colo alone), the colo-based geography split may misallocate the €300M base across countries.",
+        "nodes": [
+          "geo.DE",
+          "geo.NL",
+          "geo.CH",
+          "geo.AT",
+          "geo.PL"
+        ],
+        "refs": [
+          "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c0",
+          "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c3",
+          "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c7",
+          "refine-structure-independence.colo-denominator-mispricing-enterprise-geography#c1",
+          "geo-region-denominator#c11"
+        ]
+      },
+      {
+        "text": "tamBase anchors on Grand View's $2.81B 2025 global rack-PDU figure, but competing publishers for the same category report $2.03B (Insight Partners), $1.697B (LP Information), $2.78B (Mordor), $3.2B (MarketIntelo) and $3.94B (MarketsandMarkets, rack+floor) — a ~2.3x spread that exceeds the stated ±40% sensitivity band and means the global anchor itself is far less settled than the ledger implies.",
+        "nodes": [
+          "tamBase"
+        ],
+        "refs": [
+          "tam-global-crosscheck#c0",
+          "tam-global-crosscheck#c5",
+          "tam-global-crosscheck#c9",
+          "tam-global-crosscheck#c6",
+          "tam-global-crosscheck#c4",
+          "tam-global-crosscheck#c3"
+        ]
+      },
+      {
+        "text": "tamBase's 'Europe ≈ 30%' scope-down step is an unsourced analyst estimate: Grand View publishes only North America's 38.0% share and never states a Europe percentage, and no source in any search pass surfaced a Europe or CE-7 rack-PDU-specific figure. The €300M base rests on an inserted regional share with no direct grounding.",
+        "nodes": [
+          "tamBase"
+        ],
+        "refs": [
+          "refine-definition-scopedown.europe-share-arithmetic-ghost#c0",
+          "refine-definition-scopedown.europe-share-arithmetic-ghost#c1",
+          "tam-base#c1",
+          "refine-definition-scopedown.europe-share-arithmetic-ghost#c4"
+        ]
+      },
+      {
+        "text": "The refinement that removed the €495M ceiling relied on a '10-12% intelligent-PDU CAGR (IndexBox)' comparator, but that exact figure comes only from IndexBox's EU 'Power and Cable Management' report (€8.5-9.5B, a far broader category), not a rack-PDU-specific report — the same definitional-bundling problem the refinement claimed to escape. The band-top lowering to €360M rests on a contaminated comparator.",
+        "nodes": [
+          "tamBase"
+        ],
+        "refs": [
+          "refine-definition-scopedown.crosscheck-ceiling-contamination#c2",
+          "refine-definition-scopedown.crosscheck-ceiling-contamination#c3",
+          "tam-base#c4",
+          "refine-definition-scopedown.intelligent-subset-inflation#c9"
+        ]
+      },
+      {
+        "text": "Germany alone is forecast to reach $509.6M in a broader 'PDU' category by 2031 (Research and Markets), already exceeding the entire curated CE-7 rack-PDU base of €300M before counting the other six countries — signaling the €300M/€360M ceiling may be far too conservative if category boundaries loosen even slightly from 'rack PDU' to 'PDU', which the pervasive definitional contamination across sources makes hard to avoid.",
+        "nodes": [
+          "tamBase"
+        ],
+        "refs": [
+          "tam-base#c9",
+          "tam-base#c7",
+          "tam-base#c2"
+        ]
+      },
+      {
+        "text": "obtainableFactor's 1% Year-1 anchor treats Prospeo's staged benchmark as clean annual snapshots, but Prospeo itself elsewhere frames 1-5% as a cumulative 36-month range, and IdeaPlan/Wise/TryBuildCo all describe SOM as a 1-3 or 3-5 year aggregate — so pinning 1% strictly to Year 1 may overstate precision the sources don't support, directly affecting the YAM output.",
+        "nodes": [
+          "obtainableFactor"
+        ],
+        "refs": [
+          "refine-execution-window.som-window-semantics-mismatch#c0",
+          "refine-execution-window.som-window-semantics-mismatch#c1",
+          "obtainable-benchmark#c5",
+          "obtainable-benchmark#c6",
+          "obtainable-benchmark#c7"
+        ]
+      },
+      {
+        "text": "obtainableFactor's cross-check cites a 'Tractian comparable (first-year ~$1.2M against a multi-$B market)', but the sourced Tractian data shows revenue starting at $200K and reaching $1.2M ARR only after a reported 10x growth event — $1.2M was not a first-year figure, so the specific number validating the ≤1% anchor is unverified against its own source.",
+        "nodes": [
+          "obtainableFactor"
+        ],
+        "refs": [
+          "refine-execution-window.som-window-semantics-mismatch#c4",
+          "refine-execution-window.som-window-semantics-mismatch#c5",
+          "obtainable-benchmark#c10"
+        ]
+      },
+      {
+        "text": "obtainableFactor's cross-check assumes DC electrical gear is 'locked 12-24mo before fit-out', but transformer lead times run 48-60 months (GSU ~144 weeks) with Tier-1 backlogs to 2030 and full hyperscale cycles of 18-30mo to 4-7yr — design/procurement lock-in occurs far earlier than the 12-24mo window used to justify the ≤2% ceiling, pushing truly reachable Year-1 share below the 0.5-3% band.",
+        "nodes": [
+          "obtainableFactor"
+        ],
+        "refs": [
+          "refine-demand-discontinuity.prelet-pipeline-lockout#c0",
+          "refine-demand-discontinuity.prelet-pipeline-lockout#c1",
+          "refine-demand-discontinuity.prelet-pipeline-lockout#c6",
+          "refine-demand-discontinuity.prelet-pipeline-lockout#c10"
+        ]
+      },
+      {
+        "text": "obtainableFactor's cross-check claims 'open 2026 EU rack-PDU tenders keep 2-3% inside the band', but the only standalone PDU procurements found were small ($58K-$130K) US university/DoD bids with 1-2 bidders, one explicitly sole-sourced ('No substitutions') — evidence that some 'standalone' RFPs are not contestable, pushing the truly-contestable SAM share below even the 1% anchor rather than supporting 2-3%.",
+        "nodes": [
+          "obtainableFactor"
+        ],
+        "refs": [
+          "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c0",
+          "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c2",
+          "refine-competitive-foreclosure.bundling-eliminates-bakeoffs-year1#c5"
+        ]
+      },
+      {
+        "text": "cust.operator-large's 0.40 direct-buyer share assumes 'large operators buy direct', but the procurement evidence found (Jülich JARVIS bundling PDU/CDU into one IT line item; Schneider-Foxconn integrated rack/power/cooling; Iren's $1.6bn all-in Dell contract; Digital Realty's $373M Schneider framework agreement) shows PDU spend procured as embedded integrator/OEM/global-framework packages, not operator-selected discrete lines — a large fraction of the 40% cell may be foreclosed to regional entrants.",
+        "nodes": [
+          "cust.operator-large"
+        ],
+        "refs": [
+          "refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c0",
+          "refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c2",
+          "refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c4",
+          "refine-structure-independence.global-framework-forecloses-large-operator-cell#c0",
+          "refine-structure-independence.global-framework-forecloses-large-operator-cell#c6"
+        ]
+      },
+      {
+        "text": "The four customerType channel values (0.40/0.25/0.22/0.13) are entirely unsourced internal estimates: no retrieved source substantiates the 'hyperscale+colo ≈ 62% (Synergy)' figure in cust.operator-large's derivation, the attached Alexander Group 30%-of-orders figure measures one supplier's order composition (not buyer-type split), and channel taxonomies vary inconsistently by equipment sub-segment — leaving the entire buyer-mix dimension without corroborating quantitative evidence.",
+        "nodes": [
+          "cust.operator-large",
+          "cust.operator-mid",
+          "cust.oem",
+          "cust.distributor"
+        ],
+        "refs": [
+          "cust-mix#c0",
+          "refine-boundary-substitution.large-operator-channel-forecloses-to-odm#c7",
+          "cust-mix#c4",
+          "cust-mix#c8"
+        ]
+      },
+      {
+        "text": "seg.hyperscale rescales Synergy's global 44-48% hyperscale capacity share onto Central Europe via a flat 0.91 carve-out, but CBRE finds ~60% of Europe's operational hyperscaler self-build capacity sits in Ireland, Netherlands, Sweden and Belgium — not CE-7 — implying CE's true hyperscale-owned share could be materially lower than the derived 0.44, distorting the segment mix.",
+        "nodes": [
+          "seg.hyperscale",
+          "seg.colocation"
+        ],
+        "refs": [
+          "refine-structure-independence.ce-hyperscale-global-split-mirage#c2",
+          "refine-structure-independence.ce-hyperscale-global-split-mirage#c1",
+          "seg-mix#c14"
+        ]
+      },
+      {
+        "text": "Synergy's own 2031 forecast (hyperscale 67%, enterprise on-premise 19% globally) implies an enterprise share of ~0.17 after the 0.91 carve-out — below seg.enterprise's current 0.24 low band — and colocation moves 20-22% across Synergy vintages while seg.colocation carries a null sensitivity range, so the static segment values and bands may not hold across the model's forward horizon.",
+        "nodes": [
+          "seg.enterprise",
+          "seg.hyperscale",
+          "seg.colocation"
+        ],
+        "refs": [
+          "seg-mix#c4",
+          "seg-mix#c1",
+          "seg-mix#c6",
+          "seg-mix#c18"
+        ]
+      },
+      {
+        "text": "The seg.enterprise 'GPU pods skip PDUs' doubt is marked 'refuted/confirmed', but NVIDIA actually publishes parallel architectures — an AC/PDU version framed as legacy/fallback (3 PDUs × 72 racks) versus a DC busbar flagship (only 160 PDUs across 80 racks) — so the highest-density GPU deployments are steered toward lower PDU-attach, not universal attach. The binary 'confirmed' framing elides a materially lower attach ratio in the fastest-growing sub-segment.",
+        "nodes": [
+          "seg.enterprise"
+        ],
+        "refs": [
+          "refine-boundary-substitution.enterprise-gpu-pods-skip-pdus#c2",
+          "refine-boundary-substitution.enterprise-gpu-pods-skip-pdus#c3",
+          "refine-boundary-substitution.enterprise-gpu-pods-skip-pdus#c4",
+          "refine-boundary-substitution.enterprise-gpu-pods-skip-pdus#c0"
+        ]
+      },
+      {
+        "text": "geo.PL's 0.07 point estimate anchors on Statista's 228MW colo figure, but PMR/Atman states Poland's ~200MW is 'more than one-third of total CEE capacity' (implying ~600MW CEE total, ~6x below the 3,451MW CE-7 denominator), and Mordor's 660MW installed-load figure is corroborated by ResearchAndMarkets and Prime East — the better-supported installed-load scope yields ~0.10, arguably deserving more weight than the single Statista colo figure.",
+        "nodes": [
+          "geo.PL"
+        ],
+        "refs": [
+          "geo-PL#c11",
+          "geo-PL#c0",
+          "geo-PL#c15",
+          "geo-PL#c4"
+        ]
+      },
+      {
+        "text": "serviceableFactor's 0.55 haircut bundles EN 50600, ecodesign 2019/424, and CE/TÜV as one 'EU cert stack', but these are distinct regulatory layers at different levels (product ecodesign vs facility standard vs the newer 2024/1364 rating scheme vs CE/WEEE/RoHS/FCC), none individually implying a specific percentage, and the node has no bottom-up estimate to cross-check the top-down 0.55 against the 2x-3x validation standard — leaving the value methodologically unvalidated.",
+        "nodes": [
+          "serviceableFactor"
+        ],
+        "refs": [
+          "serviceable-benchmark#c8",
+          "serviceable-benchmark#c11",
+          "serviceable-benchmark#c12",
+          "serviceable-benchmark#c13",
+          "serviceable-benchmark#c3"
+        ]
+      },
+      {
+        "text": "MessEG/§32 evidence shows any MID-calibrated meter used to bill sub-tenants per measured kWh falls under compliance obligations, implying PDU-level billing metering must be MID-compliant — yet colo billing is often estimate-based or capacity-tier (Digital Realty fixed-kW + per-0.1kW overage), a heterogeneous reality serviceableFactor's single qualitative regulatory haircut does not distinguish, leaving the 0.45-0.65 band without an empirical anchor.",
+        "nodes": [
+          "serviceableFactor"
+        ],
+        "refs": [
+          "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c3",
+          "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c7",
+          "refine-regulatory-gauntlet.eichrecht-metering-foreclosure#c6"
+        ]
+      },
+      {
+        "text": "shape.cr3's derivation assumes a stable top-3 identity (Schneider, Vertiv, Eaton), but sources disagree: Credence ranks Eaton/Schneider/ABB/Siemens/Server Technology/Raritan/HPE with Vertiv only via Geist; two marketintelo variants give single/double-leader framings; and the only hard datapoint is APC/Schneider at 15.8% — no #2/#3 share exists, so the CR3=0.55 is an extrapolation from one point across inconsistent vendor sets.",
+        "nodes": [
+          "shape.cr3"
+        ],
+        "refs": [
+          "cr3-vendors#c0",
+          "cr3-vendors#c4",
+          "cr3-vendors#c8",
+          "cr3-vendors#c9"
+        ]
+      },
+      {
+        "text": "shape.cagr claims a tight 8-10% consensus across three publishers, but the fuller set spans 5.4% (LP Information), 6.8% (MarketIntelo, Global Industry Analysts), 8.01-9.7% (rack-PDU consensus), up to 19.5% (MarketsandMarkets, broader scope), plus Mordor's internally-contradictory 3.52%/9.44% — undermining the tightness of the stated consensus used to extrapolate forward.",
+        "nodes": [
+          "shape.cagr"
+        ],
+        "refs": [
+          "tam-global-crosscheck#c9",
+          "tam-global-crosscheck#c6",
+          "tam-global-crosscheck#c4",
+          "tam-global-crosscheck#c10"
+        ]
+      },
+      {
+        "text": "geo.AT's colo baseline (68MW → 0.02) may understate Austrian colocation: Baxtel measures Vienna alone at 78MW and multiple sources place Vienna at ~80% of national colo, implying ~97-100MW national total; separately Arizton projects only 33MW by 2031 vs Mordor's 342.54MW — a ~10x discrepancy in the same metric leaves the small-country ratios unstable.",
+        "nodes": [
+          "geo.AT"
+        ],
+        "refs": [
+          "geo-alpine#c12",
+          "geo-alpine#c14",
+          "geo-alpine#c16",
+          "geo-alpine#c10",
+          "geo-alpine#c9"
+        ]
+      },
+      {
+        "text": "geo.CH's flat 0.08 obscures a decisive scope choice: Statista colo 274MW vs CBRE commercial-only 340MW vs Mordor installed-base 850.6MW (self-operation-heavy), and market valuations diverge ~3x (Ken Research $2.9B vs Arizton $960M for 2025) — no source in any pass narrowed this, leaving the 0.07-0.13 band empirically unresolved.",
+        "nodes": [
+          "geo.CH"
+        ],
+        "refs": [
+          "geo-alpine#c5",
+          "geo-alpine#c6",
+          "geo-alpine#c0",
+          "geo-alpine#c1"
+        ]
+      },
+      {
+        "text": "geo.other's residual bucket relies on Statista colo figures (RO 27, HU 18MW) but Mordor reports Romania at 77.83MW total (2.9x, at 19.93% CAGR to 231.64MW by 2031) and a 2022 report calls Hungary larger than Romania — contradicting the Statista ordering; with Romania cited as '40% of upcoming CEE capacity', the fast-growing residual may be materially understated and require breakout.",
+        "nodes": [
+          "geo.other"
+        ],
+        "refs": [
+          "geo-CZ-other#c3",
+          "geo-CZ-other#c4",
+          "geo-CZ-other#c13",
+          "geo-CZ-other#c2"
+        ]
+      },
+      {
+        "text": "geo.NL's 0.28 colo-share basis could erode: NL hyperscale (self-build) is forecast at 26.41% CAGR vs colocation 3.54%, and regulatory caps (hyperscale bans outside two municipalities, Amsterdam 350 MVA ceiling to 2030, power unavailable until 2030) constrain colo growth independent of demand — so NL's share of CE-7 may not scale proportionally, while broader-scope figures (CleanBridge 1,638MW, DC Byte 1,849MW supply) far exceed the 924-951MW colo baseline.",
+        "nodes": [
+          "geo.NL"
+        ],
+        "refs": [
+          "refine-boundary-substitution.nl-selfbuild-hotspot-hollows-geo#c1",
+          "geo-NL#c7",
+          "geo-NL#c8",
+          "geo-NL#c13",
+          "geo-NL#c6"
+        ]
+      },
+      {
+        "text": "cust.oem's 0.22 white-label/OEM channel share assumes ODM suppliers (Digipower, Geteknet) are contestable, but every integrator case study found (Vertiv/Greenergy, Vertiv/SAGA, Legrand/MIND Park, Schleifenbauer/DPI) shows integrators selecting branded incumbents on features, certification, DCIM compatibility and support — not white-label on price — and no source quantifies the OEM channel share, leaving both the value and its addressability premise unsupported.",
+        "nodes": [
+          "cust.oem"
+        ],
+        "refs": [
+          "refine-competitive-foreclosure.oem-cell-odm-price-foreclosure#c5",
+          "refine-competitive-foreclosure.oem-cell-odm-price-foreclosure#c6",
+          "refine-competitive-foreclosure.oem-cell-odm-price-foreclosure#c7",
+          "refine-competitive-foreclosure.oem-cell-odm-price-foreclosure#c3"
+        ]
+      }
+    ]
+  }
+}

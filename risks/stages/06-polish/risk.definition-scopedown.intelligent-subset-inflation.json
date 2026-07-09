@@ -1,0 +1,39 @@
+{
+  "inputsHash": "90490abad50fc23ecd20a2293566fbf19f99cb79f39ef77a14ea03bd03e3b3a6",
+  "generatedAt": "2026-07-08T21:49:37.584Z",
+  "data": {
+    "title": "Base counts basic PDUs the venture cannot sell, halving the market",
+    "narrative": "The model assumes the venture can sell into the full €300M rack-PDU market. But Grand View, the source of that figure, says the non-intelligent segment held the largest revenue share in 2025, and the venture sells only intelligent PDUs. About half the €300M is basic units the product cannot address, so the Year-1 number is inflated about 2x.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Grand View says non-intelligent PDUs held the largest 2025 share.",
+        "refs": [
+          "digest:tam-global-crosscheck#c2",
+          "ledger:tamBase",
+          "profile:Product"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Vendors sell intelligent and basic PDUs as separate products.",
+        "refs": [
+          "digest:tam-global-crosscheck#c12",
+          "digest:tam-global-crosscheck#c13",
+          "digest:tam-base#c14"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "SAM €165M and YAM €1.65M both inherit the inflation.",
+        "refs": [
+          "ledger:tamBase",
+          "ledger:serviceableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "The label 'rack-PDU market' looks matched to a rack-PDU vendor, but the mismatch sits inside the source's own segmentation table below the headline.",
+    "falsifier": "A European source showing intelligent PDUs at 75% or more of rack-PDU revenue.",
+    "likelihoodRationale": "The source states non-intelligent held the largest revenue share globally. But intelligent units carry 3-5x prices and European buyers skew intelligent, so the European intelligent share plausibly lands at 45-60%."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "inputsHash": "f068a6bc5077dc6f3740531c3d88a44b7b200c06d4cb203f150c6cf3f4f9db8a",
+  "generatedAt": "2026-07-08T21:47:28.710Z",
+  "data": {
+    "title": "Buyer security audit adds a slow gate that delays first PO",
+    "narrative": "The model assumes the venture can sell to large operators once it clears CE and TUV product certification. But those buyers require a separate security prequalification first, and each audit cycle runs one to two quarters. That serial delay compresses the Year-1 selling window and locks out gated accounts, so both factors are too high.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "Large operators require security audits before listing networked power devices",
+        "refs": [
+          "digest:serviceable-benchmark#c13",
+          "digest:serviceable-benchmark#c4",
+          "ledger:serviceableFactor"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "New entrant builds this and passes audits within Year 1",
+        "refs": [
+          "profile:Stage",
+          "profile:Who is the primary buyer you'll sell through first?"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Gate delays first PO and blocks gated accounts",
+        "refs": [
+          "ledger:obtainableFactor",
+          "ledger:serviceableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "The founder's list shows CE and TUV as handled, but the buyer security audit is invisible until it arrives as a questionnaire on the first serious RFQ.",
+    "falsifier": "Two or more large CE operators issue rack-PDU RFQs in the first two quarters with no security prequalification, or confirm CE marking alone suffices for listing.",
+    "likelihoodRationale": "Security prequalification is standard at large buyers and CRA rules phase in, but mid-market and distributor channels gate far less strictly. Probability reflects the venture's explicit large-operator-first choice; CRA obligations bind from Dec 2027, so the near-term delay is smaller than implied."
+  }
+}

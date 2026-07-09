@@ -1,0 +1,10 @@
+{
+  "inputsHash": "9b8d0b198817834d9401fd27c0547e4a7c5e8b3e17aafabd5869a289340d36c0",
+  "generatedAt": "2026-07-08T18:19:08.260Z",
+  "data": {
+    "resolution": "risk",
+    "settleTest": "Only the outcome of the first 10 contested bids — actual entrant win-rate and observed incumbent price concessions — would settle whether Year-1 obtainable share lands at the 0.01 floor. No purchasable report resolves how incumbents will respond to this specific entrant's pilots; that requires time to unfold. The claim's own falsifier (30% win-rate across first 10 bids, no material concession) is a future market observation, not a present fact.",
+    "proposedCorrection": null,
+    "researchQueries": []
+  }
+}

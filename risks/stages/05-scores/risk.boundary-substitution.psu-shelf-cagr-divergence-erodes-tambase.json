@@ -1,0 +1,26 @@
+{
+  "inputsHash": "982a9c7206611d578f30b51df164fbba2b57994baa95a97c697e1aa89f21e066",
+  "generatedAt": "2026-07-08T05:30:23.824Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names concrete figures ($2.45B 2024 base, 21.23% vs 9.7% CAGRs, static 55% share, €495M ceiling, €320M curated, 240–520 band), sources (BIS/R&M, GVR, IndexBox), a quantified perturbation (tamBase→265), and dated report vintages for monitoring."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "Both CAGRs are already in the ledger, but the risk supplies a genuinely NEW derived claim — the ratio between them arithmetically forces ~30%+ growth into the excluded PSU/shelf component, decaying the static 55% share — and whyMissable credibly explains why the cross-check reads as belt-and-braces. A rigorous founder cross-auditing the two source scopes could plausibly find it, so not a 4."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at every arrow and a sound arithmetic core (growth gap must be absorbed by the non-PDU component). Falls short of 4 because the likelihood rationale itself concedes the load-bearing alternative — BIS's 21.23% being an inflated forecast rather than a substitution signal — and the scope mismatch between series (global AI-cluster PSU vs Europe combined) weakens the reconciliation step under hostile questioning."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Three attached sources plus a fourth stance triangulate the growth gap, and the falsifier search honestly failed to falsify (IndexBox 5–8% confirms the low rack-PDU series; QY Research 26.5% confirms fast-growing substitutes). Not a 4 because the corroborating series are not scope-identical (own admission: 'not scope-identical', global vs Europe, 'panels' vs PDUs) and the actual PDU share decay rate is uncomputed."
+    },
+    "decisionRelevance": {
+      "score": 3,
+      "note": "Actionable within a quarter — a named $4,000 IndexBox purchase resolves the key uncertainty, a cheap time-varying-share model change is specified, and indicators (Vertiv/Delta segment mix, 2026 report vintages) have explicit thresholds. Held from 4 because the impact is on sizing credibility rather than a change to operational sequencing or major spend."
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "inputsHash": "73b9635a88391c25785519f089a45fdccc2325e03f5fcb7c7d7635bb35ee7f5d",
+  "generatedAt": "2026-07-08T21:39:06.137Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names ledger nodes (cust.operator-large at 0.40, obtainableFactor), quantified perturbations (set 0.20, scale 0.7), named actors (Schneider/Vertiv/Eaton, Equinix, Digital Realty), instruments (framework agreements, SCAs) and the Year-1 window. Indicators cite concrete venues (TED CPV codes, vendor press rooms) with numeric thresholds."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The distinction that the 0.33–0.47 band models SIZE error, not contractual AVAILABILITY, is a genuinely new axis not in the model, and whyMissable correctly shows how 'direct buyers with a nameable account list' reads as good news. Falls short of 4 only because framework/preferred-supplier lock-in is a known B2B infrastructure pattern a strong founder might eventually surface."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "Three-step chain with refs at each hop (renewal → no contestable RFQ during mid-term → addressable fraction collapse) and the timing argument (launch window coincides with mid-term, not renewal) is sharp. But the model-impact step's ~0.20 residual is asserted rather than derived, and the risk's own evidence revision admits foreclosure is 'likely less complete' than the chain assumes."
+    },
+    "evidenceQuality": {
+      "score": 2,
+      "note": "The flagship Digital Realty–Schneider SCA covers UPS/switchgear/skids, not rack PDU, and its own quoted language ('preserving flexibility... multi-vendor environment') contradicts full foreclosure — as the contested stances and the honest 0.50→0.42 revision acknowledge. Two supporting sources corroborate the bundling pattern generally, so this lands as a partially-contradicted but honestly-flagged premise rather than a clean corroboration."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly reorders the declared Year-1 beachhead: mitigations specify procurement interviews to replace the unsourced 0.40, an expiry-calendar account plan, and framework-bypassing pilot clauses — all actionable within two quarters. Both indicators (framework renewals, standalone PDU lots on TED) are monitorable now with stated thresholds."
+    }
+  }
+}

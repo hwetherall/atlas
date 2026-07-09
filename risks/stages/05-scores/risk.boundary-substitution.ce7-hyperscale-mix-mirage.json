@@ -1,0 +1,26 @@
+{
+  "inputsHash": "58ee2fda426f9ef28de241be46ac93a731d3db8a2cddbedef6e521dc9b3a7074",
+  "generatedAt": "2026-07-08T21:28:51.790Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names exact nodes (seg.hyperscale/colocation/enterprise), the 0.91 carve-out, Synergy's 48% global share, the ~60%-outside-CE-7 concentration, 24% vs 19% growth rates, and explicit perturbation values (0.30/0.26/0.33). Actors, instruments and thresholds (≥8pp gap, ≥70% MW outside CE-7 for two quarters) are all concrete."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "The whyMissable is genuinely structural: shares sum to the same TAM so no headline moves, and the tornado tests bands in isolation but never the transplanted-geography hypothesis — a NEW reason, not a band-edge claim. Falls short of 4 because 'a global mix was borrowed for a regional market' is a check a rigorous founder auditing seg-mix provenance might independently run."
+    },
+    "mechanismDepth": {
+      "score": 3,
+      "note": "All three hops carry refs and each is independently plausible (concentration → widening divergence via 24%/19% growth → misallocation invisible to headline). The one soft link — hyperscale leased-in-colo capacity within CE-7 could partially restore the hyperscale share — is acknowledged in the likelihood rationale but not closed, so the 'overweight by a third' magnitude wouldn't fully survive a hostile 'why?'."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Synergy (global 48%) and CBRE (60% concentration, 24% self-build growth) directly anchor the two load-bearing premises, with IREI corroborating — though IREI echoes the same CBRE dataset rather than being fully independent. The decisive premise (actual CE-7 hyperscale share) has no direct source, which the risk honestly concedes ('no CE-7-scoped hyperscale share was located')."
+    },
+    "decisionRelevance": {
+      "score": 4,
+      "note": "Directly reorders next-two-quarter spend: the operational mitigation shifts Year-1 certification and pipeline toward colo/enterprise in DE/NL, and the information mitigation gates channel lock-in on a CE-7-scoped split. Both indicators (Synergy/CBRE regional cuts, self-build MW location) are concrete, thresholded and monitorable."
+    }
+  }
+}

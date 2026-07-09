@@ -1,0 +1,38 @@
+{
+  "inputsHash": "7a867ce7a21b9c3326b5b81c04bdfea23713d318b16f0498d8ebd890b8ac8747",
+  "generatedAt": "2026-07-08T17:41:17.663Z",
+  "data": {
+    "title": "EU compliance delays could erase first-half revenue",
+    "narrative": "The model assumes the venture can sell from day 1 of a 12-month window. But we found the product must first clear a stack of EU compliance gates that run one after another before it can quote. A two-quarter delay does not cut the Year-1 number in half evenly. It deletes the front of the ramp, where revenue compounds.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "EU entry needs more gates than the model lists: CE, RoHS, WEEE, EORI, plus 2024 rules.",
+        "refs": [
+          "digest:serviceable-benchmark#c10",
+          "digest:serviceable-benchmark#c8",
+          "digest:serviceable-benchmark#c9"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Each gate must clear before quoting; the delay eats the best half.",
+        "refs": [
+          "profile:Stage",
+          "digest:serviceable-benchmark#c6",
+          "ledger:serviceableFactor"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Year-1 share halves or worse versus the assumed 0.03.",
+        "refs": [
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "Compliance shows up as a fixed reduction inside serviceableFactor, so a timing delay looks like a discount already priced in.",
+    "falsifier": "A complete dated compliance dossier plus one distributor or operator listing before the Year-1 clock starts.",
+    "likelihoodRationale": "First-time EU entry for networked hardware routinely takes 2–4 quarters, and this pre-launch venture shows no such artifacts yet. But CE for a non-wireless PDU can clear in 2–12 weeks, so a full two-quarter slip is less certain than a one-quarter erosion."
+  }
+}

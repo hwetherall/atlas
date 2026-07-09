@@ -1,0 +1,38 @@
+{
+  "inputsHash": "750d71cac796d99693b142c07eb5e9d2ad5d4209c588cfa5ab0cd5a12dd1b477",
+  "generatedAt": "2026-07-08T17:40:40.043Z",
+  "data": {
+    "title": "Year-1 market share is set by a 3-5 year benchmark, too high",
+    "narrative": "The model says the venture wins 3% of its serviceable market in Year 1. But the benchmarks behind that 3% describe what companies capture over 1 to 5 years, and the one real comparable entrant, Tractian, started at about 0.1% of its market. Read at a 12-month grain, the Year-1 number is roughly 5 times too high.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "The 3% benchmark describes 1 to 5 year windows, not 12 months",
+        "refs": [
+          "digest:obtainable-benchmark#c1",
+          "digest:obtainable-benchmark#c4",
+          "profile:Stage"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Real first-year shares fall to 0.1%, far below the 1% floor",
+        "refs": [
+          "digest:obtainable-benchmark#c5",
+          "digest:obtainable-benchmark#c6",
+          "digest:obtainable-benchmark#c7"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "A 3% rate overstates Year-1 revenue by about 5 times",
+        "refs": [
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "The number was already cut from 6% to 3% and labelled well-sourced, so it looks conservative, but the real flaw is the mismatched time window no sensitivity band shows.",
+    "falsifier": "Any named comparable industrial B2B entrant with documented first-year revenue at or above 1% of its stated market.",
+    "likelihoodRationale": "Every source measuring a real first year, including Tractian, sits far below 1%, and no sector-specific Year-1 benchmark supports 3%. AI-driven demand growth could lift new-entrant win rates above these analogues."
+  }
+}

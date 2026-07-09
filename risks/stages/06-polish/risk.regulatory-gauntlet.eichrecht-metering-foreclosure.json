@@ -1,0 +1,38 @@
+{
+  "inputsHash": "3d34a9bf09d6e6b1c45658bfd688bb3044c90d62b05cb36e7c7efb30087fe3c0",
+  "generatedAt": "2026-07-08T17:42:29.433Z",
+  "data": {
+    "title": "German metering law blocks the PDU's billing feature in its biggest market",
+    "narrative": "The model assumes the PDU's per-outlet metering can be sold across Germany, which is half the funnel. But in Germany any meter whose reading becomes an invoice must be certified under a separate metering law, and the entrant lacks that certification. That demotes its metering to indicative only and cuts reach in the German half, so the Year-1 number is too high.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "German colo billing on measured kWh needs legally-verified meters; the PDU lacks certification",
+        "refs": [
+          "profile:Product",
+          "digest:geo-DE#c13"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Germany is half the funnel; certified rivals win the metered-billing use case",
+        "refs": [
+          "ledger:geo.DE",
+          "digest:serviceable-benchmark#c9",
+          "ledger:seg.colocation"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "Reach is overstated; certification takes 12 to 18 months, past Year 1",
+        "refs": [
+          "ledger:serviceableFactor",
+          "ledger:obtainableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "The team checked product-safety and energy law but missed metering law, which only bites once the meter reading becomes an invoice.",
+    "falsifier": "German colo specs and billing interviews showing tenant power is billed at facility feed meters, with PDU metering treated as informational only.",
+    "likelihoodRationale": "The legal requirement is certain; the open question is how much German colo billing rides on PDU-level metering versus upstream branch meters. Evidence confirms the legal rule but suggests billing often sits at branch level, so the likelihood stays near the prior with a slight uptick."
+  }
+}

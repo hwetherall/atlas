@@ -1,0 +1,39 @@
+{
+  "inputsHash": "3658ca8964f7141064c04adb1a21f11408dfb4a927fb37c86e65b5902533d7d5",
+  "generatedAt": "2026-07-08T17:42:50.635Z",
+  "data": {
+    "title": "Colo-based geo weights inflate NL, hide Swiss and German demand",
+    "narrative": "The model splits each country's share using colocation data. But 29% of the market is enterprise on-premise, which colocation data does not count. Switzerland's real installed base is about 3x its colo figure, and Germany's load exceeds 2,700 MW versus a 1,737 MW colo figure, while the Dutch weight reflects the Amsterdam colo hub. As a result, country order, channel plans and SAM are wrong for a third of the market.",
+    "mechanism": [
+      {
+        "step": "trigger",
+        "text": "All geo weights come from one colocation table that misreports countries.",
+        "refs": [
+          "digest:geo-region-denominator#c0",
+          "digest:geo-region-denominator#c1",
+          "digest:geo-region-denominator#c3"
+        ]
+      },
+      {
+        "step": "propagation",
+        "text": "Colo data excludes the 29% enterprise on-premise market it should weight.",
+        "refs": [
+          "ledger:seg.enterprise",
+          "ledger:geo.CH",
+          "ledger:geo.DE"
+        ]
+      },
+      {
+        "step": "model-impact",
+        "text": "NL is overweighted, Switzerland understated, and 29% of TAM lands in wrong countries.",
+        "refs": [
+          "ledger:geo.NL",
+          "ledger:serviceableFactor"
+        ]
+      }
+    ],
+    "whyMissable": "NL looks like the best-sourced node because Statista and the Dutch association agree within 3%, but both use colocation scope, so the agreement certifies the wrong measure.",
+    "falsifier": "A total-installed-load country split for CE-7 that reproduces the colo weights within a few points, with NL near 0.28 and CH near 0.08.",
+    "likelihoodRationale": "The ledger already shows CH at 0.08 versus 0.13 and DE at 0.42 versus 0.53 by scope, and the bias follows directly from the documented definitions. Both anchors are now confirmed by strong sources, though the final SAM and sequencing impact still rests on unverified modeling assumptions."
+  }
+}

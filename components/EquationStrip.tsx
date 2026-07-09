@@ -15,7 +15,10 @@ import FilterGroup from "@/components/FilterGroup";
 // Toggle a country and the term above the chip shrinks, then everything to its
 // right. TAM/SAM/YAM carry the dashboard funnel-ramp underlines for identity.
 //
-//   BASE × WHERE × WHAT FOR × WHO BUYS = TAM × CAN SERVE = SAM × YEAR-1 = YAM
+// Split into two deliberate rows so the funnel never breaks at a width-driven
+// point. TAM is restated as the hinge, so each row reads as its own equation:
+//   Row 1:  BASE × WHERE × WHAT FOR × WHO BUYS = TAM
+//   Row 2:  TAM  × CAN SERVE = SAM × YEAR-1 = YAM
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type EquationTerm =
@@ -58,7 +61,7 @@ const OUTPUT_UNDERLINE: Record<"tam" | "sam" | "yam", string> = {
 
 function Operator({ char }: { char: "×" | "=" }) {
   return (
-    <span aria-hidden className="select-none px-1 pt-[1.35rem] text-lg text-ink-faint">
+    <span aria-hidden className="select-none pt-[1.35rem] text-center text-lg text-ink-faint">
       {char}
     </span>
   );
@@ -72,7 +75,6 @@ function Term({
   baseline,
   children,
   controls,
-  wide,
 }: {
   label: string;
   highlighted: boolean;
@@ -81,13 +83,12 @@ function Term({
   baseline?: React.ReactNode;
   children: React.ReactNode; // the value
   controls?: React.ReactNode; // lever chips / slider under the term
-  wide?: boolean;
 }) {
   return (
     <div
       className={`flex min-w-0 flex-col rounded-lg px-1.5 py-1 transition-colors ${
         source ? "bg-accent-wash/70" : ""
-      } ${wide ? "max-w-[15rem]" : ""}`}
+      }`}
     >
       <span
         className={`whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.14em] transition-colors ${
@@ -164,21 +165,23 @@ export default function EquationStrip({ ledger, state, dispatch, highlightTerm }
 
   function leverChips(dimension: Dimension) {
     return (
-      <FilterGroup
-        dimension={dimension}
-        compact
-        showLabel={false}
-        selected={
-          current[
-            dimension === "geography"
-              ? "geographies"
-              : dimension === "segment"
-                ? "segments"
-                : "customerTypes"
-          ]
-        }
-        onToggle={(value) => dispatch({ type: "toggle", dimension, value })}
-      />
+      <div className="w-52">
+        <FilterGroup
+          dimension={dimension}
+          compact
+          showLabel={false}
+          selected={
+            current[
+              dimension === "geography"
+                ? "geographies"
+                : dimension === "segment"
+                  ? "segments"
+                  : "customerTypes"
+            ]
+          }
+          onToggle={(value) => dispatch({ type: "toggle", dimension, value })}
+        />
+      </div>
     );
   }
 
@@ -203,121 +206,12 @@ export default function EquationStrip({ ledger, state, dispatch, highlightTerm }
 
   return (
     <section className="card mt-6 rounded-xl px-5 py-4">
-      <div className="flex flex-wrap items-start gap-y-4">
-        <div className="flex items-start">
-        <Term label="Market base" highlighted={hi("base")} source={src("base")}>
-          {formatEUR(tamBase.value)}
-        </Term>
-        </div>
-
-        <div className="flex items-start">
-        <Operator char="×" />
-        <Term
-          label="Where"
-          highlighted={hi("geography")}
-          source={src("geography")}
-          baseline={factorBaseline(cur.factors.geography, base.factors.geography)}
-          controls={leverChips("geography")}
-          wide
-        >
-          {factorValue(cur.factors.geography)}
-        </Term>
-        </div>
-
-        <div className="flex items-start">
-        <Operator char="×" />
-        <Term
-          label="What for"
-          highlighted={hi("segment")}
-          source={src("segment")}
-          baseline={factorBaseline(cur.factors.segment, base.factors.segment)}
-          controls={leverChips("segment")}
-          wide
-        >
-          {factorValue(cur.factors.segment)}
-        </Term>
-        </div>
-
-        <div className="flex items-start">
-        <Operator char="×" />
-        <Term
-          label="Who buys"
-          highlighted={hi("customerType")}
-          source={src("customerType")}
-          baseline={factorBaseline(cur.factors.customerType, base.factors.customerType)}
-          controls={leverChips("customerType")}
-          wide
-        >
-          {factorValue(cur.factors.customerType)}
-        </Term>
-        </div>
-
-        <div className="flex items-start">
-        <Operator char="=" />
-        <Term
-          label="Total (TAM)"
-          output="tam"
-          highlighted={hi("tam")}
-          source={false}
-          baseline={outputBaseline(cur.tam, base.tam)}
-        >
-          <AnimatedNumber value={cur.tam} format="eur" />
-        </Term>
-        </div>
-
-        <div className="flex items-start">
-        <Operator char="×" />
-        <Term
-          label="Can serve"
-          highlighted={hi("serviceable")}
-          source={src("serviceable")}
-          baseline={factorBaseline(cur.factors.serviceable, base.factors.serviceable)}
-          controls={assumptionSlider("serviceableFactor")}
-        >
-          {factorValue(cur.factors.serviceable)}
-        </Term>
-        </div>
-
-        <div className="flex items-start">
-        <Operator char="=" />
-        <Term
-          label="Serviceable (SAM)"
-          output="sam"
-          highlighted={hi("sam")}
-          source={false}
-          baseline={outputBaseline(cur.sam, base.sam)}
-        >
-          <AnimatedNumber value={cur.sam} format="eur" />
-        </Term>
-        </div>
-
-        <div className="flex items-start">
-        <Operator char="×" />
-        <Term
-          label="Year-1 share"
-          highlighted={hi("obtainable")}
-          source={src("obtainable")}
-          baseline={factorBaseline(cur.factors.obtainable, base.factors.obtainable)}
-          controls={assumptionSlider("obtainableFactor")}
-        >
-          {factorValue(cur.factors.obtainable)}
-        </Term>
-        </div>
-
-        <div className="flex items-start">
-        <Operator char="=" />
-        <Term
-          label="Year-1 (YAM)"
-          output="yam"
-          highlighted={hi("yam")}
-          source={false}
-          baseline={outputBaseline(cur.yam, base.yam)}
-        >
-          <AnimatedNumber value={cur.yam} format="eur" />
-        </Term>
-        </div>
-
-        <div className="ml-auto flex items-center gap-2 self-start">
+      {/* Header — keeps the status + Reset out of the equation flow. */}
+      <div className="mb-3 flex items-center justify-between gap-2">
+        <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-3">
+          The model, live
+        </span>
+        <div className="flex items-center gap-2">
           {differs ? (
             <span className="rounded-full border border-fact-amber-line bg-warning-wash px-2 py-0.5 text-[11px] text-warning-ink">
               adjusted scenario
@@ -336,6 +230,112 @@ export default function EquationStrip({ ledger, state, dispatch, highlightTerm }
             Reset
           </button>
         </div>
+      </div>
+
+      {/* One 9-column grid shared by both rows so operands, operators and
+          values line up in columns. Row 1 builds the market down to TAM;
+          row 2 restates TAM as the hinge and narrows it to the year-1 number.
+          The two "column-buckets" of each row share widths, so e.g. the
+          "Market base" and "Total (TAM)" values sit in the same column. */}
+      <div
+        className="grid items-start gap-x-1.5 gap-y-2"
+        style={{
+          gridTemplateColumns:
+            "auto auto 13rem auto 13rem auto 13rem auto auto",
+        }}
+      >
+        {/* Row 1 — sizing the market down to TAM. */}
+        <Term label="Market base" highlighted={hi("base")} source={src("base")}>
+          {formatEUR(tamBase.value)}
+        </Term>
+        <Operator char="×" />
+        <Term
+          label="Where"
+          highlighted={hi("geography")}
+          source={src("geography")}
+          baseline={factorBaseline(cur.factors.geography, base.factors.geography)}
+          controls={leverChips("geography")}
+        >
+          {factorValue(cur.factors.geography)}
+        </Term>
+        <Operator char="×" />
+        <Term
+          label="What for"
+          highlighted={hi("segment")}
+          source={src("segment")}
+          baseline={factorBaseline(cur.factors.segment, base.factors.segment)}
+          controls={leverChips("segment")}
+        >
+          {factorValue(cur.factors.segment)}
+        </Term>
+        <Operator char="×" />
+        <Term
+          label="Who buys"
+          highlighted={hi("customerType")}
+          source={src("customerType")}
+          baseline={factorBaseline(cur.factors.customerType, base.factors.customerType)}
+          controls={leverChips("customerType")}
+        >
+          {factorValue(cur.factors.customerType)}
+        </Term>
+        <Operator char="=" />
+        <Term
+          label="Total (TAM)"
+          output="tam"
+          highlighted={hi("tam")}
+          source={false}
+          baseline={outputBaseline(cur.tam, base.tam)}
+        >
+          <AnimatedNumber value={cur.tam} format="eur" />
+        </Term>
+
+        {/* Divider spanning the full grid width. */}
+        <div className="my-1 border-t border-hairline" style={{ gridColumn: "1 / -1" }} />
+
+        {/* Row 2 — narrowing TAM to the year-1 opportunity. */}
+        <Term label="Total (TAM)" output="tam" highlighted={hi("tam")} source={false}>
+          <AnimatedNumber value={cur.tam} format="eur" />
+        </Term>
+        <Operator char="×" />
+        <Term
+          label="Can serve"
+          highlighted={hi("serviceable")}
+          source={src("serviceable")}
+          baseline={factorBaseline(cur.factors.serviceable, base.factors.serviceable)}
+          controls={assumptionSlider("serviceableFactor")}
+        >
+          {factorValue(cur.factors.serviceable)}
+        </Term>
+        <Operator char="=" />
+        <Term
+          label="Serviceable (SAM)"
+          output="sam"
+          highlighted={hi("sam")}
+          source={false}
+          baseline={outputBaseline(cur.sam, base.sam)}
+        >
+          <AnimatedNumber value={cur.sam} format="eur" />
+        </Term>
+        <Operator char="×" />
+        <Term
+          label="Year-1 share"
+          highlighted={hi("obtainable")}
+          source={src("obtainable")}
+          baseline={factorBaseline(cur.factors.obtainable, base.factors.obtainable)}
+          controls={assumptionSlider("obtainableFactor")}
+        >
+          {factorValue(cur.factors.obtainable)}
+        </Term>
+        <Operator char="=" />
+        <Term
+          label="Year-1 (YAM)"
+          output="yam"
+          highlighted={hi("yam")}
+          source={false}
+          baseline={outputBaseline(cur.yam, base.yam)}
+        >
+          <AnimatedNumber value={cur.yam} format="eur" />
+        </Term>
       </div>
     </section>
   );

@@ -1,0 +1,39 @@
+{
+  "model": "anthropic/claude-opus-4.8",
+  "promptSha256": "0593d3b072103a134375c3d0a8622a9622e6443c3e3a87d236464a2e79b7300b",
+  "messages": [
+    {
+      "role": "system",
+      "content": "THE TEST: Name the artifact that would SETTLE this claim — not inform it,\nsettle it. If a purchasable report, an existing dataset, or a week of expert\ncalls would settle it, the claim is an ERROR: our model of the world is wrong\ntoday and research fixes it. If only time settles it (a market shift that\nhasn't happened, a rival's response, a demand gate that may or may not bind),\nit is a RISK.\n\nGuidance:\n- \"The number is X, not Y\" claims about TODAY's market are errors\n  (market size, shares, definitions, scope mismatches, benchmark misuse).\n- Claims about how the next 12–24 months UNFOLD are risks\n  (substitution pace, foreclosure, construction slips, price responses).\n- Mixed claims: classify by the load-bearing part. If correcting today's\n  number removes most of the expected loss, it is an error.\n- For an ERROR, propose the concrete correction the evidence implies\n  (nodeId, corrected value, band, one-sentence rationale) and 2 targeted\n  research queries (one confirming, one falsifying) with concrete entities.\n- Do NOT propose corrections for risks; their perturbation already expresses\n  the scenario."
+    },
+    {
+      "role": "user",
+      "content": "THE CLAIM:\n{\n \"title\": \"Enterprise growth ships as GPU racks that skip PDUs\",\n \"narrative\": \"The model treats the whole enterprise segment, 29% of the market, as PDU-buying legacy halls on slow refresh cycles. But Synergy says enterprise capacity was flat for years and is only growing now because of GPU infrastructure, and that growth arrives as pre-built GPU racks with in-rack power, not field PDUs. The legacy stock that actually buys PDUs is declining two points a year toward 19% by 2031. Booking all 0.29 as PDU-addressable overstates the Year-1 enterprise number.\",\n \"mechanism\": [\n  {\n   \"step\": \"trigger\",\n   \"text\": \"Synergy: enterprise growth now comes only from GPU capacity\",\n   \"refs\": [\n    \"digest:seg-mix#c20\",\n    \"digest:seg-mix#c2\"\n   ]\n  },\n  {\n   \"step\": \"propagation\",\n   \"text\": \"GPU racks ship pre-built with power shelves, skipping PDUs; legacy PDU stock falls to 19% by 2031\",\n   \"refs\": [\n    \"digest:seg-mix#c22\",\n    \"digest:seg-mix#c5\"\n   ]\n  },\n  {\n   \"step\": \"model-impact\",\n   \"text\": \"Counting all 0.29 as PDU-addressable overstates the sellable Year-1 slice\",\n   \"refs\": [\n    \"ledger:seg.enterprise\",\n    \"digest:seg-mix#c3\"\n   ]\n  }\n ],\n \"falsifier\": \"Enterprise refresh data showing rack PDUs attached to new AI GPU deployments at rates like general IT racks.\",\n \"category\": \"model-structure\",\n \"evidence\": [\n  {\n   \"title\": \"DGX SuperPOD B300 AC Power Reference Architecture\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"NVIDIA\",\n   \"date\": \"2025-10-30\",\n   \"excerpt\": \"This Reference Architecture is focused on traditional PDU and AC powered EIA racks... Figure 2 shows 72 x NVIDIA DGX B300 PS systems in standard racks each with three (3) 2U rack PDUs for maximum redundancy. DGX SuperPOD with DGX B300 systems is also available for more dense DB Busbar solutions as well.\",\n   \"url\": \"https://docs.nvidia.com/dgx-superpod/reference-architecture/scalable-infrastructure-b300-xdr/latest/dgx-superpod-architecture.html\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"The World's Total Data Center Capacity is Shifting Rapidly to Hyperscale Operators\",\n   \"sourceType\": \"industry-report\",\n   \"publisher\": \"Synergy Research Group\",\n   \"date\": \"2025-06-24\",\n   \"excerpt\": \"After a sustained period of essentially no growth, on-premise data center capacity is receiving something of a boost thanks to GenAI applications and GPU infrastructure. Nonetheless, on-premise share of the total will drop.\",\n   \"url\": \"https://www.srgresearch.com/articles/the-worlds-total-data-center-capacity-is-shifting-rapidly-to-hyperscale-operators\",\n   \"attached\": true\n  },\n  {\n   \"title\": \"Data Center Rack PDU Market Report 2033\",\n   \"sourceType\": \"analyst-estimate\",\n   \"publisher\": \"Grand View Research\",\n   \"date\": null,\n   \"excerpt\": \"The growth of high-performance computing (HPC), artificial intelligence (AI), and GPU-intensive workloads is driving demand for data center rack power distribution unit market.\",\n   \"url\": \"https://www.grandviewresearch.com/industry-analysis/data-center-rack-power-distribution-unit-pdu-market\",\n   \"attached\": true\n  }\n ]\n}\n\nTHE LEDGER FACTS IT TARGETS (current values, derivations, bands):\n[\n {\n  \"id\": \"seg.enterprise\",\n  \"label\": \"Enterprise\",\n  \"kind\": \"estimated\",\n  \"value\": 0.29,\n  \"unit\": \"ratio\",\n  \"confidence\": \"inferred\",\n  \"maturity\": \"single-source\",\n  \"dimension\": \"segment\",\n  \"dimensionValue\": \"enterprise\",\n  \"sensitivityRange\": null,\n  \"funnelActive\": true,\n  \"derivation\": {\n   \"method\": \"Capacity-split rescaling\",\n   \"expression\": \"Synergy end-2025 enterprise on-premise 32% × 0.91 = 0.29\"\n  },\n  \"provenance\": {\n   \"rationale\": \"Single publisher's series (declining 37→32% through 2025); on-prem PDU refresh demand may lag capacity share → inferred.\"\n  },\n  \"evidence\": [\n   {\n    \"title\": \"Hyperscale operators to account for 67% of all data center capacity by 2031\",\n    \"sourceType\": \"industry-report\",\n    \"publisher\": \"Synergy Research Group\",\n    \"date\": \"2026\",\n    \"excerpt\": \"That leaves enterprise on-premise data centers with just 32% of the total — down from 56% in 2018, heading to 19% by 2031.\",\n    \"attached\": true\n   }\n  ]\n }\n]\n\nEmit JSON: { resolution: \"error\"|\"risk\", settleTest, proposedCorrection: {nodeId, value, low, high, rationale} or null, researchQueries: [{query, kind}] ([] for risks) }"
+    }
+  ],
+  "content": "{\"resolution\":\"error\",\"settleTest\":\"NVIDIA's own DGX SuperPOD B300 Reference Architecture (dated 2025-10-30) shows the flagship GPU deployment shipping in standard EIA racks with three 2U rack PDUs each — a purchasable/published artifact that directly settles whether GPU racks skip PDUs today. Combined with the Grand View PDU market report attributing growth to AI/GPU workloads, the load-bearing premise ('GPU growth arrives PDU-less') is falsified now, not over time.\",\"proposedCorrection\":{\"nodeId\":\"seg.enterprise\",\"value\":0.29,\"low\":0.24,\"high\":0.29,\"rationale\":\"The claim's mechanism (GPU racks skip PDUs) is contradicted by NVIDIA's B300 reference architecture using rack PDUs, so the full 0.29 remains defensible as PDU-addressable; only a modest downside band reflects residual busbar/DB-mix uncertainty rather than the claimed structural haircut.\"},\"researchQueries\":[{\"query\":\"NVIDIA DGX SuperPOD B300 and GB200/GB300 reference architectures: share of deployments using rack PDU AC power vs DC busbar power shelves\",\"kind\":\"falsifying\"},{\"query\":\"Grand View / Omdia rack PDU market reports quantifying AI/GPU-driven enterprise on-premise rack PDU attach rates 2024-2026\",\"kind\":\"confirming\"}]}",
+  "usage": {
+    "prompt_tokens": 2947,
+    "completion_tokens": 499,
+    "total_tokens": 3446,
+    "cost": 0.02721,
+    "is_byok": false,
+    "prompt_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "audio_tokens": 0,
+      "video_tokens": 0
+    },
+    "cost_details": {
+      "upstream_inference_cost": 0.02721,
+      "upstream_inference_prompt_cost": 0.014735,
+      "upstream_inference_completions_cost": 0.012475
+    },
+    "completion_tokens_details": {
+      "reasoning_tokens": 0,
+      "image_tokens": 0,
+      "audio_tokens": 0
+    }
+  },
+  "ts": "2026-07-08T18:17:13.843Z"
+}

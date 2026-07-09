@@ -1,0 +1,26 @@
+{
+  "inputsHash": "7efa0ab50f766417a84564e707aa0baf6563a9376491c77914243371f2eb9789",
+  "generatedAt": "2026-07-08T21:34:54.553Z",
+  "data": {
+    "specificity": {
+      "score": 4,
+      "note": "Names the exact node (tamBase), the exact inserted number (30%), the sourced constraints (NA 38% Grand View, APAC 38.2% MarketIntelo, 42.3% DataIntelo), the corrected residual (20–23%), and a quantified perturbation (scale 0.77). Actors, instruments, and even the specific reports to buy (IndexBox EU + world pair) are named."
+    },
+    "nonObviousness": {
+      "score": 3,
+      "note": "This is not 'a band edge might be true' — the whyMissable field explains the surface actively hides it: the '30% [est.; NA = 38% per same source]' notation reads as sourced, and the constraining APAC datapoint sits in a different publisher the model never joined against. Docked one point because the bracketed 'est.' is an explicit tell a careful ledger reader could have flagged."
+    },
+    "mechanismDepth": {
+      "score": 4,
+      "note": "Each of the three steps is referenced (digest:tam-base#c1, digest:tam-global-crosscheck#c7, ledger:tamBase) and independently plausible: shares must sum to 100%, so NA+APAC ≈ 76% arithmetically caps Europe. The one hostile question — are the two publishers' category scopes additive? — is pre-emptively named in the likelihood rationale rather than hand-waved."
+    },
+    "evidenceQuality": {
+      "score": 3,
+      "note": "Four independent sources corroborate the constraining premise (NA 38%, APAC 38.2%/42.3%/largest), with attached excerpts and a stated falsifier. Falls short of 4 because no source directly states a Europe share — the ≤24% is an inference vulnerable to the acknowledged scope mismatch, and the Mordor excerpt is dated 2019."
+    },
+    "decisionRelevance": {
+      "score": 3,
+      "note": "A 23% directional cut to tamBase propagating to SAM/YAM materially changes the sizing narrative, and the mitigations are executable this quarter (buy the IndexBox pair, rebuild bottom-up) with two concrete monitorable indicators. Not a 4 because it primarily corrects the model rather than resequencing operational spend or go-to-market in the next two quarters."
+    }
+  }
+}
