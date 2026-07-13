@@ -17,7 +17,8 @@ export type WorkspaceTab =
   | "refine"
   | "changes"
   | "dashboard2"
-  | "risks2";
+  | "risks2"
+  | "next";
 
 interface Props {
   active: WorkspaceTab;
@@ -27,7 +28,8 @@ interface Props {
 
 // The demo walks the C-suite through the loop left to right: the original
 // model (1–3), the machine re-researching its own doubts (4), the corrected
-// model (5–6), and what remains once the errors are gone (7).
+// model (5–6), what remains once the errors are gone (7), and what to do
+// about it (8).
 const TABS: { id: WorkspaceTab; label: string; step: number }[] = [
   { id: "factbank", label: "Fact bank", step: 1 },
   { id: "dashboard", label: "Dashboard", step: 2 },
@@ -38,6 +40,7 @@ const TABS: { id: WorkspaceTab; label: string; step: number }[] = [
         { id: "changes" as const, label: "What changed", step: 5 },
         { id: "dashboard2" as const, label: "New dashboard", step: 6 },
         { id: "risks2" as const, label: "Remaining risks", step: 7 },
+        { id: "next" as const, label: "Next steps", step: 8 },
       ]
     : []),
 ];

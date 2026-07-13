@@ -1,0 +1,103 @@
+{
+  "id": "delphi-price-synthesis",
+  "memo": "delphi",
+  "query": "Which purchasable market research reports cover the European or global data-center rack PDU (power distribution unit) market as of 2026? For each: publisher, exact report title, listed single-user license price in USD or EUR, geographic scope (global / Europe / Germany), whether it breaks out intelligent vs basic PDUs, and publication date. Include IndexBox, Mordor Intelligence, Grand View Research, MarketsandMarkets, and any Omdia or Dell'Oro coverage. Only reports that can actually be bought today; cite the store pages.",
+  "fetchedAt": "2026-07-13T21:46:40.834Z",
+  "engine": "perplexity",
+  "model": "sonar-pro",
+  "answer": "Below are the **buyable** reports I could verify on store pages for the **European or global data-center rack PDU market** as of now. I included the publishers you requested and only kept items that are explicitly sold on a storefront or report page; where a store page did not expose a price in the search snippet, I marked the price as *not visible in snippet* rather than guessing.\n\n| Publisher | Exact report title | Single-user license price | Geographic scope | Intelligent vs basic PDU breakout? | Publication date |\n|---|---|---:|---|---|---|\n| **IndexBox** | **Europe Intelligent Rack PDUs Market 2026 Analysis and Forecast to 2035** | *Not visible in snippet* | **Europe** | **Yes** — “Intelligent Rack PDUs” only[5] | 2026 base-year report; exact release date not shown in snippet[5] |\n| **Mordor Intelligence** | **Data Center Rack Power Distribution Unit (PDU) Market** | *Not visible in snippet* | **Global**[2] | **No visible basic/intelligent split** in the snippet[2] | 2026 market page / forecast period 2026–2031[2] |\n| **Grand View Research** | **Data Center Rack Power Distribution Unit Market** | *Not visible in snippet* | **Global**; Europe discussed in the page text[1] | **Yes** — “intelligent segment,” with metered and switched subsegments[1] | 2026 page / forecast content through 2033[1] |\n| **MarketsandMarkets** | **Data Center PDU Market by Product Level (Rack PDU, Floor PDU), Phase Type (Single-Phase, Three-Phase), Workload Type (AI Workload, General-Purpose IT Workload), End User (Hyperscale, Colocation, Enterprise) - Global Forecast to 2032** | *Not visible in snippet* | **Global**[12] | **No** — the visible breakdown is by product level, phase type, workload type, and end user, not intelligent vs basic PDU[12] | 2026 market value cited; exact report publication date not shown in snippet[12] |\n| **ResearchAndMarkets** | **Data Center Rack Power Distribution Unit Market - Global Industry Size, Share, Trends, Opportunity, and Forecast, 2021-2031** | *Not visible in snippet* | **Global**[13] | **No visible basic/intelligent split** in the snippet[13] | Added to offering on Feb. 26, 2026[13] |\n| **ResearchAndMarkets** | **Data Center Rack Pdu Market 2024-2028** | *Not visible in snippet* | **Global**[14] | **No visible basic/intelligent split** in the snippet[14] | 2024–2028 report; exact publication date not shown in snippet[14] |\n\nA few important notes:\n\n- I **could not verify a purchasable Omdia report** for the rack PDU market from the provided results, so I’m not listing one.\n- I **could not verify a purchasable Dell’Oro report** specifically on rack PDUs from the provided results, so I’m not listing one.\n- I also **did not find a visible single-user license price** in the snippets for the verified store pages above, so I have left the price column blank rather than inventing it.\n- The **IndexBox Europe** item is the clearest match to your “Europe/Germany/global” scope requirement, but in the visible snippet it is **Europe-only** and focused on **intelligent rack PDUs**[5].\n\nIf you want, I can do a second pass focused specifically on **price extraction** for each store page and build a tighter buy-only shortlist with only reports whose **single-user license price is visible in the page snippet**.",
+  "citations": [
+    "https://www.grandviewresearch.com/industry-analysis/data-center-rack-power-distribution-unit-pdu-market",
+    "https://www.mordorintelligence.com/industry-reports/data-center-rack-pdu-market",
+    "https://www.marketgrowthreports.com/market-reports/data-center-rack-power-distribution-unit-pdu-market-123837",
+    "https://www.emergenresearch.com/industry-report/rack-intelligent-power-distribution-unit-market",
+    "https://www.indexbox.io/store/europe-intelligent-rack-pdus-market-analysis-forecast-size-trends-and-insights/",
+    "https://www.mordorintelligence.com/industry-reports/europe-data-center-rack-market",
+    "https://www.datainsightsmarket.com/reports/data-center-rack-pdu-167774",
+    "https://www.kbvresearch.com/news/data-center-rack-power-distribution-unit-market/",
+    "https://dataintelo.com/report/data-center-rack-power-distribution-unit-pdu-market",
+    "https://www.technavio.com/report/data-center-rack-pdu-market-industry-analysis",
+    "https://www.fortunebusinessinsights.com/data-center-rack-market-108475",
+    "https://www.marketsandmarkets.com/PressReleases/data-center-pdu.asp",
+    "https://www.globenewswire.com/news-release/2026/02/26/3245383/28124/en/3-83-Bn-Data-Center-Rack-Power-Distribution-Unit-Market-Global-Industry-Trends-Opportunities-and-Forecasts-2021-2031.html",
+    "https://www.researchandmarkets.com/reports/5005547/data-center-rack-pdu-market-2024-2028",
+    "https://www.linkedin.com/pulse/market-forecasting-change-global-data-center-rack-power-distribution-dyove"
+  ],
+  "searchResults": [
+    {
+      "title": "Data Center Rack Power Distribution Unit Market (2026",
+      "url": "https://www.grandviewresearch.com/industry-analysis/data-center-rack-power-distribution-unit-pdu-market",
+      "date": null
+    },
+    {
+      "title": "Data Center Rack Power Distribution Unit (PDU) Market ...",
+      "url": "https://www.mordorintelligence.com/industry-reports/data-center-rack-pdu-market",
+      "date": "2026-02-27"
+    },
+    {
+      "title": "Data Center Rack Power Distribution Unit (PDU) Market Size ...",
+      "url": "https://www.marketgrowthreports.com/market-reports/data-center-rack-power-distribution-unit-pdu-market-123837",
+      "date": "2026-05-11"
+    },
+    {
+      "title": "Rack & Intelligent Power Distribution Unit Market Size, Share ...",
+      "url": "https://www.emergenresearch.com/industry-report/rack-intelligent-power-distribution-unit-market",
+      "date": "2026-06-06"
+    },
+    {
+      "title": "Intelligent Rack PDUs Market in Europe | Report - IndexBox - Prices, Size, Forecast, and Companies",
+      "url": "https://www.indexbox.io/store/europe-intelligent-rack-pdus-market-analysis-forecast-size-trends-and-insights/",
+      "date": "2026-03-04"
+    },
+    {
+      "title": "Europe Data Center Rack Market Size, Growth Trends, Forecast ...",
+      "url": "https://www.mordorintelligence.com/industry-reports/europe-data-center-rack-market",
+      "date": "2026-01-30"
+    },
+    {
+      "title": "Emerging Markets Driving Data Center Rack PDU Growth",
+      "url": "https://www.datainsightsmarket.com/reports/data-center-rack-pdu-167774",
+      "date": "2024-07-04"
+    },
+    {
+      "title": "Data Center Rack Power Distribution Unit (PDU) Market ...",
+      "url": "https://www.kbvresearch.com/news/data-center-rack-power-distribution-unit-market/",
+      "date": "2020-07-10"
+    },
+    {
+      "title": "Data Center Rack Power Distribution Unit (PDU) Market - Dataintelo",
+      "url": "https://dataintelo.com/report/data-center-rack-power-distribution-unit-pdu-market",
+      "date": "2019-07-26"
+    },
+    {
+      "title": "Data Center Rack PDU Market Size 2024-2028",
+      "url": "https://www.technavio.com/report/data-center-rack-pdu-market-industry-analysis",
+      "date": "2024-05-20"
+    },
+    {
+      "title": "Data Center Rack Market Size, Share | Industry Report 2034",
+      "url": "https://www.fortunebusinessinsights.com/data-center-rack-market-108475",
+      "date": null
+    },
+    {
+      "title": "Data Centre PDU Market worth $14.23 billion by 2032",
+      "url": "https://www.marketsandmarkets.com/PressReleases/data-center-pdu.asp",
+      "date": "2026-05-26"
+    },
+    {
+      "title": "$3.83 Bn Data Center Rack Power Distribution Unit Market -",
+      "url": "https://www.globenewswire.com/news-release/2026/02/26/3245383/28124/en/3-83-Bn-Data-Center-Rack-Power-Distribution-Unit-Market-Global-Industry-Trends-Opportunities-and-Forecasts-2021-2031.html",
+      "date": "2026-02-26"
+    },
+    {
+      "title": "Data Center Rack Pdu Market 2024-2028",
+      "url": "https://www.researchandmarkets.com/reports/5005547/data-center-rack-pdu-market-2024-2028",
+      "date": "2025-01-01"
+    },
+    {
+      "title": "Global Data Center Rack Power Distribution Unit (PDU) ...",
+      "url": "https://www.linkedin.com/pulse/market-forecasting-change-global-data-center-rack-power-distribution-dyove",
+      "date": "2026-06-29"
+    }
+  ]
+}

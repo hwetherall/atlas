@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Ledger } from "@/lib/schema";
 import type { Risk } from "@/lib/riskSchema";
+import type { FeaturedIds } from "@/lib/featured";
 import type { ScenarioState } from "@/lib/useScenario";
 import { rankRisks, type RankedRisk } from "@/lib/riskCompute";
 import { informationValue } from "@/lib/voi";
@@ -37,6 +38,10 @@ interface Props {
   // Demo framing: the register renders twice (against the original model and
   // the corrected one); this line gives each pass its narrative context.
   headerNote?: string;
+  // Curated headline subset (lib/featured.ts): featured findings render on
+  // top, the rest fold into a collapsed full register. Omit to render the
+  // classic three-board layout.
+  featured?: FeaturedIds;
 }
 
 const BOARD_COPY = {
@@ -56,7 +61,7 @@ const BOARD_COPY = {
 
 type BoardId = keyof typeof BOARD_COPY;
 
-export default function RiskRegister({ ledger, risks, state, headerNote }: Props) {
+export default function RiskRegister({ ledger, risks, state, headerNote, featured }: Props) {
   const [selectedId, setSelectedId] = useState<string | null>(null);
 
   // Severity = p × |ΔYAM|, engine-computed against the CURRENT scenario.
@@ -90,17 +95,25 @@ export default function RiskRegister({ ledger, risks, state, headerNote }: Props
     return { errors, rocks, corroborated, totalExpectedLoss };
   }, [risks, ranked]);
 
+  // Curated headline subset: featured rows render on top with their true
+  // global ranks; everything else stays in the boards, folded into a
+  // collapsed full register. Without `featured`, rest === ranked (unchanged).
+  const featuredSet = new Set(featured ? [...featured.errors, ...featured.risks] : []);
+  const featuredErrors = featured ? ranked.filter((r) => featuredSet.has(r.risk.id) && r.risk.resolution === "error") : [];
+  const featuredRisks = featured ? ranked.filter((r) => featuredSet.has(r.risk.id) && r.risk.resolution !== "error") : [];
+  const rest = ranked.filter((r) => !featuredSet.has(r.risk.id));
+
   // Errors (reducible — research fixes the model) sit on their own board and
   // feed the refinement loop; the risk boards hold only irreducible risks.
   const boards: { id: BoardId; rows: RankedRisk[] }[] = [
-    { id: "error", rows: ranked.filter((r) => r.risk.resolution === "error") },
+    { id: "error", rows: rest.filter((r) => r.risk.resolution === "error") },
     {
       id: "rock",
-      rows: ranked.filter((r) => r.risk.resolution !== "error" && r.risk.tier === "rock"),
+      rows: rest.filter((r) => r.risk.resolution !== "error" && r.risk.tier === "rock"),
     },
     {
       id: "front-of-mind",
-      rows: ranked.filter(
+      rows: rest.filter(
         (r) => r.risk.resolution !== "error" && r.risk.tier === "front-of-mind",
       ),
     },
@@ -136,61 +149,65 @@ export default function RiskRegister({ ledger, risks, state, headerNote }: Props
         }
       >
         <div className="space-y-8">
-          {boards.map(({ id, rows }) => (
-            <section key={id}>
-              <div className="flex items-baseline gap-3">
-                <h2
-                  className={`text-[10px] font-semibold uppercase tracking-[0.14em] ${
-                    id === "error" ? "text-fact-red" : "text-ink-3"
-                  }`}
-                >
-                  {id === "error" ? "▲" : id === "rock" ? "◆" : "○"} {BOARD_COPY[id].kicker}
-                </h2>
-                <p className="hidden text-xs text-ink-3 sm:block">{BOARD_COPY[id].blurb}</p>
-              </div>
-
-              {/* Column headers — name the three numbers so the row reads on its
-                  own: chance it's real × what it costs = expected loss (ranked). */}
-              <div className="mt-2 flex items-center gap-3 border-b border-hairline px-3 pb-1.5 text-[10px] font-medium uppercase tracking-[0.08em] text-ink-faint">
-                <span className="w-5 shrink-0" aria-hidden />
-                <span className="min-w-0 flex-1">Risk</span>
-                <span
-                  className="w-12 shrink-0 whitespace-nowrap text-right"
-                  title="Likelihood this risk is real and plays out."
-                >
-                  Chance
-                </span>
-                <span
-                  className="w-24 shrink-0 whitespace-nowrap text-right"
-                  title="Change in the Year-1 number (YAM) if the risk lands, at your current levers."
-                >
-                  If it lands
-                </span>
-                <span
-                  className="w-36 shrink-0 whitespace-nowrap text-right"
-                  title="Chance × impact — the expected Year-1 loss. Rows are ranked by this."
-                >
-                  Expected loss
-                </span>
-              </div>
-
-              <ul className="mt-1.5 space-y-1.5">
-                {rows.map((row) => (
-                  <RiskRow
-                    key={row.risk.id}
-                    row={row}
-                    rank={ranked.indexOf(row) + 1}
-                    maxSeverity={maxSeverity}
-                    selected={selectedId === row.risk.id}
-                    condensed={Boolean(selected)}
-                    onSelect={() =>
-                      setSelectedId((cur) => (cur === row.risk.id ? null : row.risk.id))
-                    }
-                  />
-                ))}
-              </ul>
-            </section>
-          ))}
+          {(() => {
+            const sectionProps = {
+              rankOf: (row: RankedRisk) => ranked.indexOf(row) + 1,
+              maxSeverity,
+              selectedId,
+              condensed: Boolean(selected),
+              onSelect: (id: string) => setSelectedId((cur) => (cur === id ? null : id)),
+            };
+            const boardSections = boards
+              .filter(({ rows }) => rows.length > 0)
+              .map(({ id, rows }) => (
+                <BoardSection
+                  key={id}
+                  glyph={id === "error" ? "▲" : id === "rock" ? "◆" : "○"}
+                  toneClass={id === "error" ? "text-fact-red" : "text-ink-3"}
+                  kicker={BOARD_COPY[id].kicker}
+                  blurb={BOARD_COPY[id].blurb}
+                  rows={rows}
+                  {...sectionProps}
+                />
+              ));
+            if (!featured) return boardSections;
+            return (
+              <>
+                <BoardSection
+                  glyph="▲"
+                  toneClass="text-fact-red"
+                  kicker="Headline errors"
+                  blurb="What our own numbers didn't survive — each carries a proposed fix."
+                  rows={featuredErrors}
+                  {...sectionProps}
+                />
+                <BoardSection
+                  glyph="◆"
+                  toneClass="text-ink-3"
+                  kicker="Headline risks"
+                  blurb="What could still kill the number — research won't settle these, only time."
+                  rows={featuredRisks}
+                  {...sectionProps}
+                />
+                {/* The rest of the register — the proof of work, one click away. */}
+                <details className="group">
+                  <summary className="cursor-pointer list-none rounded-lg border border-hairline bg-card px-3 py-2.5 transition-colors hover:border-hairline-strong">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-2">
+                      <span aria-hidden className="mr-1.5 inline-block transition-transform group-open:rotate-90">
+                        ▸
+                      </span>
+                      Full register — all {risks.length} findings
+                    </span>
+                    <span className="ml-2 text-xs text-ink-3">
+                      {rest.length} more · Σ expected YAM at risk {formatEUR(stats.totalExpectedLoss)} —
+                      every finding, ranked by the engine
+                    </span>
+                  </summary>
+                  <div className="mt-6 space-y-8">{boardSections}</div>
+                </details>
+              </>
+            );
+          })()}
         </div>
 
         <AnimatePresence mode="popLayout">
@@ -215,6 +232,83 @@ export default function RiskRegister({ ledger, risks, state, headerNote }: Props
         </AnimatePresence>
       </div>
     </div>
+  );
+}
+
+// One board: kicker + blurb, the three-number column header, and its rows.
+// Shared by the classic boards, the featured sections and the collapsed
+// full register so they can't drift apart.
+function BoardSection({
+  glyph,
+  toneClass,
+  kicker,
+  blurb,
+  rows,
+  rankOf,
+  maxSeverity,
+  selectedId,
+  condensed,
+  onSelect,
+}: {
+  glyph: string;
+  toneClass: string;
+  kicker: string;
+  blurb: string;
+  rows: RankedRisk[];
+  rankOf: (row: RankedRisk) => number;
+  maxSeverity: number;
+  selectedId: string | null;
+  condensed: boolean;
+  onSelect: (id: string) => void;
+}) {
+  return (
+    <section>
+      <div className="flex items-baseline gap-3">
+        <h2 className={`text-[10px] font-semibold uppercase tracking-[0.14em] ${toneClass}`}>
+          {glyph} {kicker}
+        </h2>
+        <p className="hidden text-xs text-ink-3 sm:block">{blurb}</p>
+      </div>
+
+      {/* Column headers — name the three numbers so the row reads on its
+          own: chance it's real × what it costs = expected loss (ranked). */}
+      <div className="mt-2 flex items-center gap-3 border-b border-hairline px-3 pb-1.5 text-[10px] font-medium uppercase tracking-[0.08em] text-ink-faint">
+        <span className="w-5 shrink-0" aria-hidden />
+        <span className="min-w-0 flex-1">Risk</span>
+        <span
+          className="w-12 shrink-0 whitespace-nowrap text-right"
+          title="Likelihood this risk is real and plays out."
+        >
+          Chance
+        </span>
+        <span
+          className="w-24 shrink-0 whitespace-nowrap text-right"
+          title="Change in the Year-1 number (YAM) if the risk lands, at your current levers."
+        >
+          If it lands
+        </span>
+        <span
+          className="w-36 shrink-0 whitespace-nowrap text-right"
+          title="Chance × impact — the expected Year-1 loss. Rows are ranked by this."
+        >
+          Expected loss
+        </span>
+      </div>
+
+      <ul className="mt-1.5 space-y-1.5">
+        {rows.map((row) => (
+          <RiskRow
+            key={row.risk.id}
+            row={row}
+            rank={rankOf(row)}
+            maxSeverity={maxSeverity}
+            selected={selectedId === row.risk.id}
+            condensed={condensed}
+            onSelect={() => onSelect(row.risk.id)}
+          />
+        ))}
+      </ul>
+    </section>
   );
 }
 

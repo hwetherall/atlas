@@ -7,6 +7,7 @@ import { ledger } from "@/lib/ledger"; // rev 2 (corrected) — self-validates a
 import { ledgerRev1 } from "@/lib/ledgerRev1"; // rev 1 (frozen) — the demo's "before" world
 import { risks } from "@/lib/risks"; // cycle-2 register (against rev 2)
 import { risksCycle1 } from "@/lib/risksCycle1"; // cycle-1 register (against rev 1, frozen)
+import { FEATURED } from "@/lib/featured"; // curated headline findings per register pass
 import { useScenario } from "@/lib/useScenario";
 import IntakeWizard from "@/components/IntakeWizard";
 import ThinkingSequence from "@/components/ThinkingSequence";
@@ -16,6 +17,7 @@ import Dashboard from "@/components/Dashboard";
 import RiskRegister from "@/components/RiskRegister";
 import RefinementPass from "@/components/RefinementPass";
 import CorrectedModel from "@/components/CorrectedModel";
+import NextSteps from "@/components/NextSteps";
 import WorkspaceNav, { type WorkspaceTab } from "@/components/WorkspaceNav";
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -28,6 +30,7 @@ import WorkspaceNav, { type WorkspaceTab } from "@/components/WorkspaceNav";
 //   5 What changed        the corrected model, with why (rev 1 → rev 2)
 //   6 New dashboard       the numbers after correction (rev 2)
 //   7 Remaining risks     the register against the corrected model
+//   8 Next steps          the mitigate hand-off: five risks, five responses
 // All surfaces stay mounted after first visit (instant tab flips) and share
 // one scenario state, so levers stay in sync across both worlds.
 // ─────────────────────────────────────────────────────────────────────────────
@@ -42,6 +45,7 @@ const WORKSPACE_TABS: WorkspaceTab[] = [
   "changes",
   "dashboard2",
   "risks2",
+  "next",
 ];
 
 const fade = {
@@ -143,6 +147,7 @@ export default function Home() {
                   ledger={ledgerRev1}
                   risks={risksCycle1}
                   state={state}
+                  featured={FEATURED.cycle1}
                   headerNote="First pass, against the original model — most findings are not risks but errors: places where our own numbers don't survive scrutiny."
                 />,
               )}
@@ -159,9 +164,13 @@ export default function Home() {
                   ledger={ledger}
                   risks={risks}
                   state={state}
+                  featured={FEATURED.cycle2}
                   headerNote="Second pass, against the corrected model — total exposure fell from €22.4M to €6.8M. What remains is small-caliber refinement work plus the risks only time can settle."
                 />,
               )}
+
+              {/* 8: the mitigate hand-off — what to do about what remains */}
+              {surface("next", <NextSteps ledger={ledger} state={state} />)}
             </motion.div>
           ) : null}
         </AnimatePresence>
