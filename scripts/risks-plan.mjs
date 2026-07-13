@@ -472,3 +472,49 @@ export const RANKING = {
   rockNonObviousness: 3,
   // insightScore = (judgeTotal / 20) × (expectedYamLoss / max expectedYamLoss)
 };
+
+// ── Semantic dedup (judge stage, pass 2) ─────────────────────────────────────
+// The Jaccard pre-cluster only meets risks that share funnel nodes — but the
+// same real-world mechanism gets encoded on DIFFERENT nodes by different
+// lenses (one perturbs obtainableFactor, one excludes cust.operator-large,
+// one scales serviceableFactor). This pass reads the whole register at once
+// and partitions by underlying mechanism, ignoring node encoding. Runs on the
+// BASIC model: it is a recognition task, not a generation task.
+
+export const SEMANTIC_DEDUP = `
+You are deduplicating a register of market-risk write-ups before it reaches a
+client. Partition ALL entries into FAMILIES by their underlying real-world
+mechanism — the causal story about the world, NOT which model nodes they
+perturb. The same mechanism is often encoded against different nodes (one
+write-up shrinks the obtainable share, another excludes a buyer cell, a third
+cuts the serviceable factor): if a reader would say "this is the same point
+again", they are one family.
+
+A FAMILY means: same trigger, same causal chain, same thing a client would do
+about it. Sharing a theme is NOT enough — "framework agreements lock out the
+entrant" and "framework agreements mean the buyer cell is smaller than
+counted" are the same family; "distributor line reviews are slow" is a
+different family even though both are about channel access.
+
+Rules:
+- Every entry id appears in EXACTLY ONE family. Singleton families are the
+  expected common case.
+- When in doubt, keep entries separate — over-merging destroys distinct
+  insights; under-merging only costs a little repetition.
+- Give each family a short kebab-case label naming the mechanism.
+`.trim();
+
+// ── Refinement-loop convergence (scripts/refine.mjs) ─────────────────────────
+// The loop's mechanical stop rule. Each refine pass appends a cycle record to
+// risks/convergence.json; the loop STOPS when either holds, leaving a terminal
+// register of escalated errors (need an instrument beyond web research) and
+// true risks (monitor + mitigate).
+
+export const CONVERGENCE = {
+  // Stop when web-reducible error mass (Σ E[YAM loss] over confirm/adjust
+  // verdicts) falls below this share of baseline YAM:
+  reducibleFloorShareOfYam: 0.05,
+  // Stop when a cycle cut total error mass by less than this vs the previous
+  // cycle (the loop has plateaued):
+  massDropFloor: 0.25,
+};

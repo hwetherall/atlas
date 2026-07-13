@@ -19,8 +19,9 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { spawnSync } from "node:child_process";
 import { jsonSchemaOf, refineVerdictSchema } from "./risks-schemas.mjs";
-import { STYLE } from "./risks-plan.mjs";
+import { CONVERGENCE, STYLE } from "./risks-plan.mjs";
 
 const ROOT = path.dirname(path.dirname(fileURLToPath(import.meta.url)));
 const RISKS_DIR = path.join(ROOT, "risks");
@@ -125,6 +126,47 @@ async function chatJson(cfg, label, messages, schema, schemaName) {
 
 const eur = (x) => `${x < 0 ? "−" : "+"}€${Math.abs(x).toFixed(2)}M`;
 
+function gitLedgerRev() {
+  const proc = spawnSync("git", ["log", "-1", "--format=%H", "--", "lib/ledger.ts"], { cwd: ROOT, encoding: "utf8" });
+  return proc.status === 0 ? proc.stdout.trim() : null;
+}
+
+// ── Convergence — the loop's mechanical stop rule ─────────────────────────────
+// Appends this pass's record to risks/convergence.json and evaluates the
+// CONVERGENCE thresholds (scripts/risks-plan.mjs). A cycle is keyed by ledger
+// revision: re-running refine on the same ledger replaces its record instead
+// of appending a phantom cycle.
+
+function appendConvergence(record) {
+  const file = path.join(RISKS_DIR, "convergence.json");
+  const history = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, "utf8")) : { cycles: [] };
+  const idx = history.cycles.findIndex((c) => c.ledgerRev !== null && c.ledgerRev === record.ledgerRev);
+  const at = idx === -1 ? history.cycles.length : idx;
+  const prev = at > 0 ? history.cycles[at - 1] : null;
+
+  const stopReasons = [];
+  if (record.baselineYam !== null && record.reducibleMass <= CONVERGENCE.reducibleFloorShareOfYam * record.baselineYam) {
+    stopReasons.push(
+      `web-reducible error mass €${record.reducibleMass.toFixed(2)}M ≤ ${Math.round(CONVERGENCE.reducibleFloorShareOfYam * 100)}% of baseline YAM €${record.baselineYam.toFixed(2)}M`,
+    );
+  }
+  if (prev && prev.errorMass > 0 && (prev.errorMass - record.errorMass) / prev.errorMass < CONVERGENCE.massDropFloor) {
+    stopReasons.push(
+      `error mass plateaued: €${prev.errorMass.toFixed(2)}M → €${record.errorMass.toFixed(2)}M (drop < ${Math.round(CONVERGENCE.massDropFloor * 100)}%)`,
+    );
+  }
+
+  const full = {
+    cycle: at + 1,
+    ...record,
+    stopReasons,
+    recommendation: stopReasons.length > 0 ? "stop" : "continue",
+  };
+  history.cycles[at] = full;
+  fs.writeFileSync(file, JSON.stringify(history, null, 2) + "\n");
+  return { record: full, prev };
+}
+
 async function main() {
   const cfg = readEnv();
   const classified = JSON.parse(
@@ -184,8 +226,13 @@ async function main() {
           content:
             "You adjudicate a proposed correction to one fact in a market model, against fresh search results. " +
             "Verdict: 'confirm' = evidence supports the proposed value (you may fine-tune it); 'adjust' = the fact IS wrong " +
-            "but the right value differs from the proposal — give it; 'refute' = the current ledger value stands. " +
-            "Every evidence item needs a verbatim excerpt. Final value/band must follow from cited evidence, not the proposal's authority.\n\n" +
+            "but the right value differs from the proposal — give it; 'refute' = the evidence positively supports the current " +
+            "ledger value — it stands; 'unsettleable' = NO web artifact settles the load-bearing quantity: the searches came back " +
+            "silent or off-point AND the quantity is structurally unpublished (paywalled analyst cuts, private tender terms, " +
+            "unmeasured field behavior). Absence of evidence is NOT refutation — when the web cannot decide, say 'unsettleable', " +
+            "name the cheapest instrument that WOULD settle it (commission-report | buy-data | expert-calls | experiment) and " +
+            "state concretely what it must measure. Every evidence item needs a verbatim excerpt. Final value/band must follow " +
+            "from cited evidence, not the proposal's authority.\n\n" +
             STYLE,
         },
         {
@@ -198,7 +245,8 @@ async function main() {
             )}\n\nCURRENT LEDGER FACT:\n${JSON.stringify(node ?? error.targetNodes, null, 1)}\n\n` +
             `PROPOSED CORRECTION:\n${JSON.stringify(error.proposedCorrection, null, 1)}\n\n` +
             `FRESH SEARCH RESULTS:\n${JSON.stringify(raw.queries, null, 1)}\n\n` +
-            `Emit JSON: { verdict, value, low, high, rationale, evidence: [≤3 {title, sourceType, publisher, date, excerpt, url}] }`,
+            `Emit JSON: { verdict, value, low, high, rationale, instrument (unsettleable only, else null), ` +
+            `instrumentNote (unsettleable only, else null), evidence: [≤3 {title, sourceType, publisher, date, excerpt, url}] }`,
         },
       ],
       refineVerdictSchema,
@@ -218,33 +266,95 @@ async function main() {
     console.log(`    ${verdict.verdict}${verdict.value !== null ? ` → ${verdict.value}` : ""}`);
   }
 
-  // 3 — emit the curation doc + machine-readable diffs.
+  // 3 — the terminal split + convergence record. Three buckets:
+  //   corrections (confirm/adjust) → the human curates them into the ledger;
+  //   held (refute)                → the model stood, the error dies;
+  //   escalated (unsettleable)     → beyond web research; needs an instrument
+  //                                  (commission a report, buy data, expert
+  //                                  calls, an experiment). These plus the
+  //                                  time-settled risks ARE the terminal
+  //                                  register.
+  const bucket = (vs) => results.filter((r) => vs.includes(r.verdict.verdict));
+  const mass = (rs) => rs.reduce((s, r) => s + r.expectedYamLoss, 0);
+  const corrections = bucket(["confirm", "adjust"]);
+  const held = bucket(["refute"]);
+  const escalated = bucket(["unsettleable"]);
+
+  const convergence = appendConvergence({
+    date: new Date().toISOString().slice(0, 10),
+    ledgerRev: gitLedgerRev(),
+    baselineYam: payload.baseline?.yam ?? null,
+    errorCount: results.length,
+    errorMass: mass(results),
+    reducibleMass: mass(corrections),
+    escalatedMass: mass(escalated),
+    verdicts: {
+      confirm: bucket(["confirm"]).length,
+      adjust: bucket(["adjust"]).length,
+      refute: held.length,
+      unsettleable: escalated.length,
+    },
+  });
+
   fs.writeFileSync(
     path.join(RISKS_DIR, "refine.json"),
-    JSON.stringify({ generatedAt: new Date().toISOString(), results }, null, 2) + "\n",
+    JSON.stringify(
+      {
+        generatedAt: new Date().toISOString(),
+        cycle: convergence.record.cycle,
+        recommendation: convergence.record.recommendation,
+        results,
+      },
+      null,
+      2,
+    ) + "\n",
   );
 
   const lines = [];
   const push = (...xs) => lines.push(...xs, "");
   push(
-    `# Refinement pass — ${new Date().toISOString().slice(0, 10)}`,
+    `# Refinement pass — cycle ${convergence.record.cycle} · ${new Date().toISOString().slice(0, 10)}`,
     "",
     `${results.length} model errors researched, ranked by expected Year-1 loss. Apply accepted diffs to lib/ledger.ts (values never auto-flow), then re-run \`npm run risks -- --from=context\`.`,
+  );
+  push(
+    `**Loop verdict: ${convergence.record.recommendation.toUpperCase()}** — ${convergence.record.stopReasons.length > 0 ? convergence.record.stopReasons.join("; ") : "web-reducible error mass remains; run another cycle after curation"}.`,
+    "",
+    `Buckets: **${corrections.length} corrections to curate** (${eur(-mass(corrections))}) · **${held.length} held** (model stood) · **${escalated.length} escalated** beyond web research (${eur(-mass(escalated))}).`,
   );
   push(
     `| # | Fact | Current | Suggested | Verdict | E[loss] |`,
     `|---|---|---|---|---|---|`,
     ...results.map((r, i) => {
       const v = r.verdict;
-      const suggested = v.verdict === "refute" ? "keep current" : `${v.value}${v.low !== null ? ` (band ${v.low}–${v.high})` : ""}`;
+      const suggested =
+        v.verdict === "refute"
+          ? "keep current"
+          : v.verdict === "unsettleable"
+            ? `→ ${v.instrument}`
+            : `${v.value}${v.low !== null ? ` (band ${v.low}–${v.high})` : ""}`;
       return `| ${i + 1} | ${r.nodeId} | ${r.currentValue} | ${suggested} | ${v.verdict} | ${eur(-r.expectedYamLoss)} |`;
     }),
   );
+  if (escalated.length > 0) {
+    push(
+      `## Escalated — no web artifact settles these`,
+      "",
+      `The residual the loop cannot reduce. Each names the cheapest instrument that would settle it; with the time-settled risks, this is the terminal register.`,
+      "",
+      `| Fact | Claim | Instrument | What it must measure | E[loss] |`,
+      `|---|---|---|---|---|`,
+      ...escalated.map(
+        (r) =>
+          `| ${r.nodeId} | ${r.title} | ${r.verdict.instrument} | ${(r.verdict.instrumentNote ?? "—").replaceAll("|", "·")} | ${eur(-r.expectedYamLoss)} |`,
+      ),
+    );
+  }
   for (const r of results) {
     push(
       `## ${r.title}`,
       "",
-      `\`${r.riskId}\` · fact \`${r.nodeId}\` · current **${r.currentValue}** · pipeline proposed **${r.proposed?.value ?? "flag only"}** · verdict **${r.verdict.verdict}**${r.verdict.value !== null ? ` → **${r.verdict.value}**${r.verdict.low !== null ? ` (band ${r.verdict.low}–${r.verdict.high})` : ""}` : ""}`,
+      `\`${r.riskId}\` · fact \`${r.nodeId}\` · current **${r.currentValue}** · pipeline proposed **${r.proposed?.value ?? "flag only"}** · verdict **${r.verdict.verdict}**${r.verdict.value !== null ? ` → **${r.verdict.value}**${r.verdict.low !== null ? ` (band ${r.verdict.low}–${r.verdict.high})` : ""}` : ""}${r.verdict.verdict === "unsettleable" ? ` → **${r.verdict.instrument}**${r.verdict.instrumentNote ? ` — ${r.verdict.instrumentNote}` : ""}` : ""}`,
       "",
       r.verdict.rationale,
       "",
@@ -258,7 +368,12 @@ async function main() {
     );
   }
   fs.writeFileSync(path.join(RISKS_DIR, "refine.review.md"), lines.join("\n"));
-  console.log(`✓ risks/refine.review.md · risks/refine.json (${results.length} verdicts)`);
+  console.log(`✓ risks/refine.review.md · risks/refine.json (${results.length} verdicts) · risks/convergence.json`);
+  console.log(
+    `Loop verdict: ${convergence.record.recommendation.toUpperCase()} — ` +
+      `${corrections.length} corrections (${eur(-mass(corrections))}) · ${held.length} held · ` +
+      `${escalated.length} escalated beyond web research (${eur(-mass(escalated))})`,
+  );
 }
 
 main().catch((err) => {

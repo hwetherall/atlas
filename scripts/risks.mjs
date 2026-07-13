@@ -34,6 +34,7 @@ import {
   REJECTED_PATTERNS,
   RUBRIC,
   SEED,
+  SEMANTIC_DEDUP,
   STYLE,
   CLASSIFY_TEST,
 } from "./risks-plan.mjs";
@@ -41,6 +42,7 @@ import {
   adjudicationSchema,
   classifySchema,
   digestSchema,
+  familyPartitionSchema,
   huntBatchSchema,
   hypothesisSchema,
   jsonSchemaOf,
@@ -835,7 +837,7 @@ async function runJudge(cfg) {
     scored.push({ ...risk, judge });
   }
 
-  // Dedup: deterministic pre-cluster → one merge call per cluster.
+  // Dedup pass 1: deterministic pre-cluster → one merge call per cluster.
   const clusters = [];
   const assigned = new Set();
   for (const a of scored) {
@@ -862,62 +864,153 @@ async function runJudge(cfg) {
       continue;
     }
     console.log(`  → dedup cluster (${cluster.length}): ${cluster.map((r) => r.riskId).join(", ")}`);
-    const merge = await chatJson(
-      cfg,
-      "judge",
-      `merge-${cluster[0].riskId}`,
-      cfg.SMART,
-      [
-        {
-          role: "system",
-          content:
-            "These risk write-ups share funnel target nodes, which does NOT make them the same risk — a funnel is coarse, so " +
-            "mechanistically distinct risks (a certification clock, a grid-connection queue, a distributor line-review cycle) can all " +
-            "compile to the same node. PARTITION the cluster into groups of TRUE duplicates: same underlying mechanism, same causal " +
-            "story, such that presenting both to a client would read as repetition. Distinct risks come back as singleton groups " +
-            "(absorbs: []). For a genuine duplicate group, pick the best exemplar (sharpest mechanism, best evidence) as keepId and " +
-            "fold the absorbed write-ups' UNIQUE early-warning indicators into it. Over-merging destroys distinct insights — when in " +
-            "doubt, keep them separate.",
-        },
-        {
-          role: "user",
-          content: `CLUSTER:\n${JSON.stringify(
-            cluster.map((r) => ({ riskId: r.riskId, title: r.title, narrative: r.narrative, mechanism: r.mechanism, indicators: r.indicators, judgeTotal: r.judge.total })),
+    survivors.push(...(await mergeCluster(cfg, cluster, kills, `merge-${cluster[0].riskId}`)));
+  }
+
+  // Dedup pass 2 — semantic: the Jaccard gate only meets risks that share
+  // funnel nodes, but the same real-world mechanism gets encoded on DIFFERENT
+  // nodes by different lenses (shrink obtainableFactor vs exclude the buyer
+  // cell vs cut serviceableFactor). Partition the whole register by mechanism
+  // (BASIC — a recognition task), then merge each family with the pass-1
+  // machinery.
+  const finalSurvivors = await semanticDedup(cfg, survivors, kills);
+
+  console.log(`  ✓ ${finalSurvivors.length} survive the judge`);
+  writeStage("05-judged", { risks: finalSurvivors, kills }, sha(risks.map((r) => r.riskId)));
+}
+
+/** One merge call over a cluster of suspected duplicates; returns survivors. */
+async function mergeCluster(cfg, cluster, kills, label) {
+  const merge = await chatJson(
+    cfg,
+    "judge",
+    label,
+    cfg.SMART,
+    [
+      {
+        role: "system",
+        content:
+          "These risk write-ups are suspected duplicates, which does NOT make them the same risk — a funnel is coarse, so " +
+          "mechanistically distinct risks (a certification clock, a grid-connection queue, a distributor line-review cycle) can all " +
+          "compile to the same node. PARTITION the cluster into groups of TRUE duplicates: same underlying mechanism, same causal " +
+          "story, such that presenting both to a client would read as repetition. Distinct risks come back as singleton groups " +
+          "(absorbs: []). For a genuine duplicate group, pick the best exemplar (sharpest mechanism, best evidence) as keepId and " +
+          "fold the absorbed write-ups' UNIQUE early-warning indicators into it. Over-merging destroys distinct insights — when in " +
+          "doubt, keep them separate.",
+      },
+      {
+        role: "user",
+        content: `CLUSTER:\n${JSON.stringify(
+          cluster.map((r) => ({ riskId: r.riskId, title: r.title, narrative: r.narrative, mechanism: r.mechanism, indicators: r.indicators, judgeTotal: r.judge.total })),
+          null,
+          1,
+        )}\n\nEvery riskId must appear in exactly one group (as keepId or inside absorbs).\nEmit JSON: { rationale, groups: [{keepId, absorbs: [true-duplicate riskIds, [] if none], foldedIndicators: []}] }`,
+      },
+    ],
+    mergeSchema,
+    "merge",
+    { maxTokens: 8000 },
+  );
+  const inCluster = new Map(cluster.map((r) => [r.riskId, r]));
+  const resolved = new Set();
+  const survivors = [];
+  for (const group of merge.groups) {
+    const keeper = inCluster.get(group.keepId);
+    if (!keeper || resolved.has(keeper.riskId)) continue;
+    resolved.add(keeper.riskId);
+    const seenSignals = new Set(keeper.indicators.map((i) => i.signal));
+    for (const ind of group.foldedIndicators) {
+      if (!seenSignals.has(ind.signal)) keeper.indicators.push(ind);
+    }
+    for (const id of group.absorbs) {
+      const absorbed = inCluster.get(id);
+      if (!absorbed || resolved.has(id) || id === keeper.riskId) continue;
+      resolved.add(id);
+      killInto(kills, "judge", id, absorbed.title, `merged into ${keeper.riskId}: ${merge.rationale.slice(0, 120)}`, { mergedInto: keeper.riskId });
+    }
+    survivors.push(keeper);
+  }
+  // Anything the partition failed to mention survives untouched — losing a
+  // scored risk to a malformed merge is worse than a possible duplicate.
+  for (const r of cluster) {
+    if (!resolved.has(r.riskId)) survivors.push(r);
+  }
+  return survivors;
+}
+
+/** Pass 2: global mechanism-level partition (BASIC) → per-family merges. */
+async function semanticDedup(cfg, survivors, kills) {
+  if (survivors.length < 2) return survivors;
+  console.log(`  → semantic dedup — global partition over ${survivors.length} risks (${cfg.BASIC})`);
+  const partition = await chatJson(
+    cfg,
+    "judge",
+    "semantic-partition",
+    cfg.BASIC,
+    [
+      { role: "system", content: SEMANTIC_DEDUP },
+      {
+        role: "user",
+        content:
+          `THE REGISTER:\n${JSON.stringify(
+            survivors.map((r) => ({
+              riskId: r.riskId,
+              title: r.title,
+              mechanism: r.mechanism.map((m) => m.text).join(" → "),
+              narrative: r.narrative,
+              targetNodes: r.targetNodes,
+            })),
             null,
             1,
-          )}\n\nEvery riskId must appear in exactly one group (as keepId or inside absorbs).\nEmit JSON: { rationale, groups: [{keepId, absorbs: [true-duplicate riskIds, [] if none], foldedIndicators: []}] }`,
-        },
-      ],
-      mergeSchema,
-      "merge",
-      { maxTokens: 8000 },
-    );
-    const inCluster = new Map(cluster.map((r) => [r.riskId, r]));
-    const resolved = new Set();
-    for (const group of merge.groups) {
-      const keeper = inCluster.get(group.keepId);
-      if (!keeper || resolved.has(keeper.riskId)) continue;
-      resolved.add(keeper.riskId);
-      const seenSignals = new Set(keeper.indicators.map((i) => i.signal));
-      for (const ind of group.foldedIndicators) {
-        if (!seenSignals.has(ind.signal)) keeper.indicators.push(ind);
-      }
-      for (const id of group.absorbs) {
-        const absorbed = inCluster.get(id);
-        if (!absorbed || resolved.has(id) || id === keeper.riskId) continue;
-        resolved.add(id);
-        killInto(kills, "judge", id, absorbed.title, `merged into ${keeper.riskId}: ${merge.rationale.slice(0, 120)}`, { mergedInto: keeper.riskId });
-      }
-      survivors.push(keeper);
+          )}\n\n` +
+          `Emit JSON: { families: [{label, memberIds, rationale}] } — every riskId in exactly one family; singletons expected.`,
+      },
+    ],
+    familyPartitionSchema,
+    "family_partition",
+    { maxTokens: 8000 },
+  );
+
+  // Code guarantees over the model's partition: unknown ids dropped,
+  // double-assigned ids keep their first family, unmentioned ids survive as
+  // singletons.
+  const byId = new Map(survivors.map((r) => [r.riskId, r]));
+  const seen = new Set();
+  const families = [];
+  for (const fam of partition.families) {
+    const members = fam.memberIds.filter((id) => byId.has(id) && !seen.has(id));
+    for (const id of members) seen.add(id);
+    if (members.length > 0) families.push({ label: fam.label, members: members.map((id) => byId.get(id)) });
+  }
+  for (const r of survivors) {
+    if (!seen.has(r.riskId)) families.push({ label: r.riskId, members: [r] });
+  }
+
+  const out = [];
+  for (const fam of families) {
+    if (fam.members.length === 1) {
+      out.push(fam.members[0]);
+      continue;
     }
-    // Anything the partition failed to mention survives untouched — losing a
-    // scored risk to a malformed merge is worse than a possible duplicate.
-    for (const r of cluster) {
-      if (!resolved.has(r.riskId)) survivors.push(r);
+    // Opposite-direction claims are different claims even when the mechanism
+    // reads the same — split by ΔYAM sign before merging.
+    const bySign = new Map();
+    for (const r of fam.members) {
+      const key = Math.sign(r.impact.dYam);
+      if (!bySign.has(key)) bySign.set(key, []);
+      bySign.get(key).push(r);
+    }
+    for (const [sign, group] of bySign) {
+      if (group.length === 1) {
+        out.push(group[0]);
+        continue;
+      }
+      console.log(`  → semantic family '${fam.label}' (${group.length}): ${group.map((r) => r.riskId).join(", ")}`);
+      const safeLabel = fam.label.toLowerCase().replace(/[^a-z0-9-]+/g, "-").slice(0, 60);
+      out.push(...(await mergeCluster(cfg, group, kills, `family-${safeLabel}${sign > 0 ? "-up" : ""}`)));
     }
   }
-  console.log(`  ✓ ${survivors.length} survive the judge`);
-  writeStage("05-judged", { risks: survivors, kills }, sha(risks.map((r) => r.riskId)));
+  return out;
 }
 
 // ══ Stage 6 — polish ══════════════════════════════════════════════════════════

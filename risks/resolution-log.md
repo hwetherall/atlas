@@ -4,7 +4,15 @@
 > the claim today) and RISKS (only time settles it) → `npm run refine` researches
 > each error's settle-test and adjudicates its proposed correction → a human
 > curates the accepted diffs into lib/ledger.ts → the pipeline re-runs against
-> the corrected ledger → resolved errors die. Repeat until only true risks remain.
+> the corrected ledger → resolved errors die.
+>
+> The loop STOPS mechanically (`risks/convergence.json`, thresholds in
+> `scripts/risks-plan.mjs` CONVERGENCE): when web-reducible error mass falls
+> below 5% of baseline YAM, or a cycle cuts total error mass by less than 25%.
+> What remains is the TERMINAL REGISTER, two buckets: **escalated errors** —
+> claims no web artifact settles, each named with the cheapest instrument that
+> would (commission a report · buy data · expert calls · experiment) — and
+> **risks** — claims only time settles, held with indicators and mitigations.
 
 ## Cycle 1 — 2026-07-08 · ledger rev 1 → rev 2
 

@@ -199,25 +199,48 @@ export const classifySchema = z.object({
 
 // ── Refinement loop (scripts/refine.mjs) — verdict on a proposed correction ──
 
-export const refineVerdictSchema = z.object({
-  verdict: z.enum(["confirm", "adjust", "refute"]),
-  // The final suggested ledger patch (null when the correction is refuted —
-  // the current ledger value stands and the error reclassifies as noise/risk).
-  value: z.number().nullable(),
-  low: z.number().nullable(),
-  high: z.number().nullable(),
-  rationale: z.string().min(1), // ≤2 sentences, executive register
-  evidence: z.array(
-    z.object({
-      title: z.string().min(1),
-      sourceType: z.enum(["industry-report", "analyst-estimate", "triangulation"]),
-      publisher: z.string().nullable(),
-      date: z.string().nullable(),
-      excerpt: z.string().min(1), // verbatim from the result text
-      url: z.string().min(1),
-    }),
-  ),
-});
+export const refineVerdictSchema = z
+  .object({
+    // confirm/adjust → a ledger patch to curate; refute → the current value
+    // stands and the error dies; unsettleable → NO web artifact settles the
+    // load-bearing quantity — the error ESCALATES to an instrument outside
+    // web research and leaves the refinement queue.
+    verdict: z.enum(["confirm", "adjust", "refute", "unsettleable"]),
+    // The final suggested ledger patch (null when refuted or unsettleable).
+    value: z.number().nullable(),
+    low: z.number().nullable(),
+    high: z.number().nullable(),
+    rationale: z.string().min(1), // ≤2 sentences, executive register
+    // Unsettleable only: the cheapest instrument that WOULD settle the claim.
+    instrument: z.enum(["commission-report", "buy-data", "expert-calls", "experiment"]).nullable(),
+    instrumentNote: z.string().nullable(), // what it must measure, concretely
+    evidence: z.array(
+      z.object({
+        title: z.string().min(1),
+        sourceType: z.enum(["industry-report", "analyst-estimate", "triangulation"]),
+        publisher: z.string().nullable(),
+        date: z.string().nullable(),
+        excerpt: z.string().min(1), // verbatim from the result text
+        url: z.string().min(1),
+      }),
+    ),
+  })
+  .superRefine((v, ctx) => {
+    if (v.verdict === "unsettleable" && !v.instrument) {
+      ctx.addIssue({
+        code: "custom",
+        message: "unsettleable verdict requires an instrument",
+        path: ["instrument"],
+      });
+    }
+    if ((v.verdict === "confirm" || v.verdict === "adjust") && v.value === null) {
+      ctx.addIssue({
+        code: "custom",
+        message: `${v.verdict} verdict requires a suggested value`,
+        path: ["value"],
+      });
+    }
+  });
 
 // ── Stage 5 — judge ──────────────────────────────────────────────────────────
 
@@ -251,6 +274,20 @@ export const mergeSchema = z.object({
           updates: z.enum(["increases", "decreases"]),
         }),
       ),
+    }),
+  ),
+});
+
+// Semantic dedup (judge pass 2): a global partition of the register into
+// mechanism families, produced by the BASIC model under SEMANTIC_DEDUP.
+// Harness guarantees in code (not Zod): unmentioned ids become singletons,
+// double-assigned ids keep their first family.
+export const familyPartitionSchema = z.object({
+  families: z.array(
+    z.object({
+      label: z.string().min(1), // kebab-case mechanism name
+      memberIds: z.array(z.string().min(1)).min(1),
+      rationale: z.string().min(1), // one sentence: why these are one mechanism
     }),
   ),
 });

@@ -1,0 +1,23 @@
+{
+  "cycles": [
+    {
+      "cycle": 1,
+      "date": "2026-07-08",
+      "ledgerRev": "2428e9778e2e1a3a0000000000000000rev1",
+      "baselineYam": 5.279999999999999,
+      "errorCount": 17,
+      "errorMass": 14.0803,
+      "reducibleMass": 5.2656,
+      "escalatedMass": 0,
+      "verdicts": {
+        "confirm": 4,
+        "adjust": 3,
+        "refute": 10,
+        "unsettleable": 0
+      },
+      "stopReasons": [],
+      "recommendation": "continue",
+      "note": "seeded from risks/refine.json (cycle-1 pass, pre-convergence-tracker); unsettleable verdict did not exist yet"
+    }
+  ]
+}
