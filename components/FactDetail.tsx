@@ -4,11 +4,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import type { FactNode, Ledger, Scenario, SourceType } from "@/lib/schema";
 import { evaluate, type Metric } from "@/lib/compute";
-import { formatEUR, formatNodeBand, formatNodeValue } from "@/lib/format";
+import { formatEUR, formatNodeBand, formatNodeValue, formatPct } from "@/lib/format";
 import { Badge, KIND_LABEL, KIND_STYLE } from "@/lib/badges";
 import { SKILLS } from "@/lib/skills";
 import { lineageOf, type NodeRef } from "@/lib/lineage";
-import { contributionDisplay, marginalContribution } from "@/lib/contribution";
+import { contributionDisplay, factEuro, marginalContribution } from "@/lib/contribution";
+import { factClaim } from "@/lib/factClaims";
 import { bandSwing, informationValue, swingTam, voiBucket, type VoiBucket } from "@/lib/voi";
 import EvidenceSignal from "@/components/EvidenceSignal";
 
@@ -61,25 +62,6 @@ const SOURCE_TYPE_LABEL: Record<SourceType, string> = {
   triangulation: "triangulation",
   pending: "pending",
 };
-
-function claim(node: FactNode): React.ReactNode {
-  const v = <strong className="font-semibold text-ink">{formatNodeValue(node)}</strong>;
-  if (node.id === "tamBase")
-    return <>The Central Europe rack-PDU market is worth {v} across all segments and buyers.</>;
-  if (node.id === "serviceableFactor")
-    return <>{v} of TAM is serviceable — reachable through channel and regulatory-clear demand.</>;
-  if (node.id === "obtainableFactor")
-    return <>{v} of SAM is realistically obtainable in the first 12 months.</>;
-  if (node.id === "shape.cagr") return <>The market is growing at {v} CAGR (2025–2030).</>;
-  if (node.id === "shape.cr3") return <>The top three suppliers hold {v} of the market.</>;
-  if (node.dimension === "geography")
-    return <>{node.label} accounts for {v} of the Central Europe rack-PDU market.</>;
-  if (node.dimension === "segment")
-    return <>The {node.label} segment is {v} of the rack-PDU market.</>;
-  if (node.dimension === "customerType")
-    return <>{node.label} make up {v} of rack-PDU buyers.</>;
-  return <>{node.label}: {v}.</>;
-}
 
 const BUCKET_STYLE: Record<VoiBucket, string> = {
   High: "text-negative-ink",
@@ -368,7 +350,9 @@ export default function FactDetail({ node, ledger, scenario, onSelect, onClose, 
           </button>
         </div>
 
-        <p className={`mt-3 font-display leading-snug text-ink ${style.claim}`}>{claim(node)}</p>
+        <p className={`mt-3 font-display leading-snug text-ink ${style.claim}`}>
+          {factClaim(ledger, node)}
+        </p>
 
         {/* Where this fact sits in the math — the web, walkable. */}
         {view.lineage.upstream.length + view.lineage.downstream.length > 0 ? (
@@ -402,9 +386,28 @@ export default function FactDetail({ node, ledger, scenario, onSelect, onClose, 
           transition={{ duration: 1.1, ease: "easeOut" }}
           className="mt-3 inline-flex items-baseline gap-2 rounded-lg px-1"
         >
-          <span className={`font-mono font-semibold tabular-nums text-ink ${style.value}`}>
-            {formatNodeValue(node)}
-          </span>
+          {(() => {
+            // Dimension shares lead with € — the number a reader can anchor
+            // on — with the share as the sub-line. Everything else unchanged.
+            const euro = factEuro(ledger, node);
+            if (euro !== null) {
+              return (
+                <>
+                  <span className={`font-mono font-semibold tabular-nums text-ink ${style.value}`}>
+                    {formatEUR(euro)}
+                  </span>
+                  <span className="font-mono text-sm tabular-nums text-ink-3">
+                    {formatPct(node.value)} of base
+                  </span>
+                </>
+              );
+            }
+            return (
+              <span className={`font-mono font-semibold tabular-nums text-ink ${style.value}`}>
+                {formatNodeValue(node)}
+              </span>
+            );
+          })()}
           <span className="text-[11px] text-ink-3">as of {node.asOf}</span>
         </motion.div>
 
@@ -541,16 +544,31 @@ export default function FactDetail({ node, ledger, scenario, onSelect, onClose, 
         {node.derivation ? (
           <div className="mt-3 rounded-lg border border-hairline bg-well p-3">
             <div className="text-[10px] uppercase tracking-wide text-ink-3">
-              Calculation · {node.derivation.method}
+              How we got this number
             </div>
-            <pre className="mt-1 overflow-x-auto whitespace-pre-wrap font-mono text-[12px] text-ink-2">
-              {node.derivation.expression}
-            </pre>
-            {node.derivation.crossCheck ? (
-              <div className="mt-1 text-[11px] text-positive-ink">
-                ✓ {node.derivation.crossCheck}
-              </div>
+            {node.derivation.plain ? (
+              <p className="mt-1 text-[13px] leading-relaxed text-ink-2">
+                {node.derivation.plain}
+              </p>
             ) : null}
+            {/* The working — kept whole, one click away. */}
+            <details className={`group ${node.derivation.plain ? "mt-2" : "mt-1"}`}>
+              <summary className="cursor-pointer list-none text-[11px] font-medium text-ink-3 transition-colors hover:text-ink">
+                <span aria-hidden className="mr-1 inline-block transition-transform group-open:rotate-90">
+                  ▸
+                </span>
+                Show the working · {node.derivation.method}
+              </summary>
+              <pre className="mt-1.5 overflow-x-auto whitespace-pre-wrap font-mono text-[12px] text-ink-2">
+                {node.derivation.expression}
+              </pre>
+              {node.derivation.crossCheck ? (
+                <div className="mt-1.5 text-[11px] text-ink-3">
+                  <span className="font-medium text-ink-2">Cross-check (different method):</span>{" "}
+                  {node.derivation.crossCheck}
+                </div>
+              ) : null}
+            </details>
           </div>
         ) : null}
       </div>

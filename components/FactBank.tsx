@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { FactNode, Ledger } from "@/lib/schema";
 import type { Risk } from "@/lib/riskSchema";
@@ -52,9 +52,21 @@ export default function FactBank({ ledger, state, dispatch, onOpenDashboard, ris
     return () => window.removeEventListener("keydown", onKey);
   }, [node]);
 
-  // Keep the selected row visible when lineage navigation switches facts.
+  // Keep the dossier visible: below lg the panel renders ABOVE the table
+  // (order-first), so clicking a low row would leave it off-screen — scroll
+  // it into view. When the panel is already visible (lg sticky), fall back
+  // to keeping the selected row visible for lineage navigation.
+  const panelRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     if (!selectedId) return;
+    const panel = panelRef.current;
+    if (panel) {
+      const r = panel.getBoundingClientRect();
+      if (r.top < 0 || r.top > window.innerHeight - 160) {
+        panel.scrollIntoView({ block: "start", behavior: "smooth" });
+        return;
+      }
+    }
     document.getElementById(`fb-row-${selectedId}`)?.scrollIntoView({ block: "nearest" });
   }, [selectedId]);
 
@@ -183,6 +195,7 @@ export default function FactBank({ ledger, state, dispatch, onOpenDashboard, ris
           {node ? (
             <motion.div
               key="detail"
+              ref={panelRef}
               initial={{ opacity: 0, x: 16 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 16 }}

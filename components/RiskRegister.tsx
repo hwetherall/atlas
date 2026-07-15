@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import type { Ledger } from "@/lib/schema";
 import type { Risk } from "@/lib/riskSchema";
 import type { FeaturedIds } from "@/lib/featured";
 import type { ScenarioState } from "@/lib/useScenario";
+import { evaluate } from "@/lib/compute";
 import { rankRisks, type RankedRisk } from "@/lib/riskCompute";
 import { informationValue } from "@/lib/voi";
 import { formatEUR, formatPct } from "@/lib/format";
@@ -20,6 +21,7 @@ import {
   EVIDENCE_STATUS_TOOLTIP,
 } from "@/lib/badges";
 import RiskDetail from "@/components/RiskDetail";
+import ThreadBadge from "@/components/ThreadBadge";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // RiskRegister — workspace surface #3. The aggregated register over the
@@ -87,13 +89,26 @@ export default function RiskRegister({ ledger, risks, state, headerNote, feature
     return () => window.removeEventListener("keydown", onKey);
   }, [selected]);
 
+  // Same fix as FactBank: below lg the dossier renders ABOVE the boards
+  // (order-first), so clicking a low row leaves it off-screen — scroll it in.
+  const panelRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (!selectedId) return;
+    const panel = panelRef.current;
+    if (!panel) return;
+    const r = panel.getBoundingClientRect();
+    if (r.top < 0 || r.top > window.innerHeight - 160) {
+      panel.scrollIntoView({ block: "start", behavior: "smooth" });
+    }
+  }, [selectedId]);
+
   const stats = useMemo(() => {
     const errors = risks.filter((r) => r.resolution === "error").length;
-    const rocks = risks.filter((r) => r.resolution !== "error" && r.tier === "rock").length;
-    const corroborated = risks.filter((r) => r.evidenceStatus === "corroborated").length;
-    const totalExpectedLoss = ranked.reduce((s, r) => s + r.severity, 0);
-    return { errors, rocks, corroborated, totalExpectedLoss };
-  }, [risks, ranked]);
+    return { errors, irreducible: risks.length - errors };
+  }, [risks]);
+
+  // Live funnel context so the register's € deltas have a denominator.
+  const funnel = useMemo(() => evaluate(ledger, state.current), [ledger, state.current]);
 
   // Curated headline subset: featured rows render on top with their true
   // global ranks; everything else stays in the boards, folded into a
@@ -129,13 +144,21 @@ export default function RiskRegister({ ledger, risks, state, headerNote, feature
           What could kill this number
         </h1>
         <p className="mt-2 max-w-3xl text-sm text-ink-2">
-          Every risk is a claim against a specific fact in the model, with a machine-readable
-          perturbation — so its € impact is <em>computed</em> against your current levers, never
-          asserted.{" "}
-          <span className="text-ink-3">
-            {risks.length} findings · {stats.errors} model errors to fix · {stats.rocks} rocks ·{" "}
-            {stats.corroborated} backed by evidence · Σ expected YAM at risk{" "}
-            {formatEUR(stats.totalExpectedLoss)}
+          We re-read every number in the fact bank and challenged the ones that don&rsquo;t hold
+          up. Most findings are <span className="text-ink">errors</span> — the number is probably
+          wrong, and more research can fix it. A few are{" "}
+          <span className="text-ink">risks</span> — real uncertainties no report can settle. Click
+          any finding to see which fact it challenges and what happens to the market if
+          it&rsquo;s right.
+        </p>
+        <p className="mt-2 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-xs text-ink-3">
+          <span>
+            {risks.length} findings · {stats.errors} errors → sent to re-research ·{" "}
+            {stats.irreducible} risks to watch
+          </span>
+          <span className="font-mono tabular-nums">
+            Today&rsquo;s model: TAM {formatEUR(funnel.tam)} · SAM {formatEUR(funnel.sam)} ·
+            Year-1 {formatEUR(funnel.yam)}
           </span>
         </p>
         {headerNote ? <p className="mt-1.5 max-w-3xl text-xs text-accent-ink">{headerNote}</p> : null}
@@ -199,8 +222,7 @@ export default function RiskRegister({ ledger, risks, state, headerNote, feature
                       Full register — all {risks.length} findings
                     </span>
                     <span className="ml-2 text-xs text-ink-3">
-                      {rest.length} more · Σ expected YAM at risk {formatEUR(stats.totalExpectedLoss)} —
-                      every finding, ranked by the engine
+                      {rest.length} more findings, ranked live by the engine — the proof of work
                     </span>
                   </summary>
                   <div className="mt-6 space-y-8">{boardSections}</div>
@@ -214,6 +236,7 @@ export default function RiskRegister({ ledger, risks, state, headerNote, feature
           {selected ? (
             <motion.div
               key="detail"
+              ref={panelRef}
               initial={{ opacity: 0, x: 16 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 16 }}
@@ -283,9 +306,9 @@ function BoardSection({
         </span>
         <span
           className="w-24 shrink-0 whitespace-nowrap text-right"
-          title="Change in the Year-1 number (YAM) if the risk lands, at your current levers."
+          title="The first funnel stage the risk moves — TAM, SAM or Year-1 — and the € change there if it lands, at your current levers. Year-1 is small today, so the € that matters is often the TAM/SAM hit."
         >
-          If it lands
+          Where it hits
         </span>
         <span
           className="w-36 shrink-0 whitespace-nowrap text-right"
@@ -351,6 +374,7 @@ function RiskRow({
           <div className="min-w-0 flex-1">
             <p className={`text-sm text-ink ${condensed ? "line-clamp-2" : ""}`}>{risk.title}</p>
             <div className="mt-1.5 flex flex-wrap items-center gap-x-2.5 gap-y-1">
+              <ThreadBadge riskId={risk.id} />
               <Badge
                 className={CATEGORY_STYLE[risk.category]}
                 title={CATEGORY_TOOLTIP[risk.category]}
@@ -389,18 +413,36 @@ function RiskRow({
             {formatPct(risk.likelihood.value)}
           </span>
 
-          {/* Impact on the Year-1 number if it lands. */}
-          <span
-            className={`mt-0.5 w-24 shrink-0 text-right font-mono text-xs tabular-nums ${
-              outOfScope
-                ? "text-ink-faint"
-                : impact.dYam < 0
-                  ? "text-negative-ink"
-                  : "text-positive-ink"
-            }`}
-          >
-            {outOfScope ? "—" : formatEUR(impact.dYam, { signed: true })}
-          </span>
+          {/* The delta at the FIRST funnel stage the risk moves — a risk that
+              knocks €96M off TAM shouldn't be read through a €5M Year-1 lens. */}
+          {(() => {
+            const stage =
+              Math.abs(impact.dTam) > 1e-9
+                ? { tag: "TAM", d: impact.dTam }
+                : Math.abs(impact.dSam) > 1e-9
+                  ? { tag: "SAM", d: impact.dSam }
+                  : { tag: "Yr-1", d: impact.dYam };
+            return (
+              <span className="mt-0.5 w-24 shrink-0 text-right">
+                {outOfScope ? (
+                  <span className="font-mono text-xs tabular-nums text-ink-faint">—</span>
+                ) : (
+                  <>
+                    <span
+                      className={`font-mono text-xs tabular-nums ${
+                        stage.d < 0 ? "text-negative-ink" : "text-positive-ink"
+                      }`}
+                    >
+                      {formatEUR(stage.d, { signed: true })}
+                    </span>
+                    <span className="block text-[9px] font-medium uppercase tracking-wide text-ink-faint">
+                      on {stage.tag}
+                    </span>
+                  </>
+                )}
+              </span>
+            );
+          })()}
 
           {/* Expected loss (chance × impact) — the ranking, shown as a bar. */}
           <div className="mt-0.5 flex w-36 shrink-0 items-center justify-end gap-2">

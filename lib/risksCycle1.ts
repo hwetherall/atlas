@@ -201,15 +201,8 @@ const rawRisks: Risk[] = [
     ],
     "evidenceStatus": "corroborated",
     "tier": "front-of-mind",
-    "resolution": "error",
-    "settleTest": "A bottom-up Year-1 pipeline dataset for standalone rack/row-PDU procurements in the target segment (count of contestable RFPs, win-rate, cycle time, capacity) versus total SAM, cross-checked against a share-of-channel split showing what fraction of PDU volume moves through vendor bundles vs. standalone contests. This is knowable today from procurement records and channel data — no future event needs to unfold.",
-    "proposedCorrection": {
-      "nodeId": "obtainableFactor",
-      "value": 0.01,
-      "low": 0.001,
-      "high": 0.03,
-      "rationale": "The generic 1–5% SOM benchmarks are not DC-hardware-specific; the concrete hardware entrant started near 0.001% and most PDU volume ships inside integrated bundles (Vertiv 360AI, Schneider RD48) leaving only retrofit/standalone sockets contestable, so the mid-band should drop from 3% toward 1% with a much wider low tail.},"
-    },
+    "resolution": "risk",
+    "settleTest": "No purchasable report or dataset says what fraction of THIS venture's addressable Year-1 flow arrives bundled vs. as a standalone contest — tender records prove bake-offs exist, but the bundled share of the venture's own pipeline only reveals itself deal by deal through the first selling year. Until then the right response is to watch the standalone-RFQ density indicator and steer the plan toward retrofit sockets, not to re-research the number.",
     "asOf": "2026-07-08"
   },
 
@@ -784,8 +777,15 @@ const rawRisks: Risk[] = [
     ],
     "evidenceStatus": "corroborated",
     "tier": "rock",
-    "resolution": "risk",
-    "settleTest": "Only the passage of Year 1 settles this — whether signed distribution deals and completed registrations actually cover 55% vs 30-35% of the market by the end of the venture's first 12 months. The claim is explicitly about how reach is BUILT during the launch year (country-by-country ramp, distributor onboarding, cert completions), which cannot be settled by a purchasable report today; the analogues cited only inform a plausible pace, they do not fix a present-day number. The falsifier itself is a future-dated event (deals within Q1 after launch).",
+    "resolution": "error",
+    "settleTest": "A bottom-up channel-coverage map settles this today: named distributors × countries they cover × registration and certification timelines, laid against the venture's own launch plan. That artifact — buildable in a week from distributor line cards, conformity-path guidance and the venture's channel term sheets — fixes what share of the market is actually reachable in the first 12 months. No future event needs to unfold; the 55% is a mis-stated present-day number, not a bet on how the year goes.",
+    "proposedCorrection": {
+      "nodeId": "serviceableFactor",
+      "value": 0.35,
+      "low": 0.3,
+      "high": 0.45,
+      "rationale": "A realistic Year-1 footprint of Germany plus the Netherlands through one distributor covers ~30–35% of the market, not 55%; a pan-CE master distributor with existing DE/NL/PL coverage could lift that toward 45%, which sets the band top. The 55% describes reach the venture might eventually build, not reach it starts the year with."
+    },
     "asOf": "2026-07-08"
   },
 

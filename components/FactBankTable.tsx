@@ -4,10 +4,10 @@ import { useMemo, useState } from "react";
 import type { FactNode, Ledger, Scenario } from "@/lib/schema";
 import { isExcluded } from "@/lib/dimensions";
 import { boundsFor } from "@/lib/levers";
-import { formatNodeBand, formatNodeValue } from "@/lib/format";
+import { formatEUR, formatNodeBand, formatNodeValue, formatPct } from "@/lib/format";
 import { Badge } from "@/lib/badges";
 import { informationValue } from "@/lib/voi";
-import { contributionDisplay, contributionMeasure } from "@/lib/contribution";
+import { contributionDisplay, contributionMeasure, factEuro } from "@/lib/contribution";
 import { evaluate } from "@/lib/compute";
 import type { ScenarioAction } from "@/lib/useScenario";
 import AssumptionSlider from "@/components/AssumptionSlider";
@@ -278,9 +278,19 @@ export default function FactBankTable({
                                   isBase ? "text-[15px]" : "text-sm"
                                 }`}
                               >
-                                {formatNodeValue(node)}
+                                {/* Dimension shares lead with € — "€160M" answers
+                                    the reader; "50%" (of what?) stays as sub-line. */}
+                                {(() => {
+                                  const euro = factEuro(ledger, node);
+                                  return euro !== null ? formatEUR(euro) : formatNodeValue(node);
+                                })()}
                               </span>
                             </div>
+                            {node.dimension ? (
+                              <div className="mt-0.5 text-[10px] text-ink-faint">
+                                {formatPct(node.value)} of base
+                              </div>
+                            ) : null}
                             {node.sensitivityRange ? (
                               <div className="mt-0.5 text-[10px] text-ink-faint">
                                 {formatNodeBand(node)}

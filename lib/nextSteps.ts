@@ -5,151 +5,178 @@ import { validateMemos, type Memo } from "@/lib/nextStepsSchema";
 // ─────────────────────────────────────────────────────────────────────────────
 // Next Steps — the five memos (nextsteps.md). Five risks from the cycle-2
 // register, one response each, executed by the Innovera toolkit
-// (lib/toolkit.ts). Authored from the cached research pass under
-// research/raw/nextsteps/ (report titles, prices and delivery terms are
-// store-page facts from that cache, not guesses). Every € figure on the
-// surface is engine-computed at render time — this file carries narrative
-// and projection ops only.
+// (lib/toolkit.ts — four tools; "ignore" is Accept & watch, run by Argus).
+// Authored from the cached research passes under research/raw/nextsteps/
+// (report titles, prices, audit timelines and cost bands are cache facts,
+// not guesses; anything softer is worded as an estimate). Every € figure on
+// the surface is engine-computed at render time — this file carries
+// narrative and projection ops only.
 //
-// Status: the Delphi memo is the approved-template candidate (nextsteps.md
-// §7 milestone 2); the other four are full-skeleton drafts pending their own
-// research passes.
+// Rewritten 2026-07-15 per the walkthrough feedback (next-steps.md items
+// 20–26): the Act memo moved to the security-audit gate (the slow-buyer-gate
+// thread's endpoint), stakes restructured to assumption → reality →
+// consequence → clock, language pass: guide, don't sell.
 // ─────────────────────────────────────────────────────────────────────────────
 
 const rawMemos: Memo[] = [
-  // ── 1 · Daedalus — ACT ──────────────────────────────────────────────────────
+  // ── 1 · Julius — ACT ────────────────────────────────────────────────────────
+  // The slow-buyer-gate thread lands here: flagged in cycle 1, refuted-but-
+  // mechanism-confirmed by the loop, re-surfaced quantified in cycle 2 —
+  // answered by starting the audit clock before buyers do.
   {
-    riskId: "risk.structure-independence.frankfurt-cycle-lockout-year1",
+    riskId: "risk.execution-window.firmware-security-audit-gate",
     response: "act",
-    headline: "The market won't wait for a tender that isn't coming",
+    headline: "Start the audit clock before the first RFQ does",
+    tableLine:
+      "Big buyers run their own security audit before you can quote — each one takes a quarter or two.",
     stakes: {
-      narrative:
-        "The Year-1 number assumes buyers arrive steadily and can be won inside twelve months. But the chosen corner of the market is a handful of Frankfurt and Amsterdam campus fit-outs whose electrical bill of materials was frozen at tender, in 2024–25. The capacity delivering during the venture's first year has, for sales purposes, already happened. Every quarter spent pitching new-build tenders is a quarter of the only selling year the model counts.",
-      whenItBites: "Immediately — the exposure IS the first twelve months; it decays to zero as the year burns.",
-      decisionExpiry: {
-        label: "Before Year-1 go-to-market hiring and target lists are set — this quarter",
-        why: "A retrofit pivot only pays if the account coverage, SKU kit and target list exist before the selling year is spent chasing locked tenders.",
+      assumption:
+        "The model assumes that once the product carries CE and TÜV marks, large operators can buy it — and the Year-1 plan counts on those buyers.",
+      reality:
+        "Each large operator runs its own security prequalification before a vendor may seriously quote: signed firmware, a software bill of materials, a vulnerability-disclosure process, audit evidence. From first contact to approved-vendor status typically takes three to nine months — and for standard RFQs it must finish before you can bid.",
+      consequence:
+        "Started only when the first RFQ arrives, the audit eats one to two quarters of a twelve-month selling year. The Year-1 number assumes a window that, for the biggest buyers, is only half open.",
+      clock: {
+        whenItBites:
+          "The day the first serious RFQ arrives with a security questionnaire attached — from then on, every unprepared week is selling time lost.",
+        whyNow:
+          "Buyer audits run about two quarters. To be quotable by the target first-PO date, the audit artifacts have to exist before procurement asks for them.",
       },
     },
     decision: {
-      question:
-        "Re-weight the Year-1 go-to-market from new-build tenders to brownfield retrofit and PDU swap-outs in standing Frankfurt and Amsterdam stock?",
-      deadline: "This quarter, alongside Year-1 hiring decisions",
+      question: "Start operator security prequalification now, before the first RFQ forces it?",
+      deadline: "This quarter — the artifacts take a quarter to build, the buyer audits two more",
       defaultPath:
-        "The plan keeps chasing new-build tenders whose electrical BoM was specified in 2024–25 — Year-1 revenue structurally arrives in Year 2 or 3.",
+        "Wait for the first security questionnaire, then scramble: the first PO slips roughly two quarters, and Year 1 sells in a half-open window.",
     },
     rationale: [
       {
         response: "act",
         verdict: "chosen",
-        note: "No fact is missing — pipeline data already documents early spec-lock. Only the plan itself can change what the venture is exposed to.",
+        note: "The gate is real; the only lever the venture controls is when the clock starts. Starting it now runs the audits parallel to the sales ramp instead of ahead of it.",
       },
       {
         response: "buy-information",
         verdict: "rejected",
-        note: "A fit-out pipeline audit sharpens the number but doesn't open a single locked tender.",
+        note: "No purchasable report shortens another company's audit queue — the useful information (a mock audit) is the charter's own first workstream.",
       },
       {
         response: "expert",
         verdict: "rejected",
-        note: "Procurement veterans would confirm the mechanism; confirmation moves no euros.",
+        note: "An assessor hour sharpens the artifact list — worth booking inside workstream 1 — but judgment alone moves no calendar.",
       },
       {
         response: "monitor",
         verdict: "rejected",
-        note: "Watching tender feeds while the window closes converts a risk into a result.",
+        note: "Argus already watches questionnaire density in early RFQs; watching a queue you are not in only measures the delay.",
       },
       {
         response: "ignore",
         verdict: "rejected",
-        note: "This is the largest exposure on the corrected register.",
+        note: "Accepting means a 45% chance the selling year halves — the largest actionable exposure left on the register.",
       },
     ],
     artifact: {
-      kind: "daedalus",
+      kind: "julius",
       objective:
-        "Make Year-1 revenue independent of the new-build tender cycle by winning the one sub-pool that transacts inside twelve months: retrofit and swap-outs in operating halls.",
+        "Be an approved vendor at two named operators before the first serious RFQ closes — turn the security gate from a surprise serial delay into a scheduled, parallel track.",
       workstreams: [
         {
-          name: "Retrofit SKU kit",
+          name: "Audit-artifact build",
           detail:
-            "Tool-less rails, DCIM migration adapters, and a swap-out install guide — remove every excuse an operating hall has to wait for its next build.",
+            "The four items every operator questionnaire asks for first: a signed-firmware release pipeline, an SBOM per product line, a public vulnerability-disclosure / PSIRT process, and a development file mapped to IEC 62443-4-1. Built once, reused at every gate — including the CRA.",
         },
         {
-          name: "Brownfield account coverage",
+          name: "Mock audit",
           detail:
-            "Two retrofit-focused account executives; target list built from standing Frankfurt/Amsterdam stock (operating halls), not the construction pipeline.",
+            "Run the venture through two target operators' published supplier-security requirements with a third-party assessor before any real audit — size the true listing lead time per account and fix findings while no deal is waiting.",
         },
         {
-          name: "Second-source wedge",
+          name: "Mid-market bridge",
           detail:
-            "Map framework expiry dates and qualified-alternate slots at the large operators — retrofit pilots today become second-source positions when frameworks reopen.",
+            "Sequence first revenue through lighter-gated buyers — mid-market colocation and enterprise — while the operator audits run, so the selling year is not hostage to the slowest gate.",
         },
       ],
       milestones: [
-        { when: "Day 30", what: "Installed-base target list complete; retrofit BoM frozen" },
-        { when: "Day 60", what: "First ten retrofit RFQs in flight" },
-        { when: "Day 90", what: "First retrofit purchase order" },
-        { when: "Day 180", what: "Retrofit ≥ 50% of qualified Year-1 pipeline" },
+        { when: "Day 30", what: "PSIRT / disclosure policy public; SBOM generation in the build" },
+        { when: "Day 60", what: "Firmware signing live in the release pipeline" },
+        { when: "Day 90", what: "Mock audit round 1 complete; findings triaged" },
+        { when: "Day 180", what: "Prequalification dossiers filed at both target operators" },
+        { when: "Day 270", what: "Approved-vendor status at one or more targets" },
       ],
-      resourcing: "Two AEs + 0.5 product engineer + channel ops support",
-      budget: "≈ €250–400k incremental to the current plan",
+      resourcing: "0.5–1 FTE security lead + firmware engineering time + external assessor days",
+      budget:
+        "≈ €150–250k in year one (62443-aligned process, signing pipeline, assessor days — cache-benchmarked); the full 62443-4-1 certificate (≈ €60–150k more) only if a named buyer demands it",
       leadingIndicators: [
-        "Retrofit RFQ→quote cycle under six weeks",
-        "Swap-out win rate against incumbent renewal quotes",
-        "Share of qualified pipeline sourced from standing stock vs construction pipeline",
+        "Weeks from questionnaire receipt to complete response (target: under two)",
+        "Mock-audit findings burn-down between round 1 and round 2",
+        "Share of qualified pipeline in accounts whose gate is passed — or not required",
       ],
       killCriteria: [
-        "No retrofit purchase order by day 120",
-        "Retrofit gross margin below the hardware-only floor two quarters running",
+        "Two target operators confirm CE + TÜV suffices for listing (the risk's own falsifier) — stand down to an Argus watch",
+        "Mock audit shows a 12-month-plus queue at both targets — re-point Year 1 at the mid-market bridge and revisit the operator plan",
       ],
     },
     projection: {
-      ops: [
-        {
-          nodeId: "obtainableFactor",
-          low: 0.006,
-          high: 0.03,
-          note: "Retrofit demand transacts inside 12 months — the spec-lock worst case rises off the floor",
-        },
-      ],
+      ops: [],
+      likelihoodAfter: 0.2,
       retirement: "mitigates",
-      note: "The pivot doesn't change today's 1% estimate — it changes what happens if the spec-lock risk lands: the worst case rises from 0.4–0.5% toward the retrofit-backed floor, because part of Year-1 demand no longer waits for a tender.",
+      note: "Acting doesn't move today's funnel — it moves the chance the gate bites. Prequalification started now runs parallel to the sales ramp instead of serial ahead of it: the 45% likelihood falls toward 20%, and the register re-prices on that projected chance, not on hope.",
     },
     evidence: [
       {
-        title: "Goodman, CPP Investments establish €8bn European data center platform",
-        publisher: "DatacenterDynamics",
-        url: "https://www.datacenterdynamics.com/en/news/goodman-cpp-investments-establish-8bn-european-data-center-plaform/",
+        title: "Security Guideline Product Security Sourcing Guide",
+        publisher: "NERC",
+        url: "https://www.nerc.com/globalassets/who-we-are/standing-committees/rstc/scs/product-security-sourcing-guide.pdf",
         excerpt:
-          "Four projects totalling 435MW of primary power and 282MW of IT load across Frankfurt, Amsterdam, and Paris — concentrating European take-up in a handful of flagship campuses.",
-        date: "2025-12-23",
+          "Vendor-Level Risk Management ... Product Vulnerability Disclosure ... — the formal vendor security prequalification artifacts critical-infrastructure buyers require.",
+        date: "2023-12-07",
       },
       {
-        title: "Data Center Construction Timeline: 18-36 Months, Phase by Phase",
-        publisher: "Buildermuse",
-        url: "https://buildermuse.com/commercial/data-center-construction-timeline-phase-by-phase/",
+        title: "Supply Chain Product Assurance Playbook (Schneider Electric)",
+        publisher: "NIST / Schneider Electric",
+        url: "https://csrc.nist.gov/csrc/media/Presentations/2024/supply-chain-product-assurance-playbook/images-media/20240918-FINAL%20CG%20SE%20September%202024%20SSCA%20Presentation%20v2.pdf",
         excerpt:
-          "40-60 week switchgear lead times and 18-36 month build cycles mean electrical BoM is specified far ahead of delivery.",
-        date: "2026-06-04",
+          "SBOMs generated for all products starting January 2021 and every product release is compliant to ISA/IEC 62443-4-1... certified to 4-1 Maturity Level 4 — the incumbents already carry the artifacts a new entrant must build.",
+        date: "2024-09-18",
+      },
+      {
+        title: "IEC 62443 certification schemes — registration and audit pricing",
+        publisher: "ISASecure",
+        url: "https://isasecure.org/certification/iec-62443-csa-certification",
+        excerpt:
+          "Certification registration fees in the USD 7,500–12,500 range plus annual maintenance — third-party ICS security certification pricing for component vendors (cost band per the cached research pass).",
+      },
+      {
+        title: "Bridging the Gap: Navigating the Harmonization of IEC 62443 and the EU Cyber Resilience Act",
+        publisher: "exida",
+        url: "https://www.exida.com/Blog/bridging-the-gap-navigating-the-harmonization-of-iec-62443-and-the-eu-cyber-resilience-act",
+        excerpt:
+          "A credible component certification under 62443-4-2 with development-process certification under 62443-4-1 is a six-figure investment for a mid-sized vendor — the same artifact stack the CRA will lean on.",
       },
     ],
-    asOf: "2026-07-13",
+    asOf: "2026-07-15",
   },
 
-  // ── 2 · Mentor — SPEAK TO AN EXPERT ─────────────────────────────────────────
+  // ── 2 · Egeria — SPEAK TO AN EXPERT ─────────────────────────────────────────
   {
     riskId: "risk.regulatory-gauntlet.cra-conformity-clock-outlasts-yam-window",
     response: "expert",
     headline: "One hour with a conformity assessor beats a quarter of guessing",
+    tableLine:
+      "EU law fixes the compliance dates; whether your PDU needs a third-party assessor is a judgment call no report makes.",
     stakes: {
-      narrative:
-        "The Cyber Resilience Act's dates are enacted law: reporting duties from 11 September 2026, full conformity from 11 December 2027 — both inside or touching the venture's entry window. What is NOT settled is judgment: whether remote-management PDUs land in the default class (self-declaration) or Annex III 'important' (notified body), and whether 2026 buyers will gate shortlists on CRA-readiness or accept a roadmap. Reading the regulation again will not answer either; someone who classifies connected infrastructure for a living will, in an hour.",
-      whenItBites:
-        "First tenders that write CRA/SBOM clauses — buyer front-running is already visible in 2026 bids.",
-      decisionExpiry: {
-        label: "Before design freeze on the launch firmware and certification plan",
-        why: "The conformity route (self-declaration vs notified body) changes the artifact list and the test calendar; after design freeze, a wrong guess costs a re-spin.",
+      assumption:
+        "The model assumes the product reaches EU buyers on self-declared CE conformity — the route the team can run on its own.",
+      reality:
+        "The Cyber Resilience Act is enacted law with dates inside the entry window: reporting duties from 11 September 2026, full conformity from 11 December 2027. What the regulation's text does not settle is whether a remote-management PDU lands in the default class (self-declaration) or Annex III 'important' — which forces a notified body into the calendar. Re-reading the regulation will not answer that; it is a classification judgment, and the people who make it professionally are assessors, not reports.",
+      consequence:
+        "Guess wrong toward self-declaration, and a 2027 audit — or a lost 2026 bid — discovers it mid-launch as a compliance-file re-spin. Guess wrong toward the notified body, and two quarters and six figures go into an assessment the product never needed.",
+      clock: {
+        whenItBites:
+          "The first tenders writing CRA / SBOM clauses — buyer front-running is already visible in 2026 bids.",
+        whyNow:
+          "The conformity route changes the artifact list and the test calendar. After the launch-firmware design freeze, a wrong guess costs a re-spin instead of a meeting.",
       },
     },
     decision: {
@@ -157,28 +184,28 @@ const rawMemos: Memo[] = [
         "Book the CRA classification session and lock the conformity route before design freeze?",
       deadline: "Inside the month — assessor calendars and design freeze are both clocks",
       defaultPath:
-        "The team guesses 'default class', builds to self-declaration, and discovers in a 2027 audit — or a lost 2026 bid — that a notified body was required all along.",
+        "The team guesses 'default class', builds to self-declaration, and finds out in a 2027 audit — or a lost 2026 bid — that a notified body was required all along.",
     },
     rationale: [
       {
         response: "expert",
         verdict: "chosen",
-        note: "The open question is classification judgment, not data — a practitioner who has classified rack power under RED/MID/CRA decides this weekly.",
+        note: "The open question is classification judgment, not data — a practitioner who has classified rack power under RED, MID and now the CRA decides this weekly.",
       },
       {
         response: "buy-information",
         verdict: "rejected",
-        note: "No purchasable report rules on YOUR product's class; regulatory guides restate the regulation.",
+        note: "No purchasable report rules on YOUR product's class; regulatory guides restate the regulation the team has already read.",
       },
       {
         response: "monitor",
         verdict: "rejected",
-        note: "Harmonized-standards progress is worth watching, but waiting doesn't decide the conformity route before design freeze.",
+        note: "Harmonised-standards progress is worth watching (Argus has the docket), but waiting does not decide the route before design freeze.",
       },
       {
         response: "act",
         verdict: "rejected",
-        note: "Building the full notified-body artifact stack 'just in case' costs two quarters against a question one call can settle.",
+        note: "Building the full notified-body artifact stack 'just in case' spends two quarters on a question one call can settle.",
       },
       {
         response: "ignore",
@@ -187,12 +214,51 @@ const rawMemos: Memo[] = [
       },
     ],
     artifact: {
-      kind: "mentor",
+      kind: "egeria",
       profile: {
         name: "Dr. Anneke Vos",
-        title: "EU Product Conformity & Cyber Resilience — Innovera Mentor Network",
-        bio: "Former lead assessor at a German notified body; fifteen years certifying connected infrastructure — industrial controllers, smart metering, rack power — under RED, MID and now the CRA. Sat on the CEN/CENELEC JTC 13 working group drafting the CRA harmonized standards. (Profile illustrative: Mentor matches from the live network at engagement time.)",
-        engagement: "1-hour advisory session, follow-up memo included · via Mentor",
+        title: "Independent conformity strategist — EU product security",
+        location: "Rotterdam, Netherlands",
+        background: [
+          "Fifteen years at a German notified body, finishing as lead assessor for connected infrastructure — industrial controllers, smart metering, rack power",
+          "Member of the CEN/CENELEC JTC 13 working group drafting the CRA harmonised standards (M/606 work programme)",
+          "Ran RED and MID conformity programs for two European power-equipment manufacturers before going independent",
+          "Profile fictional by design — Egeria matches from the live network at engagement time",
+        ],
+        expertise: [
+          "CRA classification",
+          "RED / MID conformity",
+          "Notified-body audits",
+          "CEN/CENELEC JTC 13",
+          "Secure-development files",
+        ],
+        engagement: "1-hour advisory session · follow-up memo included · via Egeria",
+      },
+      alternates: [
+        {
+          name: "Marek Lindqvist",
+          title: "Former EUCC evaluation-lab director, now CRA notified-body advisor",
+          location: "Munich, Germany",
+          why: "Closest to the audit chair — if the session's answer is 'Annex III', he has run the assessments the product would face. The follow-up call, not the first one.",
+        },
+        {
+          name: "Dr. Ilaria Benetti",
+          title: "Product-security lead at a mid-size industrial power OEM",
+          location: "Milan, Italy",
+          why: "The practitioner's view: how a vendor this size actually sequenced CE, RED and CRA artifacts without serializing the calendar.",
+        },
+        {
+          name: "Sofie Andersen",
+          title: "Standards liaison, CRA requirements-mapping work",
+          location: "Brussels, Belgium",
+          why: "If the blocker turns out to be harmonised-standards timing rather than classification, she tracks the JTC 13 docket weekly.",
+        },
+      ],
+      emailDraft: {
+        to: "a.vos@egeria.innovera.network",
+        subject: "CRA classification session — remote-management rack PDU",
+        intro:
+          "Dear Dr. Vos,\n\nWe are preparing an EU market entry for an intelligent rack PDU with remote management, and need a classification judgment under the Cyber Resilience Act before our firmware design freeze. Ahead of a session, the questions we would put to you:",
       },
       agenda: [
         {
@@ -221,18 +287,18 @@ const rawMemos: Memo[] = [
             "What sequencing of CE + TÜV + CRA testing avoids serializing the compliance calendar?",
           nodeId: "obtainableFactor",
           moves:
-            "Parallel tracks protect the selling window the firmware-audit-gate risk already threatens.",
+            "Parallel tracks protect the selling window the security-audit-gate risk already threatens.",
         },
         {
           question:
-            "Which CRA harmonized standards will cite by mid-2026, and does slippage change the route?",
+            "Which CRA harmonised standards will cite by mid-2026, and does slippage change the route?",
           nodeId: "serviceableFactor",
           moves:
-            "Standards slippage raises the odds buyers demand third-party proof — an early-warning to hand Argus.",
+            "Standards slippage raises the odds buyers demand third-party proof — an early warning that goes straight to Argus.",
         },
       ],
       deliverable:
-        "A one-page conformity route memo — class, route, artifact list, test calendar — folded into the register within the week; the CRA risk's likelihood re-scored on an assessor's judgment instead of a founder's reading.",
+        "A one-page conformity-route memo — class, route, artifact list, test calendar — folded into the register within the week; the CRA risk's likelihood re-scored on an assessor's judgment instead of a founder's reading.",
     },
     projection: {
       ops: [],
@@ -255,8 +321,22 @@ const rawMemos: Memo[] = [
           "The default tier — roughly 90 per cent of products — permits self-assessment under conformity assessment Module A.",
         date: "2026-01-15",
       },
+      {
+        title: "CEN, CENELEC and ETSI Work Programme M/606 — Cyber Resilience Act",
+        publisher: "CEN/CENELEC",
+        url: "https://www.cencenelec.eu/media/CEN-CENELEC/News/Newsletters/2025/m_606_work_programme_final.pdf",
+        excerpt:
+          "M/606 — planning for standard development: the harmonised standards that will carry CRA presumption of conformity, deadlines running through 2026–2027.",
+      },
+      {
+        title: "CRA Conformity Assessment: Notified Bodies vs Standards Gap",
+        publisher: "CRA Facts",
+        url: "https://cra-facts.com/blog/cra-conformity-assessment-notified-bodies-standards-gap",
+        excerpt:
+          "Notified-body designations are still being rolled out through 2026 — manufacturers must verify CRA notification via NANDO before relying on a body for third-party assessment.",
+      },
     ],
-    asOf: "2026-07-13",
+    asOf: "2026-07-15",
   },
 
   // ── 3 · Argus — MONITOR ─────────────────────────────────────────────────────
@@ -264,14 +344,20 @@ const rawMemos: Memo[] = [
     riskId: "risk.competitive-foreclosure.framework-agreements-close-first-buyer",
     response: "monitor",
     headline: "Nothing to buy, no one to ask — only time settles it. Argus watches.",
+    tableLine:
+      "Big operators sign multi-year framework deals that quietly remove tenders from the market.",
     stakes: {
-      narrative:
-        "The model prices large operators at 40% of spend and names them the first buyer. But operators of that size increasingly buy rack power through multi-year framework agreements — the Digital Realty–Schneider $373M supply capacity agreement is the template — which remove tenders from the market for their whole term. Whether most of that 40% is already locked is not knowable today from any report or call: the evidence is genuinely contested, and the settle-test is the next twelve months of tender behavior itself.",
-      whenItBites:
-        "Continuously across Year 1 — every framework renewal quietly shrinks the open market before any tender is lost.",
-      decisionExpiry: {
-        label: "No decision is due today — that is precisely why this is a watch, not a move",
-        why: "Acting on a contested foreclosure claim would re-plan the beachhead around evidence that may dissolve; the cheap correct move is to instrument the question.",
+      assumption:
+        "The model gives large operators 40% of buyer spend and names them the first buyer — an open market the venture can tender into.",
+      reality:
+        "Operators of that size increasingly buy rack power through multi-year framework agreements — the Digital Realty–Schneider $373M supply-capacity agreement is the template — which remove tenders from the market for their whole term. Whether most of that 40% is already locked is not knowable today from any report or call: the evidence is genuinely contested, and the settle-test is the next twelve months of tender behavior itself.",
+      consequence:
+        "If the frameworks have quietly closed the first-buyer pool, the Year-1 account plan is built on tenders that will never be published — and every lost quarter reads as slow sales rather than a foreclosed market.",
+      clock: {
+        whenItBites:
+          "Continuously across Year 1 — every framework renewal quietly shrinks the open market before any tender is visibly lost.",
+        whyNow:
+          "No decision is due today — which is exactly why the correct move is to instrument the question before the account plans commit, not after.",
       },
     },
     decision: {
@@ -295,12 +381,12 @@ const rawMemos: Memo[] = [
       {
         response: "expert",
         verdict: "rejected",
-        note: "Procurement leads can describe framework norms (worth folding into the Delphi/Mentor passes) but cannot reveal confidential term coverage.",
+        note: "Procurement leads can describe framework norms, but cannot reveal confidential term coverage — the one number that matters.",
       },
       {
         response: "act",
         verdict: "rejected",
-        note: "The second-source wedge is already a Daedalus workstream; re-planning the whole beachhead on contested evidence overreacts.",
+        note: "Re-planning the beachhead on contested evidence overreacts — the Julius charter's mid-market bridge already decorrelates first revenue from the slowest accounts.",
       },
       {
         response: "ignore",
@@ -331,7 +417,21 @@ const rawMemos: Memo[] = [
         },
       ],
       escalation:
-        "Threshold trip → alert to the deal owner and automatic register re-price. Two trips in one quarter → convene the second-source wedge decision (Daedalus memo, workstream 3).",
+        "Threshold trip → alert to the deal owner and automatic register re-price. Two trips in one quarter → convene a first-buyer re-plan and pull the Julius charter's mid-market bridge forward.",
+      alsoWatching: [
+        {
+          signal: "CRA harmonised-standards calendar and national implementing acts in the launch countries",
+          feed: "EUR-Lex · CEN/CENELEC JTC 13 docket · Bundestag and Tweede Kamer legislative trackers — new legislation captured the day it is tabled",
+        },
+        {
+          signal: "The Accept & watch memo's two tripwires (distributor line cards, Legrand exclusivity moves)",
+          feed: "Rexel / Sonepar catalogs · Legrand EMEA announcements",
+        },
+        {
+          signal: "Security-questionnaire density in early RFQs (the Julius charter's leading indicator)",
+          feed: "The venture's own RFQ intake, logged weekly",
+        },
+      ],
       mockAlert: {
         label: "Simulated alert — what an Argus delivery looks like",
         feedItem:
@@ -357,7 +457,7 @@ const rawMemos: Memo[] = [
         date: "2025-11-19",
       },
     ],
-    asOf: "2026-07-13",
+    asOf: "2026-07-15",
   },
 
   // ── 4 · Delphi — BUY INFORMATION (the template memo) ────────────────────────
@@ -365,14 +465,20 @@ const rawMemos: Memo[] = [
     riskId: "risk.definition-scopedown.band-top-contaminated-comparator",
     response: "buy-information",
     headline: "Buy the report before you re-argue the number",
+    tableLine:
+      "The market-base ceiling rests on a report that measured a much bigger category — a purchasable dataset settles it.",
     stakes: {
-      narrative:
-        "The model caps the market base at €360M — but the growth rate used to justify that ceiling came from a €8.5–9.5B power-and-cable-management report covering far more than rack PDUs, so the scope-down may have imported the very contamination it was meant to remove. Germany-alone forecasts and the upper global anchors point above the band. This is the rare register finding whose surprise may be UPSIDE: if the true base sits at €400M+, the Year-1 plan — certification scope, channel hires, contract-manufacturing volumes — is sized for the wrong market. And unlike every other finding, a purchasable dataset settles it outright.",
-      whenItBites:
-        "At the next planning gate — a mis-sized base compounds through certification scope, hiring and CM volume commitments before a single unit ships.",
-      decisionExpiry: {
-        label: "Before the Year-1 operating plan locks capacity and certification scope — the plan's first 6-month gate",
-        why: "The report is worth €30M of resolved TAM uncertainty today; after capacity is committed, the same answer is trivia.",
+      assumption:
+        "The model caps the market base at €360M — the ceiling the whole funnel hangs from.",
+      reality:
+        "The growth rate used to justify that cap came from a €8.5–9.5B power-and-cable-management report covering far more than rack PDUs, so the scope-down may have imported the very contamination it was meant to remove. Germany-alone forecasts and the upper global anchors point above the band.",
+      consequence:
+        "If the true base sits at €400M+, certification scope, channel hires and contract-manufacturing volumes are being sized for the wrong market. This is the rare register finding whose surprise may be UPSIDE — and the only one a purchasable dataset settles outright.",
+      clock: {
+        whenItBites:
+          "At the next planning gate — a mis-sized base compounds through certification scope, hiring and CM volume commitments before a single unit ships.",
+        whyNow:
+          "The report is worth €30M of resolved TAM uncertainty today; after capacity is committed, the same answer is trivia.",
       },
     },
     decision: {
@@ -415,17 +521,19 @@ const rawMemos: Memo[] = [
         {
           title: "Rack PDUs Market in the European Union — Analysis, Forecast, Size, Trends and Insights",
           vendor: "IndexBox",
-          scope: "EU-scoped rack-PDU base with country tables — the exact denominator the model needs",
+          scope:
+            "You'll learn the EU rack-PDU market size with country tables — the exact denominator the model needs, plus a re-sourced Germany share",
           price: "$4,000 single-user (store-listed)",
           delivery: "Digital report, immediate",
           settles: ["tamBase", "geo.DE"],
           url: "https://www.indexbox.io/store/european-union-rack-pdus-market-analysis-forecast-size-trends-and-insights/",
-          note: "The ledger's own promotion path for tamBase — named in the risk's settle-test.",
+          note: "The ledger's own promotion path for the market base — named in the risk's settle-test.",
         },
         {
           title: "Intelligent Rack PDUs Market in the European Union",
           vendor: "IndexBox",
-          scope: "The intelligent-only subset of the same base",
+          scope:
+            "You'll learn how much of that base is intelligent PDUs — the slice the product actually sells into",
           price: "$4,000 single-user (store-listed)",
           delivery: "Digital report, immediate",
           settles: ["tamBase"],
@@ -435,7 +543,8 @@ const rawMemos: Memo[] = [
         {
           title: "Rack PDU Market Tracker — 2025",
           vendor: "Omdia (Informa Tech)",
-          scope: "Vendor shipment shares and market sizing — the concentration cross-check",
+          scope:
+            "You'll learn who ships how much — vendor shipment shares that cross-check the concentration figure",
           price: "Omdia subscription · quote on access",
           delivery: "Tracker access on subscription",
           settles: ["tamBase", "shape.cr3"],
@@ -445,7 +554,8 @@ const rawMemos: Memo[] = [
         {
           title: "Data Center Rack Power Distribution Unit (PDU) Market, 2026–2031",
           vendor: "Mordor Intelligence",
-          scope: "Global base and CAGR — the outer anchor for the Europe share hop",
+          scope:
+            "You'll learn the global base and growth rate — the outer anchor for the Europe share hop",
           price: "USD 4,750 single license (store-listed)",
           delivery: "PDF + data sheet, 24–72h; 3 months analyst support",
           settles: ["tamBase", "shape.cagr"],
@@ -495,27 +605,33 @@ const rawMemos: Memo[] = [
         excerpt: "Rack PDU Market Tracker – 2025. Become a client to gain access.",
       },
     ],
-    asOf: "2026-07-13",
+    asOf: "2026-07-15",
   },
 
-  // ── 5 · Themis — IGNORE ─────────────────────────────────────────────────────
+  // ── 5 · Accept & watch (Argus-executed) — IGNORE ───────────────────────────
   {
     riskId: "risk.competitive-foreclosure.distributor-line-review-lockout",
     response: "ignore",
     headline: "Safely ignorable this year — and Argus has the watch",
+    tableLine:
+      "Distributors review their line cards once a year and the incumbent owns both big PDU brands — but Year 1 doesn't route through them.",
     stakes: {
-      narrative:
-        "The distributor cell is 13% of the model, and the claim is that annual line reviews plus Legrand's ownership of both incumbent intelligent-PDU brands keep it shut for exactly the twelve months Year 1 measures. The mechanism is real — but the evidence is contested: three 2025–26 cases show European distributors onboarding new PDU vendors mid-cycle, and the Year-1 plan (see the Daedalus memo) routes around distribution entirely. The dangerous move here isn't the risk landing; it's burning scarce launch capacity fighting a gate the plan doesn't need opened.",
-      whenItBites:
-        "Only if the plan changes to lean on distribution in Year 1 — which it currently does not.",
-      decisionExpiry: {
-        label: "Revisit at Year-2 planning, or earlier if a trigger trips",
-        why: "The next distributor line-review calendar is the natural re-entry point; before that, the acceptance costs nothing.",
+      assumption:
+        "The model counts the distributor cell at 13% of buyer spend — reachable like the rest of the funnel.",
+      reality:
+        "Annual line reviews plus Legrand's ownership of both incumbent intelligent-PDU brands may keep that cell shut for exactly the twelve months Year 1 measures. The evidence is contested — three 2025–26 cases show European distributors onboarding new PDU vendors mid-cycle.",
+      consequence:
+        "The danger is not the risk landing; it is burning scarce launch capacity fighting a gate the Year-1 plan does not need opened. Fully shut, the cell forfeits about €0.21M of Year-1 revenue at current levers — against €0.06M expected.",
+      clock: {
+        whenItBites:
+          "Only if the plan changes to lean on distribution in Year 1 — which it currently does not.",
+        whyNow:
+          "Acceptance is only worth something if it is written down before it is tested; the next line-review calendar is the natural re-entry point.",
       },
     },
     decision: {
       question: "Accept the distributor lockout for Year 1 — consciously, on the record, with tripwires?",
-      deadline: "Now — acceptance is only worth something if it's written down before it's tested",
+      deadline: "Now — before anyone spends a launch-quarter courting a channel the plan never counted on",
       defaultPath:
         "The risk lingers un-dispositioned on the register, and someone eventually spends a launch-quarter courting Rexel for a cell the plan never counted on.",
     },
@@ -547,9 +663,9 @@ const rawMemos: Memo[] = [
       },
     ],
     artifact: {
-      kind: "themis",
+      kind: "acceptance",
       acceptance:
-        "The venture accepts distributor-channel foreclosure for the Year-1 horizon. The plan's revenue path (brownfield retrofit, direct) does not depend on distribution; the claim's own evidence is contested; and the cell re-opens at the next line-review calendar regardless of anything the venture does this year.",
+        "The venture accepts distributor-channel foreclosure for the Year-1 horizon. The Year-1 revenue path is direct and does not depend on distribution; the claim's own evidence is contested; and the cell re-opens at the next line-review calendar regardless of anything the venture does this year.",
       maxRegretNote:
         "Bounded by construction: if the cell stays fully shut, the forfeited Year-1 contribution is the distributor share of the funnel — about €0.21M of YAM at current levers (13% of €1.65M), against €0.06M expected. No tail beyond the cell itself.",
       revisitTriggers: [
@@ -581,7 +697,7 @@ const rawMemos: Memo[] = [
         date: "2025-06-12",
       },
     ],
-    asOf: "2026-07-13",
+    asOf: "2026-07-15",
   },
 ];
 

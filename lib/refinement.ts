@@ -24,7 +24,27 @@ export interface RefinementEntry {
   outcome: RefinementOutcome;
   outcomeNote: string;
   appliedValue?: number;
+  // Six-beat exemplar narration (next-steps.md item 11) — authored for the
+  // four FEATURED_REFINEMENTS only; the rest render as one-line outcomes.
+  problem?: string; // the risk/problem with the premise, in plain words
+  researchNote?: string; // what we actually did (from research/raw/refine-*)
+  whatNext?: string; // where the story goes from here (optional beat)
 }
+
+// One exemplar per outcome — the demo teaches the loop with four REALLY good
+// examples instead of seventeen adequate ones (next-steps.md item 9). The two
+// narrative threads supply the applied and refuted slots; everything else
+// stays in data so the counts remain honest.
+export const FEATURED_REFINEMENTS: string[] = [
+  // applied — the 1%-assumption thread: the model's own source said 1%, not 3%.
+  "risk.execution-window.som-window-semantics-mismatch",
+  // folded — its 2% verdict set the band top of the applied fix.
+  "risk.demand-discontinuity.prelet-pipeline-lockout",
+  // deferred — bounds researched; the point value waits on the channel plan.
+  "risk.execution-window.serviceable-reach-is-flow-not-stock",
+  // refuted — the slow-buyer-gate thread: the number died, the gate survived.
+  "risk.structure-independence.year1-obtainable-correlated-with-slowest-cell",
+];
 
 export const REFINEMENT_CYCLE1: RefinementEntry[] = [
   {
@@ -58,39 +78,13 @@ export const REFINEMENT_CYCLE1: RefinementEntry[] = [
     "expectedYamLoss": 2.5343999999999993,
     "outcome": "applied",
     "outcomeNote": "Applied: obtainableFactor 0.03 → 0.01 (band 0.5–3%). The source's own Year-1 figure.",
-    "appliedValue": 0.01
-  },
-  {
-    "riskId": "risk.competitive-foreclosure.bundling-eliminates-bakeoffs-year1",
-    "title": "Rivals bundle PDUs, so the head-to-head bake-off rarely happens",
-    "nodeId": "obtainableFactor",
-    "rev1Value": 0.03,
-    "proposed": {
-      "value": 0.01,
-      "rationale": "The generic 1–5% SOM benchmarks are not DC-hardware-specific; the concrete hardware entrant started near 0.001% and most PDU volume ships inside integrated bundles (Vertiv 360AI, Schneider RD48) leaving only retrofit/standalone sockets contestable, so the mid-band should drop from 3% toward 1% with a much wider low tail.},"
-    },
-    "verdict": "refute",
-    "verdictValue": 0.03,
-    "verdictLow": 0.01,
-    "verdictHigh": 0.05,
-    "verdictRationale": "The proposal wants to cut the mid-band to 1% and open a 0.001% tail, but the fresh search does not support that. The procurement results show standalone rack/row-PDU contests do happen as separate RFPs, with named low bidders at Utah State and University of Utah and a Navy NRL sources-sought, which undercuts the 'no separate contest' bundle thesis. The revenue results for Enlogic and ZincFive give no Year-1 share figure, so the 0.001% anchor is unsupported. Absent any quantified contestable-share or win-rate data, the existing 1-5% benchmark band and 3% mid stand.",
-    "evidence": [
-      {
-        "title": "Bid Results on Rack Level Power Distribution Units",
-        "publisher": "UtahBids",
-        "url": "https://www.utahbids.net/bid-result/uu207787178_rack_level_power_distribution_units-14458370",
-        "excerpt": "Intellivex Data Center Solutions is the apparent low bidder on the Utah State University's UU207787178 Rack Level Power Distribution Units solicitation, with a low bid of $57,900.00 USD. Bids were opened on October 30, 2025"
-      },
-      {
-        "title": "Modular Power Distribution Units (PDUs)",
-        "publisher": "SAM.gov",
-        "url": "https://sam.gov/workspace/contract/opp/6dfb31aa3a6b4e7aa1b8865b85db032a/view",
-        "excerpt": "The Cyber Operations Division at the Naval Research Laboratory (NRL) ... has a requirement to install six (6) Modular Power Distribution Units (PDUs) as part of its ongoing efforts to replace antiquated computer room infrastructure"
-      }
-    ],
-    "expectedYamLoss": 2.42,
-    "outcome": "refuted",
-    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands."
+    "appliedValue": 0.01,
+    "problem":
+      "The model had the venture winning 3% of its serviceable market in Year 1 — but the very source cited for that number assigns 3% to Year TWO. Read at a 12-month grain, the Year-1 figure was roughly three times too high.",
+    "researchNote":
+      "Re-pulled the cited Prospeo benchmark pages and hunted for any real entrant's documented first-year share — including Tractian, the closest hardware comparable, whose first year (~$1.2M of revenue against a multi-billion-dollar market) sits far below even 1%.",
+    "whatNext":
+      "The corrected 1% still assumes buyers the venture can reach inside twelve months — the slow-buyer gate that survives as a risk. It returns on the Remaining-risks tab, and the Act memo starts its clock.",
   },
   {
     "riskId": "risk.structure-independence.year1-obtainable-correlated-with-slowest-cell",
@@ -122,7 +116,13 @@ export const REFINEMENT_CYCLE1: RefinementEntry[] = [
     ],
     "expectedYamLoss": 2.3231999999999995,
     "outcome": "refuted",
-    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands."
+    "outcomeNote": "The model held: fresh evidence did not support the correction; the current value stands.",
+    "problem":
+      "Year 1 deliberately targets large operators — the slowest buyers, whose vendor qualification can outlast the selling year. The claim: that choice cuts first-year capture roughly tenfold, to 0.5%.",
+    "researchNote":
+      "Hunted for the claim's own evidence: a benchmark dataset of first-year capture for hardware entrants selling direct to large operators, plus documentation of AVL/RVL qualification gates and their timelines.",
+    "whatNext":
+      "The tenfold number died — no dataset supports it. The gate mechanism did not: qualification friction at large buyers is real, returns quantified on the corrected register as the security-audit gate, and the Act memo answers it.",
   },
   {
     "riskId": "risk.demand-discontinuity.prelet-pipeline-lockout",
@@ -154,7 +154,57 @@ export const REFINEMENT_CYCLE1: RefinementEntry[] = [
     ],
     "expectedYamLoss": 1.9359999999999997,
     "outcome": "folded",
-    "outcomeNote": "Folded into the obtainableFactor correction — its 2% verdict sets the band top."
+    "outcomeNote": "Folded into the obtainableFactor correction — its 2% verdict sets the band top.",
+    "problem":
+      "Much of the capacity delivering in Year 1 was sold — pre-let — years earlier, with its electrical gear locked at design time. If that flow is closed to new vendors, the model's Year-1 pace overstates what is actually winnable.",
+    "researchNote":
+      "Traced the data-center electrical procurement sequence — when gear is specified, when it is ordered, and at what lead times — and checked whether open EU tenders for rack PDUs still appear for near-term delivery.",
+    "whatNext":
+      "Its 2% verdict did not become a separate correction — it set the top of the corrected Year-1 band. One number, two independent attacks agreeing on it.",
+  },
+  {
+    "riskId": "risk.execution-window.serviceable-reach-is-flow-not-stock",
+    "title": "Year-1 reach is two countries, not 55% of the market",
+    "nodeId": "serviceableFactor",
+    "rev1Value": 0.55,
+    "proposed": {
+      "value": 0.35,
+      "rationale": "A realistic Year-1 footprint of Germany plus the Netherlands through one distributor covers ~30–35% of the market, not 55%; a pan-CE master distributor with existing DE/NL/PL coverage could lift that toward 45%, which sets the band top."
+    },
+    "verdict": "adjust",
+    "verdictValue": 0.35,
+    "verdictLow": 0.3,
+    "verdictHigh": 0.45,
+    "verdictRationale": "The direction of the claim holds up: no outside evidence supports 45–65% first-year reach for a comparable vendor, distribution analogues show reach built one country at a time, and only 23% of B2B companies hit first-year revenue targets at all. But the right value is not a research fact — it depends on which channel the venture actually signs. Country-by-country building lands near 30–35% (DE+NL); one pan-CE master distributor with existing DE/NL/PL coverage covers several countries in a single contract and pushes reach toward 45%. The evidence can bound the range; only the venture's channel decision picks the point.",
+    "evidence": [
+      {
+        "title": "Serviceable Obtainable Market (SOM): How to Calculate It",
+        "publisher": "Prospeo",
+        "url": "https://prospeo.io/s/serviceable-obtainable-market",
+        "excerpt": "SOM is the revenue you can realistically capture in 1-3 years. Not a fantasy percentage of SAM. Not a top-down slice of a Gartner number."
+      },
+      {
+        "title": "GTM Strategy Statistics & Benchmarks 2024",
+        "publisher": "The Starr Conspiracy",
+        "url": "https://www.thestarrconspiracy.com/insights/benchmarks/go-to-market-strategy-benchmarks",
+        "excerpt": "Only 23% of B2B companies achieve their first-year revenue targets after product launch, according to a 2024 study by SiriusDecisions analyzing 847 tech companies."
+      },
+      {
+        "title": "Memphasys seals exclusive Thailand Felix deal, lifting FY2026 contracted revenue",
+        "publisher": "TipRanks",
+        "url": "https://www.tipranks.com/news/company-announcements/memphasys-seals-exclusive-thailand-felix-deal-lifting-fy2026-contracted-revenue",
+        "excerpt": "Memphasys has signed an exclusive three-year distribution agreement... in Thailand... combined with its recently signed Vietnam deal — illustrating that pre-launch distribution reach is built one country at a time."
+      }
+    ],
+    "expectedYamLoss": 1.056,
+    "outcome": "deferred",
+    "outcomeNote": "Deferred: the bounds are researched (30–45%), but the point value is set by the venture's Year-1 channel plan — one pan-CE master distributor vs country-by-country — a decision, not a research fact. Queued for curation with the channel plan.",
+    "problem":
+      "The model says 55% of the market is reachable in Year 1. But reach has to be BUILT during that same year, and every analogue found builds it one country at a time — a realistic first-year footprint of Germany plus the Netherlands is nearer 30–35%.",
+    "researchNote":
+      "Looked for any comparable vendor covering 45–65% of a regional market in its first year (none found), and for how distribution reach is actually assembled: distributor line cards, conformity timelines, country-by-country agreements.",
+    "whatNext":
+      "The bounds are now researched — 30% to 45% — but the point value depends on which channel the venture signs: one pan-CE master distributor or country-by-country. That is a decision, not a research fact, so the fix waits for the channel plan.",
   },
   {
     "riskId": "risk.structure-independence.global-framework-forecloses-large-operator-cell",
@@ -579,7 +629,7 @@ export const REFINEMENT_CYCLE1: RefinementEntry[] = [
 export const REFINEMENT_SUMMARY = {
   "researched": 17,
   "applied": 3,
-  "refuted": 10,
+  "refuted": 9,
   "folded": 1,
-  "deferred": 3
+  "deferred": 4
 } as const;

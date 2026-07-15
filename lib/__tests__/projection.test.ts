@@ -87,4 +87,42 @@ describe("retiredExposure", () => {
     expect(retiredExposure(ledger, baseline, risk, memoOf("bounds"))).toBe(0);
     expect(retiredExposure(ledger, baseline, risk, memoOf("none"))).toBe(0);
   });
+
+  it("mitigates with likelihoodAfter retires on the probability axis", () => {
+    // No ops (nothing in the world's numbers changes) but the chance the risk
+    // bites halves: 0.5 → 0.25. Retired = 4.95 − 0.25 × 9.9 = 2.475.
+    const memo = { projection: { ops: [], retirement: "mitigates" as const, likelihoodAfter: 0.25, note: "test" } };
+    expect(retiredExposure(ledger, baseline, risk, memo)).toBeCloseTo(4.95 / 2, 6);
+  });
+
+  it("mitigates with a scale-perturbing risk retires €0 from value ops alone — likelihoodAfter is the only axis that moves it", () => {
+    // A risk that perturbs by scale is invariant under value projections:
+    // ×0.5 hurts exactly as much on the projected ledger as on today's.
+    const scaleRisk = {
+      likelihood: { value: 0.4, rationale: "test", basis: "judgment" },
+      perturbation: [{ nodeId: "obtainableFactor", op: "scale", value: 0.5 }],
+    } as unknown as Risk;
+    const valueOnly = {
+      projection: {
+        ops: [{ nodeId: "tamBase", value: 1100 }],
+        retirement: "mitigates" as const,
+        note: "test",
+      },
+    };
+    // Projected severity SHRINKS slightly (smaller TAM → smaller |ΔYAM|), but
+    // proportionally — the scale hit itself is untouched. The point: retired
+    // stays a sliver of severityNow, nowhere near what acting actually buys.
+    const retiredValueOnly = retiredExposure(ledger, baseline, scaleRisk, valueOnly);
+    const severityNow = 0.4 * (1200 * 0.55 * 0.06 * 0.5); // 0.4 × half of YAM
+    expect(retiredValueOnly / severityNow).toBeLessThan(0.1);
+    // With likelihoodAfter the payoff is expressible: 0.4 → 0.2 on the same
+    // ledger retires half of severityNow.
+    const withLikelihood = {
+      projection: { ops: [], retirement: "mitigates" as const, likelihoodAfter: 0.2, note: "test" },
+    };
+    expect(retiredExposure(ledger, baseline, scaleRisk, withLikelihood)).toBeCloseTo(
+      severityNow / 2,
+      6,
+    );
+  });
 });

@@ -4,7 +4,8 @@ import type { Ledger, Scenario } from "@/lib/schema";
 import type { Mitigation, PerturbationOp } from "@/lib/riskSchema";
 import { mitigationVoi, type RankedRisk } from "@/lib/riskCompute";
 import { voiBucket } from "@/lib/voi";
-import { formatEUR, formatPct } from "@/lib/format";
+import { formatEUR, formatNodeValue, formatPct } from "@/lib/format";
+import { factClaim } from "@/lib/factClaims";
 import {
   Badge,
   CATEGORY_LABEL,
@@ -12,13 +13,15 @@ import {
   EVIDENCE_STATUS_LABEL,
   EVIDENCE_STATUS_STYLE,
 } from "@/lib/badges";
+import ThreadBadge from "@/components/ThreadBadge";
 
 // ─────────────────────────────────────────────────────────────────────────────
-// RiskDetail — the risk dossier (FactDetail's sibling). Narrative → computed
-// impact ("view this world": base vs perturbed funnel, a display-only lens
-// that never mutates the user's scenario) → mechanism chain → the partner
-// beats (why missable · falsifier) → early warnings → mitigations with
-// computed VOI → evidence. Every € figure comes from lib/riskCompute.ts.
+// RiskDetail — the risk dossier (FactDetail's sibling), reordered per the
+// walkthrough feedback (next-steps.md item 8) to read as an argument:
+//   ① the fact we're challenging  ② what the problem is  ③ what it does to
+//   our numbers  ④ how we'd attack it  ⑤ Innovera's read — with mechanism,
+//   early warnings and sources folded into one "full workings" details.
+// Every € figure comes from lib/riskCompute.ts against the current levers.
 // ─────────────────────────────────────────────────────────────────────────────
 
 interface Props {
@@ -50,6 +53,16 @@ function opLabel(op: PerturbationOp, ledger: Ledger): string {
 export default function RiskDetail({ ranked, ledger, scenario, maxVoi, onClose }: Props) {
   const { risk, impact, severity } = ranked;
   const mechanismSteps = risk.mechanism.split(" → ");
+  const targetNode = ledger.find((n) => n.id === risk.targetNodes[0]) ?? null;
+
+  // The first funnel stage the perturbation moves — where the risk bites.
+  const biteStage =
+    Math.abs(impact.dTam) > 1e-9 ? "tam" : Math.abs(impact.dSam) > 1e-9 ? "sam" : "yam";
+  const STAGES = [
+    { key: "tam" as const, label: "TAM", d: impact.dTam },
+    { key: "sam" as const, label: "SAM", d: impact.dSam },
+    { key: "yam" as const, label: "Year-1", d: impact.dYam },
+  ];
 
   return (
     <div className="p-5">
@@ -68,6 +81,7 @@ export default function RiskDetail({ ranked, ledger, scenario, maxVoi, onClose }
                   ? "◆ Rock"
                   : "○ Front of mind"}
             </span>
+            <ThreadBadge riskId={risk.id} />
             <Badge className={CATEGORY_STYLE[risk.category]}>{CATEGORY_LABEL[risk.category]}</Badge>
             {risk.evidenceStatus ? (
               <Badge className={`bg-transparent ${EVIDENCE_STATUS_STYLE[risk.evidenceStatus]}`}>
@@ -89,132 +103,115 @@ export default function RiskDetail({ ranked, ledger, scenario, maxVoi, onClose }
         </button>
       </div>
 
-      <p className="mt-3 text-sm leading-relaxed text-ink-2">{risk.narrative}</p>
-
-      {/* ── computed impact — the "view this world" lens ───────────────────── */}
-      <div className="mt-5 grid grid-cols-3 gap-2">
-        <div className="rounded-lg border border-hairline bg-well p-3">
-          <p className="text-[10px] uppercase tracking-wide text-ink-3">TAM if it lands</p>
-          <p className="mt-1 font-mono text-sm tabular-nums text-ink">
-            {formatEUR(impact.perturbed.tam)}
-          </p>
-          <p className={`font-mono text-[11px] tabular-nums ${impact.dTam < 0 ? "text-negative-ink" : "text-ink-faint"}`}>
-            {formatEUR(impact.dTam, { signed: true })}
-          </p>
-        </div>
-        <div className="rounded-lg border border-hairline bg-well p-3">
-          <p className="text-[10px] uppercase tracking-wide text-ink-3">YAM if it lands</p>
-          <p className="mt-1 font-mono text-sm tabular-nums text-ink">
-            {formatEUR(impact.perturbed.yam)}
-          </p>
-          <p className={`font-mono text-[11px] tabular-nums ${impact.dYam < 0 ? "text-negative-ink" : "text-ink-faint"}`}>
-            {formatEUR(impact.dYam, { signed: true })}
-          </p>
-        </div>
-        <div className="rounded-lg border border-negative/20 bg-negative-wash p-3">
-          <p className="text-[10px] uppercase tracking-wide text-negative-ink">Expected YAM loss</p>
-          <p className="mt-1 font-mono text-sm tabular-nums text-negative-ink">
-            {formatEUR(severity)}
-          </p>
-          <p className="font-mono text-[11px] tabular-nums text-ink-3">
-            p {formatPct(risk.likelihood.value)} · {risk.likelihood.basis}
-          </p>
-        </div>
-      </div>
-      <p className="mt-1.5 text-[11px] text-ink-faint">
-        Computed vs your current levers — this lens never moves them. Perturbation:{" "}
-        {risk.perturbation.map((op) => opLabel(op, ledger)).join(" · ")}
-      </p>
-
-      {/* ── mechanism ──────────────────────────────────────────────────────── */}
-      <Section title="Mechanism">
-        <ol className="space-y-1.5">
-          {mechanismSteps.map((step, i) => (
-            <li key={i} className="flex gap-2.5 text-sm text-ink-2">
-              <span className="mt-0.5 shrink-0 font-mono text-[11px] tabular-nums text-ink-faint">
-                {i + 1}
-              </span>
-              <span>{step}</span>
-            </li>
-          ))}
-        </ol>
-      </Section>
-
-      {/* ── the partner beats ──────────────────────────────────────────────── */}
-      <div className="mt-5 grid gap-2 sm:grid-cols-2">
-        <div className="rounded-lg border border-hairline bg-well p-3">
+      {/* ── ① the fact we're challenging ───────────────────────────────────── */}
+      {targetNode ? (
+        <div className="mt-4 rounded-lg border border-hairline bg-well p-3">
           <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-3">
-            Why you'd miss it
+            The fact we&rsquo;re challenging
           </p>
-          <p className="mt-1.5 text-xs leading-relaxed text-ink-2">{risk.whyMissable}</p>
-        </div>
-        <div className="rounded-lg border border-hairline bg-well p-3">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-3">
-            What would kill this risk
+          <p className="mt-1.5 text-sm leading-relaxed text-ink-2">
+            {factClaim(ledger, targetNode)}
           </p>
-          <p className="mt-1.5 text-xs leading-relaxed text-ink-2">{risk.falsifier}</p>
-        </div>
-      </div>
-
-      {/* ── errors vs risks: the settle-it verdict ─────────────────────────── */}
-      {risk.resolution === "error" ? (
-        <div className="mt-5 rounded-lg border border-fact-red-line bg-fact-red-tint p-3">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-fact-red">
-            ▲ Error, not a risk — research settles this
-          </p>
-          {risk.settleTest ? (
-            <p className="mt-1.5 text-xs leading-relaxed text-ink-2">
-              <span className="text-ink-3">What settles it:</span> {risk.settleTest}
-            </p>
-          ) : null}
-          {risk.proposedCorrection ? (
-            <p className="mt-1.5 text-xs leading-relaxed text-ink-2">
-              <span className="text-ink-3">Proposed fix:</span>{" "}
-              <span className="font-mono tabular-nums">
-                {ledger.find((n) => n.id === risk.proposedCorrection!.nodeId)?.label ??
-                  risk.proposedCorrection.nodeId}
-                : {ledger.find((n) => n.id === risk.proposedCorrection!.nodeId)?.value} →{" "}
-                {risk.proposedCorrection.value}
-              </span>{" "}
-              — {risk.proposedCorrection.rationale}
-            </p>
-          ) : null}
-          <p className="mt-1.5 text-[11px] text-ink-3">
-            Queued for the refinement loop: research confirms or refutes the fix, then the fact
-            bank is corrected and the register re-runs.
+          <p className="mt-1 font-mono text-[11px] tabular-nums text-ink-3">
+            {targetNode.label} = {formatNodeValue(targetNode)}
+            {risk.targetNodes.length > 1
+              ? ` · also touches: ${risk.targetNodes
+                  .slice(1)
+                  .map((id) => ledger.find((n) => n.id === id)?.label ?? id)
+                  .join(", ")}`
+              : ""}
           </p>
         </div>
-      ) : risk.settleTest ? (
-        <Section title="Why research can't settle this now">
-          <p className="text-xs leading-relaxed text-ink-2">{risk.settleTest}</p>
-        </Section>
       ) : null}
 
-      <Section title="Likelihood rationale">
-        <p className="text-xs leading-relaxed text-ink-2">{risk.likelihood.rationale}</p>
+      {/* ── ② what the problem is ──────────────────────────────────────────── */}
+      <Section title="What the problem is">
+        <p className="text-sm leading-relaxed text-ink-2">{risk.narrative}</p>
       </Section>
 
-      {/* ── early warnings (the Bayesian hooks) ────────────────────────────── */}
-      <Section title="Early warnings — watch these">
-        <ul className="space-y-2">
-          {risk.indicators.map((ind, i) => (
-            <li key={i} className="text-xs leading-relaxed text-ink-2">
-              <span className="text-ink">{ind.signal}</span>
-              {ind.where ? <span className="text-ink-3"> — watch: {ind.where}</span> : null}
-              {ind.threshold ? (
-                <span className="text-ink-3"> · trigger: {ind.threshold}</span>
-              ) : null}
-              <span className="ml-1 text-[10px] uppercase tracking-wide text-ink-faint">
-                {ind.updates === "increases" ? "↑ raises p" : "↓ lowers p"}
-              </span>
-            </li>
+      {/* ── ③ what it does to our numbers — mini funnel, biting stage lit ──── */}
+      <Section title="What it does to our numbers">
+        <div className="grid grid-cols-4 gap-2">
+          {STAGES.map((s) => (
+            <div
+              key={s.key}
+              className={`rounded-lg border p-3 ${
+                s.key === biteStage
+                  ? "border-negative/30 bg-negative-wash"
+                  : "border-hairline bg-well"
+              }`}
+            >
+              <p className="text-[10px] uppercase tracking-wide text-ink-3">
+                {s.label}
+                {s.key === biteStage ? " — where it bites" : ""}
+              </p>
+              <p className="mt-1 font-mono text-xs tabular-nums text-ink-3">
+                {formatEUR(impact.base[s.key])}
+                <span className="text-ink-faint"> → </span>
+                <span className="text-ink">{formatEUR(impact.perturbed[s.key])}</span>
+              </p>
+              <p
+                className={`font-mono text-[11px] tabular-nums ${
+                  s.d < 0 ? "text-negative-ink" : "text-ink-faint"
+                }`}
+              >
+                {formatEUR(s.d, { signed: true })}
+              </p>
+            </div>
           ))}
-        </ul>
+          <div className="rounded-lg border border-negative/20 bg-negative-wash p-3">
+            <p className="text-[10px] uppercase tracking-wide text-negative-ink">Expected loss</p>
+            <p className="mt-1 font-mono text-sm tabular-nums text-negative-ink">
+              {formatEUR(severity)}
+            </p>
+            <p className="font-mono text-[11px] tabular-nums text-ink-3">
+              p {formatPct(risk.likelihood.value)} · on Year-1
+            </p>
+          </div>
+        </div>
+        <p className="mt-1.5 text-[11px] text-ink-faint">
+          Computed vs your current levers — this lens never moves them. Year-1 is small today
+          ({formatEUR(impact.base.yam)}), so the € that matters is often the TAM/SAM hit.
+          Perturbation: {risk.perturbation.map((op) => opLabel(op, ledger)).join(" · ")}
+        </p>
       </Section>
 
-      {/* ── mitigations, information-type priced by VOI ────────────────────── */}
-      <Section title="Mitigations">
-        <ul className="space-y-2">
+      {/* ── ④ how we'd attack it ───────────────────────────────────────────── */}
+      <Section title="How we’d attack it">
+        {risk.resolution === "error" ? (
+          <div className="rounded-lg border border-fact-red-line bg-fact-red-tint p-3">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-fact-red">
+              ▲ Error, not a risk — research settles this
+            </p>
+            {risk.settleTest ? (
+              <p className="mt-1.5 text-xs leading-relaxed text-ink-2">
+                <span className="text-ink-3">What settles it:</span> {risk.settleTest}
+              </p>
+            ) : null}
+            {risk.proposedCorrection ? (
+              <p className="mt-1.5 text-xs leading-relaxed text-ink-2">
+                <span className="text-ink-3">Proposed fix:</span>{" "}
+                <span className="font-mono tabular-nums">
+                  {ledger.find((n) => n.id === risk.proposedCorrection!.nodeId)?.label ??
+                    risk.proposedCorrection.nodeId}
+                  : {ledger.find((n) => n.id === risk.proposedCorrection!.nodeId)?.value} →{" "}
+                  {risk.proposedCorrection.value}
+                </span>{" "}
+                — {risk.proposedCorrection.rationale}
+              </p>
+            ) : null}
+            <p className="mt-1.5 text-[11px] text-ink-3">
+              Queued for the refinement loop: research confirms or refutes the fix, then the fact
+              bank is corrected and the register re-runs.
+            </p>
+          </div>
+        ) : risk.settleTest ? (
+          <p className="mb-2 text-xs leading-relaxed text-ink-2">
+            <span className="text-ink-3">Why research can&rsquo;t settle this now:</span>{" "}
+            {risk.settleTest}
+          </p>
+        ) : null}
+        <ul className={`space-y-2 ${risk.resolution === "error" ? "mt-3" : ""}`}>
           {risk.mitigations.map((m, i) => {
             const voi = mitigationVoi(ledger, scenario, m);
             return (
@@ -242,44 +239,101 @@ export default function RiskDetail({ ranked, ledger, scenario, maxVoi, onClose }
         </ul>
       </Section>
 
-      {/* ── evidence ───────────────────────────────────────────────────────── */}
-      {risk.evidence?.length ? (
-        <Section title={`Evidence (${EVIDENCE_STATUS_LABEL[risk.evidenceStatus ?? "speculative"]})`}>
+      {/* ── ⑤ Innovera's read ──────────────────────────────────────────────── */}
+      <Section title="Innovera’s read">
+        <div className="space-y-2 rounded-lg border border-hairline bg-well p-3 text-xs leading-relaxed text-ink-2">
+          <p>
+            <span className="font-medium text-ink">Why you&rsquo;d miss it:</span>{" "}
+            {risk.whyMissable}
+          </p>
+          <p>
+            <span className="font-medium text-ink">Why we rate it {formatPct(risk.likelihood.value)}:</span>{" "}
+            {risk.likelihood.rationale}
+          </p>
+          <p>
+            <span className="font-medium text-ink">What would change our mind:</span>{" "}
+            {risk.falsifier}
+          </p>
+        </div>
+      </Section>
+
+      {/* ── full workings — mechanism, early warnings, sources ─────────────── */}
+      <details className="group mt-5">
+        <summary className="cursor-pointer list-none text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-3 transition-colors hover:text-ink">
+          <span aria-hidden className="mr-1 inline-block transition-transform group-open:rotate-90">
+            ▸
+          </span>
+          Full workings — mechanism, early warnings, sources
+        </summary>
+
+        <Section title="Mechanism">
+          <ol className="space-y-1.5">
+            {mechanismSteps.map((step, i) => (
+              <li key={i} className="flex gap-2.5 text-sm text-ink-2">
+                <span className="mt-0.5 shrink-0 font-mono text-[11px] tabular-nums text-ink-faint">
+                  {i + 1}
+                </span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ol>
+        </Section>
+
+        <Section title="Early warnings — watch these">
           <ul className="space-y-2">
-            {risk.evidence.map((e, i) => (
-              <li key={i} className="rounded-lg border border-hairline bg-card p-3">
-                <p className="text-xs font-medium text-ink">
-                  {e.url ? (
-                    <a
-                      href={e.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="hover:text-accent-ink hover:underline"
-                    >
-                      {e.title} ↗
-                    </a>
-                  ) : (
-                    e.title
-                  )}
-                  {e.publisher ? <span className="text-ink-3"> — {e.publisher}</span> : null}
-                </p>
-                {e.excerpt ? (
-                  <p className="mt-1 border-l-2 border-hairline pl-2 text-[11px] leading-relaxed text-ink-3">
-                    {e.excerpt}
-                  </p>
+            {risk.indicators.map((ind, i) => (
+              <li key={i} className="text-xs leading-relaxed text-ink-2">
+                <span className="text-ink">{ind.signal}</span>
+                {ind.where ? <span className="text-ink-3"> — watch: {ind.where}</span> : null}
+                {ind.threshold ? (
+                  <span className="text-ink-3"> · trigger: {ind.threshold}</span>
                 ) : null}
+                <span className="ml-1 text-[10px] uppercase tracking-wide text-ink-faint">
+                  {ind.updates === "increases" ? "↑ raises p" : "↓ lowers p"}
+                </span>
               </li>
             ))}
           </ul>
         </Section>
-      ) : (
-        <Section title="Evidence">
-          <p className="text-xs text-ink-3">
-            No external coverage found — kept and flagged, not killed. Absence of coverage is not
-            absence of risk.
-          </p>
-        </Section>
-      )}
+
+        {risk.evidence?.length ? (
+          <Section title={`Evidence (${EVIDENCE_STATUS_LABEL[risk.evidenceStatus ?? "speculative"]})`}>
+            <ul className="space-y-2">
+              {risk.evidence.map((e, i) => (
+                <li key={i} className="rounded-lg border border-hairline bg-card p-3">
+                  <p className="text-xs font-medium text-ink">
+                    {e.url ? (
+                      <a
+                        href={e.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="hover:text-accent-ink hover:underline"
+                      >
+                        {e.title} ↗
+                      </a>
+                    ) : (
+                      e.title
+                    )}
+                    {e.publisher ? <span className="text-ink-3"> — {e.publisher}</span> : null}
+                  </p>
+                  {e.excerpt ? (
+                    <p className="mt-1 border-l-2 border-hairline pl-2 text-[11px] leading-relaxed text-ink-3">
+                      {e.excerpt}
+                    </p>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </Section>
+        ) : (
+          <Section title="Evidence">
+            <p className="text-xs text-ink-3">
+              No external coverage found — kept and flagged, not killed. Absence of coverage is
+              not absence of risk.
+            </p>
+          </Section>
+        )}
+      </details>
 
       <p className="mt-5 border-t border-hairline pt-3 text-[10px] text-ink-faint">
         {risk.id} · as of {risk.asOf} · drafts, transcripts and raw evidence in risks/ (audit

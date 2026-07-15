@@ -34,6 +34,8 @@ const rawLedger: FactNode[] = [
     skillId: "tam-base-sizing",
     maturity: "triangulated",
     derivation: {
+      plain:
+        "The world buys about $2.8B of rack PDUs a year. Europe's slice is roughly 30% of that, and the seven Central European countries in scope hold about 40% of Europe's data-center capacity — multiply through and the Central European market comes out near €310M; we carry €300M. Re-research removed the old €495M ceiling: the report behind it measures PDUs and power supplies together, a much bigger category, so the band top now sits at €360M.",
       method: "Top-down scope-down from the global rack-PDU base",
       expression:
         "Global rack-PDU $2.81B (Grand View, 2025) × Europe ≈ 30% [est.; NA = 38% per same source] ≈ $843M ≈ €775M @0.92 (Jul 2026) × CE-7 = 39.8% of Europe colo MW (Statista 2025) ≈ €310M → curated €300M",
@@ -96,6 +98,8 @@ const rawLedger: FactNode[] = [
     skillId: "geo-share-triangulation",
     maturity: "triangulated",
     derivation: {
+      plain:
+        "Germany hosts 1,737 MW of the region's 3,451 MW of rented data-center capacity — just over half, so we give it 50% of the market. Counting all installed computing instead (including companies' own server rooms) gives 42%, which sets the low end of the band.",
       method: "Top-down capacity apportionment",
       expression:
         "DE colo 1,737 MW ÷ CE-7 colo 3,451 MW (Statista 2025) = 0.503 → 0.50 (normalized)",
@@ -142,6 +146,8 @@ const rawLedger: FactNode[] = [
     skillId: "geo-share-triangulation",
     maturity: "triangulated",
     derivation: {
+      plain:
+        "The Netherlands hosts 951 MW of the region's 3,451 MW of rented data-center capacity — about 28% of the market. The Dutch industry association's own count (924 MW) says the same thing, which is why the band on this fact is narrow.",
       method: "Top-down capacity apportionment",
       expression: "NL colo 951 MW ÷ CE-7 colo 3,451 MW (Statista 2025) = 0.276 → 0.28 (normalized)",
       crossCheck: "Dutch Data Center Association: national colo 924 MW (2024) — consistent scale",
@@ -185,6 +191,8 @@ const rawLedger: FactNode[] = [
     skillId: "geo-share-triangulation",
     maturity: "single-source",
     derivation: {
+      plain:
+        "Poland hosts 228 MW of the region's 3,451 MW of rented capacity — about 7%. A second source that counts all installed computing puts it nearer 10%; the two measure different things, so we widened the band rather than pick one.",
       method: "Top-down capacity apportionment",
       expression: "PL colo 228 MW ÷ CE-7 colo 3,451 MW (Statista 2025) = 0.066 → 0.07 (normalized)",
       crossCheck: "Installed-IT-load method (Mordor 660 MW, 2025) → ~0.10 — scopes diverge, band widened",
@@ -228,6 +236,8 @@ const rawLedger: FactNode[] = [
     skillId: "geo-share-triangulation",
     maturity: "single-source",
     derivation: {
+      plain:
+        "Switzerland has 274 MW of the region's 3,451 MW of rented data-center capacity — about 8%, so we give it 8% of the market. A second method that also counts data centers companies run for themselves puts it nearer 13%; the truth is probably between the two, which is why this fact's range runs from 7% to 13%.",
       method: "Top-down capacity apportionment",
       expression: "CH colo 274 MW ÷ CE-7 colo 3,451 MW (Statista 2025) = 0.079 → 0.08 (normalized)",
       crossCheck: "Installed-base method (Mordor 850.6 MW incl. self-operated) → ~0.13 — Swiss market is self-operation-heavy",
@@ -270,6 +280,8 @@ const rawLedger: FactNode[] = [
     skillId: "geo-share-triangulation",
     maturity: "triangulated",
     derivation: {
+      plain:
+        "Czechia hosts 79 MW of the region's 3,451 MW of rented capacity — about 2%. A second method counting installed load lands at 2.4%: the methods agree, so the band is tight.",
       method: "Top-down capacity apportionment",
       expression: "CZ colo 79 MW ÷ CE-7 colo 3,451 MW (Statista 2025) = 0.023 → 0.02 (normalized)",
       crossCheck: "Installed-load method (Mordor 152.67 MW) → 0.024 — methods agree",
@@ -302,6 +314,8 @@ const rawLedger: FactNode[] = [
     skillId: "geo-share-triangulation",
     maturity: "single-source",
     derivation: {
+      plain:
+        "Austria hosts 68 MW of the region's 3,451 MW of rented capacity — about 2%. A method counting all installed computing gives 3.3%; the scopes differ, so the band allows for it.",
       method: "Top-down capacity apportionment",
       expression: "AT colo 68 MW ÷ CE-7 colo 3,451 MW (Statista 2025) = 0.020 → 0.02 (normalized)",
       crossCheck: "Installed-base method (Mordor 207 MW) → 0.033 — scopes diverge",
@@ -334,6 +348,8 @@ const rawLedger: FactNode[] = [
     skillId: "geo-share-triangulation",
     maturity: "needs-source",
     derivation: {
+      plain:
+        "Everything else — Hungary, Romania, Slovakia, Slovenia, Croatia and Bulgaria — adds up to 114 MW, about 3% of the region. It is the leftover bucket, not a market we model country by country.",
       method: "Residual bucket",
       expression:
         "HU 18 + RO 27 + SK 14 + SI 6 + HR 17 + BG 32 = 114 MW ÷ CE-7 colo 3,451 MW (Statista 2025) = 0.033 → 0.03 (residual, normalized)",
@@ -373,6 +389,8 @@ const rawLedger: FactNode[] = [
     skillId: "segment-decomposition",
     maturity: "triangulated",
     derivation: {
+      plain:
+        "Industry data says hyperscale operators account for 48% of data-center capacity. We shave that by 9% to make room for the edge and telecom segments the split leaves out, landing at 44%. An earlier vintage of the same data said 44% outright — the band covers both readings.",
       method: "Capacity-split rescaling",
       expression: "Synergy end-2025 hyperscale 48% × 0.91 (edge+telecom carve-out) = 0.44",
       crossCheck: "Synergy Q1-2025 vintage: 44% — brackets the band",
@@ -416,6 +434,8 @@ const rawLedger: FactNode[] = [
     skillId: "segment-decomposition",
     maturity: "single-source",
     derivation: {
+      plain:
+        "The same industry split gives non-hyperscale colocation 20% of capacity; after the 9% carve-out for edge and telecom, that lands at 18% of the market.",
       method: "Capacity-split rescaling",
       expression: "Synergy end-2025 non-hyperscale colocation 20% × 0.91 = 0.18",
     },
@@ -448,6 +468,8 @@ const rawLedger: FactNode[] = [
     skillId: "segment-decomposition",
     maturity: "triangulated",
     derivation: {
+      plain:
+        "Companies running their own server rooms account for 32% of capacity in the industry split; after the edge and telecom carve-out, that is 29% of the market. Re-research attacked this number — the claim was that GPU racks skip PDUs — and it held: NVIDIA's own reference designs ship rack PDUs in every variant.",
       method: "Capacity-split rescaling",
       expression: "Synergy end-2025 enterprise on-premise 32% × 0.91 = 0.29",
       crossCheck:
@@ -484,6 +506,8 @@ const rawLedger: FactNode[] = [
     skillId: "segment-decomposition",
     maturity: "needs-source",
     derivation: {
+      plain:
+        "Nobody publishes edge computing's share of the data-center market, so we sized it from the absolute numbers that do exist: an edge market of roughly $12–19B against the total data-center market points to about 5%. An estimate, and flagged as one.",
       method: "Carve-out estimate",
       expression:
         "No public edge-share-of-total figure; edge market ≈ $12–19B absolute (GVR/Mordor 2024-25) vs total DC market → ~5% carve-out",
@@ -517,6 +541,8 @@ const rawLedger: FactNode[] = [
     skillId: "segment-decomposition",
     maturity: "needs-source",
     derivation: {
+      plain:
+        "No clean figure exists for telecom's share either — the one published number mixes IT and telecom together — so we estimate telecom central-office demand at about 4%. The least solid share in the segment split.",
       method: "Carve-out estimate",
       expression:
         "No clean telecom share exists (FMI's 34.6% conflates IT & telecom on the power sub-market); telecom central-office PDU demand estimated at ~4% carve-out",
@@ -556,6 +582,8 @@ const rawLedger: FactNode[] = [
     skillId: "buyer-mix-survey",
     maturity: "needs-source",
     derivation: {
+      plain:
+        "Hyperscale and colocation operators account for about 62% of capacity, and the big ones buy PDUs directly rather than through middlemen. Putting those together, we credit large operators with about 40% of PDU spend. That is a judgment from channel structure, not a measured number — the band is wide accordingly.",
       method: "Qualitative channel triangulation",
       expression:
         "Hyperscale+colo ≈ 62% of capacity (Synergy) and large operators buy direct → dominant buyer ≈ 0.40 of PDU spend",
@@ -649,6 +677,8 @@ const rawLedger: FactNode[] = [
     skillId: "serviceability-model",
     maturity: "needs-source",
     derivation: {
+      plain:
+        "Of the whole market, how much can this venture actually reach and serve? No published benchmark answers that, so this is our call: the EU certification stack and a realistic channel build say clearly less than all of it. We assume 55%, with a wide band — and it renders as a slider because it is an assumption you can move.",
       method: "Reachability assumption",
       expression:
         "No public SAM/TAM benchmark for B2B hardware exists; EU cert stack (EN 50600, ecodesign 2019/424, CE/TÜV) justifies < 1.0 but doesn't quantify 0.55",
@@ -683,6 +713,8 @@ const rawLedger: FactNode[] = [
     skillId: "year1-obtainable-model",
     maturity: "triangulated",
     derivation: {
+      plain:
+        "Of the market we can reach, how much can be won in the first year? Our own cited benchmark assigns 1% to Year 1 — the 3% previously carried is that source's Year-2 figure, an error the re-research pass caught and fixed. The one real comparable entrant's first year sits below even 1%, so 1% is the honest middle, with a band reaching down to 0.1%.",
       method: "Benchmark anchoring",
       expression:
         "Prospeo assigns 1% of SAM to YEAR 1 (3% and 5% are Years 2–3) — the prior 3% read the Year-2 figure as Year 1. Corrected to 1%; the Tractian comparable (first-year ~$1.2M against a multi-$B market) sits below 1%.",
@@ -729,6 +761,8 @@ const rawLedger: FactNode[] = [
     skillId: "cagr-projection",
     maturity: "triangulated",
     derivation: {
+      plain:
+        "Growth estimates cluster around 9% a year: global rack-PDU forecasts say 9–10%, and Europe-specific figures run 5–12% depending on what they count. We carry the consensus 9%.",
       method: "Cross-source consensus",
       expression:
         "Global rack-PDU: 9.7% (GVR 2026-33), 8.96% (Mordor 2026-31); EU rack panels 5–8%, Eastern Europe 9–12% (IndexBox) → consensus 9%",
@@ -778,6 +812,8 @@ const rawLedger: FactNode[] = [
     skillId: "competitor-concentration",
     maturity: "needs-source",
     derivation: {
+      plain:
+        "How concentrated is the market? The only hard number is the top vendor (Schneider/APC) at 15.8%. The top-three names are consistent across sources and analysts call the market semi-consolidated, so we estimate the top-3 share at about 55%, with a wide 45–65% band.",
       method: "Leader-share extrapolation",
       expression:
         "Only hard datapoint: #1 vendor (APC/Schneider) at 15.8%; top-3 identities consistent (Schneider, Vertiv, Eaton); 'medium/semi-consolidated' concentration → CR3 ≈ 0.55 (est. 0.45–0.65)",

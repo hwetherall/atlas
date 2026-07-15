@@ -6,6 +6,7 @@ import { ledgerRev1 } from "@/lib/ledgerRev1";
 import { baselineScenario, evaluate } from "@/lib/compute";
 import { REFINEMENT_CYCLE1, REFINEMENT_SUMMARY } from "@/lib/refinement";
 import { formatEUR, formatNodeValue } from "@/lib/format";
+import ThreadBadge from "@/components/ThreadBadge";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // CorrectedModel — "what changed and why": the before/after of the model once
@@ -89,7 +90,9 @@ export default function CorrectedModel() {
             return (
               <li key={e.riskId} className="card rounded-xl p-4">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <p className="text-sm font-medium text-ink">{rev1Node.label}</p>
+                  <p className="flex flex-wrap items-center gap-2 text-sm font-medium text-ink">
+                    {rev1Node.label} <ThreadBadge riskId={e.riskId} />
+                  </p>
                   <p className="font-mono text-sm tabular-nums">
                     <span className="text-ink-3 line-through">{formatNodeValue(rev1Node)}</span>{" "}
                     <span className="text-ink-faint">→</span>{" "}
@@ -119,13 +122,16 @@ export default function CorrectedModel() {
       {/* ── the model also survived attacks — that is evidence too ─────────── */}
       <div className="mt-8 grid gap-3 sm:grid-cols-2">
         <div className="rounded-xl border border-hairline bg-well p-4">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-3">
-            {s.refuted} attacks refuted — the model held
+          <p className="flex flex-wrap items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-3">
+            {s.refuted} attacks refuted — the model held{" "}
+            <ThreadBadge riskId="risk.structure-independence.year1-obtainable-correlated-with-slowest-cell" />
           </p>
           <p className="mt-1.5 text-xs leading-relaxed text-ink-2">
-            Ten proposed corrections died against fresh evidence — including three of the four
-            independent attacks on the market base. A number that survives adversarial
-            re-research is worth more than one that was never attacked.
+            Nine proposed corrections died against fresh evidence — including three of the four
+            independent attacks on the market base, and the slow-buyer tenfold cut (the gate is
+            real; the size wasn&apos;t provable — it returns quantified in the remaining risks). A
+            number that survives adversarial re-research is worth more than one that was never
+            attacked.
           </p>
         </div>
         <div className="rounded-xl border border-hairline bg-well p-4">
@@ -133,9 +139,10 @@ export default function CorrectedModel() {
             {deferred.length} corrections deferred — honestly
           </p>
           <p className="mt-1.5 text-xs leading-relaxed text-ink-2">
-            Three share-mix adjustments need a redistribution decision across sibling facts before
-            they can be applied. They are queued, not forgotten — and the next research cycle
-            independently re-derived all three.
+            Three share-mix adjustments need a redistribution decision across sibling facts, and
+            the Year-1 reach correction waits on the venture&apos;s own channel plan. They are
+            queued, not forgotten — and the next research cycle independently re-derived the three
+            share fixes.
           </p>
         </div>
       </div>

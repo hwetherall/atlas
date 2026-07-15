@@ -76,6 +76,10 @@ export type Evidence = z.infer<typeof evidenceSchema>;
 //    (Calculated internal nodes still use op/inputs; this is the narrative
 //    behind an `estimated`/`extracted` value.) ────────────────────────────────
 export const derivationSchema = z.object({
+  // Plain-English sentence(s) a non-analyst reads first — what the number
+  // means and how it was reached, no shorthand. The working below stays for
+  // the expandable "show the working" view.
+  plain: z.string().optional(),
   method: z.string().min(1), // "Top-down capacity apportionment"
   expression: z.string().min(1), // "DE_capacity (2.1 GW) ÷ CE_capacity (7.5 GW) = 0.28"
   crossCheck: z.string().optional(), // "GDP-weighted: 0.27 (within 5%)"

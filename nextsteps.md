@@ -16,16 +16,21 @@ toolkit is how the advice executes.
 
 ## 2. The toolkit (mythology suite — Atlas's own family)
 
+Five responses, **four tools** (revised 2026-07-15): "ignore" is not a
+product, it is a governed acceptance — relabeled **Accept & watch** and
+executed by Argus (its revisit triggers are Argus tripwires).
+
 | Response | Tool | Identity |
 |---|---|---|
 | Monitor | **Agent Argus** | the hundred-eyed watchman — always-on monitoring; alerts re-price the register |
 | Buy information | **Delphi** | the oracle you consult — commissioned research & data desk |
-| Speak to an expert | **Mentor** | Odysseus's advisor — the expert network |
-| Act | **Daedalus** | the master builder — execution playbooks & venture programs |
-| Ignore | **Themis** | right order — governance: acceptance memos, sign-offs, revisit triggers |
+| Speak to an expert | **Egeria** | the counselor kings consulted — the expert network |
+| Act | **Julius** | the commander — acts while others deliberate; execution playbooks |
+| Accept & watch | **Agent Argus** | the acceptance memo's tripwires, watched around the clock |
 
-Argus additionally backs every "ignore" as the safety net. Tool identities
-live in `lib/toolkit.ts` (id, name, epithet, one-line what-it-does).
+Tool identities live in `lib/toolkit.ts` (id, name, epithet, one-line
+what-it-does). The schema keeps the `"ignore"` enum value for data stability;
+the surface always says Accept & watch.
 
 ## 3. The views — stepped, one per screen
 
@@ -52,21 +57,27 @@ Every memo has the same seven-section skeleton so executives learn it once:
 
 ## 4. Artifacts by response
 
-- **Delphi (buy-information)** — sourcing table: 2–4 real, purchasable
-  reports/datasets (vendor · scope · price · delivery · which ledger nodes it
-  settles), a recommendation, VOI per option, projected band-narrowing.
-- **Mentor (expert)** — expert profile (fictional, stated) + call agenda:
-  five questions, each mapped to the ledger node it settles and how the
-  answer moves it; prep pack; the deliverable after the call.
-- **Argus (monitor)** — watch spec (signal · feed · query · threshold ·
-  cadence), escalation rules, and ONE static mock alert (clearly labeled
-  simulation): feed item → tripped threshold → the register re-pricing.
-- **Daedalus (act)** — initiative charter: objective, workstreams, 90-day
+- **Delphi (buy-information)** — the buying list: 2–4 real, purchasable
+  reports/datasets (report · what you'll learn · what it settles, as node
+  labels · price, linked to the store page), a recommendation.
+- **Egeria (expert)** — the filled-out expert profile IS the artifact
+  (fictional, stated): name, title, location, career bullets, expertise
+  chips, plus 1–3 backup experts and two static demo-mock CTAs — Book
+  session (date/time picker) and Email (prefilled draft composed from the
+  agenda questions). The agenda stays in data (it feeds the email body and
+  node validation) but is no longer a standalone section.
+- **Argus (monitor)** — three-beat strip (the risk · if things change · how
+  we track it), the watch spec table (signal · feed · threshold · cadence),
+  escalation rules, ONE static mock alert (clearly labeled simulation), and
+  the standing "also watching" list covering the rest of the register —
+  legislative feeds in launch countries, acceptance tripwires.
+- **Julius (act)** — initiative charter: objective, workstreams, 90-day
   milestones, resourcing & budget band, leading indicators, kill criteria,
-  engine-computed payoff vs status quo.
-- **Themis (ignore)** — acceptance memo: the case for accepting, max-regret
-  bound (computed from the band), revisit triggers (Argus-watched), sunset
-  date, sign-off line.
+  engine-computed payoff vs status quo (via `likelihoodAfter` where the
+  payoff is a lower chance, not a smaller hit).
+- **Accept & watch (ignore, executed by Argus)** — acceptance memo: the case
+  for accepting, max-regret bound (computed from the band), revisit triggers
+  (Argus-watched), sunset date, sign-off line.
 
 ## 5. Engine — `lib/projection.ts` (pure, tested)
 
@@ -105,6 +116,8 @@ render time against current levers; the data files carry only *what changes*.
 
 ## 8. Non-goals
 
-No pricing/commerce. No live network in the demo path. No real expert names
-(Mentor profiles are fictional by design). No new chart library — curves are
-hand-rolled SVG like the funnel.
+No pricing/commerce for the tools themselves (Delphi's *report* prices are
+external purchases and stay). No live network in the demo path — the Egeria
+Book-session and Email CTAs are static simulations, clearly labeled, nothing
+sends. No real expert names (Egeria profiles are fictional by design). No
+new chart library — curves are hand-rolled SVG like the funnel.

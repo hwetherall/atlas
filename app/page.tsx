@@ -148,7 +148,7 @@ export default function Home() {
                   risks={risksCycle1}
                   state={state}
                   featured={FEATURED.cycle1}
-                  headerNote="First pass, against the original model — most findings are not risks but errors: places where our own numbers don't survive scrutiny."
+                  headerNote="First pass, against the original model. Most of what it found are errors — our own numbers not surviving scrutiny — and errors are good news: the next tab researches and fixes them."
                 />,
               )}
 
@@ -165,7 +165,7 @@ export default function Home() {
                   risks={risks}
                   state={state}
                   featured={FEATURED.cycle2}
-                  headerNote="Second pass, against the corrected model — total exposure fell from €22.4M to €6.8M. What remains is small-caliber refinement work plus the risks only time can settle."
+                  headerNote="Second pass, against the corrected model. The loop re-attacked the fixed numbers and found the next layer down. What remains is refinement work plus the risks only time can settle — Next steps dispositions those."
                 />,
               )}
 

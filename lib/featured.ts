@@ -20,20 +20,25 @@ export const FEATURED: Record<"cycle1" | "cycle2", FeaturedIds> = {
     errors: [
       // The demo's headline: the model's own cited source says 1%, not 3% — the applied fix.
       "risk.execution-window.som-window-semantics-mismatch",
-      // Vivid mechanism, later REFUTED by the loop — the adjudicator is not a yes-machine.
-      "risk.competitive-foreclosure.bundling-eliminates-bakeoffs-year1",
+      // The slow-buyer gate, take 1 — REFUTED by the loop (the adjudicator is not a
+      // yes-machine), but the gate mechanism survives and returns in cycle 2 / Next steps.
+      "risk.structure-independence.year1-obtainable-correlated-with-slowest-cell",
       // "Most Year-1 orders were already awarded to rivals" — folded into the applied fix.
       "risk.demand-discontinuity.prelet-pipeline-lockout",
       // The self-audit catch: our own €495M cross-check measured a rival market.
       "risk.definition-scopedown.crosscheck-ceiling-contamination",
+      // "Year-1 reach is two countries, not 55% of the market" — settleable by a
+      // channel-coverage map, so an error; deferred pending the venture's channel plan.
+      "risk.execution-window.serviceable-reach-is-flow-not-stock",
     ],
     risks: [
       // Top irreducible risk — the competitive headline.
       "risk.base-rate-analogy.fragmented-incumbency-price-response",
       // The Frankfurt grid wall — viscerally real-world.
       "risk.demand-discontinuity.grid-queue-construction-pause",
-      // "Year-1 reach is two countries, not 55% of the market" — the hidden-structure rock.
-      "risk.execution-window.serviceable-reach-is-flow-not-stock",
+      // Bundled selling: how much of the venture's own pipeline ever reaches a
+      // bake-off only reveals itself deal by deal — no report settles it.
+      "risk.competitive-foreclosure.bundling-eliminates-bakeoffs-year1",
       // The CRA storyline — recurs in cycle 2 and in Next steps (continuity across tabs).
       "risk.regulatory-gauntlet.cra-conformity-clock",
     ],

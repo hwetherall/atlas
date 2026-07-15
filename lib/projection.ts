@@ -102,7 +102,12 @@ export function projectAction(
  * - settles:   the action answers the risk's question either way, so the full
  *              expected loss (severity today) comes off the register.
  * - mitigates: the risk still exists but bites a projected world — retired is
- *              severity(today) − severity(on the projected ledger).
+ *              severity(today) − severity(after). "After" can move on either
+ *              axis: the ops project the ledger (smaller impact), and/or
+ *              projection.likelihoodAfter lowers the chance the risk bites.
+ *              The likelihood axis matters when the risk perturbs by scale —
+ *              scale ops are invariant under value projections, so what the
+ *              action really buys is a lower probability, not a smaller hit.
  * - bounds/none: €0 — accepting or watching retires nothing, honestly.
  */
 export function retiredExposure(
@@ -121,7 +126,7 @@ export function retiredExposure(
     case "mitigates": {
       const projected = applyProjection(ledger, memo.projection.ops);
       const severityAfter = riskSeverity(
-        risk.likelihood.value,
+        memo.projection.likelihoodAfter ?? risk.likelihood.value,
         riskImpact(projected, scenario, risk),
       );
       return Math.max(0, severityNow - severityAfter);

@@ -50,6 +50,18 @@ export function marginalContribution(
   return evaluate(ledger, scenario)[metric] - evaluate(ledger, alt)[metric];
 }
 
+/**
+ * Scenario-independent € size of a dimension share: share × tamBase
+ * ("Germany is a €160M market"). Returns null for non-dimension nodes.
+ * Distinct from marginalContribution, which is the live, lever-dependent
+ * number — this one is the stable claim a reader can anchor on.
+ */
+export function factEuro(ledger: Ledger, node: FactNode): number | null {
+  if (!node.dimension || node.unit !== "ratio") return null;
+  const base = ledger.find((n) => n.id === TAM_BASE_ID);
+  return base ? node.value * base.value : null;
+}
+
 export type ContributionMode = "included" | "excluded" | "band" | "none";
 
 export interface ContributionMeasure {
