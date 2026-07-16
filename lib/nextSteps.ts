@@ -215,15 +215,27 @@ const rawMemos: Memo[] = [
     ],
     artifact: {
       kind: "egeria",
+      caseSummary: {
+        known: "CRA dates and obligations are enacted EU law",
+        unknown: "Default class or Annex III for a remote-management rack PDU?",
+        consequence: "A wrong route burns two quarters or discovers a compliance gap mid-launch",
+        action: "Get an assessor's classification judgment before firmware design freeze",
+      },
+      network: {
+        benchSize: 1000,
+        availability: "Advisory slots available this week",
+      },
       profile: {
         name: "Dr. Anneke Vos",
         title: "Independent conformity strategist — EU product security",
         location: "Rotterdam, Netherlands",
+        portrait: "/experts/anneke-vos.png",
+        disclosure:
+          "Illustrative demo profile — representative of experts available through the Egeria network.",
         background: [
           "Fifteen years at a German notified body, finishing as lead assessor for connected infrastructure — industrial controllers, smart metering, rack power",
           "Member of the CEN/CENELEC JTC 13 working group drafting the CRA harmonised standards (M/606 work programme)",
           "Ran RED and MID conformity programs for two European power-equipment manufacturers before going independent",
-          "Profile fictional by design — Egeria matches from the live network at engagement time",
         ],
         expertise: [
           "CRA classification",
@@ -234,6 +246,23 @@ const rawMemos: Memo[] = [
         ],
         engagement: "1-hour advisory session · follow-up memo included · via Egeria",
       },
+      matchReasons: [
+        {
+          label: "The exact judgment",
+          proof:
+            "Classifies connected industrial products under EU conformity routes — the question the regulation itself cannot answer for this PDU.",
+        },
+        {
+          label: "The exact product context",
+          proof:
+            "Led notified-body assessments across connected infrastructure, including rack power and smart metering.",
+        },
+        {
+          label: "The standards clock",
+          proof:
+            "Works inside the JTC 13 programme drafting the CRA harmonised standards the launch plan is waiting on.",
+        },
+      ],
       alternates: [
         {
           name: "Marek Lindqvist",

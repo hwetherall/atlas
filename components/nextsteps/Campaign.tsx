@@ -15,7 +15,7 @@ import type { MemoRow } from "@/components/nextsteps/types";
 // ─────────────────────────────────────────────────────────────────────────────
 // Campaign — view 0 of the Next Steps tab. Grounds the reader (what the loop
 // already did → where that leaves the model → why what remains needs executed
-// responses, not more reading), then the five memos as a table an executive
+// responses, not more reading), then the five responses as a table an executive
 // can reason with: chance × impact, the move, and what acting buys — every €
 // engine-computed at render.
 // ─────────────────────────────────────────────────────────────────────────────
@@ -97,11 +97,11 @@ export default function Campaign({
         </div>
       </section>
 
-      {/* ── The five memos ──────────────────────────────────────────────────── */}
+      {/* ── The five responses ──────────────────────────────────────────────── */}
       <section className="mt-10">
         <div className="flex items-baseline gap-3">
           <h2 className="text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-3">
-            Five memos, ranked by what&rsquo;s at stake
+            Five responses, ranked by what&rsquo;s at stake
           </h2>
           <p className="hidden text-xs text-ink-3 sm:block">
             {formatEUR(atStake)} of the register&rsquo;s {formatEUR(totalExposure)} expected

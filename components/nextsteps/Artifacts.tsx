@@ -308,10 +308,6 @@ function EgeriaArtifact({
 }) {
   const [modal, setModal] = useState<"none" | "book" | "email">("none");
   const { profile, alternates, emailDraft, agenda, deliverable } = artifact;
-  // The last background line is the fictional-by-design disclosure — render
-  // it as a footnote, not a career bullet.
-  const bullets = profile.background.filter((b) => !b.toLowerCase().includes("fictional"));
-  const disclosure = profile.background.find((b) => b.toLowerCase().includes("fictional"));
 
   return (
     <div>
@@ -351,7 +347,7 @@ function EgeriaArtifact({
           ))}
         </div>
         <ul className="mt-3 space-y-1.5">
-          {bullets.map((b) => (
+          {profile.background.map((b) => (
             <li key={b} className="flex gap-2 text-xs leading-relaxed text-ink-2">
               <span aria-hidden className="text-ink-faint">·</span>
               {b}
@@ -359,7 +355,7 @@ function EgeriaArtifact({
           ))}
         </ul>
         <p className="mt-3 font-mono text-[11px] text-ink-3">{profile.engagement}</p>
-        {disclosure ? <p className="mt-1.5 text-[10px] italic text-ink-faint">{disclosure}</p> : null}
+        <p className="mt-1.5 text-[10px] italic text-ink-faint">{profile.disclosure}</p>
       </div>
 
       <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.14em] text-ink-faint">

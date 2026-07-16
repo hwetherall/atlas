@@ -108,14 +108,39 @@ export const delphiArtifactSchema = z.object({
 
 export const egeriaArtifactSchema = z.object({
   kind: z.literal("egeria"),
+  // The Egeria surface opens as a matched expert workspace rather than a
+  // generic memo. These four beats are the compact risk -> action bridge.
+  caseSummary: z.object({
+    known: z.string().min(1),
+    unknown: z.string().min(1),
+    consequence: z.string().min(1),
+    action: z.string().min(1),
+  }),
+  network: z.object({
+    benchSize: z.number().int().positive(),
+    availability: z.string().min(1),
+  }),
   profile: z.object({
     name: z.string().min(1), // fictional by design (nextsteps.md §8)
     title: z.string().min(1),
     location: z.string().min(1),
+    portrait: z.string().min(1),
+    disclosure: z.string().min(1),
     background: z.array(z.string().min(1)).min(2), // career bullets
     expertise: z.array(z.string().min(1)).min(2), // area chips
     engagement: z.string().min(1),
   }),
+  // Why this named expert wins for this named risk. Deliberately qualitative:
+  // the demo should not invent a pseudo-precise algorithmic match score.
+  matchReasons: z
+    .array(
+      z.object({
+        label: z.string().min(1),
+        proof: z.string().min(1),
+      }),
+    )
+    .min(3)
+    .max(4),
   // 1–3 backup experts, one honest line each on when to prefer them.
   alternates: z
     .array(
@@ -135,8 +160,7 @@ export const egeriaArtifactSchema = z.object({
     subject: z.string().min(1),
     intro: z.string().min(1),
   }),
-  // Kept as data (feeds the email body + node validation) but no longer
-  // rendered as a standalone Agenda section.
+  // Feeds the first-class session brief, the email body and node validation.
   agenda: z
     .array(
       z.object({

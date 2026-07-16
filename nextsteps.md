@@ -39,8 +39,15 @@ executed · the de-risking curve over 90 days with dependencies) + the toolkit
 strip + five rows doubling as navigation. Built AFTER the memo template is
 approved (see §7).
 
-Views 1–5 **memos**, prev/next + progress dots, ordered by live severity.
-Every memo has the same seven-section skeleton so executives learn it once:
+Views 1–5 are ordered by live severity with prev/next + progress dots. Four
+responses use the same seven-section **memo** skeleton so executives learn it
+once. **Egeria is the deliberate exception:** speaking to an expert is an
+interactive product experience, so its view opens as a focused workspace with
+the stepped flow **Risk identified → Match → Brief → Book**. The named expert
+and why they fit must be visible above the fold; the long-form memo moves into
+a collapsed risk-details section.
+
+The shared memo skeleton is:
 
 1. **The stakes** — narrative; computed panel (expected loss, band, share of
    remaining portfolio); *when it bites* and when the decision expires.
@@ -60,12 +67,16 @@ Every memo has the same seven-section skeleton so executives learn it once:
 - **Delphi (buy-information)** — the buying list: 2–4 real, purchasable
   reports/datasets (report · what you'll learn · what it settles, as node
   labels · price, linked to the store page), a recommendation.
-- **Egeria (expert)** — the filled-out expert profile IS the artifact
-  (fictional, stated): name, title, location, career bullets, expertise
-  chips, plus 1–3 backup experts and two static demo-mock CTAs — Book
-  session (date/time picker) and Email (prefilled draft composed from the
-  agenda questions). The agenda stays in data (it feeds the email body and
-  node validation) but is no longer a standalone section.
+- **Egeria (expert)** — a dedicated app-within-the-app. It starts with a
+  compact visual bridge from the quantified risk to the human judgment that
+  research cannot supply, then a best-match profile selected from the 1,000+
+  expert bench. The named expert is fictional and explicitly labeled as an
+  illustrative demo profile. Match reasons are tied to this risk, not generic
+  biography. The agenda is a first-class session brief: every question shows
+  the addressable model node and what its answer settles. The final Book step
+  combines the deterministic date/time simulation, prepared agenda, expected
+  deliverable and write-back-to-register timeline. Email remains a secondary
+  prefilled demo action. Nothing sends or books.
 - **Argus (monitor)** — three-beat strip (the risk · if things change · how
   we track it), the watch spec table (signal · feed · threshold · cadence),
   escalation rules, ONE static mock alert (clearly labeled simulation), and

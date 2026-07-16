@@ -10,12 +10,14 @@ import { rankRisks } from "@/lib/riskCompute";
 import { retiredExposure } from "@/lib/projection";
 import Campaign from "@/components/nextsteps/Campaign";
 import MemoView from "@/components/nextsteps/MemoView";
+import EgeriaWorkspace from "@/components/nextsteps/egeria/EgeriaWorkspace";
 import type { MemoRow } from "@/components/nextsteps/types";
 
 // ─────────────────────────────────────────────────────────────────────────────
 // NextSteps — workspace surface #8: the Innovera toolkit in action. Shell
 // only: nav state, keyboard, and the live memo↔register join. The views live
-// in components/nextsteps/ (Campaign, MemoView, Artifacts, EgeriaModals).
+// in components/nextsteps/: most responses use MemoView; Egeria branches into
+// its own Risk -> Match -> Brief -> Book workspace.
 // Register design language throughout; every € figure is engine-computed
 // against the current levers (rankRisks, projectAction, retiredExposure) —
 // the data module carries narrative and projection ops.
@@ -49,9 +51,11 @@ export default function NextSteps({ ledger, state }: Props) {
   // 0 = campaign overview · 1..5 = memos.
   const [view, setView] = useState(0);
   const last = rows.length;
+  const activeRow = view > 0 ? rows[view - 1] : undefined;
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if ((e.target as HTMLElement).closest("button, input, textarea, select")) return;
       if (e.key === "ArrowRight") setView((v) => Math.min(v + 1, last));
       if (e.key === "ArrowLeft") setView((v) => Math.max(v - 1, 0));
     };
@@ -65,20 +69,27 @@ export default function NextSteps({ ledger, state }: Props) {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-6 py-10">
+    <div className="mx-auto max-w-6xl px-6 py-10">
       <StepNav view={view} rows={rows} onGo={go} />
       {view === 0 ? (
         <Campaign ledger={ledger} rows={rows} totalExposure={totalExposure} onOpen={go} />
-      ) : (
+      ) : activeRow?.memo.artifact.kind === "egeria" ? (
+        <EgeriaWorkspace
+          row={activeRow}
+          ledger={ledger}
+          totalExposure={totalExposure}
+          onBackToCampaign={() => go(0)}
+        />
+      ) : activeRow ? (
         <MemoView
-          row={rows[view - 1]}
+          row={activeRow}
           index={view}
           count={rows.length}
           ledger={ledger}
           state={state}
           totalExposure={totalExposure}
         />
-      )}
+      ) : null}
     </div>
   );
 }
@@ -110,7 +121,7 @@ function StepNav({
         <span aria-hidden className="text-ink-faint">
           ·
         </span>
-        <div className="flex items-center gap-2" role="tablist" aria-label="Memos">
+        <div className="flex items-center gap-2" role="tablist" aria-label="Responses">
           {rows.map((row, i) => (
             <button
               key={row.memo.riskId}
