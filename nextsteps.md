@@ -44,8 +44,10 @@ responses use the same seven-section **memo** skeleton so executives learn it
 once. **Egeria is the deliberate exception:** speaking to an expert is an
 interactive product experience, so its view opens as a focused workspace with
 the stepped flow **Risk identified → Match → Brief → Book**. The named expert
-and why they fit must be visible above the fold; the long-form memo moves into
-a collapsed risk-details section.
+and why they fit must be visible above the fold after the match has been earned;
+the long-form memo moves into a collapsed risk-details section. Every completed
+step remains clickable. Future steps stay locked until the user has completed
+the transition that unlocks them.
 
 The shared memo skeleton is:
 
@@ -67,12 +69,18 @@ The shared memo skeleton is:
 - **Delphi (buy-information)** — the buying list: 2–4 real, purchasable
   reports/datasets (report · what you'll learn · what it settles, as node
   labels · price, linked to the store page), a recommendation.
-- **Egeria (expert)** — a dedicated app-within-the-app. It starts with a
-  compact visual bridge from the quantified risk to the human judgment that
-  research cannot supply, then a best-match profile selected from the 1,000+
-  expert bench. The named expert is fictional and explicitly labeled as an
+- **Egeria (expert)** — a dedicated app-within-the-app with its own application
+  header, decision rail and case state. It opens on an interactive research-
+  boundary screen: the user selects the unresolved risk, sees what the web
+  research established, what it cannot decide, and the cost of guessing. Only
+  then can they start a five-stage matching sequence that visibly narrows the
+  1,000+ profile bench by decision, product context, standards proximity and
+  availability before revealing the best match. The sequence is deterministic
+  and explicitly labeled as illustrative; it performs no runtime network call.
+  The named expert is fictional and explicitly labeled as an
   illustrative demo profile. Match reasons are tied to this risk, not generic
-  biography. The agenda is a first-class session brief: every question shows
+  biography, and render as criterion-to-evidence rows rather than generic cards.
+  The agenda is a first-class session brief: every question shows
   the addressable model node and what its answer settles. The final Book step
   combines the deterministic date/time simulation, prepared agenda, expected
   deliverable and write-back-to-register timeline. Email remains a secondary

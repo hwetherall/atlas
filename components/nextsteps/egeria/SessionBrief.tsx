@@ -22,11 +22,11 @@ export default function SessionBrief({
   const selected = artifact.agenda[active];
 
   return (
-    <div className="mt-5">
-      <section className="card overflow-hidden rounded-2xl">
+    <div>
+      <section className="overflow-hidden border-y border-hairline">
         <div className="grid gap-0 md:grid-cols-[220px_minmax(0,1fr)]">
           <div className="flex items-center gap-3 border-b border-hairline bg-well p-4 md:border-b-0 md:border-r">
-            <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl">
+            <div className="relative h-16 w-16 shrink-0 overflow-hidden">
               <Image
                 src={artifact.profile.portrait}
                 alt=""
@@ -51,7 +51,7 @@ export default function SessionBrief({
                 </p>
                 <h2 className="mt-1 font-display text-2xl text-ink">Five questions. Two model nodes. One decision.</h2>
               </div>
-              <p className="rounded-full border border-hairline bg-well px-3 py-1 font-mono text-[10px] text-ink-3">
+              <p className="border-l border-hairline pl-3 font-mono text-[10px] text-ink-3">
                 {artifact.agenda.length} questions · {linkedNodeCount} linked nodes
               </p>
             </div>
@@ -63,29 +63,29 @@ export default function SessionBrief({
       </section>
 
       <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)]">
-        <section aria-label="Prepared questions" className="space-y-2">
+        <section aria-label="Prepared questions" className="divide-y divide-hairline border-y border-hairline">
           {artifact.agenda.map((item, index) => (
             <button
               key={item.question}
               type="button"
               onClick={() => setActive(index)}
               aria-pressed={active === index}
-              className={`flex w-full items-start gap-3 rounded-xl border p-3.5 text-left transition-colors ${
+              className={`flex w-full items-start gap-3 border-l-2 p-3.5 text-left transition-colors ${
                 active === index
-                  ? "border-accent/40 bg-accent-wash"
-                  : "border-hairline bg-card hover:border-hairline-strong"
+                  ? "border-accent bg-accent-wash"
+                  : "border-transparent bg-card hover:bg-well"
               }`}
             >
               <span
-                className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full font-mono text-[11px] ${
-                  active === index ? "bg-accent text-card" : "bg-well text-ink-3"
+                className={`flex h-7 w-7 shrink-0 items-center justify-center border font-mono text-[11px] ${
+                  active === index ? "border-accent bg-accent text-card" : "border-hairline-strong bg-card text-ink-3"
                 }`}
               >
                 {index + 1}
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block text-xs font-medium leading-relaxed text-ink">{item.question}</span>
-                <span className="mt-1.5 inline-flex rounded border border-hairline bg-card px-1.5 py-0.5 font-mono text-[9px] text-ink-3">
+                <span className="mt-1.5 inline-flex border-l border-hairline-strong pl-1.5 font-mono text-[9px] text-ink-3">
                   {nodes.get(item.nodeId) ?? item.nodeId}
                 </span>
               </span>
@@ -94,13 +94,13 @@ export default function SessionBrief({
           ))}
         </section>
 
-        <aside className="card h-fit rounded-2xl p-5 lg:sticky lg:top-24">
+        <aside className="h-fit border-l-2 border-accent bg-well p-5 lg:sticky lg:top-24">
           <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-accent-ink">
             Question {active + 1} · model connection
           </p>
           <p className="mt-3 font-display text-xl leading-snug text-ink">{selected.question}</p>
 
-          <div className="mt-5 rounded-xl border border-hairline bg-well p-4">
+          <div className="mt-5 border-y border-hairline bg-card px-4 py-4">
             <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-ink-faint">
               Settles this node
             </p>
@@ -127,7 +127,7 @@ export default function SessionBrief({
         <button
           type="button"
           onClick={onContinue}
-          className="rounded-xl bg-accent px-5 py-2.5 text-sm font-semibold text-card shadow-raised transition-colors hover:bg-accent-ink"
+          className="bg-accent px-5 py-2.5 text-sm font-semibold text-card transition-colors hover:bg-accent-ink"
         >
           Continue to booking →
         </button>

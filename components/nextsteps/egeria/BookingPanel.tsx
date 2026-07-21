@@ -38,11 +38,11 @@ export default function BookingPanel({
   if (confirmed && day !== null && time !== null) {
     const selected = DAYS[day];
     return (
-      <div className="mt-5">
-        <section className="card overflow-hidden rounded-2xl border-positive/25">
+      <div>
+        <section className="overflow-hidden border-y border-positive/25">
           <div className="grid lg:grid-cols-[0.82fr_1.18fr]">
             <div className="bg-positive-wash p-6 sm:p-8">
-              <span className="flex h-12 w-12 items-center justify-center rounded-full bg-positive text-xl text-card">✓</span>
+              <span className="flex h-12 w-12 items-center justify-center bg-positive text-xl text-card">✓</span>
               <p className="mt-5 text-[10px] font-semibold uppercase tracking-[0.16em] text-positive-ink">
                 Session request staged
               </p>
@@ -91,9 +91,9 @@ export default function BookingPanel({
   }
 
   return (
-    <div className="mt-5">
+    <div>
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)]">
-        <section className="card rounded-2xl p-5 sm:p-6">
+        <section className="border-y border-hairline p-5 sm:p-6">
           <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-accent-ink">
             Choose an advisory slot
           </p>
@@ -107,7 +107,7 @@ export default function BookingPanel({
                 type="button"
                 onClick={() => setDay(index)}
                 aria-pressed={day === index}
-                className={`rounded-xl border px-2 py-3 text-center transition-colors ${
+                className={`border px-2 py-3 text-center transition-colors ${
                   day === index
                     ? "border-accent/50 bg-accent-wash"
                     : "border-hairline bg-well hover:border-hairline-strong"
@@ -128,7 +128,7 @@ export default function BookingPanel({
                 type="button"
                 onClick={() => setTime(item)}
                 aria-pressed={time === item}
-                className={`rounded-full border px-4 py-2 font-mono text-xs transition-colors ${
+                className={`border px-4 py-2 font-mono text-xs transition-colors ${
                   time === item
                     ? "border-accent/50 bg-accent-wash text-accent-ink"
                     : "border-hairline bg-card text-ink-2 hover:border-hairline-strong"
@@ -142,9 +142,9 @@ export default function BookingPanel({
           <SimulationTag />
         </section>
 
-        <aside className="card flex flex-col rounded-2xl p-5 sm:p-6">
+        <aside className="flex flex-col border-l-2 border-accent bg-well p-5 sm:p-6">
           <div className="flex items-center gap-3 border-b border-hairline pb-4">
-            <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl">
+            <div className="relative h-14 w-14 shrink-0 overflow-hidden">
               <Image
                 src={artifact.profile.portrait}
                 alt=""
@@ -174,7 +174,7 @@ export default function BookingPanel({
             <p className="mt-2 text-[10px] text-ink-faint">+ {artifact.agenda.length - 3} linked questions and source pack</p>
           </div>
 
-          <div className="mt-4 rounded-xl border border-hairline bg-well p-3.5">
+          <div className="mt-4 border-y border-hairline bg-card p-3.5">
             <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-ink-faint">
               Comes back
             </p>
@@ -185,14 +185,14 @@ export default function BookingPanel({
             type="button"
             disabled={day === null || time === null}
             onClick={() => setConfirmed(true)}
-            className="mt-5 w-full rounded-xl bg-accent px-4 py-3 text-sm font-semibold text-card shadow-raised transition-colors hover:bg-accent-ink disabled:cursor-not-allowed disabled:opacity-35"
+            className="mt-5 w-full bg-accent px-4 py-3 text-sm font-semibold text-card transition-colors hover:bg-accent-ink disabled:cursor-not-allowed disabled:opacity-35"
           >
             Request the session
           </button>
           <button
             type="button"
             onClick={() => setEmailOpen(true)}
-            className="mt-2 w-full rounded-xl border border-hairline bg-card px-4 py-2.5 text-xs font-medium text-ink-2 hover:border-hairline-strong"
+            className="mt-2 w-full border border-hairline bg-card px-4 py-2.5 text-xs font-medium text-ink-2 hover:border-hairline-strong"
           >
             Prefer email? Open the prepared draft
           </button>
@@ -239,7 +239,7 @@ function OutcomeStep({
   return (
     <div className="grid grid-cols-[28px_1fr] gap-3">
       <div className="flex flex-col items-center">
-        <span className="flex h-7 w-7 items-center justify-center rounded-full border border-accent/30 bg-accent-wash font-mono text-[9px] text-accent-ink">
+        <span className="flex h-7 w-7 items-center justify-center border border-accent/30 bg-accent-wash font-mono text-[9px] text-accent-ink">
           {number}
         </span>
         {!last ? <span aria-hidden className="h-full w-px bg-hairline" /> : null}
